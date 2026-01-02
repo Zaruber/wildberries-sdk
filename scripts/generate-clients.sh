@@ -8,11 +8,47 @@ SKIP_VALIDATE_SPEC="${SKIP_VALIDATE_SPEC:-1}"
 USE_DOCKER="${OPENAPI_GENERATOR_DOCKER:-0}"
 DOCKER_IMAGE="${OPENAPI_GENERATOR_DOCKER_IMAGE:-openapitools/openapi-generator-cli}"
 GLOBAL_PROPERTIES="${OPENAPI_GENERATOR_GLOBAL_PROPERTIES:-apiDocs=false,modelDocs=false,apiTests=false,modelTests=false}"
+GO_MODULE_BASE="${GO_MODULE_BASE:-}"
+GO_MODULE_BASE_WARNED=0
 
 if [[ ! -f "${CONFIG_FILE}" ]]; then
   echo "Error: config not found: ${CONFIG_FILE}" >&2
   exit 1
 fi
+
+detect_module_base() {
+  local url host path
+
+  if ! command -v git >/dev/null 2>&1; then
+    return 1
+  fi
+
+  url="$(git -C "${ROOT_DIR}" config --get remote.origin.url 2>/dev/null || true)"
+  if [[ -z "${url}" ]]; then
+    return 1
+  fi
+
+  if [[ "${url}" =~ ^git@([^:]+):(.+)$ ]]; then
+    host="${BASH_REMATCH[1]}"
+    path="${BASH_REMATCH[2]}"
+  elif [[ "${url}" =~ ^https?://([^/]+)/(.+)$ ]]; then
+    host="${BASH_REMATCH[1]}"
+    path="${BASH_REMATCH[2]}"
+  elif [[ "${url}" =~ ^ssh://git@([^/]+)/(.+)$ ]]; then
+    host="${BASH_REMATCH[1]}"
+    path="${BASH_REMATCH[2]}"
+  else
+    return 1
+  fi
+
+  path="${path%.git}"
+  echo "${host}/${path}"
+}
+
+if [[ -z "${GO_MODULE_BASE}" ]]; then
+  GO_MODULE_BASE="$(detect_module_base || true)"
+fi
+GO_MODULE_BASE="${GO_MODULE_BASE%/}"
 
 read_specs() {
   awk '
@@ -117,6 +153,38 @@ cleanup_output_dir() {
       rm -rf "${dir}/${d}"
     fi
   done
+}
+
+fix_go_module() {
+  local out_path="$1"
+  local go_mod
+  local rel_path
+  local module_path
+  local tmp_file
+
+  if [[ -z "${GO_MODULE_BASE}" ]]; then
+    return
+  fi
+
+  go_mod="${out_path}/go.mod"
+  if [[ ! -f "${go_mod}" ]]; then
+    return
+  fi
+
+  if [[ "${out_path}" != "${ROOT_DIR}/"* ]]; then
+    return
+  fi
+
+  rel_path="${out_path#${ROOT_DIR}/}"
+  module_path="${GO_MODULE_BASE}/${rel_path}"
+
+  tmp_file="$(mktemp)"
+  awk -v module="${module_path}" '
+    /^module[[:space:]]+/ { print "module " module; updated=1; next }
+    { print }
+    END { if (!updated) print "module " module }
+  ' "${go_mod}" > "${tmp_file}"
+  mv "${tmp_file}" "${go_mod}"
 }
 
 fix_typescript_enum_keys() {
@@ -421,5 +489,12 @@ for lang in "${langs[@]}"; do
       rewrite_typescript_index "${out_path}"
     fi
     cleanup_output_dir "${out_path}"
+    if [[ "${generator}" == "go" ]]; then
+      if [[ -z "${GO_MODULE_BASE}" && "${GO_MODULE_BASE_WARNED}" -eq 0 ]]; then
+        echo "Warning: GO_MODULE_BASE not set and git remote not detected; go.mod will keep default module path." >&2
+        GO_MODULE_BASE_WARNED=1
+      fi
+      fix_go_module "${out_path}"
+    fi
   done
 done

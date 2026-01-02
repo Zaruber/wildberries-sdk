@@ -1,6 +1,7 @@
 # wildberries-sdk (Go)
 
 Сгенерированные Go-клиенты находятся в `clients/go/<module>`.
+Модульный путь: `github.com/eslazarev/wildberries-sdk/clients/go/<module>`.
 
 ## Использование
 
