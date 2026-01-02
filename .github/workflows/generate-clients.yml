@@ -33,6 +33,9 @@ jobs:
           PACKAGE_VERSION: ${{ steps.bump.outputs.version }}
         run: bash scripts/generate-clients.sh
 
+      - name: Update Python methods list
+        run: bash scripts/generate-python-methods-list.sh
+
       - name: Prepare Python package
         run: bash scripts/prepare-pypi-package.sh
 
