@@ -814,7 +814,7 @@ components:
           example: 6354
         acceptance:
           type: number
-          description: Платная приёмка
+          description: Операции на приёмке
           example: 865
         assembly_id:
           type: integer
@@ -846,7 +846,7 @@ components:
           example: false
         trbx_id:
           type: string
-          description: Номер короба для платной приёмки
+          description: Номер короба для обработки товара
           example: WB-TRBX-1234567
         installment_cofinancing_amount:
           type: number
@@ -880,9 +880,16 @@ components:
           example: 0
         delivery_method:
           type: string
-          description: |
-            Способ продажи и тип товара
-          example: FBS
+          description: Способ продажи и тип товара
+          example: FBS, (МГТ)
+        seller_promo_id:
+          type: integer
+          description: ID собственной акции продавца с дополнительной скидкой
+          example: 14350
+        seller_promo_discount:
+          type: number
+          description: Размер дополнительной скидки по собственной акции продавца, %
+          example: 3
   responses:
     '401':
       description: Не авторизован

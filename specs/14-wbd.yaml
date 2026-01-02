@@ -446,7 +446,7 @@ paths:
 
         **Добавить дополнительные медиафайлы**
 
-        1. Загрузить медиафайлы с помощью метода [Загрузить медиафайл для предложения](/openapi/wbd#tag/Predlozheniya/operation/contentGallery), метод возвращает список URI адресов загруженных медиафайлов.
+        1. Загрузить медиафайлы с помощью метода [Загрузить медиафайл для предложения](/openapi/wbd#tag/Kontent/operation/contentGallery), метод возвращает список URI адресов загруженных медиафайлов.
         2. Добавить URI медиафайлов в поле `gallery`.
 
         **Категория и подкатегория предложения**<br><br>
@@ -2626,7 +2626,7 @@ components:
           x-nullable: false
         value_translit:
           description: Перевод названия тега
-          example: biznes
+          example: business
           type: string
           x-nullable: false
         weight:

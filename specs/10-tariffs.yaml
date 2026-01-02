@@ -311,7 +311,9 @@ components:
       description: Комиссия Узбекистан
       value:
         report:
-          - kgvpUzbekistan: 15.5
+          - kgvpMarketplaceUz: 15.5
+            kgvpPaidStorageUz: 15.5
+            kgvpSupplierUz: 15.5
             parentID: 657
             parentName: Бытовая техника
             subjectID: 6461
@@ -771,9 +773,15 @@ components:
           items:
             type: object
             properties:
-              kgvpUzbekistan:
+              kgvpMarketplaceUz:
                 type: number
-                description: Комиссия для продавцов из Узбекистана, %
+                description: Комиссия по модели «Маркетплейс» (`FBS`), %
+              kgvpPaidStorageUz:
+                type: number
+                description: Комиссия по модели «Склад WB» (`FBW`), %
+              kgvpSupplierUz:
+                type: number
+                description: Комиссия по модели «Витрина» (`DBS`), %
               parentID:
                 type: integer
                 description: ID родительской категории

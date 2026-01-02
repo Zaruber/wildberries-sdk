@@ -1370,7 +1370,7 @@ components:
         positionCluster:
           $ref: '#/components/schemas/PositionCluster'
         orderBy:
-          $ref: '#/components/schemas/OrderBy'
+          $ref: '#/components/schemas/OrderByMainAndDetails'
         includeSubstitutedSKUs:
           type: boolean
           default: true
@@ -2043,8 +2043,8 @@ components:
             format: int32
         brandNames:
           example:
-            - nille
-            - aikas
+            - nikkle
+            - abikas
           type: array
           description: Список брендов для фильтрации
           items:
@@ -2136,7 +2136,7 @@ components:
             type: integer
             format: uint64
         orderBy:
-          $ref: '#/components/schemas/OrderBy'
+          $ref: '#/components/schemas/OrderByMainAndDetails'
         positionCluster:
           description: |
             Товары с какой средней позицией в поиске показывать в отчёте:
@@ -2617,6 +2617,47 @@ components:
             - orders
             - cartToOrder
             - visibility
+        mode:
+          type: string
+          example: asc
+          description: |
+            Порядок сортировки:
+              - `asc` — по возрастанию
+              - `desc` — по убыванию
+          enum:
+            - asc
+            - desc
+      required:
+        - field
+        - mode
+    OrderByMainAndDetails:
+      type: object
+      description: Параметры сортировки
+      properties:
+        field:
+          description: |
+            Поле для сортировки:
+              - `avgPosition` — по средней позиции
+              - `addToCart` — по добавлениям в корзину
+              - `openCard` — по открытию карточки (переход на страницу товара)
+              - `orders` — по количеству заказов
+              - `cartToOrder` — по конверсии в заказ из поиска
+              - `openToCart` — по конверсии в корзину из поиска
+              - `visibility` — по видимости товара
+              - `minPrice` — по минимальной цене
+              - `maxPrice` — по максимальной цене
+          example: avgPosition
+          type: string
+          enum:
+            - avgPosition
+            - openCard
+            - addToCart
+            - openToCart
+            - orders
+            - cartToOrder
+            - visibility
+            - minPrice
+            - maxPrice
         mode:
           type: string
           example: asc
@@ -3217,7 +3258,6 @@ components:
               createdAt:
                 type: string
                 description: Дата и время завершения генерации
-                format: date-time
                 example: '2024-06-26 20:05:32'
               status:
                 type: string
@@ -3462,7 +3502,7 @@ components:
     TableGroupField:
       type: string
       description: |
-        Cортировка по полю:
+        Сортировка по полю:
           - `ordersCount` — Заказы, шт.
           - `ordersSum` — Заказы, сумма
           - `avgOrders` — Среднее количество заказов в день
@@ -5010,7 +5050,7 @@ components:
               - `stockWbQty` — Остатки на складах WB, шт
               - `shareOrderPercent` — Доля в выручке
               - `addToWishlist` — Добавили в **Отложенные**
-              - `timeToReady` — Cреднее время доставки
+              - `timeToReady` — Среднее время доставки
               - `localizationPercent` — Локальные заказы в рамках одного региона
               - `wbClub.orderCount` — Заказали товаров с WB Клубом, шт
               - `wbClub.orderSum` — Заказали на сумму с WB Клубом

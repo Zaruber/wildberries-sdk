@@ -272,6 +272,8 @@ paths:
     servers:
       - url: https://user-management-api.wildberries.ru
     post:
+      x-readonly-method: false
+      x-category: usermanagement
       tags:
         - Управление пользователями продавца
       security:
@@ -322,6 +324,8 @@ paths:
     servers:
       - url: https://user-management-api.wildberries.ru
     get:
+      x-readonly-method: true
+      x-category: usermanagement
       tags:
         - Управление пользователями продавца
       security:
@@ -587,6 +591,8 @@ paths:
     servers:
       - url: https://user-management-api.wildberries.ru
     put:
+      x-readonly-method: false
+      x-category: usermanagement
       tags:
         - Управление пользователями продавца
       security:
@@ -627,6 +633,8 @@ paths:
     servers:
       - url: https://user-management-api.wildberries.ru
     delete:
+      x-readonly-method: false
+      x-category: usermanagement
       tags:
         - Управление пользователями продавца
       security:

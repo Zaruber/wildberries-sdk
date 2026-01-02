@@ -32,9 +32,9 @@ paths:
         - Информация для формирования поставок
       summary: Коэффициенты приёмки
       description: |
-        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `https://common-api.wildberries.ru` с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории.
+        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории.
 
-        Доступ к этому методу с доменом `https://supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)
+        Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -839,7 +839,7 @@ components:
         acceptanceCost: 5000
         paidAcceptanceCoefficient: 10
         rejectReason: null
-        supplierAssignName: Магазн
+        supplierAssignName: Магазин
         storageCoef: '215'
         deliveryCoef: '200'
         quantity: 10
@@ -1135,11 +1135,11 @@ components:
     OptionsResponse:
       value:
         result:
-          - barcode: кrrr
+          - barcode: Seller
             warehouses: null
             error:
               title: barcode validation error
-              detail: barcode кrrr is not found
+              detail: barcode Seller is not found
             isError: true
           - barcode: '123456789'
             warehouses:
