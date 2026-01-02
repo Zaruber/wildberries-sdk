@@ -1,6 +1,6 @@
 {
   "name": "wildberries-sdk-communications",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "OpenAPI client for wildberries-sdk-communications",
   "author": "OpenAPI-Generator",
   "repository": {

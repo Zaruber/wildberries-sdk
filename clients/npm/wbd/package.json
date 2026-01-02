@@ -1,6 +1,6 @@
 {
   "name": "wildberries-sdk-wbd",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "OpenAPI client for wildberries-sdk-wbd",
   "author": "OpenAPI-Generator",
   "repository": {
