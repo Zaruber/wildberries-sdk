@@ -345,10 +345,10 @@ paths:
         - Сборочные задания FBS
       summary: Получить список новых сборочных заданий
       description: |
-        Метод возвращает список всех новых [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get), которые есть у продавца на момент запроса.
+        Метод возвращает список всех новых [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get), которые есть у продавца на момент запроса.
 
         <div class="description_important">
-        Наличие в сборочныx заданияx метаданных, указанных в полях <code>requiredMeta</code> и <code>optionalMeta</code>, влияет только на возможность перевести поставку в доставку. Если ваш товар подлежит обязательной <a href ="https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs">маркировке</a> средствами
+        Наличие в сборочных заданиях метаданных, указанных в полях <code>requiredMeta</code> и <code>optionalMeta</code>, влияет только на возможность перевести поставку в доставку. Если ваш товар подлежит обязательной <a href ="https://seller.wildberries.ru/instructions/ru/ru/material/items-labeling-in-fbs">маркировке</a> средствами
         идентификации, необходимо указывать метаданные независимо от того, в каком поле они были получены (п. 4.6 <a href ="https://seller.wildberries.ru/confirm-offer-condition/product/view">Оферты</a>).
         <br>
         Рекомендуем добавлять в сборочные задания все метаданные, полученные в полях <code>requiredMeta</code> и <code>optionalMeta</code>
@@ -395,7 +395,7 @@ paths:
         - Сборочные задания FBS
       summary: Получить информацию о сборочных заданиях
       description: |
-        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post).
+        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).
 
         Можно получить данные за заданный период, максимум 30 календарных дней одним запросом.
 
@@ -465,7 +465,7 @@ paths:
         - Сборочные задания FBS
       summary: Получить статусы сборочных заданий
       description: |
-        Метод возвращает статусы [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) по их ID.
+        Метод возвращает статусы [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по их ID.
         <br><br>
         `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.
 
@@ -474,7 +474,7 @@ paths:
         | Статус   | Описание            | Как перевести сборочное задание в данный статус |
         |-------|----------------------|--------------------------------------|
         | `new`      | **Новое сборочное задание** |  |
-        | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1orders~1%7BorderId%7D/patch)
+        | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch)
         | `complete` | **В доставке** | [Передать поставку в доставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1deliver/patch) |
         | `cancel`   | **Отменено продавцом**   | [Отменить сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch)|
 
@@ -596,9 +596,9 @@ paths:
         - Сборочные задания FBS
       summary: Получить все сборочные задания для повторной отгрузки
       description: |
-        Метод возвращает все [сборочные задания](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get), требующие повторной отгрузки.
+        Метод возвращает все [сборочные задания](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get), требующие повторной отгрузки.
         <br><br>
-        Повторная отгрузка требуется, если поставка была отсканирована в пункте приёмки, но при этом в ней всё ещё есть неотсканированные товары. Спустя определённое время необходимо доставить эти товары заново. Данные сборочные задания можно перевести в [другую активную поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1orders~1%7BorderId%7D/patch).
+        Повторная отгрузка требуется, если поставка была отсканирована в пункте приёмки, но при этом в ней всё ещё есть неотсканированные товары. Спустя определённое время необходимо доставить эти товары заново. Данные сборочные задания можно перевести в [другую активную поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -658,7 +658,7 @@ paths:
         - Сборочные задания FBS
       summary: Отменить сборочное задание
       description: |
-        Метод отменяет [сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) и переводит в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `cancel` — отменено продавцом.
+        Метод отменяет [сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) и переводит в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `cancel` — отменено продавцом.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -724,7 +724,7 @@ paths:
 
         Ограничения:
           - За один запрос можно получить максимум 100 стикеров.
-          - Cтикеры можно получить только для сборочных заданий в [статусах](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` — на сборке и `complete` — в доставке.
+          - Стикеры можно получить только для сборочных заданий в [статусах](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` — на сборке и `complete` — в доставке.
 
         Доступны размеры:
           - 580x400 px при `width=58&height=40` в запросе
@@ -927,38 +927,6 @@ paths:
   /api/v3/orders/{orderId}/meta:
     servers:
       - url: https://marketplace-api.wildberries.ru
-    get:
-      x-readonly-method: true
-      x-category: marketplace
-      security:
-        - HeaderApiKey: []
-      tags:
-        - Метаданные FBS
-      summary: Получить метаданные сборочного задания
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [24 декабря](https://dev.wildberries.ru/release-notes?id=371)
-      parameters:
-        - $ref: '#/components/parameters/Order'
-      responses:
-        '200':
-          description: Успешно
-          content:
-            application/json:
-              schema:
-                type: object
-                nullable: false
-                properties:
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/429'
     delete:
       x-readonly-method: false
       x-category: marketplace
@@ -1035,11 +1003,11 @@ paths:
         - Метаданные FBS
       summary: Закрепить за сборочным заданием код маркировки товара
       description: |
-        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) код маркировки [Честный знак](https://честныйзнак.рф).
+        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честный знак](https://честныйзнак.рф).
         <br><br>
-        Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `confirm`.
+        Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`.
         <br><br>
-        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get).
+        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:
@@ -1112,11 +1080,11 @@ paths:
         - Метаданные FBS
       summary: Закрепить за сборочным заданием УИН
       description: |
-        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер.
+        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) — уникальный идентификационный номер.
         <br><br>
         У одного сборочного задания может быть только один УИН.
 
-        Добавлять маркировку можно только для заказов, которые доставляются WB и находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `confirm`.
+        Добавлять маркировку можно только для заказов, которые доставляются WB и находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:
@@ -1186,11 +1154,11 @@ paths:
         - Метаданные FBS
       summary: Закрепить за сборочным заданием IMEI
       description: |
-        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get).
+        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).
         <br><br>
         У одного сборочного задания может быть только один IMEI. Если у устройства два IMEI — **IMEI** и **IMEI2** или **IMEI1** и **IMEI2** — укажите только **IMEI** или **IMEI1**. **IMEI2** указывать не нужно.
         <br><br>
-        Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `confirm`.
+        Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:
@@ -1260,11 +1228,11 @@ paths:
         - Метаданные FBS
       summary: Закрепить за сборочным заданием GTIN
       description: |
-        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси.
+        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) — уникальный ID товара в Беларуси.
         <br><br>
         У одного сборочного задания может быть только один GTIN.
 
-        Добавлять маркировку можно только для заказов, которые доставляются WB и находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `confirm`.
+        Добавлять маркировку можно только для заказов, которые доставляются WB и находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:
@@ -1334,12 +1302,12 @@ paths:
         - Метаданные FBS
       summary: Закрепить за сборочным заданием срок годности товара
       description: |
-        Метод закрепляет за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) срок годности товара. Товар годен до указанной даты.
+        Метод закрепляет за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) срок годности товара. Товар годен до указанной даты.
         <br>
-        Добавить срок годности можно только для заказов, которые доставляются WB и находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `confirm`.
+        Добавить срок годности можно только для заказов, которые доставляются WB и находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`.
         <br>
         <br>
-        Получить загруженные данные можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get).
+        Получить загруженные данные можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).
         Чтобы изменить срок годности, отправьте запрос с новой датой.
         Удалить срок годности из метаданных сборочного задания невозможно.
 
@@ -1460,7 +1428,7 @@ paths:
                           type: string
                           format: byte
                           nullable: false
-                          description: Cтикер в формате PDF, кодировка base64
+                          description: Стикер в формате PDF, кодировка base64
                           example: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
                         orderId:
                           type: integer
@@ -1500,7 +1468,7 @@ paths:
         - Сборочные задания FBS
       summary: История статусов для сборочных заданий кроссбордера
       description: |
-        Метод возвращает историю [статусов](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) для [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) кроссбордера.
+        Метод возвращает историю [статусов](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) для [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) кроссбордера.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -1692,8 +1660,8 @@ paths:
         Метод создаёт новую [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get).
 
         Ограничения:
-        - Только для [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) по модели FBS.
-        - При добавлении в поставку все передаваемые сборочные задания в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `new` будут автоматически переведены в статус `confirm` — на сборке.
+        - Только для [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по модели FBS.
+        - При добавлении в поставку все передаваемые сборочные задания в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `new` будут автоматически переведены в статус `confirm` — на сборке.
         - Если вы переведёте сборочное задание в статус `cancel` — отмена продавцом, прикрепленное сборочное задание автоматически удалится из поставки.
         - Поставку можно собрать только из сборочных заданий (заказов) одного габаритного типа `cargoType`. Новая поставка не обладает габаритным признаком, она приобретает габаритный признак первого заказа, добавленного в поставку.
 
@@ -1814,11 +1782,11 @@ paths:
         - Поставки FBS
       summary: Добавить сборочные задания к поставке
       description: |
-        Метод добавляет до 100 [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) к поставке и переводит их в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `confirm` — на сборке.
+        Метод добавляет до 100 [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) к поставке и переводит их в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` — на сборке.
 
         Может перемещать сборочные задания:
           - между активными поставками
-          - из закрытой поставки в активную, если сборочные задания требуют [повторной отгрузки](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1supplies~1orders~1reshipment/get)
+          - из закрытой поставки в активную, если сборочные задания требуют [повторной отгрузки](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1supplies~1orders~1reshipment/get)
 
         <div class="description_important">
           В пустую поставку можно добавить сборочные задания любого габаритного типа. Поставка приобретает габаритный тип первого добавленного сборочного задания <a href ="./orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get">из поля</a> <code>cargoType</code>.
@@ -1863,52 +1831,6 @@ paths:
       responses:
         '204':
           description: Сборочные задания закреплены за поставкой
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка добавления сборочного задания к поставке
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                FailedToAddSupplyOrder:
-                  $ref: '#/components/examples/FailedToAddSupplyOrder'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/supplies/{supplyId}/orders/{orderId}:
-    servers:
-      - url: https://marketplace-api.wildberries.ru
-    patch:
-      deprecated: true
-      x-readonly-method: false
-      x-category: marketplace
-      security:
-        - HeaderApiKey: []
-      tags:
-        - Поставки FBS
-      summary: Добавить сборочное задание к поставке
-      description: |
-        Данный метод устарел. Он будет удалён [18 декабря](https://dev.wildberries.ru/release-notes?id=362)
-      parameters:
-        - $ref: '#/components/parameters/Supply'
-        - $ref: '#/components/parameters/Order'
-      responses:
-        '204':
-          description: Задание закреплено за поставкой
         '400':
           description: Неправильный запрос
           content:
@@ -1993,7 +1915,7 @@ paths:
         - Поставки FBS
       summary: Удалить поставку
       description: |
-        Метод удаляет [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get), если она активна и за ней не закреплено ни одно [сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get).
+        Метод удаляет [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get), если она активна и за ней не закреплено ни одно [сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -2146,7 +2068,7 @@ paths:
         - Поставки FBS
       summary: Передать поставку в доставку
       description: |
-        Метод закрывает [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get) и переводит все [сборочные задания](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders/get) в ней в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya/paths/~1api~1v3~1orders~1status/post) `complete` — в доставке. После закрытия поставки добавить новые сборочные задания к ней нельзя.
+        Метод закрывает [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get) и переводит все [сборочные задания](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) в ней в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `complete` — в доставке. После закрытия поставки добавить новые сборочные задания к ней нельзя.
         <br><br>
         Если поставка не была передана в доставку, то при приёмке первого товара поставка автоматически закроется.
         <br><br>
@@ -2421,7 +2343,7 @@ paths:
         - Поставки FBS
       summary: Удалить короба из поставки
       description: |
-        Метод даляет короба из поставки.
+        Метод удаляет короба из поставки.
         <br><br>
         Можно удалить только пока поставка на сборке.
 
@@ -2660,7 +2582,7 @@ components:
     StatusChangeNotAllowed:
       value:
         code: StatusChangeNotAllowed
-        message: Задание перейдёт в завершенные после сканирования на пунте выдачи заказов (ПВЗ)
+        message: Задание перейдёт в завершенные после сканирования на пункте выдачи заказов (ПВЗ)
   responses:
     '401':
       description: Не авторизован
@@ -3210,7 +3132,7 @@ components:
             Цена в валюте продажи с учётом всех скидок, кроме скидки по WB Кошельку, умноженная на 100. Код валюты продажи — в поле `currencyCode`. Предоставляется в информационных целях
           example: 1014
         finalPrice:
-          description: Cумма к оплате покупателем в валюте продажи с учетом всех скидок, умноженная на 100. Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях
+          description: Сумма к оплате покупателем в валюте продажи с учетом всех скидок, умноженная на 100. Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях
           type: integer
           example: 1014
         convertedPrice:
@@ -3219,7 +3141,7 @@ components:
           description: Цена в валюте страны продавца с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100. Предоставляется в информационных целях
           example: 28322
         convertedFinalPrice:
-          description: Cумма к оплате покупателем в валюте страны продавца с учетом всех скидок, умноженная на 100. Предоставляется в информационных целях
+          description: Сумма к оплате покупателем в валюте страны продавца с учетом всех скидок, умноженная на 100. Предоставляется в информационных целях
           type: integer
           example: 1014
         currencyCode:
