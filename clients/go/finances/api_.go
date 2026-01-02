@@ -231,9 +231,9 @@ func (a *DefaultApiService) ApiV1DocumentsCategoriesGetExecute(r ApiApiV1Documen
 	if r.locale != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", r.locale, "form", "")
 	} else {
-		var defaultValue string = "en"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
-		r.locale = &defaultValue
+        var defaultValue string = "en"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
+        r.locale = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -772,9 +772,9 @@ func (a *DefaultApiService) ApiV1DocumentsListGetExecute(r ApiApiV1DocumentsList
 	if r.locale != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", r.locale, "form", "")
 	} else {
-		var defaultValue string = "en"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
-		r.locale = &defaultValue
+        var defaultValue string = "en"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
+        r.locale = &defaultValue
 	}
 	if r.beginTime != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "beginTime", r.beginTime, "form", "")
@@ -785,16 +785,16 @@ func (a *DefaultApiService) ApiV1DocumentsListGetExecute(r ApiApiV1DocumentsList
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
 	} else {
-		var defaultValue string = "date"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", defaultValue, "form", "")
-		r.sort = &defaultValue
+        var defaultValue string = "date"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "sort", defaultValue, "form", "")
+        r.sort = &defaultValue
 	}
 	if r.order != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "order", r.order, "form", "")
 	} else {
-		var defaultValue string = "desc"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "order", defaultValue, "form", "")
-		r.order = &defaultValue
+        var defaultValue string = "desc"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "order", defaultValue, "form", "")
+        r.order = &defaultValue
 	}
 	if r.category != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "category", r.category, "form", "")
@@ -805,16 +805,16 @@ func (a *DefaultApiService) ApiV1DocumentsListGetExecute(r ApiApiV1DocumentsList
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-		var defaultValue int32 = 50
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
+        var defaultValue int32 = 50
+        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+        r.limit = &defaultValue
 	}
 	if r.offset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
-		r.offset = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
+        r.offset = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1022,23 +1022,23 @@ func (a *DefaultApiService) ApiV5SupplierReportDetailByPeriodGetExecute(r ApiApi
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-		var defaultValue int32 = 100000
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
+        var defaultValue int32 = 100000
+        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+        r.limit = &defaultValue
 	}
 	if r.rrdid != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "rrdid", r.rrdid, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rrdid", defaultValue, "form", "")
-		r.rrdid = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "rrdid", defaultValue, "form", "")
+        r.rrdid = &defaultValue
 	}
 	if r.period != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "period", r.period, "form", "")
 	} else {
-		var defaultValue string = "weekly"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "period", defaultValue, "form", "")
-		r.period = &defaultValue
+        var defaultValue string = "weekly"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "period", defaultValue, "form", "")
+        r.period = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

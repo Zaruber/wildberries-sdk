@@ -118,6 +118,19 @@ normalize_dir_name() {
   echo "${name}"
 }
 
+to_pascal_case() {
+  local name="$1"
+  name="${name//-/_}"
+  echo "${name}" | awk -F_ '{
+    out = ""
+    for (i = 1; i <= NF; i++) {
+      if ($i == "") continue
+      out = out toupper(substr($i, 1, 1)) substr($i, 2)
+    }
+    printf "%s", out
+  }'
+}
+
 cleanup_output_dir() {
   local dir="$1"
   local files=(
@@ -437,6 +450,10 @@ for lang in "${langs[@]}"; do
       fi
       npm_pkg="$(sanitize_npm_name "${npm_pkg}")"
       additional_props="${additional_props},npmName=${npm_pkg},npmVersion=${PACKAGE_VERSION}"
+    fi
+    if [[ "${generator}" == "php" ]]; then
+      module_ns="$(to_pascal_case "${dir_name}")"
+      additional_props="${additional_props},invokerPackage=Wildberries\\\\Sdk\\\\${module_ns}"
     fi
 
     echo "Generating ${name} for ${filename}"

@@ -1499,9 +1499,9 @@ func (a *DefaultApiService) ApiV1AnalyticsBrandShareParentSubjectsGetExecute(r A
 	if r.locale != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", r.locale, "form", "")
 	} else {
-		var defaultValue string = "ru"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
-		r.locale = &defaultValue
+        var defaultValue string = "ru"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
+        r.locale = &defaultValue
 	}
 	parameterAddToHeaderOrQuery(localVarQueryParams, "brand", r.brand, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "dateFrom", r.dateFrom, "form", "")
@@ -2610,9 +2610,9 @@ func (a *DefaultApiService) ApiV1AnalyticsWarehouseMeasurementsGetExecute(r ApiA
 	if r.offset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
-		r.offset = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
+        r.offset = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3482,9 +3482,9 @@ func (a *DefaultApiService) ApiV1SupplierOrdersGetExecute(r ApiApiV1SupplierOrde
 	if r.flag != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "flag", r.flag, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "flag", defaultValue, "form", "")
-		r.flag = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "flag", defaultValue, "form", "")
+        r.flag = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3667,9 +3667,9 @@ func (a *DefaultApiService) ApiV1SupplierSalesGetExecute(r ApiApiV1SupplierSales
 	if r.flag != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "flag", r.flag, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "flag", defaultValue, "form", "")
-		r.flag = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "flag", defaultValue, "form", "")
+        r.flag = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4060,65 +4060,65 @@ func (a *DefaultApiService) ApiV1WarehouseRemainsGetExecute(r ApiApiV1WarehouseR
 	if r.locale != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", r.locale, "form", "")
 	} else {
-		var defaultValue string = "ru"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
-		r.locale = &defaultValue
+        var defaultValue string = "ru"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "locale", defaultValue, "form", "")
+        r.locale = &defaultValue
 	}
 	if r.groupByBrand != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "groupByBrand", r.groupByBrand, "form", "")
 	} else {
-		var defaultValue bool = false
-		parameterAddToHeaderOrQuery(localVarQueryParams, "groupByBrand", defaultValue, "form", "")
-		r.groupByBrand = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "groupByBrand", defaultValue, "form", "")
+        r.groupByBrand = &defaultValue
 	}
 	if r.groupBySubject != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySubject", r.groupBySubject, "form", "")
 	} else {
-		var defaultValue bool = false
-		parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySubject", defaultValue, "form", "")
-		r.groupBySubject = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySubject", defaultValue, "form", "")
+        r.groupBySubject = &defaultValue
 	}
 	if r.groupBySa != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySa", r.groupBySa, "form", "")
 	} else {
-		var defaultValue bool = false
-		parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySa", defaultValue, "form", "")
-		r.groupBySa = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySa", defaultValue, "form", "")
+        r.groupBySa = &defaultValue
 	}
 	if r.groupByNm != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "groupByNm", r.groupByNm, "form", "")
 	} else {
-		var defaultValue bool = false
-		parameterAddToHeaderOrQuery(localVarQueryParams, "groupByNm", defaultValue, "form", "")
-		r.groupByNm = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "groupByNm", defaultValue, "form", "")
+        r.groupByNm = &defaultValue
 	}
 	if r.groupByBarcode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "groupByBarcode", r.groupByBarcode, "form", "")
 	} else {
-		var defaultValue bool = false
-		parameterAddToHeaderOrQuery(localVarQueryParams, "groupByBarcode", defaultValue, "form", "")
-		r.groupByBarcode = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "groupByBarcode", defaultValue, "form", "")
+        r.groupByBarcode = &defaultValue
 	}
 	if r.groupBySize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySize", r.groupBySize, "form", "")
 	} else {
-		var defaultValue bool = false
-		parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySize", defaultValue, "form", "")
-		r.groupBySize = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "groupBySize", defaultValue, "form", "")
+        r.groupBySize = &defaultValue
 	}
 	if r.filterPics != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filterPics", r.filterPics, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filterPics", defaultValue, "form", "")
-		r.filterPics = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "filterPics", defaultValue, "form", "")
+        r.filterPics = &defaultValue
 	}
 	if r.filterVolume != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filterVolume", r.filterVolume, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filterVolume", defaultValue, "form", "")
-		r.filterVolume = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "filterVolume", defaultValue, "form", "")
+        r.filterVolume = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4666,24 +4666,24 @@ func (a *DefaultApiService) GetDeductionsExecute(r ApiGetDeductionsRequest) (*Ge
 	if r.sort != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
 	} else {
-		var defaultValue string = "dtBonus"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", defaultValue, "form", "")
-		r.sort = &defaultValue
+        var defaultValue string = "dtBonus"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "sort", defaultValue, "form", "")
+        r.sort = &defaultValue
 	}
 	if r.order != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "order", r.order, "form", "")
 	} else {
-		var defaultValue string = "desc"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "order", defaultValue, "form", "")
-		r.order = &defaultValue
+        var defaultValue string = "desc"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "order", defaultValue, "form", "")
+        r.order = &defaultValue
 	}
 	parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	if r.offset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
-		r.offset = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
+        r.offset = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4893,9 +4893,9 @@ func (a *DefaultApiService) GetMeasurementPenaltiesExecute(r ApiGetMeasurementPe
 	if r.offset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
-		r.offset = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
+        r.offset = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -5105,9 +5105,9 @@ func (a *DefaultApiService) GetWarehouseMeasurementsExecute(r ApiGetWarehouseMea
 	if r.offset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
-		r.offset = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
+        r.offset = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

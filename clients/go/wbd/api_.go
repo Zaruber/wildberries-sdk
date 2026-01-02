@@ -160,16 +160,16 @@ func (a *DefaultApiService) ContentAuthorGetExecute(r ApiContentAuthorGetRequest
 	if r.skip != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", r.skip, "form", "")
 	} else {
-		var defaultValue int64 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
-		r.skip = &defaultValue
+        var defaultValue int64 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
+        r.skip = &defaultValue
 	}
 	if r.take != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "take", r.take, "form", "")
 	} else {
-		var defaultValue int64 = 50
-		parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
-		r.take = &defaultValue
+        var defaultValue int64 = 50
+        parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
+        r.take = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2190,16 +2190,16 @@ func (a *DefaultApiService) GetRedeemedKeysExecute(r ApiGetRedeemedKeysRequest) 
 	if r.skip != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", r.skip, "form", "")
 	} else {
-		var defaultValue int64 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
-		r.skip = &defaultValue
+        var defaultValue int64 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
+        r.skip = &defaultValue
 	}
 	if r.take != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "take", r.take, "form", "")
 	} else {
-		var defaultValue int64 = 50
-		parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
-		r.take = &defaultValue
+        var defaultValue int64 = 50
+        parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
+        r.take = &defaultValue
 	}
 	if r.dateFrom != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "date_from", r.dateFrom, "form", "")
@@ -3147,44 +3147,44 @@ func (a *DefaultApiService) OfferKeysGetExecute(r ApiOfferKeysGetRequest) (*Keys
 	if r.take != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "take", r.take, "form", "")
 	} else {
-		var defaultValue int32 = 50
-		parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
-		r.take = &defaultValue
+        var defaultValue int32 = 50
+        parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
+        r.take = &defaultValue
 	}
 	if r.skip != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", r.skip, "form", "")
 	} else {
-		var defaultValue int32 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
-		r.skip = &defaultValue
+        var defaultValue int32 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
+        r.skip = &defaultValue
 	}
 	if r.deleted != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "deleted", r.deleted, "form", "")
 	} else {
-		var defaultValue bool = true
-		parameterAddToHeaderOrQuery(localVarQueryParams, "deleted", defaultValue, "form", "")
-		r.deleted = &defaultValue
+        var defaultValue bool = true
+        parameterAddToHeaderOrQuery(localVarQueryParams, "deleted", defaultValue, "form", "")
+        r.deleted = &defaultValue
 	}
 	if r.sold != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sold", r.sold, "form", "")
 	} else {
-		var defaultValue bool = true
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sold", defaultValue, "form", "")
-		r.sold = &defaultValue
+        var defaultValue bool = true
+        parameterAddToHeaderOrQuery(localVarQueryParams, "sold", defaultValue, "form", "")
+        r.sold = &defaultValue
 	}
 	if r.reserved != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "reserved", r.reserved, "form", "")
 	} else {
-		var defaultValue bool = true
-		parameterAddToHeaderOrQuery(localVarQueryParams, "reserved", defaultValue, "form", "")
-		r.reserved = &defaultValue
+        var defaultValue bool = true
+        parameterAddToHeaderOrQuery(localVarQueryParams, "reserved", defaultValue, "form", "")
+        r.reserved = &defaultValue
 	}
 	if r.expired != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "expired", r.expired, "form", "")
 	} else {
-		var defaultValue bool = true
-		parameterAddToHeaderOrQuery(localVarQueryParams, "expired", defaultValue, "form", "")
-		r.expired = &defaultValue
+        var defaultValue bool = true
+        parameterAddToHeaderOrQuery(localVarQueryParams, "expired", defaultValue, "form", "")
+        r.expired = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3936,16 +3936,16 @@ func (a *DefaultApiService) OffersAuthorGetExecute(r ApiOffersAuthorGetRequest) 
 	if r.skip != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", r.skip, "form", "")
 	} else {
-		var defaultValue int64 = 0
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
-		r.skip = &defaultValue
+        var defaultValue int64 = 0
+        parameterAddToHeaderOrQuery(localVarQueryParams, "skip", defaultValue, "form", "")
+        r.skip = &defaultValue
 	}
 	if r.take != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "take", r.take, "form", "")
 	} else {
-		var defaultValue int64 = 50
-		parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
-		r.take = &defaultValue
+        var defaultValue int64 = 50
+        parameterAddToHeaderOrQuery(localVarQueryParams, "take", defaultValue, "form", "")
+        r.take = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

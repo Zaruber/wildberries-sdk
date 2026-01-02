@@ -42,13 +42,19 @@ jobs:
       - name: Update Go methods list
         run: bash scripts/generate-go-methods-list.sh
 
+      - name: Update PHP methods list
+        run: bash scripts/generate-php-methods-list.sh
+
       - name: Prepare Python package
         run: bash scripts/prepare-pypi-package.sh
+
+      - name: Prepare PHP package
+        run: bash scripts/prepare-php-package.sh
 
       - name: Commit generated clients
         id: commit
         run: |
-          git add pyproject.toml README.md docs/python/README.md docs/npm/README.md docs/go/README.md clients/python clients/npm clients/go
+          git add pyproject.toml README.md composer.json docs/python/README.md docs/npm/README.md docs/go/README.md docs/php/README.md clients/python clients/npm clients/go clients/php
           if git diff --cached --quiet; then
             echo "No client changes to commit."
             echo "did_commit=false" >> "$GITHUB_OUTPUT"
@@ -59,6 +65,13 @@ jobs:
           git commit -m "chore: regenerate clients"
           git push
           echo "did_commit=true" >> "$GITHUB_OUTPUT"
+
+      - name: Tag release
+        if: steps.commit.outputs.did_commit == 'true'
+        env:
+          PACKAGE_VERSION: ${{ steps.bump.outputs.version }}
+          PUSH_TAGS: "1"
+        run: bash scripts/tag-release.sh
 
       - name: Tag Go modules
         if: steps.commit.outputs.did_commit == 'true'
@@ -117,3 +130,17 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
+
+      - name: Update Packagist
+        if: steps.commit.outputs.did_commit == 'true'
+        env:
+          PACKAGIST_USERNAME: ${{ secrets.PACKAGIST_USERNAME }}
+          PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
+        run: |
+          if [ -z "$PACKAGIST_USERNAME" ] || [ -z "$PACKAGIST_TOKEN" ]; then
+            echo "Packagist credentials not set; skipping."
+            exit 0
+          fi
+          curl -sS -X POST -H "Content-Type: application/json" \
+            -d '{"repository":{"url":"https://github.com/eslazarev/wildberries-sdk"}}' \
+            "https://packagist.org/api/update-package?username=${PACKAGIST_USERNAME}&apiToken=${PACKAGIST_TOKEN}"

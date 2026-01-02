@@ -20,6 +20,13 @@
 - npm: https://www.npmjs.com/package/wildberries-sdk
 - README: [docs/npm/README.md](docs/npm/README.md)
 
+### PHP
+[![Packagist Downloads](https://img.shields.io/packagist/dt/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk)
+[![Packagist](https://img.shields.io/packagist/v/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk)
+
+- Packagist: https://packagist.org/packages/eslazarev/wildberries-sdk
+- README: [docs/php/README.md](docs/php/README.md)
+
 ### Go
  [![Go Reference](https://pkg.go.dev/badge/github.com/eslazarev/wildberries-sdk/clients/go/general.svg)](https://pkg.go.dev/github.com/eslazarev/wildberries-sdk/clients/go/general)
 

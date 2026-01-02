@@ -6076,9 +6076,9 @@ func (a *DefaultApiService) AdvV1SupplierSubjectsGetExecute(r ApiAdvV1SupplierSu
 	if r.paymentType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "payment_type", r.paymentType, "form", "")
 	} else {
-		var defaultValue string = "cpm"
-		parameterAddToHeaderOrQuery(localVarQueryParams, "payment_type", defaultValue, "form", "")
-		r.paymentType = &defaultValue
+        var defaultValue string = "cpm"
+        parameterAddToHeaderOrQuery(localVarQueryParams, "payment_type", defaultValue, "form", "")
+        r.paymentType = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

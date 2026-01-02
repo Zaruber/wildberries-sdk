@@ -41,3 +41,6 @@ languages:
   - name: go
     generator: go
     output_dir: clients/go
+  - name: php
+    generator: php
+    output_dir: clients/php
