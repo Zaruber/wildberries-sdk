@@ -21,9 +21,11 @@
 - README: [docs/npm/README.md](docs/npm/README.md)
 
 ### Go
+ [![Go Reference](https://pkg.go.dev/badge/github.com/eslazarev/wildberries-sdk/clients/go/general.svg)](https://pkg.go.dev/github.com/eslazarev/wildberries-sdk/clients/go/general)
 
 - README: [docs/go/README.md](docs/go/README.md)
 - Исходники: `clients/go`
+- Модульный путь: `github.com/eslazarev/wildberries-sdk/clients/go/<module>`
 
 ## В данный момент представлены **все доступные** спецификации:
 
