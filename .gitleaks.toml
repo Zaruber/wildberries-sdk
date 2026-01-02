@@ -1,0 +1,8 @@
+[allowlist]
+description = "Ignore OpenAPI model name constants in generated PHP clients"
+regexes = [
+  '''protected static \$openAPIModelName = 'v3\.[^']+';'''
+]
+paths = [
+  '''clients/php/.*/lib/Model/.*\.php'''
+]
