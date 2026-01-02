@@ -351,7 +351,9 @@ class Api:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
+            '202': "ApiV1SellerDownloadIdGet202Response",
             '400': "ApiV1SellerEventsGet400Response",
+            '451': "ApiV1SellerDownloadIdGet451Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -419,7 +421,9 @@ class Api:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
+            '202': "ApiV1SellerDownloadIdGet202Response",
             '400': "ApiV1SellerEventsGet400Response",
+            '451': "ApiV1SellerDownloadIdGet451Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -487,7 +491,9 @@ class Api:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
+            '202': "ApiV1SellerDownloadIdGet202Response",
             '400': "ApiV1SellerEventsGet400Response",
+            '451': "ApiV1SellerDownloadIdGet451Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -538,7 +544,8 @@ class Api:
                     'application/pdf', 
                     'image/jpeg', 
                     'image/png', 
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 

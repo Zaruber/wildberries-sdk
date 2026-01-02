@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from wildberries_sdk.analytics.models.order_by import OrderBy
+from wildberries_sdk.analytics.models.order_by_main_and_details import OrderByMainAndDetails
 from wildberries_sdk.analytics.models.past_period import PastPeriod
 from wildberries_sdk.analytics.models.period import Period
 from typing import Optional, Set
@@ -36,7 +36,7 @@ class TableDetailsRequest(BaseModel):
     brand_name: Optional[StrictStr] = Field(default=None, description="Название товара", alias="brandName")
     tag_id: Optional[StrictInt] = Field(default=None, description="ID ярлыка", alias="tagId")
     nm_ids: Optional[Annotated[List[StrictInt], Field(max_length=50)]] = Field(default=None, description="Список артикулов WB", alias="nmIds")
-    order_by: OrderBy = Field(alias="orderBy")
+    order_by: OrderByMainAndDetails = Field(alias="orderBy")
     position_cluster: StrictStr = Field(description="Товары с какой средней позицией в поиске показывать в отчёте:   - `all` — все   - `firstHundred` — от 1 до 100   - `secondHundred` — от 101 до 200   - `below` — от 201 и ниже ", alias="positionCluster")
     include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs")
     include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts")
@@ -117,7 +117,7 @@ class TableDetailsRequest(BaseModel):
             "brandName": obj.get("brandName"),
             "tagId": obj.get("tagId"),
             "nmIds": obj.get("nmIds"),
-            "orderBy": OrderBy.from_dict(obj["orderBy"]) if obj.get("orderBy") is not None else None,
+            "orderBy": OrderByMainAndDetails.from_dict(obj["orderBy"]) if obj.get("orderBy") is not None else None,
             "positionCluster": obj.get("positionCluster"),
             "includeSubstitutedSKUs": obj.get("includeSubstitutedSKUs") if obj.get("includeSubstitutedSKUs") is not None else True,
             "includeSearchTexts": obj.get("includeSearchTexts") if obj.get("includeSearchTexts") is not None else True,

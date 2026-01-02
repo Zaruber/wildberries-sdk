@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
     /**
-     * Cтикер в формате PDF, кодировка base64
+     * Стикер в формате PDF, кодировка base64
      * @type {string}
      * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
      */

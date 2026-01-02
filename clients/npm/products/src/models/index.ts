@@ -48,6 +48,7 @@ export * from './ContentV2CardsUpdatePostRequestInnerSizesInner';
 export * from './ContentV2CardsUploadAddPostRequest';
 export * from './ContentV2CardsUploadAddPostRequestCardsToAddInner';
 export * from './ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions';
+export * from './ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner';
 export * from './ContentV2CardsUploadPostRequestInner';
 export * from './ContentV2CardsUploadPostRequestInnerVariantsInner';
 export * from './ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions';

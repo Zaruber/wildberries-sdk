@@ -34,7 +34,7 @@ export interface OrderBy {
      *   - `stockWbQty` — Остатки на складах WB, шт
      *   - `shareOrderPercent` — Доля в выручке
      *   - `addToWishlist` — Добавили в **Отложенные**
-     *   - `timeToReady` — Cреднее время доставки
+     *   - `timeToReady` — Среднее время доставки
      *   - `localizationPercent` — Локальные заказы в рамках одного региона
      *   - `wbClub.orderCount` — Заказали товаров с WB Клубом, шт
      *   - `wbClub.orderSum` — Заказали на сумму с WB Клубом

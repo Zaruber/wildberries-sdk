@@ -54,6 +54,9 @@ from wildberries_sdk.reports.models.incomes_item import IncomesItem
 from wildberries_sdk.reports.models.measurement import Measurement
 from wildberries_sdk.reports.models.measurement_data import MeasurementData
 from wildberries_sdk.reports.models.measurement_data_reports_inner import MeasurementDataReportsInner
+from wildberries_sdk.reports.models.measurement_penalties import MeasurementPenalties
+from wildberries_sdk.reports.models.measurement_penalties_data import MeasurementPenaltiesData
+from wildberries_sdk.reports.models.measurement_penalties_data_reports_inner import MeasurementPenaltiesDataReportsInner
 from wildberries_sdk.reports.models.model4xx_response import Model4xxResponse
 from wildberries_sdk.reports.models.models_excise_report_response import ModelsExciseReportResponse
 from wildberries_sdk.reports.models.models_excise_report_response_data_inner import ModelsExciseReportResponseDataInner
@@ -68,4 +71,7 @@ from wildberries_sdk.reports.models.response_error_statistics2 import ResponseEr
 from wildberries_sdk.reports.models.response_paid_storage_inner import ResponsePaidStorageInner
 from wildberries_sdk.reports.models.sales_item import SalesItem
 from wildberries_sdk.reports.models.stocks_item import StocksItem
+from wildberries_sdk.reports.models.whm import WHM
+from wildberries_sdk.reports.models.whm_data import WHMData
+from wildberries_sdk.reports.models.whm_data_reports_inner import WHMDataReportsInner
 

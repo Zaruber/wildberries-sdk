@@ -21,16 +21,16 @@ import { mapValues } from '../runtime';
 export interface SalesItem {
     /**
      * Дата и время продажи. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).
-     * @type {Date}
+     * @type {string}
      * @memberof SalesItem
      */
-    date?: Date;
+    date?: string;
     /**
      * Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).
-     * @type {Date}
+     * @type {string}
      * @memberof SalesItem
      */
-    lastChangeDate?: Date;
+    lastChangeDate?: string;
     /**
      * Склад отгрузки
      * @type {string}
@@ -222,8 +222,8 @@ export function SalesItemFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     }
     return {
         
-        'date': json['date'] == null ? undefined : (new Date(json['date'])),
-        'lastChangeDate': json['lastChangeDate'] == null ? undefined : (new Date(json['lastChangeDate'])),
+        'date': json['date'] == null ? undefined : json['date'],
+        'lastChangeDate': json['lastChangeDate'] == null ? undefined : json['lastChangeDate'],
         'warehouseName': json['warehouseName'] == null ? undefined : json['warehouseName'],
         'warehouseType': json['warehouseType'] == null ? undefined : json['warehouseType'],
         'countryName': json['countryName'] == null ? undefined : json['countryName'],
@@ -264,8 +264,8 @@ export function SalesItemToJSONTyped(value?: SalesItem | null, ignoreDiscriminat
 
     return {
         
-        'date': value['date'] == null ? value['date'] : value['date'].toISOString(),
-        'lastChangeDate': value['lastChangeDate'] == null ? value['lastChangeDate'] : value['lastChangeDate'].toISOString(),
+        'date': value['date'],
+        'lastChangeDate': value['lastChangeDate'],
         'warehouseName': value['warehouseName'],
         'warehouseType': value['warehouseType'],
         'countryName': value['countryName'],

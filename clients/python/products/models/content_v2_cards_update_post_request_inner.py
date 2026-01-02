@@ -34,7 +34,7 @@ class ContentV2CardsUpdatePostRequestInner(BaseModel):
     vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode")
     brand: Optional[StrictStr] = Field(default=None, description="Бренд")
     title: Optional[Annotated[str, Field(strict=True, max_length=60)]] = Field(default=None, description="Наименование товара")
-    description: Optional[StrictStr] = Field(default=None, description="Описание товара<br> Максимальное количество символов зависит от категории товара<br> Стандарт — 2000, минимум — 1000, максимум — 5000<br> Подробно о правилах описания в **Правилах заполнения карточки товара** в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113#описание) на портале продавцов ")
+    description: Optional[StrictStr] = Field(default=None, description="Описание товара<br> Максимальное количество символов зависит от категории товара<br> Стандарт — 2000, минимум — 1000, максимум — 5000<br> Подробно о правилах описания в **Правилах заполнения карточки товара** в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113) на портале продавцов ")
     dimensions: Optional[ContentV2CardsUpdatePostRequestInnerDimensions] = None
     characteristics: Optional[List[ContentV2CardsUpdatePostRequestInnerCharacteristicsInner]] = Field(default=None, description="Характеристики товара. <br> Можно получить методом [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get) ")
     sizes: List[ContentV2CardsUpdatePostRequestInnerSizesInner] = Field(description="Массив размеров<br> Для безразмерного товара всё равно нужно передавать данный массив без параметров (wbSize и techSize), но с баркодом ")

@@ -46,7 +46,7 @@ class AdvV1AdvertGet200ResponseItemsInner(BaseModel):
     bottom_text1: Optional[StrictStr] = Field(default=None, description="Текст под плашкой баннера", alias="bottomText1")
     bottom_text2: Optional[StrictStr] = Field(default=None, description="2-я строка с текстом под плашкой баннера", alias="bottomText2")
     message: Optional[StrictStr] = Field(default=None, description="Текст push-уведомления или рассылки")
-    additional_settings: Optional[StrictInt] = Field(default=None, description="Дополнительные настройки.  Формат почтовой рассылки: - `1` — общий - `2` — частичный - `3` — уникальный   Социальная сеть: - `1` — VKontakte - `2` — OK (Одноклассники) ", alias="additionalSettings")
+    additional_settings: Optional[StrictInt] = Field(default=None, description="Дополнительные настройки.  Формат почтовой рассылки: - `1` — общий - `2` — частичный - `3` — уникальный   Социальная сеть: - `1` — VK - `2` — OK (Одноклассники) ", alias="additionalSettings")
     receivers_count: Optional[StrictInt] = Field(default=None, description="Кол-во получателей push-уведомлений", alias="receiversCount")
     subject_id: Optional[StrictInt] = Field(default=None, description="ID родительской категории товара")
     subject_name: Optional[StrictStr] = Field(default=None, description="Название родительской категории товара")

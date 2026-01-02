@@ -26,7 +26,7 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner(BaseModel):
     """
     ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
     """ # noqa: E501
-    file: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="Cтикер в формате PDF, кодировка base64")
+    file: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="Стикер в формате PDF, кодировка base64")
     order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
     parcel_id: Optional[StrictStr] = Field(default=None, description="Трек-номер в стикере для отслеживания сборочного задания", alias="parcelId")
     __properties: ClassVar[List[str]] = ["file", "orderId", "parcelId"]

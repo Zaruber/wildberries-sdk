@@ -151,7 +151,7 @@ export interface AdvV1AdvertGet200ResponseItemsInner {
      * 
      * 
      * Социальная сеть:
-     * - `1` — VKontakte
+     * - `1` — VK
      * - `2` — OK (Одноклассники)
      * 
      * @type {number}

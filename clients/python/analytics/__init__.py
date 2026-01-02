@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.9"
+__version__ = "0.1.10"
 
 # Define package exports
 __all__ = [
@@ -73,6 +73,7 @@ __all__ = [
     "NmReportRetryReportResponse",
     "OrderBy",
     "OrderByGrTe",
+    "OrderByMainAndDetails",
     "OrderByMode",
     "PastPeriod",
     "Period",
@@ -247,6 +248,7 @@ from wildberries_sdk.analytics.models.nm_report_retry_report_request import NmRe
 from wildberries_sdk.analytics.models.nm_report_retry_report_response import NmReportRetryReportResponse as NmReportRetryReportResponse
 from wildberries_sdk.analytics.models.order_by import OrderBy as OrderBy
 from wildberries_sdk.analytics.models.order_by_gr_te import OrderByGrTe as OrderByGrTe
+from wildberries_sdk.analytics.models.order_by_main_and_details import OrderByMainAndDetails as OrderByMainAndDetails
 from wildberries_sdk.analytics.models.order_by_mode import OrderByMode as OrderByMode
 from wildberries_sdk.analytics.models.past_period import PastPeriod as PastPeriod
 from wildberries_sdk.analytics.models.period import Period as Period

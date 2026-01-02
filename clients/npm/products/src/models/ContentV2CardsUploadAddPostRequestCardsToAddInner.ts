@@ -27,13 +27,13 @@ import {
     ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerToJSON,
     ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerToJSONTyped,
 } from './ContentV2CardsUpdatePostRequestInnerCharacteristicsInner';
-import type { ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner } from './ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner';
+import type { ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner } from './ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner';
 import {
-    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerFromJSON,
-    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerFromJSONTyped,
-    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerToJSON,
-    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerToJSONTyped,
-} from './ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner';
+    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerFromJSON,
+    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerFromJSONTyped,
+    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerToJSON,
+    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerToJSONTyped,
+} from './ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner';
 import type { ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions } from './ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions';
 import {
     ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsFromJSON,
@@ -76,7 +76,7 @@ export interface ContentV2CardsUploadAddPostRequestCardsToAddInner {
      * Описание товара.<br>
      * Максимальное количество символов зависит от категории товара<br>
      * Стандарт — 2000, минимум — 1000, максимум — 5000<br>
-     * Подробно о правилах описания в **Правилах заполнения карточки товара** в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113#описание) на портале продавцов
+     * Подробно о правилах описания в **Правилах заполнения карточки товара** в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113) на портале продавцов
      * 
      * @type {string}
      * @memberof ContentV2CardsUploadAddPostRequestCardsToAddInner
@@ -92,10 +92,10 @@ export interface ContentV2CardsUploadAddPostRequestCardsToAddInner {
      * Массив размеров.<br>
      * Если не указать для размерного товара (обувь, одежда и др.), сгенерируется автоматически с `techSize` = "A", `wbSize` = "1" и баркодом
      * 
-     * @type {Array<ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner>}
+     * @type {Array<ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner>}
      * @memberof ContentV2CardsUploadAddPostRequestCardsToAddInner
      */
-    sizes?: Array<ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner>;
+    sizes?: Array<ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner>;
     /**
      * Характеристики товара.
      * <br>
@@ -131,7 +131,7 @@ export function ContentV2CardsUploadAddPostRequestCardsToAddInnerFromJSONTyped(j
         'title': json['title'] == null ? undefined : json['title'],
         'description': json['description'] == null ? undefined : json['description'],
         'dimensions': json['dimensions'] == null ? undefined : ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsFromJSON(json['dimensions']),
-        'sizes': json['sizes'] == null ? undefined : ((json['sizes'] as Array<any>).map(ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerFromJSON)),
+        'sizes': json['sizes'] == null ? undefined : ((json['sizes'] as Array<any>).map(ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerFromJSON)),
         'characteristics': json['characteristics'] == null ? undefined : ((json['characteristics'] as Array<any>).map(ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerFromJSON)),
     };
 }
@@ -153,7 +153,7 @@ export function ContentV2CardsUploadAddPostRequestCardsToAddInnerToJSONTyped(val
         'title': value['title'],
         'description': value['description'],
         'dimensions': ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsToJSON(value['dimensions']),
-        'sizes': value['sizes'] == null ? undefined : ((value['sizes'] as Array<any>).map(ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerToJSON)),
+        'sizes': value['sizes'] == null ? undefined : ((value['sizes'] as Array<any>).map(ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerToJSON)),
         'characteristics': value['characteristics'] == null ? undefined : ((value['characteristics'] as Array<any>).map(ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerToJSON)),
     };
 }

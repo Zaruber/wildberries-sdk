@@ -26,12 +26,14 @@ class CommissionUzbekistanReportInner(BaseModel):
     """
     CommissionUzbekistanReportInner
     """ # noqa: E501
-    kgvp_uzbekistan: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Комиссия для продавцов из Узбекистана, %", alias="kgvpUzbekistan")
+    kgvp_marketplace_uz: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Комиссия по модели «Маркетплейс» (`FBS`), %", alias="kgvpMarketplaceUz")
+    kgvp_paid_storage_uz: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Комиссия по модели «Склад WB» (`FBW`), %", alias="kgvpPaidStorageUz")
+    kgvp_supplier_uz: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Комиссия по модели «Витрина» (`DBS`), %", alias="kgvpSupplierUz")
     parent_id: Optional[StrictInt] = Field(default=None, description="ID родительской категории", alias="parentID")
     parent_name: Optional[StrictStr] = Field(default=None, description="Название родительской категории", alias="parentName")
     subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectID")
     subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName")
-    __properties: ClassVar[List[str]] = ["kgvpUzbekistan", "parentID", "parentName", "subjectID", "subjectName"]
+    __properties: ClassVar[List[str]] = ["kgvpMarketplaceUz", "kgvpPaidStorageUz", "kgvpSupplierUz", "parentID", "parentName", "subjectID", "subjectName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,7 +86,9 @@ class CommissionUzbekistanReportInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "kgvpUzbekistan": obj.get("kgvpUzbekistan"),
+            "kgvpMarketplaceUz": obj.get("kgvpMarketplaceUz"),
+            "kgvpPaidStorageUz": obj.get("kgvpPaidStorageUz"),
+            "kgvpSupplierUz": obj.get("kgvpSupplierUz"),
             "parentID": obj.get("parentID"),
             "parentName": obj.get("parentName"),
             "subjectID": obj.get("subjectID"),

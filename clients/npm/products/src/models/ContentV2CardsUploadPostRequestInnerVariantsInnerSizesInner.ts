@@ -38,7 +38,10 @@ export interface ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner {
      */
     price?: number;
     /**
-     * Баркод. Если не указать, сгенерируется автоматически
+     * Массив баркодов для размера. <br>
+     * Если не указать, сгенерируется автоматически. <br>
+     * Позволяет связать несколько баркодов с одним размером, например, для разных партий товара
+     * 
      * @type {Array<string>}
      * @memberof ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner
      */

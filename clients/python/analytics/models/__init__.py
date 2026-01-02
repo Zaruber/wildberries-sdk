@@ -56,6 +56,7 @@ from wildberries_sdk.analytics.models.nm_report_retry_report_request import NmRe
 from wildberries_sdk.analytics.models.nm_report_retry_report_response import NmReportRetryReportResponse
 from wildberries_sdk.analytics.models.order_by import OrderBy
 from wildberries_sdk.analytics.models.order_by_gr_te import OrderByGrTe
+from wildberries_sdk.analytics.models.order_by_main_and_details import OrderByMainAndDetails
 from wildberries_sdk.analytics.models.order_by_mode import OrderByMode
 from wildberries_sdk.analytics.models.past_period import PastPeriod
 from wildberries_sdk.analytics.models.period import Period

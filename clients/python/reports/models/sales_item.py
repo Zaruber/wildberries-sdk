@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -28,8 +27,8 @@ class SalesItem(BaseModel):
     """
     SalesItem
     """ # noqa: E501
-    var_date: Optional[datetime] = Field(default=None, description="Дата и время продажи. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="date")
-    last_change_date: Optional[datetime] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="lastChangeDate")
+    var_date: Optional[StrictStr] = Field(default=None, description="Дата и время продажи. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="date")
+    last_change_date: Optional[StrictStr] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="lastChangeDate")
     warehouse_name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Склад отгрузки", alias="warehouseName")
     warehouse_type: Optional[StrictStr] = Field(default=None, description="Тип склада хранения товаров", alias="warehouseType")
     country_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = Field(default=None, description="Страна", alias="countryName")

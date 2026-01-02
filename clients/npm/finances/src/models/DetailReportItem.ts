@@ -420,7 +420,7 @@ export interface DetailReportItem {
      */
     deduction?: number;
     /**
-     * Платная приёмка
+     * Операции на приёмке
      * @type {number}
      * @memberof DetailReportItem
      */
@@ -464,7 +464,7 @@ export interface DetailReportItem {
      */
     isLegalEntity?: boolean;
     /**
-     * Номер короба для платной приёмки
+     * Номер короба для обработки товара
      * @type {string}
      * @memberof DetailReportItem
      */
@@ -513,11 +513,22 @@ export interface DetailReportItem {
     paymentSchedule?: number;
     /**
      * Способ продажи и тип товара
-     * 
      * @type {string}
      * @memberof DetailReportItem
      */
     deliveryMethod?: string;
+    /**
+     * ID собственной акции продавца с дополнительной скидкой
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    sellerPromoId?: number;
+    /**
+     * Размер дополнительной скидки по собственной акции продавца, %
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    sellerPromoDiscount?: number;
 }
 
 
@@ -629,6 +640,8 @@ export function DetailReportItemFromJSONTyped(json: any, ignoreDiscriminator: bo
         'orderUid': json['order_uid'] == null ? undefined : json['order_uid'],
         'paymentSchedule': json['payment_schedule'] == null ? undefined : json['payment_schedule'],
         'deliveryMethod': json['delivery_method'] == null ? undefined : json['delivery_method'],
+        'sellerPromoId': json['seller_promo_id'] == null ? undefined : json['seller_promo_id'],
+        'sellerPromoDiscount': json['seller_promo_discount'] == null ? undefined : json['seller_promo_discount'],
     };
 }
 
@@ -724,6 +737,8 @@ export function DetailReportItemToJSONTyped(value?: DetailReportItem | null, ign
         'order_uid': value['orderUid'],
         'payment_schedule': value['paymentSchedule'],
         'delivery_method': value['deliveryMethod'],
+        'seller_promo_id': value['sellerPromoId'],
+        'seller_promo_discount': value['sellerPromoDiscount'],
     };
 }
 

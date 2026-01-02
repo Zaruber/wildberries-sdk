@@ -21,16 +21,16 @@ import { mapValues } from '../runtime';
 export interface OrdersItem {
     /**
      * Дата и время заказа. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).
-     * @type {Date}
+     * @type {string}
      * @memberof OrdersItem
      */
-    date?: Date;
+    date?: string;
     /**
      * Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).
-     * @type {Date}
+     * @type {string}
      * @memberof OrdersItem
      */
-    lastChangeDate?: Date;
+    lastChangeDate?: string;
     /**
      * Склад отгрузки
      * @type {string}
@@ -161,10 +161,10 @@ export interface OrdersItem {
     isCancel?: boolean;
     /**
      * Дата и время отмены заказа. Если заказ не был отменен, то "0001-01-01T00:00:00".Если часовой пояс не указан, то берётся Московское время UTC+3.
-     * @type {Date}
+     * @type {string}
      * @memberof OrdersItem
      */
-    cancelDate?: Date;
+    cancelDate?: string;
     /**
      * ID стикера
      * @type {string}
@@ -215,8 +215,8 @@ export function OrdersItemFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         
-        'date': json['date'] == null ? undefined : (new Date(json['date'])),
-        'lastChangeDate': json['lastChangeDate'] == null ? undefined : (new Date(json['lastChangeDate'])),
+        'date': json['date'] == null ? undefined : json['date'],
+        'lastChangeDate': json['lastChangeDate'] == null ? undefined : json['lastChangeDate'],
         'warehouseName': json['warehouseName'] == null ? undefined : json['warehouseName'],
         'warehouseType': json['warehouseType'] == null ? undefined : json['warehouseType'],
         'countryName': json['countryName'] == null ? undefined : json['countryName'],
@@ -238,7 +238,7 @@ export function OrdersItemFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'finishedPrice': json['finishedPrice'] == null ? undefined : json['finishedPrice'],
         'priceWithDisc': json['priceWithDisc'] == null ? undefined : json['priceWithDisc'],
         'isCancel': json['isCancel'] == null ? undefined : json['isCancel'],
-        'cancelDate': json['cancelDate'] == null ? undefined : (new Date(json['cancelDate'])),
+        'cancelDate': json['cancelDate'] == null ? undefined : json['cancelDate'],
         'sticker': json['sticker'] == null ? undefined : json['sticker'],
         'gNumber': json['gNumber'] == null ? undefined : json['gNumber'],
         'srid': json['srid'] == null ? undefined : json['srid'],
@@ -256,8 +256,8 @@ export function OrdersItemToJSONTyped(value?: OrdersItem | null, ignoreDiscrimin
 
     return {
         
-        'date': value['date'] == null ? value['date'] : value['date'].toISOString(),
-        'lastChangeDate': value['lastChangeDate'] == null ? value['lastChangeDate'] : value['lastChangeDate'].toISOString(),
+        'date': value['date'],
+        'lastChangeDate': value['lastChangeDate'],
         'warehouseName': value['warehouseName'],
         'warehouseType': value['warehouseType'],
         'countryName': value['countryName'],
@@ -279,7 +279,7 @@ export function OrdersItemToJSONTyped(value?: OrdersItem | null, ignoreDiscrimin
         'finishedPrice': value['finishedPrice'],
         'priceWithDisc': value['priceWithDisc'],
         'isCancel': value['isCancel'],
-        'cancelDate': value['cancelDate'] == null ? value['cancelDate'] : value['cancelDate'].toISOString(),
+        'cancelDate': value['cancelDate'],
         'sticker': value['sticker'],
         'gNumber': value['gNumber'],
         'srid': value['srid'],

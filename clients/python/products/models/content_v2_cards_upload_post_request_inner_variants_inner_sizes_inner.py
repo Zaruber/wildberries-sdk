@@ -29,7 +29,7 @@ class ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner(BaseModel):
     tech_size: Optional[StrictStr] = Field(default=None, description="Размер товара (например, XL, 45)", alias="techSize")
     wb_size: Optional[StrictStr] = Field(default=None, description="Российский размер товара", alias="wbSize")
     price: Optional[StrictInt] = Field(default=None, description="Цена товара")
-    skus: Optional[List[StrictStr]] = Field(default=None, description="Баркод. Если не указать, сгенерируется автоматически")
+    skus: Optional[List[StrictStr]] = Field(default=None, description="Массив баркодов для размера. <br> Если не указать, сгенерируется автоматически. <br> Позволяет связать несколько баркодов с одним размером, например, для разных партий товара ")
     __properties: ClassVar[List[str]] = ["techSize", "wbSize", "price", "skus"]
 
     model_config = ConfigDict(

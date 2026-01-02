@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from wildberries_sdk.analytics.models.order_by import OrderBy
+from wildberries_sdk.analytics.models.order_by_main_and_details import OrderByMainAndDetails
 from wildberries_sdk.analytics.models.past_period import PastPeriod
 from wildberries_sdk.analytics.models.period import Period
 from wildberries_sdk.analytics.models.position_cluster import PositionCluster
@@ -38,7 +38,7 @@ class MainRequest(BaseModel):
     brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
     tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds")
     position_cluster: PositionCluster = Field(alias="positionCluster")
-    order_by: OrderBy = Field(alias="orderBy")
+    order_by: OrderByMainAndDetails = Field(alias="orderBy")
     include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs")
     include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts")
     limit: Annotated[int, Field(le=1000, strict=True)] = Field(description="Количество групп товаров в ответе")
@@ -112,7 +112,7 @@ class MainRequest(BaseModel):
             "brandNames": obj.get("brandNames"),
             "tagIds": obj.get("tagIds"),
             "positionCluster": obj.get("positionCluster"),
-            "orderBy": OrderBy.from_dict(obj["orderBy"]) if obj.get("orderBy") is not None else None,
+            "orderBy": OrderByMainAndDetails.from_dict(obj["orderBy"]) if obj.get("orderBy") is not None else None,
             "includeSubstitutedSKUs": obj.get("includeSubstitutedSKUs") if obj.get("includeSubstitutedSKUs") is not None else True,
             "includeSearchTexts": obj.get("includeSearchTexts") if obj.get("includeSearchTexts") is not None else True,
             "limit": obj.get("limit"),

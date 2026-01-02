@@ -17,8 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -28,7 +27,7 @@ class StocksItem(BaseModel):
     """
     StocksItem
     """ # noqa: E501
-    last_change_date: Optional[datetime] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе. Если часовой пояс не указан, то берётся Московское время (UTC+3)", alias="lastChangeDate")
+    last_change_date: Optional[StrictStr] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе. Если часовой пояс не указан, то берётся Московское время (UTC+3)", alias="lastChangeDate")
     warehouse_name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Название склада", alias="warehouseName")
     supplier_article: Optional[Annotated[str, Field(strict=True, max_length=75)]] = Field(default=None, description="Артикул продавца", alias="supplierArticle")
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")

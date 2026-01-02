@@ -27,10 +27,10 @@ export interface NmReportGetReportsResponseDataInner {
     id: string;
     /**
      * Дата и время завершения генерации
-     * @type {Date}
+     * @type {string}
      * @memberof NmReportGetReportsResponseDataInner
      */
-    createdAt: Date;
+    createdAt: string;
     /**
      * Статус отчёта:
      * 
@@ -95,7 +95,7 @@ export function NmReportGetReportsResponseDataInnerFromJSONTyped(json: any, igno
     return {
         
         'id': json['id'],
-        'createdAt': (new Date(json['createdAt'])),
+        'createdAt': json['createdAt'],
         'status': json['status'],
         'name': json['name'],
         'size': json['size'],
@@ -116,7 +116,7 @@ export function NmReportGetReportsResponseDataInnerToJSONTyped(value?: NmReportG
     return {
         
         'id': value['id'],
-        'createdAt': value['createdAt'].toISOString(),
+        'createdAt': value['createdAt'],
         'status': value['status'],
         'name': value['name'],
         'size': value['size'],

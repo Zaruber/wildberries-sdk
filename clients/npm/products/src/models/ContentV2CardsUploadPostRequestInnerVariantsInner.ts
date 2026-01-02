@@ -64,7 +64,7 @@ export interface ContentV2CardsUploadPostRequestInnerVariantsInner {
      * Описание товара.<br>
      * Максимальное количество символов зависит от категории товара<br>
      * Стандарт — 2000, минимум — 1000, максимум — 5000<br>
-     * Подробно о правилах описания в **Правилах заполнения карточки товара** в разделе в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113#описание) на портале продавцов
+     * Подробно о правилах описания в **Правилах заполнения карточки товара** в разделе в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113) на портале продавцов
      * 
      * @type {string}
      * @memberof ContentV2CardsUploadPostRequestInnerVariantsInner

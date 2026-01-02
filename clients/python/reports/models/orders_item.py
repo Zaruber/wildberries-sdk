@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -28,8 +27,8 @@ class OrdersItem(BaseModel):
     """
     OrdersItem
     """ # noqa: E501
-    var_date: Optional[datetime] = Field(default=None, description="Дата и время заказа. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="date")
-    last_change_date: Optional[datetime] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="lastChangeDate")
+    var_date: Optional[StrictStr] = Field(default=None, description="Дата и время заказа. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="date")
+    last_change_date: Optional[StrictStr] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="lastChangeDate")
     warehouse_name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Склад отгрузки", alias="warehouseName")
     warehouse_type: Optional[StrictStr] = Field(default=None, description="Тип склада хранения товаров", alias="warehouseType")
     country_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = Field(default=None, description="Страна", alias="countryName")
@@ -51,7 +50,7 @@ class OrdersItem(BaseModel):
     finished_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена с учетом всех скидок, кроме суммы по WB Кошельку", alias="finishedPrice")
     price_with_disc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена со скидкой продавца (= `totalPrice` * (1 - `discountPercent`/100))", alias="priceWithDisc")
     is_cancel: Optional[StrictBool] = Field(default=None, description="Отмена заказа:   - `true` — заказ отменен ", alias="isCancel")
-    cancel_date: Optional[datetime] = Field(default=None, description="Дата и время отмены заказа. Если заказ не был отменен, то \"0001-01-01T00:00:00\".Если часовой пояс не указан, то берётся Московское время UTC+3.", alias="cancelDate")
+    cancel_date: Optional[StrictStr] = Field(default=None, description="Дата и время отмены заказа. Если заказ не был отменен, то \"0001-01-01T00:00:00\".Если часовой пояс не указан, то берётся Московское время UTC+3.", alias="cancelDate")
     sticker: Optional[StrictStr] = Field(default=None, description="ID стикера")
     g_number: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="ID корзины покупателя. Заказы одной транзакции будут иметь одинаковый `gNumber`", alias="gNumber")
     srid: Optional[StrictStr] = Field(default=None, description="Уникальный ID заказа.<br> Примечание для использующих API Маркетплейс: `srid` равен `rid` в ответах методов сборочных заданий. ")

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date, datetime
+from datetime import date
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
@@ -29,7 +29,7 @@ class NmReportGetReportsResponseDataInner(BaseModel):
     NmReportGetReportsResponseDataInner
     """ # noqa: E501
     id: UUID = Field(description="ID отчёта")
-    created_at: datetime = Field(description="Дата и время завершения генерации", alias="createdAt")
+    created_at: StrictStr = Field(description="Дата и время завершения генерации", alias="createdAt")
     status: StrictStr = Field(description="Статус отчёта:  * `WAITING` — в очереди на обработку * `PROCESSING` — генерируется * `SUCCESS —` готов * `RETRY` — ожидает повторной обработки * `FAILED` — не получилось сгенерировать, сгенерируйте повторно ")
     name: StrictStr = Field(description="Название отчёта")
     size: StrictInt = Field(description="Размер отчёта, Б")

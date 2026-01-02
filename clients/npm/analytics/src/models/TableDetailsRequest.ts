@@ -13,13 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { OrderBy } from './OrderBy';
-import {
-    OrderByFromJSON,
-    OrderByFromJSONTyped,
-    OrderByToJSON,
-    OrderByToJSONTyped,
-} from './OrderBy';
 import type { PastPeriod } from './PastPeriod';
 import {
     PastPeriodFromJSON,
@@ -27,6 +20,13 @@ import {
     PastPeriodToJSON,
     PastPeriodToJSONTyped,
 } from './PastPeriod';
+import type { OrderByMainAndDetails } from './OrderByMainAndDetails';
+import {
+    OrderByMainAndDetailsFromJSON,
+    OrderByMainAndDetailsFromJSONTyped,
+    OrderByMainAndDetailsToJSON,
+    OrderByMainAndDetailsToJSONTyped,
+} from './OrderByMainAndDetails';
 import type { Period } from './Period';
 import {
     PeriodFromJSON,
@@ -82,10 +82,10 @@ export interface TableDetailsRequest {
     nmIds?: Array<number>;
     /**
      * 
-     * @type {OrderBy}
+     * @type {OrderByMainAndDetails}
      * @memberof TableDetailsRequest
      */
-    orderBy: OrderBy;
+    orderBy: OrderByMainAndDetails;
     /**
      * Товары с какой средней позицией в поиске показывать в отчёте:
      *   - `all` — все
@@ -164,7 +164,7 @@ export function TableDetailsRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'brandName': json['brandName'] == null ? undefined : json['brandName'],
         'tagId': json['tagId'] == null ? undefined : json['tagId'],
         'nmIds': json['nmIds'] == null ? undefined : json['nmIds'],
-        'orderBy': OrderByFromJSON(json['orderBy']),
+        'orderBy': OrderByMainAndDetailsFromJSON(json['orderBy']),
         'positionCluster': json['positionCluster'],
         'includeSubstitutedSKUs': json['includeSubstitutedSKUs'] == null ? undefined : json['includeSubstitutedSKUs'],
         'includeSearchTexts': json['includeSearchTexts'] == null ? undefined : json['includeSearchTexts'],
@@ -190,7 +190,7 @@ export function TableDetailsRequestToJSONTyped(value?: TableDetailsRequest | nul
         'brandName': value['brandName'],
         'tagId': value['tagId'],
         'nmIds': value['nmIds'],
-        'orderBy': OrderByToJSON(value['orderBy']),
+        'orderBy': OrderByMainAndDetailsToJSON(value['orderBy']),
         'positionCluster': value['positionCluster'],
         'includeSubstitutedSKUs': value['includeSubstitutedSKUs'],
         'includeSearchTexts': value['includeSearchTexts'],

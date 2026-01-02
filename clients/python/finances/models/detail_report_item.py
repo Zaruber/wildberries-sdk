@@ -93,13 +93,13 @@ class DetailReportItem(BaseModel):
     rebill_logistic_org: Optional[StrictStr] = Field(default=None, description="Организатор перевозки.<br> Поле будет в ответе при наличии значения ")
     storage_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Хранение")
     deduction: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Удержания")
-    acceptance: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Платная приёмка")
+    acceptance: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Операции на приёмке")
     assembly_id: Optional[StrictInt] = Field(default=None, description="Номер сборочного задания")
     kiz: Optional[StrictStr] = Field(default=None, description="Код маркировки.<br> Поле будет в ответе при наличии значения ")
     srid: Optional[StrictStr] = Field(default=None, description="Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. ")
     report_type: Optional[StrictInt] = Field(default=None, description="Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе ")
     is_legal_entity: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи")
-    trbx_id: Optional[StrictStr] = Field(default=None, description="Номер короба для платной приёмки")
+    trbx_id: Optional[StrictStr] = Field(default=None, description="Номер короба для обработки товара")
     installment_cofinancing_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка по программе софинансирования")
     wibes_wb_discount_percent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка Wibes, %")
     cashback_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Сумма, удержанная за начисленные баллы программы лояльности")
@@ -107,8 +107,10 @@ class DetailReportItem(BaseModel):
     cashback_commission_change: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Стоимость участия в программе лояльности")
     order_uid: Optional[StrictStr] = Field(default=None, description="ID транзакции. Заказы в одной корзине покупателя будут иметь одинаковый `order_uid`")
     payment_schedule: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Разовое изменение срока перечисления денежных средств")
-    delivery_method: Optional[StrictStr] = Field(default=None, description="Способ продажи и тип товара ")
-    __properties: ClassVar[List[str]] = ["realizationreport_id", "date_from", "date_to", "create_dt", "currency_name", "suppliercontract_code", "rrd_id", "gi_id", "dlv_prc", "fix_tariff_date_from", "fix_tariff_date_to", "subject_name", "nm_id", "brand_name", "sa_name", "ts_name", "barcode", "doc_type_name", "quantity", "retail_price", "retail_amount", "sale_percent", "commission_percent", "office_name", "supplier_oper_name", "order_dt", "sale_dt", "rr_dt", "shk_id", "retail_price_withdisc_rub", "delivery_amount", "return_amount", "delivery_rub", "gi_box_type_name", "product_discount_for_report", "supplier_promo", "ppvz_spp_prc", "ppvz_kvw_prc_base", "ppvz_kvw_prc", "sup_rating_prc_up", "is_kgvp_v2", "ppvz_sales_commission", "ppvz_for_pay", "ppvz_reward", "acquiring_fee", "acquiring_percent", "payment_processing", "acquiring_bank", "ppvz_vw", "ppvz_vw_nds", "ppvz_office_name", "ppvz_office_id", "ppvz_supplier_id", "ppvz_supplier_name", "ppvz_inn", "declaration_number", "bonus_type_name", "sticker_id", "site_country", "srv_dbs", "penalty", "additional_payment", "rebill_logistic_cost", "rebill_logistic_org", "storage_fee", "deduction", "acceptance", "assembly_id", "kiz", "srid", "report_type", "is_legal_entity", "trbx_id", "installment_cofinancing_amount", "wibes_wb_discount_percent", "cashback_amount", "cashback_discount", "cashback_commission_change", "order_uid", "payment_schedule", "delivery_method"]
+    delivery_method: Optional[StrictStr] = Field(default=None, description="Способ продажи и тип товара")
+    seller_promo_id: Optional[StrictInt] = Field(default=None, description="ID собственной акции продавца с дополнительной скидкой")
+    seller_promo_discount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Размер дополнительной скидки по собственной акции продавца, %")
+    __properties: ClassVar[List[str]] = ["realizationreport_id", "date_from", "date_to", "create_dt", "currency_name", "suppliercontract_code", "rrd_id", "gi_id", "dlv_prc", "fix_tariff_date_from", "fix_tariff_date_to", "subject_name", "nm_id", "brand_name", "sa_name", "ts_name", "barcode", "doc_type_name", "quantity", "retail_price", "retail_amount", "sale_percent", "commission_percent", "office_name", "supplier_oper_name", "order_dt", "sale_dt", "rr_dt", "shk_id", "retail_price_withdisc_rub", "delivery_amount", "return_amount", "delivery_rub", "gi_box_type_name", "product_discount_for_report", "supplier_promo", "ppvz_spp_prc", "ppvz_kvw_prc_base", "ppvz_kvw_prc", "sup_rating_prc_up", "is_kgvp_v2", "ppvz_sales_commission", "ppvz_for_pay", "ppvz_reward", "acquiring_fee", "acquiring_percent", "payment_processing", "acquiring_bank", "ppvz_vw", "ppvz_vw_nds", "ppvz_office_name", "ppvz_office_id", "ppvz_supplier_id", "ppvz_supplier_name", "ppvz_inn", "declaration_number", "bonus_type_name", "sticker_id", "site_country", "srv_dbs", "penalty", "additional_payment", "rebill_logistic_cost", "rebill_logistic_org", "storage_fee", "deduction", "acceptance", "assembly_id", "kiz", "srid", "report_type", "is_legal_entity", "trbx_id", "installment_cofinancing_amount", "wibes_wb_discount_percent", "cashback_amount", "cashback_discount", "cashback_commission_change", "order_uid", "payment_schedule", "delivery_method", "seller_promo_id", "seller_promo_discount"]
 
     @field_validator('report_type')
     def report_type_validate_enum(cls, value):
@@ -256,7 +258,9 @@ class DetailReportItem(BaseModel):
             "cashback_commission_change": obj.get("cashback_commission_change"),
             "order_uid": obj.get("order_uid"),
             "payment_schedule": obj.get("payment_schedule"),
-            "delivery_method": obj.get("delivery_method")
+            "delivery_method": obj.get("delivery_method"),
+            "seller_promo_id": obj.get("seller_promo_id"),
+            "seller_promo_discount": obj.get("seller_promo_discount")
         })
         return _obj
 

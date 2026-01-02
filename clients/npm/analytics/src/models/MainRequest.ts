@@ -13,13 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { OrderBy } from './OrderBy';
-import {
-    OrderByFromJSON,
-    OrderByFromJSONTyped,
-    OrderByToJSON,
-    OrderByToJSONTyped,
-} from './OrderBy';
 import type { PastPeriod } from './PastPeriod';
 import {
     PastPeriodFromJSON,
@@ -27,6 +20,13 @@ import {
     PastPeriodToJSON,
     PastPeriodToJSONTyped,
 } from './PastPeriod';
+import type { OrderByMainAndDetails } from './OrderByMainAndDetails';
+import {
+    OrderByMainAndDetailsFromJSON,
+    OrderByMainAndDetailsFromJSONTyped,
+    OrderByMainAndDetailsToJSON,
+    OrderByMainAndDetailsToJSONTyped,
+} from './OrderByMainAndDetails';
 import type { PositionCluster } from './PositionCluster';
 import {
     PositionClusterFromJSON,
@@ -95,10 +95,10 @@ export interface MainRequest {
     positionCluster: PositionCluster;
     /**
      * 
-     * @type {OrderBy}
+     * @type {OrderByMainAndDetails}
      * @memberof MainRequest
      */
-    orderBy: OrderBy;
+    orderBy: OrderByMainAndDetails;
     /**
      * Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)
      * @type {boolean}
@@ -156,7 +156,7 @@ export function MainRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean
         'brandNames': json['brandNames'] == null ? undefined : json['brandNames'],
         'tagIds': json['tagIds'] == null ? undefined : json['tagIds'],
         'positionCluster': PositionClusterFromJSON(json['positionCluster']),
-        'orderBy': OrderByFromJSON(json['orderBy']),
+        'orderBy': OrderByMainAndDetailsFromJSON(json['orderBy']),
         'includeSubstitutedSKUs': json['includeSubstitutedSKUs'] == null ? undefined : json['includeSubstitutedSKUs'],
         'includeSearchTexts': json['includeSearchTexts'] == null ? undefined : json['includeSearchTexts'],
         'limit': json['limit'],
@@ -182,7 +182,7 @@ export function MainRequestToJSONTyped(value?: MainRequest | null, ignoreDiscrim
         'brandNames': value['brandNames'],
         'tagIds': value['tagIds'],
         'positionCluster': PositionClusterToJSON(value['positionCluster']),
-        'orderBy': OrderByToJSON(value['orderBy']),
+        'orderBy': OrderByMainAndDetailsToJSON(value['orderBy']),
         'includeSubstitutedSKUs': value['includeSubstitutedSKUs'],
         'includeSearchTexts': value['includeSearchTexts'],
         'limit': value['limit'],

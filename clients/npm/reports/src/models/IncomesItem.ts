@@ -33,16 +33,16 @@ export interface IncomesItem {
     number?: string;
     /**
      * Дата поступления. Если часовой пояс не указан, то берётся Московское время UTC+3.
-     * @type {Date}
+     * @type {string}
      * @memberof IncomesItem
      */
-    date?: Date;
+    date?: string;
     /**
      * Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе. Если часовой пояс не указан, то берётся Московское время UTC+3.
-     * @type {Date}
+     * @type {string}
      * @memberof IncomesItem
      */
-    lastChangeDate?: Date;
+    lastChangeDate?: string;
     /**
      * Артикул продавца
      * @type {string}
@@ -75,10 +75,10 @@ export interface IncomesItem {
     totalPrice?: number;
     /**
      * Дата принятия (закрытия) в WB. Если часовой пояс не указан, то берётся Московское время UTC+3
-     * @type {Date}
+     * @type {string}
      * @memberof IncomesItem
      */
-    dateClose?: Date;
+    dateClose?: string;
     /**
      * Название склада
      * @type {string}
@@ -128,14 +128,14 @@ export function IncomesItemFromJSONTyped(json: any, ignoreDiscriminator: boolean
         
         'incomeId': json['incomeId'] == null ? undefined : json['incomeId'],
         'number': json['number'] == null ? undefined : json['number'],
-        'date': json['date'] == null ? undefined : (new Date(json['date'])),
-        'lastChangeDate': json['lastChangeDate'] == null ? undefined : (new Date(json['lastChangeDate'])),
+        'date': json['date'] == null ? undefined : json['date'],
+        'lastChangeDate': json['lastChangeDate'] == null ? undefined : json['lastChangeDate'],
         'supplierArticle': json['supplierArticle'] == null ? undefined : json['supplierArticle'],
         'techSize': json['techSize'] == null ? undefined : json['techSize'],
         'barcode': json['barcode'] == null ? undefined : json['barcode'],
         'quantity': json['quantity'] == null ? undefined : json['quantity'],
         'totalPrice': json['totalPrice'] == null ? undefined : json['totalPrice'],
-        'dateClose': json['dateClose'] == null ? undefined : (new Date(json['dateClose'])),
+        'dateClose': json['dateClose'] == null ? undefined : json['dateClose'],
         'warehouseName': json['warehouseName'] == null ? undefined : json['warehouseName'],
         'nmId': json['nmId'] == null ? undefined : json['nmId'],
         'status': json['status'] == null ? undefined : json['status'],
@@ -155,14 +155,14 @@ export function IncomesItemToJSONTyped(value?: IncomesItem | null, ignoreDiscrim
         
         'incomeId': value['incomeId'],
         'number': value['number'],
-        'date': value['date'] == null ? value['date'] : value['date'].toISOString(),
-        'lastChangeDate': value['lastChangeDate'] == null ? value['lastChangeDate'] : value['lastChangeDate'].toISOString(),
+        'date': value['date'],
+        'lastChangeDate': value['lastChangeDate'],
         'supplierArticle': value['supplierArticle'],
         'techSize': value['techSize'],
         'barcode': value['barcode'],
         'quantity': value['quantity'],
         'totalPrice': value['totalPrice'],
-        'dateClose': value['dateClose'] == null ? value['dateClose'] : value['dateClose'].toISOString(),
+        'dateClose': value['dateClose'],
         'warehouseName': value['warehouseName'],
         'nmId': value['nmId'],
         'status': value['status'],

@@ -46,6 +46,8 @@ export * from './ApiV1QuestionsPatchRequest';
 export * from './ApiV1QuestionsPatchRequestOneOf';
 export * from './ApiV1QuestionsPatchRequestOneOf1';
 export * from './ApiV1QuestionsPatchRequestOneOf1Answer';
+export * from './ApiV1SellerDownloadIdGet202Response';
+export * from './ApiV1SellerDownloadIdGet451Response';
 export * from './ApiV1SellerEventsGet400Response';
 export * from './Chat';
 export * from './ChatsResponse';

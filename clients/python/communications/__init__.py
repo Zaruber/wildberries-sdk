@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.9"
+__version__ = "0.1.10"
 
 # Define package exports
 __all__ = [
@@ -76,6 +76,8 @@ __all__ = [
     "ApiV1QuestionsPatchRequestOneOf",
     "ApiV1QuestionsPatchRequestOneOf1",
     "ApiV1QuestionsPatchRequestOneOf1Answer",
+    "ApiV1SellerDownloadIdGet202Response",
+    "ApiV1SellerDownloadIdGet451Response",
     "ApiV1SellerEventsGet400Response",
     "Chat",
     "ChatsResponse",
@@ -176,6 +178,8 @@ from wildberries_sdk.communications.models.api_v1_questions_patch_request import
 from wildberries_sdk.communications.models.api_v1_questions_patch_request_one_of import ApiV1QuestionsPatchRequestOneOf as ApiV1QuestionsPatchRequestOneOf
 from wildberries_sdk.communications.models.api_v1_questions_patch_request_one_of1 import ApiV1QuestionsPatchRequestOneOf1 as ApiV1QuestionsPatchRequestOneOf1
 from wildberries_sdk.communications.models.api_v1_questions_patch_request_one_of1_answer import ApiV1QuestionsPatchRequestOneOf1Answer as ApiV1QuestionsPatchRequestOneOf1Answer
+from wildberries_sdk.communications.models.api_v1_seller_download_id_get202_response import ApiV1SellerDownloadIdGet202Response as ApiV1SellerDownloadIdGet202Response
+from wildberries_sdk.communications.models.api_v1_seller_download_id_get451_response import ApiV1SellerDownloadIdGet451Response as ApiV1SellerDownloadIdGet451Response
 from wildberries_sdk.communications.models.api_v1_seller_events_get400_response import ApiV1SellerEventsGet400Response as ApiV1SellerEventsGet400Response
 from wildberries_sdk.communications.models.chat import Chat as Chat
 from wildberries_sdk.communications.models.chats_response import ChatsResponse as ChatsResponse

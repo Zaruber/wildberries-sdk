@@ -20,11 +20,23 @@ import { mapValues } from '../runtime';
  */
 export interface CommissionUzbekistanReportInner {
     /**
-     * Комиссия для продавцов из Узбекистана, %
+     * Комиссия по модели «Маркетплейс» (`FBS`), %
      * @type {number}
      * @memberof CommissionUzbekistanReportInner
      */
-    kgvpUzbekistan?: number;
+    kgvpMarketplaceUz?: number;
+    /**
+     * Комиссия по модели «Склад WB» (`FBW`), %
+     * @type {number}
+     * @memberof CommissionUzbekistanReportInner
+     */
+    kgvpPaidStorageUz?: number;
+    /**
+     * Комиссия по модели «Витрина» (`DBS`), %
+     * @type {number}
+     * @memberof CommissionUzbekistanReportInner
+     */
+    kgvpSupplierUz?: number;
     /**
      * ID родительской категории
      * @type {number}
@@ -68,7 +80,9 @@ export function CommissionUzbekistanReportInnerFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'kgvpUzbekistan': json['kgvpUzbekistan'] == null ? undefined : json['kgvpUzbekistan'],
+        'kgvpMarketplaceUz': json['kgvpMarketplaceUz'] == null ? undefined : json['kgvpMarketplaceUz'],
+        'kgvpPaidStorageUz': json['kgvpPaidStorageUz'] == null ? undefined : json['kgvpPaidStorageUz'],
+        'kgvpSupplierUz': json['kgvpSupplierUz'] == null ? undefined : json['kgvpSupplierUz'],
         'parentID': json['parentID'] == null ? undefined : json['parentID'],
         'parentName': json['parentName'] == null ? undefined : json['parentName'],
         'subjectID': json['subjectID'] == null ? undefined : json['subjectID'],
@@ -87,7 +101,9 @@ export function CommissionUzbekistanReportInnerToJSONTyped(value?: CommissionUzb
 
     return {
         
-        'kgvpUzbekistan': value['kgvpUzbekistan'],
+        'kgvpMarketplaceUz': value['kgvpMarketplaceUz'],
+        'kgvpPaidStorageUz': value['kgvpPaidStorageUz'],
+        'kgvpSupplierUz': value['kgvpSupplierUz'],
         'parentID': value['parentID'],
         'parentName': value['parentName'],
         'subjectID': value['subjectID'],

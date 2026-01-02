@@ -43,6 +43,7 @@ export * from './NmReportRetryReportRequest';
 export * from './NmReportRetryReportResponse';
 export * from './OrderBy';
 export * from './OrderByGrTe';
+export * from './OrderByMainAndDetails';
 export * from './OrderByMode';
 export * from './PastPeriod';
 export * from './Period';

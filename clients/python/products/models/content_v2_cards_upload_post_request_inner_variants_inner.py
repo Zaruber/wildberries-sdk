@@ -33,7 +33,7 @@ class ContentV2CardsUploadPostRequestInnerVariantsInner(BaseModel):
     """ # noqa: E501
     brand: Optional[StrictStr] = Field(default=None, description="Бренд")
     title: Optional[Annotated[str, Field(strict=True, max_length=60)]] = Field(default=None, description="Наименование товара")
-    description: Optional[StrictStr] = Field(default=None, description="Описание товара.<br> Максимальное количество символов зависит от категории товара<br> Стандарт — 2000, минимум — 1000, максимум — 5000<br> Подробно о правилах описания в **Правилах заполнения карточки товара** в разделе в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113#описание) на портале продавцов ")
+    description: Optional[StrictStr] = Field(default=None, description="Описание товара.<br> Максимальное количество символов зависит от категории товара<br> Стандарт — 2000, минимум — 1000, максимум — 5000<br> Подробно о правилах описания в **Правилах заполнения карточки товара** в разделе в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113) на портале продавцов ")
     vendor_code: Annotated[str, Field(strict=True, max_length=72)] = Field(description="Артикул продавца", alias="vendorCode")
     wholesale: Optional[ContentV2GetCardsListPost200ResponseCardsInnerWholesale] = None
     dimensions: Optional[ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions] = None

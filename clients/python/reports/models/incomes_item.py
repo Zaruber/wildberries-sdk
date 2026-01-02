@@ -17,8 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -30,14 +29,14 @@ class IncomesItem(BaseModel):
     """ # noqa: E501
     income_id: Optional[StrictInt] = Field(default=None, description="Номер поставки", alias="incomeId")
     number: Optional[Annotated[str, Field(strict=True, max_length=40)]] = Field(default=None, description="Номер УПД")
-    var_date: Optional[datetime] = Field(default=None, description="Дата поступления. Если часовой пояс не указан, то берётся Московское время UTC+3.", alias="date")
-    last_change_date: Optional[datetime] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе. Если часовой пояс не указан, то берётся Московское время UTC+3.", alias="lastChangeDate")
+    var_date: Optional[StrictStr] = Field(default=None, description="Дата поступления. Если часовой пояс не указан, то берётся Московское время UTC+3.", alias="date")
+    last_change_date: Optional[StrictStr] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе. Если часовой пояс не указан, то берётся Московское время UTC+3.", alias="lastChangeDate")
     supplier_article: Optional[Annotated[str, Field(strict=True, max_length=75)]] = Field(default=None, description="Артикул продавца", alias="supplierArticle")
     tech_size: Optional[Annotated[str, Field(strict=True, max_length=30)]] = Field(default=None, description="Размер товара", alias="techSize")
     barcode: Optional[Annotated[str, Field(strict=True, max_length=30)]] = Field(default=None, description="Баркод")
     quantity: Optional[StrictInt] = Field(default=None, description="Количество")
     total_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена из УПД", alias="totalPrice")
-    date_close: Optional[datetime] = Field(default=None, description="Дата принятия (закрытия) в WB. Если часовой пояс не указан, то берётся Московское время UTC+3", alias="dateClose")
+    date_close: Optional[StrictStr] = Field(default=None, description="Дата принятия (закрытия) в WB. Если часовой пояс не указан, то берётся Московское время UTC+3", alias="dateClose")
     warehouse_name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Название склада", alias="warehouseName")
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")
     status: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Текущий статус поставки")

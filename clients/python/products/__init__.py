@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.9"
+__version__ = "0.1.10"
 
 # Define package exports
 __all__ = [
@@ -79,6 +79,7 @@ __all__ = [
     "ContentV2CardsUploadAddPostRequest",
     "ContentV2CardsUploadAddPostRequestCardsToAddInner",
     "ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions",
+    "ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner",
     "ContentV2CardsUploadPostRequestInner",
     "ContentV2CardsUploadPostRequestInnerVariantsInner",
     "ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions",
@@ -239,6 +240,7 @@ from wildberries_sdk.products.models.content_v2_cards_update_post_request_inner_
 from wildberries_sdk.products.models.content_v2_cards_upload_add_post_request import ContentV2CardsUploadAddPostRequest as ContentV2CardsUploadAddPostRequest
 from wildberries_sdk.products.models.content_v2_cards_upload_add_post_request_cards_to_add_inner import ContentV2CardsUploadAddPostRequestCardsToAddInner as ContentV2CardsUploadAddPostRequestCardsToAddInner
 from wildberries_sdk.products.models.content_v2_cards_upload_add_post_request_cards_to_add_inner_dimensions import ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions as ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions
+from wildberries_sdk.products.models.content_v2_cards_upload_add_post_request_cards_to_add_inner_sizes_inner import ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner as ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner
 from wildberries_sdk.products.models.content_v2_cards_upload_post_request_inner import ContentV2CardsUploadPostRequestInner as ContentV2CardsUploadPostRequestInner
 from wildberries_sdk.products.models.content_v2_cards_upload_post_request_inner_variants_inner import ContentV2CardsUploadPostRequestInnerVariantsInner as ContentV2CardsUploadPostRequestInnerVariantsInner
 from wildberries_sdk.products.models.content_v2_cards_upload_post_request_inner_variants_inner_dimensions import ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions as ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions

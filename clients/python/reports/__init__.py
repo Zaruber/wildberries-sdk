@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.9"
+__version__ = "0.1.10"
 
 # Define package exports
 __all__ = [
@@ -74,6 +74,9 @@ __all__ = [
     "Measurement",
     "MeasurementData",
     "MeasurementDataReportsInner",
+    "MeasurementPenalties",
+    "MeasurementPenaltiesData",
+    "MeasurementPenaltiesDataReportsInner",
     "Model4xxResponse",
     "ModelsExciseReportResponse",
     "ModelsExciseReportResponseDataInner",
@@ -88,6 +91,9 @@ __all__ = [
     "ResponsePaidStorageInner",
     "SalesItem",
     "StocksItem",
+    "WHM",
+    "WHMData",
+    "WHMDataReportsInner",
 ]
 
 # import apis into sdk package
@@ -151,6 +157,9 @@ from wildberries_sdk.reports.models.incomes_item import IncomesItem as IncomesIt
 from wildberries_sdk.reports.models.measurement import Measurement as Measurement
 from wildberries_sdk.reports.models.measurement_data import MeasurementData as MeasurementData
 from wildberries_sdk.reports.models.measurement_data_reports_inner import MeasurementDataReportsInner as MeasurementDataReportsInner
+from wildberries_sdk.reports.models.measurement_penalties import MeasurementPenalties as MeasurementPenalties
+from wildberries_sdk.reports.models.measurement_penalties_data import MeasurementPenaltiesData as MeasurementPenaltiesData
+from wildberries_sdk.reports.models.measurement_penalties_data_reports_inner import MeasurementPenaltiesDataReportsInner as MeasurementPenaltiesDataReportsInner
 from wildberries_sdk.reports.models.model4xx_response import Model4xxResponse as Model4xxResponse
 from wildberries_sdk.reports.models.models_excise_report_response import ModelsExciseReportResponse as ModelsExciseReportResponse
 from wildberries_sdk.reports.models.models_excise_report_response_data_inner import ModelsExciseReportResponseDataInner as ModelsExciseReportResponseDataInner
@@ -165,4 +174,7 @@ from wildberries_sdk.reports.models.response_error_statistics2 import ResponseEr
 from wildberries_sdk.reports.models.response_paid_storage_inner import ResponsePaidStorageInner as ResponsePaidStorageInner
 from wildberries_sdk.reports.models.sales_item import SalesItem as SalesItem
 from wildberries_sdk.reports.models.stocks_item import StocksItem as StocksItem
+from wildberries_sdk.reports.models.whm import WHM as WHM
+from wildberries_sdk.reports.models.whm_data import WHMData as WHMData
+from wildberries_sdk.reports.models.whm_data_reports_inner import WHMDataReportsInner as WHMDataReportsInner
 

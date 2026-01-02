@@ -21,10 +21,10 @@ import { mapValues } from '../runtime';
 export interface StocksItem {
     /**
      * Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе. Если часовой пояс не указан, то берётся Московское время (UTC+3)
-     * @type {Date}
+     * @type {string}
      * @memberof StocksItem
      */
-    lastChangeDate?: Date;
+    lastChangeDate?: string;
     /**
      * Название склада
      * @type {string}
@@ -146,7 +146,7 @@ export function StocksItemFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         
-        'lastChangeDate': json['lastChangeDate'] == null ? undefined : (new Date(json['lastChangeDate'])),
+        'lastChangeDate': json['lastChangeDate'] == null ? undefined : json['lastChangeDate'],
         'warehouseName': json['warehouseName'] == null ? undefined : json['warehouseName'],
         'supplierArticle': json['supplierArticle'] == null ? undefined : json['supplierArticle'],
         'nmId': json['nmId'] == null ? undefined : json['nmId'],
@@ -178,7 +178,7 @@ export function StocksItemToJSONTyped(value?: StocksItem | null, ignoreDiscrimin
 
     return {
         
-        'lastChangeDate': value['lastChangeDate'] == null ? value['lastChangeDate'] : value['lastChangeDate'].toISOString(),
+        'lastChangeDate': value['lastChangeDate'],
         'warehouseName': value['warehouseName'],
         'supplierArticle': value['supplierArticle'],
         'nmId': value['nmId'],
