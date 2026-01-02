@@ -18,6 +18,9 @@ jobs:
       - name: Download specs
         run: bash scripts/download-specs-from-config.sh
 
+      - name: Update methods list
+        run: bash scripts/generate-methods-list.sh
+
       - name: Bump version
         id: bump
         run: |
@@ -30,12 +33,18 @@ jobs:
           PACKAGE_VERSION: ${{ steps.bump.outputs.version }}
         run: bash scripts/generate-clients.sh
 
+      - name: Update Python methods list
+        run: bash scripts/generate-python-methods-list.sh
+
+      - name: Update npm methods list
+        run: bash scripts/generate-npm-methods-list.sh
+
       - name: Prepare Python package
         run: bash scripts/prepare-pypi-package.sh
 
       - name: Commit generated clients
         run: |
-          git add pyproject.toml clients/python clients/npm
+          git add pyproject.toml README.md docs/python/README.md docs/npm/README.md clients/python clients/npm
           if git diff --cached --quiet; then
             echo "No client changes to commit."
             exit 0
