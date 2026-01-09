@@ -3,6 +3,12 @@
   "description": "Wildberries OpenAPI clients (generated).",
   "license": "MIT",
   "type": "library",
+  "authors": [
+    {
+      "name": "Evgenii Lazarev",
+      "email": "elazarev@gmail.com"
+    }
+  ],
   "require": {
     "php": "^8.1",
     "ext-curl": "*",

@@ -1,6 +1,12 @@
-# wildberries-sdk
+# Wildberries SDK-клиенты для Python, Node.js, Go и PHP, постоянно актуальные в соответствии с OpenAPI-спецификациями.
 
-В этом репозитории находятся сгенерированные SDK-клиенты Wildberries для разных языков на основе OpenAPI спецификаций Wildberries.
+| Язык | Версия | Кол-во скачиваний | README | Репозиторий |
+| --- | --- | --- | --- | --- |
+| Python | [![PyPI](https://img.shields.io/pypi/v/wildberries-sdk.svg)](https://pypi.org/project/wildberries-sdk/) | [![PyPI Downloads](https://static.pepy.tech/badge/wildberries-sdk)](https://pepy.tech/project/wildberries-sdk) | [docs/python/README.md](docs/python/README.md) | [pypi.org](https://pypi.org/project/wildberries-sdk/) |
+| Node.js | [![npm](https://img.shields.io/npm/v/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk) | [![NPM Downloads](https://img.shields.io/npm/dt/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk) | [docs/npm/README.md](docs/npm/README.md) | [npmjs.com](https://www.npmjs.com/package/wildberries-sdk) |
+| PHP | [![Packagist](https://img.shields.io/packagist/v/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk) | [![Packagist Downloads](https://img.shields.io/packagist/dt/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk) | [docs/php/README.md](docs/php/README.md) | [packagist.org](https://packagist.org/packages/eslazarev/wildberries-sdk) |
+| Go | [![Go](https://img.shields.io/github/v/tag/eslazarev/wildberries-sdk?label=go)](https://github.com/eslazarev/wildberries-sdk/tags) | — | [docs/go/README.md](docs/go/README.md) | [pkg.go.dev](https://pkg.go.dev/github.com/eslazarev/wildberries-sdk/clients/go) |
+
 
 Поддерживаются все доступные на текущий момент команды API Wildberries, разделённые по спецификациям.
 
@@ -9,40 +15,11 @@
 Почему это важно?
 Посмотрите как часто wildberries обновляет свои OpenAPI спецификации
 
-![wildberries-api-changes.png](.github/images/wildberries-api-changes.png)
+<img src=".github/images/wildberries-api-changes.png" alt="wildberries-api-changes" width="200">
+
 
 #### За месяц 14 изменений в спецификациях. 
 
-
-## Готовые пакеты
-
-### Python
-![PyPI Downloads](https://static.pepy.tech/badge/wildberries-sdk)
-[![PyPI](https://img.shields.io/pypi/v/wildberries-sdk.svg)](https://pypi.org/project/wildberries-sdk/)
-
-- PyPI: https://pypi.org/project/wildberries-sdk/
-- README: [docs/python/README.md](docs/python/README.md)
-
-### Node.js
-[![NPM Downloads](https://img.shields.io/npm/dt/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk)
-[![npm](https://img.shields.io/npm/v/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk)
-
-- npm: https://www.npmjs.com/package/wildberries-sdk
-- README: [docs/npm/README.md](docs/npm/README.md)
-
-### PHP
-[![Packagist Downloads](https://img.shields.io/packagist/dt/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk)
-[![Packagist](https://img.shields.io/packagist/v/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk)
-
-- Packagist: https://packagist.org/packages/eslazarev/wildberries-sdk
-- README: [docs/php/README.md](docs/php/README.md)
-
-### Go
- [![Go Reference](https://pkg.go.dev/badge/github.com/eslazarev/wildberries-sdk/clients/go/general.svg)](https://pkg.go.dev/github.com/eslazarev/wildberries-sdk/clients/go/general)
-
-- README: [docs/go/README.md](docs/go/README.md)
-- Исходники: `clients/go`
-- Модульный путь: `github.com/eslazarev/wildberries-sdk/clients/go/<module>`
 
 ## В данный момент представлены **все доступные** спецификации:
 

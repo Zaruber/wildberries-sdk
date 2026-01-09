@@ -8,6 +8,9 @@ version = "0.1.15"
 description = "Wildberries OpenAPI clients (generated)."
 readme = "docs/python/README.md"
 requires-python = ">=3.8"
+authors = [
+  { name = "Evgenii Lazarev", email = "elazarev@gmail.com" },
+]
 license = { text = "MIT" }
 dependencies = [
   "pydantic>=2.0.0",
