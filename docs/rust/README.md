@@ -2,6 +2,22 @@
 
 Сгенерированные Rust-клиенты находятся в `clients/rust/<module>`.
 
+## Установка
+
+Каждая спецификация - отдельный crate (например, `wildberries_sdk_general`).
+
+```toml
+[dependencies]
+wildberries_sdk_general = "0.1.0"
+```
+
+Если крейты недоступны в registry, используйте локальные зависимости:
+
+```toml
+[dependencies]
+wildberries_sdk_general = { path = "clients/rust/general" }
+```
+
 ## Использование
 
 Каждая спецификация - отдельный crate. Добавьте нужный crate как локальную зависимость:
