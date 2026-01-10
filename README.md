@@ -1,4 +1,4 @@
-# Wildberries SDK-клиенты для Python, Node.js, Go и PHP, постоянно актуальные в соответствии с OpenAPI-спецификациями.
+# Wildberries SDK-клиенты для Python, Node.js, Go, PHP и Rust, постоянно актуальные в соответствии с OpenAPI-спецификациями.
 
 | Язык | Версия | Кол-во скачиваний | README | Репозиторий |
 | --- | --- | --- | --- | --- |
@@ -6,6 +6,7 @@
 | Node.js | [![npm](https://img.shields.io/npm/v/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk) | [![NPM Downloads](https://img.shields.io/npm/dt/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk) | [docs/npm/README.md](docs/npm/README.md) | [npmjs.com](https://www.npmjs.com/package/wildberries-sdk) |
 | PHP | [![Packagist](https://img.shields.io/packagist/v/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk) | [![Packagist Downloads](https://img.shields.io/packagist/dt/eslazarev/wildberries-sdk.svg)](https://packagist.org/packages/eslazarev/wildberries-sdk) | [docs/php/README.md](docs/php/README.md) | [packagist.org](https://packagist.org/packages/eslazarev/wildberries-sdk) |
 | Go | [![Go](https://img.shields.io/github/v/tag/eslazarev/wildberries-sdk?label=go)](https://github.com/eslazarev/wildberries-sdk/tags) | — | [docs/go/README.md](docs/go/README.md) | [pkg.go.dev](https://pkg.go.dev/github.com/eslazarev/wildberries-sdk/clients/go) |
+| Rust | [![Rust](https://img.shields.io/github/v/tag/eslazarev/wildberries-sdk?label=rust)](https://github.com/eslazarev/wildberries-sdk/tags) | — | [docs/rust/README.md](docs/rust/README.md) | [crates.io](https://crates.io) |
 
 
 Поддерживаются все доступные на текущий момент команды API Wildberries, разделённые по спецификациям.

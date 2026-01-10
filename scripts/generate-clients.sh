@@ -243,6 +243,335 @@ for path in root.rglob("*.ts"):
 PY
 }
 
+fix_rust_authors() {
+  local out_path="$1"
+  local cargo_file="${out_path}/Cargo.toml"
+  if [[ ! -f "${cargo_file}" ]]; then
+    return
+  fi
+  python3 - <<'PY' "${cargo_file}"
+from pathlib import Path
+
+path = Path(__file__ if False else __import__("sys").argv[1])
+data = path.read_text(encoding="utf-8").splitlines()
+out = []
+replaced = False
+for line in data:
+    if line.strip().startswith("authors = "):
+        out.append('authors = ["Evgenii Lazarev <elazarev@gmail.com>"]')
+        replaced = True
+    else:
+        out.append(line)
+if replaced:
+    path.write_text("\n".join(out) + "\n", encoding="utf-8")
+PY
+}
+
+fix_rust_code() {
+  local out_path="$1"
+  python3 - <<'PY' "${out_path}"
+import re
+import sys
+from pathlib import Path
+
+root = Path(sys.argv[1])
+
+KNOWN_RENAMES = {
+    "Принято": "Accepted",
+    "Склад продавца": "SellerWarehouse",
+}
+
+
+def derive_variant_name(value, used, counter):
+    if value in KNOWN_RENAMES:
+        name = KNOWN_RENAMES[value]
+    else:
+        cleaned = re.sub(r"[^A-Za-z0-9]+", " ", value).strip()
+        parts = [p for p in cleaned.split(" ") if p]
+        name = "".join(p[:1].upper() + p[1:] for p in parts)
+    if not name or name[0].isdigit():
+        name = f"Value{counter}"
+    if name in used:
+        name = f"{name}{counter}"
+    return name
+
+
+def fix_empty_enum_variants(path):
+    lines = path.read_text(encoding="utf-8").splitlines()
+    out = []
+    enum_first_variant = {}
+    inside_enum = False
+    current_enum = None
+    used = set()
+    counter = 1
+    pending_rename = None
+    pending_indent = ""
+
+    for line in lines:
+        enum_match = re.match(r"\s*pub enum (\w+)", line)
+        if enum_match:
+            inside_enum = True
+            current_enum = enum_match.group(1)
+            used = set()
+            counter = 1
+            pending_rename = None
+            pending_indent = ""
+            out.append(line)
+            continue
+
+        if inside_enum and line.strip() == "}":
+            inside_enum = False
+            pending_rename = None
+            pending_indent = ""
+            out.append(line)
+            continue
+
+        if inside_enum:
+            rename_match = re.match(r'(\s*)#\[serde\(rename = "([^"]*)"\)\]', line)
+            if rename_match:
+                pending_indent = rename_match.group(1)
+                pending_rename = rename_match.group(2)
+                out.append(line)
+                continue
+
+            if pending_rename is not None and re.match(r"^\s*,\s*$", line):
+                name = derive_variant_name(pending_rename, used, counter)
+                out.append(f"{pending_indent}{name},")
+                used.add(name)
+                enum_first_variant.setdefault(current_enum, name)
+                counter += 1
+                pending_rename = None
+                continue
+
+            variant_match = re.match(r"\s*([A-Za-z][A-Za-z0-9_]*)\s*,\s*$", line)
+            if variant_match:
+                name = variant_match.group(1)
+                used.add(name)
+                enum_first_variant.setdefault(current_enum, name)
+
+        out.append(line)
+
+    return out, enum_first_variant
+
+
+def fix_default_impls(lines, enum_first_variant):
+    out = []
+    current_enum = None
+    in_default = False
+    for line in lines:
+        enum_match = re.match(r"\s*impl Default for (\w+)\s*\{", line)
+        if enum_match:
+            current_enum = enum_match.group(1)
+            in_default = True
+            out.append(line)
+            continue
+
+        if in_default and line.strip() == "}":
+            in_default = False
+            current_enum = None
+            out.append(line)
+            continue
+
+        if in_default and re.match(r"\s*Self::\s*$", line):
+            replacement = enum_first_variant.get(current_enum)
+            if replacement:
+                indent = re.match(r"(\s*)", line).group(1)
+                out.append(f"{indent}Self::{replacement}")
+                continue
+
+        out.append(line)
+
+    return out
+
+
+def fix_multipart_vectors(path):
+    text = path.read_text(encoding="utf-8")
+    vec_vars = set(
+        re.findall(r"([A-Za-z0-9_]+)\s*:\s*Vec\s*<\s*std::path::PathBuf\s*>", text)
+    )
+    option_vec_vars = set(
+        re.findall(r"([A-Za-z0-9_]+)\s*:\s*Option\s*<\s*Vec\s*<\s*std::path::PathBuf\s*>\s*>", text)
+    )
+    for alias, target in re.findall(r"let\s+([A-Za-z0-9_]+)\s*=\s*([A-Za-z0-9_]+)\s*;", text):
+        if target in vec_vars:
+            vec_vars.add(alias)
+        if target in option_vec_vars:
+            option_vec_vars.add(alias)
+    if not vec_vars and not option_vec_vars:
+        vec_vars = set()
+
+    lines = text.splitlines()
+    out = []
+    option_param_vars = {}
+    depth = 0
+    for line in lines:
+        to_remove = [name for name, d in option_param_vars.items() if d > depth]
+        for name in to_remove:
+            option_param_vars.pop(name, None)
+
+        option_match = re.match(r"\s*if let Some\(ref ([A-Za-z0-9_]+)\) = ([A-Za-z0-9_]+)\s*\{", line)
+        if option_match and option_match.group(2) in option_vec_vars:
+            option_param_vars[option_match.group(1)] = depth + 1
+        match = re.match(r'(\s*)multipart_form\s*=\s*multipart_form\.file\("([^"]+)",\s*([A-Za-z0-9_]+)\.as_os_str\(\)\)\.await\?;', line)
+        if match and (match.group(3) in vec_vars or match.group(3) in option_param_vars):
+            indent, field, var = match.groups()
+            out.append(f"{indent}for file_path in {var} {{")
+            out.append(f"{indent}    multipart_form = multipart_form.file(\"{field}\", file_path).await?;")
+            out.append(f"{indent}}}")
+            continue
+        out.append(line)
+        depth += line.count("{") - line.count("}")
+    path.write_text("\n".join(out) + "\n", encoding="utf-8")
+
+
+def ensure_uuid_dependency(root):
+    cargo = root / "Cargo.toml"
+    if not cargo.exists():
+        return
+    cargo_text = cargo.read_text(encoding="utf-8")
+    if "uuid =" in cargo_text:
+        return
+    uses_uuid = any("uuid::" in p.read_text(encoding="utf-8") for p in root.rglob("src/**/*.rs"))
+    if not uses_uuid:
+        return
+
+    lines = cargo_text.splitlines()
+    dep_start = None
+    dep_end = len(lines)
+    for idx, line in enumerate(lines):
+        if line.strip() == "[dependencies]":
+            dep_start = idx
+            continue
+        if dep_start is not None and idx > dep_start and line.startswith("[") and line.endswith("]"):
+            dep_end = idx
+            break
+    if dep_start is None:
+        return
+
+    insert_at = dep_end
+    for idx in range(dep_start + 1, dep_end):
+        if lines[idx].startswith("url "):
+            insert_at = idx + 1
+            break
+
+    lines.insert(insert_at, 'uuid = { version = "^1.8", features = ["serde", "v4"] }')
+    cargo.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def ensure_reqwest_stream(root):
+    cargo = root / "Cargo.toml"
+    if not cargo.exists():
+        return
+    text = cargo.read_text(encoding="utf-8")
+    if "reqwest =" not in text or "features" not in text:
+        return
+    if "stream" in text:
+        return
+    uses_file = any("multipart_form.file" in p.read_text(encoding="utf-8") for p in root.rglob("src/**/*.rs"))
+    if not uses_file:
+        return
+
+    lines = text.splitlines()
+    out = []
+    updated = False
+    for line in lines:
+        if line.strip().startswith("reqwest =") and "features" in line and "[" in line and "]" in line:
+            prefix, rest = line.split("features = [", 1)
+            features_part, suffix = rest.split("]", 1)
+            features = [f.strip().strip('"') for f in features_part.split(",") if f.strip()]
+            if "stream" not in features:
+                features.append("stream")
+                updated = True
+            features_rendered = ", ".join(f"\"{f}\"" for f in features)
+            line = f"{prefix}features = [{features_rendered}]{suffix}"
+        out.append(line)
+    if updated:
+        cargo.write_text("\n".join(out) + "\n", encoding="utf-8")
+
+
+def ensure_cargo_metadata(root):
+    cargo = root / "Cargo.toml"
+    if not cargo.exists():
+        return
+    lines = cargo.read_text(encoding="utf-8").splitlines()
+    package_start = None
+    package_end = len(lines)
+    crate_name = None
+    for idx, line in enumerate(lines):
+        if line.strip() == "[package]":
+            package_start = idx
+            continue
+        if package_start is not None and idx > package_start and line.startswith("[") and line.endswith("]"):
+            package_end = idx
+            break
+        if crate_name is None:
+            match = re.match(r'\s*name\s*=\s*"([^"]+)"', line)
+            if match:
+                crate_name = match.group(1)
+
+    if package_start is None:
+        return
+
+    desired_description = "Wildberries OpenAPI client (generated)."
+    desired_license = "MIT"
+    desired_repo = "https://github.com/eslazarev/wildberries-sdk"
+    desired_homepage = desired_repo
+    desired_doc = f"https://docs.rs/{crate_name}" if crate_name else None
+
+    found = {"description": False, "license": False, "repository": False, "homepage": False, "documentation": False}
+    for idx in range(package_start + 1, package_end):
+        line = lines[idx]
+        if line.strip().startswith("description ="):
+            lines[idx] = f'description = "{desired_description}"'
+            found["description"] = True
+        elif line.strip().startswith("license ="):
+            lines[idx] = f'license = "{desired_license}"'
+            found["license"] = True
+        elif line.strip().startswith("repository ="):
+            lines[idx] = f'repository = "{desired_repo}"'
+            found["repository"] = True
+        elif line.strip().startswith("homepage ="):
+            lines[idx] = f'homepage = "{desired_homepage}"'
+            found["homepage"] = True
+        elif line.strip().startswith("documentation =") and desired_doc:
+            lines[idx] = f'documentation = "{desired_doc}"'
+            found["documentation"] = True
+
+    insert_at = package_start + 1
+    for idx in range(package_start + 1, package_end):
+        if lines[idx].strip().startswith("description ="):
+            insert_at = idx + 1
+            break
+
+    def insert_if_missing(key, line):
+        nonlocal insert_at
+        if not found[key]:
+            lines.insert(insert_at, line)
+            insert_at += 1
+
+    insert_if_missing("description", f'description = "{desired_description}"')
+    insert_if_missing("license", f'license = "{desired_license}"')
+    insert_if_missing("repository", f'repository = "{desired_repo}"')
+    insert_if_missing("homepage", f'homepage = "{desired_homepage}"')
+    if desired_doc:
+        insert_if_missing("documentation", f'documentation = "{desired_doc}"')
+
+    cargo.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+for model_path in root.glob("src/models/*.rs"):
+    updated_lines, first_variants = fix_empty_enum_variants(model_path)
+    updated_lines = fix_default_impls(updated_lines, first_variants)
+    model_path.write_text("\n".join(updated_lines) + "\n", encoding="utf-8")
+
+for api_path in root.glob("src/apis/*.rs"):
+    fix_multipart_vectors(api_path)
+ensure_uuid_dependency(root)
+ensure_reqwest_stream(root)
+ensure_cargo_metadata(root)
+PY
+}
+
 rewrite_typescript_index() {
   local out_path="$1"
   local index_file="${out_path}/src/index.ts"
@@ -512,6 +841,10 @@ for lang in "${langs[@]}"; do
         GO_MODULE_BASE_WARNED=1
       fi
       fix_go_module "${out_path}"
+    fi
+    if [[ "${generator}" == "rust" ]]; then
+      fix_rust_authors "${out_path}"
+      fix_rust_code "${out_path}"
     fi
   done
 done

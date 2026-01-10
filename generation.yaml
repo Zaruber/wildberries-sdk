@@ -44,3 +44,7 @@ languages:
   - name: php
     generator: php
     output_dir: clients/php
+  - name: rust
+    generator: rust
+    output_dir: clients/rust
+    package_name_prefix: wildberries-sdk
