@@ -2,9 +2,12 @@
 name = "wildberries_sdk_orders_dbw"
 version = "0.1.0"
 authors = ["Evgenii Lazarev <elazarev@gmail.com>"]
-description = "Управление [сборочными заданиями](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW) и [метаданными](/openapi/orders-dbw#tag/Metadannye-DBW) заказов DBW (Доставка курьером WB)."
+description = "Wildberries OpenAPI client (generated)."
+repository = "https://github.com/eslazarev/wildberries-sdk"
+homepage = "https://github.com/eslazarev/wildberries-sdk"
+documentation = "https://docs.rs/wildberries_sdk_orders_dbw"
 # Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+license = "MIT"
 edition = "2021"
 
 [dependencies]

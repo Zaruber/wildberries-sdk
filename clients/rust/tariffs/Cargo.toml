@@ -2,9 +2,12 @@
 name = "wildberries_sdk_tariffs"
 version = "0.1.0"
 authors = ["Evgenii Lazarev <elazarev@gmail.com>"]
-description = "<div class=\"description_important\">     Узнать больше о комиссиях и тарифах можно в <a href=\"https://seller.wildberries.ru/instructions/category/a04560b5-256d-48cb-8f09-60e283b5d493\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Комиссий](/openapi/wb-tariffs#tag/Komissii)   2. [Тарифов на остаток](/openapi/wb-tariffs#tag/Tarify-na-ostatok)   3. [Тарифов на возврат товаров продавцу](/openapi/wb-tariffs#tag/Stoimost-vozvrata-prodavcu) "
+description = "Wildberries OpenAPI client (generated)."
+repository = "https://github.com/eslazarev/wildberries-sdk"
+homepage = "https://github.com/eslazarev/wildberries-sdk"
+documentation = "https://docs.rs/wildberries_sdk_tariffs"
 # Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+license = "MIT"
 edition = "2021"
 
 [dependencies]

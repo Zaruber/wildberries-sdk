@@ -489,6 +489,76 @@ def ensure_reqwest_stream(root):
         cargo.write_text("\n".join(out) + "\n", encoding="utf-8")
 
 
+def ensure_cargo_metadata(root):
+    cargo = root / "Cargo.toml"
+    if not cargo.exists():
+        return
+    lines = cargo.read_text(encoding="utf-8").splitlines()
+    package_start = None
+    package_end = len(lines)
+    crate_name = None
+    for idx, line in enumerate(lines):
+        if line.strip() == "[package]":
+            package_start = idx
+            continue
+        if package_start is not None and idx > package_start and line.startswith("[") and line.endswith("]"):
+            package_end = idx
+            break
+        if crate_name is None:
+            match = re.match(r'\s*name\s*=\s*"([^"]+)"', line)
+            if match:
+                crate_name = match.group(1)
+
+    if package_start is None:
+        return
+
+    desired_description = "Wildberries OpenAPI client (generated)."
+    desired_license = "MIT"
+    desired_repo = "https://github.com/eslazarev/wildberries-sdk"
+    desired_homepage = desired_repo
+    desired_doc = f"https://docs.rs/{crate_name}" if crate_name else None
+
+    found = {"description": False, "license": False, "repository": False, "homepage": False, "documentation": False}
+    for idx in range(package_start + 1, package_end):
+        line = lines[idx]
+        if line.strip().startswith("description ="):
+            lines[idx] = f'description = "{desired_description}"'
+            found["description"] = True
+        elif line.strip().startswith("license ="):
+            lines[idx] = f'license = "{desired_license}"'
+            found["license"] = True
+        elif line.strip().startswith("repository ="):
+            lines[idx] = f'repository = "{desired_repo}"'
+            found["repository"] = True
+        elif line.strip().startswith("homepage ="):
+            lines[idx] = f'homepage = "{desired_homepage}"'
+            found["homepage"] = True
+        elif line.strip().startswith("documentation =") and desired_doc:
+            lines[idx] = f'documentation = "{desired_doc}"'
+            found["documentation"] = True
+
+    insert_at = package_start + 1
+    for idx in range(package_start + 1, package_end):
+        if lines[idx].strip().startswith("description ="):
+            insert_at = idx + 1
+            break
+
+    def insert_if_missing(key, line):
+        nonlocal insert_at
+        if not found[key]:
+            lines.insert(insert_at, line)
+            insert_at += 1
+
+    insert_if_missing("description", f'description = "{desired_description}"')
+    insert_if_missing("license", f'license = "{desired_license}"')
+    insert_if_missing("repository", f'repository = "{desired_repo}"')
+    insert_if_missing("homepage", f'homepage = "{desired_homepage}"')
+    if desired_doc:
+        insert_if_missing("documentation", f'documentation = "{desired_doc}"')
+
+    cargo.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 for model_path in root.glob("src/models/*.rs"):
     updated_lines, first_variants = fix_empty_enum_variants(model_path)
     updated_lines = fix_default_impls(updated_lines, first_variants)
@@ -498,6 +568,7 @@ for api_path in root.glob("src/apis/*.rs"):
     fix_multipart_vectors(api_path)
 ensure_uuid_dependency(root)
 ensure_reqwest_stream(root)
+ensure_cargo_metadata(root)
 PY
 }
 

@@ -2,9 +2,12 @@
 name = "wildberries_sdk_wbd"
 version = "0.1.0"
 authors = ["Evgenii Lazarev <elazarev@gmail.com>"]
-description = "По вопросам работы с WBD API обращайтесь в <a href=\"https://digital.wildberries.ru/support\" target=\"_blank\">техническую поддержку</a> "
+description = "Wildberries OpenAPI client (generated)."
+repository = "https://github.com/eslazarev/wildberries-sdk"
+homepage = "https://github.com/eslazarev/wildberries-sdk"
+documentation = "https://docs.rs/wildberries_sdk_wbd"
 # Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+license = "MIT"
 edition = "2021"
 
 [dependencies]

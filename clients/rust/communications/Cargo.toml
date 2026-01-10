@@ -2,9 +2,12 @@
 name = "wildberries_sdk_communications"
 version = "0.1.0"
 authors = ["Evgenii Lazarev <elazarev@gmail.com>"]
-description = "<div class=\"description_important\">     Узнать больше об общении с покупателями можно в <a href=\"https://seller.wildberries.ru/instructions/category/f7f6c465-dd12-422d-80a0-a6d9562115d5?goBackOption=prevRoute&categoryId=30817062-14cc-4a82-bc78-3600c2b0685b\">справочном центре</a> </div>  С помощью методов общения с покупателями вы можете работать с:   1. [Вопросами](/openapi/user-communication#tag/Voprosy) и [отзывами](/openapi/user-communication#tag/Otzyvy) покупателей   2. [Закреплёнными отзывами](/openapi/user-communication#tag/Zakreplyonnye-otzyvy)   3. [Чатами с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami)   4. [Заявками покупателей на возврат](/openapi/user-communication#tag/Vozvraty-pokupatelyami) "
+description = "Wildberries OpenAPI client (generated)."
+repository = "https://github.com/eslazarev/wildberries-sdk"
+homepage = "https://github.com/eslazarev/wildberries-sdk"
+documentation = "https://docs.rs/wildberries_sdk_communications"
 # Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+license = "MIT"
 edition = "2021"
 
 [dependencies]

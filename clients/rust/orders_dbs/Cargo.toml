@@ -2,9 +2,12 @@
 name = "wildberries_sdk_orders_dbs"
 version = "0.1.0"
 authors = ["Evgenii Lazarev <elazarev@gmail.com>"]
-description = "<div class=\"description_important\">     Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller). "
+description = "Wildberries OpenAPI client (generated)."
+repository = "https://github.com/eslazarev/wildberries-sdk"
+homepage = "https://github.com/eslazarev/wildberries-sdk"
+documentation = "https://docs.rs/wildberries_sdk_orders_dbs"
 # Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+license = "MIT"
 edition = "2021"
 
 [dependencies]

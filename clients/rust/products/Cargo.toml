@@ -2,9 +2,12 @@
 name = "wildberries_sdk_products"
 version = "0.1.0"
 authors = ["Evgenii Lazarev <elazarev@gmail.com>"]
-description = "С помощью методов этого раздела вы можете:   - [создать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получить [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загрузить [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настроить [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - установить [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции по работе с товарами</a>   </div> "
+description = "Wildberries OpenAPI client (generated)."
+repository = "https://github.com/eslazarev/wildberries-sdk"
+homepage = "https://github.com/eslazarev/wildberries-sdk"
+documentation = "https://docs.rs/wildberries_sdk_products"
 # Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+license = "MIT"
 edition = "2021"
 
 [dependencies]
