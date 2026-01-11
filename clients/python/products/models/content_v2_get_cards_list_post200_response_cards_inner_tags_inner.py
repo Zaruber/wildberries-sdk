@@ -28,7 +28,7 @@ class ContentV2GetCardsListPost200ResponseCardsInnerTagsInner(BaseModel):
     """ # noqa: E501
     id: Optional[StrictInt] = Field(default=None, description="ID ярлыка")
     name: Optional[StrictStr] = Field(default=None, description="Название ярлыка")
-    color: Optional[StrictStr] = Field(default=None, description="Цвет ярлыка. <br> Доступные цвета: - `D1CFD7` — серый - `FEE0E0` — красный - `ECDAFF` — фиолетовый - `E4EAFF` — синий - `DEF1DD` — зеленый - `FFECC7` — желтый ")
+    color: Optional[StrictStr] = Field(default=None, description="Цвет ярлыка. <br> Доступные цвета: - Default - Default - Default - Default - Default - Default ")
     __properties: ClassVar[List[str]] = ["id", "name", "color"]
 
     model_config = ConfigDict(

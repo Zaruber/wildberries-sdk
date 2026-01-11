@@ -14,16 +14,11 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.17"
+__version__ = "0.1.0"
 
 # Define package exports
 __all__ = [
-    "Api",
-    "Api",
-    "Api",
-    "Api",
-    "Api",
-    "CApi",
+    "DefaultApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -97,12 +92,7 @@ __all__ = [
 ]
 
 # import apis into sdk package
-from wildberries_sdk.reports.api.api import Api as Api
-from wildberries_sdk.reports.api.api import Api as Api
-from wildberries_sdk.reports.api.api import Api as Api
-from wildberries_sdk.reports.api.api import Api as Api
-from wildberries_sdk.reports.api.api import Api as Api
-from wildberries_sdk.reports.api.c_api import CApi as CApi
+from wildberries_sdk.reports.api.default_api import DefaultApi as DefaultApi
 
 # import ApiClient
 from wildberries_sdk.reports.api_response import ApiResponse as ApiResponse

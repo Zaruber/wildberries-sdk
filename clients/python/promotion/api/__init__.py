@@ -2,5 +2,4 @@
 
 # import apis into api package
 from wildberries_sdk.promotion.api.default_api import DefaultApi
-from wildberries_sdk.promotion.api.api import Api
 
