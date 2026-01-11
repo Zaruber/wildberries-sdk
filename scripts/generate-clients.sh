@@ -10,6 +10,20 @@ DOCKER_IMAGE="${OPENAPI_GENERATOR_DOCKER_IMAGE:-openapitools/openapi-generator-c
 GLOBAL_PROPERTIES="${OPENAPI_GENERATOR_GLOBAL_PROPERTIES:-apiDocs=false,modelDocs=false,apiTests=false,modelTests=false}"
 GO_MODULE_BASE="${GO_MODULE_BASE:-}"
 GO_MODULE_BASE_WARNED=0
+TMP_SPECS=()
+
+cleanup_tmp_specs() {
+  local tmp
+  for tmp in "${TMP_SPECS[@]:-}"; do
+    if [[ -n "${tmp}" && -f "${tmp}" ]]; then
+      rm -f "${tmp}"
+    fi
+  done
+  if [[ -d "${ROOT_DIR}/.tmp-python-specs" ]]; then
+    rmdir "${ROOT_DIR}/.tmp-python-specs" 2>/dev/null || true
+  fi
+}
+trap cleanup_tmp_specs EXIT
 
 if [[ ! -f "${CONFIG_FILE}" ]]; then
   echo "Error: config not found: ${CONFIG_FILE}" >&2
@@ -654,6 +668,46 @@ for path in root.rglob("*.py"):
 PY
 }
 
+rewrite_python_tags() {
+  local input="$1"
+  local output="$2"
+
+  python3 - <<'PY' "${input}" "${output}"
+from pathlib import Path
+import sys
+
+src = Path(sys.argv[1]).read_text(encoding="utf-8").splitlines()
+out_lines = []
+
+in_tags = False
+tags_indent = None
+rewrite_items = False
+
+for line in src:
+    stripped = line.lstrip()
+    indent = len(line) - len(stripped)
+    if stripped == "tags:":
+        in_tags = True
+        tags_indent = indent
+        rewrite_items = indent > 0
+        out_lines.append(line)
+        continue
+
+    if in_tags:
+        if stripped and indent <= tags_indent:
+            in_tags = False
+            rewrite_items = False
+        if rewrite_items and stripped.startswith("- ") and indent > tags_indent:
+            if ":" not in stripped[2:]:
+                out_lines.append(" " * indent + "- Default")
+                continue
+
+    out_lines.append(line)
+
+Path(sys.argv[2]).write_text("\n".join(out_lines) + "\n", encoding="utf-8")
+PY
+}
+
 to_container_path() {
   local path="$1"
   if [[ "${path}" != "${ROOT_DIR}/"* ]]; then
@@ -759,6 +813,8 @@ for lang in "${langs[@]}"; do
   fi
 
   for input in "${inputs[@]}"; do
+    input_path="${input}"
+    tmp_spec=""
     filename="$(basename "${input}")"
     base="$(basename "${filename}" .yaml)"
     base="${base%.yml}"
@@ -780,6 +836,9 @@ for lang in "${langs[@]}"; do
       npm_pkg="$(sanitize_npm_name "${npm_pkg}")"
       additional_props="${additional_props},npmName=${npm_pkg},npmVersion=${PACKAGE_VERSION}"
     fi
+    if [[ "${generator}" == "python" ]]; then
+      additional_props="${additional_props},useTags=false"
+    fi
     if [[ "${generator}" == "php" ]]; then
       module_ns="$(to_pascal_case "${dir_name}")"
       additional_props="${additional_props},invokerPackage=Wildberries\\\\Sdk\\\\${module_ns}"
@@ -788,9 +847,15 @@ for lang in "${langs[@]}"; do
     echo "Generating ${name} for ${filename}"
     if [[ "${generator}" == "python" ]]; then
       rm -rf "${out_path}"
+      tmp_dir="${ROOT_DIR}/.tmp-python-specs"
+      mkdir -p "${tmp_dir}"
+      tmp_spec="${tmp_dir}/${filename}"
+      rewrite_python_tags "${input}" "${tmp_spec}"
+      TMP_SPECS+=("${tmp_spec}")
+      input_path="${tmp_spec}"
     fi
     if [[ "${USE_DOCKER}" == "1" ]]; then
-      in_container="$(to_container_path "${input}")"
+      in_container="$(to_container_path "${input_path}")"
       out_container="$(to_container_path "${out_path}")"
       cmd=(
         docker run --rm
@@ -808,7 +873,7 @@ for lang in "${langs[@]}"; do
       cmd=(
         "${GENERATOR_BIN}" generate
         -g "${generator}"
-        -i "${input}"
+        -i "${input_path}"
         -o "${out_path}"
         --additional-properties "${additional_props}"
       )

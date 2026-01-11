@@ -14,12 +14,11 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.17"
+__version__ = "0.1.0"
 
 # Define package exports
 __all__ = [
-    "DBWApi",
-    "DBWApi",
+    "DefaultApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -64,8 +63,7 @@ __all__ = [
 ]
 
 # import apis into sdk package
-from wildberries_sdk.orders_dbw.api.dbw_api import DBWApi as DBWApi
-from wildberries_sdk.orders_dbw.api.dbw_api import DBWApi as DBWApi
+from wildberries_sdk.orders_dbw.api.default_api import DefaultApi as DefaultApi
 
 # import ApiClient
 from wildberries_sdk.orders_dbw.api_response import ApiResponse as ApiResponse

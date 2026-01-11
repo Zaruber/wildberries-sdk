@@ -14,12 +14,11 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.17"
+__version__ = "0.1.0"
 
 # Define package exports
 __all__ = [
-    "Api",
-    "Api",
+    "DefaultApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -56,8 +55,7 @@ __all__ = [
 ]
 
 # import apis into sdk package
-from wildberries_sdk.in_store_pickup.api.api import Api as Api
-from wildberries_sdk.in_store_pickup.api.api import Api as Api
+from wildberries_sdk.in_store_pickup.api.default_api import DefaultApi as DefaultApi
 
 # import ApiClient
 from wildberries_sdk.in_store_pickup.api_response import ApiResponse as ApiResponse
