@@ -414,6 +414,63 @@ def fix_multipart_vectors(path):
     if not vec_vars and not option_vec_vars:
         vec_vars = set()
 
+    def replace_option_vec_stream(match):
+        src = match.group("src")
+        if src not in option_vec_vars:
+            return match.group(0)
+        indent = match.group("indent")
+        alias = match.group("alias")
+        field = match.group("field")
+        inner_indent = indent + "    "
+        inner_inner_indent = inner_indent + "    "
+        return (
+            f"{indent}if let Some(ref {alias}) = {src} {{\n"
+            f"{inner_indent}for file_path in {alias} {{\n"
+            f"{inner_inner_indent}let file = TokioFile::open(file_path).await?;\n"
+            f"{inner_inner_indent}let stream = FramedRead::new(file, BytesCodec::new());\n"
+            f"{inner_inner_indent}let file_name = file_path.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();\n"
+            f"{inner_inner_indent}let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);\n"
+            f"{inner_inner_indent}multipart_form = multipart_form.part(\"{field}\", file_part);\n"
+            f"{inner_indent}}}\n"
+            f"{indent}}}"
+        )
+
+    def replace_vec_stream(match):
+        var = match.group("var")
+        if var not in vec_vars:
+            return match.group(0)
+        indent = match.group("indent")
+        field = match.group("field")
+        inner_indent = indent + "    "
+        return (
+            f"{indent}for file_path in &{var} {{\n"
+            f"{inner_indent}let file = TokioFile::open(file_path).await?;\n"
+            f"{inner_indent}let stream = FramedRead::new(file, BytesCodec::new());\n"
+            f"{inner_indent}let file_name = file_path.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();\n"
+            f"{inner_indent}let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);\n"
+            f"{inner_indent}multipart_form = multipart_form.part(\"{field}\", file_part);\n"
+            f"{indent}}}"
+        )
+
+    option_stream_pattern = re.compile(
+        r'(?m)^(?P<indent>\s*)if let Some\(ref (?P<alias>[A-Za-z0-9_]+)\) = (?P<src>[A-Za-z0-9_]+)\s*\{\n'
+        r'(?P=indent)\s+let file = TokioFile::open\((?P=alias)\)\.await\?;\n'
+        r'(?P=indent)\s+let stream = FramedRead::new\(file, BytesCodec::new\(\)\);\n'
+        r'(?P=indent)\s+let file_name = (?P=alias)\.file_name\(\)\.map\(\|n\| n\.to_string_lossy\(\)\.to_string\(\)\)\.unwrap_or_default\(\);\n'
+        r'(?P=indent)\s+let file_part = reqwest::multipart::Part::stream\(reqwest::Body::wrap_stream\(stream\)\)\.file_name\(file_name\);\n'
+        r'(?P=indent)\s+multipart_form = multipart_form\.part\("(?P<field>[^"]+)", file_part\);\n'
+        r'(?P=indent)\}'
+    )
+    vec_stream_pattern = re.compile(
+        r'(?m)^(?P<indent>\s*)let file = TokioFile::open\(&?(?P<var>[A-Za-z0-9_]+)\)\.await\?;\n'
+        r'(?P=indent)let stream = FramedRead::new\(file, BytesCodec::new\(\)\);\n'
+        r'(?P=indent)let file_name = (?P=var)\.file_name\(\)\.map\(\|n\| n\.to_string_lossy\(\)\.to_string\(\)\)\.unwrap_or_default\(\);\n'
+        r'(?P=indent)let file_part = reqwest::multipart::Part::stream\(reqwest::Body::wrap_stream\(stream\)\)\.file_name\(file_name\);\n'
+        r'(?P=indent)multipart_form = multipart_form\.part\("(?P<field>[^"]+)", file_part\);'
+    )
+    text = option_stream_pattern.sub(replace_option_vec_stream, text)
+    text = vec_stream_pattern.sub(replace_vec_stream, text)
+
     lines = text.splitlines()
     out = []
     option_param_vars = {}
