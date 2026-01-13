@@ -1,4 +1,5 @@
 # Wildberries SDK-клиенты для Python, Node.js, Go, PHP и Rust, постоянно актуальные в соответствии с OpenAPI-спецификациями.
+![using_sdk.gif](.github/images/using_wildberries_sdk_python.gif)
 
 | Язык | Версия | Кол-во скачиваний | README | Репозиторий |
 | --- | --- | --- | --- | --- |
