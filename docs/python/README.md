@@ -6,28 +6,22 @@
 pip install wildberries-sdk
 ```
 
-## Пример (communications)
+## Пример получения 100 неотвеченных отзывов (клиент - communications)
 
 ```python
 import os
-
 from wildberries_sdk import communications
 
 token = os.getenv("WB_API_TOKEN")
 
-config = communications.Configuration(host="https://feedbacks-api.wildberries.ru")
-config.api_key["HeaderApiKey"] = token
-
-client = communications.ApiClient(configuration=config)
-api = communications.DefaultApi(api_client=client)
-
-response = api.api_v1_feedbacks_get(
-    is_answered=True,
-    take=100,
-    skip=0,
+api = communications.DefaultApi(
+    communications.ApiClient(
+        communications.Configuration(api_key={"HeaderApiKey": token})
+    )
 )
+feedbacks = api.api_v1_feedbacks_get(is_answered=False, take=100, skip=0).data.feedbacks
 
-print(response)
+print(feedbacks)
 ```
 
 ## Доступные клиенты
