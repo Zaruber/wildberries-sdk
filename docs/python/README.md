@@ -1,4 +1,5 @@
 # wildberries-sdk (Python)
+![using_wildberries_sdk_python.gif](../../.github/images/using_wildberries_sdk_python.gif)
 
 ## Установка
 
