@@ -15,6 +15,144 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_meta_delete_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersMetaDeletePostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status409(models::ApiError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_meta_gtin_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersMetaGtinPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status409(models::ApiError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_meta_imei_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersMetaImeiPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status409(models::ApiError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_meta_info_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersMetaInfoPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_meta_sgtin_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersMetaSgtinPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status409(models::ApiError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_meta_uin_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersMetaUinPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status409(models::ApiError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_status_cancel_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersStatusCancelPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_status_confirm_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersStatusConfirmPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_status_deliver_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersStatusDeliverPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_status_info_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersStatusInfoPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status404(models::ApiBatchError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_status_receive_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersStatusReceivePostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_dbs_orders_status_reject_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3DbsOrdersStatusRejectPostError {
+    Status400(models::ApiBatchError),
+    Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status403(models::ApiBatchError),
+    Status429(models::ApiV3DbsOrdersNewGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`api_v3_dbs_groups_info_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -221,6 +359,558 @@ pub enum ApiV3DbsOrdersStatusPostError {
     UnknownValue(serde_json::Value),
 }
 
+
+/// Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) для нескольких сборочных заданий. <br><br> В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_meta_delete_post(configuration: &configuration::Configuration, api_orders_meta_delete_request: Option<models::ApiOrdersMetaDeleteRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersMetaDeletePostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_meta_delete_request = api_orders_meta_delete_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/meta/delete", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_meta_delete_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersMetaDeletePostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один GTIN. Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_meta_gtin_post(configuration: &configuration::Configuration, api_orders_gtin_set_request: Option<models::ApiOrdersGtinSetRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersMetaGtinPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_gtin_set_request = api_orders_gtin_set_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/meta/gtin", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_gtin_set_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersMetaGtinPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один IMEI. Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_meta_imei_post(configuration: &configuration::Configuration, api_orders_imei_set_request: Option<models::ApiOrdersImeiSetRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersMetaImeiPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_imei_set_request = api_orders_imei_set_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/meta/imei", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_imei_set_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersMetaImeiPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_meta_info_post(configuration: &configuration::Configuration, api_orders_request_v2: Option<models::ApiOrdersRequestV2>) -> Result<models::ApiOrdersMetaResponse, Error<ApiMarketplaceV3DbsOrdersMetaInfoPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_request_v2 = api_orders_request_v2;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/meta/info", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_request_v2);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiOrdersMetaResponse`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiOrdersMetaResponse`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersMetaInfoPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_meta_sgtin_post(configuration: &configuration::Configuration, api_orders_sgtins_set_request: Option<models::ApiOrdersSgtinsSetRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersMetaSgtinPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_sgtins_set_request = api_orders_sgtins_set_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/meta/sgtin", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_sgtins_set_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersMetaSgtinPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).<br> У одного сборочного задания может быть только один УИН. Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_meta_uin_post(configuration: &configuration::Configuration, api_orders_uin_set_request: Option<models::ApiOrdersUinSetRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersMetaUinPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_uin_set_request = api_orders_uin_set_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/meta/uin", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_uin_set_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersMetaUinPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статусов](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new`, `confirm` и `deliver` в статус `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_status_cancel_post(configuration: &configuration::Configuration, api_orders_request_v2: Option<models::ApiOrdersRequestV2>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersStatusCancelPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_request_v2 = api_orders_request_v2;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/status/cancel", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_request_v2);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersStatusCancelPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new` в статус `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_status_confirm_post(configuration: &configuration::Configuration, api_orders_request_v2: Option<models::ApiOrdersRequestV2>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersStatusConfirmPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_request_v2 = api_orders_request_v2;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/status/confirm", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_request_v2);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersStatusConfirmPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` в статус `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_status_deliver_post(configuration: &configuration::Configuration, api_orders_request_v2: Option<models::ApiOrdersRequestV2>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersStatusDeliverPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_request_v2 = api_orders_request_v2;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/status/deliver", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_request_v2);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersStatusDeliverPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод возвращает статусы [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1confirm/post) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1deliver/post) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1receive/post) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1reject/post) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1cancel/post) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+pub async fn api_marketplace_v3_dbs_orders_status_info_post(configuration: &configuration::Configuration, api_orders_request_v2: Option<models::ApiOrdersRequestV2>) -> Result<models::ApiOrderStatusesV2, Error<ApiMarketplaceV3DbsOrdersStatusInfoPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_request_v2 = api_orders_request_v2;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/status/info", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_request_v2);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiOrderStatusesV2`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiOrderStatusesV2`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersStatusInfoPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_status_receive_post(configuration: &configuration::Configuration, api_orders_code_request: Option<models::ApiOrdersCodeRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersStatusReceivePostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_code_request = api_orders_code_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/status/receive", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_code_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersStatusReceivePostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `reject` — отказ покупателя при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_dbs_orders_status_reject_post(configuration: &configuration::Configuration, api_orders_code_request: Option<models::ApiOrdersCodeRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersStatusRejectPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_api_orders_code_request = api_orders_code_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/dbs/orders/status/reject", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_orders_code_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3DbsOrdersStatusRejectPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
 
 /// Метод возвращает информацию о платной доставке сборочных заданий, которые поступили на один склад (`warehouseId`) в рамках одной транзакции покупателя (`orderUid`).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 pub async fn api_v3_dbs_groups_info_post(configuration: &configuration::Configuration, api_order_groups_request: models::ApiOrderGroupsRequest) -> Result<Vec<models::ApiOrderGroupInner>, Error<ApiV3DbsGroupsInfoPostError>> {
@@ -455,7 +1145,8 @@ pub async fn api_v3_dbs_orders_new_get(configuration: &configuration::Configurat
     }
 }
 
-/// Метод отменяет [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и переводит в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_cancel_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbsOrdersOrderIdCancelPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -489,7 +1180,8 @@ pub async fn api_v3_dbs_orders_order_id_cancel_patch(configuration: &configurati
     }
 }
 
-/// Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_confirm_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbsOrdersOrderIdConfirmPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -523,7 +1215,8 @@ pub async fn api_v3_dbs_orders_order_id_confirm_patch(configuration: &configurat
     }
 }
 
-/// Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_deliver_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbsOrdersOrderIdDeliverPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -557,7 +1250,8 @@ pub async fn api_v3_dbs_orders_order_id_deliver_patch(configuration: &configurat
     }
 }
 
-/// Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_delete(configuration: &configuration::Configuration, order_id: i64, key: Option<&str>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaDeleteError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -595,7 +1289,8 @@ pub async fn api_v3_dbs_orders_order_id_meta_delete(configuration: &configuratio
     }
 }
 
-/// Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_get(configuration: &configuration::Configuration, order_id: i64) -> Result<models::ApiV3DbsOrdersOrderIdMetaGet200Response, Error<ApiV3DbsOrdersOrderIdMetaGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -640,7 +1335,8 @@ pub async fn api_v3_dbs_orders_order_id_meta_get(configuration: &configuration::
     }
 }
 
-/// Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси. <br><br> У одного сборочного задания может быть только один GTIN.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_gtin_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_gtin_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaGtinPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaGtinPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -676,7 +1372,8 @@ pub async fn api_v3_dbs_orders_order_id_meta_gtin_put(configuration: &configurat
     }
 }
 
-/// Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get). <br><br> У одного сборочного задания может быть только один IMEI.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_imei_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_imei_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaImeiPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaImeiPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -712,7 +1409,8 @@ pub async fn api_v3_dbs_orders_order_id_meta_imei_put(configuration: &configurat
     }
 }
 
-/// Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_sgtin_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_sgtin_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaSgtinPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaSgtinPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -748,7 +1446,8 @@ pub async fn api_v3_dbs_orders_order_id_meta_sgtin_put(configuration: &configura
     }
 }
 
-/// Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер. <br><br> У одного сборочного задания может быть только один УИН.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_uin_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_uin_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaUinPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaUinPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -784,7 +1483,8 @@ pub async fn api_v3_dbs_orders_order_id_meta_uin_put(configuration: &configurati
     }
 }
 
-/// Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_receive_patch(configuration: &configuration::Configuration, order_id: i64, code: models::Code) -> Result<(), Error<ApiV3DbsOrdersOrderIdReceivePatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -820,7 +1520,8 @@ pub async fn api_v3_dbs_orders_order_id_receive_patch(configuration: &configurat
     }
 }
 
-/// Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `reject` — отказ при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_order_id_reject_patch(configuration: &configuration::Configuration, order_id: i64, code: models::Code) -> Result<(), Error<ApiV3DbsOrdersOrderIdRejectPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;
@@ -856,7 +1557,8 @@ pub async fn api_v3_dbs_orders_order_id_reject_patch(configuration: &configurati
     }
 }
 
-/// Метод возвращает статусы сборочных заданий по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1confirm/patch) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1deliver/patch) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1receive/patch) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1reject/patch) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1cancel/patch) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+#[deprecated]
 pub async fn api_v3_dbs_orders_status_post(configuration: &configuration::Configuration, api_v3_dbs_orders_status_post_request: Option<models::ApiV3DbsOrdersStatusPostRequest>) -> Result<models::ApiV3DbsOrdersStatusPost200Response, Error<ApiV3DbsOrdersStatusPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v3_dbs_orders_status_post_request = api_v3_dbs_orders_status_post_request;

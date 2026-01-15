@@ -15,8 +15,20 @@
 
 import * as runtime from '../runtime';
 import type {
+  ApiBatchError,
+  ApiError,
   ApiOrderGroupInner,
   ApiOrderGroupsRequest,
+  ApiOrderStatusesV2,
+  ApiOrdersCodeRequest,
+  ApiOrdersGTINSetRequest,
+  ApiOrdersIMEISetRequest,
+  ApiOrdersMetaDeleteRequest,
+  ApiOrdersMetaResponse,
+  ApiOrdersRequestV2,
+  ApiOrdersSGTINsSetRequest,
+  ApiOrdersUINSetRequest,
+  ApiStatusSetResponses,
   ApiV3DbsOrdersGet200Response,
   ApiV3DbsOrdersNewGet200Response,
   ApiV3DbsOrdersNewGet401Response,
@@ -34,10 +46,34 @@ import type {
   OrdersRequestAPI,
 } from '../models/index';
 import {
+    ApiBatchErrorFromJSON,
+    ApiBatchErrorToJSON,
+    ApiErrorFromJSON,
+    ApiErrorToJSON,
     ApiOrderGroupInnerFromJSON,
     ApiOrderGroupInnerToJSON,
     ApiOrderGroupsRequestFromJSON,
     ApiOrderGroupsRequestToJSON,
+    ApiOrderStatusesV2FromJSON,
+    ApiOrderStatusesV2ToJSON,
+    ApiOrdersCodeRequestFromJSON,
+    ApiOrdersCodeRequestToJSON,
+    ApiOrdersGTINSetRequestFromJSON,
+    ApiOrdersGTINSetRequestToJSON,
+    ApiOrdersIMEISetRequestFromJSON,
+    ApiOrdersIMEISetRequestToJSON,
+    ApiOrdersMetaDeleteRequestFromJSON,
+    ApiOrdersMetaDeleteRequestToJSON,
+    ApiOrdersMetaResponseFromJSON,
+    ApiOrdersMetaResponseToJSON,
+    ApiOrdersRequestV2FromJSON,
+    ApiOrdersRequestV2ToJSON,
+    ApiOrdersSGTINsSetRequestFromJSON,
+    ApiOrdersSGTINsSetRequestToJSON,
+    ApiOrdersUINSetRequestFromJSON,
+    ApiOrdersUINSetRequestToJSON,
+    ApiStatusSetResponsesFromJSON,
+    ApiStatusSetResponsesToJSON,
     ApiV3DbsOrdersGet200ResponseFromJSON,
     ApiV3DbsOrdersGet200ResponseToJSON,
     ApiV3DbsOrdersNewGet200ResponseFromJSON,
@@ -69,6 +105,54 @@ import {
     OrdersRequestAPIFromJSON,
     OrdersRequestAPIToJSON,
 } from '../models/index';
+
+export interface ApiMarketplaceV3DbsOrdersMetaDeletePostRequest {
+    apiOrdersMetaDeleteRequest?: ApiOrdersMetaDeleteRequest;
+}
+
+export interface ApiMarketplaceV3DbsOrdersMetaGtinPostRequest {
+    apiOrdersGTINSetRequest?: ApiOrdersGTINSetRequest;
+}
+
+export interface ApiMarketplaceV3DbsOrdersMetaImeiPostRequest {
+    apiOrdersIMEISetRequest?: ApiOrdersIMEISetRequest;
+}
+
+export interface ApiMarketplaceV3DbsOrdersMetaInfoPostRequest {
+    apiOrdersRequestV2?: ApiOrdersRequestV2;
+}
+
+export interface ApiMarketplaceV3DbsOrdersMetaSgtinPostRequest {
+    apiOrdersSGTINsSetRequest?: ApiOrdersSGTINsSetRequest;
+}
+
+export interface ApiMarketplaceV3DbsOrdersMetaUinPostRequest {
+    apiOrdersUINSetRequest?: ApiOrdersUINSetRequest;
+}
+
+export interface ApiMarketplaceV3DbsOrdersStatusCancelPostRequest {
+    apiOrdersRequestV2?: ApiOrdersRequestV2;
+}
+
+export interface ApiMarketplaceV3DbsOrdersStatusConfirmPostRequest {
+    apiOrdersRequestV2?: ApiOrdersRequestV2;
+}
+
+export interface ApiMarketplaceV3DbsOrdersStatusDeliverPostRequest {
+    apiOrdersRequestV2?: ApiOrdersRequestV2;
+}
+
+export interface ApiMarketplaceV3DbsOrdersStatusInfoPostRequest {
+    apiOrdersRequestV2?: ApiOrdersRequestV2;
+}
+
+export interface ApiMarketplaceV3DbsOrdersStatusReceivePostRequest {
+    apiOrdersCodeRequest?: ApiOrdersCodeRequest;
+}
+
+export interface ApiMarketplaceV3DbsOrdersStatusRejectPostRequest {
+    apiOrdersCodeRequest?: ApiOrdersCodeRequest;
+}
 
 export interface ApiV3DbsGroupsInfoPostRequest {
     apiOrderGroupsRequest: ApiOrderGroupsRequest;
@@ -148,6 +232,462 @@ export interface ApiV3DbsOrdersStatusPostOperationRequest {
  * 
  */
 export class DBSApi extends runtime.BaseAPI {
+
+    /**
+     * Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) для нескольких сборочных заданий. <br><br> В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Удалить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersMetaDeletePostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaDeletePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/meta/delete`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersMetaDeleteRequestToJSON(requestParameters['apiOrdersMetaDeleteRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) для нескольких сборочных заданий. <br><br> В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Удалить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersMetaDeletePost(requestParameters: ApiMarketplaceV3DbsOrdersMetaDeletePostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersMetaDeletePostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один GTIN. Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить GTIN за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaGtinPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaGtinPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/meta/gtin`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersGTINSetRequestToJSON(requestParameters['apiOrdersGTINSetRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один GTIN. Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить GTIN за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaGtinPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaGtinPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersMetaGtinPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один IMEI. Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить IMEI за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaImeiPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaImeiPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/meta/imei`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersIMEISetRequestToJSON(requestParameters['apiOrdersIMEISetRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один IMEI. Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить IMEI за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaImeiPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaImeiPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersMetaImeiPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Получить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersMetaInfoPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaInfoPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiOrdersMetaResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/meta/info`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiOrdersMetaResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Получить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersMetaInfoPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaInfoPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiOrdersMetaResponse> {
+        const response = await this.apiMarketplaceV3DbsOrdersMetaInfoPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить коды маркировки за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaSgtinPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaSgtinPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/meta/sgtin`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersSGTINsSetRequestToJSON(requestParameters['apiOrdersSGTINsSetRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить коды маркировки за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaSgtinPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaSgtinPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersMetaSgtinPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).<br> У одного сборочного задания может быть только один УИН. Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить УИН за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaUinPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaUinPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/meta/uin`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersUINSetRequestToJSON(requestParameters['apiOrdersUINSetRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).<br> У одного сборочного задания может быть только один УИН. Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Закрепить УИН за сборочными заданиями
+     */
+    async apiMarketplaceV3DbsOrdersMetaUinPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaUinPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersMetaUinPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статусов](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new`, `confirm` и `deliver` в статус `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Отменить сборочные задания
+     */
+    async apiMarketplaceV3DbsOrdersStatusCancelPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusCancelPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/status/cancel`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статусов](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new`, `confirm` и `deliver` в статус `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Отменить сборочные задания
+     */
+    async apiMarketplaceV3DbsOrdersStatusCancelPost(requestParameters: ApiMarketplaceV3DbsOrdersStatusCancelPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersStatusCancelPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new` в статус `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Перевести сборочные задания на сборку
+     */
+    async apiMarketplaceV3DbsOrdersStatusConfirmPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusConfirmPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/status/confirm`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new` в статус `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Перевести сборочные задания на сборку
+     */
+    async apiMarketplaceV3DbsOrdersStatusConfirmPost(requestParameters: ApiMarketplaceV3DbsOrdersStatusConfirmPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersStatusConfirmPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` в статус `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Перевести сборочные задания в доставку
+     */
+    async apiMarketplaceV3DbsOrdersStatusDeliverPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusDeliverPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/status/deliver`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` в статус `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Перевести сборочные задания в доставку
+     */
+    async apiMarketplaceV3DbsOrdersStatusDeliverPost(requestParameters: ApiMarketplaceV3DbsOrdersStatusDeliverPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersStatusDeliverPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод возвращает статусы [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1confirm/post) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1deliver/post) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1receive/post) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1reject/post) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1cancel/post) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Получить статусы сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersStatusInfoPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusInfoPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiOrderStatusesV2>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/status/info`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiOrderStatusesV2FromJSON(jsonValue));
+    }
+
+    /**
+     * Метод возвращает статусы [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1confirm/post) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1deliver/post) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1receive/post) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1reject/post) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1cancel/post) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Получить статусы сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersStatusInfoPost(requestParameters: ApiMarketplaceV3DbsOrdersStatusInfoPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiOrderStatusesV2> {
+        const response = await this.apiMarketplaceV3DbsOrdersStatusInfoPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Сообщить о получении заказов
+     */
+    async apiMarketplaceV3DbsOrdersStatusReceivePostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusReceivePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/status/receive`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersCodeRequestToJSON(requestParameters['apiOrdersCodeRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Сообщить о получении заказов
+     */
+    async apiMarketplaceV3DbsOrdersStatusReceivePost(requestParameters: ApiMarketplaceV3DbsOrdersStatusReceivePostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersStatusReceivePostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `reject` — отказ покупателя при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Сообщить об отказе от заказов
+     */
+    async apiMarketplaceV3DbsOrdersStatusRejectPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusRejectPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/status/reject`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersCodeRequestToJSON(requestParameters['apiOrdersCodeRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `reject` — отказ покупателя при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Сообщить об отказе от заказов
+     */
+    async apiMarketplaceV3DbsOrdersStatusRejectPost(requestParameters: ApiMarketplaceV3DbsOrdersStatusRejectPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersStatusRejectPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
 
     /**
      * Метод возвращает информацию о платной доставке сборочных заданий, которые поступили на один склад (`warehouseId`) в рамках одной транзакции покупателя (`orderUid`).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
@@ -399,8 +939,9 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отменяет [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и переводит в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Отменить сборочное задание
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdCancelPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdCancelPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -433,16 +974,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отменяет [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и переводит в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Отменить сборочное задание
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdCancelPatch(requestParameters: ApiV3DbsOrdersOrderIdCancelPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdCancelPatchRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Перевести на сборку
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdConfirmPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdConfirmPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -475,16 +1018,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Перевести на сборку
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdConfirmPatch(requestParameters: ApiV3DbsOrdersOrderIdConfirmPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdConfirmPatchRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Перевести в доставку
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdDeliverPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdDeliverPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -517,16 +1062,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Перевести в доставку
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdDeliverPatch(requestParameters: ApiV3DbsOrdersOrderIdDeliverPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdDeliverPatchRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Удалить метаданные сборочного задания
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaDeleteRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -563,16 +1110,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Удалить метаданные сборочного задания
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaDelete(requestParameters: ApiV3DbsOrdersOrderIdMetaDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdMetaDeleteRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Получить метаданные сборочного задания
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaGetRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3DbsOrdersOrderIdMetaGet200Response>> {
         if (requestParameters['orderId'] == null) {
@@ -605,8 +1154,9 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Получить метаданные сборочного задания
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaGet(requestParameters: ApiV3DbsOrdersOrderIdMetaGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3DbsOrdersOrderIdMetaGet200Response> {
         const response = await this.apiV3DbsOrdersOrderIdMetaGetRaw(requestParameters, initOverrides);
@@ -614,8 +1164,9 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси. <br><br> У одного сборочного задания может быть только один GTIN.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием GTIN
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaGtinPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaGtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -651,16 +1202,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси. <br><br> У одного сборочного задания может быть только один GTIN.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием GTIN
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaGtinPut(requestParameters: ApiV3DbsOrdersOrderIdMetaGtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdMetaGtinPutRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get). <br><br> У одного сборочного задания может быть только один IMEI.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием IMEI
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaImeiPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaImeiPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -696,16 +1249,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get). <br><br> У одного сборочного задания может быть только один IMEI.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием IMEI
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaImeiPut(requestParameters: ApiV3DbsOrdersOrderIdMetaImeiPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdMetaImeiPutRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием код маркировки товара
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaSgtinPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaSgtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -741,16 +1296,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием код маркировки товара
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaSgtinPut(requestParameters: ApiV3DbsOrdersOrderIdMetaSgtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdMetaSgtinPutRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер. <br><br> У одного сборочного задания может быть только один УИН.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaUinPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaUinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -786,16 +1343,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер. <br><br> У одного сборочного задания может быть только один УИН.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdMetaUinPut(requestParameters: ApiV3DbsOrdersOrderIdMetaUinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdMetaUinPutRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Сообщить, что заказ принят покупателем
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdReceivePatchRaw(requestParameters: ApiV3DbsOrdersOrderIdReceivePatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -838,16 +1397,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Сообщить, что заказ принят покупателем
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdReceivePatch(requestParameters: ApiV3DbsOrdersOrderIdReceivePatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdReceivePatchRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `reject` — отказ при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Сообщить, что покупатель отказался от заказа
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdRejectPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdRejectPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['orderId'] == null) {
@@ -890,16 +1451,18 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `reject` — отказ при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Сообщить, что покупатель отказался от заказа
+     * @deprecated
      */
     async apiV3DbsOrdersOrderIdRejectPatch(requestParameters: ApiV3DbsOrdersOrderIdRejectPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbsOrdersOrderIdRejectPatchRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Метод возвращает статусы сборочных заданий по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1confirm/patch) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1deliver/patch) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1receive/patch) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1reject/patch) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1cancel/patch) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Получить статусы сборочных заданий
+     * @deprecated
      */
     async apiV3DbsOrdersStatusPostRaw(requestParameters: ApiV3DbsOrdersStatusPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3DbsOrdersStatusPost200Response>> {
         const queryParameters: any = {};
@@ -927,8 +1490,9 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает статусы сборочных заданий по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1confirm/patch) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1deliver/patch) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1receive/patch) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1reject/patch) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1cancel/patch) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
      * Получить статусы сборочных заданий
+     * @deprecated
      */
     async apiV3DbsOrdersStatusPost(requestParameters: ApiV3DbsOrdersStatusPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3DbsOrdersStatusPost200Response> {
         const response = await this.apiV3DbsOrdersStatusPostRaw(requestParameters, initOverrides);

@@ -28,7 +28,7 @@ class Error(BaseModel):
     """ # noqa: E501
     code: Optional[StrictStr] = Field(default=None, description="Код ошибки")
     message: Optional[StrictStr] = Field(default=None, description="Описание ошибки")
-    data: Optional[Dict[str, Any]] = Field(default=None, description="Дополнительные данные, обогащающие ошибку")
+    data: Optional[Dict[str, Any]] = Field(default=None, description="Дополнительные данные ошибки")
     __properties: ClassVar[List[str]] = ["code", "message", "data"]
 
     model_config = ConfigDict(

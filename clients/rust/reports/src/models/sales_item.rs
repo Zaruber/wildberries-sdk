@@ -76,13 +76,13 @@ pub struct SalesItem {
     /// Скидка за оплату WB Кошельком, ₽
     #[serde(rename = "paymentSaleAmount", skip_serializing_if = "Option::is_none")]
     pub payment_sale_amount: Option<i32>,
-    /// К перечислению продавцу
+    /// К перечислению продавцу.<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`
     #[serde(rename = "forPay", skip_serializing_if = "Option::is_none")]
     pub for_pay: Option<f64>,
-    /// Фактическая цена с учетом всех скидок (к взиманию с покупателя)
+    /// Фактическая цена с учётом всех скидок (к взиманию с покупателя).<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`
     #[serde(rename = "finishedPrice", skip_serializing_if = "Option::is_none")]
     pub finished_price: Option<f64>,
-    /// Цена со скидкой продавца, от которой считается сумма к перечислению продавцу `forPay` (= `totalPrice` * (1 - `discountPercent`/100))
+    /// Цена со скидкой продавца, в том числе со скидкой WB Клуба, от которой рассчитывается сумма к перечислению продавцу `forPay`.<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`
     #[serde(rename = "priceWithDisc", skip_serializing_if = "Option::is_none")]
     pub price_with_disc: Option<f64>,
     /// Уникальный ID продажи/возврата - `S**********` — продажа - `R**********` — возврат (на склад WB) 

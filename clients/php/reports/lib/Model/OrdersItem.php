@@ -1169,7 +1169,7 @@ class OrdersItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_with_disc
      *
-     * @param float|null $price_with_disc Цена со скидкой продавца (= `totalPrice` * (1 - `discountPercent`/100))
+     * @param float|null $price_with_disc Цена со скидкой продавца, в том числе со скидкой WB Клуба
      *
      * @return self
      */

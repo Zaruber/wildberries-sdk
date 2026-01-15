@@ -163,6 +163,18 @@ var_dump($response);
 - `orders_dbw.DBWApi.apiV3DbwOrdersStickersPost` — `POST /api/v3/dbw/orders/stickers` — Получить стикеры сборочных заданий
 
 ### orders_dbs (`orders_dbs`)
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaGtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaImeiPost` — `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaInfoPost` — `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки за сборочными заданиями
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaUinPost` — `POST /api/marketplace/v3/dbs/orders/meta/uin` — Закрепить УИН за сборочными заданиями
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusCancelPost` — `POST /api/marketplace/v3/dbs/orders/status/cancel` — Отменить сборочные задания
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusConfirmPost` — `POST /api/marketplace/v3/dbs/orders/status/confirm` — Перевести сборочные задания на сборку
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusDeliverPost` — `POST /api/marketplace/v3/dbs/orders/status/deliver` — Перевести сборочные задания в доставку
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusInfoPost` — `POST /api/marketplace/v3/dbs/orders/status/info` — Получить статусы сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusReceivePost` — `POST /api/marketplace/v3/dbs/orders/status/receive` — Сообщить о получении заказов
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusRejectPost` — `POST /api/marketplace/v3/dbs/orders/status/reject` — Сообщить об отказе от заказов
 - `orders_dbs.DBSApi.apiV3DbsGroupsInfoPost` — `POST /api/v3/dbs/groups/info` — Получить информацию о платной доставке
 - `orders_dbs.DBSApi.apiV3DbsOrdersClientPost` — `POST /api/v3/dbs/orders/client` — Информация о покупателе
 - `orders_dbs.DBSApi.apiV3DbsOrdersDeliveryDatePost` — `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки

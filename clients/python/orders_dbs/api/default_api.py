@@ -21,6 +21,16 @@ from typing import List, Optional
 from typing_extensions import Annotated
 from wildberries_sdk.orders_dbs.models.api_order_group_inner import ApiOrderGroupInner
 from wildberries_sdk.orders_dbs.models.api_order_groups_request import ApiOrderGroupsRequest
+from wildberries_sdk.orders_dbs.models.api_order_statuses_v2 import ApiOrderStatusesV2
+from wildberries_sdk.orders_dbs.models.api_orders_code_request import ApiOrdersCodeRequest
+from wildberries_sdk.orders_dbs.models.api_orders_gtin_set_request import ApiOrdersGTINSetRequest
+from wildberries_sdk.orders_dbs.models.api_orders_imei_set_request import ApiOrdersIMEISetRequest
+from wildberries_sdk.orders_dbs.models.api_orders_meta_delete_request import ApiOrdersMetaDeleteRequest
+from wildberries_sdk.orders_dbs.models.api_orders_meta_response import ApiOrdersMetaResponse
+from wildberries_sdk.orders_dbs.models.api_orders_request_v2 import ApiOrdersRequestV2
+from wildberries_sdk.orders_dbs.models.api_orders_sgtins_set_request import ApiOrdersSGTINsSetRequest
+from wildberries_sdk.orders_dbs.models.api_orders_uin_set_request import ApiOrdersUINSetRequest
+from wildberries_sdk.orders_dbs.models.api_status_set_responses import ApiStatusSetResponses
 from wildberries_sdk.orders_dbs.models.api_v3_dbs_orders_get200_response import ApiV3DbsOrdersGet200Response
 from wildberries_sdk.orders_dbs.models.api_v3_dbs_orders_new_get200_response import ApiV3DbsOrdersNewGet200Response
 from wildberries_sdk.orders_dbs.models.api_v3_dbs_orders_order_id_meta_get200_response import ApiV3DbsOrdersOrderIdMetaGet200Response
@@ -52,6 +62,3492 @@ class DefaultApi:
         if api_client is None:
             api_client = ApiClient.get_default()
         self.api_client = api_client
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_delete_post(
+        self,
+        api_orders_meta_delete_request: Optional[ApiOrdersMetaDeleteRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Удалить метаданные сборочных заданий
+
+        Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) для нескольких сборочных заданий. <br><br> В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_meta_delete_request:
+        :type api_orders_meta_delete_request: ApiOrdersMetaDeleteRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_delete_post_serialize(
+            api_orders_meta_delete_request=api_orders_meta_delete_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_delete_post_with_http_info(
+        self,
+        api_orders_meta_delete_request: Optional[ApiOrdersMetaDeleteRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Удалить метаданные сборочных заданий
+
+        Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) для нескольких сборочных заданий. <br><br> В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_meta_delete_request:
+        :type api_orders_meta_delete_request: ApiOrdersMetaDeleteRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_delete_post_serialize(
+            api_orders_meta_delete_request=api_orders_meta_delete_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_delete_post_without_preload_content(
+        self,
+        api_orders_meta_delete_request: Optional[ApiOrdersMetaDeleteRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Удалить метаданные сборочных заданий
+
+        Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) для нескольких сборочных заданий. <br><br> В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_meta_delete_request:
+        :type api_orders_meta_delete_request: ApiOrdersMetaDeleteRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_delete_post_serialize(
+            api_orders_meta_delete_request=api_orders_meta_delete_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_meta_delete_post_serialize(
+        self,
+        api_orders_meta_delete_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_meta_delete_request is not None:
+            _body_params = api_orders_meta_delete_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/meta/delete',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_gtin_post(
+        self,
+        api_orders_gtin_set_request: Optional[ApiOrdersGTINSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Закрепить GTIN за сборочными заданиями
+
+        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один GTIN. Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_gtin_set_request:
+        :type api_orders_gtin_set_request: ApiOrdersGTINSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_gtin_post_serialize(
+            api_orders_gtin_set_request=api_orders_gtin_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_gtin_post_with_http_info(
+        self,
+        api_orders_gtin_set_request: Optional[ApiOrdersGTINSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Закрепить GTIN за сборочными заданиями
+
+        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один GTIN. Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_gtin_set_request:
+        :type api_orders_gtin_set_request: ApiOrdersGTINSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_gtin_post_serialize(
+            api_orders_gtin_set_request=api_orders_gtin_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_gtin_post_without_preload_content(
+        self,
+        api_orders_gtin_set_request: Optional[ApiOrdersGTINSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Закрепить GTIN за сборочными заданиями
+
+        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один GTIN. Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_gtin_set_request:
+        :type api_orders_gtin_set_request: ApiOrdersGTINSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_gtin_post_serialize(
+            api_orders_gtin_set_request=api_orders_gtin_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_meta_gtin_post_serialize(
+        self,
+        api_orders_gtin_set_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_gtin_set_request is not None:
+            _body_params = api_orders_gtin_set_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/meta/gtin',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_imei_post(
+        self,
+        api_orders_imei_set_request: Optional[ApiOrdersIMEISetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Закрепить IMEI за сборочными заданиями
+
+        Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один IMEI. Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_imei_set_request:
+        :type api_orders_imei_set_request: ApiOrdersIMEISetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_imei_post_serialize(
+            api_orders_imei_set_request=api_orders_imei_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_imei_post_with_http_info(
+        self,
+        api_orders_imei_set_request: Optional[ApiOrdersIMEISetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Закрепить IMEI за сборочными заданиями
+
+        Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один IMEI. Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_imei_set_request:
+        :type api_orders_imei_set_request: ApiOrdersIMEISetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_imei_post_serialize(
+            api_orders_imei_set_request=api_orders_imei_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_imei_post_without_preload_content(
+        self,
+        api_orders_imei_set_request: Optional[ApiOrdersIMEISetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Закрепить IMEI за сборочными заданиями
+
+        Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> У одного сборочного задания может быть только один IMEI. Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_imei_set_request:
+        :type api_orders_imei_set_request: ApiOrdersIMEISetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_imei_post_serialize(
+            api_orders_imei_set_request=api_orders_imei_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_meta_imei_post_serialize(
+        self,
+        api_orders_imei_set_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_imei_set_request is not None:
+            _body_params = api_orders_imei_set_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/meta/imei',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_info_post(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiOrdersMetaResponse:
+        """Получить метаданные сборочных заданий
+
+        Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_info_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiOrdersMetaResponse",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_info_post_with_http_info(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiOrdersMetaResponse]:
+        """Получить метаданные сборочных заданий
+
+        Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_info_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiOrdersMetaResponse",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_info_post_without_preload_content(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Получить метаданные сборочных заданий
+
+        Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_info_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiOrdersMetaResponse",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_meta_info_post_serialize(
+        self,
+        api_orders_request_v2,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_request_v2 is not None:
+            _body_params = api_orders_request_v2
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/meta/info',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_sgtin_post(
+        self,
+        api_orders_sgtins_set_request: Optional[ApiOrdersSGTINsSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Закрепить коды маркировки за сборочными заданиями
+
+        Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_sgtins_set_request:
+        :type api_orders_sgtins_set_request: ApiOrdersSGTINsSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_sgtin_post_serialize(
+            api_orders_sgtins_set_request=api_orders_sgtins_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_sgtin_post_with_http_info(
+        self,
+        api_orders_sgtins_set_request: Optional[ApiOrdersSGTINsSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Закрепить коды маркировки за сборочными заданиями
+
+        Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_sgtins_set_request:
+        :type api_orders_sgtins_set_request: ApiOrdersSGTINsSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_sgtin_post_serialize(
+            api_orders_sgtins_set_request=api_orders_sgtins_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_sgtin_post_without_preload_content(
+        self,
+        api_orders_sgtins_set_request: Optional[ApiOrdersSGTINsSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Закрепить коды маркировки за сборочными заданиями
+
+        Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_sgtins_set_request:
+        :type api_orders_sgtins_set_request: ApiOrdersSGTINsSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_sgtin_post_serialize(
+            api_orders_sgtins_set_request=api_orders_sgtins_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_meta_sgtin_post_serialize(
+        self,
+        api_orders_sgtins_set_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_sgtins_set_request is not None:
+            _body_params = api_orders_sgtins_set_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/meta/sgtin',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_uin_post(
+        self,
+        api_orders_uin_set_request: Optional[ApiOrdersUINSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Закрепить УИН за сборочными заданиями
+
+        Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).<br> У одного сборочного задания может быть только один УИН. Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_uin_set_request:
+        :type api_orders_uin_set_request: ApiOrdersUINSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_uin_post_serialize(
+            api_orders_uin_set_request=api_orders_uin_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_uin_post_with_http_info(
+        self,
+        api_orders_uin_set_request: Optional[ApiOrdersUINSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Закрепить УИН за сборочными заданиями
+
+        Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).<br> У одного сборочного задания может быть только один УИН. Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_uin_set_request:
+        :type api_orders_uin_set_request: ApiOrdersUINSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_uin_post_serialize(
+            api_orders_uin_set_request=api_orders_uin_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_meta_uin_post_without_preload_content(
+        self,
+        api_orders_uin_set_request: Optional[ApiOrdersUINSetRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Закрепить УИН за сборочными заданиями
+
+        Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).<br> У одного сборочного задания может быть только один УИН. Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_uin_set_request:
+        :type api_orders_uin_set_request: ApiOrdersUINSetRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_meta_uin_post_serialize(
+            api_orders_uin_set_request=api_orders_uin_set_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '409': "ApiError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_meta_uin_post_serialize(
+        self,
+        api_orders_uin_set_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_uin_set_request is not None:
+            _body_params = api_orders_uin_set_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/meta/uin',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_cancel_post(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Отменить сборочные задания
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статусов](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new`, `confirm` и `deliver` в статус `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_cancel_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_cancel_post_with_http_info(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Отменить сборочные задания
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статусов](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new`, `confirm` и `deliver` в статус `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_cancel_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_cancel_post_without_preload_content(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Отменить сборочные задания
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статусов](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new`, `confirm` и `deliver` в статус `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_cancel_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_status_cancel_post_serialize(
+        self,
+        api_orders_request_v2,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_request_v2 is not None:
+            _body_params = api_orders_request_v2
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/status/cancel',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_confirm_post(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Перевести сборочные задания на сборку
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new` в статус `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_confirm_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_confirm_post_with_http_info(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Перевести сборочные задания на сборку
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new` в статус `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_confirm_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_confirm_post_without_preload_content(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Перевести сборочные задания на сборку
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new` в статус `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_confirm_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_status_confirm_post_serialize(
+        self,
+        api_orders_request_v2,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_request_v2 is not None:
+            _body_params = api_orders_request_v2
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/status/confirm',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_deliver_post(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Перевести сборочные задания в доставку
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` в статус `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_deliver_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_deliver_post_with_http_info(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Перевести сборочные задания в доставку
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` в статус `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_deliver_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_deliver_post_without_preload_content(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Перевести сборочные задания в доставку
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` в статус `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_deliver_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_status_deliver_post_serialize(
+        self,
+        api_orders_request_v2,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_request_v2 is not None:
+            _body_params = api_orders_request_v2
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/status/deliver',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_info_post(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiOrderStatusesV2:
+        """Получить статусы сборочных заданий
+
+        Метод возвращает статусы [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1confirm/post) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1deliver/post) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1receive/post) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1reject/post) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1cancel/post) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_info_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiOrderStatusesV2",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '404': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_info_post_with_http_info(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiOrderStatusesV2]:
+        """Получить статусы сборочных заданий
+
+        Метод возвращает статусы [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1confirm/post) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1deliver/post) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1receive/post) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1reject/post) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1cancel/post) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_info_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiOrderStatusesV2",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '404': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_info_post_without_preload_content(
+        self,
+        api_orders_request_v2: Optional[ApiOrdersRequestV2] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Получить статусы сборочных заданий
+
+        Метод возвращает статусы [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1confirm/post) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1deliver/post) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1receive/post) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1reject/post) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1cancel/post) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+
+        :param api_orders_request_v2:
+        :type api_orders_request_v2: ApiOrdersRequestV2
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_info_post_serialize(
+            api_orders_request_v2=api_orders_request_v2,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiOrderStatusesV2",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '404': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_status_info_post_serialize(
+        self,
+        api_orders_request_v2,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_request_v2 is not None:
+            _body_params = api_orders_request_v2
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/status/info',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_receive_post(
+        self,
+        api_orders_code_request: Optional[ApiOrdersCodeRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Сообщить о получении заказов
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_code_request:
+        :type api_orders_code_request: ApiOrdersCodeRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_receive_post_serialize(
+            api_orders_code_request=api_orders_code_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_receive_post_with_http_info(
+        self,
+        api_orders_code_request: Optional[ApiOrdersCodeRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Сообщить о получении заказов
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_code_request:
+        :type api_orders_code_request: ApiOrdersCodeRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_receive_post_serialize(
+            api_orders_code_request=api_orders_code_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_receive_post_without_preload_content(
+        self,
+        api_orders_code_request: Optional[ApiOrdersCodeRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Сообщить о получении заказов
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_code_request:
+        :type api_orders_code_request: ApiOrdersCodeRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_receive_post_serialize(
+            api_orders_code_request=api_orders_code_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_status_receive_post_serialize(
+        self,
+        api_orders_code_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_code_request is not None:
+            _body_params = api_orders_code_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/status/receive',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_reject_post(
+        self,
+        api_orders_code_request: Optional[ApiOrdersCodeRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiStatusSetResponses:
+        """Сообщить об отказе от заказов
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `reject` — отказ покупателя при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_code_request:
+        :type api_orders_code_request: ApiOrdersCodeRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_reject_post_serialize(
+            api_orders_code_request=api_orders_code_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_reject_post_with_http_info(
+        self,
+        api_orders_code_request: Optional[ApiOrdersCodeRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[ApiStatusSetResponses]:
+        """Сообщить об отказе от заказов
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `reject` — отказ покупателя при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_code_request:
+        :type api_orders_code_request: ApiOrdersCodeRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_reject_post_serialize(
+            api_orders_code_request=api_orders_code_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_dbs_orders_status_reject_post_without_preload_content(
+        self,
+        api_orders_code_request: Optional[ApiOrdersCodeRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Сообщить об отказе от заказов
+
+        Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `reject` — отказ покупателя при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+
+        :param api_orders_code_request:
+        :type api_orders_code_request: ApiOrdersCodeRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_dbs_orders_status_reject_post_serialize(
+            api_orders_code_request=api_orders_code_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiStatusSetResponses",
+            '400': "ApiBatchError",
+            '401': "ApiV3DbsOrdersNewGet401Response",
+            '403': "ApiBatchError",
+            '429': "ApiV3DbsOrdersNewGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_dbs_orders_status_reject_post_serialize(
+        self,
+        api_orders_code_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if api_orders_code_request is not None:
+            _body_params = api_orders_code_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/marketplace/v3/dbs/orders/status/reject',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
 
 
     @validate_call
@@ -1528,9 +5024,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Отменить сборочное задание
+        """(Deprecated) Отменить сборочное задание
 
-        Метод отменяет [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и переводит в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -1555,6 +5051,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/cancel is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_cancel_patch_serialize(
             order_id=order_id,
@@ -1601,9 +5098,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Отменить сборочное задание
+        """(Deprecated) Отменить сборочное задание
 
-        Метод отменяет [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и переводит в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -1628,6 +5125,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/cancel is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_cancel_patch_serialize(
             order_id=order_id,
@@ -1674,9 +5172,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Отменить сборочное задание
+        """(Deprecated) Отменить сборочное задание
 
-        Метод отменяет [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и переводит в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -1701,6 +5199,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/cancel is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_cancel_patch_serialize(
             order_id=order_id,
@@ -1810,9 +5309,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Перевести на сборку
+        """(Deprecated) Перевести на сборку
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -1837,6 +5336,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/confirm is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_confirm_patch_serialize(
             order_id=order_id,
@@ -1883,9 +5383,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Перевести на сборку
+        """(Deprecated) Перевести на сборку
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -1910,6 +5410,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/confirm is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_confirm_patch_serialize(
             order_id=order_id,
@@ -1956,9 +5457,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Перевести на сборку
+        """(Deprecated) Перевести на сборку
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm` — на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -1983,6 +5484,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/confirm is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_confirm_patch_serialize(
             order_id=order_id,
@@ -2092,9 +5594,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Перевести в доставку
+        """(Deprecated) Перевести в доставку
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2119,6 +5621,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/deliver is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_deliver_patch_serialize(
             order_id=order_id,
@@ -2165,9 +5668,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Перевести в доставку
+        """(Deprecated) Перевести в доставку
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2192,6 +5695,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/deliver is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_deliver_patch_serialize(
             order_id=order_id,
@@ -2238,9 +5742,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Перевести в доставку
+        """(Deprecated) Перевести в доставку
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver` — в доставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2265,6 +5769,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/deliver is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_deliver_patch_serialize(
             order_id=order_id,
@@ -2361,7 +5866,7 @@ class DefaultApi:
     def api_v3_dbs_orders_order_id_meta_delete(
         self,
         order_id: Annotated[StrictInt, Field(description="ID сборочного задания")],
-        key: Annotated[Optional[StrictStr], Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передается только одно значение.")] = None,
+        key: Annotated[Optional[StrictStr], Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2375,13 +5880,13 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Удалить метаданные сборочного задания
+        """(Deprecated) Удалить метаданные сборочного задания
 
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
-        :param key: Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передается только одно значение.
+        :param key: Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение
         :type key: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2404,6 +5909,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("DELETE /api/v3/dbs/orders/{orderId}/meta is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_delete_serialize(
             order_id=order_id,
@@ -2437,7 +5943,7 @@ class DefaultApi:
     def api_v3_dbs_orders_order_id_meta_delete_with_http_info(
         self,
         order_id: Annotated[StrictInt, Field(description="ID сборочного задания")],
-        key: Annotated[Optional[StrictStr], Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передается только одно значение.")] = None,
+        key: Annotated[Optional[StrictStr], Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2451,13 +5957,13 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Удалить метаданные сборочного задания
+        """(Deprecated) Удалить метаданные сборочного задания
 
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
-        :param key: Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передается только одно значение.
+        :param key: Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение
         :type key: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2480,6 +5986,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("DELETE /api/v3/dbs/orders/{orderId}/meta is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_delete_serialize(
             order_id=order_id,
@@ -2513,7 +6020,7 @@ class DefaultApi:
     def api_v3_dbs_orders_order_id_meta_delete_without_preload_content(
         self,
         order_id: Annotated[StrictInt, Field(description="ID сборочного задания")],
-        key: Annotated[Optional[StrictStr], Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передается только одно значение.")] = None,
+        key: Annotated[Optional[StrictStr], Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2527,13 +6034,13 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Удалить метаданные сборочного задания
+        """(Deprecated) Удалить метаданные сборочного задания
 
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
-        :param key: Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передается только одно значение.
+        :param key: Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение
         :type key: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2556,6 +6063,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("DELETE /api/v3/dbs/orders/{orderId}/meta is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_delete_serialize(
             order_id=order_id,
@@ -2670,9 +6178,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiV3DbsOrdersOrderIdMetaGet200Response:
-        """Получить метаданные сборочного задания
+        """(Deprecated) Получить метаданные сборочного задания
 
-        Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2697,6 +6205,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /api/v3/dbs/orders/{orderId}/meta is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_get_serialize(
             order_id=order_id,
@@ -2741,9 +6250,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[ApiV3DbsOrdersOrderIdMetaGet200Response]:
-        """Получить метаданные сборочного задания
+        """(Deprecated) Получить метаданные сборочного задания
 
-        Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2768,6 +6277,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /api/v3/dbs/orders/{orderId}/meta is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_get_serialize(
             order_id=order_id,
@@ -2812,9 +6322,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Получить метаданные сборочного задания
+        """(Deprecated) Получить метаданные сборочного задания
 
-        Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2839,6 +6349,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /api/v3/dbs/orders/{orderId}/meta is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_get_serialize(
             order_id=order_id,
@@ -2947,9 +6458,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Закрепить за сборочным заданием GTIN
+        """(Deprecated) Закрепить за сборочным заданием GTIN
 
-        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси. <br><br> У одного сборочного задания может быть только один GTIN.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2976,6 +6487,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/gtin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_gtin_put_serialize(
             order_id=order_id,
@@ -3024,9 +6536,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Закрепить за сборочным заданием GTIN
+        """(Deprecated) Закрепить за сборочным заданием GTIN
 
-        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси. <br><br> У одного сборочного задания может быть только один GTIN.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3053,6 +6565,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/gtin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_gtin_put_serialize(
             order_id=order_id,
@@ -3101,9 +6614,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Закрепить за сборочным заданием GTIN
+        """(Deprecated) Закрепить за сборочным заданием GTIN
 
-        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси. <br><br> У одного сборочного задания может быть только один GTIN.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3130,6 +6643,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/gtin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_gtin_put_serialize(
             order_id=order_id,
@@ -3257,9 +6771,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Закрепить за сборочным заданием IMEI
+        """(Deprecated) Закрепить за сборочным заданием IMEI
 
-        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get). <br><br> У одного сборочного задания может быть только один IMEI.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3286,6 +6800,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/imei is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_imei_put_serialize(
             order_id=order_id,
@@ -3334,9 +6849,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Закрепить за сборочным заданием IMEI
+        """(Deprecated) Закрепить за сборочным заданием IMEI
 
-        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get). <br><br> У одного сборочного задания может быть только один IMEI.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3363,6 +6878,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/imei is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_imei_put_serialize(
             order_id=order_id,
@@ -3411,9 +6927,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Закрепить за сборочным заданием IMEI
+        """(Deprecated) Закрепить за сборочным заданием IMEI
 
-        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get). <br><br> У одного сборочного задания может быть только один IMEI.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3440,6 +6956,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/imei is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_imei_put_serialize(
             order_id=order_id,
@@ -3567,9 +7084,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Закрепить за сборочным заданием код маркировки товара
+        """(Deprecated) Закрепить за сборочным заданием код маркировки товара
 
-        Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3596,6 +7113,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/sgtin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_sgtin_put_serialize(
             order_id=order_id,
@@ -3644,9 +7162,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Закрепить за сборочным заданием код маркировки товара
+        """(Deprecated) Закрепить за сборочным заданием код маркировки товара
 
-        Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3673,6 +7191,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/sgtin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_sgtin_put_serialize(
             order_id=order_id,
@@ -3721,9 +7240,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Закрепить за сборочным заданием код маркировки товара
+        """(Deprecated) Закрепить за сборочным заданием код маркировки товара
 
-        Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3750,6 +7269,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/sgtin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_sgtin_put_serialize(
             order_id=order_id,
@@ -3877,9 +7397,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
+        """(Deprecated) Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер. <br><br> У одного сборочного задания может быть только один УИН.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3906,6 +7426,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/uin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_uin_put_serialize(
             order_id=order_id,
@@ -3954,9 +7475,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
+        """(Deprecated) Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер. <br><br> У одного сборочного задания может быть только один УИН.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -3983,6 +7504,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/uin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_uin_put_serialize(
             order_id=order_id,
@@ -4031,9 +7553,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
+        """(Deprecated) Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер. <br><br> У одного сборочного задания может быть только один УИН.  Добавлять маркировку можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `confirm`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4060,6 +7582,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PUT /api/v3/dbs/orders/{orderId}/meta/uin is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_meta_uin_put_serialize(
             order_id=order_id,
@@ -4187,9 +7710,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Сообщить, что заказ принят покупателем
+        """(Deprecated) Сообщить, что заказ принят покупателем
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4216,6 +7739,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/receive is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_receive_patch_serialize(
             order_id=order_id,
@@ -4264,9 +7788,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Сообщить, что заказ принят покупателем
+        """(Deprecated) Сообщить, что заказ принят покупателем
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4293,6 +7817,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/receive is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_receive_patch_serialize(
             order_id=order_id,
@@ -4341,9 +7866,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Сообщить, что заказ принят покупателем
+        """(Deprecated) Сообщить, что заказ принят покупателем
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4370,6 +7895,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/receive is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_receive_patch_serialize(
             order_id=order_id,
@@ -4497,9 +8023,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Сообщить, что покупатель отказался от заказа
+        """(Deprecated) Сообщить, что покупатель отказался от заказа
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `reject` — отказ при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4526,6 +8052,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/reject is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_reject_patch_serialize(
             order_id=order_id,
@@ -4574,9 +8101,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Сообщить, что покупатель отказался от заказа
+        """(Deprecated) Сообщить, что покупатель отказался от заказа
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `reject` — отказ при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4603,6 +8130,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/reject is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_reject_patch_serialize(
             order_id=order_id,
@@ -4651,9 +8179,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Сообщить, что покупатель отказался от заказа
+        """(Deprecated) Сообщить, что покупатель отказался от заказа
 
-        Метод переводит [сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) в [статус](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `reject` — отказ при получении.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 33 запроса </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4680,6 +8208,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("PATCH /api/v3/dbs/orders/{orderId}/reject is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_order_id_reject_patch_serialize(
             order_id=order_id,
@@ -4806,9 +8335,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiV3DbsOrdersStatusPost200Response:
-        """Получить статусы сборочных заданий
+        """(Deprecated) Получить статусы сборочных заданий
 
-        Метод возвращает статусы сборочных заданий по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1confirm/patch) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1deliver/patch) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1receive/patch) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1reject/patch) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1cancel/patch) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param api_v3_dbs_orders_status_post_request:
         :type api_v3_dbs_orders_status_post_request: ApiV3DbsOrdersStatusPostRequest
@@ -4833,6 +8362,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /api/v3/dbs/orders/status is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_status_post_serialize(
             api_v3_dbs_orders_status_post_request=api_v3_dbs_orders_status_post_request,
@@ -4877,9 +8407,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[ApiV3DbsOrdersStatusPost200Response]:
-        """Получить статусы сборочных заданий
+        """(Deprecated) Получить статусы сборочных заданий
 
-        Метод возвращает статусы сборочных заданий по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1confirm/patch) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1deliver/patch) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1receive/patch) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1reject/patch) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1cancel/patch) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param api_v3_dbs_orders_status_post_request:
         :type api_v3_dbs_orders_status_post_request: ApiV3DbsOrdersStatusPostRequest
@@ -4904,6 +8434,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /api/v3/dbs/orders/status is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_status_post_serialize(
             api_v3_dbs_orders_status_post_request=api_v3_dbs_orders_status_post_request,
@@ -4948,9 +8479,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Получить статусы сборочных заданий
+        """(Deprecated) Получить статусы сборочных заданий
 
-        Метод возвращает статусы сборочных заданий по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | `new`      | **Новое сборочное задание** | | | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1confirm/patch) | `deliver`  | **В доставке**    | [Перевести сборочное задание в доставку](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1deliver/patch) | `receive`  | **Получено покупателем**       | [Сообщить, что заказ принят покупателем](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1receive/patch) <br> | `reject`   | **Отказ покупателя при получении**           |  [Сообщить, что покупатель отказался от заказа](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1reject/patch) | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1{orderId}~1cancel/patch) | `cancel_missed_call` | **Отмена по причине недозвона** | Статус меняется автоматически |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ в первый чаc <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на ПВЗ - `canceled_by_missed_call` — отмена по причине недозвона  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+        Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
 
         :param api_v3_dbs_orders_status_post_request:
         :type api_v3_dbs_orders_status_post_request: ApiV3DbsOrdersStatusPostRequest
@@ -4975,6 +8506,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /api/v3/dbs/orders/status is deprecated.", DeprecationWarning)
 
         _param = self._api_v3_dbs_orders_status_post_serialize(
             api_v3_dbs_orders_status_post_request=api_v3_dbs_orders_status_post_request,

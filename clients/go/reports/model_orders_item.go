@@ -61,7 +61,7 @@ type OrdersItem struct {
 	Spp *float32 `json:"spp,omitempty"`
 	// Цена с учетом всех скидок, кроме суммы по WB Кошельку
 	FinishedPrice *float32 `json:"finishedPrice,omitempty"`
-	// Цена со скидкой продавца (= `totalPrice` * (1 - `discountPercent`/100))
+	// Цена со скидкой продавца, в том числе со скидкой WB Клуба
 	PriceWithDisc *float32 `json:"priceWithDisc,omitempty"`
 	// Отмена заказа:   - `true` — заказ отменен 
 	IsCancel *bool `json:"isCancel,omitempty"`

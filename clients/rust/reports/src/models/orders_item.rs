@@ -76,7 +76,7 @@ pub struct OrdersItem {
     /// Цена с учетом всех скидок, кроме суммы по WB Кошельку
     #[serde(rename = "finishedPrice", skip_serializing_if = "Option::is_none")]
     pub finished_price: Option<f64>,
-    /// Цена со скидкой продавца (= `totalPrice` * (1 - `discountPercent`/100))
+    /// Цена со скидкой продавца, в том числе со скидкой WB Клуба
     #[serde(rename = "priceWithDisc", skip_serializing_if = "Option::is_none")]
     pub price_with_disc: Option<f64>,
     /// Отмена заказа:   - `true` — заказ отменен 

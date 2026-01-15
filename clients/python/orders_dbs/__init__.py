@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.21"
+__version__ = "0.1.22"
 
 # Define package exports
 __all__ = [
@@ -28,8 +28,29 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "ApiBatchError",
+    "ApiBatchErrorResponse",
+    "ApiError",
+    "ApiGTIN",
+    "ApiIMEI",
+    "ApiOrderCodeRequest",
     "ApiOrderGroupInner",
     "ApiOrderGroupsRequest",
+    "ApiOrderMetaV2",
+    "ApiOrderStatusV2",
+    "ApiOrderStatusesV2",
+    "ApiOrdersCodeRequest",
+    "ApiOrdersGTINSetRequest",
+    "ApiOrdersIMEISetRequest",
+    "ApiOrdersMetaDeleteRequest",
+    "ApiOrdersMetaResponse",
+    "ApiOrdersRequestV2",
+    "ApiOrdersSGTINsSetRequest",
+    "ApiOrdersUINSetRequest",
+    "ApiSGTINs",
+    "ApiStatusSetResponse",
+    "ApiStatusSetResponses",
+    "ApiUIN",
     "ApiV3DbsOrdersGet200Response",
     "ApiV3DbsOrdersNewGet200Response",
     "ApiV3DbsOrdersNewGet401Response",
@@ -76,8 +97,29 @@ from wildberries_sdk.orders_dbs.exceptions import ApiAttributeError as ApiAttrib
 from wildberries_sdk.orders_dbs.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from wildberries_sdk.orders_dbs.models.api_batch_error import ApiBatchError as ApiBatchError
+from wildberries_sdk.orders_dbs.models.api_batch_error_response import ApiBatchErrorResponse as ApiBatchErrorResponse
+from wildberries_sdk.orders_dbs.models.api_error import ApiError as ApiError
+from wildberries_sdk.orders_dbs.models.api_gtin import ApiGTIN as ApiGTIN
+from wildberries_sdk.orders_dbs.models.api_imei import ApiIMEI as ApiIMEI
+from wildberries_sdk.orders_dbs.models.api_order_code_request import ApiOrderCodeRequest as ApiOrderCodeRequest
 from wildberries_sdk.orders_dbs.models.api_order_group_inner import ApiOrderGroupInner as ApiOrderGroupInner
 from wildberries_sdk.orders_dbs.models.api_order_groups_request import ApiOrderGroupsRequest as ApiOrderGroupsRequest
+from wildberries_sdk.orders_dbs.models.api_order_meta_v2 import ApiOrderMetaV2 as ApiOrderMetaV2
+from wildberries_sdk.orders_dbs.models.api_order_status_v2 import ApiOrderStatusV2 as ApiOrderStatusV2
+from wildberries_sdk.orders_dbs.models.api_order_statuses_v2 import ApiOrderStatusesV2 as ApiOrderStatusesV2
+from wildberries_sdk.orders_dbs.models.api_orders_code_request import ApiOrdersCodeRequest as ApiOrdersCodeRequest
+from wildberries_sdk.orders_dbs.models.api_orders_gtin_set_request import ApiOrdersGTINSetRequest as ApiOrdersGTINSetRequest
+from wildberries_sdk.orders_dbs.models.api_orders_imei_set_request import ApiOrdersIMEISetRequest as ApiOrdersIMEISetRequest
+from wildberries_sdk.orders_dbs.models.api_orders_meta_delete_request import ApiOrdersMetaDeleteRequest as ApiOrdersMetaDeleteRequest
+from wildberries_sdk.orders_dbs.models.api_orders_meta_response import ApiOrdersMetaResponse as ApiOrdersMetaResponse
+from wildberries_sdk.orders_dbs.models.api_orders_request_v2 import ApiOrdersRequestV2 as ApiOrdersRequestV2
+from wildberries_sdk.orders_dbs.models.api_orders_sgtins_set_request import ApiOrdersSGTINsSetRequest as ApiOrdersSGTINsSetRequest
+from wildberries_sdk.orders_dbs.models.api_orders_uin_set_request import ApiOrdersUINSetRequest as ApiOrdersUINSetRequest
+from wildberries_sdk.orders_dbs.models.api_sgtins import ApiSGTINs as ApiSGTINs
+from wildberries_sdk.orders_dbs.models.api_status_set_response import ApiStatusSetResponse as ApiStatusSetResponse
+from wildberries_sdk.orders_dbs.models.api_status_set_responses import ApiStatusSetResponses as ApiStatusSetResponses
+from wildberries_sdk.orders_dbs.models.api_uin import ApiUIN as ApiUIN
 from wildberries_sdk.orders_dbs.models.api_v3_dbs_orders_get200_response import ApiV3DbsOrdersGet200Response as ApiV3DbsOrdersGet200Response
 from wildberries_sdk.orders_dbs.models.api_v3_dbs_orders_new_get200_response import ApiV3DbsOrdersNewGet200Response as ApiV3DbsOrdersNewGet200Response
 from wildberries_sdk.orders_dbs.models.api_v3_dbs_orders_new_get401_response import ApiV3DbsOrdersNewGet401Response as ApiV3DbsOrdersNewGet401Response

@@ -155,6 +155,18 @@
 - `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
 ### Заказы DBS (`05-orders-dbs.yaml`)
+- `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
+- `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
+- `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки за сборочными заданиями
+- `POST /api/marketplace/v3/dbs/orders/meta/uin` — Закрепить УИН за сборочными заданиями
+- `POST /api/marketplace/v3/dbs/orders/status/cancel` — Отменить сборочные задания
+- `POST /api/marketplace/v3/dbs/orders/status/confirm` — Перевести сборочные задания на сборку
+- `POST /api/marketplace/v3/dbs/orders/status/deliver` — Перевести сборочные задания в доставку
+- `POST /api/marketplace/v3/dbs/orders/status/info` — Получить статусы сборочных заданий
+- `POST /api/marketplace/v3/dbs/orders/status/receive` — Сообщить о получении заказов
+- `POST /api/marketplace/v3/dbs/orders/status/reject` — Сообщить об отказе от заказов
 - `POST /api/v3/dbs/groups/info` — Получить информацию о платной доставке
 - `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `POST /api/v3/dbs/orders/client` — Информация о покупателе

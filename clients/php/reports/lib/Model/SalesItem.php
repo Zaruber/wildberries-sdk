@@ -1180,7 +1180,7 @@ class SalesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets for_pay
      *
-     * @param float|null $for_pay К перечислению продавцу
+     * @param float|null $for_pay К перечислению продавцу.<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`
      *
      * @return self
      */
@@ -1207,7 +1207,7 @@ class SalesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets finished_price
      *
-     * @param float|null $finished_price Фактическая цена с учетом всех скидок (к взиманию с покупателя)
+     * @param float|null $finished_price Фактическая цена с учётом всех скидок (к взиманию с покупателя).<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`
      *
      * @return self
      */
@@ -1234,7 +1234,7 @@ class SalesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_with_disc
      *
-     * @param float|null $price_with_disc Цена со скидкой продавца, от которой считается сумма к перечислению продавцу `forPay` (= `totalPrice` * (1 - `discountPercent`/100))
+     * @param float|null $price_with_disc Цена со скидкой продавца, в том числе со скидкой WB Клуба, от которой рассчитывается сумма к перечислению продавцу `forPay`.<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`
      *
      * @return self
      */

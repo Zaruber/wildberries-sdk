@@ -22,7 +22,7 @@ var _ MappedNullable = &OrderNewDBS{}
 type OrderNewDBS struct {
 	// Цена в валюте продажи с учетом скидки продавца, без учета скидки WB Клуба, умноженная на 100. Предоставляется в информационных целях 
 	SalePrice NullableInt32 `json:"salePrice,omitempty"`
-	// Список метаданных, доступных для сборочного задания. [Указывать IMEI](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `\"subjectId\":515`
+	// Список метаданных, доступных для сборочного задания. [Указывать IMEI](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `\"subjectId\":515`
 	RequiredMeta []string `json:"requiredMeta,omitempty"`
 	// Комментарий покупателя
 	Comment *string `json:"comment,omitempty"`

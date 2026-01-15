@@ -146,7 +146,7 @@ export interface OrdersItem {
      */
     finishedPrice?: number;
     /**
-     * Цена со скидкой продавца (= `totalPrice` * (1 - `discountPercent`/100))
+     * Цена со скидкой продавца, в том числе со скидкой WB Клуба
      * @type {number}
      * @memberof OrdersItem
      */

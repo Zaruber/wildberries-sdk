@@ -48,7 +48,7 @@ class OrdersItem(BaseModel):
     discount_percent: Optional[StrictInt] = Field(default=None, description="Скидка продавца, %", alias="discountPercent")
     spp: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка WB, %")
     finished_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена с учетом всех скидок, кроме суммы по WB Кошельку", alias="finishedPrice")
-    price_with_disc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена со скидкой продавца (= `totalPrice` * (1 - `discountPercent`/100))", alias="priceWithDisc")
+    price_with_disc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена со скидкой продавца, в том числе со скидкой WB Клуба", alias="priceWithDisc")
     is_cancel: Optional[StrictBool] = Field(default=None, description="Отмена заказа:   - `true` — заказ отменен ", alias="isCancel")
     cancel_date: Optional[StrictStr] = Field(default=None, description="Дата и время отмены заказа. Если заказ не был отменен, то \"0001-01-01T00:00:00\".Если часовой пояс не указан, то берётся Московское время UTC+3.", alias="cancelDate")
     sticker: Optional[StrictStr] = Field(default=None, description="ID стикера")

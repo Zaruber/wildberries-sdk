@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.21/go",
+		UserAgent:        "OpenAPI-Generator/0.1.22/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -98,6 +98,78 @@ func NewConfiguration() *Configuration {
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersMetaDeletePost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersMetaGtinPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersMetaImeiPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersMetaInfoPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersMetaSgtinPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersMetaUinPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersStatusCancelPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersStatusConfirmPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersStatusDeliverPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersStatusInfoPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersStatusReceivePost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DBSAPIService.ApiMarketplaceV3DbsOrdersStatusRejectPost": {
+				{
+					URL: "https://marketplace-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
 			"DBSAPIService.ApiV3DbsGroupsInfoPost": {
 				{
 					URL: "https://marketplace-api.wildberries.ru",
