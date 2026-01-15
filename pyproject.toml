@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "wildberries-sdk"
 version = "0.1.21"
 description = "Wildberries OpenAPI clients (generated)."
+keywords = ["wildberries", "wb", "api", "sdk", "openapi", "marketplace", "ecommerce", "wildberries-api", "вайлдберриз"]
 readme = "docs/python/README.md"
 requires-python = ">=3.8"
 authors = [
@@ -20,7 +21,10 @@ dependencies = [
 ]
 
 [project.urls]
+Homepage = "https://github.com/eslazarev/wildberries-sdk"
 Documentation = "https://eslazarev.github.io/wildberries-sdk/"
+Source = "https://github.com/eslazarev/wildberries-sdk"
+Issues = "https://github.com/eslazarev/wildberries-sdk/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

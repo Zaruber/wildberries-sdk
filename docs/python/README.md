@@ -1,5 +1,6 @@
-# wildberries-sdk (Python)
-![using_wildberries_sdk_python.gif](../../.github/images/using_wildberries_sdk_python.gif)
+# Wildberries SDK for Python (wildberries-sdk)
+
+<img src="https://raw.githubusercontent.com/eslazarev/wildberries-sdk/main/.github/images/using_wildberries_sdk_python.gif">
 
 ## Установка
 
