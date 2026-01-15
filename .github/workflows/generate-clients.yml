@@ -91,6 +91,7 @@ jobs:
 
       - name: Warm Go proxy
         if: steps.commit.outputs.did_commit == 'true'
+        continue-on-error: true
         env:
           PACKAGE_VERSION: ${{ steps.bump.outputs.version }}
         run: bash scripts/warm-go-proxy.sh
@@ -106,10 +107,11 @@ jobs:
           /usr/bin/python3 -m build
 
       - name: Upload to PyPI
+        continue-on-error: true
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        run: /usr/bin/python3 -m twine upload dist/*
+        run: /usr/bin/python3 -m twine upload --skip-existing dist/*
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -130,12 +132,14 @@ jobs:
 
       - name: Publish npm package
         working-directory: npm
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
 
       - name: Update Packagist
         if: steps.commit.outputs.did_commit == 'true'
+        continue-on-error: true
         env:
           PACKAGIST_USERNAME: ${{ secrets.PACKAGIST_USERNAME }}
           PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
@@ -154,6 +158,7 @@ jobs:
 
       - name: Publish Rust
         if: steps.commit.outputs.did_commit == 'true'
+        continue-on-error: true
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
         run: |
