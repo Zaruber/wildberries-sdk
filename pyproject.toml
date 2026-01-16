@@ -25,6 +25,7 @@ Homepage = "https://github.com/eslazarev/wildberries-sdk"
 Documentation = "https://eslazarev.github.io/wildberries-sdk/"
 Source = "https://github.com/eslazarev/wildberries-sdk"
 Issues = "https://github.com/eslazarev/wildberries-sdk/issues"
+Changelog = "https://github.com/eslazarev/wildberries-sdk/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
