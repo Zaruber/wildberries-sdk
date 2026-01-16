@@ -1,7 +1,7 @@
 /*
 Заказы FBS
 
-<div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+<div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
 
 API version: order
 */
@@ -24,6 +24,7 @@ type Meta struct {
 	Gtin *MetaGtin `json:"gtin,omitempty"`
 	Sgtin *MetaSgtin `json:"sgtin,omitempty"`
 	Expiration *MetaExpiration `json:"expiration,omitempty"`
+	CustomsDeclaration *MetaCustomsDeclaration `json:"customsDeclaration,omitempty"`
 }
 
 // NewMeta instantiates a new Meta object
@@ -203,6 +204,38 @@ func (o *Meta) SetExpiration(v MetaExpiration) {
 	o.Expiration = &v
 }
 
+// GetCustomsDeclaration returns the CustomsDeclaration field value if set, zero value otherwise.
+func (o *Meta) GetCustomsDeclaration() MetaCustomsDeclaration {
+	if o == nil || IsNil(o.CustomsDeclaration) {
+		var ret MetaCustomsDeclaration
+		return ret
+	}
+	return *o.CustomsDeclaration
+}
+
+// GetCustomsDeclarationOk returns a tuple with the CustomsDeclaration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Meta) GetCustomsDeclarationOk() (*MetaCustomsDeclaration, bool) {
+	if o == nil || IsNil(o.CustomsDeclaration) {
+		return nil, false
+	}
+	return o.CustomsDeclaration, true
+}
+
+// HasCustomsDeclaration returns a boolean if a field has been set.
+func (o *Meta) HasCustomsDeclaration() bool {
+	if o != nil && !IsNil(o.CustomsDeclaration) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomsDeclaration gets a reference to the given MetaCustomsDeclaration and assigns it to the CustomsDeclaration field.
+func (o *Meta) SetCustomsDeclaration(v MetaCustomsDeclaration) {
+	o.CustomsDeclaration = &v
+}
+
 func (o Meta) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -227,6 +260,9 @@ func (o Meta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Expiration) {
 		toSerialize["expiration"] = o.Expiration
+	}
+	if !IsNil(o.CustomsDeclaration) {
+		toSerialize["customsDeclaration"] = o.CustomsDeclaration
 	}
 	return toSerialize, nil
 }

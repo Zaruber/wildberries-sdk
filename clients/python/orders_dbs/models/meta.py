@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from wildberries_sdk.orders_dbs.models.meta_customs_declaration import MetaCustomsDeclaration
 from wildberries_sdk.orders_dbs.models.meta_gtin import MetaGtin
 from wildberries_sdk.orders_dbs.models.meta_imei import MetaImei
 from wildberries_sdk.orders_dbs.models.meta_sgtin import MetaSgtin
@@ -34,7 +35,8 @@ class Meta(BaseModel):
     uin: Optional[MetaUin] = None
     gtin: Optional[MetaGtin] = None
     sgtin: Optional[MetaSgtin] = None
-    __properties: ClassVar[List[str]] = ["imei", "uin", "gtin", "sgtin"]
+    customs_declaration: Optional[MetaCustomsDeclaration] = Field(default=None, alias="customsDeclaration")
+    __properties: ClassVar[List[str]] = ["imei", "uin", "gtin", "sgtin", "customsDeclaration"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +89,9 @@ class Meta(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of sgtin
         if self.sgtin:
             _dict['sgtin'] = self.sgtin.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of customs_declaration
+        if self.customs_declaration:
+            _dict['customsDeclaration'] = self.customs_declaration.to_dict()
         return _dict
 
     @classmethod
@@ -102,7 +107,8 @@ class Meta(BaseModel):
             "imei": MetaImei.from_dict(obj["imei"]) if obj.get("imei") is not None else None,
             "uin": MetaUin.from_dict(obj["uin"]) if obj.get("uin") is not None else None,
             "gtin": MetaGtin.from_dict(obj["gtin"]) if obj.get("gtin") is not None else None,
-            "sgtin": MetaSgtin.from_dict(obj["sgtin"]) if obj.get("sgtin") is not None else None
+            "sgtin": MetaSgtin.from_dict(obj["sgtin"]) if obj.get("sgtin") is not None else None,
+            "customsDeclaration": MetaCustomsDeclaration.from_dict(obj["customsDeclaration"]) if obj.get("customsDeclaration") is not None else None
         })
         return _obj
 

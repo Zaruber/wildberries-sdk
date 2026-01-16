@@ -63,7 +63,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -184,7 +184,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -269,7 +269,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -356,7 +356,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -452,7 +452,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -1091,7 +1091,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -1168,7 +1168,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -1263,7 +1263,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -1358,7 +1358,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -1463,7 +1463,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -1570,7 +1570,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -1625,6 +1625,7 @@ paths:
           - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
           - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
           - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
         Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
         <div class="description_limit">
@@ -1720,6 +1721,7 @@ paths:
           - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
           - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
           - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
@@ -2195,6 +2197,112 @@ paths:
       x-category: marketplace
     servers:
     - url: https://marketplace-api.wildberries.ru
+  /api/marketplace/v3/dbs/meta/customs-declaration:
+    post:
+      description: |
+        Метод обновляет номер ГТД — грузовой таможенной декларации — в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).
+        <br><br>
+        У одного сборочного задания может быть только один ГТД.
+
+        Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `delivery`.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 500 запросов | 120 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_marketplace_v3_dbs_meta_customs_declaration_post_request"
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Закрепить за сборочными заданиями номер ГТД
+      tags:
+      - Метаданные DBS
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
   /api/v3/dbs/orders/{orderId}/meta:
     delete:
       deprecated: true
@@ -2258,7 +2366,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "409":
           content:
             application/json:
@@ -2336,7 +2444,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -2431,7 +2539,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -2535,7 +2643,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -2639,7 +2747,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -2743,7 +2851,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -2920,7 +3028,7 @@ components:
             message: ""
           schema:
             $ref: "#/components/schemas/Error"
-      description: Доступ запрещен
+      description: Доступ запрещён
   schemas:
     api.OrderGroupsRequest:
       example:
@@ -3501,6 +3609,8 @@ components:
           value: "123456789012345"
         imei:
           value: "123456789012345"
+        customsDeclaration:
+          value: 10704010/010624/0000302
         uin:
           value: "123456789012345"
       nullable: true
@@ -3513,6 +3623,8 @@ components:
           $ref: "#/components/schemas/Meta_gtin"
         sgtin:
           $ref: "#/components/schemas/Meta_sgtin"
+        customsDeclaration:
+          $ref: "#/components/schemas/Meta_customsDeclaration"
       type: object
     api.OrdersMetaDeleteRequest:
       properties:
@@ -3689,6 +3801,8 @@ components:
           gtin: "123456789012345"
           orderId: 654321
           imei: "123456789012345"
+          customsDeclaration:
+            value: 10704010/010624/0000302
           uin: "123456789012345"
           error: ""
         - sgtin:
@@ -3697,6 +3811,8 @@ components:
           gtin: "123456789012345"
           orderId: 654321
           imei: "123456789012345"
+          customsDeclaration:
+            value: 10704010/010624/0000302
           uin: "123456789012345"
           error: ""
       properties:
@@ -3714,6 +3830,8 @@ components:
         gtin: "123456789012345"
         orderId: 654321
         imei: "123456789012345"
+        customsDeclaration:
+          value: 10704010/010624/0000302
         uin: "123456789012345"
         error: ""
       properties:
@@ -3745,6 +3863,8 @@ components:
           description: УИН
           example: "123456789012345"
           type: string
+        customsDeclaration:
+          $ref: "#/components/schemas/Meta_customsDeclaration"
       type: object
     api.OrderStatusesV2:
       example:
@@ -4115,6 +4235,29 @@ components:
           nullable: false
           type: array
       type: object
+    _api_marketplace_v3_dbs_meta_customs_declaration_post_request_orders_inner:
+      properties:
+        customsDeclaration:
+          description: Номер ГТД
+          example: 10704010/010624/0000302
+          maxLength: 29
+          minLength: 17
+          type: string
+        orderId:
+          description: ID сборочного задания
+          type: integer
+      required:
+      - customsDeclaration
+      - orderId
+      type: object
+    _api_marketplace_v3_dbs_meta_customs_declaration_post_request:
+      properties:
+        orders:
+          items:
+            $ref: "#/components/schemas/_api_marketplace_v3_dbs_meta_customs_declaration_post_request_orders_inner"
+          maxItems: 1000
+          type: array
+      type: object
     _api_v3_dbs_orders__orderId__meta_get_200_response:
       example:
         meta:
@@ -4125,6 +4268,8 @@ components:
             value: "123456789012345"
           imei:
             value: "123456789012345"
+          customsDeclaration:
+            value: 10704010/010624/0000302
           uin:
             value: "123456789012345"
       nullable: false
@@ -4365,6 +4510,16 @@ components:
             type: string
           nullable: true
           type: array
+      type: object
+    Meta_customsDeclaration:
+      description: Номер грузовой таможенной декларации
+      example:
+        value: 10704010/010624/0000302
+      properties:
+        value:
+          example: 10704010/010624/0000302
+          nullable: true
+          type: string
       type: object
   securitySchemes:
     HeaderApiKey:

@@ -13,6 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
+import type { MetaCustomsDeclaration } from './MetaCustomsDeclaration';
+import {
+    MetaCustomsDeclarationFromJSON,
+    MetaCustomsDeclarationFromJSONTyped,
+    MetaCustomsDeclarationToJSON,
+    MetaCustomsDeclarationToJSONTyped,
+} from './MetaCustomsDeclaration';
 import type { MetaImei } from './MetaImei';
 import {
     MetaImeiFromJSON,
@@ -72,6 +79,12 @@ export interface Meta {
      * @memberof Meta
      */
     sgtin?: MetaSgtin;
+    /**
+     * 
+     * @type {MetaCustomsDeclaration}
+     * @memberof Meta
+     */
+    customsDeclaration?: MetaCustomsDeclaration;
 }
 
 /**
@@ -95,6 +108,7 @@ export function MetaFromJSONTyped(json: any, ignoreDiscriminator: boolean): Meta
         'uin': json['uin'] == null ? undefined : MetaUinFromJSON(json['uin']),
         'gtin': json['gtin'] == null ? undefined : MetaGtinFromJSON(json['gtin']),
         'sgtin': json['sgtin'] == null ? undefined : MetaSgtinFromJSON(json['sgtin']),
+        'customsDeclaration': json['customsDeclaration'] == null ? undefined : MetaCustomsDeclarationFromJSON(json['customsDeclaration']),
     };
 }
 
@@ -113,6 +127,7 @@ export function MetaToJSONTyped(value?: Meta | null, ignoreDiscriminator: boolea
         'uin': MetaUinToJSON(value['uin']),
         'gtin': MetaGtinToJSON(value['gtin']),
         'sgtin': MetaSgtinToJSON(value['sgtin']),
+        'customsDeclaration': MetaCustomsDeclarationToJSON(value['customsDeclaration']),
     };
 }
 

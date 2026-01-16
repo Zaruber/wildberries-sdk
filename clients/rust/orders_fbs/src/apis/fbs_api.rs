@@ -1,7 +1,7 @@
 /*
  * Заказы FBS
  *
- * <div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+ * <div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
  *
  * The version of the OpenAPI document: order
  * 
@@ -23,6 +23,19 @@ pub enum ApiMarketplaceV3OrdersMetaPostError {
     Status401(models::ApiV3PassesOfficesGet401Response),
     Status403(models::V3ApiError),
     Status404(models::V3ApiError),
+    Status429(models::ApiV3PassesOfficesGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`api_marketplace_v3_orders_order_id_meta_customs_declaration_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutError {
+    Status400(models::Error),
+    Status401(models::ApiV3PassesOfficesGet401Response),
+    Status403(models::Error),
+    Status404(models::Error),
+    Status409(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -417,7 +430,7 @@ pub enum ApiV3SuppliesSupplyIdTrbxStickersPostError {
 }
 
 
-/// Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 pub async fn api_marketplace_v3_orders_meta_post(configuration: &configuration::Configuration, v3_get_meta_multi_request: Option<models::V3GetMetaMultiRequest>) -> Result<models::V3OrdersMetaApi, Error<ApiMarketplaceV3OrdersMetaPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v3_get_meta_multi_request = v3_get_meta_multi_request;
@@ -459,6 +472,42 @@ pub async fn api_marketplace_v3_orders_meta_post(configuration: &configuration::
     } else {
         let content = resp.text().await?;
         let entity: Option<ApiMarketplaceV3OrdersMetaPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод обновляет номер грузовой таможенной декларации (ГТД) в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get). <br> У одного сборочного задания может быть только один номер ГТД.  Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` или `complete`  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+pub async fn api_marketplace_v3_orders_order_id_meta_customs_declaration_put(configuration: &configuration::Configuration, order_id: i64, api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request: Option<models::ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest>) -> Result<(), Error<ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_order_id = order_id;
+    let p_body_api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request = api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request;
+
+    let uri_str = format!("{}/api/marketplace/v3/orders/{orderId}/meta/customs-declaration", configuration.base_path, orderId=p_path_order_id);
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
@@ -723,7 +772,7 @@ pub async fn api_v3_orders_order_id_cancel_patch(configuration: &configuration::
     }
 }
 
-/// Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 pub async fn api_v3_orders_order_id_meta_delete(configuration: &configuration::Configuration, order_id: i64, key: Option<&str>) -> Result<(), Error<ApiV3OrdersOrderIdMetaDeleteError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_order_id = order_id;

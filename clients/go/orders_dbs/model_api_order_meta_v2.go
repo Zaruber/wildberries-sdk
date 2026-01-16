@@ -31,6 +31,7 @@ type ApiOrderMetaV2 struct {
 	Sgtin []string `json:"sgtin,omitempty"`
 	// УИН
 	Uin *string `json:"uin,omitempty"`
+	CustomsDeclaration *MetaCustomsDeclaration `json:"customsDeclaration,omitempty"`
 }
 
 // NewApiOrderMetaV2 instantiates a new ApiOrderMetaV2 object
@@ -242,6 +243,38 @@ func (o *ApiOrderMetaV2) SetUin(v string) {
 	o.Uin = &v
 }
 
+// GetCustomsDeclaration returns the CustomsDeclaration field value if set, zero value otherwise.
+func (o *ApiOrderMetaV2) GetCustomsDeclaration() MetaCustomsDeclaration {
+	if o == nil || IsNil(o.CustomsDeclaration) {
+		var ret MetaCustomsDeclaration
+		return ret
+	}
+	return *o.CustomsDeclaration
+}
+
+// GetCustomsDeclarationOk returns a tuple with the CustomsDeclaration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiOrderMetaV2) GetCustomsDeclarationOk() (*MetaCustomsDeclaration, bool) {
+	if o == nil || IsNil(o.CustomsDeclaration) {
+		return nil, false
+	}
+	return o.CustomsDeclaration, true
+}
+
+// HasCustomsDeclaration returns a boolean if a field has been set.
+func (o *ApiOrderMetaV2) HasCustomsDeclaration() bool {
+	if o != nil && !IsNil(o.CustomsDeclaration) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomsDeclaration gets a reference to the given MetaCustomsDeclaration and assigns it to the CustomsDeclaration field.
+func (o *ApiOrderMetaV2) SetCustomsDeclaration(v MetaCustomsDeclaration) {
+	o.CustomsDeclaration = &v
+}
+
 func (o ApiOrderMetaV2) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -269,6 +302,9 @@ func (o ApiOrderMetaV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Uin) {
 		toSerialize["uin"] = o.Uin
+	}
+	if !IsNil(o.CustomsDeclaration) {
+		toSerialize["customsDeclaration"] = o.CustomsDeclaration
 	}
 	return toSerialize, nil
 }

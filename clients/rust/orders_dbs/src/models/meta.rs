@@ -22,6 +22,8 @@ pub struct Meta {
     pub gtin: Option<Box<models::MetaGtin>>,
     #[serde(rename = "sgtin", skip_serializing_if = "Option::is_none")]
     pub sgtin: Option<Box<models::MetaSgtin>>,
+    #[serde(rename = "customsDeclaration", skip_serializing_if = "Option::is_none")]
+    pub customs_declaration: Option<Box<models::MetaCustomsDeclaration>>,
 }
 
 impl Meta {
@@ -32,6 +34,7 @@ impl Meta {
             uin: None,
             gtin: None,
             sgtin: None,
+            customs_declaration: None,
         }
     }
 }

@@ -23,6 +23,7 @@ type Meta struct {
 	Uin *MetaUin `json:"uin,omitempty"`
 	Gtin *MetaGtin `json:"gtin,omitempty"`
 	Sgtin *MetaSgtin `json:"sgtin,omitempty"`
+	CustomsDeclaration *MetaCustomsDeclaration `json:"customsDeclaration,omitempty"`
 }
 
 // NewMeta instantiates a new Meta object
@@ -170,6 +171,38 @@ func (o *Meta) SetSgtin(v MetaSgtin) {
 	o.Sgtin = &v
 }
 
+// GetCustomsDeclaration returns the CustomsDeclaration field value if set, zero value otherwise.
+func (o *Meta) GetCustomsDeclaration() MetaCustomsDeclaration {
+	if o == nil || IsNil(o.CustomsDeclaration) {
+		var ret MetaCustomsDeclaration
+		return ret
+	}
+	return *o.CustomsDeclaration
+}
+
+// GetCustomsDeclarationOk returns a tuple with the CustomsDeclaration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Meta) GetCustomsDeclarationOk() (*MetaCustomsDeclaration, bool) {
+	if o == nil || IsNil(o.CustomsDeclaration) {
+		return nil, false
+	}
+	return o.CustomsDeclaration, true
+}
+
+// HasCustomsDeclaration returns a boolean if a field has been set.
+func (o *Meta) HasCustomsDeclaration() bool {
+	if o != nil && !IsNil(o.CustomsDeclaration) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomsDeclaration gets a reference to the given MetaCustomsDeclaration and assigns it to the CustomsDeclaration field.
+func (o *Meta) SetCustomsDeclaration(v MetaCustomsDeclaration) {
+	o.CustomsDeclaration = &v
+}
+
 func (o Meta) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -191,6 +224,9 @@ func (o Meta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Sgtin) {
 		toSerialize["sgtin"] = o.Sgtin
+	}
+	if !IsNil(o.CustomsDeclaration) {
+		toSerialize["customsDeclaration"] = o.CustomsDeclaration
 	}
 	return toSerialize, nil
 }

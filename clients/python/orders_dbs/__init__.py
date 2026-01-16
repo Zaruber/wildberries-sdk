@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.22"
+__version__ = "0.1.23"
 
 # Define package exports
 __all__ = [
@@ -33,6 +33,8 @@ __all__ = [
     "ApiError",
     "ApiGTIN",
     "ApiIMEI",
+    "ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequest",
+    "ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner",
     "ApiOrderCodeRequest",
     "ApiOrderGroupInner",
     "ApiOrderGroupsRequest",
@@ -70,6 +72,7 @@ __all__ = [
     "DeliveryDatesRequest",
     "Error",
     "Meta",
+    "MetaCustomsDeclaration",
     "MetaGtin",
     "MetaImei",
     "MetaSgtin",
@@ -102,6 +105,8 @@ from wildberries_sdk.orders_dbs.models.api_batch_error_response import ApiBatchE
 from wildberries_sdk.orders_dbs.models.api_error import ApiError as ApiError
 from wildberries_sdk.orders_dbs.models.api_gtin import ApiGTIN as ApiGTIN
 from wildberries_sdk.orders_dbs.models.api_imei import ApiIMEI as ApiIMEI
+from wildberries_sdk.orders_dbs.models.api_marketplace_v3_dbs_meta_customs_declaration_post_request import ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequest as ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequest
+from wildberries_sdk.orders_dbs.models.api_marketplace_v3_dbs_meta_customs_declaration_post_request_orders_inner import ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner as ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner
 from wildberries_sdk.orders_dbs.models.api_order_code_request import ApiOrderCodeRequest as ApiOrderCodeRequest
 from wildberries_sdk.orders_dbs.models.api_order_group_inner import ApiOrderGroupInner as ApiOrderGroupInner
 from wildberries_sdk.orders_dbs.models.api_order_groups_request import ApiOrderGroupsRequest as ApiOrderGroupsRequest
@@ -139,6 +144,7 @@ from wildberries_sdk.orders_dbs.models.delivery_dates_info_resp_orders_inner imp
 from wildberries_sdk.orders_dbs.models.delivery_dates_request import DeliveryDatesRequest as DeliveryDatesRequest
 from wildberries_sdk.orders_dbs.models.error import Error as Error
 from wildberries_sdk.orders_dbs.models.meta import Meta as Meta
+from wildberries_sdk.orders_dbs.models.meta_customs_declaration import MetaCustomsDeclaration as MetaCustomsDeclaration
 from wildberries_sdk.orders_dbs.models.meta_gtin import MetaGtin as MetaGtin
 from wildberries_sdk.orders_dbs.models.meta_imei import MetaImei as MetaImei
 from wildberries_sdk.orders_dbs.models.meta_sgtin import MetaSgtin as MetaSgtin

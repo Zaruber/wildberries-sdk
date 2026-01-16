@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest';
 export * from './ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest';
 export * from './ApiV3OrdersGet200Response';
 export * from './ApiV3OrdersNewGet200Response';
@@ -41,6 +42,7 @@ export * from './ApiV3SuppliesSupplyIdTrbxStickersPostRequest';
 export * from './CrossborderTurkeyClientInfo';
 export * from './CrossborderTurkeyClientInfoResp';
 export * from './Meta';
+export * from './MetaCustomsDeclaration';
 export * from './MetaExpiration';
 export * from './MetaGtin';
 export * from './MetaImei';

@@ -62,7 +62,8 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => 'string',
         'order_id' => 'int',
         'sgtin' => 'string[]',
-        'uin' => 'string'
+        'uin' => 'string',
+        'customs_declaration' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration'
     ];
 
     /**
@@ -78,7 +79,8 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => null,
         'order_id' => null,
         'sgtin' => null,
-        'uin' => null
+        'uin' => null,
+        'customs_declaration' => null
     ];
 
     /**
@@ -92,7 +94,8 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => false,
         'order_id' => false,
         'sgtin' => false,
-        'uin' => false
+        'uin' => false,
+        'customs_declaration' => false
     ];
 
     /**
@@ -186,7 +189,8 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => 'imei',
         'order_id' => 'orderId',
         'sgtin' => 'sgtin',
-        'uin' => 'uin'
+        'uin' => 'uin',
+        'customs_declaration' => 'customsDeclaration'
     ];
 
     /**
@@ -200,7 +204,8 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => 'setImei',
         'order_id' => 'setOrderId',
         'sgtin' => 'setSgtin',
-        'uin' => 'setUin'
+        'uin' => 'setUin',
+        'customs_declaration' => 'setCustomsDeclaration'
     ];
 
     /**
@@ -214,7 +219,8 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => 'getImei',
         'order_id' => 'getOrderId',
         'sgtin' => 'getSgtin',
-        'uin' => 'getUin'
+        'uin' => 'getUin',
+        'customs_declaration' => 'getCustomsDeclaration'
     ];
 
     /**
@@ -280,6 +286,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('order_id', $data ?? [], null);
         $this->setIfExists('sgtin', $data ?? [], null);
         $this->setIfExists('uin', $data ?? [], null);
+        $this->setIfExists('customs_declaration', $data ?? [], null);
     }
 
     /**
@@ -482,6 +489,33 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable uin cannot be null');
         }
         $this->container['uin'] = $uin;
+
+        return $this;
+    }
+
+    /**
+     * Gets customs_declaration
+     *
+     * @return \Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration|null
+     */
+    public function getCustomsDeclaration()
+    {
+        return $this->container['customs_declaration'];
+    }
+
+    /**
+     * Sets customs_declaration
+     *
+     * @param \Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration|null $customs_declaration customs_declaration
+     *
+     * @return self
+     */
+    public function setCustomsDeclaration($customs_declaration)
+    {
+        if (is_null($customs_declaration)) {
+            throw new \InvalidArgumentException('non-nullable customs_declaration cannot be null');
+        }
+        $this->container['customs_declaration'] = $customs_declaration;
 
         return $this;
     }

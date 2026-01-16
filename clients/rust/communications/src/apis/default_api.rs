@@ -886,7 +886,7 @@ pub async fn api_v1_feedbacks_count_get(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время   - среднюю оценку всех отзывов  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+/// Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
 pub async fn api_v1_feedbacks_count_unanswered_get(configuration: &configuration::Configuration, ) -> Result<models::ApiV1FeedbacksCountUnansweredGet200Response, Error<ApiV1FeedbacksCountUnansweredGetError>> {
 
     let uri_str = format!("{}/api/v1/feedbacks/count-unanswered", configuration.base_path);

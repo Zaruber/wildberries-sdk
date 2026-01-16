@@ -103,6 +103,7 @@
 
 ### Заказы FBS (`03-orders-fbs.yaml`)
 - `POST /api/marketplace/v3/orders/meta` — Получить метаданные сборочных заданий
+- `PUT /api/marketplace/v3/orders/{orderId}/meta/customs-declaration` — Закрепить за сборочным заданием номер ГТД
 - `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки
 - `PATCH /api/marketplace/v3/supplies/{supplyId}/orders` — Добавить сборочные задания к поставке
 - `GET /api/v3/orders` — Получить информацию о сборочных заданиях
@@ -155,6 +156,7 @@
 - `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
 ### Заказы DBS (`05-orders-dbs.yaml`)
+- `POST /api/marketplace/v3/dbs/meta/customs-declaration` — Закрепить за сборочными заданиями номер ГТД
 - `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
 - `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями

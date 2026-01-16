@@ -7,7 +7,7 @@ info:
 
 
     В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:
-      1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya): информация о сборочных заданиях, метаданные, стикеры и так далее.
+      1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS): информация о сборочных заданиях, метаданные, стикеры и так далее.
       2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.
       3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB.
     <br>
@@ -1114,6 +1114,7 @@ paths:
           - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)
           - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
           - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)
+          - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
 
         Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.
 
@@ -1211,13 +1212,14 @@ paths:
   /api/v3/orders/{orderId}/meta:
     delete:
       description: |
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get) для переданного ключа.
+        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа.
         <br><br>
         Возможные метаданные:
           - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)
           - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)
           - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)
           - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
+          - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
 
         Можно передать только один ключ.
 
@@ -1241,8 +1243,8 @@ paths:
           format: int64
           type: integer
         style: simple
-      - description: "Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`).\
-          \ Передается только одно значение."
+      - description: "Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`,\
+          \ `customsDeclaration`). Передается только одно значение."
         explode: true
         in: query
         name: key
@@ -1879,6 +1881,123 @@ paths:
       security:
       - HeaderApiKey: []
       summary: Закрепить за сборочным заданием срок годности товара
+      tags:
+      - Метаданные FBS
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/marketplace/v3/orders/{orderId}/meta/customs-declaration:
+    put:
+      description: |
+        Метод обновляет номер грузовой таможенной декларации (ГТД) в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get).
+        <br>
+        У одного сборочного задания может быть только один номер ГТД.
+
+        Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` или `complete`
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_marketplace_v3_orders__orderId__meta_customs_declaration_put_request"
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_passes_offices_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Не найдено
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления номера ГТД
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_passes_offices_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Закрепить за сборочным заданием номер ГТД
       tags:
       - Метаданные FBS
       x-readonly-method: false
@@ -4433,6 +4552,8 @@ components:
           value: "123456789012345"
         expiration:
           value: 12.09.2030
+        customsDeclaration:
+          value: 10704010/010624/0000302
         uin:
           value: "123456789012345"
       properties:
@@ -4446,6 +4567,8 @@ components:
           $ref: "#/components/schemas/Meta_sgtin"
         expiration:
           $ref: "#/components/schemas/Meta_expiration"
+        customsDeclaration:
+          $ref: "#/components/schemas/Meta_customsDeclaration"
       type: object
     v3.GetMetaMultiRequest:
       description: ID сборочных заданий
@@ -4475,6 +4598,8 @@ components:
               value: "123456789012345"
             expiration:
               value: 12.09.2030
+            customsDeclaration:
+              value: 10704010/010624/0000302
             uin:
               value: "123456789012345"
           id: 0
@@ -4488,6 +4613,8 @@ components:
               value: "123456789012345"
             expiration:
               value: 12.09.2030
+            customsDeclaration:
+              value: 10704010/010624/0000302
             uin:
               value: "123456789012345"
           id: 0
@@ -4509,6 +4636,8 @@ components:
             value: "123456789012345"
           expiration:
             value: 12.09.2030
+          customsDeclaration:
+            value: 10704010/010624/0000302
           uin:
             value: "123456789012345"
         id: 0
@@ -5241,6 +5370,15 @@ components:
           format: date (dd.mm.yyyy)
           type: string
       type: object
+    _api_marketplace_v3_orders__orderId__meta_customs_declaration_put_request:
+      properties:
+        customsDeclaration:
+          description: Номер ГТД
+          example: 10704010/010624/0000302
+          maxLength: 29
+          minLength: 17
+          type: string
+      type: object
     _api_v3_orders_stickers_cross_border_post_request:
       properties:
         orders:
@@ -5881,6 +6019,16 @@ components:
       properties:
         value:
           example: 12.09.2030
+          nullable: true
+          type: string
+      type: object
+    Meta_customsDeclaration:
+      description: Номер грузовой таможенной декларации
+      example:
+        value: 10704010/010624/0000302
+      properties:
+        value:
+          example: 10704010/010624/0000302
           nullable: true
           type: string
       type: object

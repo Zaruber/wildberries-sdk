@@ -2251,7 +2251,6 @@ ApiV1FeedbacksCountUnansweredGet Необработанные отзывы
 
 Метод возвращает:
   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время
-  - среднюю оценку всех отзывов
 
 <div class="description_limit">
 <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:

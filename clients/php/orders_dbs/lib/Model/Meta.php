@@ -61,7 +61,8 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaImei',
         'uin' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaUin',
         'gtin' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaGtin',
-        'sgtin' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaSgtin'
+        'sgtin' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaSgtin',
+        'customs_declaration' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration'
     ];
 
     /**
@@ -75,7 +76,8 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => null,
         'uin' => null,
         'gtin' => null,
-        'sgtin' => null
+        'sgtin' => null,
+        'customs_declaration' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => false,
         'uin' => false,
         'gtin' => false,
-        'sgtin' => false
+        'sgtin' => false,
+        'customs_declaration' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => 'imei',
         'uin' => 'uin',
         'gtin' => 'gtin',
-        'sgtin' => 'sgtin'
+        'sgtin' => 'sgtin',
+        'customs_declaration' => 'customsDeclaration'
     ];
 
     /**
@@ -191,7 +195,8 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => 'setImei',
         'uin' => 'setUin',
         'gtin' => 'setGtin',
-        'sgtin' => 'setSgtin'
+        'sgtin' => 'setSgtin',
+        'customs_declaration' => 'setCustomsDeclaration'
     ];
 
     /**
@@ -203,7 +208,8 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
         'imei' => 'getImei',
         'uin' => 'getUin',
         'gtin' => 'getGtin',
-        'sgtin' => 'getSgtin'
+        'sgtin' => 'getSgtin',
+        'customs_declaration' => 'getCustomsDeclaration'
     ];
 
     /**
@@ -267,6 +273,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('uin', $data ?? [], null);
         $this->setIfExists('gtin', $data ?? [], null);
         $this->setIfExists('sgtin', $data ?? [], null);
+        $this->setIfExists('customs_declaration', $data ?? [], null);
     }
 
     /**
@@ -415,6 +422,33 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sgtin cannot be null');
         }
         $this->container['sgtin'] = $sgtin;
+
+        return $this;
+    }
+
+    /**
+     * Gets customs_declaration
+     *
+     * @return \Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration|null
+     */
+    public function getCustomsDeclaration()
+    {
+        return $this->container['customs_declaration'];
+    }
+
+    /**
+     * Sets customs_declaration
+     *
+     * @param \Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration|null $customs_declaration customs_declaration
+     *
+     * @return self
+     */
+    public function setCustomsDeclaration($customs_declaration)
+    {
+        if (is_null($customs_declaration)) {
+            throw new \InvalidArgumentException('non-nullable customs_declaration cannot be null');
+        }
+        $this->container['customs_declaration'] = $customs_declaration;
 
         return $this;
     }

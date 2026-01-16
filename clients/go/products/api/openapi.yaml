@@ -4581,7 +4581,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -4699,7 +4699,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -4804,7 +4804,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -4918,7 +4918,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -4992,7 +4992,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -5080,7 +5080,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -5172,7 +5172,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -5276,7 +5276,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "404":
           content:
             application/json:
@@ -5378,7 +5378,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -5474,7 +5474,7 @@ paths:
                 message: ""
               schema:
                 $ref: "#/components/schemas/Error"
-          description: Доступ запрещен
+          description: Доступ запрещён
         "429":
           content:
             application/json:
@@ -6227,7 +6227,7 @@ components:
             message: ""
           schema:
             $ref: "#/components/schemas/Error"
-      description: Доступ запрещен
+      description: Доступ запрещён
     ResponseGoodsLists:
       content:
         application/json:
@@ -6460,8 +6460,8 @@ components:
       example:
         data: null
         error: true
-        errorText: Доступ запрещен
-        additionalErrors: Доступ запрещен
+        errorText: Доступ запрещён
+        additionalErrors: Доступ запрещён
       properties:
         data:
           description: Данные ошибки

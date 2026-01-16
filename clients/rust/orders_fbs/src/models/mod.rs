@@ -1,3 +1,5 @@
+pub mod _api_marketplace_v3_orders__order_id__meta_customs_declaration_put_request;
+pub use self::_api_marketplace_v3_orders__order_id__meta_customs_declaration_put_request::ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest;
 pub mod _api_marketplace_v3_supplies__supply_id__orders_patch_request;
 pub use self::_api_marketplace_v3_supplies__supply_id__orders_patch_request::ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest;
 pub mod _api_v3_orders_get_200_response;
@@ -82,6 +84,8 @@ pub mod error;
 pub use self::error::Error;
 pub mod meta;
 pub use self::meta::Meta;
+pub mod meta_customs_declaration;
+pub use self::meta_customs_declaration::MetaCustomsDeclaration;
 pub mod meta_expiration;
 pub use self::meta_expiration::MetaExpiration;
 pub mod meta_gtin;

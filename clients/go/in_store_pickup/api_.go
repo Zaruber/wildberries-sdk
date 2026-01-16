@@ -1332,7 +1332,7 @@ func (r ApiApiV3ClickCollectOrdersOrderIdMetaGetRequest) Execute() (*ApiOrdersMe
 /*
 ApiV3ClickCollectOrdersOrderIdMetaGet Получить метаданные сборочного задания
 
-Метод возвращает метаданные [сборочного задания](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1orders~1new/get).
+Метод возвращает метаданные [сборочного задания](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1new/get).
 <br><br>
 Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1new/get), поле `requiredMeta`.
 <br><br>

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Заказы FBS
- * <div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+ * <div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
  *
  * The version of the OpenAPI document: order
  * 
@@ -13,6 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
+import type { MetaCustomsDeclaration } from './MetaCustomsDeclaration';
+import {
+    MetaCustomsDeclarationFromJSON,
+    MetaCustomsDeclarationFromJSONTyped,
+    MetaCustomsDeclarationToJSON,
+    MetaCustomsDeclarationToJSONTyped,
+} from './MetaCustomsDeclaration';
 import type { MetaExpiration } from './MetaExpiration';
 import {
     MetaExpirationFromJSON,
@@ -85,6 +92,12 @@ export interface Meta {
      * @memberof Meta
      */
     expiration?: MetaExpiration;
+    /**
+     * 
+     * @type {MetaCustomsDeclaration}
+     * @memberof Meta
+     */
+    customsDeclaration?: MetaCustomsDeclaration;
 }
 
 /**
@@ -109,6 +122,7 @@ export function MetaFromJSONTyped(json: any, ignoreDiscriminator: boolean): Meta
         'gtin': json['gtin'] == null ? undefined : MetaGtinFromJSON(json['gtin']),
         'sgtin': json['sgtin'] == null ? undefined : MetaSgtinFromJSON(json['sgtin']),
         'expiration': json['expiration'] == null ? undefined : MetaExpirationFromJSON(json['expiration']),
+        'customsDeclaration': json['customsDeclaration'] == null ? undefined : MetaCustomsDeclarationFromJSON(json['customsDeclaration']),
     };
 }
 
@@ -128,6 +142,7 @@ export function MetaToJSONTyped(value?: Meta | null, ignoreDiscriminator: boolea
         'gtin': MetaGtinToJSON(value['gtin']),
         'sgtin': MetaSgtinToJSON(value['sgtin']),
         'expiration': MetaExpirationToJSON(value['expiration']),
+        'customsDeclaration': MetaCustomsDeclarationToJSON(value['customsDeclaration']),
     };
 }
 

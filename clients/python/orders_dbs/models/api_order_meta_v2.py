@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from wildberries_sdk.orders_dbs.models.meta_customs_declaration import MetaCustomsDeclaration
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,8 @@ class ApiOrderMetaV2(BaseModel):
     order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
     sgtin: Optional[List[StrictStr]] = Field(default=None, description="Код маркировки Честного знака")
     uin: Optional[StrictStr] = Field(default=None, description="УИН")
-    __properties: ClassVar[List[str]] = ["error", "gtin", "imei", "orderId", "sgtin", "uin"]
+    customs_declaration: Optional[MetaCustomsDeclaration] = Field(default=None, alias="customsDeclaration")
+    __properties: ClassVar[List[str]] = ["error", "gtin", "imei", "orderId", "sgtin", "uin", "customsDeclaration"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +75,9 @@ class ApiOrderMetaV2(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of customs_declaration
+        if self.customs_declaration:
+            _dict['customsDeclaration'] = self.customs_declaration.to_dict()
         return _dict
 
     @classmethod
@@ -90,7 +95,8 @@ class ApiOrderMetaV2(BaseModel):
             "imei": obj.get("imei"),
             "orderId": obj.get("orderId"),
             "sgtin": obj.get("sgtin"),
-            "uin": obj.get("uin")
+            "uin": obj.get("uin"),
+            "customsDeclaration": MetaCustomsDeclaration.from_dict(obj["customsDeclaration"]) if obj.get("customsDeclaration") is not None else None
         })
         return _obj
 

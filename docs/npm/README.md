@@ -97,6 +97,7 @@ main().catch(console.error);
 
 ### orders_fbs (`orders_fbs`)
 - `orders_fbs.FBSApi.apiMarketplaceV3OrdersMetaPost` — `POST /api/marketplace/v3/orders/meta` — Получить метаданные сборочных заданий
+- `orders_fbs.FBSApi.apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut` — `PUT /api/marketplace/v3/orders/{orderId}/meta/customs-declaration` — Закрепить за сборочным заданием номер ГТД
 - `orders_fbs.FBSApi.apiMarketplaceV3SuppliesSupplyIdOrderIdsGet` — `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки
 - `orders_fbs.FBSApi.apiMarketplaceV3SuppliesSupplyIdOrdersPatch` — `PATCH /api/marketplace/v3/supplies/{supplyId}/orders` — Добавить сборочные задания к поставке
 - `orders_fbs.FBSApi.apiV3OrdersClientPost` — `POST /api/v3/orders/client` — Заказы с информацией по клиенту
@@ -149,6 +150,7 @@ main().catch(console.error);
 - `orders_dbw.DBWApi.apiV3DbwOrdersStickersPost` — `POST /api/v3/dbw/orders/stickers` — Получить стикеры сборочных заданий
 
 ### orders_dbs (`orders_dbs`)
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsMetaCustomsDeclarationPost` — `POST /api/marketplace/v3/dbs/meta/customs-declaration` — Закрепить за сборочными заданиями номер ГТД
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaGtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaImeiPost` — `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
