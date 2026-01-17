@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.01.17)
+- Products/Orders DBW/DBS: исправлено написание «Доступ запрещён» в описаниях ошибок и `AccessDenied`.
+- Orders FBS: обновлены ссылки на раздел сборочных заданий и метаданные.
+- In-store pickup: актуализирована ссылка на список новых сборочных заданий в описании метаданных.
+- Analytics: обновлена ссылка на отчёты по поисковым запросам.
+
 ### Changed (2026.01.16)
 - Orders FBS: добавлен `customsDeclaration` (номер ГТД) в метаданные, расширены допустимые ключи и добавлен новый endpoint `/api/marketplace/v3/orders/{orderId}/meta/customs-declaration`.
 - Communications: в методе подсчета отзывов/вопросов убрано обещание возвращать среднюю оценку.
