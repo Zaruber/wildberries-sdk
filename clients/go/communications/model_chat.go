@@ -23,7 +23,8 @@ type Chat struct {
 	ChatID *string `json:"chatID,omitempty"`
 	// Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) 
 	ReplySign *string `json:"replySign,omitempty"`
-	// ID покупателя
+	// ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
+	// Deprecated
 	ClientID *string `json:"clientID,omitempty"`
 	// Имя покупателя
 	ClientName *string `json:"clientName,omitempty"`
@@ -114,6 +115,7 @@ func (o *Chat) SetReplySign(v string) {
 }
 
 // GetClientID returns the ClientID field value if set, zero value otherwise.
+// Deprecated
 func (o *Chat) GetClientID() string {
 	if o == nil || IsNil(o.ClientID) {
 		var ret string
@@ -124,6 +126,7 @@ func (o *Chat) GetClientID() string {
 
 // GetClientIDOk returns a tuple with the ClientID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Chat) GetClientIDOk() (*string, bool) {
 	if o == nil || IsNil(o.ClientID) {
 		return nil, false
@@ -141,6 +144,7 @@ func (o *Chat) HasClientID() bool {
 }
 
 // SetClientID gets a reference to the given string and assigns it to the ClientID field.
+// Deprecated
 func (o *Chat) SetClientID(v string) {
 	o.ClientID = &v
 }

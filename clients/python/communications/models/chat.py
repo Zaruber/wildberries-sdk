@@ -30,7 +30,7 @@ class Chat(BaseModel):
     """ # noqa: E501
     chat_id: Optional[StrictStr] = Field(default=None, description="ID чата", alias="chatID")
     reply_sign: Optional[StrictStr] = Field(default=None, description="Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) ", alias="replySign")
-    client_id: Optional[StrictStr] = Field(default=None, description="ID покупателя", alias="clientID")
+    client_id: Optional[StrictStr] = Field(default=None, description="ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)", alias="clientID")
     client_name: Optional[StrictStr] = Field(default=None, description="Имя покупателя", alias="clientName")
     good_card: Optional[GoodCard] = Field(default=None, alias="goodCard")
     last_message: Optional[LastMessage] = Field(default=None, description="Последнее сообщение в чате", alias="lastMessage")

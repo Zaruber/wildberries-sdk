@@ -48,9 +48,10 @@ export interface Chat {
      */
     replySign?: string;
     /**
-     * ID покупателя
+     * ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
      * @type {string}
      * @memberof Chat
+     * @deprecated
      */
     clientID?: string;
     /**

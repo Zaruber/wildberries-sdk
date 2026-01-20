@@ -113,9 +113,10 @@ export interface Event {
      */
     sender?: Sender;
     /**
-     * ID покупателя
+     * ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
      * @type {string}
      * @memberof Event
+     * @deprecated
      */
     clientID?: string;
     /**

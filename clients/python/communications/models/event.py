@@ -39,7 +39,7 @@ class Event(BaseModel):
     add_time: Optional[StrictStr] = Field(default=None, description="Время появления события на сервере в UTC", alias="addTime")
     reply_sign: Optional[StrictStr] = Field(default=None, description="Подпись чата. Доступна только при `\"isNewChat\": true`. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) ", alias="replySign")
     sender: Optional[Sender] = None
-    client_id: Optional[StrictStr] = Field(default=None, description="ID покупателя", alias="clientID")
+    client_id: Optional[StrictStr] = Field(default=None, description="ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)", alias="clientID")
     client_name: Optional[StrictStr] = Field(default=None, description="Имя покупателя", alias="clientName")
     __properties: ClassVar[List[str]] = ["chatID", "eventID", "eventType", "isNewChat", "message", "source", "addTimestamp", "addTime", "replySign", "sender", "clientID", "clientName"]
 
