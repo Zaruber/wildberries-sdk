@@ -1376,9 +1376,7 @@ paths:
       - url: https://content-api.wildberries.ru
     post:
       x-readonly-method: true
-      x-category:
-        - advert
-        - content
+      x-category: content
       security:
         - HeaderApiKey: []
       tags:
@@ -2458,9 +2456,7 @@ paths:
       - url: https://content-api.wildberries.ru
     post:
       x-readonly-method: true
-      x-category:
-        - advert
-        - content
+      x-category: content
       security:
         - HeaderApiKey: []
       summary: Список карточек товаров в корзине

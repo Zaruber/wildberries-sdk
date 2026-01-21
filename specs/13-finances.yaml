@@ -898,6 +898,14 @@ components:
           type: number
           description: Размер скидки лояльности от продавца, %
           example: 0
+        uuid_promocode:
+          type: string
+          description: ID промокода
+          example: ''
+        sale_price_promocode_discount_prc:
+          type: number
+          description: Скидка за промокод, %
+          example: 0
   responses:
     '401':
       description: Не авторизован
