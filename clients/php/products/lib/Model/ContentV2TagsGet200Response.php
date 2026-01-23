@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2TagsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ContentV2TagsGet200Response implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Products\Model\ContentV2TagsGet200ResponseData',
+        'data' => '\Wildberries\Sdk\Products\Model\ContentV2TagsGet200ResponseData',
         'error' => 'bool',
         'error_text' => 'string',
         'additional_errors' => 'string'
@@ -313,7 +313,7 @@ class ContentV2TagsGet200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2TagsGet200ResponseData|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2TagsGet200ResponseData|null
      */
     public function getData()
     {
@@ -323,7 +323,7 @@ class ContentV2TagsGet200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2TagsGet200ResponseData|null $data data
+     * @param \Wildberries\Sdk\Products\Model\ContentV2TagsGet200ResponseData|null $data data
      *
      * @return self
      */

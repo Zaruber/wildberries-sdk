@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * KeysRedeemedResponseList Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class KeysRedeemedResponseList implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Wildberries\\Sdk\\Wbd\Model\KeyRedeemedResponse[]',
+        'items' => '\Wildberries\Sdk\Wbd\Model\KeyRedeemedResponse[]',
         'total' => 'int'
     ];
 
@@ -305,7 +305,7 @@ class KeysRedeemedResponseList implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets items
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\KeyRedeemedResponse[]
+     * @return \Wildberries\Sdk\Wbd\Model\KeyRedeemedResponse[]
      */
     public function getItems()
     {
@@ -315,7 +315,7 @@ class KeysRedeemedResponseList implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets items
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\KeyRedeemedResponse[] $items Список проданных ключей
+     * @param \Wildberries\Sdk\Wbd\Model\KeyRedeemedResponse[] $items Список проданных ключей
      *
      * @return self
      */

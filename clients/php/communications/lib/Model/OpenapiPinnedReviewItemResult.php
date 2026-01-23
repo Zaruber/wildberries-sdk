@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * OpenapiPinnedReviewItemResult Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,10 +61,10 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
         'imt_id' => 'int',
         'nm_id' => 'int',
         'pin_id' => 'int',
-        'pin_method' => '\Wildberries\\Sdk\\Communications\Model\DomainReviewPinMethod',
-        'pin_on' => '\Wildberries\\Sdk\\Communications\Model\DomainReviewPinOn',
+        'pin_method' => '\Wildberries\Sdk\Communications\Model\DomainReviewPinMethod',
+        'pin_on' => '\Wildberries\Sdk\Communications\Model\DomainReviewPinOn',
         'feedback_id' => 'string',
-        'state' => '\Wildberries\\Sdk\\Communications\Model\DomainReviewState',
+        'state' => '\Wildberries\Sdk\Communications\Model\DomainReviewState',
         'unpinned_cause' => 'string'
     ];
 
@@ -508,7 +508,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pin_method
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\DomainReviewPinMethod
+     * @return \Wildberries\Sdk\Communications\Model\DomainReviewPinMethod
      */
     public function getPinMethod()
     {
@@ -518,7 +518,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pin_method
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\DomainReviewPinMethod $pin_method Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция
+     * @param \Wildberries\Sdk\Communications\Model\DomainReviewPinMethod $pin_method Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция
      *
      * @return self
      */
@@ -535,7 +535,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pin_on
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\DomainReviewPinOn
+     * @return \Wildberries\Sdk\Communications\Model\DomainReviewPinOn
      */
     public function getPinOn()
     {
@@ -545,7 +545,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pin_on
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\DomainReviewPinOn $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
+     * @param \Wildberries\Sdk\Communications\Model\DomainReviewPinOn $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */
@@ -589,7 +589,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets state
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\DomainReviewState
+     * @return \Wildberries\Sdk\Communications\Model\DomainReviewState
      */
     public function getState()
     {
@@ -599,7 +599,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets state
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\DomainReviewState $state Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет
+     * @param \Wildberries\Sdk\Communications\Model\DomainReviewState $state Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет
      *
      * @return self
      */

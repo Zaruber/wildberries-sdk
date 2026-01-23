@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * SalesFunnelGroupReq Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class SalesFunnelGroupReq implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'string',
         'report_type' => 'string',
         'user_report_name' => 'string',
-        'params' => '\Wildberries\\Sdk\\Analytics\Model\SalesFunnelGroupReqParams'
+        'params' => '\Wildberries\Sdk\Analytics\Model\SalesFunnelGroupReqParams'
     ];
 
     /**
@@ -403,7 +403,7 @@ class SalesFunnelGroupReq implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets params
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\SalesFunnelGroupReqParams
+     * @return \Wildberries\Sdk\Analytics\Model\SalesFunnelGroupReqParams
      */
     public function getParams()
     {
@@ -413,7 +413,7 @@ class SalesFunnelGroupReq implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets params
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\SalesFunnelGroupReqParams $params params
+     * @param \Wildberries\Sdk\Analytics\Model\SalesFunnelGroupReqParams $params params
      *
      * @return self
      */

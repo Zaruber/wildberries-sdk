@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\InStorePickup\Model;
+namespace Wildberries\Sdk\InStorePickup\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\InStorePickup\ObjectSerializer;
+use \Wildberries\Sdk\InStorePickup\ObjectSerializer;
 
 /**
  * ApiOrdersMeta Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiOrdersMeta implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMeta'
+        'meta' => '\Wildberries\Sdk\InStorePickup\Model\ApiBaseMeta'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiOrdersMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meta
      *
-     * @return \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMeta|null
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiBaseMeta|null
      */
     public function getMeta()
     {
@@ -302,7 +302,7 @@ class ApiOrdersMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMeta|null $meta Метаданные сборочного задания
+     * @param \Wildberries\Sdk\InStorePickup\Model\ApiBaseMeta|null $meta Метаданные сборочного задания
      *
      * @return self
      */

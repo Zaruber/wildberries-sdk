@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * ApiOrdersGTINSetRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiOrdersGTINSetRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersDbs\Model\ApiGTIN[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbs\Model\ApiGTIN[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class ApiOrdersGTINSetRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\ApiGTIN[]
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiGTIN[]
      */
     public function getOrders()
     {
@@ -309,7 +309,7 @@ class ApiOrdersGTINSetRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\ApiGTIN[] $orders orders
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiGTIN[] $orders orders
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Api;
+namespace Wildberries\Sdk\General\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Wildberries\\Sdk\\General\ApiException;
-use Wildberries\\Sdk\\General\Configuration;
-use Wildberries\\Sdk\\General\FormDataProcessor;
-use Wildberries\\Sdk\\General\HeaderSelector;
-use Wildberries\\Sdk\\General\ObjectSerializer;
+use Wildberries\Sdk\General\ApiException;
+use Wildberries\Sdk\General\Configuration;
+use Wildberries\Sdk\General\FormDataProcessor;
+use Wildberries\Sdk\General\HeaderSelector;
+use Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -146,14 +146,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\CreateInviteRequest $create_invite_request create_invite_request (required)
+     * @param  \Wildberries\Sdk\General\Model\CreateInviteRequest $create_invite_request create_invite_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1InvitePost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\General\Model\CreateInviteResponse|\Wildberries\\Sdk\\General\Model\ErrorResponse|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response
+     * @return \Wildberries\Sdk\General\Model\CreateInviteResponse|\Wildberries\Sdk\General\Model\ErrorResponse|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response
      */
     public function apiV1InvitePost($create_invite_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1InvitePost'][0])
     {
@@ -170,14 +170,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\CreateInviteRequest $create_invite_request (required)
+     * @param  \Wildberries\Sdk\General\Model\CreateInviteRequest $create_invite_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1InvitePost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\General\Model\CreateInviteResponse|\Wildberries\\Sdk\\General\Model\ErrorResponse|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\General\Model\CreateInviteResponse|\Wildberries\Sdk\General\Model\ErrorResponse|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1InvitePostWithHttpInfo($create_invite_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1InvitePost'][0])
     {
@@ -209,25 +209,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\CreateInviteResponse',
+                        '\Wildberries\Sdk\General\Model\CreateInviteResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\ErrorResponse',
+                        '\Wildberries\Sdk\General\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
@@ -249,7 +249,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\General\Model\CreateInviteResponse',
+                '\Wildberries\Sdk\General\Model\CreateInviteResponse',
                 $request,
                 $response,
             );
@@ -258,7 +258,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\CreateInviteResponse',
+                        '\Wildberries\Sdk\General\Model\CreateInviteResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -266,7 +266,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\ErrorResponse',
+                        '\Wildberries\Sdk\General\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -282,7 +282,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -303,7 +303,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\CreateInviteRequest $create_invite_request (required)
+     * @param  \Wildberries\Sdk\General\Model\CreateInviteRequest $create_invite_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1InvitePost'] to see the possible values for this operation
@@ -330,7 +330,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\CreateInviteRequest $create_invite_request (required)
+     * @param  \Wildberries\Sdk\General\Model\CreateInviteRequest $create_invite_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1InvitePost'] to see the possible values for this operation
@@ -340,7 +340,7 @@ class DefaultApi
      */
     public function apiV1InvitePostAsyncWithHttpInfo($create_invite_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1InvitePost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\General\Model\CreateInviteResponse';
+        $returnType = '\Wildberries\Sdk\General\Model\CreateInviteResponse';
         $request = $this->apiV1InvitePostRequest($create_invite_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -386,7 +386,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\CreateInviteRequest $create_invite_request (required)
+     * @param  \Wildberries\Sdk\General\Model\CreateInviteRequest $create_invite_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1InvitePost'] to see the possible values for this operation
@@ -519,9 +519,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SellerInfoGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response
+     * @return \Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response
      */
     public function apiV1SellerInfoGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SellerInfoGet'][0])
     {
@@ -542,9 +542,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SellerInfoGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1SellerInfoGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SellerInfoGet'][0])
     {
@@ -576,19 +576,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\ApiV1SellerInfoGet200Response',
+                        '\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
@@ -610,7 +610,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\General\Model\ApiV1SellerInfoGet200Response',
+                '\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response',
                 $request,
                 $response,
             );
@@ -619,7 +619,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\ApiV1SellerInfoGet200Response',
+                        '\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -627,7 +627,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -635,7 +635,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -691,7 +691,7 @@ class DefaultApi
      */
     public function apiV1SellerInfoGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SellerInfoGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\General\Model\ApiV1SellerInfoGet200Response';
+        $returnType = '\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response';
         $request = $this->apiV1SellerInfoGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -856,7 +856,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UserDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -879,7 +879,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UserDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -916,7 +916,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\ErrorResponse',
+                        '\Wildberries\Sdk\General\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -924,7 +924,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -932,7 +932,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1154,12 +1154,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\UpdateUserAccessRequest $update_user_access_request update_user_access_request (required)
+     * @param  \Wildberries\Sdk\General\Model\UpdateUserAccessRequest $update_user_access_request update_user_access_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UsersAccessPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1177,12 +1177,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
+     * @param  \Wildberries\Sdk\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UsersAccessPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1219,7 +1219,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\ErrorResponse',
+                        '\Wildberries\Sdk\General\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1227,7 +1227,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1235,7 +1235,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1256,7 +1256,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
+     * @param  \Wildberries\Sdk\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UsersAccessPut'] to see the possible values for this operation
@@ -1283,7 +1283,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
+     * @param  \Wildberries\Sdk\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UsersAccessPut'] to see the possible values for this operation
@@ -1326,7 +1326,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://user-management-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
+     * @param  \Wildberries\Sdk\General\Model\UpdateUserAccessRequest $update_user_access_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UsersAccessPut'] to see the possible values for this operation
@@ -1462,9 +1462,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UsersGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\General\Model\GetUsersResponse|\Wildberries\\Sdk\\General\Model\ErrorResponse|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response
+     * @return \Wildberries\Sdk\General\Model\GetUsersResponse|\Wildberries\Sdk\General\Model\ErrorResponse|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response
      */
     public function apiV1UsersGet($limit = 100, $offset = 0, $is_invite_only = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1UsersGet'][0])
     {
@@ -1488,9 +1488,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1UsersGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\General\Model\GetUsersResponse|\Wildberries\\Sdk\\General\Model\ErrorResponse|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\General\Model\GetUsersResponse|\Wildberries\Sdk\General\Model\ErrorResponse|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1UsersGetWithHttpInfo($limit = 100, $offset = 0, $is_invite_only = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1UsersGet'][0])
     {
@@ -1522,25 +1522,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\GetUsersResponse',
+                        '\Wildberries\Sdk\General\Model\GetUsersResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\ErrorResponse',
+                        '\Wildberries\Sdk\General\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
@@ -1562,7 +1562,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\General\Model\GetUsersResponse',
+                '\Wildberries\Sdk\General\Model\GetUsersResponse',
                 $request,
                 $response,
             );
@@ -1571,7 +1571,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\GetUsersResponse',
+                        '\Wildberries\Sdk\General\Model\GetUsersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1579,7 +1579,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\ErrorResponse',
+                        '\Wildberries\Sdk\General\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1587,7 +1587,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1595,7 +1595,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1657,7 +1657,7 @@ class DefaultApi
      */
     public function apiV1UsersGetAsyncWithHttpInfo($limit = 100, $offset = 0, $is_invite_only = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1UsersGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\General\Model\GetUsersResponse';
+        $returnType = '\Wildberries\Sdk\General\Model\GetUsersResponse';
         $request = $this->apiV1UsersGetRequest($limit, $offset, $is_invite_only, $hostIndex, $variables, $contentType);
 
         return $this->client

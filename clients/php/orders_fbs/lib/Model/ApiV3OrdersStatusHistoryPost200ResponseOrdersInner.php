@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * ApiV3OrdersStatusHistoryPost200ResponseOrdersInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiV3OrdersStatusHistoryPost200ResponseOrdersInner implements ModelInterfa
       */
     protected static $openAPITypes = [
         'delivery_date' => '\DateTime',
-        'statuses' => '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner[]',
+        'statuses' => '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner[]',
         'order_id' => 'int'
     ];
 
@@ -333,7 +333,7 @@ class ApiV3OrdersStatusHistoryPost200ResponseOrdersInner implements ModelInterfa
     /**
      * Gets statuses
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner[]|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner[]|null
      */
     public function getStatuses()
     {
@@ -343,7 +343,7 @@ class ApiV3OrdersStatusHistoryPost200ResponseOrdersInner implements ModelInterfa
     /**
      * Sets statuses
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner[]|null $statuses Статусы
+     * @param \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner[]|null $statuses Статусы
      *
      * @return self
      */

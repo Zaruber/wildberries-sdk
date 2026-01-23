@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1PromotionCountGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class AdvV1PromotionCountGet200Response implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'adverts' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInner[]',
+        'adverts' => '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInner[]',
         'all' => 'int'
     ];
 
@@ -299,7 +299,7 @@ class AdvV1PromotionCountGet200Response implements ModelInterface, ArrayAccess, 
     /**
      * Gets adverts
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInner[]|null
      */
     public function getAdverts()
     {
@@ -309,7 +309,7 @@ class AdvV1PromotionCountGet200Response implements ModelInterface, ArrayAccess, 
     /**
      * Sets adverts
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInner[]|null $adverts Данные по кампаниям
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInner[]|null $adverts Данные по кампаниям
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ApiV2SearchReportTableDetailsPost200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV2SearchReportTableDetailsPost200Response implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Analytics\Model\TableDetailsResponse'
+        'data' => '\Wildberries\Sdk\Analytics\Model\TableDetailsResponse'
     ];
 
     /**
@@ -295,7 +295,7 @@ class ApiV2SearchReportTableDetailsPost200Response implements ModelInterface, Ar
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableDetailsResponse
+     * @return \Wildberries\Sdk\Analytics\Model\TableDetailsResponse
      */
     public function getData()
     {
@@ -305,7 +305,7 @@ class ApiV2SearchReportTableDetailsPost200Response implements ModelInterface, Ar
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableDetailsResponse $data data
+     * @param \Wildberries\Sdk\Analytics\Model\TableDetailsResponse $data data
      *
      * @return self
      */

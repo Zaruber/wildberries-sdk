@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * StoreContactRequestBody Class Doc Comment
  *
  * @category Class
  * @description Контакты склада продавца
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class StoreContactRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'contacts' => '\Wildberries\\Sdk\\Products\Model\StoreContactRequestBodyContactsInner[]'
+        'contacts' => '\Wildberries\Sdk\Products\Model\StoreContactRequestBodyContactsInner[]'
     ];
 
     /**
@@ -297,7 +297,7 @@ class StoreContactRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets contacts
      *
-     * @return \Wildberries\\Sdk\\Products\Model\StoreContactRequestBodyContactsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\StoreContactRequestBodyContactsInner[]|null
      */
     public function getContacts()
     {
@@ -307,7 +307,7 @@ class StoreContactRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets contacts
      *
-     * @param \Wildberries\\Sdk\\Products\Model\StoreContactRequestBodyContactsInner[]|null $contacts contacts
+     * @param \Wildberries\Sdk\Products\Model\StoreContactRequestBodyContactsInner[]|null $contacts contacts
      *
      * @return self
      */

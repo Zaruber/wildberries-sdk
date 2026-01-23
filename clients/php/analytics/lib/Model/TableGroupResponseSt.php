@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableGroupResponseSt Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'groups' => '\Wildberries\\Sdk\\Analytics\Model\TableGroupItemSt[]'
+        'groups' => '\Wildberries\Sdk\Analytics\Model\TableGroupItemSt[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets groups
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableGroupItemSt[]
+     * @return \Wildberries\Sdk\Analytics\Model\TableGroupItemSt[]
      */
     public function getGroups()
     {
@@ -305,7 +305,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets groups
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableGroupItemSt[] $groups Множество данных по группам
+     * @param \Wildberries\Sdk\Analytics\Model\TableGroupItemSt[] $groups Множество данных по группам
      *
      * @return self
      */

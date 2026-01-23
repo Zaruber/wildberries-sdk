@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+namespace Wildberries\Sdk\Analytics\Model;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableGroupField Class Doc Comment
  *
  * @category Class
  * @description Сортировка по полю:   - &#x60;ordersCount&#x60; — Заказы, шт.   - &#x60;ordersSum&#x60; — Заказы, сумма   - &#x60;avgOrders&#x60; — Среднее количество заказов в день   - &#x60;buyoutCount&#x60; — Выкупы, шт.   - &#x60;buyoutSum&#x60; — Выкупы, сумма   - &#x60;buyoutPercent&#x60; — Процент выкупа   - &#x60;stockCount&#x60; — Остатки на текущий день, шт.   - &#x60;stockSum&#x60; — Стоимость остатков на текущий день   - &#x60;saleRate&#x60; — Оборачиваемость текущих остатков   - &#x60;avgStockTurnover&#x60; — Оборачиваемость средних остатков   - &#x60;toClientCount&#x60; — В пути к клиенту, шт.   - &#x60;fromClientCount&#x60; — В пути от клиента, шт.   - &#x60;minPrice&#x60; — Минимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)   - &#x60;maxPrice&#x60; — Максимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)   - &#x60;officeMissingTime&#x60; — Время отсутствия товара на складе   - &#x60;lostOrdersCount&#x60; — Упущенные заказы, шт.   - &#x60;lostOrdersSum&#x60; — Упущенные заказы, сумма   - &#x60;lostBuyoutsCount&#x60; — Упущенные выкупы, шт.   - &#x60;lostBuyoutsSum&#x60; — Упущенные выкупы, сумма
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

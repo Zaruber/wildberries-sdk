@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableSizeResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'offices' => '\Wildberries\\Sdk\\Analytics\Model\TableOfficeItem[]',
-        'sizes' => '\Wildberries\\Sdk\\Analytics\Model\TableSizeResponseSizesInner[]'
+        'offices' => '\Wildberries\Sdk\Analytics\Model\TableOfficeItem[]',
+        'sizes' => '\Wildberries\Sdk\Analytics\Model\TableSizeResponseSizesInner[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets offices
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableOfficeItem[]|null
+     * @return \Wildberries\Sdk\Analytics\Model\TableOfficeItem[]|null
      */
     public function getOffices()
     {
@@ -309,7 +309,7 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets offices
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableOfficeItem[]|null $offices Множество данных по складам
+     * @param \Wildberries\Sdk\Analytics\Model\TableOfficeItem[]|null $offices Множество данных по складам
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets sizes
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableSizeResponseSizesInner[]|null
+     * @return \Wildberries\Sdk\Analytics\Model\TableSizeResponseSizesInner[]|null
      */
     public function getSizes()
     {
@@ -336,7 +336,7 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets sizes
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableSizeResponseSizesInner[]|null $sizes Множество данных по размерам товара
+     * @param \Wildberries\Sdk\Analytics\Model\TableSizeResponseSizesInner[]|null $sizes Множество данных по размерам товара
      *
      * @return self
      */

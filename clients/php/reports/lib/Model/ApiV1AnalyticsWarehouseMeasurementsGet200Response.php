@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * ApiV1AnalyticsWarehouseMeasurementsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV1AnalyticsWarehouseMeasurementsGet200Response implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Reports\Model\MeasurementData'
+        'data' => '\Wildberries\Sdk\Reports\Model\MeasurementData'
     ];
 
     /**
@@ -295,7 +295,7 @@ class ApiV1AnalyticsWarehouseMeasurementsGet200Response implements ModelInterfac
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\MeasurementData
+     * @return \Wildberries\Sdk\Reports\Model\MeasurementData
      */
     public function getData()
     {
@@ -305,7 +305,7 @@ class ApiV1AnalyticsWarehouseMeasurementsGet200Response implements ModelInterfac
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\MeasurementData $data data
+     * @param \Wildberries\Sdk\Reports\Model\MeasurementData $data data
      *
      * @return self
      */

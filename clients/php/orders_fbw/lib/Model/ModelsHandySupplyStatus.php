@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,14 +26,14 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Model;
-use \Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+namespace Wildberries\Sdk\OrdersFbw\Model;
+use \Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * ModelsHandySupplyStatus Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

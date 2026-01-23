@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1StatsPost200ResponseInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class AdvV1StatsPost200ResponseInner implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'interval' => '\Wildberries\\Sdk\\Promotion\Model\StatIntervalInterval',
-        'stats' => '\Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]',
+        'interval' => '\Wildberries\Sdk\Promotion\Model\StatIntervalInterval',
+        'stats' => '\Wildberries\Sdk\Promotion\Model\StatsBlok1[]',
         'dates' => '\DateTime[]'
     ];
 
@@ -312,7 +312,7 @@ class AdvV1StatsPost200ResponseInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets interval
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\StatIntervalInterval
+     * @return \Wildberries\Sdk\Promotion\Model\StatIntervalInterval
      */
     public function getInterval()
     {
@@ -322,7 +322,7 @@ class AdvV1StatsPost200ResponseInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets interval
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\StatIntervalInterval $interval interval
+     * @param \Wildberries\Sdk\Promotion\Model\StatIntervalInterval $interval interval
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class AdvV1StatsPost200ResponseInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\StatsBlok1[]|null
      */
     public function getStats()
     {
@@ -349,7 +349,7 @@ class AdvV1StatsPost200ResponseInner implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]|null $stats Блок статистики
+     * @param \Wildberries\Sdk\Promotion\Model\StatsBlok1[]|null $stats Блок статистики
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1QuestionGet200ResponseData Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,8 +61,8 @@ class ApiV1QuestionGet200ResponseData implements ModelInterface, ArrayAccess, \J
         'text' => 'string',
         'created_date' => '\DateTime',
         'state' => 'string',
-        'answer' => '\Wildberries\\Sdk\\Communications\Model\ApiV1QuestionGet200ResponseDataAnswer',
-        'product_details' => '\Wildberries\\Sdk\\Communications\Model\ApiV1QuestionGet200ResponseDataProductDetails',
+        'answer' => '\Wildberries\Sdk\Communications\Model\ApiV1QuestionGet200ResponseDataAnswer',
+        'product_details' => '\Wildberries\Sdk\Communications\Model\ApiV1QuestionGet200ResponseDataProductDetails',
         'was_viewed' => 'bool',
         'is_warned' => 'bool'
     ];
@@ -449,7 +449,7 @@ class ApiV1QuestionGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets answer
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionGet200ResponseDataAnswer|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1QuestionGet200ResponseDataAnswer|null
      */
     public function getAnswer()
     {
@@ -459,7 +459,7 @@ class ApiV1QuestionGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets answer
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionGet200ResponseDataAnswer|null $answer answer
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1QuestionGet200ResponseDataAnswer|null $answer answer
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class ApiV1QuestionGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets product_details
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionGet200ResponseDataProductDetails|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1QuestionGet200ResponseDataProductDetails|null
      */
     public function getProductDetails()
     {
@@ -493,7 +493,7 @@ class ApiV1QuestionGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets product_details
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionGet200ResponseDataProductDetails|null $product_details product_details
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1QuestionGet200ResponseDataProductDetails|null $product_details product_details
      *
      * @return self
      */

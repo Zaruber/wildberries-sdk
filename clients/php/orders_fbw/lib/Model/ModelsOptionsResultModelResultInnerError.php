@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Model;
+namespace Wildberries\Sdk\OrdersFbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * ModelsOptionsResultModelResultInnerError Class Doc Comment
  *
  * @category Class
  * @description Данные ошибки. При наличии
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

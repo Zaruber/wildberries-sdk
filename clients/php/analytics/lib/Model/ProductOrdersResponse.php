@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ProductOrdersResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => '\Wildberries\\Sdk\\Analytics\Model\ProductOrdersMetrics[]',
-        'items' => '\Wildberries\\Sdk\\Analytics\Model\ProductOrdersTextItem[]'
+        'total' => '\Wildberries\Sdk\Analytics\Model\ProductOrdersMetrics[]',
+        'items' => '\Wildberries\Sdk\Analytics\Model\ProductOrdersTextItem[]'
     ];
 
     /**
@@ -305,7 +305,7 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets total
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductOrdersMetrics[]
+     * @return \Wildberries\Sdk\Analytics\Model\ProductOrdersMetrics[]
      */
     public function getTotal()
     {
@@ -315,7 +315,7 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets total
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductOrdersMetrics[] $total Итог по товарам
+     * @param \Wildberries\Sdk\Analytics\Model\ProductOrdersMetrics[] $total Итог по товарам
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets items
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductOrdersTextItem[]
+     * @return \Wildberries\Sdk\Analytics\Model\ProductOrdersTextItem[]
      */
     public function getItems()
     {
@@ -342,7 +342,7 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets items
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductOrdersTextItem[] $items Элементы таблицы
+     * @param \Wildberries\Sdk\Analytics\Model\ProductOrdersTextItem[] $items Элементы таблицы
      *
      * @return self
      */

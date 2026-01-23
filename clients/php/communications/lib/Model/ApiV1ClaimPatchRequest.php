@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1ClaimPatchRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

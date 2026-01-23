@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * V0AdvertMultibid Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class V0AdvertMultibid implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'advert_id' => 'int',
-        'nm_bids' => '\Wildberries\\Sdk\\Promotion\Model\V0AdvertMultiBidItem[]'
+        'nm_bids' => '\Wildberries\Sdk\Promotion\Model\V0AdvertMultiBidItem[]'
     ];
 
     /**
@@ -332,7 +332,7 @@ class V0AdvertMultibid implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets nm_bids
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0AdvertMultiBidItem[]
+     * @return \Wildberries\Sdk\Promotion\Model\V0AdvertMultiBidItem[]
      */
     public function getNmBids()
     {
@@ -342,7 +342,7 @@ class V0AdvertMultibid implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nm_bids
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\V0AdvertMultiBidItem[] $nm_bids Артикулы WB и ставки для них
+     * @param \Wildberries\Sdk\Promotion\Model\V0AdvertMultiBidItem[] $nm_bids Артикулы WB и ставки для них
      *
      * @return self
      */

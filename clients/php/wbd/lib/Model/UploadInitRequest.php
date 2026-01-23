@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * UploadInitRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,8 +61,8 @@ class UploadInitRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'description' => 'string',
         'catalog_id' => 'int',
         'content_type' => 'string',
-        'parts' => '\Wildberries\\Sdk\\Wbd\Model\ChunkPart[]',
-        'meta' => '\Wildberries\\Sdk\\Wbd\Model\ContentMeta'
+        'parts' => '\Wildberries\Sdk\Wbd\Model\ChunkPart[]',
+        'meta' => '\Wildberries\Sdk\Wbd\Model\ContentMeta'
     ];
 
     /**
@@ -545,7 +545,7 @@ class UploadInitRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets parts
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\ChunkPart[]
+     * @return \Wildberries\Sdk\Wbd\Model\ChunkPart[]
      */
     public function getParts()
     {
@@ -555,7 +555,7 @@ class UploadInitRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets parts
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\ChunkPart[] $parts Для оптимальной скорости загрузки контента следует разбить файл на фреймы по 2 Мб. В массиве указываются индекс каждого фрейма и его размер
+     * @param \Wildberries\Sdk\Wbd\Model\ChunkPart[] $parts Для оптимальной скорости загрузки контента следует разбить файл на фреймы по 2 Мб. В массиве указываются индекс каждого фрейма и его размер
      *
      * @return self
      */
@@ -572,7 +572,7 @@ class UploadInitRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets meta
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\ContentMeta|null
+     * @return \Wildberries\Sdk\Wbd\Model\ContentMeta|null
      */
     public function getMeta()
     {
@@ -582,7 +582,7 @@ class UploadInitRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets meta
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\ContentMeta|null $meta meta
+     * @param \Wildberries\Sdk\Wbd\Model\ContentMeta|null $meta meta
      *
      * @return self
      */

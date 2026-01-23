@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ResponseFeedbackInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,11 +63,11 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
         'cons' => 'string',
         'product_valuation' => 'int',
         'created_date' => '\DateTime',
-        'answer' => '\Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerAnswer',
+        'answer' => '\Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerAnswer',
         'state' => 'string',
-        'product_details' => '\Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerProductDetails',
-        'photo_links' => '\Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]',
-        'video' => '\Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerVideo',
+        'product_details' => '\Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerProductDetails',
+        'photo_links' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]',
+        'video' => '\Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerVideo',
         'was_viewed' => 'bool',
         'user_name' => 'string',
         'matching_size' => 'string',
@@ -643,7 +643,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets answer
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerAnswer|null
+     * @return \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerAnswer|null
      */
     public function getAnswer()
     {
@@ -653,7 +653,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets answer
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerAnswer|null $answer answer
+     * @param \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerAnswer|null $answer answer
      *
      * @return self
      */
@@ -704,7 +704,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets product_details
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerProductDetails|null
+     * @return \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerProductDetails|null
      */
     public function getProductDetails()
     {
@@ -714,7 +714,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets product_details
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerProductDetails|null $product_details product_details
+     * @param \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerProductDetails|null $product_details product_details
      *
      * @return self
      */
@@ -731,7 +731,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets photo_links
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null
      */
     public function getPhotoLinks()
     {
@@ -741,7 +741,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets photo_links
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null $photo_links Массив структур фотографий
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null $photo_links Массив структур фотографий
      *
      * @return self
      */
@@ -765,7 +765,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets video
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerVideo|null
+     * @return \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerVideo|null
      */
     public function getVideo()
     {
@@ -775,7 +775,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets video
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInnerVideo|null $video video
+     * @param \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerVideo|null $video video
      *
      * @return self
      */

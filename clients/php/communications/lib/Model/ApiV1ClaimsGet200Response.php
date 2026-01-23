@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1ClaimsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV1ClaimsGet200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'claims' => '\Wildberries\\Sdk\\Communications\Model\ApiV1ClaimsGet200ResponseClaimsInner[]',
+        'claims' => '\Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet200ResponseClaimsInner[]',
         'total' => 'int'
     ];
 
@@ -299,7 +299,7 @@ class ApiV1ClaimsGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets claims
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1ClaimsGet200ResponseClaimsInner[]|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet200ResponseClaimsInner[]|null
      */
     public function getClaims()
     {
@@ -309,7 +309,7 @@ class ApiV1ClaimsGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets claims
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1ClaimsGet200ResponseClaimsInner[]|null $claims Заявки
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet200ResponseClaimsInner[]|null $claims Заявки
      *
      * @return self
      */

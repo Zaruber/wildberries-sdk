@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw;
+namespace Wildberries\Sdk\OrdersFbw;
 
 use \Exception;
 
@@ -33,7 +33,7 @@ use \Exception;
  * ApiException Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

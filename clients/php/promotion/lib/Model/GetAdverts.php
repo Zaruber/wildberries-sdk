@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * GetAdverts Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'adverts' => '\Wildberries\\Sdk\\Promotion\Model\GetAdvertsAdvertsInner[]'
+        'adverts' => '\Wildberries\Sdk\Promotion\Model\GetAdvertsAdvertsInner[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets adverts
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\GetAdvertsAdvertsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\GetAdvertsAdvertsInner[]
      */
     public function getAdverts()
     {
@@ -305,7 +305,7 @@ class GetAdverts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets adverts
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\GetAdvertsAdvertsInner[] $adverts Кампании
+     * @param \Wildberries\Sdk\Promotion\Model\GetAdvertsAdvertsInner[] $adverts Кампании
      *
      * @return self
      */

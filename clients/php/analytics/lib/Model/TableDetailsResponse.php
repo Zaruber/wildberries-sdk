@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableDetailsResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class TableDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'products' => '\Wildberries\\Sdk\\Analytics\Model\TableProductItem[]'
+        'products' => '\Wildberries\Sdk\Analytics\Model\TableProductItem[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class TableDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets products
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableProductItem[]
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItem[]
      */
     public function getProducts()
     {
@@ -305,7 +305,7 @@ class TableDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets products
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableProductItem[] $products Список товаров в группе по фильтру
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItem[] $products Список товаров в группе по фильтру
      *
      * @return self
      */

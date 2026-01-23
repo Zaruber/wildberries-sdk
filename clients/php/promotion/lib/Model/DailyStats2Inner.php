@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * DailyStats2Inner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class DailyStats2Inner implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'date' => '\DateTime',
-        'app_type_stats' => '\Wildberries\\Sdk\\Promotion\Model\DailyStats2InnerAppTypeStatsInner[]'
+        'app_type_stats' => '\Wildberries\Sdk\Promotion\Model\DailyStats2InnerAppTypeStatsInner[]'
     ];
 
     /**
@@ -326,7 +326,7 @@ class DailyStats2Inner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets app_type_stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\DailyStats2InnerAppTypeStatsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\DailyStats2InnerAppTypeStatsInner[]|null
      */
     public function getAppTypeStats()
     {
@@ -336,7 +336,7 @@ class DailyStats2Inner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets app_type_stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\DailyStats2InnerAppTypeStatsInner[]|null $app_type_stats Статистика по платформам
+     * @param \Wildberries\Sdk\Promotion\Model\DailyStats2InnerAppTypeStatsInner[]|null $app_type_stats Статистика по платформам
      *
      * @return self
      */

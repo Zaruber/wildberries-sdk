@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * ApiV3SuppliesOrdersReshipmentGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV3SuppliesOrdersReshipmentGet200Response implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200ResponseOrdersInner[]'
+        'orders' => '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200ResponseOrdersInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV3SuppliesOrdersReshipmentGet200Response implements ModelInterface, Arr
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200ResponseOrdersInner[]|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200ResponseOrdersInner[]|null
      */
     public function getOrders()
     {
@@ -302,7 +302,7 @@ class ApiV3SuppliesOrdersReshipmentGet200Response implements ModelInterface, Arr
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200ResponseOrdersInner[]|null $orders Список сборочных заданий
+     * @param \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200ResponseOrdersInner[]|null $orders Список сборочных заданий
      *
      * @return self
      */

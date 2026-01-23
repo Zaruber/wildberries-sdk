@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2CardsUpdatePostRequestInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,9 +62,9 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
         'brand' => 'string',
         'title' => 'string',
         'description' => 'string',
-        'dimensions' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions',
-        'characteristics' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]',
-        'sizes' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerSizesInner[]'
+        'dimensions' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions',
+        'characteristics' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]',
+        'sizes' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerSizesInner[]'
     ];
 
     /**
@@ -493,7 +493,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Gets dimensions
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions|null
      */
     public function getDimensions()
     {
@@ -503,7 +503,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Sets dimensions
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions|null $dimensions dimensions
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions|null $dimensions dimensions
      *
      * @return self
      */
@@ -520,7 +520,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Gets characteristics
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null
      */
     public function getCharacteristics()
     {
@@ -530,7 +530,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Sets characteristics
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null $characteristics Характеристики товара. <br> Можно получить методом [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get)
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null $characteristics Характеристики товара. <br> Можно получить методом [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get)
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Gets sizes
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerSizesInner[]
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerSizesInner[]
      */
     public function getSizes()
     {
@@ -557,7 +557,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Sets sizes
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerSizesInner[] $sizes Массив размеров<br> Для безразмерного товара всё равно нужно передавать данный массив без параметров (wbSize и techSize), но с баркодом
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerSizesInner[] $sizes Массив размеров<br> Для безразмерного товара всё равно нужно передавать данный массив без параметров (wbSize и techSize), но с баркодом
      *
      * @return self
      */

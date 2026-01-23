@@ -60,7 +60,7 @@ type ResponseFeedbackInner struct {
 	// Список тегов покупателя
 	Bables []string `json:"bables,omitempty"`
 	// Штрихкод единицы товара
-	LastOrderShkId *int32 `json:"lastOrderShkId,omitempty"`
+	LastOrderShkId *int64 `json:"lastOrderShkId,omitempty"`
 	// Дата покупки
 	LastOrderCreatedAt *string `json:"lastOrderCreatedAt,omitempty"`
 	// Цвет товара
@@ -797,7 +797,7 @@ func (o *ResponseFeedbackInner) SetBables(v []string) {
 }
 
 // GetLastOrderShkId returns the LastOrderShkId field value if set, zero value otherwise.
-func (o *ResponseFeedbackInner) GetLastOrderShkId() int32 {
+func (o *ResponseFeedbackInner) GetLastOrderShkId() int64 {
 	if o == nil || IsNil(o.LastOrderShkId) {
 		var ret int32
 		return ret
@@ -807,7 +807,7 @@ func (o *ResponseFeedbackInner) GetLastOrderShkId() int32 {
 
 // GetLastOrderShkIdOk returns a tuple with the LastOrderShkId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResponseFeedbackInner) GetLastOrderShkIdOk() (*int32, bool) {
+func (o *ResponseFeedbackInner) GetLastOrderShkIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.LastOrderShkId) {
 		return nil, false
 	}
@@ -823,8 +823,8 @@ func (o *ResponseFeedbackInner) HasLastOrderShkId() bool {
 	return false
 }
 
-// SetLastOrderShkId gets a reference to the given int32 and assigns it to the LastOrderShkId field.
-func (o *ResponseFeedbackInner) SetLastOrderShkId(v int32) {
+// SetLastOrderShkId gets a reference to the given int64 and assigns it to the LastOrderShkId field.
+func (o *ResponseFeedbackInner) SetLastOrderShkId(v int64) {
 	o.LastOrderShkId = &v
 }
 

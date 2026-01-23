@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Finances;
+namespace Wildberries\Sdk\Finances;
 
 use \Exception;
 
@@ -33,7 +33,7 @@ use \Exception;
  * ApiException Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

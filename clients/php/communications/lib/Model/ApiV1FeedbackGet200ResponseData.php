@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1FeedbackGet200ResponseData Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,11 +65,11 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
         'text' => 'string',
         'product_valuation' => 'int',
         'created_date' => '\DateTime',
-        'answer' => '\Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer',
+        'answer' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer',
         'state' => 'string',
-        'product_details' => '\Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails',
-        'photo_links' => '\Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]',
-        'video' => '\Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo',
+        'product_details' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails',
+        'photo_links' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]',
+        'video' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo',
         'was_viewed' => 'bool',
         'is_able_supplier_feedback_valuation' => 'bool',
         'supplier_feedback_valuation' => 'int',
@@ -697,7 +697,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets answer
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer|null
      */
     public function getAnswer()
     {
@@ -707,7 +707,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets answer
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer|null $answer answer
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer|null $answer answer
      *
      * @return self
      */
@@ -758,7 +758,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets product_details
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails|null
      */
     public function getProductDetails()
     {
@@ -768,7 +768,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets product_details
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails|null $product_details product_details
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails|null $product_details product_details
      *
      * @return self
      */
@@ -785,7 +785,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets photo_links
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null
      */
     public function getPhotoLinks()
     {
@@ -795,7 +795,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets photo_links
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null $photo_links Массив структур фотографий
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]|null $photo_links Массив структур фотографий
      *
      * @return self
      */
@@ -819,7 +819,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets video
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo|null
      */
     public function getVideo()
     {
@@ -829,7 +829,7 @@ class ApiV1FeedbackGet200ResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets video
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo|null $video video
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo|null $video video
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Tariffs\Model;
+namespace Wildberries\Sdk\Tariffs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Tariffs\ObjectSerializer;
+use \Wildberries\Sdk\Tariffs\ObjectSerializer;
 
 /**
  * ModelsWarehousesReturnRates Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class ModelsWarehousesReturnRates implements ModelInterface, ArrayAccess, \JsonS
         'dt_next_delivery_dump_kgt' => 'string',
         'dt_next_delivery_dump_srg' => 'string',
         'dt_next_delivery_dump_sup' => 'string',
-        'warehouse_list' => '\Wildberries\\Sdk\\Tariffs\Model\ModelsWarehouseReturnRates[]'
+        'warehouse_list' => '\Wildberries\Sdk\Tariffs\Model\ModelsWarehouseReturnRates[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class ModelsWarehousesReturnRates implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets warehouse_list
      *
-     * @return \Wildberries\\Sdk\\Tariffs\Model\ModelsWarehouseReturnRates[]|null
+     * @return \Wildberries\Sdk\Tariffs\Model\ModelsWarehouseReturnRates[]|null
      */
     public function getWarehouseList()
     {
@@ -404,7 +404,7 @@ class ModelsWarehousesReturnRates implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets warehouse_list
      *
-     * @param \Wildberries\\Sdk\\Tariffs\Model\ModelsWarehouseReturnRates[]|null $warehouse_list Тарифы на возврат, сгруппированные по складам:   - стоимость возврата брака и возврата по инициативе продавца при грузовой доставке.   - стоимость возврата неопознанного складом товара.   - стоимость возврата брака, возврата по инициативе продавца и автовозвратов Маркетплейс (в пункт выдачи и обратно).  Можно получить стоимость возврата в пункт выдачи (ПВЗ) и обратной логистики — если продавец не забрал товары из пункта выдачи за 7 дней.
+     * @param \Wildberries\Sdk\Tariffs\Model\ModelsWarehouseReturnRates[]|null $warehouse_list Тарифы на возврат, сгруппированные по складам:   - стоимость возврата брака и возврата по инициативе продавца при грузовой доставке.   - стоимость возврата неопознанного складом товара.   - стоимость возврата брака, возврата по инициативе продавца и автовозвратов Маркетплейс (в пункт выдачи и обратно).  Можно получить стоимость возврата в пункт выдачи (ПВЗ) и обратной логистики — если продавец не забрал товары из пункта выдачи за 7 дней.
      *
      * @return self
      */

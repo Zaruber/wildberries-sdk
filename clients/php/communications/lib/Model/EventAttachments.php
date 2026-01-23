@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * EventAttachments Class Doc Comment
  *
  * @category Class
  * @description Вложения
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class EventAttachments implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'good_card' => '\Wildberries\\Sdk\\Communications\Model\GoodCard',
-        'files' => '\Wildberries\\Sdk\\Communications\Model\File[]',
-        'images' => '\Wildberries\\Sdk\\Communications\Model\Image[]'
+        'good_card' => '\Wildberries\Sdk\Communications\Model\GoodCard',
+        'files' => '\Wildberries\Sdk\Communications\Model\File[]',
+        'images' => '\Wildberries\Sdk\Communications\Model\Image[]'
     ];
 
     /**
@@ -307,7 +307,7 @@ class EventAttachments implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets good_card
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\GoodCard|null
+     * @return \Wildberries\Sdk\Communications\Model\GoodCard|null
      */
     public function getGoodCard()
     {
@@ -317,7 +317,7 @@ class EventAttachments implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets good_card
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\GoodCard|null $good_card good_card
+     * @param \Wildberries\Sdk\Communications\Model\GoodCard|null $good_card good_card
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class EventAttachments implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets files
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\File[]|null
+     * @return \Wildberries\Sdk\Communications\Model\File[]|null
      */
     public function getFiles()
     {
@@ -344,7 +344,7 @@ class EventAttachments implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets files
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\File[]|null $files Файлы
+     * @param \Wildberries\Sdk\Communications\Model\File[]|null $files Файлы
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class EventAttachments implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets images
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\Image[]|null
+     * @return \Wildberries\Sdk\Communications\Model\Image[]|null
      */
     public function getImages()
     {
@@ -371,7 +371,7 @@ class EventAttachments implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets images
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\Image[]|null $images Изображения
+     * @param \Wildberries\Sdk\Communications\Model\Image[]|null $images Изображения
      *
      * @return self
      */

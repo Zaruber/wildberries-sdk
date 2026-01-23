@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiV1CalendarPromotionsUploadPostRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV1CalendarPromotionsUploadPostRequest implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequestData'
+        'data' => '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequestData'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV1CalendarPromotionsUploadPostRequest implements ModelInterface, ArrayA
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequestData|null
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequestData|null
      */
     public function getData()
     {
@@ -302,7 +302,7 @@ class ApiV1CalendarPromotionsUploadPostRequest implements ModelInterface, ArrayA
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequestData|null $data data
+     * @param \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequestData|null $data data
      *
      * @return self
      */

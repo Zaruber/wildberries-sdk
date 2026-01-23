@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\InStorePickup\Model;
+namespace Wildberries\Sdk\InStorePickup\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\InStorePickup\ObjectSerializer;
+use \Wildberries\Sdk\InStorePickup\ObjectSerializer;
 
 /**
  * ApiBaseMeta Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,10 +57,10 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'gtin' => '\Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaGtin',
-        'imei' => '\Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaImei',
-        'sgtin' => '\Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaSgtin',
-        'uin' => '\Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaUin'
+        'gtin' => '\Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaGtin',
+        'imei' => '\Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaImei',
+        'sgtin' => '\Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaSgtin',
+        'uin' => '\Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaUin'
     ];
 
     /**
@@ -313,7 +313,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gtin
      *
-     * @return \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaGtin|null
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaGtin|null
      */
     public function getGtin()
     {
@@ -323,7 +323,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gtin
      *
-     * @param \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaGtin|null $gtin gtin
+     * @param \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaGtin|null $gtin gtin
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets imei
      *
-     * @return \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaImei|null
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaImei|null
      */
     public function getImei()
     {
@@ -350,7 +350,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets imei
      *
-     * @param \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaImei|null $imei imei
+     * @param \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaImei|null $imei imei
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sgtin
      *
-     * @return \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaSgtin|null
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaSgtin|null
      */
     public function getSgtin()
     {
@@ -377,7 +377,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sgtin
      *
-     * @param \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaSgtin|null $sgtin sgtin
+     * @param \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaSgtin|null $sgtin sgtin
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets uin
      *
-     * @return \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaUin|null
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaUin|null
      */
     public function getUin()
     {
@@ -404,7 +404,7 @@ class ApiBaseMeta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets uin
      *
-     * @param \Wildberries\\Sdk\\InStorePickup\Model\ApiBaseMetaUin|null $uin uin
+     * @param \Wildberries\Sdk\InStorePickup\Model\ApiBaseMetaUin|null $uin uin
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * DbsOnlyClientInfoResp Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class DbsOnlyClientInfoResp implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersDbs\Model\DbsOnlyClientInfo[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbs\Model\DbsOnlyClientInfo[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class DbsOnlyClientInfoResp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\DbsOnlyClientInfo[]|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\DbsOnlyClientInfo[]|null
      */
     public function getOrders()
     {
@@ -302,7 +302,7 @@ class DbsOnlyClientInfoResp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\DbsOnlyClientInfo[]|null $orders Информация о покупателе
+     * @param \Wildberries\Sdk\OrdersDbs\Model\DbsOnlyClientInfo[]|null $orders Информация о покупателе
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * GoodsList Class Doc Comment
  *
  * @category Class
  * @description Размеры товара
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'nm_id' => 'int',
         'vendor_code' => 'string',
-        'sizes' => '\Wildberries\\Sdk\\Products\Model\GoodsListSizesInner[]',
+        'sizes' => '\Wildberries\Sdk\Products\Model\GoodsListSizesInner[]',
         'currency_iso_code4217' => 'string',
         'discount' => 'int',
         'club_discount' => 'int',
@@ -396,7 +396,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sizes
      *
-     * @return \Wildberries\\Sdk\\Products\Model\GoodsListSizesInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\GoodsListSizesInner[]|null
      */
     public function getSizes()
     {
@@ -406,7 +406,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sizes
      *
-     * @param \Wildberries\\Sdk\\Products\Model\GoodsListSizesInner[]|null $sizes Размер
+     * @param \Wildberries\Sdk\Products\Model\GoodsListSizesInner[]|null $sizes Размер
      *
      * @return self
      */

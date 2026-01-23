@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * OrderAddress Class Doc Comment
  *
  * @category Class
  * @description Точный адрес покупателя для доставки, если применимо. Из-за особенностей адреса некоторые поля могут быть пустыми
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

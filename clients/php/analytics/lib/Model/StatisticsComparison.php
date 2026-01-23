@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * StatisticsComparison Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -69,10 +69,10 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
         'avg_price_dynamic' => 'int',
         'share_order_percent_dynamic' => 'int',
         'add_to_wishlist_dynamic' => 'int',
-        'time_to_ready_dynamic' => '\Wildberries\\Sdk\\Analytics\Model\ComparisonTimeToReadyDynamic',
+        'time_to_ready_dynamic' => '\Wildberries\Sdk\Analytics\Model\ComparisonTimeToReadyDynamic',
         'localization_percent_dynamic' => 'int',
-        'wb_club_dynamic' => '\Wildberries\\Sdk\\Analytics\Model\ComparisonWbClubDynamic',
-        'conversions' => '\Wildberries\\Sdk\\Analytics\Model\StatisticConversions'
+        'wb_club_dynamic' => '\Wildberries\Sdk\Analytics\Model\ComparisonWbClubDynamic',
+        'conversions' => '\Wildberries\Sdk\Analytics\Model\StatisticConversions'
     ];
 
     /**
@@ -769,7 +769,7 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets time_to_ready_dynamic
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ComparisonTimeToReadyDynamic
+     * @return \Wildberries\Sdk\Analytics\Model\ComparisonTimeToReadyDynamic
      */
     public function getTimeToReadyDynamic()
     {
@@ -779,7 +779,7 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets time_to_ready_dynamic
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ComparisonTimeToReadyDynamic $time_to_ready_dynamic time_to_ready_dynamic
+     * @param \Wildberries\Sdk\Analytics\Model\ComparisonTimeToReadyDynamic $time_to_ready_dynamic time_to_ready_dynamic
      *
      * @return self
      */
@@ -823,7 +823,7 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets wb_club_dynamic
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ComparisonWbClubDynamic
+     * @return \Wildberries\Sdk\Analytics\Model\ComparisonWbClubDynamic
      */
     public function getWbClubDynamic()
     {
@@ -833,7 +833,7 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets wb_club_dynamic
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ComparisonWbClubDynamic $wb_club_dynamic wb_club_dynamic
+     * @param \Wildberries\Sdk\Analytics\Model\ComparisonWbClubDynamic $wb_club_dynamic wb_club_dynamic
      *
      * @return self
      */
@@ -850,7 +850,7 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets conversions
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StatisticConversions
+     * @return \Wildberries\Sdk\Analytics\Model\StatisticConversions
      */
     public function getConversions()
     {
@@ -860,7 +860,7 @@ class StatisticsComparison implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets conversions
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StatisticConversions $conversions conversions
+     * @param \Wildberries\Sdk\Analytics\Model\StatisticConversions $conversions conversions
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Finances;
+namespace Wildberries\Sdk\Finances;
 
 use GuzzleHttp\Psr7\Utils;
-use Wildberries\\Sdk\\Finances\Model\ModelInterface;
+use Wildberries\Sdk\Finances\Model\ModelInterface;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -503,7 +503,7 @@ class ObjectSerializer
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\Wildberries\\Sdk\\Finances\Model\\' . $data->{$discriminator};
+                $subclass = '\Wildberries\Sdk\Finances\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }

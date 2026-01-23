@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Tariffs\Model;
+namespace Wildberries\Sdk\Tariffs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Tariffs\ObjectSerializer;
+use \Wildberries\Sdk\Tariffs\ObjectSerializer;
 
 /**
  * ModelsWarehousesPalletRates Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ModelsWarehousesPalletRates implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'dt_next_pallet' => 'string',
         'dt_till_max' => 'string',
-        'warehouse_list' => '\Wildberries\\Sdk\\Tariffs\Model\ModelsWarehousePalletRates[]'
+        'warehouse_list' => '\Wildberries\Sdk\Tariffs\Model\ModelsWarehousePalletRates[]'
     ];
 
     /**
@@ -360,7 +360,7 @@ class ModelsWarehousesPalletRates implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets warehouse_list
      *
-     * @return \Wildberries\\Sdk\\Tariffs\Model\ModelsWarehousePalletRates[]|null
+     * @return \Wildberries\Sdk\Tariffs\Model\ModelsWarehousePalletRates[]|null
      */
     public function getWarehouseList()
     {
@@ -370,7 +370,7 @@ class ModelsWarehousesPalletRates implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets warehouse_list
      *
-     * @param \Wildberries\\Sdk\\Tariffs\Model\ModelsWarehousePalletRates[]|null $warehouse_list Тарифы для монопаллет, сгруппированные по складам
+     * @param \Wildberries\Sdk\Tariffs\Model\ModelsWarehousePalletRates[]|null $warehouse_list Тарифы для монопаллет, сгруппированные по складам
      *
      * @return self
      */

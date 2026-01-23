@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * PositionInfo Class Doc Comment
  *
  * @category Class
  * @description Информация о позиции товара
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,10 +58,10 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'average' => '\Wildberries\\Sdk\\Analytics\Model\PositionInfoAverage',
-        'median' => '\Wildberries\\Sdk\\Analytics\Model\PositionInfoMedian',
-        'chart_items' => '\Wildberries\\Sdk\\Analytics\Model\SearchReportPositionChartItem[]',
-        'clusters' => '\Wildberries\\Sdk\\Analytics\Model\SearchReportPositionClusters'
+        'average' => '\Wildberries\Sdk\Analytics\Model\PositionInfoAverage',
+        'median' => '\Wildberries\Sdk\Analytics\Model\PositionInfoMedian',
+        'chart_items' => '\Wildberries\Sdk\Analytics\Model\SearchReportPositionChartItem[]',
+        'clusters' => '\Wildberries\Sdk\Analytics\Model\SearchReportPositionClusters'
     ];
 
     /**
@@ -326,7 +326,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets average
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PositionInfoAverage
+     * @return \Wildberries\Sdk\Analytics\Model\PositionInfoAverage
      */
     public function getAverage()
     {
@@ -336,7 +336,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets average
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PositionInfoAverage $average average
+     * @param \Wildberries\Sdk\Analytics\Model\PositionInfoAverage $average average
      *
      * @return self
      */
@@ -353,7 +353,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets median
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PositionInfoMedian
+     * @return \Wildberries\Sdk\Analytics\Model\PositionInfoMedian
      */
     public function getMedian()
     {
@@ -363,7 +363,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets median
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PositionInfoMedian $median median
+     * @param \Wildberries\Sdk\Analytics\Model\PositionInfoMedian $median median
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets chart_items
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\SearchReportPositionChartItem[]
+     * @return \Wildberries\Sdk\Analytics\Model\SearchReportPositionChartItem[]
      */
     public function getChartItems()
     {
@@ -390,7 +390,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets chart_items
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\SearchReportPositionChartItem[] $chart_items Данные для чарта по средней и медианной позиции товара в результатах поиска
+     * @param \Wildberries\Sdk\Analytics\Model\SearchReportPositionChartItem[] $chart_items Данные для чарта по средней и медианной позиции товара в результатах поиска
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets clusters
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\SearchReportPositionClusters
+     * @return \Wildberries\Sdk\Analytics\Model\SearchReportPositionClusters
      */
     public function getClusters()
     {
@@ -417,7 +417,7 @@ class PositionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets clusters
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\SearchReportPositionClusters $clusters clusters
+     * @param \Wildberries\Sdk\Analytics\Model\SearchReportPositionClusters $clusters clusters
      *
      * @return self
      */

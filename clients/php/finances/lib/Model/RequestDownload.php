@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Finances\Model;
+namespace Wildberries\Sdk\Finances\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Finances\ObjectSerializer;
+use \Wildberries\Sdk\Finances\ObjectSerializer;
 
 /**
  * RequestDownload Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class RequestDownload implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'params' => '\Wildberries\\Sdk\\Finances\Model\RequestDownloadParamsInner[]'
+        'params' => '\Wildberries\Sdk\Finances\Model\RequestDownloadParamsInner[]'
     ];
 
     /**
@@ -300,7 +300,7 @@ class RequestDownload implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets params
      *
-     * @return \Wildberries\\Sdk\\Finances\Model\RequestDownloadParamsInner[]|null
+     * @return \Wildberries\Sdk\Finances\Model\RequestDownloadParamsInner[]|null
      */
     public function getParams()
     {
@@ -310,7 +310,7 @@ class RequestDownload implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets params
      *
-     * @param \Wildberries\\Sdk\\Finances\Model\RequestDownloadParamsInner[]|null $params params
+     * @param \Wildberries\Sdk\Finances\Model\RequestDownloadParamsInner[]|null $params params
      *
      * @return self
      */

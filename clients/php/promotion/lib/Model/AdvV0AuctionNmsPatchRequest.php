@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV0AuctionNmsPatchRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class AdvV0AuctionNmsPatchRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'nms' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequestNmsInner[]'
+        'nms' => '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequestNmsInner[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class AdvV0AuctionNmsPatchRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets nms
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequestNmsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequestNmsInner[]
      */
     public function getNms()
     {
@@ -309,7 +309,7 @@ class AdvV0AuctionNmsPatchRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets nms
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequestNmsInner[] $nms Карточки товаров в кампаниях
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequestNmsInner[] $nms Карточки товаров в кампаниях
      *
      * @return self
      */

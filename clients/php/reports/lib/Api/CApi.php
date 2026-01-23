@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Api;
+namespace Wildberries\Sdk\Reports\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Wildberries\\Sdk\\Reports\ApiException;
-use Wildberries\\Sdk\\Reports\Configuration;
-use Wildberries\\Sdk\\Reports\FormDataProcessor;
-use Wildberries\\Sdk\\Reports\HeaderSelector;
-use Wildberries\\Sdk\\Reports\ObjectSerializer;
+use Wildberries\Sdk\Reports\ApiException;
+use Wildberries\Sdk\Reports\Configuration;
+use Wildberries\Sdk\Reports\FormDataProcessor;
+use Wildberries\Sdk\Reports\HeaderSelector;
+use Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * CApi Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -136,14 +136,14 @@ class CApi
      *
      * @param  string $date_from Начало отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
      * @param  string $date_to Конец отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
-     * @param  \Wildberries\\Sdk\\Reports\Model\ExciseReportRequest|null $excise_report_request excise_report_request (optional)
+     * @param  \Wildberries\Sdk\Reports\Model\ExciseReportRequest|null $excise_report_request excise_report_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsExciseReportPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Reports\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Reports\Model\ExciseReportResponse|\Wildberries\\Sdk\\Reports\Model\Model4xxResponse|\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response|\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response
+     * @return \Wildberries\Sdk\Reports\Model\ExciseReportResponse|\Wildberries\Sdk\Reports\Model\Model4xxResponse|\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response
      */
     public function apiV1AnalyticsExciseReportPost($date_from, $date_to, $excise_report_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AnalyticsExciseReportPost'][0])
     {
@@ -162,14 +162,14 @@ class CApi
      *
      * @param  string $date_from Начало отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
      * @param  string $date_to Конец отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
-     * @param  \Wildberries\\Sdk\\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
+     * @param  \Wildberries\Sdk\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsExciseReportPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Reports\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Reports\Model\ExciseReportResponse|\Wildberries\\Sdk\\Reports\Model\Model4xxResponse|\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response|\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Reports\Model\ExciseReportResponse|\Wildberries\Sdk\Reports\Model\Model4xxResponse|\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1AnalyticsExciseReportPostWithHttpInfo($date_from, $date_to, $excise_report_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AnalyticsExciseReportPost'][0])
     {
@@ -201,25 +201,25 @@ class CApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Reports\Model\ExciseReportResponse',
+                        '\Wildberries\Sdk\Reports\Model\ExciseReportResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Reports\Model\Model4xxResponse',
+                        '\Wildberries\Sdk\Reports\Model\Model4xxResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response',
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response',
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response',
                         $request,
                         $response,
                     );
@@ -241,7 +241,7 @@ class CApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Reports\Model\ExciseReportResponse',
+                '\Wildberries\Sdk\Reports\Model\ExciseReportResponse',
                 $request,
                 $response,
             );
@@ -250,7 +250,7 @@ class CApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Reports\Model\ExciseReportResponse',
+                        '\Wildberries\Sdk\Reports\Model\ExciseReportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -258,7 +258,7 @@ class CApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Reports\Model\Model4xxResponse',
+                        '\Wildberries\Sdk\Reports\Model\Model4xxResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -266,7 +266,7 @@ class CApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response',
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class CApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Reports\Model\ApiV1SupplierIncomesGet401Response',
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierIncomesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -297,7 +297,7 @@ class CApi
      *
      * @param  string $date_from Начало отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
      * @param  string $date_to Конец отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
-     * @param  \Wildberries\\Sdk\\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
+     * @param  \Wildberries\Sdk\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsExciseReportPost'] to see the possible values for this operation
@@ -326,7 +326,7 @@ class CApi
      *
      * @param  string $date_from Начало отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
      * @param  string $date_to Конец отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
-     * @param  \Wildberries\\Sdk\\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
+     * @param  \Wildberries\Sdk\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsExciseReportPost'] to see the possible values for this operation
@@ -336,7 +336,7 @@ class CApi
      */
     public function apiV1AnalyticsExciseReportPostAsyncWithHttpInfo($date_from, $date_to, $excise_report_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AnalyticsExciseReportPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Reports\Model\ExciseReportResponse';
+        $returnType = '\Wildberries\Sdk\Reports\Model\ExciseReportResponse';
         $request = $this->apiV1AnalyticsExciseReportPostRequest($date_from, $date_to, $excise_report_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -384,7 +384,7 @@ class CApi
      *
      * @param  string $date_from Начало отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
      * @param  string $date_to Конец отчётного периода, &#x60;ГГГГ-ММ-ДД&#x60; (required)
-     * @param  \Wildberries\\Sdk\\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
+     * @param  \Wildberries\Sdk\Reports\Model\ExciseReportRequest|null $excise_report_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsExciseReportPost'] to see the possible values for this operation

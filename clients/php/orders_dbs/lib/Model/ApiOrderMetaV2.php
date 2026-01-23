@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * ApiOrderMetaV2 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,7 +63,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_id' => 'int',
         'sgtin' => 'string[]',
         'uin' => 'string',
-        'customs_declaration' => '\Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration'
+        'customs_declaration' => '\Wildberries\Sdk\OrdersDbs\Model\MetaCustomsDeclaration'
     ];
 
     /**
@@ -496,7 +496,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets customs_declaration
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\MetaCustomsDeclaration|null
      */
     public function getCustomsDeclaration()
     {
@@ -506,7 +506,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customs_declaration
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\MetaCustomsDeclaration|null $customs_declaration customs_declaration
+     * @param \Wildberries\Sdk\OrdersDbs\Model\MetaCustomsDeclaration|null $customs_declaration customs_declaration
      *
      * @return self
      */

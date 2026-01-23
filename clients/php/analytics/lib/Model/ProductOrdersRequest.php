@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ProductOrdersRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ProductOrdersRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'period' => '\Wildberries\\Sdk\\Analytics\Model\PeriodOrdersRequest',
+        'period' => '\Wildberries\Sdk\Analytics\Model\PeriodOrdersRequest',
         'nm_id' => 'int',
         'search_texts' => 'string[]'
     ];
@@ -323,7 +323,7 @@ class ProductOrdersRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PeriodOrdersRequest
+     * @return \Wildberries\Sdk\Analytics\Model\PeriodOrdersRequest
      */
     public function getPeriod()
     {
@@ -333,7 +333,7 @@ class ProductOrdersRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PeriodOrdersRequest $period period
+     * @param \Wildberries\Sdk\Analytics\Model\PeriodOrdersRequest $period period
      *
      * @return self
      */

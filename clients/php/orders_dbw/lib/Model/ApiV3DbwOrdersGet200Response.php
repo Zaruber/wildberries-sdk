@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbw\Model;
+namespace Wildberries\Sdk\OrdersDbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbw\ObjectSerializer;
 
 /**
  * ApiV3DbwOrdersGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiV3DbwOrdersGet200Response implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'next' => 'int',
-        'orders' => '\Wildberries\\Sdk\\OrdersDbw\Model\Order[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbw\Model\Order[]'
     ];
 
     /**
@@ -326,7 +326,7 @@ class ApiV3DbwOrdersGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbw\Model\Order[]|null
+     * @return \Wildberries\Sdk\OrdersDbw\Model\Order[]|null
      */
     public function getOrders()
     {
@@ -336,7 +336,7 @@ class ApiV3DbwOrdersGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbw\Model\Order[]|null $orders orders
+     * @param \Wildberries\Sdk\OrdersDbw\Model\Order[]|null $orders orders
      *
      * @return self
      */

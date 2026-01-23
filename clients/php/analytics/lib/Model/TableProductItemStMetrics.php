@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableProductItemStMetrics Class Doc Comment
  *
  * @category Class
  * @description Метрики товара
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,22 +61,22 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
         'orders_count' => 'int',
         'orders_sum' => 'int',
         'avg_orders' => 'float',
-        'avg_orders_by_month' => '\Wildberries\\Sdk\\Analytics\Model\FloatGraphByPeriodItem[]',
+        'avg_orders_by_month' => '\Wildberries\Sdk\Analytics\Model\FloatGraphByPeriodItem[]',
         'buyout_count' => 'int',
         'buyout_sum' => 'int',
         'buyout_percent' => 'int',
         'stock_count' => 'int',
         'stock_sum' => 'int',
-        'sale_rate' => '\Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsSaleRate',
-        'avg_stock_turnover' => '\Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsAvgStockTurnover',
+        'sale_rate' => '\Wildberries\Sdk\Analytics\Model\TableCommonMetricsSaleRate',
+        'avg_stock_turnover' => '\Wildberries\Sdk\Analytics\Model\TableCommonMetricsAvgStockTurnover',
         'to_client_count' => 'int',
         'from_client_count' => 'int',
-        'office_missing_time' => '\Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsOfficeMissingTime',
+        'office_missing_time' => '\Wildberries\Sdk\Analytics\Model\TableCommonMetricsOfficeMissingTime',
         'lost_orders_count' => 'float',
         'lost_orders_sum' => 'float',
         'lost_buyouts_count' => 'float',
         'lost_buyouts_sum' => 'float',
-        'current_price' => '\Wildberries\\Sdk\\Analytics\Model\TableProductItemStMetricsAllOfCurrentPrice',
+        'current_price' => '\Wildberries\Sdk\Analytics\Model\TableProductItemStMetricsAllOfCurrentPrice',
         'availability' => 'string'
     ];
 
@@ -599,7 +599,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets avg_orders_by_month
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\FloatGraphByPeriodItem[]
+     * @return \Wildberries\Sdk\Analytics\Model\FloatGraphByPeriodItem[]
      */
     public function getAvgOrdersByMonth()
     {
@@ -609,7 +609,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets avg_orders_by_month
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\FloatGraphByPeriodItem[] $avg_orders_by_month Среднее количество заказов по месяцам
+     * @param \Wildberries\Sdk\Analytics\Model\FloatGraphByPeriodItem[] $avg_orders_by_month Среднее количество заказов по месяцам
      *
      * @return self
      */
@@ -761,7 +761,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets sale_rate
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsSaleRate
+     * @return \Wildberries\Sdk\Analytics\Model\TableCommonMetricsSaleRate
      */
     public function getSaleRate()
     {
@@ -771,7 +771,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets sale_rate
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsSaleRate $sale_rate sale_rate
+     * @param \Wildberries\Sdk\Analytics\Model\TableCommonMetricsSaleRate $sale_rate sale_rate
      *
      * @return self
      */
@@ -788,7 +788,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets avg_stock_turnover
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsAvgStockTurnover
+     * @return \Wildberries\Sdk\Analytics\Model\TableCommonMetricsAvgStockTurnover
      */
     public function getAvgStockTurnover()
     {
@@ -798,7 +798,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets avg_stock_turnover
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsAvgStockTurnover $avg_stock_turnover avg_stock_turnover
+     * @param \Wildberries\Sdk\Analytics\Model\TableCommonMetricsAvgStockTurnover $avg_stock_turnover avg_stock_turnover
      *
      * @return self
      */
@@ -869,7 +869,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets office_missing_time
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsOfficeMissingTime
+     * @return \Wildberries\Sdk\Analytics\Model\TableCommonMetricsOfficeMissingTime
      */
     public function getOfficeMissingTime()
     {
@@ -879,7 +879,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets office_missing_time
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsOfficeMissingTime $office_missing_time office_missing_time
+     * @param \Wildberries\Sdk\Analytics\Model\TableCommonMetricsOfficeMissingTime $office_missing_time office_missing_time
      *
      * @return self
      */
@@ -1004,7 +1004,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets current_price
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableProductItemStMetricsAllOfCurrentPrice
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItemStMetricsAllOfCurrentPrice
      */
     public function getCurrentPrice()
     {
@@ -1014,7 +1014,7 @@ class TableProductItemStMetrics implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets current_price
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableProductItemStMetricsAllOfCurrentPrice $current_price current_price
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItemStMetricsAllOfCurrentPrice $current_price current_price
      *
      * @return self
      */

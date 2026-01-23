@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,20 +25,20 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbw;
+namespace Wildberries\Sdk\OrdersDbw;
 
 use ArrayAccess;
 use DateTime;
 use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\StreamInterface;
 use SplFileObject;
-use Wildberries\\Sdk\\OrdersDbw\Model\ModelInterface;
+use Wildberries\Sdk\OrdersDbw\Model\ModelInterface;
 
 /**
  * FormDataProcessor Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

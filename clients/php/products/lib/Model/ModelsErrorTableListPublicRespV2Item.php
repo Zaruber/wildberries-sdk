@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ModelsErrorTableListPublicRespV2Item Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'batch_uuid' => 'string',
-        'subjects' => 'array<string,\Wildberries\\Sdk\\Products\Model\ModelsErrorSubject>',
-        'brands' => 'array<string,\Wildberries\\Sdk\\Products\Model\ModelsErrorBrand>',
+        'subjects' => 'array<string,\Wildberries\Sdk\Products\Model\ModelsErrorSubject>',
+        'brands' => 'array<string,\Wildberries\Sdk\Products\Model\ModelsErrorBrand>',
         'vendor_codes' => 'string[]',
         'errors' => 'array<string,string[]>'
     ];
@@ -362,7 +362,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets subjects
      *
-     * @return array<string,\Wildberries\\Sdk\\Products\Model\ModelsErrorSubject>
+     * @return array<string,\Wildberries\Sdk\Products\Model\ModelsErrorSubject>
      */
     public function getSubjects()
     {
@@ -372,7 +372,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets subjects
      *
-     * @param array<string,\Wildberries\\Sdk\\Products\Model\ModelsErrorSubject> $subjects Предметы. Разбивка по `vendorCodes`
+     * @param array<string,\Wildberries\Sdk\Products\Model\ModelsErrorSubject> $subjects Предметы. Разбивка по `vendorCodes`
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Gets brands
      *
-     * @return array<string,\Wildberries\\Sdk\\Products\Model\ModelsErrorBrand>
+     * @return array<string,\Wildberries\Sdk\Products\Model\ModelsErrorBrand>
      */
     public function getBrands()
     {
@@ -399,7 +399,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
     /**
      * Sets brands
      *
-     * @param array<string,\Wildberries\\Sdk\\Products\Model\ModelsErrorBrand> $brands Бренды. Разбивка по `vendorCodes`
+     * @param array<string,\Wildberries\Sdk\Products\Model\ModelsErrorBrand> $brands Бренды. Разбивка по `vendorCodes`
      *
      * @return self
      */

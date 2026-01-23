@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * RequestWithInterval Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class RequestWithInterval implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'interval' => '\Wildberries\\Sdk\\Promotion\Model\RequestWithIntervalInterval'
+        'interval' => '\Wildberries\Sdk\Promotion\Model\RequestWithIntervalInterval'
     ];
 
     /**
@@ -332,7 +332,7 @@ class RequestWithInterval implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets interval
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\RequestWithIntervalInterval
+     * @return \Wildberries\Sdk\Promotion\Model\RequestWithIntervalInterval
      */
     public function getInterval()
     {
@@ -342,7 +342,7 @@ class RequestWithInterval implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets interval
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\RequestWithIntervalInterval $interval interval
+     * @param \Wildberries\Sdk\Promotion\Model\RequestWithIntervalInterval $interval interval
      *
      * @return self
      */

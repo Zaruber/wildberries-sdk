@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * OpenapiPinReviewItemResultDataInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
         'pin_method' => 'string',
         'pin_on' => 'string',
         'is_errors' => 'bool',
-        'errors' => '\Wildberries\\Sdk\\Communications\Model\OpenapiResultErr[]'
+        'errors' => '\Wildberries\Sdk\Communications\Model\OpenapiResultErr[]'
     ];
 
     /**
@@ -542,7 +542,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\OpenapiResultErr[]|null
+     * @return \Wildberries\Sdk\Communications\Model\OpenapiResultErr[]|null
      */
     public function getErrors()
     {
@@ -552,7 +552,7 @@ class OpenapiPinReviewItemResultDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\OpenapiResultErr[]|null $errors Детали ошибок
+     * @param \Wildberries\Sdk\Communications\Model\OpenapiResultErr[]|null $errors Детали ошибок
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequest implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersDbs\Model\ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequest implements ModelInter
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner[]|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner[]|null
      */
     public function getOrders()
     {
@@ -306,7 +306,7 @@ class ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequest implements ModelInter
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner[]|null $orders orders
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsMetaCustomsDeclarationPostRequestOrdersInner[]|null $orders orders
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ProductHistoryResponseInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'product' => '\Wildberries\\Sdk\\Analytics\Model\ProductHistoryResponseInnerProduct',
-        'history' => '\Wildberries\\Sdk\\Analytics\Model\History[]'
+        'product' => '\Wildberries\Sdk\Analytics\Model\ProductHistoryResponseInnerProduct',
+        'history' => '\Wildberries\Sdk\Analytics\Model\History[]'
     ];
 
     /**
@@ -305,7 +305,7 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets product
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductHistoryResponseInnerProduct
+     * @return \Wildberries\Sdk\Analytics\Model\ProductHistoryResponseInnerProduct
      */
     public function getProduct()
     {
@@ -315,7 +315,7 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets product
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductHistoryResponseInnerProduct $product product
+     * @param \Wildberries\Sdk\Analytics\Model\ProductHistoryResponseInnerProduct $product product
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets history
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\History[]
+     * @return \Wildberries\Sdk\Analytics\Model\History[]
      */
     public function getHistory()
     {
@@ -342,7 +342,7 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets history
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\History[] $history Статистика за период
+     * @param \Wildberries\Sdk\Analytics\Model\History[] $history Статистика за период
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * GetDeductions200ResponseData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class GetDeductions200ResponseData implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'reports' => '\Wildberries\\Sdk\\Reports\Model\GetDeductions200ResponseDataReportsInner[]',
+        'reports' => '\Wildberries\Sdk\Reports\Model\GetDeductions200ResponseDataReportsInner[]',
         'total' => 'int'
     ];
 
@@ -306,7 +306,7 @@ class GetDeductions200ResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets reports
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\GetDeductions200ResponseDataReportsInner[]
+     * @return \Wildberries\Sdk\Reports\Model\GetDeductions200ResponseDataReportsInner[]
      */
     public function getReports()
     {
@@ -316,7 +316,7 @@ class GetDeductions200ResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets reports
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\GetDeductions200ResponseDataReportsInner[] $reports Удержания
+     * @param \Wildberries\Sdk\Reports\Model\GetDeductions200ResponseDataReportsInner[] $reports Удержания
      *
      * @return self
      */

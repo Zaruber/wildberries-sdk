@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbw\Model;
+namespace Wildberries\Sdk\OrdersDbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbw\ObjectSerializer;
 
 /**
  * ApiV3DbwOrdersOrderIdMetaGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV3DbwOrdersOrderIdMetaGet200Response implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meta' => '\Wildberries\\Sdk\\OrdersDbw\Model\Meta'
+        'meta' => '\Wildberries\Sdk\OrdersDbw\Model\Meta'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV3DbwOrdersOrderIdMetaGet200Response implements ModelInterface, ArrayAc
     /**
      * Gets meta
      *
-     * @return \Wildberries\\Sdk\\OrdersDbw\Model\Meta|null
+     * @return \Wildberries\Sdk\OrdersDbw\Model\Meta|null
      */
     public function getMeta()
     {
@@ -302,7 +302,7 @@ class ApiV3DbwOrdersOrderIdMetaGet200Response implements ModelInterface, ArrayAc
     /**
      * Sets meta
      *
-     * @param \Wildberries\\Sdk\\OrdersDbw\Model\Meta|null $meta meta
+     * @param \Wildberries\Sdk\OrdersDbw\Model\Meta|null $meta meta
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1QuestionsPatchRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ApiV1QuestionsPatchRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPITypes = [
         'id' => 'string',
         'was_viewed' => 'bool',
-        'answer' => '\Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsPatchRequestOneOf1Answer',
+        'answer' => '\Wildberries\Sdk\Communications\Model\ApiV1QuestionsPatchRequestOneOf1Answer',
         'state' => 'string'
     ];
 
@@ -379,7 +379,7 @@ class ApiV1QuestionsPatchRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets answer
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsPatchRequestOneOf1Answer
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1QuestionsPatchRequestOneOf1Answer
      */
     public function getAnswer()
     {
@@ -389,7 +389,7 @@ class ApiV1QuestionsPatchRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets answer
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsPatchRequestOneOf1Answer $answer answer
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1QuestionsPatchRequestOneOf1Answer $answer answer
      *
      * @return self
      */

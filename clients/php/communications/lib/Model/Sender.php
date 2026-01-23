@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+namespace Wildberries\Sdk\Communications\Model;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * Sender Class Doc Comment
  *
  * @category Class
  * @description Отправитель: - &#x60;client&#x60; — покупатель - &#x60;seller&#x60; — продавец - &#x60;wb&#x60; — Wildberries
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

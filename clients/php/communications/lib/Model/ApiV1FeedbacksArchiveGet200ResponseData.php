@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1FeedbacksArchiveGet200ResponseData Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV1FeedbacksArchiveGet200ResponseData implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'feedbacks' => '\Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInner[]'
+        'feedbacks' => '\Wildberries\Sdk\Communications\Model\ResponseFeedbackInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV1FeedbacksArchiveGet200ResponseData implements ModelInterface, ArrayAc
     /**
      * Gets feedbacks
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInner[]|null
+     * @return \Wildberries\Sdk\Communications\Model\ResponseFeedbackInner[]|null
      */
     public function getFeedbacks()
     {
@@ -302,7 +302,7 @@ class ApiV1FeedbacksArchiveGet200ResponseData implements ModelInterface, ArrayAc
     /**
      * Sets feedbacks
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ResponseFeedbackInner[]|null $feedbacks Массив отзывов
+     * @param \Wildberries\Sdk\Communications\Model\ResponseFeedbackInner[]|null $feedbacks Массив отзывов
      *
      * @return self
      */

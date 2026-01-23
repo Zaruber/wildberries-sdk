@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbw\Model;
+namespace Wildberries\Sdk\OrdersDbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbw\ObjectSerializer;
 
 /**
  * OrderCourierInfoResp Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class OrderCourierInfoResp implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersDbw\Model\OrderCourierInfo[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbw\Model\OrderCourierInfo[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class OrderCourierInfoResp implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbw\Model\OrderCourierInfo[]|null
+     * @return \Wildberries\Sdk\OrdersDbw\Model\OrderCourierInfo[]|null
      */
     public function getOrders()
     {
@@ -302,7 +302,7 @@ class OrderCourierInfoResp implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbw\Model\OrderCourierInfo[]|null $orders orders
+     * @param \Wildberries\Sdk\OrdersDbw\Model\OrderCourierInfo[]|null $orders orders
      *
      * @return self
      */

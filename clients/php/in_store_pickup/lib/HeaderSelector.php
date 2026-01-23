@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,13 +25,13 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\InStorePickup;
+namespace Wildberries\Sdk\InStorePickup;
 
 /**
  * HeaderSelector Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

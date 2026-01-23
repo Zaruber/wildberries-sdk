@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2CardsUploadAddPostRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ContentV2CardsUploadAddPostRequest implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'imt_id' => 'int',
-        'cards_to_add' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]'
+        'cards_to_add' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]'
     ];
 
     /**
@@ -326,7 +326,7 @@ class ContentV2CardsUploadAddPostRequest implements ModelInterface, ArrayAccess,
     /**
      * Gets cards_to_add
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]|null
      */
     public function getCardsToAdd()
     {
@@ -336,7 +336,7 @@ class ContentV2CardsUploadAddPostRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets cards_to_add
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]|null $cards_to_add Добавляемые карточки товаров
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]|null $cards_to_add Добавляемые карточки товаров
      *
      * @return self
      */

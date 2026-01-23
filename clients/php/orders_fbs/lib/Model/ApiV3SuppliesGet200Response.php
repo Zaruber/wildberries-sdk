@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * ApiV3SuppliesGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiV3SuppliesGet200Response implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'next' => 'int',
-        'supplies' => '\Wildberries\\Sdk\\OrdersFbs\Model\Supply[]'
+        'supplies' => '\Wildberries\Sdk\OrdersFbs\Model\Supply[]'
     ];
 
     /**
@@ -326,7 +326,7 @@ class ApiV3SuppliesGet200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets supplies
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\Supply[]|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\Supply[]|null
      */
     public function getSupplies()
     {
@@ -336,7 +336,7 @@ class ApiV3SuppliesGet200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets supplies
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\Supply[]|null $supplies Список поставок
+     * @param \Wildberries\Sdk\OrdersFbs\Model\Supply[]|null $supplies Список поставок
      *
      * @return self
      */

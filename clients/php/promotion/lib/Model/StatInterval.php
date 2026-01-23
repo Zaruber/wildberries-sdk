@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * StatInterval Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'interval' => '\Wildberries\\Sdk\\Promotion\Model\StatIntervalInterval',
-        'stats' => '\Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]'
+        'interval' => '\Wildberries\Sdk\Promotion\Model\StatIntervalInterval',
+        'stats' => '\Wildberries\Sdk\Promotion\Model\StatsBlok1[]'
     ];
 
     /**
@@ -302,7 +302,7 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets interval
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\StatIntervalInterval
+     * @return \Wildberries\Sdk\Promotion\Model\StatIntervalInterval
      */
     public function getInterval()
     {
@@ -312,7 +312,7 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets interval
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\StatIntervalInterval $interval interval
+     * @param \Wildberries\Sdk\Promotion\Model\StatIntervalInterval $interval interval
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\StatsBlok1[]|null
      */
     public function getStats()
     {
@@ -339,7 +339,7 @@ class StatInterval implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]|null $stats Блок статистики
+     * @param \Wildberries\Sdk\Promotion\Model\StatsBlok1[]|null $stats Блок статистики
      *
      * @return self
      */

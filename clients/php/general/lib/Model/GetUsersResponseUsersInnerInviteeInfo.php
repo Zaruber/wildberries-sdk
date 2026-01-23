@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * GetUsersResponseUsersInnerInviteeInfo Class Doc Comment
  *
  * @category Class
  * @description Информация о приглашении, если пользователь приглашён
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

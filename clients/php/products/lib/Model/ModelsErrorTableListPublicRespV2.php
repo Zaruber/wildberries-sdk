@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ModelsErrorTableListPublicRespV2 Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Wildberries\\Sdk\\Products\Model\ModelsErrorTableListPublicRespV2Item[]',
-        'cursor' => '\Wildberries\\Sdk\\Products\Model\ViewerContractPublicErrorsCursorOutput'
+        'items' => '\Wildberries\Sdk\Products\Model\ModelsErrorTableListPublicRespV2Item[]',
+        'cursor' => '\Wildberries\Sdk\Products\Model\ViewerContractPublicErrorsCursorOutput'
     ];
 
     /**
@@ -306,7 +306,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Gets items
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ModelsErrorTableListPublicRespV2Item[]
+     * @return \Wildberries\Sdk\Products\Model\ModelsErrorTableListPublicRespV2Item[]
      */
     public function getItems()
     {
@@ -316,7 +316,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Sets items
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ModelsErrorTableListPublicRespV2Item[] $items Пакеты данных
+     * @param \Wildberries\Sdk\Products\Model\ModelsErrorTableListPublicRespV2Item[] $items Пакеты данных
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Gets cursor
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ViewerContractPublicErrorsCursorOutput
+     * @return \Wildberries\Sdk\Products\Model\ViewerContractPublicErrorsCursorOutput
      */
     public function getCursor()
     {
@@ -343,7 +343,7 @@ class ModelsErrorTableListPublicRespV2 implements ModelInterface, ArrayAccess, \
     /**
      * Sets cursor
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ViewerContractPublicErrorsCursorOutput $cursor cursor
+     * @param \Wildberries\Sdk\Products\Model\ViewerContractPublicErrorsCursorOutput $cursor cursor
      *
      * @return self
      */

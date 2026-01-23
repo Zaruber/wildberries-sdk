@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,20 +25,20 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General;
+namespace Wildberries\Sdk\General;
 
 use ArrayAccess;
 use DateTime;
 use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\StreamInterface;
 use SplFileObject;
-use Wildberries\\Sdk\\General\Model\ModelInterface;
+use Wildberries\Sdk\General\Model\ModelInterface;
 
 /**
  * FormDataProcessor Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

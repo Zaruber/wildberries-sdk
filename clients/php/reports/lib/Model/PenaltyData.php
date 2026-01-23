@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * PenaltyData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class PenaltyData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'reports' => '\Wildberries\\Sdk\\Reports\Model\PenaltyDataReportsInner[]',
+        'reports' => '\Wildberries\Sdk\Reports\Model\PenaltyDataReportsInner[]',
         'total_count' => 'int'
     ];
 
@@ -306,7 +306,7 @@ class PenaltyData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets reports
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\PenaltyDataReportsInner[]
+     * @return \Wildberries\Sdk\Reports\Model\PenaltyDataReportsInner[]
      */
     public function getReports()
     {
@@ -316,7 +316,7 @@ class PenaltyData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reports
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\PenaltyDataReportsInner[] $reports Удержания
+     * @param \Wildberries\Sdk\Reports\Model\PenaltyDataReportsInner[] $reports Удержания
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * GetAuctionAdvertsAdvertsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,10 +58,10 @@ class GetAuctionAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'nm_settings' => '\Wildberries\\Sdk\\Promotion\Model\AuctionAdvertNMsSettings[]',
-        'settings' => '\Wildberries\\Sdk\\Promotion\Model\AuctionAdvertSettings',
+        'nm_settings' => '\Wildberries\Sdk\Promotion\Model\AuctionAdvertNMsSettings[]',
+        'settings' => '\Wildberries\Sdk\Promotion\Model\AuctionAdvertSettings',
         'status' => 'int',
-        'timestamps' => '\Wildberries\\Sdk\\Promotion\Model\Timestamps',
+        'timestamps' => '\Wildberries\Sdk\Promotion\Model\Timestamps',
         'bid_type' => 'string'
     ];
 
@@ -404,7 +404,7 @@ class GetAuctionAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets nm_settings
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertNMsSettings[]
+     * @return \Wildberries\Sdk\Promotion\Model\AuctionAdvertNMsSettings[]
      */
     public function getNmSettings()
     {
@@ -414,7 +414,7 @@ class GetAuctionAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets nm_settings
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertNMsSettings[] $nm_settings Настройки товаров
+     * @param \Wildberries\Sdk\Promotion\Model\AuctionAdvertNMsSettings[] $nm_settings Настройки товаров
      *
      * @return self
      */
@@ -431,7 +431,7 @@ class GetAuctionAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets settings
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertSettings
+     * @return \Wildberries\Sdk\Promotion\Model\AuctionAdvertSettings
      */
     public function getSettings()
     {
@@ -441,7 +441,7 @@ class GetAuctionAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets settings
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertSettings $settings settings
+     * @param \Wildberries\Sdk\Promotion\Model\AuctionAdvertSettings $settings settings
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class GetAuctionAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets timestamps
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\Timestamps
+     * @return \Wildberries\Sdk\Promotion\Model\Timestamps
      */
     public function getTimestamps()
     {
@@ -505,7 +505,7 @@ class GetAuctionAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets timestamps
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\Timestamps $timestamps timestamps
+     * @param \Wildberries\Sdk\Promotion\Model\Timestamps $timestamps timestamps
      *
      * @return self
      */

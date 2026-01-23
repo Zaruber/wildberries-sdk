@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * Product Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,10 +63,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_name' => 'string',
         'subject_id' => 'int',
         'subject_name' => 'string',
-        'tags' => '\Wildberries\\Sdk\\Analytics\Model\Tag[]',
+        'tags' => '\Wildberries\Sdk\Analytics\Model\Tag[]',
         'product_rating' => 'float',
         'feedback_rating' => 'float',
-        'stocks' => '\Wildberries\\Sdk\\Analytics\Model\ProductStocks'
+        'stocks' => '\Wildberries\Sdk\Analytics\Model\ProductStocks'
     ];
 
     /**
@@ -547,7 +547,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tags
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\Tag[]
+     * @return \Wildberries\Sdk\Analytics\Model\Tag[]
      */
     public function getTags()
     {
@@ -557,7 +557,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tags
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\Tag[] $tags Ярлыки
+     * @param \Wildberries\Sdk\Analytics\Model\Tag[] $tags Ярлыки
      *
      * @return self
      */
@@ -628,7 +628,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets stocks
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductStocks
+     * @return \Wildberries\Sdk\Analytics\Model\ProductStocks
      */
     public function getStocks()
     {
@@ -638,7 +638,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stocks
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductStocks $stocks stocks
+     * @param \Wildberries\Sdk\Analytics\Model\ProductStocks $stocks stocks
      *
      * @return self
      */

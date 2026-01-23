@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * StocksWarehouseErrorInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class StocksWarehouseErrorInner implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Products\Model\StocksWarehouseErrorInnerDataInner[]',
+        'data' => '\Wildberries\Sdk\Products\Model\StocksWarehouseErrorInnerDataInner[]',
         'code' => 'string',
         'message' => 'string'
     ];
@@ -306,7 +306,7 @@ class StocksWarehouseErrorInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Products\Model\StocksWarehouseErrorInnerDataInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\StocksWarehouseErrorInnerDataInner[]|null
      */
     public function getData()
     {
@@ -316,7 +316,7 @@ class StocksWarehouseErrorInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Products\Model\StocksWarehouseErrorInnerDataInner[]|null $data Дополнительная информация об ошибке
+     * @param \Wildberries\Sdk\Products\Model\StocksWarehouseErrorInnerDataInner[]|null $data Дополнительная информация об ошибке
      *
      * @return self
      */

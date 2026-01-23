@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * CommonReportFilters Class Doc Comment
  *
  * @category Class
  * @description Общие фильтры по отчёту
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,11 +62,11 @@ class CommonReportFilters implements ModelInterface, ArrayAccess, \JsonSerializa
         'subject_ids' => 'int[]',
         'brand_names' => 'string[]',
         'tag_ids' => 'int[]',
-        'current_period' => '\Wildberries\\Sdk\\Analytics\Model\PeriodSt',
-        'stock_type' => '\Wildberries\\Sdk\\Analytics\Model\StockType',
+        'current_period' => '\Wildberries\Sdk\Analytics\Model\PeriodSt',
+        'stock_type' => '\Wildberries\Sdk\Analytics\Model\StockType',
         'skip_deleted_nm' => 'bool',
         'availability_filters' => 'string[]',
-        'order_by' => '\Wildberries\\Sdk\\Analytics\Model\TableOrderBy'
+        'order_by' => '\Wildberries\Sdk\Analytics\Model\TableOrderBy'
     ];
 
     /**
@@ -495,7 +495,7 @@ class CommonReportFilters implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets current_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PeriodSt
+     * @return \Wildberries\Sdk\Analytics\Model\PeriodSt
      */
     public function getCurrentPeriod()
     {
@@ -505,7 +505,7 @@ class CommonReportFilters implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets current_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PeriodSt $current_period current_period
+     * @param \Wildberries\Sdk\Analytics\Model\PeriodSt $current_period current_period
      *
      * @return self
      */
@@ -522,7 +522,7 @@ class CommonReportFilters implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets stock_type
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StockType
+     * @return \Wildberries\Sdk\Analytics\Model\StockType
      */
     public function getStockType()
     {
@@ -532,7 +532,7 @@ class CommonReportFilters implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets stock_type
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StockType $stock_type stock_type
+     * @param \Wildberries\Sdk\Analytics\Model\StockType $stock_type stock_type
      *
      * @return self
      */
@@ -612,7 +612,7 @@ class CommonReportFilters implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets order_by
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableOrderBy
+     * @return \Wildberries\Sdk\Analytics\Model\TableOrderBy
      */
     public function getOrderBy()
     {
@@ -622,7 +622,7 @@ class CommonReportFilters implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets order_by
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableOrderBy $order_by order_by
+     * @param \Wildberries\Sdk\Analytics\Model\TableOrderBy $order_by order_by
      *
      * @return self
      */

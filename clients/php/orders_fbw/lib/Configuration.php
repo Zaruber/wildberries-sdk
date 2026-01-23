@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,14 +25,14 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw;
+namespace Wildberries\Sdk\OrdersFbw;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -486,7 +486,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Wildberries\\Sdk\\OrdersFbw) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (Wildberries\Sdk\OrdersFbw) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: ordersfbw' . PHP_EOL;

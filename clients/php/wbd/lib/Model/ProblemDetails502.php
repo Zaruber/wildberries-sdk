@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * ProblemDetails502 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class ProblemDetails502 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'status' => 'int',
         'title' => 'string',
         'code' => 'string',
-        'errors' => '\Wildberries\\Sdk\\Wbd\Model\ProblemDetails502[]',
+        'errors' => '\Wildberries\Sdk\Wbd\Model\ProblemDetails502[]',
         'request_id' => 'string',
         'origin' => 'string'
     ];
@@ -414,7 +414,7 @@ class ProblemDetails502 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets errors
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\ProblemDetails502[]|null
+     * @return \Wildberries\Sdk\Wbd\Model\ProblemDetails502[]|null
      */
     public function getErrors()
     {
@@ -424,7 +424,7 @@ class ProblemDetails502 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\ProblemDetails502[]|null $errors Массив ошибок. Для передачи нескольких ошибок
+     * @param \Wildberries\Sdk\Wbd\Model\ProblemDetails502[]|null $errors Массив ошибок. Для передачи нескольких ошибок
      *
      * @return self
      */

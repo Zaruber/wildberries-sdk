@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ResponseInfoAdvertType8AutoParams Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,11 +57,11 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subject' => '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsSubject',
-        'sets' => '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsSetsInner[]',
-        'menus' => '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsMenusInner[]',
-        'active' => '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsActive',
-        'nm_cpm' => '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsNmCPMInner[]',
+        'subject' => '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsSubject',
+        'sets' => '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsSetsInner[]',
+        'menus' => '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsMenusInner[]',
+        'active' => '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsActive',
+        'nm_cpm' => '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsNmCPMInner[]',
         'nms' => 'int[]',
         'cpm' => 'int'
     ];
@@ -334,7 +334,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Gets subject
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsSubject|null
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsSubject|null
      */
     public function getSubject()
     {
@@ -344,7 +344,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets subject
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsSubject|null $subject subject
+     * @param \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsSubject|null $subject subject
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Gets sets
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsSetsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsSetsInner[]|null
      */
     public function getSets()
     {
@@ -371,7 +371,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets sets
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsSetsInner[]|null $sets Внутренняя (системная) сущность (пол + предмет)
+     * @param \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsSetsInner[]|null $sets Внутренняя (системная) сущность (пол + предмет)
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Gets menus
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsMenusInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsMenusInner[]|null
      */
     public function getMenus()
     {
@@ -398,7 +398,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets menus
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsMenusInner[]|null $menus menus
+     * @param \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsMenusInner[]|null $menus menus
      *
      * @return self
      */
@@ -415,7 +415,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Gets active
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsActive|null
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsActive|null
      */
     public function getActive()
     {
@@ -425,7 +425,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets active
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsActive|null $active active
+     * @param \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsActive|null $active active
      *
      * @return self
      */
@@ -442,7 +442,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Gets nm_cpm
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsNmCPMInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsNmCPMInner[]|null
      */
     public function getNmCpm()
     {
@@ -452,7 +452,7 @@ class ResponseInfoAdvertType8AutoParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets nm_cpm
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParamsNmCPMInner[]|null $nm_cpm Ставки карточек товаров
+     * @param \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParamsNmCPMInner[]|null $nm_cpm Ставки карточек товаров
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ApiV2BufferGoodsTaskGet200ResponseData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ApiV2BufferGoodsTaskGet200ResponseData implements ModelInterface, ArrayAcc
       */
     protected static $openAPITypes = [
         'upload_id' => 'int',
-        'buffer_goods' => '\Wildberries\\Sdk\\Products\Model\GoodBufferHistory[]'
+        'buffer_goods' => '\Wildberries\Sdk\Products\Model\GoodBufferHistory[]'
     ];
 
     /**
@@ -334,7 +334,7 @@ class ApiV2BufferGoodsTaskGet200ResponseData implements ModelInterface, ArrayAcc
     /**
      * Gets buffer_goods
      *
-     * @return \Wildberries\\Sdk\\Products\Model\GoodBufferHistory[]|null
+     * @return \Wildberries\Sdk\Products\Model\GoodBufferHistory[]|null
      */
     public function getBufferGoods()
     {
@@ -344,7 +344,7 @@ class ApiV2BufferGoodsTaskGet200ResponseData implements ModelInterface, ArrayAcc
     /**
      * Sets buffer_goods
      *
-     * @param \Wildberries\\Sdk\\Products\Model\GoodBufferHistory[]|null $buffer_goods Информация о товарах в загрузке
+     * @param \Wildberries\Sdk\Products\Model\GoodBufferHistory[]|null $buffer_goods Информация о товарах в загрузке
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ApiV2UploadTaskSizePostRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV2UploadTaskSizePostRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Products\Model\SizeGoodReq[]'
+        'data' => '\Wildberries\Sdk\Products\Model\SizeGoodReq[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class ApiV2UploadTaskSizePostRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Products\Model\SizeGoodReq[]
+     * @return \Wildberries\Sdk\Products\Model\SizeGoodReq[]
      */
     public function getData()
     {
@@ -305,7 +305,7 @@ class ApiV2UploadTaskSizePostRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Products\Model\SizeGoodReq[] $data Размеры и цены для них. Максимум 1 000 размеров. <br><br> Для товаров с поразмерной установкой цен [карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) не применяется
+     * @param \Wildberries\Sdk\Products\Model\SizeGoodReq[] $data Размеры и цены для них. Максимум 1 000 размеров. <br><br> Для товаров с поразмерной установкой цен [карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) не применяется
      *
      * @return self
      */

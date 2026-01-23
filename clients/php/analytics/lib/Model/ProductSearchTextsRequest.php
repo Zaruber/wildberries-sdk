@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ProductSearchTextsRequest Class Doc Comment
  *
  * @category Class
  * @description Параметры для запроса по рейтингу поисковых запросов:   - &#x60;currentPeriod&#x60; — текущий период   - &#x60;pastPeriod&#x60; — предыдущий период для сравнения
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,14 +58,14 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'current_period' => '\Wildberries\\Sdk\\Analytics\Model\Period',
-        'past_period' => '\Wildberries\\Sdk\\Analytics\Model\PastPeriod',
+        'current_period' => '\Wildberries\Sdk\Analytics\Model\Period',
+        'past_period' => '\Wildberries\Sdk\Analytics\Model\PastPeriod',
         'nm_ids' => 'int[]',
         'top_order_by' => 'string',
         'include_substituted_skus' => 'bool',
         'include_search_texts' => 'bool',
-        'order_by' => '\Wildberries\\Sdk\\Analytics\Model\OrderByGrTe',
-        'limit' => '\Wildberries\\Sdk\\Analytics\Model\TextLimit'
+        'order_by' => '\Wildberries\Sdk\Analytics\Model\OrderByGrTe',
+        'limit' => '\Wildberries\Sdk\Analytics\Model\TextLimit'
     ];
 
     /**
@@ -391,7 +391,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets current_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\Period
+     * @return \Wildberries\Sdk\Analytics\Model\Period
      */
     public function getCurrentPeriod()
     {
@@ -401,7 +401,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets current_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\Period $current_period current_period
+     * @param \Wildberries\Sdk\Analytics\Model\Period $current_period current_period
      *
      * @return self
      */
@@ -418,7 +418,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets past_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null
+     * @return \Wildberries\Sdk\Analytics\Model\PastPeriod|null
      */
     public function getPastPeriod()
     {
@@ -428,7 +428,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets past_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null $past_period past_period
+     * @param \Wildberries\Sdk\Analytics\Model\PastPeriod|null $past_period past_period
      *
      * @return self
      */
@@ -567,7 +567,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets order_by
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\OrderByGrTe
+     * @return \Wildberries\Sdk\Analytics\Model\OrderByGrTe
      */
     public function getOrderBy()
     {
@@ -577,7 +577,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets order_by
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\OrderByGrTe $order_by order_by
+     * @param \Wildberries\Sdk\Analytics\Model\OrderByGrTe $order_by order_by
      *
      * @return self
      */
@@ -594,7 +594,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets limit
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TextLimit
+     * @return \Wildberries\Sdk\Analytics\Model\TextLimit
      */
     public function getLimit()
     {
@@ -604,7 +604,7 @@ class ProductSearchTextsRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets limit
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TextLimit $limit limit
+     * @param \Wildberries\Sdk\Analytics\Model\TextLimit $limit limit
      *
      * @return self
      */

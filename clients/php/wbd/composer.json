@@ -30,9 +30,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "Wildberries\\\\Sdk\\\\Wbd\\" : "lib/" }
+        "psr-4": { "Wildberries\\Sdk\\Wbd\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Wildberries\\\\Sdk\\\\Wbd\\Test\\" : "test/" }
+        "psr-4": { "Wildberries\\Sdk\\Wbd\\Test\\" : "test/" }
     }
 }

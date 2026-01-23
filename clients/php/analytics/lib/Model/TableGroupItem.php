@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableGroupItem Class Doc Comment
  *
  * @category Class
  * @description К группе товаров относятся все карточки, подходящие хотя бы по одному из параметров:   - &#x60;subjectName&#x60; — название предмета   - &#x60;brandName&#x60; — бренд   - &#x60;tagName&#x60; — название ярлыка
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,8 +63,8 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_name' => 'string',
         'tag_name' => 'string',
         'tag_id' => 'int',
-        'metrics' => '\Wildberries\\Sdk\\Analytics\Model\TableGroupItemMetrics',
-        'items' => '\Wildberries\\Sdk\\Analytics\Model\TableProductItem[]'
+        'metrics' => '\Wildberries\Sdk\Analytics\Model\TableGroupItemMetrics',
+        'items' => '\Wildberries\Sdk\Analytics\Model\TableProductItem[]'
     ];
 
     /**
@@ -476,7 +476,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metrics
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableGroupItemMetrics
+     * @return \Wildberries\Sdk\Analytics\Model\TableGroupItemMetrics
      */
     public function getMetrics()
     {
@@ -486,7 +486,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metrics
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableGroupItemMetrics $metrics metrics
+     * @param \Wildberries\Sdk\Analytics\Model\TableGroupItemMetrics $metrics metrics
      *
      * @return self
      */
@@ -503,7 +503,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableProductItem[]
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItem[]
      */
     public function getItems()
     {
@@ -513,7 +513,7 @@ class TableGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableProductItem[] $items Массив товаров группы
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItem[] $items Массив товаров группы
      *
      * @return self
      */

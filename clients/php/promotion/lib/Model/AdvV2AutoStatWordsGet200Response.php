@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV2AutoStatWordsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class AdvV2AutoStatWordsGet200Response implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'excluded' => 'string[]',
-        'clusters' => '\Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200ResponseClustersInner[]'
+        'clusters' => '\Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200ResponseClustersInner[]'
     ];
 
     /**
@@ -326,7 +326,7 @@ class AdvV2AutoStatWordsGet200Response implements ModelInterface, ArrayAccess, \
     /**
      * Gets clusters
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200ResponseClustersInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200ResponseClustersInner[]|null
      */
     public function getClusters()
     {
@@ -336,7 +336,7 @@ class AdvV2AutoStatWordsGet200Response implements ModelInterface, ArrayAccess, \
     /**
      * Sets clusters
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200ResponseClustersInner[]|null $clusters Кластеры ключевых фраз
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200ResponseClustersInner[]|null $clusters Кластеры ключевых фраз
      *
      * @return self
      */

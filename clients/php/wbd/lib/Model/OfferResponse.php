@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * OfferResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,9 +66,9 @@ class OfferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'discount_price' => 'int',
         'gallery' => 'string[]',
         'meta' => 'string',
-        'tags' => '\Wildberries\\Sdk\\Wbd\Model\Tag[]',
+        'tags' => '\Wildberries\Sdk\Wbd\Model\Tag[]',
         'thumbnail' => 'string[]',
-        'content' => '\Wildberries\\Sdk\\Wbd\Model\OfferContent[]',
+        'content' => '\Wildberries\Sdk\Wbd\Model\OfferContent[]',
         'created' => 'string',
         'updated' => 'string',
         'deleted' => 'string',
@@ -783,7 +783,7 @@ class OfferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tags
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\Tag[]|null
+     * @return \Wildberries\Sdk\Wbd\Model\Tag[]|null
      */
     public function getTags()
     {
@@ -793,7 +793,7 @@ class OfferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tags
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\Tag[]|null $tags Список тегов. Теги нужны для группирования, ранжирования и облегчения поиска вашего товара
+     * @param \Wildberries\Sdk\Wbd\Model\Tag[]|null $tags Список тегов. Теги нужны для группирования, ранжирования и облегчения поиска вашего товара
      *
      * @return self
      */
@@ -844,7 +844,7 @@ class OfferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\OfferContent[]|null
+     * @return \Wildberries\Sdk\Wbd\Model\OfferContent[]|null
      */
     public function getContent()
     {
@@ -854,7 +854,7 @@ class OfferResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\OfferContent[]|null $content Контент предложения
+     * @param \Wildberries\Sdk\Wbd\Model\OfferContent[]|null $content Контент предложения
      *
      * @return self
      */

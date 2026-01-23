@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV0ConfigGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class AdvV0ConfigGet200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'categories' => '\Wildberries\\Sdk\\Promotion\Model\V0GetConfigCategoriesResponse[]',
-        'config' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200ResponseConfigInner[]'
+        'categories' => '\Wildberries\Sdk\Promotion\Model\V0GetConfigCategoriesResponse[]',
+        'config' => '\Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200ResponseConfigInner[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class AdvV0ConfigGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets categories
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0GetConfigCategoriesResponse[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\V0GetConfigCategoriesResponse[]|null
      */
     public function getCategories()
     {
@@ -309,7 +309,7 @@ class AdvV0ConfigGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets categories
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\V0GetConfigCategoriesResponse[]|null $categories Список категорий товаров (предметов) с минимально допустимыми ставками
+     * @param \Wildberries\Sdk\Promotion\Model\V0GetConfigCategoriesResponse[]|null $categories Список категорий товаров (предметов) с минимально допустимыми ставками
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class AdvV0ConfigGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets config
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200ResponseConfigInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200ResponseConfigInner[]|null
      */
     public function getConfig()
     {
@@ -336,7 +336,7 @@ class AdvV0ConfigGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets config
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200ResponseConfigInner[]|null $config Список основных параметров конфигурации с допустимыми значениями
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200ResponseConfigInner[]|null $config Список основных параметров конфигурации с допустимыми значениями
      *
      * @return self
      */

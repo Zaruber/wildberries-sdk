@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * StatsBlok1 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -74,7 +74,7 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'float',
         'cpc' => 'float',
         'status' => 'int',
-        'daily_stats' => '\Wildberries\\Sdk\\Promotion\Model\DailyStats1Inner[]',
+        'daily_stats' => '\Wildberries\Sdk\Promotion\Model\DailyStats1Inner[]',
         'expenses' => 'float',
         'cr1' => 'float',
         'cr2' => 'int'
@@ -891,7 +891,7 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets daily_stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\DailyStats1Inner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\DailyStats1Inner[]|null
      */
     public function getDailyStats()
     {
@@ -901,7 +901,7 @@ class StatsBlok1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets daily_stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\DailyStats1Inner[]|null $daily_stats daily_stats
+     * @param \Wildberries\Sdk\Promotion\Model\DailyStats1Inner[]|null $daily_stats daily_stats
      *
      * @return self
      */

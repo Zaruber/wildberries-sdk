@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * ApiOrderStatusV2 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiOrderStatusV2 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Wildberries\\Sdk\\OrdersDbs\Model\ApiBatchErrorResponse[]',
+        'errors' => '\Wildberries\Sdk\OrdersDbs\Model\ApiBatchErrorResponse[]',
         'order_id' => 'int',
         'supplier_status' => 'string',
         'wb_status' => 'string'
@@ -313,7 +313,7 @@ class ApiOrderStatusV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\ApiBatchErrorResponse[]|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiBatchErrorResponse[]|null
      */
     public function getErrors()
     {
@@ -323,7 +323,7 @@ class ApiOrderStatusV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\ApiBatchErrorResponse[]|null $errors Информация об ошибке
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiBatchErrorResponse[]|null $errors Информация об ошибке
      *
      * @return self
      */

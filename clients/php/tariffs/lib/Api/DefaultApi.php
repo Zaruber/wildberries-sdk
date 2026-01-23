@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Tariffs\Api;
+namespace Wildberries\Sdk\Tariffs\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Wildberries\\Sdk\\Tariffs\ApiException;
-use Wildberries\\Sdk\\Tariffs\Configuration;
-use Wildberries\\Sdk\\Tariffs\FormDataProcessor;
-use Wildberries\\Sdk\\Tariffs\HeaderSelector;
-use Wildberries\\Sdk\\Tariffs\ObjectSerializer;
+use Wildberries\Sdk\Tariffs\ApiException;
+use Wildberries\Sdk\Tariffs\Configuration;
+use Wildberries\Sdk\Tariffs\FormDataProcessor;
+use Wildberries\Sdk\Tariffs\HeaderSelector;
+use Wildberries\Sdk\Tariffs\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -151,9 +151,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiTariffsV1AcceptanceCoefficientsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\\Sdk\\Tariffs\Model\ModelsErrorModel|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response
+     * @return \Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response
      */
     public function apiTariffsV1AcceptanceCoefficientsGet($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiTariffsV1AcceptanceCoefficientsGet'][0])
     {
@@ -175,9 +175,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiTariffsV1AcceptanceCoefficientsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\\Sdk\\Tariffs\Model\ModelsErrorModel|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiTariffsV1AcceptanceCoefficientsGetWithHttpInfo($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiTariffsV1AcceptanceCoefficientsGet'][0])
     {
@@ -209,25 +209,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ModelsAcceptanceCoefficient[]',
+                        '\Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
@@ -249,7 +249,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Tariffs\Model\ModelsAcceptanceCoefficient[]',
+                '\Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]',
                 $request,
                 $response,
             );
@@ -258,7 +258,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ModelsAcceptanceCoefficient[]',
+                        '\Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -266,7 +266,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -282,7 +282,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -340,7 +340,7 @@ class DefaultApi
      */
     public function apiTariffsV1AcceptanceCoefficientsGetAsyncWithHttpInfo($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiTariffsV1AcceptanceCoefficientsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Tariffs\Model\ModelsAcceptanceCoefficient[]';
+        $returnType = '\Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]';
         $request = $this->apiTariffsV1AcceptanceCoefficientsGetRequest($warehouse_ids, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -516,9 +516,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsBoxGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Tariffs\Model\TariffsBoxResponse|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response
+     * @return \Wildberries\Sdk\Tariffs\Model\TariffsBoxResponse|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response
      */
     public function apiV1TariffsBoxGet($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsBoxGet'][0])
     {
@@ -540,9 +540,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsBoxGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Tariffs\Model\TariffsBoxResponse|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Tariffs\Model\TariffsBoxResponse|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1TariffsBoxGetWithHttpInfo($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsBoxGet'][0])
     {
@@ -574,25 +574,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\TariffsBoxResponse',
+                        '\Wildberries\Sdk\Tariffs\Model\TariffsBoxResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
@@ -614,7 +614,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Tariffs\Model\TariffsBoxResponse',
+                '\Wildberries\Sdk\Tariffs\Model\TariffsBoxResponse',
                 $request,
                 $response,
             );
@@ -623,7 +623,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\TariffsBoxResponse',
+                        '\Wildberries\Sdk\Tariffs\Model\TariffsBoxResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -631,7 +631,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -639,7 +639,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -647,7 +647,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -705,7 +705,7 @@ class DefaultApi
      */
     public function apiV1TariffsBoxGetAsyncWithHttpInfo($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsBoxGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Tariffs\Model\TariffsBoxResponse';
+        $returnType = '\Wildberries\Sdk\Tariffs\Model\TariffsBoxResponse';
         $request = $this->apiV1TariffsBoxGetRequest($date, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -887,9 +887,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsCommissionGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet200Response|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response
+     * @return \Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet200Response|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response
      */
     public function apiV1TariffsCommissionGet($locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsCommissionGet'][0])
     {
@@ -911,9 +911,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsCommissionGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet200Response|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet200Response|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1TariffsCommissionGetWithHttpInfo($locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsCommissionGet'][0])
     {
@@ -945,25 +945,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet200Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
@@ -985,7 +985,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet200Response',
+                '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet200Response',
                 $request,
                 $response,
             );
@@ -994,7 +994,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet200Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1002,7 +1002,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1010,7 +1010,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1018,7 +1018,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1076,7 +1076,7 @@ class DefaultApi
      */
     public function apiV1TariffsCommissionGetAsyncWithHttpInfo($locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsCommissionGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet200Response';
+        $returnType = '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet200Response';
         $request = $this->apiV1TariffsCommissionGetRequest($locale, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1252,9 +1252,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsPalletGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Tariffs\Model\TariffsPalletResponse|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response
+     * @return \Wildberries\Sdk\Tariffs\Model\TariffsPalletResponse|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response
      */
     public function apiV1TariffsPalletGet($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsPalletGet'][0])
     {
@@ -1276,9 +1276,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsPalletGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Tariffs\Model\TariffsPalletResponse|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Tariffs\Model\TariffsPalletResponse|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1TariffsPalletGetWithHttpInfo($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsPalletGet'][0])
     {
@@ -1310,25 +1310,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\TariffsPalletResponse',
+                        '\Wildberries\Sdk\Tariffs\Model\TariffsPalletResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
@@ -1350,7 +1350,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Tariffs\Model\TariffsPalletResponse',
+                '\Wildberries\Sdk\Tariffs\Model\TariffsPalletResponse',
                 $request,
                 $response,
             );
@@ -1359,7 +1359,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\TariffsPalletResponse',
+                        '\Wildberries\Sdk\Tariffs\Model\TariffsPalletResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1367,7 +1367,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1375,7 +1375,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1383,7 +1383,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1441,7 +1441,7 @@ class DefaultApi
      */
     public function apiV1TariffsPalletGetAsyncWithHttpInfo($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsPalletGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Tariffs\Model\TariffsPalletResponse';
+        $returnType = '\Wildberries\Sdk\Tariffs\Model\TariffsPalletResponse';
         $request = $this->apiV1TariffsPalletGetRequest($date, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1623,9 +1623,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsReturnGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Tariffs\Model\ReturnTariffsResponse|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response
+     * @return \Wildberries\Sdk\Tariffs\Model\ReturnTariffsResponse|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response
      */
     public function apiV1TariffsReturnGet($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsReturnGet'][0])
     {
@@ -1647,9 +1647,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TariffsReturnGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Tariffs\Model\ReturnTariffsResponse|\Wildberries\\Sdk\\Tariffs\Model\BadRequest|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Tariffs\Model\ReturnTariffsResponse|\Wildberries\Sdk\Tariffs\Model\BadRequest|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1TariffsReturnGetWithHttpInfo($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsReturnGet'][0])
     {
@@ -1681,25 +1681,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ReturnTariffsResponse',
+                        '\Wildberries\Sdk\Tariffs\Model\ReturnTariffsResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $request,
                         $response,
                     );
@@ -1721,7 +1721,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Tariffs\Model\ReturnTariffsResponse',
+                '\Wildberries\Sdk\Tariffs\Model\ReturnTariffsResponse',
                 $request,
                 $response,
             );
@@ -1730,7 +1730,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ReturnTariffsResponse',
+                        '\Wildberries\Sdk\Tariffs\Model\ReturnTariffsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1738,7 +1738,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\BadRequest',
+                        '\Wildberries\Sdk\Tariffs\Model\BadRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1746,7 +1746,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1754,7 +1754,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1812,7 +1812,7 @@ class DefaultApi
      */
     public function apiV1TariffsReturnGetAsyncWithHttpInfo($date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TariffsReturnGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Tariffs\Model\ReturnTariffsResponse';
+        $returnType = '\Wildberries\Sdk\Tariffs\Model\ReturnTariffsResponse';
         $request = $this->apiV1TariffsReturnGetRequest($date, $hostIndex, $variables, $contentType);
 
         return $this->client

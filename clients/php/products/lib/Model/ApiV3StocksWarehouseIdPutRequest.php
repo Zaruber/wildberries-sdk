@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ApiV3StocksWarehouseIdPutRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV3StocksWarehouseIdPutRequest implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'stocks' => '\Wildberries\\Sdk\\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[]'
+        'stocks' => '\Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[]'
     ];
 
     /**
@@ -303,7 +303,7 @@ class ApiV3StocksWarehouseIdPutRequest implements ModelInterface, ArrayAccess, \
     /**
      * Gets stocks
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[]
+     * @return \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[]
      */
     public function getStocks()
     {
@@ -313,7 +313,7 @@ class ApiV3StocksWarehouseIdPutRequest implements ModelInterface, ArrayAccess, \
     /**
      * Sets stocks
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[] $stocks Массив баркодов товаров и их остатков
+     * @param \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[] $stocks Массив баркодов товаров и их остатков
      *
      * @return self
      */

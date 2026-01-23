@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * OfferCreateRequest Class Doc Comment
  *
  * @category Class
  * @description Новое предложение
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -69,8 +69,8 @@ class OfferCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'gallery' => 'string[]',
         'keys' => 'string[]',
         'status' => 'int',
-        'content' => '\Wildberries\\Sdk\\Wbd\Model\OfferCreateContent[]',
-        'meta' => '\Wildberries\\Sdk\\Wbd\Model\OfferMetaRequest'
+        'content' => '\Wildberries\Sdk\Wbd\Model\OfferCreateContent[]',
+        'meta' => '\Wildberries\Sdk\Wbd\Model\OfferMetaRequest'
     ];
 
     /**
@@ -877,7 +877,7 @@ class OfferCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets content
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\OfferCreateContent[]|null
+     * @return \Wildberries\Sdk\Wbd\Model\OfferCreateContent[]|null
      */
     public function getContent()
     {
@@ -887,7 +887,7 @@ class OfferCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets content
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\OfferCreateContent[]|null $content Список контента
+     * @param \Wildberries\Sdk\Wbd\Model\OfferCreateContent[]|null $content Список контента
      *
      * @return self
      */
@@ -904,7 +904,7 @@ class OfferCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets meta
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\OfferMetaRequest|null
+     * @return \Wildberries\Sdk\Wbd\Model\OfferMetaRequest|null
      */
     public function getMeta()
     {
@@ -914,7 +914,7 @@ class OfferCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets meta
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\OfferMetaRequest|null $meta meta
+     * @param \Wildberries\Sdk\Wbd\Model\OfferMetaRequest|null $meta meta
      *
      * @return self
      */

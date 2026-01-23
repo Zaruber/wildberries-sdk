@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * OfferContent Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class OfferContent implements ModelInterface, ArrayAccess, \JsonSerializable
         'content' => 'int',
         'title' => 'string',
         'description' => 'string',
-        'files' => '\Wildberries\\Sdk\\Wbd\Model\OfferContentFilesInner[]',
+        'files' => '\Wildberries\Sdk\Wbd\Model\OfferContentFilesInner[]',
         'meta' => 'string',
         'playlist' => 'string',
         'category_id' => 'int'
@@ -444,7 +444,7 @@ class OfferContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets files
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\OfferContentFilesInner[]|null
+     * @return \Wildberries\Sdk\Wbd\Model\OfferContentFilesInner[]|null
      */
     public function getFiles()
     {
@@ -454,7 +454,7 @@ class OfferContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets files
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\OfferContentFilesInner[]|null $files Список с информацией о дополнительных файлах
+     * @param \Wildberries\Sdk\Wbd\Model\OfferContentFilesInner[]|null $files Список с информацией о дополнительных файлах
      *
      * @return self
      */

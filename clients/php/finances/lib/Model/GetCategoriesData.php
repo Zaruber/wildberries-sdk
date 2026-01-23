@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Finances\Model;
+namespace Wildberries\Sdk\Finances\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Finances\ObjectSerializer;
+use \Wildberries\Sdk\Finances\ObjectSerializer;
 
 /**
  * GetCategoriesData Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GetCategoriesData implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'categories' => '\Wildberries\\Sdk\\Finances\Model\GetCategoriesDataCategoriesInner[]'
+        'categories' => '\Wildberries\Sdk\Finances\Model\GetCategoriesDataCategoriesInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GetCategoriesData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets categories
      *
-     * @return \Wildberries\\Sdk\\Finances\Model\GetCategoriesDataCategoriesInner[]|null
+     * @return \Wildberries\Sdk\Finances\Model\GetCategoriesDataCategoriesInner[]|null
      */
     public function getCategories()
     {
@@ -302,7 +302,7 @@ class GetCategoriesData implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets categories
      *
-     * @param \Wildberries\\Sdk\\Finances\Model\GetCategoriesDataCategoriesInner[]|null $categories Категории документов
+     * @param \Wildberries\Sdk\Finances\Model\GetCategoriesDataCategoriesInner[]|null $categories Категории документов
      *
      * @return self
      */

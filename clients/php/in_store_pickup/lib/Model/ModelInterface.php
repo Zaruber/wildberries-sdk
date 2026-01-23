@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup\Model
+ * @package  Wildberries\Sdk\InStorePickup\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,12 +26,12 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\InStorePickup\Model;
+namespace Wildberries\Sdk\InStorePickup\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Wildberries\\Sdk\\InStorePickup\Model
+ * @package Wildberries\Sdk\InStorePickup\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

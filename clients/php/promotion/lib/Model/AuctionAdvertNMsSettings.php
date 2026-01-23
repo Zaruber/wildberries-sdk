@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AuctionAdvertNMsSettings Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class AuctionAdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bids' => '\Wildberries\\Sdk\\Promotion\Model\AuctionAdvertBids',
-        'subject' => '\Wildberries\\Sdk\\Promotion\Model\AuctionAdvertSubject',
+        'bids' => '\Wildberries\Sdk\Promotion\Model\AuctionAdvertBids',
+        'subject' => '\Wildberries\Sdk\Promotion\Model\AuctionAdvertSubject',
         'nm_id' => 'int'
     ];
 
@@ -315,7 +315,7 @@ class AuctionAdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets bids
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertBids
+     * @return \Wildberries\Sdk\Promotion\Model\AuctionAdvertBids
      */
     public function getBids()
     {
@@ -325,7 +325,7 @@ class AuctionAdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets bids
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertBids $bids bids
+     * @param \Wildberries\Sdk\Promotion\Model\AuctionAdvertBids $bids bids
      *
      * @return self
      */
@@ -342,7 +342,7 @@ class AuctionAdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets subject
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertSubject
+     * @return \Wildberries\Sdk\Promotion\Model\AuctionAdvertSubject
      */
     public function getSubject()
     {
@@ -352,7 +352,7 @@ class AuctionAdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets subject
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AuctionAdvertSubject $subject subject
+     * @param \Wildberries\Sdk\Promotion\Model\AuctionAdvertSubject $subject subject
      *
      * @return self
      */

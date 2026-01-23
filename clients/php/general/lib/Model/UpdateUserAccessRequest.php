@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * UpdateUserAccessRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class UpdateUserAccessRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users_accesses' => '\Wildberries\\Sdk\\General\Model\UserAccess[]'
+        'users_accesses' => '\Wildberries\Sdk\General\Model\UserAccess[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class UpdateUserAccessRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets users_accesses
      *
-     * @return \Wildberries\\Sdk\\General\Model\UserAccess[]
+     * @return \Wildberries\Sdk\General\Model\UserAccess[]
      */
     public function getUsersAccesses()
     {
@@ -305,7 +305,7 @@ class UpdateUserAccessRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets users_accesses
      *
-     * @param \Wildberries\\Sdk\\General\Model\UserAccess[] $users_accesses Настройки доступа для пользователя
+     * @param \Wildberries\Sdk\General\Model\UserAccess[] $users_accesses Настройки доступа для пользователя
      *
      * @return self
      */

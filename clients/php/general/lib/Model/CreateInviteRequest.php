@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * CreateInviteRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'access' => '\Wildberries\\Sdk\\General\Model\AccessInner[]',
-        'invite' => '\Wildberries\\Sdk\\General\Model\CreateInviteRequestInvite'
+        'access' => '\Wildberries\Sdk\General\Model\AccessInner[]',
+        'invite' => '\Wildberries\Sdk\General\Model\CreateInviteRequestInvite'
     ];
 
     /**
@@ -302,7 +302,7 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets access
      *
-     * @return \Wildberries\\Sdk\\General\Model\AccessInner[]|null
+     * @return \Wildberries\Sdk\General\Model\AccessInner[]|null
      */
     public function getAccess()
     {
@@ -312,7 +312,7 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets access
      *
-     * @param \Wildberries\\Sdk\\General\Model\AccessInner[]|null $access Настройки доступа к разделам профиля продавца
+     * @param \Wildberries\Sdk\General\Model\AccessInner[]|null $access Настройки доступа к разделам профиля продавца
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets invite
      *
-     * @return \Wildberries\\Sdk\\General\Model\CreateInviteRequestInvite
+     * @return \Wildberries\Sdk\General\Model\CreateInviteRequestInvite
      */
     public function getInvite()
     {
@@ -339,7 +339,7 @@ class CreateInviteRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets invite
      *
-     * @param \Wildberries\\Sdk\\General\Model\CreateInviteRequestInvite $invite invite
+     * @param \Wildberries\Sdk\General\Model\CreateInviteRequestInvite $invite invite
      *
      * @return self
      */

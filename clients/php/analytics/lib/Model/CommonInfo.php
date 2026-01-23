@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * CommonInfo Class Doc Comment
  *
  * @category Class
  * @description Общая информация
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'supplier_rating' => '\Wildberries\\Sdk\\Analytics\Model\CommonInfoSupplierRating',
-        'advertised_products' => '\Wildberries\\Sdk\\Analytics\Model\CommonInfoAdvertisedProducts',
+        'supplier_rating' => '\Wildberries\Sdk\Analytics\Model\CommonInfoSupplierRating',
+        'advertised_products' => '\Wildberries\Sdk\Analytics\Model\CommonInfoAdvertisedProducts',
         'total_products' => 'int'
     ];
 
@@ -316,7 +316,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets supplier_rating
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\CommonInfoSupplierRating
+     * @return \Wildberries\Sdk\Analytics\Model\CommonInfoSupplierRating
      */
     public function getSupplierRating()
     {
@@ -326,7 +326,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets supplier_rating
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\CommonInfoSupplierRating $supplier_rating supplier_rating
+     * @param \Wildberries\Sdk\Analytics\Model\CommonInfoSupplierRating $supplier_rating supplier_rating
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets advertised_products
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\CommonInfoAdvertisedProducts
+     * @return \Wildberries\Sdk\Analytics\Model\CommonInfoAdvertisedProducts
      */
     public function getAdvertisedProducts()
     {
@@ -353,7 +353,7 @@ class CommonInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets advertised_products
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\CommonInfoAdvertisedProducts $advertised_products advertised_products
+     * @param \Wildberries\Sdk\Analytics\Model\CommonInfoAdvertisedProducts $advertised_products advertised_products
      *
      * @return self
      */

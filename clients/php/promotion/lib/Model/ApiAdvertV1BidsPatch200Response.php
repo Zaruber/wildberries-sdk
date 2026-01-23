@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiAdvertV1BidsPatch200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiAdvertV1BidsPatch200Response implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bids' => '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInner[]'
+        'bids' => '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInner[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class ApiAdvertV1BidsPatch200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Gets bids
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInner[]
      */
     public function getBids()
     {
@@ -305,7 +305,7 @@ class ApiAdvertV1BidsPatch200Response implements ModelInterface, ArrayAccess, \J
     /**
      * Sets bids
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInner[] $bids Результат отработки запроса
+     * @param \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInner[] $bids Результат отработки запроса
      *
      * @return self
      */

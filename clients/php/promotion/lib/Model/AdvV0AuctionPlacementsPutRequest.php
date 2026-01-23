@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV0AuctionPlacementsPutRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class AdvV0AuctionPlacementsPutRequest implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'placements' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInner[]'
+        'placements' => '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInner[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class AdvV0AuctionPlacementsPutRequest implements ModelInterface, ArrayAccess, \
     /**
      * Gets placements
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInner[]
      */
     public function getPlacements()
     {
@@ -309,7 +309,7 @@ class AdvV0AuctionPlacementsPutRequest implements ModelInterface, ArrayAccess, \
     /**
      * Sets placements
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInner[] $placements Места размещения в кампаниях
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInner[] $placements Места размещения в кампаниях
      *
      * @return self
      */

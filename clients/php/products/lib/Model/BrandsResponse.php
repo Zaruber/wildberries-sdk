@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * BrandsResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'brands' => '\Wildberries\\Sdk\\Products\Model\BrandsResponseBrandsInner[]',
+        'brands' => '\Wildberries\Sdk\Products\Model\BrandsResponseBrandsInner[]',
         'next' => 'int',
         'total' => 'int'
     ];
@@ -312,7 +312,7 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets brands
      *
-     * @return \Wildberries\\Sdk\\Products\Model\BrandsResponseBrandsInner[]
+     * @return \Wildberries\Sdk\Products\Model\BrandsResponseBrandsInner[]
      */
     public function getBrands()
     {
@@ -322,7 +322,7 @@ class BrandsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brands
      *
-     * @param \Wildberries\\Sdk\\Products\Model\BrandsResponseBrandsInner[] $brands brands
+     * @param \Wildberries\Sdk\Products\Model\BrandsResponseBrandsInner[] $brands brands
      *
      * @return self
      */

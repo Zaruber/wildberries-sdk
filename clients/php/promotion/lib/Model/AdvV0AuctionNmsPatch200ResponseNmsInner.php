@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV0AuctionNmsPatch200ResponseNmsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class AdvV0AuctionNmsPatch200ResponseNmsInner implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'advert_id' => 'int',
-        'nms' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200ResponseNmsInnerNms'
+        'nms' => '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200ResponseNmsInnerNms'
     ];
 
     /**
@@ -332,7 +332,7 @@ class AdvV0AuctionNmsPatch200ResponseNmsInner implements ModelInterface, ArrayAc
     /**
      * Gets nms
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200ResponseNmsInnerNms
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200ResponseNmsInnerNms
      */
     public function getNms()
     {
@@ -342,7 +342,7 @@ class AdvV0AuctionNmsPatch200ResponseNmsInner implements ModelInterface, ArrayAc
     /**
      * Sets nms
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200ResponseNmsInnerNms $nms nms
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200ResponseNmsInnerNms $nms nms
      *
      * @return self
      */

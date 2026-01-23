@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ProductsRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,14 +57,14 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'selected_period' => '\Wildberries\\Sdk\\Analytics\Model\ProductsRequestSelectedPeriod',
-        'past_period' => '\Wildberries\\Sdk\\Analytics\Model\ProductsRequestPastPeriod',
+        'selected_period' => '\Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod',
+        'past_period' => '\Wildberries\Sdk\Analytics\Model\ProductsRequestPastPeriod',
         'nm_ids' => 'int[]',
         'brand_names' => 'string[]',
         'subject_ids' => 'int[]',
         'tag_ids' => 'int[]',
         'skip_deleted_nm' => 'bool',
-        'order_by' => '\Wildberries\\Sdk\\Analytics\Model\OrderBy',
+        'order_by' => '\Wildberries\Sdk\Analytics\Model\OrderBy',
         'limit' => 'int',
         'offset' => 'int'
     ];
@@ -370,7 +370,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets selected_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductsRequestSelectedPeriod
+     * @return \Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod
      */
     public function getSelectedPeriod()
     {
@@ -380,7 +380,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets selected_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductsRequestSelectedPeriod $selected_period selected_period
+     * @param \Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod $selected_period selected_period
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets past_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductsRequestPastPeriod|null
+     * @return \Wildberries\Sdk\Analytics\Model\ProductsRequestPastPeriod|null
      */
     public function getPastPeriod()
     {
@@ -407,7 +407,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets past_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductsRequestPastPeriod|null $past_period past_period
+     * @param \Wildberries\Sdk\Analytics\Model\ProductsRequestPastPeriod|null $past_period past_period
      *
      * @return self
      */
@@ -566,7 +566,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_by
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\OrderBy|null
+     * @return \Wildberries\Sdk\Analytics\Model\OrderBy|null
      */
     public function getOrderBy()
     {
@@ -576,7 +576,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_by
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\OrderBy|null $order_by order_by
+     * @param \Wildberries\Sdk\Analytics\Model\OrderBy|null $order_by order_by
      *
      * @return self
      */

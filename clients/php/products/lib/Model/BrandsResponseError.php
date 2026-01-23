@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * BrandsResponseError Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
         'detail' => 'string',
         'origin' => 'string',
         'request_id' => 'string',
-        'errors' => '\Wildberries\\Sdk\\Products\Model\BrandsResponseErrorErrorsInner[]'
+        'errors' => '\Wildberries\Sdk\Products\Model\BrandsResponseErrorErrorsInner[]'
     ];
 
     /**
@@ -440,7 +440,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets errors
      *
-     * @return \Wildberries\\Sdk\\Products\Model\BrandsResponseErrorErrorsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\BrandsResponseErrorErrorsInner[]|null
      */
     public function getErrors()
     {
@@ -450,7 +450,7 @@ class BrandsResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets errors
      *
-     * @param \Wildberries\\Sdk\\Products\Model\BrandsResponseErrorErrorsInner[]|null $errors errors
+     * @param \Wildberries\Sdk\Products\Model\BrandsResponseErrorErrorsInner[]|null $errors errors
      *
      * @return self
      */

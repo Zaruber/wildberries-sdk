@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableGroupRequest Class Doc Comment
  *
  * @category Class
  * @description Параметры запроса для пагинации по группам:   - &#x60;currentPeriod&#x60; — текущий период   - &#x60;pastPeriod&#x60; — предыдущий период для сравнения
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,14 +58,14 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'current_period' => '\Wildberries\\Sdk\\Analytics\Model\Period',
-        'past_period' => '\Wildberries\\Sdk\\Analytics\Model\PastPeriod',
+        'current_period' => '\Wildberries\Sdk\Analytics\Model\Period',
+        'past_period' => '\Wildberries\Sdk\Analytics\Model\PastPeriod',
         'nm_ids' => 'int[]',
         'subject_ids' => 'int[]',
         'brand_names' => 'string[]',
         'tag_ids' => 'int[]',
-        'order_by' => '\Wildberries\\Sdk\\Analytics\Model\OrderByGrTe',
-        'position_cluster' => '\Wildberries\\Sdk\\Analytics\Model\PositionCluster',
+        'order_by' => '\Wildberries\Sdk\Analytics\Model\OrderByGrTe',
+        'position_cluster' => '\Wildberries\Sdk\Analytics\Model\PositionCluster',
         'include_substituted_skus' => 'bool',
         'include_search_texts' => 'bool',
         'limit' => 'int',
@@ -389,7 +389,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets current_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\Period
+     * @return \Wildberries\Sdk\Analytics\Model\Period
      */
     public function getCurrentPeriod()
     {
@@ -399,7 +399,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets current_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\Period $current_period current_period
+     * @param \Wildberries\Sdk\Analytics\Model\Period $current_period current_period
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets past_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null
+     * @return \Wildberries\Sdk\Analytics\Model\PastPeriod|null
      */
     public function getPastPeriod()
     {
@@ -426,7 +426,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets past_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null $past_period past_period
+     * @param \Wildberries\Sdk\Analytics\Model\PastPeriod|null $past_period past_period
      *
      * @return self
      */
@@ -551,7 +551,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets order_by
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\OrderByGrTe
+     * @return \Wildberries\Sdk\Analytics\Model\OrderByGrTe
      */
     public function getOrderBy()
     {
@@ -561,7 +561,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets order_by
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\OrderByGrTe $order_by order_by
+     * @param \Wildberries\Sdk\Analytics\Model\OrderByGrTe $order_by order_by
      *
      * @return self
      */
@@ -578,7 +578,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets position_cluster
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PositionCluster
+     * @return \Wildberries\Sdk\Analytics\Model\PositionCluster
      */
     public function getPositionCluster()
     {
@@ -588,7 +588,7 @@ class TableGroupRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets position_cluster
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PositionCluster $position_cluster position_cluster
+     * @param \Wildberries\Sdk\Analytics\Model\PositionCluster $position_cluster position_cluster
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * ApiStatusSetResponses Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'request_id' => 'string',
-        'results' => '\Wildberries\\Sdk\\OrdersDbs\Model\ApiStatusSetResponse[]'
+        'results' => '\Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponse[]'
     ];
 
     /**
@@ -326,7 +326,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets results
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\ApiStatusSetResponse[]|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponse[]|null
      */
     public function getResults()
     {
@@ -336,7 +336,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets results
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\ApiStatusSetResponse[]|null $results results
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponse[]|null $results results
      *
      * @return self
      */

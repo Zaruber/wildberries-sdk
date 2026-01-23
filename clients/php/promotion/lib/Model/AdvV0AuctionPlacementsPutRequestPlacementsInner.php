@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV0AuctionPlacementsPutRequestPlacementsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class AdvV0AuctionPlacementsPutRequestPlacementsInner implements ModelInterface,
       */
     protected static $openAPITypes = [
         'advert_id' => 'int',
-        'placements' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements'
+        'placements' => '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements'
     ];
 
     /**
@@ -332,7 +332,7 @@ class AdvV0AuctionPlacementsPutRequestPlacementsInner implements ModelInterface,
     /**
      * Gets placements
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements
      */
     public function getPlacements()
     {
@@ -342,7 +342,7 @@ class AdvV0AuctionPlacementsPutRequestPlacementsInner implements ModelInterface,
     /**
      * Sets placements
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements $placements placements
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements $placements placements
      *
      * @return self
      */

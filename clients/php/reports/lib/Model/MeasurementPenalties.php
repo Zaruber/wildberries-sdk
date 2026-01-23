@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * MeasurementPenalties Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class MeasurementPenalties implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Reports\Model\MeasurementPenaltiesData'
+        'data' => '\Wildberries\Sdk\Reports\Model\MeasurementPenaltiesData'
     ];
 
     /**
@@ -295,7 +295,7 @@ class MeasurementPenalties implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\MeasurementPenaltiesData
+     * @return \Wildberries\Sdk\Reports\Model\MeasurementPenaltiesData
      */
     public function getData()
     {
@@ -305,7 +305,7 @@ class MeasurementPenalties implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\MeasurementPenaltiesData $data data
+     * @param \Wildberries\Sdk\Reports\Model\MeasurementPenaltiesData $data data
      *
      * @return self
      */

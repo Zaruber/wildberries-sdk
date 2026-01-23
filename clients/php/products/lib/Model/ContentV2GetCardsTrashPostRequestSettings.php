@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2GetCardsTrashPostRequestSettings Class Doc Comment
  *
  * @category Class
  * @description Настройки
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class ContentV2GetCardsTrashPostRequestSettings implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sort' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsSort',
-        'cursor' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsCursor',
-        'filter' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsFilter'
+        'sort' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsSort',
+        'cursor' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsCursor',
+        'filter' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsFilter'
     ];
 
     /**
@@ -307,7 +307,7 @@ class ContentV2GetCardsTrashPostRequestSettings implements ModelInterface, Array
     /**
      * Gets sort
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsSort|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsSort|null
      */
     public function getSort()
     {
@@ -317,7 +317,7 @@ class ContentV2GetCardsTrashPostRequestSettings implements ModelInterface, Array
     /**
      * Sets sort
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsSort|null $sort sort
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsSort|null $sort sort
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class ContentV2GetCardsTrashPostRequestSettings implements ModelInterface, Array
     /**
      * Gets cursor
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsCursor|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsCursor|null
      */
     public function getCursor()
     {
@@ -344,7 +344,7 @@ class ContentV2GetCardsTrashPostRequestSettings implements ModelInterface, Array
     /**
      * Sets cursor
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsCursor|null $cursor cursor
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsCursor|null $cursor cursor
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class ContentV2GetCardsTrashPostRequestSettings implements ModelInterface, Array
     /**
      * Gets filter
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsFilter|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsFilter|null
      */
     public function getFilter()
     {
@@ -371,7 +371,7 @@ class ContentV2GetCardsTrashPostRequestSettings implements ModelInterface, Array
     /**
      * Sets filter
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPostRequestSettingsFilter|null $filter filter
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPostRequestSettingsFilter|null $filter filter
      *
      * @return self
      */

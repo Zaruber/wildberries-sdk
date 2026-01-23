@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1CountGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class AdvV1CountGet200Response implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'all' => 'int',
-        'adverts' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200ResponseAdverts'
+        'adverts' => '\Wildberries\Sdk\Promotion\Model\AdvV1CountGet200ResponseAdverts'
     ];
 
     /**
@@ -326,7 +326,7 @@ class AdvV1CountGet200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets adverts
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200ResponseAdverts|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1CountGet200ResponseAdverts|null
      */
     public function getAdverts()
     {
@@ -336,7 +336,7 @@ class AdvV1CountGet200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets adverts
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200ResponseAdverts|null $adverts adverts
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1CountGet200ResponseAdverts|null $adverts adverts
      *
      * @return self
      */

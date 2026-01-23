@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * OpenapiPinReviewItemResult Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class OpenapiPinReviewItemResult implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Communications\Model\OpenapiPinReviewItemResultDataInner[]'
+        'data' => '\Wildberries\Sdk\Communications\Model\OpenapiPinReviewItemResultDataInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class OpenapiPinReviewItemResult implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\OpenapiPinReviewItemResultDataInner[]|null
+     * @return \Wildberries\Sdk\Communications\Model\OpenapiPinReviewItemResultDataInner[]|null
      */
     public function getData()
     {
@@ -302,7 +302,7 @@ class OpenapiPinReviewItemResult implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\OpenapiPinReviewItemResultDataInner[]|null $data data
+     * @param \Wildberries\Sdk\Communications\Model\OpenapiPinReviewItemResultDataInner[]|null $data data
      *
      * @return self
      */

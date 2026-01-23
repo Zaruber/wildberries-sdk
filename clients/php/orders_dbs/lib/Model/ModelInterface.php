@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs\Model
+ * @package  Wildberries\Sdk\OrdersDbs\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,12 +26,12 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Wildberries\\Sdk\\OrdersDbs\Model
+ * @package Wildberries\Sdk\OrdersDbs\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

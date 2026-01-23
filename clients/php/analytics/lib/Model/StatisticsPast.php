@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * StatisticsPast Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'period' => '\Wildberries\\Sdk\\Analytics\Model\DatePeriod',
+        'period' => '\Wildberries\Sdk\Analytics\Model\DatePeriod',
         'open_count' => 'int',
         'cart_count' => 'int',
         'order_count' => 'int',
@@ -70,10 +70,10 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
         'avg_orders_count_per_day' => 'float',
         'share_order_percent' => 'float',
         'add_to_wishlist' => 'int',
-        'time_to_ready' => '\Wildberries\\Sdk\\Analytics\Model\StatisticTimeToReady',
+        'time_to_ready' => '\Wildberries\Sdk\Analytics\Model\StatisticTimeToReady',
         'localization_percent' => 'int',
-        'wb_club' => '\Wildberries\\Sdk\\Analytics\Model\StatisticWbClub',
-        'conversions' => '\Wildberries\\Sdk\\Analytics\Model\StatisticConversions'
+        'wb_club' => '\Wildberries\Sdk\Analytics\Model\StatisticWbClub',
+        'conversions' => '\Wildberries\Sdk\Analytics\Model\StatisticConversions'
     ];
 
     /**
@@ -455,7 +455,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\DatePeriod
+     * @return \Wildberries\Sdk\Analytics\Model\DatePeriod
      */
     public function getPeriod()
     {
@@ -465,7 +465,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\DatePeriod $period Даты периода
+     * @param \Wildberries\Sdk\Analytics\Model\DatePeriod $period Даты периода
      *
      * @return self
      */
@@ -806,7 +806,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets time_to_ready
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StatisticTimeToReady
+     * @return \Wildberries\Sdk\Analytics\Model\StatisticTimeToReady
      */
     public function getTimeToReady()
     {
@@ -816,7 +816,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_to_ready
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StatisticTimeToReady $time_to_ready time_to_ready
+     * @param \Wildberries\Sdk\Analytics\Model\StatisticTimeToReady $time_to_ready time_to_ready
      *
      * @return self
      */
@@ -860,7 +860,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets wb_club
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StatisticWbClub
+     * @return \Wildberries\Sdk\Analytics\Model\StatisticWbClub
      */
     public function getWbClub()
     {
@@ -870,7 +870,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets wb_club
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StatisticWbClub $wb_club wb_club
+     * @param \Wildberries\Sdk\Analytics\Model\StatisticWbClub $wb_club wb_club
      *
      * @return self
      */
@@ -887,7 +887,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets conversions
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StatisticConversions
+     * @return \Wildberries\Sdk\Analytics\Model\StatisticConversions
      */
     public function getConversions()
     {
@@ -897,7 +897,7 @@ class StatisticsPast implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets conversions
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StatisticConversions $conversions conversions
+     * @param \Wildberries\Sdk\Analytics\Model\StatisticConversions $conversions conversions
      *
      * @return self
      */

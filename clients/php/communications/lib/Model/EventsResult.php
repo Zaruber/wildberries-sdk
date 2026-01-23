@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * EventsResult Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'newest_event_time' => '\DateTime',
         'oldest_event_time' => '\DateTime',
         'total_events' => 'int',
-        'events' => '\Wildberries\\Sdk\\Communications\Model\Event[]'
+        'events' => '\Wildberries\Sdk\Communications\Model\Event[]'
     ];
 
     /**
@@ -428,7 +428,7 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets events
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\Event[]|null
+     * @return \Wildberries\Sdk\Communications\Model\Event[]|null
      */
     public function getEvents()
     {
@@ -438,7 +438,7 @@ class EventsResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets events
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\Event[]|null $events events
+     * @param \Wildberries\Sdk\Communications\Model\Event[]|null $events events
      *
      * @return self
      */

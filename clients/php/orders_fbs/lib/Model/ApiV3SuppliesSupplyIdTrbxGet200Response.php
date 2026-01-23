@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * ApiV3SuppliesSupplyIdTrbxGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV3SuppliesSupplyIdTrbxGet200Response implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trbxes' => '\Wildberries\\Sdk\\OrdersFbs\Model\SupplyTrbx[]'
+        'trbxes' => '\Wildberries\Sdk\OrdersFbs\Model\SupplyTrbx[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV3SuppliesSupplyIdTrbxGet200Response implements ModelInterface, ArrayAc
     /**
      * Gets trbxes
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\SupplyTrbx[]|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\SupplyTrbx[]|null
      */
     public function getTrbxes()
     {
@@ -302,7 +302,7 @@ class ApiV3SuppliesSupplyIdTrbxGet200Response implements ModelInterface, ArrayAc
     /**
      * Sets trbxes
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\SupplyTrbx[]|null $trbxes trbxes
+     * @param \Wildberries\Sdk\OrdersFbs\Model\SupplyTrbx[]|null $trbxes trbxes
      *
      * @return self
      */

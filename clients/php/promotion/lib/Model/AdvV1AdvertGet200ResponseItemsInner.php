@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1AdvertGet200ResponseItemsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -80,7 +80,7 @@ class AdvV1AdvertGet200ResponseItemsInner implements ModelInterface, ArrayAccess
         'subject_id' => 'int',
         'subject_name' => 'string',
         'action_name' => 'string',
-        'show_hours' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseItemsInnerShowHoursInner[]',
+        'show_hours' => '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseItemsInnerShowHoursInner[]',
         'erid' => 'string'
     ];
 
@@ -1081,7 +1081,7 @@ class AdvV1AdvertGet200ResponseItemsInner implements ModelInterface, ArrayAccess
     /**
      * Gets show_hours
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseItemsInnerShowHoursInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseItemsInnerShowHoursInner[]|null
      */
     public function getShowHours()
     {
@@ -1091,7 +1091,7 @@ class AdvV1AdvertGet200ResponseItemsInner implements ModelInterface, ArrayAccess
     /**
      * Sets show_hours
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseItemsInnerShowHoursInner[]|null $show_hours Часы показа
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseItemsInnerShowHoursInner[]|null $show_hours Часы показа
      *
      * @return self
      */

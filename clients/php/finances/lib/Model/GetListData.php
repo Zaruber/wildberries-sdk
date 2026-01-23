@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Finances\Model;
+namespace Wildberries\Sdk\Finances\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Finances\ObjectSerializer;
+use \Wildberries\Sdk\Finances\ObjectSerializer;
 
 /**
  * GetListData Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GetListData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'documents' => '\Wildberries\\Sdk\\Finances\Model\GetListDataDocumentsInner[]'
+        'documents' => '\Wildberries\Sdk\Finances\Model\GetListDataDocumentsInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GetListData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets documents
      *
-     * @return \Wildberries\\Sdk\\Finances\Model\GetListDataDocumentsInner[]|null
+     * @return \Wildberries\Sdk\Finances\Model\GetListDataDocumentsInner[]|null
      */
     public function getDocuments()
     {
@@ -302,7 +302,7 @@ class GetListData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets documents
      *
-     * @param \Wildberries\\Sdk\\Finances\Model\GetListDataDocumentsInner[]|null $documents Категории документов
+     * @param \Wildberries\Sdk\Finances\Model\GetListDataDocumentsInner[]|null $documents Категории документов
      *
      * @return self
      */

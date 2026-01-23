@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1QuestionsGet200ResponseData Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ApiV1QuestionsGet200ResponseData implements ModelInterface, ArrayAccess, \
     protected static $openAPITypes = [
         'count_unanswered' => 'int',
         'count_archive' => 'int',
-        'questions' => '\Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsGet200ResponseDataQuestionsInner[]'
+        'questions' => '\Wildberries\Sdk\Communications\Model\ApiV1QuestionsGet200ResponseDataQuestionsInner[]'
     ];
 
     /**
@@ -360,7 +360,7 @@ class ApiV1QuestionsGet200ResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets questions
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsGet200ResponseDataQuestionsInner[]|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1QuestionsGet200ResponseDataQuestionsInner[]|null
      */
     public function getQuestions()
     {
@@ -370,7 +370,7 @@ class ApiV1QuestionsGet200ResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets questions
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsGet200ResponseDataQuestionsInner[]|null $questions Вопросы
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1QuestionsGet200ResponseDataQuestionsInner[]|null $questions Вопросы
      *
      * @return self
      */

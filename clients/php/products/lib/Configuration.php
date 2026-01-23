@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,14 +25,14 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products;
+namespace Wildberries\Sdk\Products;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -486,7 +486,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Wildberries\\Sdk\\Products) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (Wildberries\Sdk\Products) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: products' . PHP_EOL;

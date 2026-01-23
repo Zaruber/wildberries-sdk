@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * MeasurementData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class MeasurementData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'reports' => '\Wildberries\\Sdk\\Reports\Model\MeasurementDataReportsInner[]',
+        'reports' => '\Wildberries\Sdk\Reports\Model\MeasurementDataReportsInner[]',
         'total_count' => 'int'
     ];
 
@@ -306,7 +306,7 @@ class MeasurementData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets reports
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\MeasurementDataReportsInner[]
+     * @return \Wildberries\Sdk\Reports\Model\MeasurementDataReportsInner[]
      */
     public function getReports()
     {
@@ -316,7 +316,7 @@ class MeasurementData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reports
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\MeasurementDataReportsInner[] $reports Замеры
+     * @param \Wildberries\Sdk\Reports\Model\MeasurementDataReportsInner[] $reports Замеры
      *
      * @return self
      */

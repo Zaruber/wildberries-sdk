@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ResponsePublicViewerPublicErrorsTableListV2 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Products\Model\ModelsErrorTableListPublicRespV2',
+        'data' => '\Wildberries\Sdk\Products\Model\ModelsErrorTableListPublicRespV2',
         'error' => 'bool',
         'error_text' => 'string',
         'additional_errors' => 'object'
@@ -325,7 +325,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ModelsErrorTableListPublicRespV2
+     * @return \Wildberries\Sdk\Products\Model\ModelsErrorTableListPublicRespV2
      */
     public function getData()
     {
@@ -335,7 +335,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ModelsErrorTableListPublicRespV2 $data data
+     * @param \Wildberries\Sdk\Products\Model\ModelsErrorTableListPublicRespV2 $data data
      *
      * @return self
      */

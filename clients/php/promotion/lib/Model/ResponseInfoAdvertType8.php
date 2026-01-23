@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ResponseInfoAdvertType8 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class ResponseInfoAdvertType8 implements ModelInterface, ArrayAccess, \JsonSeria
         'create_time' => '\DateTime',
         'change_time' => '\DateTime',
         'start_time' => '\DateTime',
-        'auto_params' => '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParams',
+        'auto_params' => '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParams',
         'name' => 'string',
         'daily_budget' => 'int',
         'advert_id' => 'int',
@@ -470,7 +470,7 @@ class ResponseInfoAdvertType8 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets auto_params
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParams|null
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParams|null
      */
     public function getAutoParams()
     {
@@ -480,7 +480,7 @@ class ResponseInfoAdvertType8 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets auto_params
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8AutoParams|null $auto_params auto_params
+     * @param \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8AutoParams|null $auto_params auto_params
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+namespace Wildberries\Sdk\Analytics\Model;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * PositionCluster Class Doc Comment
  *
  * @category Class
  * @description Товары с какой средней позицией в поиске показывать в отчёте:   - &#x60;all&#x60; — все   - &#x60;firstHundred&#x60; — от 1 до 100   - &#x60;secondHundred&#x60; — от 101 до 200   - &#x60;below&#x60; — от 201 и ниже
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

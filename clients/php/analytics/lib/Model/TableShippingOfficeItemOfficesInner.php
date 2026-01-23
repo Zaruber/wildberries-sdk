@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableShippingOfficeItemOfficesInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'office_id' => 'int',
         'office_name' => 'string',
-        'metrics' => '\Wildberries\\Sdk\\Analytics\Model\TableShippingOfficeMetrics'
+        'metrics' => '\Wildberries\Sdk\Analytics\Model\TableShippingOfficeMetrics'
     ];
 
     /**
@@ -369,7 +369,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Gets metrics
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableShippingOfficeMetrics
+     * @return \Wildberries\Sdk\Analytics\Model\TableShippingOfficeMetrics
      */
     public function getMetrics()
     {
@@ -379,7 +379,7 @@ class TableShippingOfficeItemOfficesInner implements ModelInterface, ArrayAccess
     /**
      * Sets metrics
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableShippingOfficeMetrics $metrics Метрики по складу
+     * @param \Wildberries\Sdk\Analytics\Model\TableShippingOfficeMetrics $metrics Метрики по складу
      *
      * @return self
      */

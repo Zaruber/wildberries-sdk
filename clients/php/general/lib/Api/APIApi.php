@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Api;
+namespace Wildberries\Sdk\General\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Wildberries\\Sdk\\General\ApiException;
-use Wildberries\\Sdk\\General\Configuration;
-use Wildberries\\Sdk\\General\FormDataProcessor;
-use Wildberries\\Sdk\\General\HeaderSelector;
-use Wildberries\\Sdk\\General\ObjectSerializer;
+use Wildberries\Sdk\General\ApiException;
+use Wildberries\Sdk\General\Configuration;
+use Wildberries\Sdk\General\FormDataProcessor;
+use Wildberries\Sdk\General\HeaderSelector;
+use Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * APIApi Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -140,9 +140,9 @@ class APIApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiCommunicationsV2NewsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200Response|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response
+     * @return \Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response
      */
     public function apiCommunicationsV2NewsGet($from = null, $from_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiCommunicationsV2NewsGet'][0])
     {
@@ -165,9 +165,9 @@ class APIApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiCommunicationsV2NewsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\General\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200Response|\Wildberries\\Sdk\\General\Model\PingGet401Response|\Wildberries\\Sdk\\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiCommunicationsV2NewsGetWithHttpInfo($from = null, $from_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiCommunicationsV2NewsGet'][0])
     {
@@ -199,19 +199,19 @@ class APIApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200Response',
+                        '\Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $request,
                         $response,
                     );
@@ -233,7 +233,7 @@ class APIApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200Response',
+                '\Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200Response',
                 $request,
                 $response,
             );
@@ -242,7 +242,7 @@ class APIApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200Response',
+                        '\Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class APIApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -258,7 +258,7 @@ class APIApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\General\Model\PingGet401Response',
+                        '\Wildberries\Sdk\General\Model\PingGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -318,7 +318,7 @@ class APIApi
      */
     public function apiCommunicationsV2NewsGetAsyncWithHttpInfo($from = null, $from_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiCommunicationsV2NewsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200Response';
+        $returnType = '\Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200Response';
         $request = $this->apiCommunicationsV2NewsGetRequest($from, $from_id, $hostIndex, $variables, $contentType);
 
         return $this->client

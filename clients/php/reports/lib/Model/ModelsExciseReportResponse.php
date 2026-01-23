@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * ModelsExciseReportResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ModelsExciseReportResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Reports\Model\ModelsExciseReportResponseDataInner[]'
+        'data' => '\Wildberries\Sdk\Reports\Model\ModelsExciseReportResponseDataInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ModelsExciseReportResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\ModelsExciseReportResponseDataInner[]|null
+     * @return \Wildberries\Sdk\Reports\Model\ModelsExciseReportResponseDataInner[]|null
      */
     public function getData()
     {
@@ -302,7 +302,7 @@ class ModelsExciseReportResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\ModelsExciseReportResponseDataInner[]|null $data data
+     * @param \Wildberries\Sdk\Reports\Model\ModelsExciseReportResponseDataInner[]|null $data data
      *
      * @return self
      */

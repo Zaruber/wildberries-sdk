@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiV1CalendarPromotionsDetailsGet200ResponseData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiV1CalendarPromotionsDetailsGet200ResponseData implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'promotions' => '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner[]'
+        'promotions' => '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class ApiV1CalendarPromotionsDetailsGet200ResponseData implements ModelInterface
     /**
      * Gets promotions
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner[]|null
      */
     public function getPromotions()
     {
@@ -303,7 +303,7 @@ class ApiV1CalendarPromotionsDetailsGet200ResponseData implements ModelInterface
     /**
      * Sets promotions
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner[]|null $promotions Список акций
+     * @param \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner[]|null $promotions Список акций
      *
      * @return self
      */

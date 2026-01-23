@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+namespace Wildberries\Sdk\Analytics\Model;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * StockType Class Doc Comment
  *
  * @category Class
  * @description Тип складов хранения товаров:   - &#x60;\&quot;\&quot;&#x60; — все   - &#x60;wb&#x60; — Склады WB   - &#x60;mp&#x60; — Склады продавца
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiV1QuestionsCountUnansweredGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV1QuestionsCountUnansweredGet200Response implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsCountUnansweredGet200ResponseData',
+        'data' => '\Wildberries\Sdk\Communications\Model\ApiV1QuestionsCountUnansweredGet200ResponseData',
         'error' => 'bool',
         'error_text' => 'string',
         'additional_errors' => 'string[]'
@@ -313,7 +313,7 @@ class ApiV1QuestionsCountUnansweredGet200Response implements ModelInterface, Arr
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsCountUnansweredGet200ResponseData|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1QuestionsCountUnansweredGet200ResponseData|null
      */
     public function getData()
     {
@@ -323,7 +323,7 @@ class ApiV1QuestionsCountUnansweredGet200Response implements ModelInterface, Arr
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\ApiV1QuestionsCountUnansweredGet200ResponseData|null $data data
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1QuestionsCountUnansweredGet200ResponseData|null $data data
      *
      * @return self
      */

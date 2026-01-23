@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * Chat Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,8 +61,8 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
         'reply_sign' => 'string',
         'client_id' => 'string',
         'client_name' => 'string',
-        'good_card' => '\Wildberries\\Sdk\\Communications\Model\GoodCard',
-        'last_message' => '\Wildberries\\Sdk\\Communications\Model\LastMessage'
+        'good_card' => '\Wildberries\Sdk\Communications\Model\GoodCard',
+        'last_message' => '\Wildberries\Sdk\Communications\Model\LastMessage'
     ];
 
     /**
@@ -437,7 +437,7 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets good_card
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\GoodCard|null
+     * @return \Wildberries\Sdk\Communications\Model\GoodCard|null
      */
     public function getGoodCard()
     {
@@ -447,7 +447,7 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets good_card
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\GoodCard|null $good_card good_card
+     * @param \Wildberries\Sdk\Communications\Model\GoodCard|null $good_card good_card
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets last_message
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\LastMessage|null
+     * @return \Wildberries\Sdk\Communications\Model\LastMessage|null
      */
     public function getLastMessage()
     {
@@ -474,7 +474,7 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_message
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\LastMessage|null $last_message Последнее сообщение в чате
+     * @param \Wildberries\Sdk\Communications\Model\LastMessage|null $last_message Последнее сообщение в чате
      *
      * @return self
      */

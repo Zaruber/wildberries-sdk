@@ -75,7 +75,7 @@ pub struct ResponseFeedbackInner {
     pub bables: Option<Option<Vec<String>>>,
     /// Штрихкод единицы товара
     #[serde(rename = "lastOrderShkId", skip_serializing_if = "Option::is_none")]
-    pub last_order_shk_id: Option<i32>,
+    pub last_order_shk_id: Option<i64>,
     /// Дата покупки
     #[serde(rename = "lastOrderCreatedAt", skip_serializing_if = "Option::is_none")]
     pub last_order_created_at: Option<String>,

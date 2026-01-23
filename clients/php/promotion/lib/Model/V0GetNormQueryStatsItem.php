@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * V0GetNormQueryStatsItem Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class V0GetNormQueryStatsItem implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'advert_id' => 'int',
         'nm_id' => 'int',
-        'stats' => '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsItemStat[]'
+        'stats' => '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsItemStat[]'
     ];
 
     /**
@@ -370,7 +370,7 @@ class V0GetNormQueryStatsItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsItemStat[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsItemStat[]|null
      */
     public function getStats()
     {
@@ -380,7 +380,7 @@ class V0GetNormQueryStatsItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsItemStat[]|null $stats stats
+     * @param \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsItemStat[]|null $stats stats
      *
      * @return self
      */

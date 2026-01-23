@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2CardsUploadAddPostRequestCardsToAddInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     protected static $openAPITypes = [
         'brand' => 'string',
         'vendor_code' => 'string',
-        'wholesale' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale',
+        'wholesale' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale',
         'title' => 'string',
         'description' => 'string',
-        'dimensions' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions',
-        'sizes' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]',
-        'characteristics' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]'
+        'dimensions' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions',
+        'sizes' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]',
+        'characteristics' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]'
     ];
 
     /**
@@ -410,7 +410,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Gets wholesale
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null
      */
     public function getWholesale()
     {
@@ -420,7 +420,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Sets wholesale
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null $wholesale wholesale
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null $wholesale wholesale
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Gets dimensions
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions|null
      */
     public function getDimensions()
     {
@@ -505,7 +505,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Sets dimensions
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions|null $dimensions dimensions
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions|null $dimensions dimensions
      *
      * @return self
      */
@@ -522,7 +522,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Gets sizes
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]|null
      */
     public function getSizes()
     {
@@ -532,7 +532,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Sets sizes
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]|null $sizes Массив размеров.<br> Если не указать для размерного товара (обувь, одежда и др.), сгенерируется автоматически с `techSize` = \"A\", `wbSize` = \"1\" и баркодом
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]|null $sizes Массив размеров.<br> Если не указать для размерного товара (обувь, одежда и др.), сгенерируется автоматически с `techSize` = \"A\", `wbSize` = \"1\" и баркодом
      *
      * @return self
      */
@@ -549,7 +549,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Gets characteristics
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null
      */
     public function getCharacteristics()
     {
@@ -559,7 +559,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Sets characteristics
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null $characteristics Характеристики товара. <br> Можно получить методом [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get)
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]|null $characteristics Характеристики товара. <br> Можно получить методом [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get)
      *
      * @return self
      */

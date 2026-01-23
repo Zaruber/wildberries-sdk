@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * V0KeywordsStatistics Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class V0KeywordsStatistics implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'date' => '\DateTime',
-        'stats' => '\Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatistic[]'
+        'stats' => '\Wildberries\Sdk\Promotion\Model\V0KeywordsStatistic[]'
     ];
 
     /**
@@ -332,7 +332,7 @@ class V0KeywordsStatistics implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatistic[]
+     * @return \Wildberries\Sdk\Promotion\Model\V0KeywordsStatistic[]
      */
     public function getStats()
     {
@@ -342,7 +342,7 @@ class V0KeywordsStatistics implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatistic[] $stats stats
+     * @param \Wildberries\Sdk\Promotion\Model\V0KeywordsStatistic[] $stats stats
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Model;
+namespace Wildberries\Sdk\OrdersFbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * ModelsBox Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'package_code' => 'string',
         'quantity' => 'int',
-        'barcodes' => '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInBox[]'
+        'barcodes' => '\Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInBox[]'
     ];
 
     /**
@@ -360,7 +360,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets barcodes
      *
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInBox[]|null
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInBox[]|null
      */
     public function getBarcodes()
     {
@@ -370,7 +370,7 @@ class ModelsBox implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets barcodes
      *
-     * @param \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInBox[]|null $barcodes Список упакованных товаров
+     * @param \Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInBox[]|null $barcodes Список упакованных товаров
      *
      * @return self
      */

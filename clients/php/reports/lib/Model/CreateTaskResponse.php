@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * CreateTaskResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class CreateTaskResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Reports\Model\CreateTaskResponseData'
+        'data' => '\Wildberries\Sdk\Reports\Model\CreateTaskResponseData'
     ];
 
     /**
@@ -292,7 +292,7 @@ class CreateTaskResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\CreateTaskResponseData|null
+     * @return \Wildberries\Sdk\Reports\Model\CreateTaskResponseData|null
      */
     public function getData()
     {
@@ -302,7 +302,7 @@ class CreateTaskResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\CreateTaskResponseData|null $data data
+     * @param \Wildberries\Sdk\Reports\Model\CreateTaskResponseData|null $data data
      *
      * @return self
      */

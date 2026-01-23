@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * SearchReportProductReq Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class SearchReportProductReq implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'string',
         'report_type' => 'string',
         'user_report_name' => 'string',
-        'params' => '\Wildberries\\Sdk\\Analytics\Model\SearchReportProductReqParams'
+        'params' => '\Wildberries\Sdk\Analytics\Model\SearchReportProductReqParams'
     ];
 
     /**
@@ -403,7 +403,7 @@ class SearchReportProductReq implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets params
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\SearchReportProductReqParams
+     * @return \Wildberries\Sdk\Analytics\Model\SearchReportProductReqParams
      */
     public function getParams()
     {
@@ -413,7 +413,7 @@ class SearchReportProductReq implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets params
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\SearchReportProductReqParams $params params
+     * @param \Wildberries\Sdk\Analytics\Model\SearchReportProductReqParams $params params
      *
      * @return self
      */

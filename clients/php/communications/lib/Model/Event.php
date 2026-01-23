@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * Event Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,14 +59,14 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'chat_id' => 'string',
         'event_id' => 'string',
-        'event_type' => '\Wildberries\\Sdk\\Communications\Model\EventType',
+        'event_type' => '\Wildberries\Sdk\Communications\Model\EventType',
         'is_new_chat' => 'bool',
-        'message' => '\Wildberries\\Sdk\\Communications\Model\EventMessage',
+        'message' => '\Wildberries\Sdk\Communications\Model\EventMessage',
         'source' => 'string',
         'add_timestamp' => 'int',
         'add_time' => 'string',
         'reply_sign' => 'string',
-        'sender' => '\Wildberries\\Sdk\\Communications\Model\Sender',
+        'sender' => '\Wildberries\Sdk\Communications\Model\Sender',
         'client_id' => 'string',
         'client_name' => 'string'
     ];
@@ -423,7 +423,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets event_type
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\EventType|null
+     * @return \Wildberries\Sdk\Communications\Model\EventType|null
      */
     public function getEventType()
     {
@@ -433,7 +433,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets event_type
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\EventType|null $event_type event_type
+     * @param \Wildberries\Sdk\Communications\Model\EventType|null $event_type event_type
      *
      * @return self
      */
@@ -477,7 +477,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets message
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\EventMessage|null
+     * @return \Wildberries\Sdk\Communications\Model\EventMessage|null
      */
     public function getMessage()
     {
@@ -487,7 +487,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\EventMessage|null $message message
+     * @param \Wildberries\Sdk\Communications\Model\EventMessage|null $message message
      *
      * @return self
      */
@@ -612,7 +612,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sender
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\Sender|null
+     * @return \Wildberries\Sdk\Communications\Model\Sender|null
      */
     public function getSender()
     {
@@ -622,7 +622,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sender
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\Sender|null $sender sender
+     * @param \Wildberries\Sdk\Communications\Model\Sender|null $sender sender
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ApiV2ListGoodsFilterGet200ResponseData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiV2ListGoodsFilterGet200ResponseData implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'list_goods' => '\Wildberries\\Sdk\\Products\Model\GoodsList[]'
+        'list_goods' => '\Wildberries\Sdk\Products\Model\GoodsList[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class ApiV2ListGoodsFilterGet200ResponseData implements ModelInterface, ArrayAcc
     /**
      * Gets list_goods
      *
-     * @return \Wildberries\\Sdk\\Products\Model\GoodsList[]
+     * @return \Wildberries\Sdk\Products\Model\GoodsList[]
      */
     public function getListGoods()
     {
@@ -306,7 +306,7 @@ class ApiV2ListGoodsFilterGet200ResponseData implements ModelInterface, ArrayAcc
     /**
      * Sets list_goods
      *
-     * @param \Wildberries\\Sdk\\Products\Model\GoodsList[] $list_goods Информация о товарах
+     * @param \Wildberries\Sdk\Products\Model\GoodsList[] $list_goods Информация о товарах
      *
      * @return self
      */

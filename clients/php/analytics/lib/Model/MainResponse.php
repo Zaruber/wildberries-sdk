@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * MainResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,10 +57,10 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'common_info' => '\Wildberries\\Sdk\\Analytics\Model\CommonInfo',
-        'position_info' => '\Wildberries\\Sdk\\Analytics\Model\PositionInfo',
-        'visibility_info' => '\Wildberries\\Sdk\\Analytics\Model\VisibilityInfo',
-        'groups' => '\Wildberries\\Sdk\\Analytics\Model\TableGroupItem[]'
+        'common_info' => '\Wildberries\Sdk\Analytics\Model\CommonInfo',
+        'position_info' => '\Wildberries\Sdk\Analytics\Model\PositionInfo',
+        'visibility_info' => '\Wildberries\Sdk\Analytics\Model\VisibilityInfo',
+        'groups' => '\Wildberries\Sdk\Analytics\Model\TableGroupItem[]'
     ];
 
     /**
@@ -322,7 +322,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets common_info
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\CommonInfo
+     * @return \Wildberries\Sdk\Analytics\Model\CommonInfo
      */
     public function getCommonInfo()
     {
@@ -332,7 +332,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets common_info
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\CommonInfo $common_info common_info
+     * @param \Wildberries\Sdk\Analytics\Model\CommonInfo $common_info common_info
      *
      * @return self
      */
@@ -349,7 +349,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets position_info
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PositionInfo
+     * @return \Wildberries\Sdk\Analytics\Model\PositionInfo
      */
     public function getPositionInfo()
     {
@@ -359,7 +359,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets position_info
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PositionInfo $position_info position_info
+     * @param \Wildberries\Sdk\Analytics\Model\PositionInfo $position_info position_info
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets visibility_info
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\VisibilityInfo
+     * @return \Wildberries\Sdk\Analytics\Model\VisibilityInfo
      */
     public function getVisibilityInfo()
     {
@@ -386,7 +386,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets visibility_info
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\VisibilityInfo $visibility_info visibility_info
+     * @param \Wildberries\Sdk\Analytics\Model\VisibilityInfo $visibility_info visibility_info
      *
      * @return self
      */
@@ -403,7 +403,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets groups
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableGroupItem[]|null
+     * @return \Wildberries\Sdk\Analytics\Model\TableGroupItem[]|null
      */
     public function getGroups()
     {
@@ -413,7 +413,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets groups
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableGroupItem[]|null $groups Список элементов таблицы
+     * @param \Wildberries\Sdk\Analytics\Model\TableGroupItem[]|null $groups Список элементов таблицы
      *
      * @return self
      */

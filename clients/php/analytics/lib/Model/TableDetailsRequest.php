@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableDetailsRequest Class Doc Comment
  *
  * @category Class
  * @description Параметры запроса для пагинации по товарам в группе:   - &#x60;currentPeriod&#x60; — текущий период   - &#x60;pastPeriod&#x60; — предыдущий период для сравнения
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,13 +58,13 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'current_period' => '\Wildberries\\Sdk\\Analytics\Model\Period',
-        'past_period' => '\Wildberries\\Sdk\\Analytics\Model\PastPeriod',
+        'current_period' => '\Wildberries\Sdk\Analytics\Model\Period',
+        'past_period' => '\Wildberries\Sdk\Analytics\Model\PastPeriod',
         'subject_id' => 'int',
         'brand_name' => 'string',
         'tag_id' => 'int',
         'nm_ids' => 'int[]',
-        'order_by' => '\Wildberries\\Sdk\\Analytics\Model\OrderByMainAndDetails',
+        'order_by' => '\Wildberries\Sdk\Analytics\Model\OrderByMainAndDetails',
         'position_cluster' => 'string',
         'include_substituted_skus' => 'bool',
         'include_search_texts' => 'bool',
@@ -421,7 +421,7 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets current_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\Period
+     * @return \Wildberries\Sdk\Analytics\Model\Period
      */
     public function getCurrentPeriod()
     {
@@ -431,7 +431,7 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets current_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\Period $current_period current_period
+     * @param \Wildberries\Sdk\Analytics\Model\Period $current_period current_period
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets past_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null
+     * @return \Wildberries\Sdk\Analytics\Model\PastPeriod|null
      */
     public function getPastPeriod()
     {
@@ -458,7 +458,7 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets past_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null $past_period past_period
+     * @param \Wildberries\Sdk\Analytics\Model\PastPeriod|null $past_period past_period
      *
      * @return self
      */
@@ -587,7 +587,7 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets order_by
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\OrderByMainAndDetails
+     * @return \Wildberries\Sdk\Analytics\Model\OrderByMainAndDetails
      */
     public function getOrderBy()
     {
@@ -597,7 +597,7 @@ class TableDetailsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets order_by
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\OrderByMainAndDetails $order_by order_by
+     * @param \Wildberries\Sdk\Analytics\Model\OrderByMainAndDetails $order_by order_by
      *
      * @return self
      */

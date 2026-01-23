@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ChatsResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ChatsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Wildberries\\Sdk\\Communications\Model\Chat[]',
+        'result' => '\Wildberries\Sdk\Communications\Model\Chat[]',
         'errors' => 'string[]'
     ];
 
@@ -299,7 +299,7 @@ class ChatsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets result
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\Chat[]|null
+     * @return \Wildberries\Sdk\Communications\Model\Chat[]|null
      */
     public function getResult()
     {
@@ -309,7 +309,7 @@ class ChatsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets result
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\Chat[]|null $result result
+     * @param \Wildberries\Sdk\Communications\Model\Chat[]|null $result result
      *
      * @return self
      */

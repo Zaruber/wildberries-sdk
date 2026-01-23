@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ApiV2NmReportDownloadsPostRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class ApiV2NmReportDownloadsPostRequest implements ModelInterface, ArrayAccess, 
         'id' => 'string',
         'report_type' => 'string',
         'user_report_name' => 'string',
-        'params' => '\Wildberries\\Sdk\\Analytics\Model\CommonReportFilters'
+        'params' => '\Wildberries\Sdk\Analytics\Model\CommonReportFilters'
     ];
 
     /**
@@ -406,7 +406,7 @@ class ApiV2NmReportDownloadsPostRequest implements ModelInterface, ArrayAccess, 
     /**
      * Gets params
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\CommonReportFilters
+     * @return \Wildberries\Sdk\Analytics\Model\CommonReportFilters
      */
     public function getParams()
     {
@@ -416,7 +416,7 @@ class ApiV2NmReportDownloadsPostRequest implements ModelInterface, ArrayAccess, 
     /**
      * Sets params
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\CommonReportFilters $params Параметры отчёта
+     * @param \Wildberries\Sdk\Analytics\Model\CommonReportFilters $params Параметры отчёта
      *
      * @return self
      */

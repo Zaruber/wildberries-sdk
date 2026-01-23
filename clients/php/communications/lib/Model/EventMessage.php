@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * EventMessage Class Doc Comment
  *
  * @category Class
  * @description Данные сообщения
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class EventMessage implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'attachments' => '\Wildberries\\Sdk\\Communications\Model\EventAttachments',
+        'attachments' => '\Wildberries\Sdk\Communications\Model\EventAttachments',
         'text' => 'string'
     ];
 
@@ -300,7 +300,7 @@ class EventMessage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attachments
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\EventAttachments|null
+     * @return \Wildberries\Sdk\Communications\Model\EventAttachments|null
      */
     public function getAttachments()
     {
@@ -310,7 +310,7 @@ class EventMessage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachments
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\EventAttachments|null $attachments attachments
+     * @param \Wildberries\Sdk\Communications\Model\EventAttachments|null $attachments attachments
      *
      * @return self
      */

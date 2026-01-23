@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Tariffs\Model;
+namespace Wildberries\Sdk\Tariffs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Tariffs\ObjectSerializer;
+use \Wildberries\Sdk\Tariffs\ObjectSerializer;
 
 /**
  * ReturnTariffsResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Tariffs
+ * @package  Wildberries\Sdk\Tariffs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ReturnTariffsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'response' => '\Wildberries\\Sdk\\Tariffs\Model\ModelsReturnTariffsResponse'
+        'response' => '\Wildberries\Sdk\Tariffs\Model\ModelsReturnTariffsResponse'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ReturnTariffsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets response
      *
-     * @return \Wildberries\\Sdk\\Tariffs\Model\ModelsReturnTariffsResponse|null
+     * @return \Wildberries\Sdk\Tariffs\Model\ModelsReturnTariffsResponse|null
      */
     public function getResponse()
     {
@@ -302,7 +302,7 @@ class ReturnTariffsResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets response
      *
-     * @param \Wildberries\\Sdk\\Tariffs\Model\ModelsReturnTariffsResponse|null $response response
+     * @param \Wildberries\Sdk\Tariffs\Model\ModelsReturnTariffsResponse|null $response response
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ApiV2BufferGoodsTaskGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV2BufferGoodsTaskGet200Response implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Products\Model\ApiV2BufferGoodsTaskGet200ResponseData',
+        'data' => '\Wildberries\Sdk\Products\Model\ApiV2BufferGoodsTaskGet200ResponseData',
         'error' => 'bool',
         'error_text' => 'string'
     ];
@@ -306,7 +306,7 @@ class ApiV2BufferGoodsTaskGet200Response implements ModelInterface, ArrayAccess,
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ApiV2BufferGoodsTaskGet200ResponseData|null
+     * @return \Wildberries\Sdk\Products\Model\ApiV2BufferGoodsTaskGet200ResponseData|null
      */
     public function getData()
     {
@@ -316,7 +316,7 @@ class ApiV2BufferGoodsTaskGet200Response implements ModelInterface, ArrayAccess,
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ApiV2BufferGoodsTaskGet200ResponseData|null $data data
+     * @param \Wildberries\Sdk\Products\Model\ApiV2BufferGoodsTaskGet200ResponseData|null $data data
      *
      * @return self
      */

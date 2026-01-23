@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbw\Model;
+namespace Wildberries\Sdk\OrdersDbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbw\ObjectSerializer;
 
 /**
  * DeliveryDatesInfoResp Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class DeliveryDatesInfoResp implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersDbw\Model\DeliveryDatesInfoRespOrdersInner[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbw\Model\DeliveryDatesInfoRespOrdersInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class DeliveryDatesInfoResp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbw\Model\DeliveryDatesInfoRespOrdersInner[]|null
+     * @return \Wildberries\Sdk\OrdersDbw\Model\DeliveryDatesInfoRespOrdersInner[]|null
      */
     public function getOrders()
     {
@@ -302,7 +302,7 @@ class DeliveryDatesInfoResp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbw\Model\DeliveryDatesInfoRespOrdersInner[]|null $orders orders
+     * @param \Wildberries\Sdk\OrdersDbw\Model\DeliveryDatesInfoRespOrdersInner[]|null $orders orders
      *
      * @return self
      */

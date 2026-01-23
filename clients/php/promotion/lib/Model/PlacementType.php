@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+namespace Wildberries\Sdk\Promotion\Model;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * PlacementType Class Doc Comment
  *
  * @category Class
  * @description Места размещения:   - &#x60;search&#x60; — поиск   - &#x60;recommendation&#x60; — рекомендации   - &#x60;combined&#x60; — поиск и рекомендации
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

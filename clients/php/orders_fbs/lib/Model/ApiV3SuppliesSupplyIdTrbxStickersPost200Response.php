@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * ApiV3SuppliesSupplyIdTrbxStickersPost200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV3SuppliesSupplyIdTrbxStickersPost200Response implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'stickers' => '\Wildberries\\Sdk\\OrdersFbs\Model\TrbxStickers[]'
+        'stickers' => '\Wildberries\Sdk\OrdersFbs\Model\TrbxStickers[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class ApiV3SuppliesSupplyIdTrbxStickersPost200Response implements ModelInterface
     /**
      * Gets stickers
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\TrbxStickers[]|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\TrbxStickers[]|null
      */
     public function getStickers()
     {
@@ -306,7 +306,7 @@ class ApiV3SuppliesSupplyIdTrbxStickersPost200Response implements ModelInterface
     /**
      * Sets stickers
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\TrbxStickers[]|null $stickers stickers
+     * @param \Wildberries\Sdk\OrdersFbs\Model\TrbxStickers[]|null $stickers stickers
      *
      * @return self
      */

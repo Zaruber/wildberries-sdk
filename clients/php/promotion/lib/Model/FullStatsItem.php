@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * FullStatsItem Class Doc Comment
  *
  * @category Class
  * @description Статистика по одной кампании за период, указанный в запросе. По всем артикулам WB и платформам
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,13 +60,13 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'advert_id' => 'int',
         'atbs' => 'int',
-        'booster_stats' => '\Wildberries\\Sdk\\Promotion\Model\BoosterStatsV3Inner[]',
+        'booster_stats' => '\Wildberries\Sdk\Promotion\Model\BoosterStatsV3Inner[]',
         'canceled' => 'int',
         'clicks' => 'int',
         'cpc' => 'float',
         'cr' => 'float',
         'ctr' => 'float',
-        'days' => '\Wildberries\\Sdk\\Promotion\Model\DaysV3Inner[]',
+        'days' => '\Wildberries\Sdk\Promotion\Model\DaysV3Inner[]',
         'orders' => 'int',
         'shks' => 'int',
         'sum' => 'float',
@@ -477,7 +477,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets booster_stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\BoosterStatsV3Inner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\BoosterStatsV3Inner[]|null
      */
     public function getBoosterStats()
     {
@@ -487,7 +487,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets booster_stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\BoosterStatsV3Inner[]|null $booster_stats Статистика по средней позиции товара (для кампаний с единой ставкой)
+     * @param \Wildberries\Sdk\Promotion\Model\BoosterStatsV3Inner[]|null $booster_stats Статистика по средней позиции товара (для кампаний с единой ставкой)
      *
      * @return self
      */
@@ -639,7 +639,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets days
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\DaysV3Inner[]
+     * @return \Wildberries\Sdk\Promotion\Model\DaysV3Inner[]
      */
     public function getDays()
     {
@@ -649,7 +649,7 @@ class FullStatsItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets days
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\DaysV3Inner[] $days Статистка по дням
+     * @param \Wildberries\Sdk\Promotion\Model\DaysV3Inner[] $days Статистка по дням
      *
      * @return self
      */

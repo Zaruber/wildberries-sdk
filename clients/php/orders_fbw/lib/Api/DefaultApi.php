@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Api;
+namespace Wildberries\Sdk\OrdersFbw\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Wildberries\\Sdk\\OrdersFbw\ApiException;
-use Wildberries\\Sdk\\OrdersFbw\Configuration;
-use Wildberries\\Sdk\\OrdersFbw\FormDataProcessor;
-use Wildberries\\Sdk\\OrdersFbw\HeaderSelector;
-use Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+use Wildberries\Sdk\OrdersFbw\ApiException;
+use Wildberries\Sdk\OrdersFbw\Configuration;
+use Wildberries\Sdk\OrdersFbw\FormDataProcessor;
+use Wildberries\Sdk\OrdersFbw\HeaderSelector;
+use Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -160,9 +160,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AcceptanceCoefficientsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsAcceptanceCoefficient[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      * @deprecated
      */
     public function apiV1AcceptanceCoefficientsGet($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AcceptanceCoefficientsGet'][0])
@@ -185,9 +185,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AcceptanceCoefficientsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsAcceptanceCoefficient[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function apiV1AcceptanceCoefficientsGetWithHttpInfo($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AcceptanceCoefficientsGet'][0])
@@ -220,25 +220,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsAcceptanceCoefficient[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsAcceptanceCoefficient[]',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -260,7 +260,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsAcceptanceCoefficient[]',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsAcceptanceCoefficient[]',
                 $request,
                 $response,
             );
@@ -269,7 +269,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsAcceptanceCoefficient[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsAcceptanceCoefficient[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -277,7 +277,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -285,7 +285,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -293,7 +293,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -353,7 +353,7 @@ class DefaultApi
      */
     public function apiV1AcceptanceCoefficientsGetAsyncWithHttpInfo($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AcceptanceCoefficientsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsAcceptanceCoefficient[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsAcceptanceCoefficient[]';
         $request = $this->apiV1AcceptanceCoefficientsGetRequest($warehouse_ids, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -525,15 +525,15 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGood[] $models_good models_good (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsGood[] $models_good models_good (required)
      * @param  int|null $warehouse_id ID склада. &lt;br&gt; Если параметр не указан, возвращаются данные по всем складам.&lt;br&gt; **Максимум одно значение** (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AcceptanceOptionsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModel|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModel|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      */
     public function apiV1AcceptanceOptionsPost($models_good, $warehouse_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AcceptanceOptionsPost'][0])
     {
@@ -550,15 +550,15 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGood[] $models_good (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsGood[] $models_good (required)
      * @param  int|null $warehouse_id ID склада. &lt;br&gt; Если параметр не указан, возвращаются данные по всем складам.&lt;br&gt; **Максимум одно значение** (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AcceptanceOptionsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModel|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModel|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1AcceptanceOptionsPostWithHttpInfo($models_good, $warehouse_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AcceptanceOptionsPost'][0])
     {
@@ -590,25 +590,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModel',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -630,7 +630,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModel',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModel',
                 $request,
                 $response,
             );
@@ -639,7 +639,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -647,7 +647,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -655,7 +655,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -663,7 +663,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -684,7 +684,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGood[] $models_good (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsGood[] $models_good (required)
      * @param  int|null $warehouse_id ID склада. &lt;br&gt; Если параметр не указан, возвращаются данные по всем складам.&lt;br&gt; **Максимум одно значение** (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -712,7 +712,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGood[] $models_good (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsGood[] $models_good (required)
      * @param  int|null $warehouse_id ID склада. &lt;br&gt; Если параметр не указан, возвращаются данные по всем складам.&lt;br&gt; **Максимум одно значение** (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -723,7 +723,7 @@ class DefaultApi
      */
     public function apiV1AcceptanceOptionsPostAsyncWithHttpInfo($models_good, $warehouse_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1AcceptanceOptionsPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModel';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModel';
         $request = $this->apiV1AcceptanceOptionsPostRequest($models_good, $warehouse_id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -769,7 +769,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGood[] $models_good (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsGood[] $models_good (required)
      * @param  int|null $warehouse_id ID склада. &lt;br&gt; Если параметр не указан, возвращаются данные по всем складам.&lt;br&gt; **Максимум одно значение** (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -918,9 +918,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesIDGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupplyDetails|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsSupplyDetails|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      */
     public function apiV1SuppliesIDGet($id, $is_preorder_id = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDGet'][0])
     {
@@ -943,9 +943,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesIDGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupplyDetails|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsSupplyDetails|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1SuppliesIDGetWithHttpInfo($id, $is_preorder_id = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDGet'][0])
     {
@@ -977,31 +977,31 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupplyDetails',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupplyDetails',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -1023,7 +1023,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupplyDetails',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupplyDetails',
                 $request,
                 $response,
             );
@@ -1032,7 +1032,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupplyDetails',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupplyDetails',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1040,7 +1040,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1048,7 +1048,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1056,7 +1056,7 @@ class DefaultApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1064,7 +1064,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1124,7 +1124,7 @@ class DefaultApi
      */
     public function apiV1SuppliesIDGetAsyncWithHttpInfo($id, $is_preorder_id = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupplyDetails';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupplyDetails';
         $request = $this->apiV1SuppliesIDGetRequest($id, $is_preorder_id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1319,9 +1319,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesIDGoodsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInSupply[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInSupply[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      */
     public function apiV1SuppliesIDGoodsGet($id, $limit = 100, $offset = 0, $is_preorder_id = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDGoodsGet'][0])
     {
@@ -1346,9 +1346,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesIDGoodsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInSupply[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInSupply[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1SuppliesIDGoodsGetWithHttpInfo($id, $limit = 100, $offset = 0, $is_preorder_id = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDGoodsGet'][0])
     {
@@ -1380,25 +1380,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInSupply[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInSupply[]',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -1420,7 +1420,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInSupply[]',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInSupply[]',
                 $request,
                 $response,
             );
@@ -1429,7 +1429,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInSupply[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInSupply[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1437,7 +1437,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1445,7 +1445,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1453,7 +1453,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1517,7 +1517,7 @@ class DefaultApi
      */
     public function apiV1SuppliesIDGoodsGetAsyncWithHttpInfo($id, $limit = 100, $offset = 0, $is_preorder_id = false, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDGoodsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsGoodInSupply[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsGoodInSupply[]';
         $request = $this->apiV1SuppliesIDGoodsGetRequest($id, $limit, $offset, $is_preorder_id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1737,9 +1737,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesIDPackageGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsBox[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsBox[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      */
     public function apiV1SuppliesIDPackageGet($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDPackageGet'][0])
     {
@@ -1761,9 +1761,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesIDPackageGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsBox[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsBox[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1SuppliesIDPackageGetWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDPackageGet'][0])
     {
@@ -1795,25 +1795,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsBox[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsBox[]',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -1835,7 +1835,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsBox[]',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsBox[]',
                 $request,
                 $response,
             );
@@ -1844,7 +1844,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsBox[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsBox[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1852,7 +1852,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1860,7 +1860,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1868,7 +1868,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1926,7 +1926,7 @@ class DefaultApi
      */
     public function apiV1SuppliesIDPackageGetAsyncWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesIDPackageGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsBox[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsBox[]';
         $request = $this->apiV1SuppliesIDPackageGetRequest($id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -2102,16 +2102,16 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request models_supplies_filters_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request models_supplies_filters_request (required)
      * @param  int|null $limit Количество записей в ответе (optional, default to 1000)
      * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupply[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsSupply[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      */
     public function apiV1SuppliesPost($models_supplies_filters_request, $limit = 1000, $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesPost'][0])
     {
@@ -2128,16 +2128,16 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
      * @param  int|null $limit Количество записей в ответе (optional, default to 1000)
      * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1SuppliesPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupply[]|\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsSupply[]|\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1SuppliesPostWithHttpInfo($models_supplies_filters_request, $limit = 1000, $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesPost'][0])
     {
@@ -2169,25 +2169,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupply[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupply[]',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -2209,7 +2209,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupply[]',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupply[]',
                 $request,
                 $response,
             );
@@ -2218,7 +2218,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupply[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupply[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2226,7 +2226,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsErrorModel',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2234,7 +2234,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2242,7 +2242,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2263,7 +2263,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
      * @param  int|null $limit Количество записей в ответе (optional, default to 1000)
      * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -2292,7 +2292,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
      * @param  int|null $limit Количество записей в ответе (optional, default to 1000)
      * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -2304,7 +2304,7 @@ class DefaultApi
      */
     public function apiV1SuppliesPostAsyncWithHttpInfo($models_supplies_filters_request, $limit = 1000, $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SuppliesPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsSupply[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsSupply[]';
         $request = $this->apiV1SuppliesPostRequest($models_supplies_filters_request, $limit, $offset, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -2350,7 +2350,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://supplies-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbw\Model\ModelsSuppliesFiltersRequest $models_supplies_filters_request (required)
      * @param  int|null $limit Количество записей в ответе (optional, default to 1000)
      * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
@@ -2511,9 +2511,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TransitTariffsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsTransitTariff[]|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsTransitTariff[]|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      */
     public function apiV1TransitTariffsGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TransitTariffsGet'][0])
     {
@@ -2534,9 +2534,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1TransitTariffsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsTransitTariff[]|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsTransitTariff[]|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1TransitTariffsGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TransitTariffsGet'][0])
     {
@@ -2568,19 +2568,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsTransitTariff[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsTransitTariff[]',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -2602,7 +2602,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsTransitTariff[]',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsTransitTariff[]',
                 $request,
                 $response,
             );
@@ -2611,7 +2611,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsTransitTariff[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsTransitTariff[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2619,7 +2619,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2627,7 +2627,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2683,7 +2683,7 @@ class DefaultApi
      */
     public function apiV1TransitTariffsGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1TransitTariffsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsTransitTariff[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsTransitTariff[]';
         $request = $this->apiV1TransitTariffsGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -2847,9 +2847,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1WarehousesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsWarehousesResultItems[]|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsWarehousesResultItems[]|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response
      */
     public function apiV1WarehousesGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1WarehousesGet'][0])
     {
@@ -2870,9 +2870,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1WarehousesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbw\Model\ModelsWarehousesResultItems[]|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbw\Model\ModelsWarehousesResultItems[]|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response|\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1WarehousesGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1WarehousesGet'][0])
     {
@@ -2904,19 +2904,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsWarehousesResultItems[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsWarehousesResultItems[]',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $request,
                         $response,
                     );
@@ -2938,7 +2938,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsWarehousesResultItems[]',
+                '\Wildberries\Sdk\OrdersFbw\Model\ModelsWarehousesResultItems[]',
                 $request,
                 $response,
             );
@@ -2947,7 +2947,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsWarehousesResultItems[]',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ModelsWarehousesResultItems[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2955,7 +2955,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2963,7 +2963,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
+                        '\Wildberries\Sdk\OrdersFbw\Model\ApiV1AcceptanceCoefficientsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3019,7 +3019,7 @@ class DefaultApi
      */
     public function apiV1WarehousesGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1WarehousesGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsWarehousesResultItems[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbw\Model\ModelsWarehousesResultItems[]';
         $request = $this->apiV1WarehousesGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client

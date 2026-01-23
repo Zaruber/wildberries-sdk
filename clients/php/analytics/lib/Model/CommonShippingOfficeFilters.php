@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * CommonShippingOfficeFilters Class Doc Comment
  *
  * @category Class
  * @description Общие фильтры по регионам отгрузки
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,8 +62,8 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
         'subject_ids' => 'int[]',
         'brand_names' => 'string[]',
         'tag_ids' => 'int[]',
-        'current_period' => '\Wildberries\\Sdk\\Analytics\Model\PeriodSt',
-        'stock_type' => '\Wildberries\\Sdk\\Analytics\Model\StockType',
+        'current_period' => '\Wildberries\Sdk\Analytics\Model\PeriodSt',
+        'stock_type' => '\Wildberries\Sdk\Analytics\Model\StockType',
         'skip_deleted_nm' => 'bool'
     ];
 
@@ -452,7 +452,7 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets current_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PeriodSt
+     * @return \Wildberries\Sdk\Analytics\Model\PeriodSt
      */
     public function getCurrentPeriod()
     {
@@ -462,7 +462,7 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets current_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PeriodSt $current_period current_period
+     * @param \Wildberries\Sdk\Analytics\Model\PeriodSt $current_period current_period
      *
      * @return self
      */
@@ -479,7 +479,7 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets stock_type
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StockType
+     * @return \Wildberries\Sdk\Analytics\Model\StockType
      */
     public function getStockType()
     {
@@ -489,7 +489,7 @@ class CommonShippingOfficeFilters implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets stock_type
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StockType $stock_type stock_type
+     * @param \Wildberries\Sdk\Analytics\Model\StockType $stock_type stock_type
      *
      * @return self
      */

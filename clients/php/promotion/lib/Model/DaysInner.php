@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * DaysInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -68,7 +68,7 @@ class DaysInner implements ModelInterface, ArrayAccess, \JsonSerializable
         'cr' => 'float',
         'shks' => 'int',
         'sum_price' => 'float',
-        'apps' => '\Wildberries\\Sdk\\Promotion\Model\DaysInnerAppsInner[]'
+        'apps' => '\Wildberries\Sdk\Promotion\Model\DaysInnerAppsInner[]'
     ];
 
     /**
@@ -666,7 +666,7 @@ class DaysInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets apps
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\DaysInnerAppsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\DaysInnerAppsInner[]|null
      */
     public function getApps()
     {
@@ -676,7 +676,7 @@ class DaysInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets apps
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\DaysInnerAppsInner[]|null $apps Блок информации о платформе
+     * @param \Wildberries\Sdk\Promotion\Model\DaysInnerAppsInner[]|null $apps Блок информации о платформе
      *
      * @return self
      */

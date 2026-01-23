@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Model;
+namespace Wildberries\Sdk\OrdersFbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * ModelsOptionsResultModel Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ModelsOptionsResultModel implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInner[]',
+        'result' => '\Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInner[]',
         'request_id' => 'string'
     ];
 
@@ -299,7 +299,7 @@ class ModelsOptionsResultModel implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets result
      *
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInner[]|null
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInner[]|null
      */
     public function getResult()
     {
@@ -309,7 +309,7 @@ class ModelsOptionsResultModel implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets result
      *
-     * @param \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInner[]|null $result result
+     * @param \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInner[]|null $result result
      *
      * @return self
      */

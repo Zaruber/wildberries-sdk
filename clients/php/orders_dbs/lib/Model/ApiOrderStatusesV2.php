@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * ApiOrderStatusesV2 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiOrderStatusesV2 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersDbs\Model\ApiOrderStatusV2[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbs\Model\ApiOrderStatusV2[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiOrderStatusesV2 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\ApiOrderStatusV2[]|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiOrderStatusV2[]|null
      */
     public function getOrders()
     {
@@ -302,7 +302,7 @@ class ApiOrderStatusesV2 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\ApiOrderStatusV2[]|null $orders Информация о статусах
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiOrderStatusV2[]|null $orders Информация о статусах
      *
      * @return self
      */

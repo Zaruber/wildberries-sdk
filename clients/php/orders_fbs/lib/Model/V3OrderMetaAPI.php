@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * V3OrderMetaAPI Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'meta' => '\Wildberries\\Sdk\\OrdersFbs\Model\Meta'
+        'meta' => '\Wildberries\Sdk\OrdersFbs\Model\Meta'
     ];
 
     /**
@@ -326,7 +326,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meta
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\Meta|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\Meta|null
      */
     public function getMeta()
     {
@@ -336,7 +336,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\Meta|null $meta meta
+     * @param \Wildberries\Sdk\OrdersFbs\Model\Meta|null $meta meta
      *
      * @return self
      */

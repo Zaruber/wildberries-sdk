@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1StatWordsGet200ResponseWords Class Doc Comment
  *
  * @category Class
  * @description Блок информации по ключевым фразам
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class AdvV1StatWordsGet200ResponseWords implements ModelInterface, ArrayAccess, 
         'strong' => 'string[]',
         'excluded' => 'string[]',
         'pluse' => 'string[]',
-        'keywords' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseWordsKeywordsInner[]',
+        'keywords' => '\Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseWordsKeywordsInner[]',
         'fixed' => 'bool'
     ];
 
@@ -436,7 +436,7 @@ class AdvV1StatWordsGet200ResponseWords implements ModelInterface, ArrayAccess, 
     /**
      * Gets keywords
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseWordsKeywordsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseWordsKeywordsInner[]|null
      */
     public function getKeywords()
     {
@@ -446,7 +446,7 @@ class AdvV1StatWordsGet200ResponseWords implements ModelInterface, ArrayAccess, 
     /**
      * Sets keywords
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseWordsKeywordsInner[]|null $keywords Блок со статистикой по ключевым фразам
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseWordsKeywordsInner[]|null $keywords Блок со статистикой по ключевым фразам
      *
      * @return self
      */

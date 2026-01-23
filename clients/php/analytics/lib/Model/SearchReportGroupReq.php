@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * SearchReportGroupReq Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class SearchReportGroupReq implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'string',
         'report_type' => 'string',
         'user_report_name' => 'string',
-        'params' => '\Wildberries\\Sdk\\Analytics\Model\SearchReportGroupReqParams'
+        'params' => '\Wildberries\Sdk\Analytics\Model\SearchReportGroupReqParams'
     ];
 
     /**
@@ -403,7 +403,7 @@ class SearchReportGroupReq implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets params
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\SearchReportGroupReqParams
+     * @return \Wildberries\Sdk\Analytics\Model\SearchReportGroupReqParams
      */
     public function getParams()
     {
@@ -413,7 +413,7 @@ class SearchReportGroupReq implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets params
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\SearchReportGroupReqParams $params params
+     * @param \Wildberries\Sdk\Analytics\Model\SearchReportGroupReqParams $params params
      *
      * @return self
      */

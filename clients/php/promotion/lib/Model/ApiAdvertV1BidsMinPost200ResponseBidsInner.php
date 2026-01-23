@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiAdvertV1BidsMinPost200ResponseBidsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiAdvertV1BidsMinPost200ResponseBidsInner implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bids' => '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner[]',
+        'bids' => '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner[]',
         'nm_id' => 'int'
     ];
 
@@ -305,7 +305,7 @@ class ApiAdvertV1BidsMinPost200ResponseBidsInner implements ModelInterface, Arra
     /**
      * Gets bids
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner[]
      */
     public function getBids()
     {
@@ -315,7 +315,7 @@ class ApiAdvertV1BidsMinPost200ResponseBidsInner implements ModelInterface, Arra
     /**
      * Sets bids
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner[] $bids Список ставок по местам размещения
+     * @param \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner[] $bids Список ставок по местам размещения
      *
      * @return self
      */

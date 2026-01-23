@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * ApiV3OrdersNewGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV3OrdersNewGet200Response implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersFbs\Model\OrderNew[]'
+        'orders' => '\Wildberries\Sdk\OrdersFbs\Model\OrderNew[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV3OrdersNewGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\OrderNew[]|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\OrderNew[]|null
      */
     public function getOrders()
     {
@@ -302,7 +302,7 @@ class ApiV3OrdersNewGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\OrderNew[]|null $orders Список новых сборочных заданий
+     * @param \Wildberries\Sdk\OrdersFbs\Model\OrderNew[]|null $orders Список новых сборочных заданий
      *
      * @return self
      */

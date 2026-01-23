@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Api;
+namespace Wildberries\Sdk\OrdersFbs\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Wildberries\\Sdk\\OrdersFbs\ApiException;
-use Wildberries\\Sdk\\OrdersFbs\Configuration;
-use Wildberries\\Sdk\\OrdersFbs\FormDataProcessor;
-use Wildberries\\Sdk\\OrdersFbs\HeaderSelector;
-use Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use Wildberries\Sdk\OrdersFbs\ApiException;
+use Wildberries\Sdk\OrdersFbs\Configuration;
+use Wildberries\Sdk\OrdersFbs\FormDataProcessor;
+use Wildberries\Sdk\OrdersFbs\HeaderSelector;
+use Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * FBSApi Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -233,14 +233,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request v3_get_meta_multi_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request v3_get_meta_multi_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersMetaPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\V3OrdersMetaAPI|\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError|\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\V3OrdersMetaAPI|\Wildberries\Sdk\OrdersFbs\Model\V3APIError|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\V3APIError|\Wildberries\Sdk\OrdersFbs\Model\V3APIError|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiMarketplaceV3OrdersMetaPost($v3_get_meta_multi_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3OrdersMetaPost'][0])
     {
@@ -257,14 +257,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersMetaPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\V3OrdersMetaAPI|\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError|\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\V3OrdersMetaAPI|\Wildberries\Sdk\OrdersFbs\Model\V3APIError|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\V3APIError|\Wildberries\Sdk\OrdersFbs\Model\V3APIError|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3OrdersMetaPostWithHttpInfo($v3_get_meta_multi_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3OrdersMetaPost'][0])
     {
@@ -296,37 +296,37 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3OrdersMetaAPI',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3OrdersMetaAPI',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3APIError',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3APIError',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3APIError',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -348,7 +348,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\V3OrdersMetaAPI',
+                '\Wildberries\Sdk\OrdersFbs\Model\V3OrdersMetaAPI',
                 $request,
                 $response,
             );
@@ -357,7 +357,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3OrdersMetaAPI',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3OrdersMetaAPI',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -365,7 +365,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3APIError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -373,7 +373,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -381,7 +381,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3APIError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -389,7 +389,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3APIError',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3APIError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -397,7 +397,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -418,7 +418,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersMetaPost'] to see the possible values for this operation
@@ -445,7 +445,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersMetaPost'] to see the possible values for this operation
@@ -455,7 +455,7 @@ class FBSApi
      */
     public function apiMarketplaceV3OrdersMetaPostAsyncWithHttpInfo($v3_get_meta_multi_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3OrdersMetaPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\V3OrdersMetaAPI';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\V3OrdersMetaAPI';
         $request = $this->apiMarketplaceV3OrdersMetaPostRequest($v3_get_meta_multi_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -501,7 +501,7 @@ class FBSApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\V3GetMetaMultiRequest|null $v3_get_meta_multi_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersMetaPost'] to see the possible values for this operation
@@ -625,12 +625,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -649,12 +649,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -691,7 +691,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -699,7 +699,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -707,7 +707,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -715,7 +715,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -723,7 +723,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -753,7 +753,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut'] to see the possible values for this operation
@@ -781,7 +781,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut'] to see the possible values for this operation
@@ -825,7 +825,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest|null $api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut'] to see the possible values for this operation
@@ -968,9 +968,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrderIdsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\V3SupplyOrderIDsAPI|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\V3SupplyOrderIDsAPI|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiMarketplaceV3SuppliesSupplyIdOrderIdsGet($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrderIdsGet'][0])
     {
@@ -992,9 +992,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrderIdsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\V3SupplyOrderIDsAPI|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\V3SupplyOrderIDsAPI|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3SuppliesSupplyIdOrderIdsGetWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrderIdsGet'][0])
     {
@@ -1026,37 +1026,37 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3SupplyOrderIDsAPI',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3SupplyOrderIDsAPI',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -1078,7 +1078,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\V3SupplyOrderIDsAPI',
+                '\Wildberries\Sdk\OrdersFbs\Model\V3SupplyOrderIDsAPI',
                 $request,
                 $response,
             );
@@ -1087,7 +1087,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\V3SupplyOrderIDsAPI',
+                        '\Wildberries\Sdk\OrdersFbs\Model\V3SupplyOrderIDsAPI',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1095,7 +1095,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1103,7 +1103,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1111,7 +1111,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1119,7 +1119,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1127,7 +1127,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1185,7 +1185,7 @@ class FBSApi
      */
     public function apiMarketplaceV3SuppliesSupplyIdOrderIdsGetAsyncWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrderIdsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\V3SupplyOrderIDsAPI';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\V3SupplyOrderIDsAPI';
         $request = $this->apiMarketplaceV3SuppliesSupplyIdOrderIdsGetRequest($supply_id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1362,12 +1362,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrdersPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1386,12 +1386,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrdersPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1428,7 +1428,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1436,7 +1436,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1444,7 +1444,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1452,7 +1452,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1460,7 +1460,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1468,7 +1468,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1490,7 +1490,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrdersPatch'] to see the possible values for this operation
@@ -1518,7 +1518,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrdersPatch'] to see the possible values for this operation
@@ -1562,7 +1562,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest $api_marketplace_v3_supplies_supply_id_orders_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3SuppliesSupplyIdOrdersPatch'] to see the possible values for this operation
@@ -1706,14 +1706,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\OrdersRequestAPI $orders_request_api orders_request_api (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\OrdersRequestAPI $orders_request_api orders_request_api (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersClientPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\CrossborderTurkeyClientInfoResp|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfoResp|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3OrdersClientPost($orders_request_api, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersClientPost'][0])
     {
@@ -1730,14 +1730,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersClientPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\CrossborderTurkeyClientInfoResp|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfoResp|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersClientPostWithHttpInfo($orders_request_api, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersClientPost'][0])
     {
@@ -1769,37 +1769,37 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\CrossborderTurkeyClientInfoResp',
+                        '\Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfoResp',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -1821,7 +1821,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\CrossborderTurkeyClientInfoResp',
+                '\Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfoResp',
                 $request,
                 $response,
             );
@@ -1830,7 +1830,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\CrossborderTurkeyClientInfoResp',
+                        '\Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfoResp',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1838,7 +1838,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1846,7 +1846,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1854,7 +1854,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1862,7 +1862,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1870,7 +1870,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1891,7 +1891,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersClientPost'] to see the possible values for this operation
@@ -1918,7 +1918,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersClientPost'] to see the possible values for this operation
@@ -1928,7 +1928,7 @@ class FBSApi
      */
     public function apiV3OrdersClientPostAsyncWithHttpInfo($orders_request_api, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersClientPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\CrossborderTurkeyClientInfoResp';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfoResp';
         $request = $this->apiV3OrdersClientPostRequest($orders_request_api, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1974,7 +1974,7 @@ class FBSApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\OrdersRequestAPI $orders_request_api (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersClientPost'] to see the possible values for this operation
@@ -2111,9 +2111,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3OrdersGet($limit, $next, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersGet'][0])
     {
@@ -2138,9 +2138,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersGetWithHttpInfo($limit, $next, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersGet'][0])
     {
@@ -2172,31 +2172,31 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -2218,7 +2218,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersGet200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersGet200Response',
                 $request,
                 $response,
             );
@@ -2227,7 +2227,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2235,7 +2235,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2243,7 +2243,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2251,7 +2251,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2259,7 +2259,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2323,7 +2323,7 @@ class FBSApi
      */
     public function apiV3OrdersGetAsyncWithHttpInfo($limit, $next, $date_from = null, $date_to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersGet200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersGet200Response';
         $request = $this->apiV3OrdersGetRequest($limit, $next, $date_from, $date_to, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -2549,9 +2549,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersNewGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersNewGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersNewGet200Response|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3OrdersNewGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersNewGet'][0])
     {
@@ -2572,9 +2572,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersNewGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersNewGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersNewGet200Response|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersNewGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersNewGet'][0])
     {
@@ -2606,25 +2606,25 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersNewGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersNewGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -2646,7 +2646,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersNewGet200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersNewGet200Response',
                 $request,
                 $response,
             );
@@ -2655,7 +2655,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersNewGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersNewGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2663,7 +2663,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2671,7 +2671,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2679,7 +2679,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2735,7 +2735,7 @@ class FBSApi
      */
     public function apiV3OrdersNewGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersNewGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersNewGet200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersNewGet200Response';
         $request = $this->apiV3OrdersNewGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -2900,7 +2900,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdCancelPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2923,7 +2923,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdCancelPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2960,7 +2960,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2968,7 +2968,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2976,7 +2976,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2984,7 +2984,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2992,7 +2992,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3000,7 +3000,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3227,7 +3227,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3251,7 +3251,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3288,7 +3288,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3296,7 +3296,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3304,7 +3304,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3312,7 +3312,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3320,7 +3320,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3555,12 +3555,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request api_v3_orders_order_id_meta_expiration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request api_v3_orders_order_id_meta_expiration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaExpirationPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3579,12 +3579,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaExpirationPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3621,7 +3621,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3629,7 +3629,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3637,7 +3637,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3645,7 +3645,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3653,7 +3653,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3661,7 +3661,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3683,7 +3683,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaExpirationPut'] to see the possible values for this operation
@@ -3711,7 +3711,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaExpirationPut'] to see the possible values for this operation
@@ -3755,7 +3755,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaExpirationPutRequest|null $api_v3_orders_order_id_meta_expiration_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaExpirationPut'] to see the possible values for this operation
@@ -3894,12 +3894,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request api_v3_orders_order_id_meta_gtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request api_v3_orders_order_id_meta_gtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaGtinPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3918,12 +3918,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaGtinPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3960,7 +3960,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3968,7 +3968,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3976,7 +3976,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3984,7 +3984,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3992,7 +3992,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4014,7 +4014,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaGtinPut'] to see the possible values for this operation
@@ -4042,7 +4042,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaGtinPut'] to see the possible values for this operation
@@ -4086,7 +4086,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaGtinPutRequest|null $api_v3_orders_order_id_meta_gtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaGtinPut'] to see the possible values for this operation
@@ -4225,12 +4225,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request api_v3_orders_order_id_meta_imei_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request api_v3_orders_order_id_meta_imei_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaImeiPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4249,12 +4249,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaImeiPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4291,7 +4291,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4299,7 +4299,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4307,7 +4307,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4315,7 +4315,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4323,7 +4323,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4345,7 +4345,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaImeiPut'] to see the possible values for this operation
@@ -4373,7 +4373,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaImeiPut'] to see the possible values for this operation
@@ -4417,7 +4417,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaImeiPutRequest|null $api_v3_orders_order_id_meta_imei_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaImeiPut'] to see the possible values for this operation
@@ -4556,12 +4556,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request api_v3_orders_order_id_meta_sgtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request api_v3_orders_order_id_meta_sgtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaSgtinPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4580,12 +4580,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaSgtinPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4622,7 +4622,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4630,7 +4630,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4638,7 +4638,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4646,7 +4646,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4654,7 +4654,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4662,7 +4662,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4684,7 +4684,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaSgtinPut'] to see the possible values for this operation
@@ -4712,7 +4712,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaSgtinPut'] to see the possible values for this operation
@@ -4756,7 +4756,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaSgtinPutRequest|null $api_v3_orders_order_id_meta_sgtin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaSgtinPut'] to see the possible values for this operation
@@ -4895,12 +4895,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request api_v3_orders_order_id_meta_uin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request api_v3_orders_order_id_meta_uin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaUinPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4919,12 +4919,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaUinPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4961,7 +4961,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4969,7 +4969,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4977,7 +4977,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4985,7 +4985,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4993,7 +4993,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5015,7 +5015,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaUinPut'] to see the possible values for this operation
@@ -5043,7 +5043,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaUinPut'] to see the possible values for this operation
@@ -5087,7 +5087,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $order_id ID сборочного задания (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersOrderIdMetaUinPutRequest|null $api_v3_orders_order_id_meta_uin_put_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersOrderIdMetaUinPut'] to see the possible values for this operation
@@ -5225,14 +5225,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request api_v3_orders_status_history_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request api_v3_orders_status_history_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusHistoryPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3OrdersStatusHistoryPost($api_v3_orders_status_history_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStatusHistoryPost'][0])
     {
@@ -5249,14 +5249,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusHistoryPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersStatusHistoryPostWithHttpInfo($api_v3_orders_status_history_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStatusHistoryPost'][0])
     {
@@ -5288,31 +5288,31 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -5334,7 +5334,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response',
                 $request,
                 $response,
             );
@@ -5343,7 +5343,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5351,7 +5351,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5359,7 +5359,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5367,7 +5367,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5375,7 +5375,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5396,7 +5396,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusHistoryPost'] to see the possible values for this operation
@@ -5423,7 +5423,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusHistoryPost'] to see the possible values for this operation
@@ -5433,7 +5433,7 @@ class FBSApi
      */
     public function apiV3OrdersStatusHistoryPostAsyncWithHttpInfo($api_v3_orders_status_history_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStatusHistoryPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPost200Response';
         $request = $this->apiV3OrdersStatusHistoryPostRequest($api_v3_orders_status_history_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -5479,7 +5479,7 @@ class FBSApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusHistoryPostRequest|null $api_v3_orders_status_history_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusHistoryPost'] to see the possible values for this operation
@@ -5602,14 +5602,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request api_v3_orders_status_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request api_v3_orders_status_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3OrdersStatusPost($api_v3_orders_status_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStatusPost'][0])
     {
@@ -5626,14 +5626,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersStatusPostWithHttpInfo($api_v3_orders_status_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStatusPost'][0])
     {
@@ -5665,31 +5665,31 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -5711,7 +5711,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPost200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPost200Response',
                 $request,
                 $response,
             );
@@ -5720,7 +5720,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5728,7 +5728,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5736,7 +5736,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5744,7 +5744,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5752,7 +5752,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5773,7 +5773,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusPost'] to see the possible values for this operation
@@ -5800,7 +5800,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusPost'] to see the possible values for this operation
@@ -5810,7 +5810,7 @@ class FBSApi
      */
     public function apiV3OrdersStatusPostAsyncWithHttpInfo($api_v3_orders_status_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStatusPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPost200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPost200Response';
         $request = $this->apiV3OrdersStatusPostRequest($api_v3_orders_status_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -5856,7 +5856,7 @@ class FBSApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStatusPostRequest|null $api_v3_orders_status_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStatusPost'] to see the possible values for this operation
@@ -5979,14 +5979,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request api_v3_orders_stickers_cross_border_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request api_v3_orders_stickers_cross_border_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersCrossBorderPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3OrdersStickersCrossBorderPost($api_v3_orders_stickers_cross_border_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStickersCrossBorderPost'][0])
     {
@@ -6003,14 +6003,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersCrossBorderPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersStickersCrossBorderPostWithHttpInfo($api_v3_orders_stickers_cross_border_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStickersCrossBorderPost'][0])
     {
@@ -6042,31 +6042,31 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -6088,7 +6088,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response',
                 $request,
                 $response,
             );
@@ -6097,7 +6097,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6105,7 +6105,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6113,7 +6113,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6121,7 +6121,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6129,7 +6129,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6150,7 +6150,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersCrossBorderPost'] to see the possible values for this operation
@@ -6177,7 +6177,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersCrossBorderPost'] to see the possible values for this operation
@@ -6187,7 +6187,7 @@ class FBSApi
      */
     public function apiV3OrdersStickersCrossBorderPostAsyncWithHttpInfo($api_v3_orders_stickers_cross_border_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStickersCrossBorderPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPost200Response';
         $request = $this->apiV3OrdersStickersCrossBorderPostRequest($api_v3_orders_stickers_cross_border_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -6233,7 +6233,7 @@ class FBSApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersCrossBorderPostRequest|null $api_v3_orders_stickers_cross_border_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersCrossBorderPost'] to see the possible values for this operation
@@ -6359,14 +6359,14 @@ class FBSApi
      * @param  string $type Тип стикера (required)
      * @param  int $width Ширина стикера (required)
      * @param  int $height Высота стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request api_v3_orders_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request api_v3_orders_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3OrdersStickersPost($type, $width, $height, $api_v3_orders_stickers_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStickersPost'][0])
     {
@@ -6386,14 +6386,14 @@ class FBSApi
      * @param  string $type Тип стикера (required)
      * @param  int $width Ширина стикера (required)
      * @param  int $height Высота стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersStickersPostWithHttpInfo($type, $width, $height, $api_v3_orders_stickers_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStickersPost'][0])
     {
@@ -6425,31 +6425,31 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -6471,7 +6471,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPost200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPost200Response',
                 $request,
                 $response,
             );
@@ -6480,7 +6480,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6488,7 +6488,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6496,7 +6496,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6504,7 +6504,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6512,7 +6512,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6536,7 +6536,7 @@ class FBSApi
      * @param  string $type Тип стикера (required)
      * @param  int $width Ширина стикера (required)
      * @param  int $height Высота стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersPost'] to see the possible values for this operation
@@ -6566,7 +6566,7 @@ class FBSApi
      * @param  string $type Тип стикера (required)
      * @param  int $width Ширина стикера (required)
      * @param  int $height Высота стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersPost'] to see the possible values for this operation
@@ -6576,7 +6576,7 @@ class FBSApi
      */
     public function apiV3OrdersStickersPostAsyncWithHttpInfo($type, $width, $height, $api_v3_orders_stickers_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3OrdersStickersPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPost200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPost200Response';
         $request = $this->apiV3OrdersStickersPostRequest($type, $width, $height, $api_v3_orders_stickers_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -6625,7 +6625,7 @@ class FBSApi
      * @param  string $type Тип стикера (required)
      * @param  int $width Ширина стикера (required)
      * @param  int $height Высота стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3OrdersStickersPostRequest|null $api_v3_orders_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersStickersPost'] to see the possible values for this operation
@@ -6800,9 +6800,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\Pass[]|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\Pass[]|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3PassesGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesGet'][0])
     {
@@ -6823,9 +6823,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\Pass[]|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\Pass[]|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3PassesGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesGet'][0])
     {
@@ -6857,25 +6857,25 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Pass[]',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Pass[]',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -6897,7 +6897,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\Pass[]',
+                '\Wildberries\Sdk\OrdersFbs\Model\Pass[]',
                 $request,
                 $response,
             );
@@ -6906,7 +6906,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Pass[]',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Pass[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6914,7 +6914,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6922,7 +6922,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6930,7 +6930,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6986,7 +6986,7 @@ class FBSApi
      */
     public function apiV3PassesGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\Pass[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\Pass[]';
         $request = $this->apiV3PassesGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -7150,9 +7150,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesOfficesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\PassOffice[]|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\PassOffice[]|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3PassesOfficesGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesOfficesGet'][0])
     {
@@ -7173,9 +7173,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesOfficesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\PassOffice[]|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\PassOffice[]|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3PassesOfficesGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesOfficesGet'][0])
     {
@@ -7207,25 +7207,25 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\PassOffice[]',
+                        '\Wildberries\Sdk\OrdersFbs\Model\PassOffice[]',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -7247,7 +7247,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\PassOffice[]',
+                '\Wildberries\Sdk\OrdersFbs\Model\PassOffice[]',
                 $request,
                 $response,
             );
@@ -7256,7 +7256,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\PassOffice[]',
+                        '\Wildberries\Sdk\OrdersFbs\Model\PassOffice[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7264,7 +7264,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7272,7 +7272,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7280,7 +7280,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7336,7 +7336,7 @@ class FBSApi
      */
     public function apiV3PassesOfficesGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesOfficesGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\PassOffice[]';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\PassOffice[]';
         $request = $this->apiV3PassesOfficesGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -7501,7 +7501,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPassIdDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7524,7 +7524,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPassIdDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -7561,7 +7561,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7569,7 +7569,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7577,7 +7577,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7585,7 +7585,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7807,12 +7807,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $pass_id ID пропуска (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPassIdPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7831,12 +7831,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $pass_id ID пропуска (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPassIdPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -7873,7 +7873,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7881,7 +7881,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7889,7 +7889,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7897,7 +7897,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7905,7 +7905,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7927,7 +7927,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $pass_id ID пропуска (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPassIdPut'] to see the possible values for this operation
@@ -7955,7 +7955,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $pass_id ID пропуска (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPassIdPut'] to see the possible values for this operation
@@ -7999,7 +7999,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  int $pass_id ID пропуска (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPassIdPutRequest $api_v3_passes_pass_id_put_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPassIdPut'] to see the possible values for this operation
@@ -8143,14 +8143,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPost201Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPost201Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3PassesPost($api_v3_passes_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesPost'][0])
     {
@@ -8167,14 +8167,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPost201Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPost201Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3PassesPostWithHttpInfo($api_v3_passes_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesPost'][0])
     {
@@ -8206,37 +8206,37 @@ class FBSApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPost201Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPost201Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -8258,7 +8258,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPost201Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPost201Response',
                 $request,
                 $response,
             );
@@ -8267,7 +8267,7 @@ class FBSApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPost201Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPost201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8275,7 +8275,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8283,7 +8283,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8291,7 +8291,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8299,7 +8299,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8307,7 +8307,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8328,7 +8328,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPost'] to see the possible values for this operation
@@ -8355,7 +8355,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPost'] to see the possible values for this operation
@@ -8365,7 +8365,7 @@ class FBSApi
      */
     public function apiV3PassesPostAsyncWithHttpInfo($api_v3_passes_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3PassesPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPost201Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPost201Response';
         $request = $this->apiV3PassesPostRequest($api_v3_passes_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -8411,7 +8411,7 @@ class FBSApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesPostRequest $api_v3_passes_post_request Общая длина ФИО ограничена от 6 до 100 символов. В номере машины могут быть только буквы и цифры. (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3PassesPost'] to see the possible values for this operation
@@ -8546,9 +8546,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesGet($limit, $next, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesGet'][0])
     {
@@ -8571,9 +8571,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesGetWithHttpInfo($limit, $next, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesGet'][0])
     {
@@ -8605,31 +8605,31 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -8651,7 +8651,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesGet200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesGet200Response',
                 $request,
                 $response,
             );
@@ -8660,7 +8660,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8668,7 +8668,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8676,7 +8676,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8684,7 +8684,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8692,7 +8692,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8752,7 +8752,7 @@ class FBSApi
      */
     public function apiV3SuppliesGetAsyncWithHttpInfo($limit, $next, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesGet200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesGet200Response';
         $request = $this->apiV3SuppliesGetRequest($limit, $next, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -8956,9 +8956,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesOrdersReshipmentGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesOrdersReshipmentGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesOrdersReshipmentGet'][0])
     {
@@ -8979,9 +8979,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesOrdersReshipmentGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesOrdersReshipmentGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesOrdersReshipmentGet'][0])
     {
@@ -9013,31 +9013,31 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -9059,7 +9059,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response',
                 $request,
                 $response,
             );
@@ -9068,7 +9068,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9076,7 +9076,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9084,7 +9084,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9092,7 +9092,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9100,7 +9100,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9156,7 +9156,7 @@ class FBSApi
      */
     public function apiV3SuppliesOrdersReshipmentGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesOrdersReshipmentGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesOrdersReshipmentGet200Response';
         $request = $this->apiV3SuppliesOrdersReshipmentGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -9316,14 +9316,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request api_v3_supplies_post_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request api_v3_supplies_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPost201Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPost201Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesPost($api_v3_supplies_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesPost'][0])
     {
@@ -9340,14 +9340,14 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPost201Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPost201Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesPostWithHttpInfo($api_v3_supplies_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesPost'][0])
     {
@@ -9379,31 +9379,31 @@ class FBSApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPost201Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPost201Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -9425,7 +9425,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPost201Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPost201Response',
                 $request,
                 $response,
             );
@@ -9434,7 +9434,7 @@ class FBSApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPost201Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPost201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9442,7 +9442,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9450,7 +9450,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9458,7 +9458,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9466,7 +9466,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9487,7 +9487,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesPost'] to see the possible values for this operation
@@ -9514,7 +9514,7 @@ class FBSApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesPost'] to see the possible values for this operation
@@ -9524,7 +9524,7 @@ class FBSApi
      */
     public function apiV3SuppliesPostAsyncWithHttpInfo($api_v3_supplies_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPost201Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPost201Response';
         $request = $this->apiV3SuppliesPostRequest($api_v3_supplies_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -9570,7 +9570,7 @@ class FBSApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://marketplace-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesPostRequest $api_v3_supplies_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesPost'] to see the possible values for this operation
@@ -9705,9 +9705,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdBarcodeGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesSupplyIdBarcodeGet($supply_id, $type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdBarcodeGet'][0])
     {
@@ -9730,9 +9730,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdBarcodeGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesSupplyIdBarcodeGetWithHttpInfo($supply_id, $type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdBarcodeGet'][0])
     {
@@ -9764,43 +9764,43 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 409:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -9822,7 +9822,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response',
                 $request,
                 $response,
             );
@@ -9831,7 +9831,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9839,7 +9839,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9847,7 +9847,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9855,7 +9855,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9863,7 +9863,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9871,7 +9871,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9879,7 +9879,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9939,7 +9939,7 @@ class FBSApi
      */
     public function apiV3SuppliesSupplyIdBarcodeGetAsyncWithHttpInfo($supply_id, $type, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdBarcodeGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdBarcodeGet200Response';
         $request = $this->apiV3SuppliesSupplyIdBarcodeGetRequest($supply_id, $type, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -10137,7 +10137,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -10160,7 +10160,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -10197,7 +10197,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10205,7 +10205,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10213,7 +10213,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10221,7 +10221,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10229,7 +10229,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10237,7 +10237,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10463,7 +10463,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdDeliverPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -10486,7 +10486,7 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdDeliverPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -10523,7 +10523,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10531,7 +10531,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10539,7 +10539,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10547,7 +10547,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10555,7 +10555,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10563,7 +10563,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10789,9 +10789,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\Supply|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\Supply|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesSupplyIdGet($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdGet'][0])
     {
@@ -10813,9 +10813,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\Supply|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\Supply|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesSupplyIdGetWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdGet'][0])
     {
@@ -10847,37 +10847,37 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Supply',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Supply',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -10899,7 +10899,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\Supply',
+                '\Wildberries\Sdk\OrdersFbs\Model\Supply',
                 $request,
                 $response,
             );
@@ -10908,7 +10908,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Supply',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Supply',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10916,7 +10916,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10924,7 +10924,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10932,7 +10932,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10940,7 +10940,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10948,7 +10948,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11006,7 +11006,7 @@ class FBSApi
      */
     public function apiV3SuppliesSupplyIdGetAsyncWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\Supply';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\Supply';
         $request = $this->apiV3SuppliesSupplyIdGetRequest($supply_id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -11183,12 +11183,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request api_v3_supplies_supply_id_trbx_delete_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request api_v3_supplies_supply_id_trbx_delete_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11207,12 +11207,12 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11249,7 +11249,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11257,7 +11257,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11265,7 +11265,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11273,7 +11273,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11281,7 +11281,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11303,7 +11303,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxDelete'] to see the possible values for this operation
@@ -11331,7 +11331,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxDelete'] to see the possible values for this operation
@@ -11375,7 +11375,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxDeleteRequest|null $api_v3_supplies_supply_id_trbx_delete_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxDelete'] to see the possible values for this operation
@@ -11518,9 +11518,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesSupplyIdTrbxGet($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxGet'][0])
     {
@@ -11542,9 +11542,9 @@ class FBSApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesSupplyIdTrbxGetWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxGet'][0])
     {
@@ -11576,37 +11576,37 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -11628,7 +11628,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response',
                 $request,
                 $response,
             );
@@ -11637,7 +11637,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11645,7 +11645,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11653,7 +11653,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11661,7 +11661,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11669,7 +11669,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11677,7 +11677,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11735,7 +11735,7 @@ class FBSApi
      */
     public function apiV3SuppliesSupplyIdTrbxGetAsyncWithHttpInfo($supply_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxGet200Response';
         $request = $this->apiV3SuppliesSupplyIdTrbxGetRequest($supply_id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -11912,14 +11912,14 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request api_v3_supplies_supply_id_trbx_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request api_v3_supplies_supply_id_trbx_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesSupplyIdTrbxPost($supply_id, $api_v3_supplies_supply_id_trbx_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'][0])
     {
@@ -11937,14 +11937,14 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesSupplyIdTrbxPostWithHttpInfo($supply_id, $api_v3_supplies_supply_id_trbx_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'][0])
     {
@@ -11976,37 +11976,37 @@ class FBSApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -12028,7 +12028,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response',
                 $request,
                 $response,
             );
@@ -12037,7 +12037,7 @@ class FBSApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12045,7 +12045,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12053,7 +12053,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12061,7 +12061,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12069,7 +12069,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12077,7 +12077,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12099,7 +12099,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'] to see the possible values for this operation
@@ -12127,7 +12127,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'] to see the possible values for this operation
@@ -12137,7 +12137,7 @@ class FBSApi
      */
     public function apiV3SuppliesSupplyIdTrbxPostAsyncWithHttpInfo($supply_id, $api_v3_supplies_supply_id_trbx_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPost201Response';
         $request = $this->apiV3SuppliesSupplyIdTrbxPostRequest($supply_id, $api_v3_supplies_supply_id_trbx_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -12184,7 +12184,7 @@ class FBSApi
      * URL: https://marketplace-api.wildberries.ru
      *
      * @param  string $supply_id ID поставки (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxPostRequest|null $api_v3_supplies_supply_id_trbx_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxPost'] to see the possible values for this operation
@@ -12324,14 +12324,14 @@ class FBSApi
      *
      * @param  string $supply_id ID поставки (required)
      * @param  string $type Тип стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
+     * @return \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response
      */
     public function apiV3SuppliesSupplyIdTrbxStickersPost($supply_id, $type, $api_v3_supplies_supply_id_trbx_stickers_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'][0])
     {
@@ -12350,14 +12350,14 @@ class FBSApi
      *
      * @param  string $supply_id ID поставки (required)
      * @param  string $type Тип стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\OrdersFbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\Error|\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\Error|\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesSupplyIdTrbxStickersPostWithHttpInfo($supply_id, $type, $api_v3_supplies_supply_id_trbx_stickers_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'][0])
     {
@@ -12389,37 +12389,37 @@ class FBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $request,
                         $response,
                     );
@@ -12441,7 +12441,7 @@ class FBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response',
+                '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response',
                 $request,
                 $response,
             );
@@ -12450,7 +12450,7 @@ class FBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12458,7 +12458,7 @@ class FBSApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12466,7 +12466,7 @@ class FBSApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12474,7 +12474,7 @@ class FBSApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12482,7 +12482,7 @@ class FBSApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12490,7 +12490,7 @@ class FBSApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
+                        '\Wildberries\Sdk\OrdersFbs\Model\ApiV3PassesOfficesGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12513,7 +12513,7 @@ class FBSApi
      *
      * @param  string $supply_id ID поставки (required)
      * @param  string $type Тип стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'] to see the possible values for this operation
@@ -12542,7 +12542,7 @@ class FBSApi
      *
      * @param  string $supply_id ID поставки (required)
      * @param  string $type Тип стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'] to see the possible values for this operation
@@ -12552,7 +12552,7 @@ class FBSApi
      */
     public function apiV3SuppliesSupplyIdTrbxStickersPostAsyncWithHttpInfo($supply_id, $type, $api_v3_supplies_supply_id_trbx_stickers_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response';
+        $returnType = '\Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPost200Response';
         $request = $this->apiV3SuppliesSupplyIdTrbxStickersPostRequest($supply_id, $type, $api_v3_supplies_supply_id_trbx_stickers_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -12600,7 +12600,7 @@ class FBSApi
      *
      * @param  string $supply_id ID поставки (required)
      * @param  string $type Тип стикера (required)
-     * @param  \Wildberries\\Sdk\\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
+     * @param  \Wildberries\Sdk\OrdersFbs\Model\ApiV3SuppliesSupplyIdTrbxStickersPostRequest|null $api_v3_supplies_supply_id_trbx_stickers_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3SuppliesSupplyIdTrbxStickersPost'] to see the possible values for this operation

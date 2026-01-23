@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvertNMsSettings Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bids_kopecks' => '\Wildberries\\Sdk\\Promotion\Model\AdvertBidsKopecks',
-        'subject' => '\Wildberries\\Sdk\\Promotion\Model\AdvertSubject',
+        'bids_kopecks' => '\Wildberries\Sdk\Promotion\Model\AdvertBidsKopecks',
+        'subject' => '\Wildberries\Sdk\Promotion\Model\AdvertSubject',
         'nm_id' => 'int'
     ];
 
@@ -315,7 +315,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets bids_kopecks
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvertBidsKopecks
+     * @return \Wildberries\Sdk\Promotion\Model\AdvertBidsKopecks
      */
     public function getBidsKopecks()
     {
@@ -325,7 +325,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets bids_kopecks
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvertBidsKopecks $bids_kopecks bids_kopecks
+     * @param \Wildberries\Sdk\Promotion\Model\AdvertBidsKopecks $bids_kopecks bids_kopecks
      *
      * @return self
      */
@@ -342,7 +342,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets subject
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvertSubject
+     * @return \Wildberries\Sdk\Promotion\Model\AdvertSubject
      */
     public function getSubject()
     {
@@ -352,7 +352,7 @@ class AdvertNMsSettings implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subject
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvertSubject $subject subject
+     * @param \Wildberries\Sdk\Promotion\Model\AdvertSubject $subject subject
      *
      * @return self
      */

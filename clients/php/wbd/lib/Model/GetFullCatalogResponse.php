@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * GetFullCatalogResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GetFullCatalogResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Wildberries\\Sdk\\Wbd\Model\CatalogNode[]',
+        'items' => '\Wildberries\Sdk\Wbd\Model\CatalogNode[]',
         'total' => 'int'
     ];
 
@@ -305,7 +305,7 @@ class GetFullCatalogResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets items
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\CatalogNode[]
+     * @return \Wildberries\Sdk\Wbd\Model\CatalogNode[]
      */
     public function getItems()
     {
@@ -315,7 +315,7 @@ class GetFullCatalogResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets items
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\CatalogNode[] $items Дерево с категориям и их подкатегориями
+     * @param \Wildberries\Sdk\Wbd\Model\CatalogNode[] $items Дерево с категориям и их подкатегориями
      *
      * @return self
      */

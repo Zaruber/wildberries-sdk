@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiV1CalendarPromotionsNomenclaturesGet200ResponseData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiV1CalendarPromotionsNomenclaturesGet200ResponseData implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'nomenclatures' => '\Wildberries\\Sdk\\Promotion\Model\PromotionsGoodsList[]'
+        'nomenclatures' => '\Wildberries\Sdk\Promotion\Model\PromotionsGoodsList[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class ApiV1CalendarPromotionsNomenclaturesGet200ResponseData implements ModelInt
     /**
      * Gets nomenclatures
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\PromotionsGoodsList[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\PromotionsGoodsList[]|null
      */
     public function getNomenclatures()
     {
@@ -303,7 +303,7 @@ class ApiV1CalendarPromotionsNomenclaturesGet200ResponseData implements ModelInt
     /**
      * Sets nomenclatures
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\PromotionsGoodsList[]|null $nomenclatures Список товаров
+     * @param \Wildberries\Sdk\Promotion\Model\PromotionsGoodsList[]|null $nomenclatures Список товаров
      *
      * @return self
      */

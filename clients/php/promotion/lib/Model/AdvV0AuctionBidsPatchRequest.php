@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV0AuctionBidsPatchRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class AdvV0AuctionBidsPatchRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bids' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequestBidsInner[]'
+        'bids' => '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequestBidsInner[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class AdvV0AuctionBidsPatchRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets bids
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequestBidsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequestBidsInner[]
      */
     public function getBids()
     {
@@ -309,7 +309,7 @@ class AdvV0AuctionBidsPatchRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets bids
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequestBidsInner[] $bids Ставки в кампаниях
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequestBidsInner[] $bids Ставки в кампаниях
      *
      * @return self
      */

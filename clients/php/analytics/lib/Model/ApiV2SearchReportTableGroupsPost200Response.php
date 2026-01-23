@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ApiV2SearchReportTableGroupsPost200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV2SearchReportTableGroupsPost200Response implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Analytics\Model\TableGroupResponse'
+        'data' => '\Wildberries\Sdk\Analytics\Model\TableGroupResponse'
     ];
 
     /**
@@ -295,7 +295,7 @@ class ApiV2SearchReportTableGroupsPost200Response implements ModelInterface, Arr
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableGroupResponse
+     * @return \Wildberries\Sdk\Analytics\Model\TableGroupResponse
      */
     public function getData()
     {
@@ -305,7 +305,7 @@ class ApiV2SearchReportTableGroupsPost200Response implements ModelInterface, Arr
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableGroupResponse $data data
+     * @param \Wildberries\Sdk\Analytics\Model\TableGroupResponse $data data
      *
      * @return self
      */

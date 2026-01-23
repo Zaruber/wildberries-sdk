@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * TaskCreated Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class TaskCreated implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Products\Model\TaskCreatedData',
+        'data' => '\Wildberries\Sdk\Products\Model\TaskCreatedData',
         'error' => 'bool',
         'error_text' => 'string'
     ];
@@ -306,7 +306,7 @@ class TaskCreated implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Products\Model\TaskCreatedData|null
+     * @return \Wildberries\Sdk\Products\Model\TaskCreatedData|null
      */
     public function getData()
     {
@@ -316,7 +316,7 @@ class TaskCreated implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Products\Model\TaskCreatedData|null $data data
+     * @param \Wildberries\Sdk\Products\Model\TaskCreatedData|null $data data
      *
      * @return self
      */

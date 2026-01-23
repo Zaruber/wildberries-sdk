@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiAdvertV1BidsPatch200ResponseBidsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiAdvertV1BidsPatch200ResponseBidsInner implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'advert_id' => 'int',
-        'nm_bids' => '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInnerNmBidsInner[]'
+        'nm_bids' => '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInnerNmBidsInner[]'
     ];
 
     /**
@@ -332,7 +332,7 @@ class ApiAdvertV1BidsPatch200ResponseBidsInner implements ModelInterface, ArrayA
     /**
      * Gets nm_bids
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInnerNmBidsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInnerNmBidsInner[]
      */
     public function getNmBids()
     {
@@ -342,7 +342,7 @@ class ApiAdvertV1BidsPatch200ResponseBidsInner implements ModelInterface, ArrayA
     /**
      * Sets nm_bids
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInnerNmBidsInner[] $nm_bids Ставки
+     * @param \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200ResponseBidsInnerNmBidsInner[] $nm_bids Ставки
      *
      * @return self
      */

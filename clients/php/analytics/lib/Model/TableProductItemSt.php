@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableProductItemSt Class Doc Comment
  *
  * @category Class
  * @description Данные по товару
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,7 +66,7 @@ class TableProductItemSt implements ModelInterface, ArrayAccess, \JsonSerializab
         'brand_name' => 'string',
         'main_photo' => 'string',
         'has_sizes' => 'bool',
-        'metrics' => '\Wildberries\\Sdk\\Analytics\Model\TableProductItemStMetrics'
+        'metrics' => '\Wildberries\Sdk\Analytics\Model\TableProductItemStMetrics'
     ];
 
     /**
@@ -592,7 +592,7 @@ class TableProductItemSt implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets metrics
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableProductItemStMetrics
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItemStMetrics
      */
     public function getMetrics()
     {
@@ -602,7 +602,7 @@ class TableProductItemSt implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets metrics
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableProductItemStMetrics $metrics metrics
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItemStMetrics $metrics metrics
      *
      * @return self
      */

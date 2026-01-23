@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * DaysV3Inner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class DaysV3Inner implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'apps' => '\Wildberries\\Sdk\\Promotion\Model\DaysV3InnerAppsInner[]',
+        'apps' => '\Wildberries\Sdk\Promotion\Model\DaysV3InnerAppsInner[]',
         'atbs' => 'int',
         'canceled' => 'int',
         'date' => '\DateTime',
@@ -415,7 +415,7 @@ class DaysV3Inner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets apps
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\DaysV3InnerAppsInner[]
+     * @return \Wildberries\Sdk\Promotion\Model\DaysV3InnerAppsInner[]
      */
     public function getApps()
     {
@@ -425,7 +425,7 @@ class DaysV3Inner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets apps
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\DaysV3InnerAppsInner[] $apps Блок информации о платформе
+     * @param \Wildberries\Sdk\Promotion\Model\DaysV3InnerAppsInner[] $apps Блок информации о платформе
      *
      * @return self
      */

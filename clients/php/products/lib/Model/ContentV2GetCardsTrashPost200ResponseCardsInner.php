@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2GetCardsTrashPost200ResponseCardsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,12 +61,12 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
         'vendor_code' => 'string',
         'subject_id' => 'int',
         'subject_name' => 'string',
-        'photos' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]',
+        'photos' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]',
         'video' => 'string',
-        'wholesale' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale',
-        'sizes' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPost200ResponseCardsInnerSizesInner[]',
-        'dimensions' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerDimensions',
-        'characteristics' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner[]',
+        'wholesale' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale',
+        'sizes' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPost200ResponseCardsInnerSizesInner[]',
+        'dimensions' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerDimensions',
+        'characteristics' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner[]',
         'created_at' => 'string',
         'trashed_at' => 'string'
     ];
@@ -477,7 +477,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Gets photos
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]|null
      */
     public function getPhotos()
     {
@@ -487,7 +487,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Sets photos
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]|null $photos Массив фото
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]|null $photos Массив фото
      *
      * @return self
      */
@@ -531,7 +531,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Gets wholesale
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null
      */
     public function getWholesale()
     {
@@ -541,7 +541,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Sets wholesale
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null $wholesale wholesale
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale|null $wholesale wholesale
      *
      * @return self
      */
@@ -558,7 +558,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Gets sizes
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPost200ResponseCardsInnerSizesInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPost200ResponseCardsInnerSizesInner[]|null
      */
     public function getSizes()
     {
@@ -568,7 +568,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Sets sizes
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsTrashPost200ResponseCardsInnerSizesInner[]|null $sizes Массив размеров
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPost200ResponseCardsInnerSizesInner[]|null $sizes Массив размеров
      *
      * @return self
      */
@@ -585,7 +585,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Gets dimensions
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerDimensions|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerDimensions|null
      */
     public function getDimensions()
     {
@@ -595,7 +595,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Sets dimensions
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerDimensions|null $dimensions dimensions
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerDimensions|null $dimensions dimensions
      *
      * @return self
      */
@@ -612,7 +612,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Gets characteristics
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner[]|null
      */
     public function getCharacteristics()
     {
@@ -622,7 +622,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     /**
      * Sets characteristics
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner[]|null $characteristics Характеристики
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner[]|null $characteristics Характеристики
      *
      * @return self
      */

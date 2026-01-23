@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * GetAdvertsAdvertsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'bid_type' => 'string',
         'id' => 'int',
-        'nm_settings' => '\Wildberries\\Sdk\\Promotion\Model\AdvertNMsSettings[]',
-        'settings' => '\Wildberries\\Sdk\\Promotion\Model\AdvertSettings',
+        'nm_settings' => '\Wildberries\Sdk\Promotion\Model\AdvertNMsSettings[]',
+        'settings' => '\Wildberries\Sdk\Promotion\Model\AdvertSettings',
         'status' => 'int',
-        'timestamps' => '\Wildberries\\Sdk\\Promotion\Model\Timestamps'
+        'timestamps' => '\Wildberries\Sdk\Promotion\Model\Timestamps'
     ];
 
     /**
@@ -431,7 +431,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets nm_settings
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvertNMsSettings[]
+     * @return \Wildberries\Sdk\Promotion\Model\AdvertNMsSettings[]
      */
     public function getNmSettings()
     {
@@ -441,7 +441,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets nm_settings
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvertNMsSettings[] $nm_settings Настройки товаров
+     * @param \Wildberries\Sdk\Promotion\Model\AdvertNMsSettings[] $nm_settings Настройки товаров
      *
      * @return self
      */
@@ -458,7 +458,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets settings
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvertSettings
+     * @return \Wildberries\Sdk\Promotion\Model\AdvertSettings
      */
     public function getSettings()
     {
@@ -468,7 +468,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets settings
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvertSettings $settings settings
+     * @param \Wildberries\Sdk\Promotion\Model\AdvertSettings $settings settings
      *
      * @return self
      */
@@ -522,7 +522,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets timestamps
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\Timestamps
+     * @return \Wildberries\Sdk\Promotion\Model\Timestamps
      */
     public function getTimestamps()
     {
@@ -532,7 +532,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets timestamps
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\Timestamps $timestamps timestamps
+     * @param \Wildberries\Sdk\Promotion\Model\Timestamps $timestamps timestamps
      *
      * @return self
      */

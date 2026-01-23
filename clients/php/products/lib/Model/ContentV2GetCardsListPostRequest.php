@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2GetCardsListPostRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ContentV2GetCardsListPostRequest implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'settings' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettings'
+        'settings' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettings'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ContentV2GetCardsListPostRequest implements ModelInterface, ArrayAccess, \
     /**
      * Gets settings
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettings|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettings|null
      */
     public function getSettings()
     {
@@ -302,7 +302,7 @@ class ContentV2GetCardsListPostRequest implements ModelInterface, ArrayAccess, \
     /**
      * Sets settings
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettings|null $settings settings
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettings|null $settings settings
      *
      * @return self
      */

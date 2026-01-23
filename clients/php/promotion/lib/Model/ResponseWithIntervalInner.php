@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ResponseWithIntervalInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'interval' => '\Wildberries\\Sdk\\Promotion\Model\ResponseWithIntervalInnerInterval',
+        'interval' => '\Wildberries\Sdk\Promotion\Model\ResponseWithIntervalInnerInterval',
         'views' => 'int',
         'clicks' => 'int',
         'ctr' => 'float',
@@ -68,8 +68,8 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
         'cr' => 'float',
         'shks' => 'int',
         'sum_price' => 'float',
-        'days' => '\Wildberries\\Sdk\\Promotion\Model\DaysInner[]',
-        'booster_stats' => '\Wildberries\\Sdk\\Promotion\Model\BoosterStatsInner[]',
+        'days' => '\Wildberries\Sdk\Promotion\Model\DaysInner[]',
+        'booster_stats' => '\Wildberries\Sdk\Promotion\Model\BoosterStatsInner[]',
         'advert_id' => 'int'
     ];
 
@@ -383,7 +383,7 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets interval
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseWithIntervalInnerInterval|null
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseWithIntervalInnerInterval|null
      */
     public function getInterval()
     {
@@ -393,7 +393,7 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets interval
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ResponseWithIntervalInnerInterval|null $interval interval
+     * @param \Wildberries\Sdk\Promotion\Model\ResponseWithIntervalInnerInterval|null $interval interval
      *
      * @return self
      */
@@ -680,7 +680,7 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets days
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\DaysInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\DaysInner[]|null
      */
     public function getDays()
     {
@@ -690,7 +690,7 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets days
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\DaysInner[]|null $days Статистка по дням
+     * @param \Wildberries\Sdk\Promotion\Model\DaysInner[]|null $days Статистка по дням
      *
      * @return self
      */
@@ -707,7 +707,7 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets booster_stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\BoosterStatsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\BoosterStatsInner[]|null
      */
     public function getBoosterStats()
     {
@@ -717,7 +717,7 @@ class ResponseWithIntervalInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets booster_stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\BoosterStatsInner[]|null $booster_stats Статистика по средней позиции товара на страницах поисковой выдачи и каталога (для кампаний с единой ставкой)
+     * @param \Wildberries\Sdk\Promotion\Model\BoosterStatsInner[]|null $booster_stats Статистика по средней позиции товара на страницах поисковой выдачи и каталога (для кампаний с единой ставкой)
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * OpenapiSellerLimitsResponseData Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class OpenapiSellerLimitsResponseData implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subscription' => '\Wildberries\\Sdk\\Communications\Model\OpenapiSellerLimit',
-        'tariff' => '\Wildberries\\Sdk\\Communications\Model\OpenapiSellerLimit'
+        'subscription' => '\Wildberries\Sdk\Communications\Model\OpenapiSellerLimit',
+        'tariff' => '\Wildberries\Sdk\Communications\Model\OpenapiSellerLimit'
     ];
 
     /**
@@ -299,7 +299,7 @@ class OpenapiSellerLimitsResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets subscription
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\OpenapiSellerLimit|null
+     * @return \Wildberries\Sdk\Communications\Model\OpenapiSellerLimit|null
      */
     public function getSubscription()
     {
@@ -309,7 +309,7 @@ class OpenapiSellerLimitsResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets subscription
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\OpenapiSellerLimit|null $subscription Лимиты по подписке
+     * @param \Wildberries\Sdk\Communications\Model\OpenapiSellerLimit|null $subscription Лимиты по подписке
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class OpenapiSellerLimitsResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets tariff
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\OpenapiSellerLimit|null
+     * @return \Wildberries\Sdk\Communications\Model\OpenapiSellerLimit|null
      */
     public function getTariff()
     {
@@ -343,7 +343,7 @@ class OpenapiSellerLimitsResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets tariff
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\OpenapiSellerLimit|null $tariff Лимиты по тарифной опции
+     * @param \Wildberries\Sdk\Communications\Model\OpenapiSellerLimit|null $tariff Лимиты по тарифной опции
      *
      * @return self
      */

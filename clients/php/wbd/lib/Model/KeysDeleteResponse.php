@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * KeysDeleteResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class KeysDeleteResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'statuses' => '\Wildberries\\Sdk\\Wbd\Model\KeysDeleteResponseStatusesInner[]'
+        'statuses' => '\Wildberries\Sdk\Wbd\Model\KeysDeleteResponseStatusesInner[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class KeysDeleteResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets statuses
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\KeysDeleteResponseStatusesInner[]
+     * @return \Wildberries\Sdk\Wbd\Model\KeysDeleteResponseStatusesInner[]
      */
     public function getStatuses()
     {
@@ -305,7 +305,7 @@ class KeysDeleteResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets statuses
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\KeysDeleteResponseStatusesInner[] $statuses Статусы удаления ключей
+     * @param \Wildberries\Sdk\Wbd\Model\KeysDeleteResponseStatusesInner[] $statuses Статусы удаления ключей
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AuctionAdvertSettings Class Doc Comment
  *
  * @category Class
  * @description Настройки кампании
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class AuctionAdvertSettings implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'payment_type' => 'string',
         'name' => 'string',
-        'placements' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements'
+        'placements' => '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements'
     ];
 
     /**
@@ -404,7 +404,7 @@ class AuctionAdvertSettings implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets placements
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements
      */
     public function getPlacements()
     {
@@ -414,7 +414,7 @@ class AuctionAdvertSettings implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets placements
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements $placements placements
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements $placements placements
      *
      * @return self
      */

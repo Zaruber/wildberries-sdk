@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * ApiCommunicationsV2NewsGet200ResponseDataInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class ApiCommunicationsV2NewsGet200ResponseDataInner implements ModelInterface, 
         'date' => '\DateTime',
         'header' => 'string',
         'id' => 'int',
-        'types' => '\Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner[]'
+        'types' => '\Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner[]'
     ];
 
     /**
@@ -428,7 +428,7 @@ class ApiCommunicationsV2NewsGet200ResponseDataInner implements ModelInterface, 
     /**
      * Gets types
      *
-     * @return \Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner[]|null
+     * @return \Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner[]|null
      */
     public function getTypes()
     {
@@ -438,7 +438,7 @@ class ApiCommunicationsV2NewsGet200ResponseDataInner implements ModelInterface, 
     /**
      * Sets types
      *
-     * @param \Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner[]|null $types Теги новости
+     * @param \Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner[]|null $types Теги новости
      *
      * @return self
      */

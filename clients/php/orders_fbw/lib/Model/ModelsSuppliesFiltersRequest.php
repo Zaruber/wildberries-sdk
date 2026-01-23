@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Model;
+namespace Wildberries\Sdk\OrdersFbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * ModelsSuppliesFiltersRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class ModelsSuppliesFiltersRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dates' => '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsDateFilterRequest[]',
-        'status_ids' => '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsHandySupplyStatus[]'
+        'dates' => '\Wildberries\Sdk\OrdersFbw\Model\ModelsDateFilterRequest[]',
+        'status_ids' => '\Wildberries\Sdk\OrdersFbw\Model\ModelsHandySupplyStatus[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class ModelsSuppliesFiltersRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets dates
      *
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsDateFilterRequest[]|null
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsDateFilterRequest[]|null
      */
     public function getDates()
     {
@@ -309,7 +309,7 @@ class ModelsSuppliesFiltersRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets dates
      *
-     * @param \Wildberries\\Sdk\\OrdersFbw\Model\ModelsDateFilterRequest[]|null $dates Фильтр по датам
+     * @param \Wildberries\Sdk\OrdersFbw\Model\ModelsDateFilterRequest[]|null $dates Фильтр по датам
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class ModelsSuppliesFiltersRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets status_ids
      *
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsHandySupplyStatus[]|null
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsHandySupplyStatus[]|null
      */
     public function getStatusIds()
     {
@@ -336,7 +336,7 @@ class ModelsSuppliesFiltersRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets status_ids
      *
-     * @param \Wildberries\\Sdk\\OrdersFbw\Model\ModelsHandySupplyStatus[]|null $status_ids Фильтр поставок по статусам. Возможные значения:   - `1` — Не запланировано   - `2` — Запланировано   - `3` — Отгрузка разрешена   - `4` — Идёт приёмка   - `5` — Принято   - `6` — Отгружено на воротах
+     * @param \Wildberries\Sdk\OrdersFbw\Model\ModelsHandySupplyStatus[]|null $status_ids Фильтр поставок по статусам. Возможные значения:   - `1` — Не запланировано   - `2` — Запланировано   - `3` — Отгрузка разрешена   - `4` — Идёт приёмка   - `5` — Принято   - `6` — Отгружено на воротах
      *
      * @return self
      */

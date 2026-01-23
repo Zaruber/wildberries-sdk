@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableShippingOfficeMetrics Class Doc Comment
  *
  * @category Class
  * @description Общие метрики по регионам/складам отгрузки
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPITypes = [
         'stock_count' => 'int',
         'stock_sum' => 'int',
-        'sale_rate' => '\Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsSaleRate',
+        'sale_rate' => '\Wildberries\Sdk\Analytics\Model\TableCommonMetricsSaleRate',
         'to_client_count' => 'int',
         'from_client_count' => 'int'
     ];
@@ -390,7 +390,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets sale_rate
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsSaleRate
+     * @return \Wildberries\Sdk\Analytics\Model\TableCommonMetricsSaleRate
      */
     public function getSaleRate()
     {
@@ -400,7 +400,7 @@ class TableShippingOfficeMetrics implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets sale_rate
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableCommonMetricsSaleRate $sale_rate sale_rate
+     * @param \Wildberries\Sdk\Analytics\Model\TableCommonMetricsSaleRate $sale_rate sale_rate
      *
      * @return self
      */

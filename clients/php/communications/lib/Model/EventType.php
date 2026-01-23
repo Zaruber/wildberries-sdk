@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+namespace Wildberries\Sdk\Communications\Model;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * EventType Class Doc Comment
  *
  * @category Class
  * @description Тип события: - &#x60;message&#x60; — сообщение
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

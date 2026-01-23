@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbw\Model;
+namespace Wildberries\Sdk\OrdersDbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbw\ObjectSerializer;
 
 /**
  * CourierInfo Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbw
+ * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'contacts' => '\Wildberries\\Sdk\\OrdersDbw\Model\CourierContactsResponse',
+        'contacts' => '\Wildberries\Sdk\OrdersDbw\Model\CourierContactsResponse',
         'must_be_assigned' => 'bool',
         'p_time_from' => '\DateTime',
         'p_time_to' => '\DateTime',
@@ -320,7 +320,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets contacts
      *
-     * @return \Wildberries\\Sdk\\OrdersDbw\Model\CourierContactsResponse|null
+     * @return \Wildberries\Sdk\OrdersDbw\Model\CourierContactsResponse|null
      */
     public function getContacts()
     {
@@ -330,7 +330,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contacts
      *
-     * @param \Wildberries\\Sdk\\OrdersDbw\Model\CourierContactsResponse|null $contacts Контактные данные курьера
+     * @param \Wildberries\Sdk\OrdersDbw\Model\CourierContactsResponse|null $contacts Контактные данные курьера
      *
      * @return self
      */

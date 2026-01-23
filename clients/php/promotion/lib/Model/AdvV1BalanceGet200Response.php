@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1BalanceGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class AdvV1BalanceGet200Response implements ModelInterface, ArrayAccess, \JsonSe
         'balance' => 'int',
         'net' => 'int',
         'bonus' => 'int',
-        'cashbacks' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200ResponseCashbacksInner[]'
+        'cashbacks' => '\Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200ResponseCashbacksInner[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class AdvV1BalanceGet200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets cashbacks
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200ResponseCashbacksInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200ResponseCashbacksInner[]|null
      */
     public function getCashbacks()
     {
@@ -404,7 +404,7 @@ class AdvV1BalanceGet200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets cashbacks
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200ResponseCashbacksInner[]|null $cashbacks Промо-бонусы
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200ResponseCashbacksInner[]|null $cashbacks Промо-бонусы
      *
      * @return self
      */

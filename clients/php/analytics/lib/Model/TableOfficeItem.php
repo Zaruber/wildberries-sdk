@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * TableOfficeItem Class Doc Comment
  *
  * @category Class
  * @description Данные по складу
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'region_name' => 'string',
         'office_id' => 'int',
         'office_name' => 'string',
-        'metrics' => '\Wildberries\\Sdk\\Analytics\Model\TableCommonMetrics'
+        'metrics' => '\Wildberries\Sdk\Analytics\Model\TableCommonMetrics'
     ];
 
     /**
@@ -407,7 +407,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metrics
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\TableCommonMetrics
+     * @return \Wildberries\Sdk\Analytics\Model\TableCommonMetrics
      */
     public function getMetrics()
     {
@@ -417,7 +417,7 @@ class TableOfficeItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metrics
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\TableCommonMetrics $metrics Метрики склада
+     * @param \Wildberries\Sdk\Analytics\Model\TableCommonMetrics $metrics Метрики склада
      *
      * @return self
      */

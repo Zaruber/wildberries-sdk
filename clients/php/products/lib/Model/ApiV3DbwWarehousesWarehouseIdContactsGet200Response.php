@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ApiV3DbwWarehousesWarehouseIdContactsGet200Response Class Doc Comment
  *
  * @category Class
  * @description Список контактов склада продавца
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ApiV3DbwWarehousesWarehouseIdContactsGet200Response implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'contacts' => '\Wildberries\\Sdk\\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]'
+        'contacts' => '\Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class ApiV3DbwWarehousesWarehouseIdContactsGet200Response implements ModelInterf
     /**
      * Gets contacts
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]|null
      */
     public function getContacts()
     {
@@ -303,7 +303,7 @@ class ApiV3DbwWarehousesWarehouseIdContactsGet200Response implements ModelInterf
     /**
      * Sets contacts
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]|null $contacts contacts
+     * @param \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]|null $contacts contacts
      *
      * @return self
      */

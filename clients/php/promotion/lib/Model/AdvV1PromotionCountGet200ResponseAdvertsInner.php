@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1PromotionCountGet200ResponseAdvertsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class AdvV1PromotionCountGet200ResponseAdvertsInner implements ModelInterface, A
         'type' => 'int',
         'status' => 'int',
         'count' => 'int',
-        'advert_list' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner[]'
+        'advert_list' => '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class AdvV1PromotionCountGet200ResponseAdvertsInner implements ModelInterface, A
     /**
      * Gets advert_list
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner[]|null
      */
     public function getAdvertList()
     {
@@ -404,7 +404,7 @@ class AdvV1PromotionCountGet200ResponseAdvertsInner implements ModelInterface, A
     /**
      * Sets advert_list
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner[]|null $advert_list Список кампаний
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner[]|null $advert_list Список кампаний
      *
      * @return self
      */

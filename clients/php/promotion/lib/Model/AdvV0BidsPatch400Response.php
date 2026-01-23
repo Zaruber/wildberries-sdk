@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV0BidsPatch400Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class AdvV0BidsPatch400Response implements ModelInterface, ArrayAccess, \JsonSer
         'request_id' => 'string',
         'status' => 'int',
         'title' => 'string',
-        'errors' => '\Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatch400ResponseErrorsInner[]',
+        'errors' => '\Wildberries\Sdk\Promotion\Model\AdvV0BidsPatch400ResponseErrorsInner[]',
         'type' => 'string'
     ];
 
@@ -469,7 +469,7 @@ class AdvV0BidsPatch400Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets errors
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatch400ResponseErrorsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0BidsPatch400ResponseErrorsInner[]|null
      */
     public function getErrors()
     {
@@ -479,7 +479,7 @@ class AdvV0BidsPatch400Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets errors
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatch400ResponseErrorsInner[]|null $errors Детализация ошибки
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV0BidsPatch400ResponseErrorsInner[]|null $errors Детализация ошибки
      *
      * @return self
      */

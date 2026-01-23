@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Api;
+namespace Wildberries\Sdk\Promotion\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Wildberries\\Sdk\\Promotion\ApiException;
-use Wildberries\\Sdk\\Promotion\Configuration;
-use Wildberries\\Sdk\\Promotion\FormDataProcessor;
-use Wildberries\\Sdk\\Promotion\HeaderSelector;
-use Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use Wildberries\Sdk\Promotion\ApiException;
+use Wildberries\Sdk\Promotion\Configuration;
+use Wildberries\Sdk\Promotion\FormDataProcessor;
+use Wildberries\Sdk\Promotion\HeaderSelector;
+use Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -288,9 +288,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionAdvertsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\GetAuctionAdverts|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\GetAuctionAdverts|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV0AuctionAdvertsGet($ids = null, $statuses = null, $payment_type = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionAdvertsGet'][0])
@@ -315,9 +315,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionAdvertsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\GetAuctionAdverts|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\GetAuctionAdverts|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV0AuctionAdvertsGetWithHttpInfo($ids = null, $statuses = null, $payment_type = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionAdvertsGet'][0])
@@ -350,25 +350,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\GetAuctionAdverts',
+                        '\Wildberries\Sdk\Promotion\Model\GetAuctionAdverts',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -390,7 +390,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\GetAuctionAdverts',
+                '\Wildberries\Sdk\Promotion\Model\GetAuctionAdverts',
                 $request,
                 $response,
             );
@@ -399,7 +399,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\GetAuctionAdverts',
+                        '\Wildberries\Sdk\Promotion\Model\GetAuctionAdverts',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -407,7 +407,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -415,7 +415,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -423,7 +423,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -487,7 +487,7 @@ class DefaultApi
      */
     public function advV0AuctionAdvertsGetAsyncWithHttpInfo($ids = null, $statuses = null, $payment_type = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionAdvertsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\GetAuctionAdverts';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\GetAuctionAdverts';
         $request = $this->advV0AuctionAdvertsGetRequest($ids, $statuses, $payment_type, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -681,14 +681,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request adv_v0_auction_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request adv_v0_auction_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionBidsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatch200Response|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatch200Response|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV0AuctionBidsPatch($adv_v0_auction_bids_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionBidsPatch'][0])
@@ -706,14 +706,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionBidsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatch200Response|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatch200Response|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV0AuctionBidsPatchWithHttpInfo($adv_v0_auction_bids_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionBidsPatch'][0])
@@ -746,25 +746,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatch200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatch200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -786,7 +786,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatch200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatch200Response',
                 $request,
                 $response,
             );
@@ -795,7 +795,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatch200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatch200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -803,7 +803,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -811,7 +811,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -819,7 +819,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -840,7 +840,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionBidsPatch'] to see the possible values for this operation
@@ -868,7 +868,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionBidsPatch'] to see the possible values for this operation
@@ -879,7 +879,7 @@ class DefaultApi
      */
     public function advV0AuctionBidsPatchAsyncWithHttpInfo($adv_v0_auction_bids_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionBidsPatch'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatch200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatch200Response';
         $request = $this->advV0AuctionBidsPatchRequest($adv_v0_auction_bids_patch_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -925,7 +925,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionBidsPatchRequest $adv_v0_auction_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionBidsPatch'] to see the possible values for this operation
@@ -1055,14 +1055,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request adv_v0_auction_nms_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request adv_v0_auction_nms_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionNmsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200Response|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200Response|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV0AuctionNmsPatch($adv_v0_auction_nms_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionNmsPatch'][0])
     {
@@ -1079,14 +1079,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionNmsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200Response|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200Response|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0AuctionNmsPatchWithHttpInfo($adv_v0_auction_nms_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionNmsPatch'][0])
     {
@@ -1118,25 +1118,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -1158,7 +1158,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200Response',
                 $request,
                 $response,
             );
@@ -1167,7 +1167,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1175,7 +1175,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1183,7 +1183,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1191,7 +1191,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1212,7 +1212,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionNmsPatch'] to see the possible values for this operation
@@ -1239,7 +1239,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionNmsPatch'] to see the possible values for this operation
@@ -1249,7 +1249,7 @@ class DefaultApi
      */
     public function advV0AuctionNmsPatchAsyncWithHttpInfo($adv_v0_auction_nms_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0AuctionNmsPatch'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatch200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatch200Response';
         $request = $this->advV0AuctionNmsPatchRequest($adv_v0_auction_nms_patch_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1295,7 +1295,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionNmsPatchRequest $adv_v0_auction_nms_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionNmsPatch'] to see the possible values for this operation
@@ -1424,12 +1424,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request adv_v0_auction_placements_put_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request adv_v0_auction_placements_put_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionPlacementsPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1447,12 +1447,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionPlacementsPut'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1489,7 +1489,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1497,7 +1497,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1505,7 +1505,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1526,7 +1526,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionPlacementsPut'] to see the possible values for this operation
@@ -1553,7 +1553,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionPlacementsPut'] to see the possible values for this operation
@@ -1596,7 +1596,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0AuctionPlacementsPutRequest $adv_v0_auction_placements_put_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0AuctionPlacementsPut'] to see the possible values for this operation
@@ -1725,14 +1725,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsMinPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPost200Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPost200Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV0BidsMinPost($adv_v0_bids_min_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0BidsMinPost'][0])
@@ -1750,14 +1750,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsMinPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPost200Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPost200Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV0BidsMinPostWithHttpInfo($adv_v0_bids_min_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0BidsMinPost'][0])
@@ -1790,25 +1790,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -1830,7 +1830,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPost200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPost200Response',
                 $request,
                 $response,
             );
@@ -1839,7 +1839,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1847,7 +1847,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1855,7 +1855,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1863,7 +1863,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1884,7 +1884,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsMinPost'] to see the possible values for this operation
@@ -1912,7 +1912,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsMinPost'] to see the possible values for this operation
@@ -1923,7 +1923,7 @@ class DefaultApi
      */
     public function advV0BidsMinPostAsyncWithHttpInfo($adv_v0_bids_min_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0BidsMinPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPost200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPost200Response';
         $request = $this->advV0BidsMinPostRequest($adv_v0_bids_min_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -1969,7 +1969,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsMinPost'] to see the possible values for this operation
@@ -2099,12 +2099,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request adv_v0_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request adv_v0_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -2123,12 +2123,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -2166,7 +2166,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatch400Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0BidsPatch400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2174,7 +2174,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2182,7 +2182,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2203,7 +2203,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsPatch'] to see the possible values for this operation
@@ -2231,7 +2231,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsPatch'] to see the possible values for this operation
@@ -2275,7 +2275,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsPatchRequest $adv_v0_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0BidsPatch'] to see the possible values for this operation
@@ -2409,9 +2409,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0ConfigGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV0ConfigGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0ConfigGet'][0])
@@ -2433,9 +2433,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0ConfigGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV0ConfigGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0ConfigGet'][0])
@@ -2468,19 +2468,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -2502,7 +2502,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200Response',
                 $request,
                 $response,
             );
@@ -2511,7 +2511,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2519,7 +2519,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2527,7 +2527,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2585,7 +2585,7 @@ class DefaultApi
      */
     public function advV0ConfigGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0ConfigGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV0ConfigGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV0ConfigGet200Response';
         $request = $this->advV0ConfigGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -2751,7 +2751,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0DeleteGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2774,7 +2774,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0DeleteGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2811,7 +2811,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2819,7 +2819,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2827,7 +2827,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3049,12 +3049,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3072,12 +3072,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsDelete'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3114,7 +3114,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3122,7 +3122,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3130,7 +3130,7 @@ class DefaultApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3138,7 +3138,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3159,7 +3159,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsDelete'] to see the possible values for this operation
@@ -3186,7 +3186,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsDelete'] to see the possible values for this operation
@@ -3229,7 +3229,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsDelete'] to see the possible values for this operation
@@ -3358,12 +3358,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3381,12 +3381,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3423,7 +3423,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3431,7 +3431,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3439,7 +3439,7 @@ class DefaultApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3447,7 +3447,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3468,7 +3468,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsPost'] to see the possible values for this operation
@@ -3495,7 +3495,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsPost'] to see the possible values for this operation
@@ -3538,7 +3538,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetNormQueryBidsRequest $v0_set_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryBidsPost'] to see the possible values for this operation
@@ -3667,14 +3667,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request v0_get_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request v0_get_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetBidsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsResponse|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsResponse|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV0NormqueryGetBidsPost($v0_get_norm_query_bids_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryGetBidsPost'][0])
     {
@@ -3691,14 +3691,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetBidsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsResponse|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsResponse|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0NormqueryGetBidsPostWithHttpInfo($v0_get_norm_query_bids_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryGetBidsPost'][0])
     {
@@ -3730,31 +3730,31 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -3776,7 +3776,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsResponse',
+                '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsResponse',
                 $request,
                 $response,
             );
@@ -3785,7 +3785,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3793,7 +3793,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3801,7 +3801,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3809,7 +3809,7 @@ class DefaultApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3817,7 +3817,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3838,7 +3838,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetBidsPost'] to see the possible values for this operation
@@ -3865,7 +3865,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetBidsPost'] to see the possible values for this operation
@@ -3875,7 +3875,7 @@ class DefaultApi
      */
     public function advV0NormqueryGetBidsPostAsyncWithHttpInfo($v0_get_norm_query_bids_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryGetBidsPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsResponse';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsResponse';
         $request = $this->advV0NormqueryGetBidsPostRequest($v0_get_norm_query_bids_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -3921,7 +3921,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryBidsRequest $v0_get_norm_query_bids_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetBidsPost'] to see the possible values for this operation
@@ -4050,14 +4050,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request v0_get_norm_query_minus_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request v0_get_norm_query_minus_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetMinusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponse|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponse|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV0NormqueryGetMinusPost($v0_get_norm_query_minus_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryGetMinusPost'][0])
     {
@@ -4074,14 +4074,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetMinusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponse|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponse|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0NormqueryGetMinusPostWithHttpInfo($v0_get_norm_query_minus_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryGetMinusPost'][0])
     {
@@ -4113,31 +4113,31 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -4159,7 +4159,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponse',
+                '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponse',
                 $request,
                 $response,
             );
@@ -4168,7 +4168,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4176,7 +4176,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4184,7 +4184,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4192,7 +4192,7 @@ class DefaultApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4200,7 +4200,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4221,7 +4221,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetMinusPost'] to see the possible values for this operation
@@ -4248,7 +4248,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetMinusPost'] to see the possible values for this operation
@@ -4258,7 +4258,7 @@ class DefaultApi
      */
     public function advV0NormqueryGetMinusPostAsyncWithHttpInfo($v0_get_norm_query_minus_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryGetMinusPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponse';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponse';
         $request = $this->advV0NormqueryGetMinusPostRequest($v0_get_norm_query_minus_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -4304,7 +4304,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusRequest $v0_get_norm_query_minus_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryGetMinusPost'] to see the possible values for this operation
@@ -4433,12 +4433,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request v0_set_minus_norm_query_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request v0_set_minus_norm_query_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormquerySetMinusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4456,12 +4456,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormquerySetMinusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4498,7 +4498,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4506,7 +4506,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4514,7 +4514,7 @@ class DefaultApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4522,7 +4522,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4543,7 +4543,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormquerySetMinusPost'] to see the possible values for this operation
@@ -4570,7 +4570,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormquerySetMinusPost'] to see the possible values for this operation
@@ -4613,7 +4613,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0SetMinusNormQueryRequest $v0_set_minus_norm_query_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormquerySetMinusPost'] to see the possible values for this operation
@@ -4742,14 +4742,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request v0_get_norm_query_stats_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request v0_get_norm_query_stats_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryStatsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsResponse|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsResponse|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV0NormqueryStatsPost($v0_get_norm_query_stats_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryStatsPost'][0])
     {
@@ -4766,14 +4766,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryStatsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsResponse|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsResponse|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0NormqueryStatsPostWithHttpInfo($v0_get_norm_query_stats_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryStatsPost'][0])
     {
@@ -4805,31 +4805,31 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -4851,7 +4851,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsResponse',
+                '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsResponse',
                 $request,
                 $response,
             );
@@ -4860,7 +4860,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4868,7 +4868,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4876,7 +4876,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4884,7 +4884,7 @@ class DefaultApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4892,7 +4892,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4913,7 +4913,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryStatsPost'] to see the possible values for this operation
@@ -4940,7 +4940,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryStatsPost'] to see the possible values for this operation
@@ -4950,7 +4950,7 @@ class DefaultApi
      */
     public function advV0NormqueryStatsPostAsyncWithHttpInfo($v0_get_norm_query_stats_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0NormqueryStatsPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsResponse';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsResponse';
         $request = $this->advV0NormqueryStatsPostRequest($v0_get_norm_query_stats_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -4996,7 +4996,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\V0GetNormQueryStatsRequest $v0_get_norm_query_stats_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0NormqueryStatsPost'] to see the possible values for this operation
@@ -5130,7 +5130,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0PauseGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5153,7 +5153,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0PauseGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5190,7 +5190,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Model400Response',
+                        '\Wildberries\Sdk\Promotion\Model\Model400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5198,7 +5198,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5214,7 +5214,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5436,12 +5436,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request adv_v0_rename_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request adv_v0_rename_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0RenamePost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5459,12 +5459,12 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0RenamePost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5509,7 +5509,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5525,7 +5525,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5546,7 +5546,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0RenamePost'] to see the possible values for this operation
@@ -5573,7 +5573,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0RenamePost'] to see the possible values for this operation
@@ -5616,7 +5616,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0RenamePostRequest|null $adv_v0_rename_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0RenamePost'] to see the possible values for this operation
@@ -5744,7 +5744,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0StartGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5767,7 +5767,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0StartGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5804,7 +5804,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Model400Response',
+                        '\Wildberries\Sdk\Promotion\Model\Model400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5812,7 +5812,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5828,7 +5828,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6057,9 +6057,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0StatsKeywordsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatisticsResponse|\Wildberries\\Sdk\\Promotion\Model\ErrorResponse|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\ErrorResponse|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\V0KeywordsStatisticsResponse|\Wildberries\Sdk\Promotion\Model\ErrorResponse|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ErrorResponse|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV0StatsKeywordsGet($advert_id, $from, $to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0StatsKeywordsGet'][0])
@@ -6084,9 +6084,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0StatsKeywordsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatisticsResponse|\Wildberries\\Sdk\\Promotion\Model\ErrorResponse|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\ErrorResponse|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\V0KeywordsStatisticsResponse|\Wildberries\Sdk\Promotion\Model\ErrorResponse|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ErrorResponse|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV0StatsKeywordsGetWithHttpInfo($advert_id, $from, $to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0StatsKeywordsGet'][0])
@@ -6119,31 +6119,31 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatisticsResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0KeywordsStatisticsResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ErrorResponse',
+                        '\Wildberries\Sdk\Promotion\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ErrorResponse',
+                        '\Wildberries\Sdk\Promotion\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -6165,7 +6165,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatisticsResponse',
+                '\Wildberries\Sdk\Promotion\Model\V0KeywordsStatisticsResponse',
                 $request,
                 $response,
             );
@@ -6174,7 +6174,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatisticsResponse',
+                        '\Wildberries\Sdk\Promotion\Model\V0KeywordsStatisticsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6182,7 +6182,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ErrorResponse',
+                        '\Wildberries\Sdk\Promotion\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6190,7 +6190,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6198,7 +6198,7 @@ class DefaultApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ErrorResponse',
+                        '\Wildberries\Sdk\Promotion\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6206,7 +6206,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6270,7 +6270,7 @@ class DefaultApi
      */
     public function advV0StatsKeywordsGetAsyncWithHttpInfo($advert_id, $from, $to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV0StatsKeywordsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\V0KeywordsStatisticsResponse';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\V0KeywordsStatisticsResponse';
         $request = $this->advV0StatsKeywordsGetRequest($advert_id, $from, $to, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -6487,7 +6487,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0StopGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6510,7 +6510,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV0StopGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6547,7 +6547,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Model400Response',
+                        '\Wildberries\Sdk\Promotion\Model\Model400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6555,7 +6555,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6571,7 +6571,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6798,9 +6798,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AdvertGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1AdvertGet($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertGet'][0])
     {
@@ -6822,9 +6822,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AdvertGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1AdvertGetWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertGet'][0])
     {
@@ -6856,19 +6856,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -6890,7 +6890,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response',
                 $request,
                 $response,
             );
@@ -6899,7 +6899,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6907,7 +6907,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6915,7 +6915,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6973,7 +6973,7 @@ class DefaultApi
      */
     public function advV1AdvertGetAsyncWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response';
         $request = $this->advV1AdvertGetRequest($id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -7160,9 +7160,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AdvertsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1AdvertsGet($status = null, $type = null, $limit = null, $offset = null, $order = null, $direction = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertsGet'][0])
     {
@@ -7189,9 +7189,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AdvertsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1AdvertsGetWithHttpInfo($status = null, $type = null, $limit = null, $offset = null, $order = null, $direction = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertsGet'][0])
     {
@@ -7223,19 +7223,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -7257,7 +7257,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]',
                 $request,
                 $response,
             );
@@ -7266,7 +7266,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7274,7 +7274,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7282,7 +7282,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7350,7 +7350,7 @@ class DefaultApi
      */
     public function advV1AdvertsGetAsyncWithHttpInfo($status = null, $type = null, $limit = null, $offset = null, $order = null, $direction = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertsGet200ResponseInner[]';
         $request = $this->advV1AdvertsGetRequest($status, $type, $limit, $offset, $order, $direction, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -7581,9 +7581,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoGetnmtoaddGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return int[]|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return int[]|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV1AutoGetnmtoaddGet($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AutoGetnmtoaddGet'][0])
@@ -7606,9 +7606,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoGetnmtoaddGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of int[]|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of int[]|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV1AutoGetnmtoaddGetWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AutoGetnmtoaddGet'][0])
@@ -7647,19 +7647,19 @@ class DefaultApi
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -7698,7 +7698,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7706,7 +7706,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7714,7 +7714,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7953,12 +7953,12 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoSetExcludedPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -7978,12 +7978,12 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoSetExcludedPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -8021,7 +8021,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Model400Response',
+                        '\Wildberries\Sdk\Promotion\Model\Model400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8029,7 +8029,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8037,7 +8037,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8059,7 +8059,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoSetExcludedPost'] to see the possible values for this operation
@@ -8088,7 +8088,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoSetExcludedPost'] to see the possible values for this operation
@@ -8133,7 +8133,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoSetExcludedPost'] to see the possible values for this operation
@@ -8280,12 +8280,12 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request adv_v1_auto_updatenm_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request adv_v1_auto_updatenm_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoUpdatenmPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -8305,12 +8305,12 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoUpdatenmPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -8348,7 +8348,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8356,7 +8356,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8364,7 +8364,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8386,7 +8386,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoUpdatenmPost'] to see the possible values for this operation
@@ -8415,7 +8415,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoUpdatenmPost'] to see the possible values for this operation
@@ -8460,7 +8460,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1AutoUpdatenmPostRequest $adv_v1_auto_updatenm_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1AutoUpdatenmPost'] to see the possible values for this operation
@@ -8610,9 +8610,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BalanceGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200Response|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1BalanceGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BalanceGet'][0])
     {
@@ -8633,9 +8633,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BalanceGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200Response|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1BalanceGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BalanceGet'][0])
     {
@@ -8667,7 +8667,7 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200Response',
                         $request,
                         $response,
                     );
@@ -8679,13 +8679,13 @@ class DefaultApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -8707,7 +8707,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200Response',
                 $request,
                 $response,
             );
@@ -8716,7 +8716,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8732,7 +8732,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8740,7 +8740,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8796,7 +8796,7 @@ class DefaultApi
      */
     public function advV1BalanceGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BalanceGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1BalanceGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1BalanceGet200Response';
         $request = $this->advV1BalanceGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -8957,14 +8957,14 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request adv_v1_budget_deposit_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request adv_v1_budget_deposit_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BudgetDepositPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseWithReturn|\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseWithReturn|\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1BudgetDepositPost($id, $adv_v1_budget_deposit_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BudgetDepositPost'][0])
     {
@@ -8982,14 +8982,14 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BudgetDepositPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ResponseWithReturn|\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ResponseWithReturn|\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1BudgetDepositPostWithHttpInfo($id, $adv_v1_budget_deposit_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BudgetDepositPost'][0])
     {
@@ -9021,25 +9021,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseWithReturn',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseWithReturn',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -9061,7 +9061,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ResponseWithReturn',
+                '\Wildberries\Sdk\Promotion\Model\ResponseWithReturn',
                 $request,
                 $response,
             );
@@ -9070,7 +9070,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseWithReturn',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseWithReturn',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9078,7 +9078,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9086,7 +9086,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9094,7 +9094,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9116,7 +9116,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BudgetDepositPost'] to see the possible values for this operation
@@ -9144,7 +9144,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BudgetDepositPost'] to see the possible values for this operation
@@ -9154,7 +9154,7 @@ class DefaultApi
      */
     public function advV1BudgetDepositPostAsyncWithHttpInfo($id, $adv_v1_budget_deposit_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BudgetDepositPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ResponseWithReturn';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ResponseWithReturn';
         $request = $this->advV1BudgetDepositPostRequest($id, $adv_v1_budget_deposit_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -9201,7 +9201,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPostRequest $adv_v1_budget_deposit_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BudgetDepositPost'] to see the possible values for this operation
@@ -9351,9 +9351,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BudgetGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetGet200Response|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1BudgetGet200Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1BudgetGet($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BudgetGet'][0])
     {
@@ -9375,9 +9375,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1BudgetGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetGet200Response|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1BudgetGet200Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1BudgetGetWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BudgetGet'][0])
     {
@@ -9409,7 +9409,7 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetGet200Response',
                         $request,
                         $response,
                     );
@@ -9421,13 +9421,13 @@ class DefaultApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -9449,7 +9449,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetGet200Response',
                 $request,
                 $response,
             );
@@ -9458,7 +9458,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9474,7 +9474,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9482,7 +9482,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9540,7 +9540,7 @@ class DefaultApi
      */
     public function advV1BudgetGetAsyncWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1BudgetGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetGet200Response';
         $request = $this->advV1BudgetGetRequest($id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -9721,9 +9721,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1CountGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1CountGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1CountGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1CountGet'][0])
     {
@@ -9744,9 +9744,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1CountGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1CountGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1CountGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1CountGet'][0])
     {
@@ -9778,19 +9778,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1CountGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -9812,7 +9812,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1CountGet200Response',
                 $request,
                 $response,
             );
@@ -9821,7 +9821,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1CountGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9829,7 +9829,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9837,7 +9837,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9893,7 +9893,7 @@ class DefaultApi
      */
     public function advV1CountGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1CountGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1CountGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1CountGet200Response';
         $request = $this->advV1CountGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -10059,9 +10059,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1PaymentsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1PaymentsGet($from = null, $to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PaymentsGet'][0])
     {
@@ -10084,9 +10084,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1PaymentsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1PaymentsGetWithHttpInfo($from = null, $to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PaymentsGet'][0])
     {
@@ -10118,7 +10118,7 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]',
                         $request,
                         $response,
                     );
@@ -10130,13 +10130,13 @@ class DefaultApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -10158,7 +10158,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]',
                 $request,
                 $response,
             );
@@ -10167,7 +10167,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10183,7 +10183,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10191,7 +10191,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10251,7 +10251,7 @@ class DefaultApi
      */
     public function advV1PaymentsGetAsyncWithHttpInfo($from = null, $to = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PaymentsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1PaymentsGet200ResponseInner[]';
         $request = $this->advV1PaymentsGetRequest($from, $to, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -10442,9 +10442,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1PromotionAdvertsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV1PromotionAdvertsPost($request_body, $status = null, $type = null, $order = null, $direction = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PromotionAdvertsPost'][0])
@@ -10471,9 +10471,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1PromotionAdvertsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV1PromotionAdvertsPostWithHttpInfo($request_body, $status = null, $type = null, $order = null, $direction = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PromotionAdvertsPost'][0])
@@ -10506,7 +10506,7 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8[]',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8[]',
                         $request,
                         $response,
                     );
@@ -10518,7 +10518,7 @@ class DefaultApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -10530,7 +10530,7 @@ class DefaultApi
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -10552,7 +10552,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8[]',
+                '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8[]',
                 $request,
                 $response,
             );
@@ -10561,7 +10561,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8[]',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10577,7 +10577,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10593,7 +10593,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10661,7 +10661,7 @@ class DefaultApi
      */
     public function advV1PromotionAdvertsPostAsyncWithHttpInfo($request_body, $status = null, $type = null, $order = null, $direction = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PromotionAdvertsPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ResponseInfoAdvertType8[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ResponseInfoAdvertType8[]';
         $request = $this->advV1PromotionAdvertsPostRequest($request_body, $status, $type, $order, $direction, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -10885,9 +10885,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1PromotionCountGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1PromotionCountGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PromotionCountGet'][0])
     {
@@ -10908,9 +10908,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1PromotionCountGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1PromotionCountGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PromotionCountGet'][0])
     {
@@ -10942,19 +10942,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -10976,7 +10976,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200Response',
                 $request,
                 $response,
             );
@@ -10985,7 +10985,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10993,7 +10993,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11001,7 +11001,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11057,7 +11057,7 @@ class DefaultApi
      */
     public function advV1PromotionCountGetAsyncWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1PromotionCountGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet200Response';
         $request = $this->advV1PromotionCountGetRequest($hostIndex, $variables, $contentType);
 
         return $this->client
@@ -11218,12 +11218,12 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetExcludedPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -11243,12 +11243,12 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetExcludedPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -11294,7 +11294,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11302,7 +11302,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11324,7 +11324,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetExcludedPost'] to see the possible values for this operation
@@ -11353,7 +11353,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetExcludedPost'] to see the possible values for this operation
@@ -11398,7 +11398,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetExcludedPostRequest $adv_v1_search_set_excluded_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetExcludedPost'] to see the possible values for this operation
@@ -11550,7 +11550,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetPlusGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -11575,7 +11575,7 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetPlusGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -11621,7 +11621,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11629,7 +11629,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11868,14 +11868,14 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request adv_v1_search_set_plus_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request adv_v1_search_set_plus_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetPlusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]|\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return string[]|\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV1SearchSetPlusPost($id, $adv_v1_search_set_plus_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1SearchSetPlusPost'][0])
@@ -11894,14 +11894,14 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetPlusPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[]|\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string[]|\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV1SearchSetPlusPostWithHttpInfo($id, $adv_v1_search_set_plus_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1SearchSetPlusPost'][0])
@@ -11940,19 +11940,19 @@ class DefaultApi
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -11991,7 +11991,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1BudgetDepositPost400Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1BudgetDepositPost400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11999,7 +11999,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12007,7 +12007,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12029,7 +12029,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetPlusPost'] to see the possible values for this operation
@@ -12058,7 +12058,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetPlusPost'] to see the possible values for this operation
@@ -12116,7 +12116,7 @@ class DefaultApi
      * URL: https://advert-api.wildberries.ru
      *
      * @param  int $id ID кампании (required)
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV1SearchSetPlusPostRequest $adv_v1_search_set_plus_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SearchSetPlusPost'] to see the possible values for this operation
@@ -12267,9 +12267,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1StatWordsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV1StatWordsGet($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1StatWordsGet'][0])
@@ -12292,9 +12292,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1StatWordsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV1StatWordsGetWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1StatWordsGet'][0])
@@ -12327,19 +12327,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -12361,7 +12361,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200Response',
                 $request,
                 $response,
             );
@@ -12370,7 +12370,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12378,7 +12378,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12386,7 +12386,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12446,7 +12446,7 @@ class DefaultApi
      */
     public function advV1StatWordsGetAsyncWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1StatWordsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200Response';
         $request = $this->advV1StatWordsGetRequest($id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -12624,14 +12624,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-media-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1StatsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1StatsPost200ResponseInner[]|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1StatsPost200ResponseInner[]|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1StatsPost($adv_v2_fullstats_post_request_inner, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1StatsPost'][0])
     {
@@ -12648,14 +12648,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-media-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1StatsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1StatsPost200ResponseInner[]|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1StatsPost200ResponseInner[]|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1StatsPostWithHttpInfo($adv_v2_fullstats_post_request_inner, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1StatsPost'][0])
     {
@@ -12687,25 +12687,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatsPost200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1StatsPost200ResponseInner[]',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -12727,7 +12727,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatsPost200ResponseInner[]',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1StatsPost200ResponseInner[]',
                 $request,
                 $response,
             );
@@ -12736,7 +12736,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatsPost200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1StatsPost200ResponseInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12744,7 +12744,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12752,7 +12752,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12760,7 +12760,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12781,7 +12781,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-media-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1StatsPost'] to see the possible values for this operation
@@ -12808,7 +12808,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-media-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1StatsPost'] to see the possible values for this operation
@@ -12818,7 +12818,7 @@ class DefaultApi
      */
     public function advV1StatsPostAsyncWithHttpInfo($adv_v2_fullstats_post_request_inner, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1StatsPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatsPost200ResponseInner[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1StatsPost200ResponseInner[]';
         $request = $this->advV1StatsPostRequest($adv_v2_fullstats_post_request_inner, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -12864,7 +12864,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-media-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1StatsPost'] to see the possible values for this operation
@@ -13004,9 +13004,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SupplierSubjectsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1SupplierSubjectsGet($payment_type = 'cpm', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1SupplierSubjectsGet'][0])
     {
@@ -13028,9 +13028,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1SupplierSubjectsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1SupplierSubjectsGetWithHttpInfo($payment_type = 'cpm', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1SupplierSubjectsGet'][0])
     {
@@ -13062,19 +13062,19 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -13096,7 +13096,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]',
                 $request,
                 $response,
             );
@@ -13105,7 +13105,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13113,7 +13113,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13121,7 +13121,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13179,7 +13179,7 @@ class DefaultApi
      */
     public function advV1SupplierSubjectsGetAsyncWithHttpInfo($payment_type = 'cpm', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1SupplierSubjectsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1SupplierSubjectsGet200ResponseInner[]';
         $request = $this->advV1SupplierSubjectsGetRequest($payment_type, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -13356,9 +13356,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1UpdGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1UpdGet200ResponseInner[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1UpdGet200ResponseInner[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1UpdGet($from, $to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1UpdGet'][0])
     {
@@ -13381,9 +13381,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV1UpdGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV1UpdGet200ResponseInner[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1UpdGet200ResponseInner[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1UpdGetWithHttpInfo($from, $to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1UpdGet'][0])
     {
@@ -13415,7 +13415,7 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1UpdGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1UpdGet200ResponseInner[]',
                         $request,
                         $response,
                     );
@@ -13427,13 +13427,13 @@ class DefaultApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -13455,7 +13455,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV1UpdGet200ResponseInner[]',
+                '\Wildberries\Sdk\Promotion\Model\AdvV1UpdGet200ResponseInner[]',
                 $request,
                 $response,
             );
@@ -13464,7 +13464,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1UpdGet200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1UpdGet200ResponseInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13480,7 +13480,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13488,7 +13488,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13548,7 +13548,7 @@ class DefaultApi
      */
     public function advV1UpdGetAsyncWithHttpInfo($from, $to, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1UpdGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV1UpdGet200ResponseInner[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV1UpdGet200ResponseInner[]';
         $request = $this->advV1UpdGetRequest($from, $to, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -13747,9 +13747,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2AutoStatWordsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200Response|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200Response|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV2AutoStatWordsGet($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2AutoStatWordsGet'][0])
@@ -13772,9 +13772,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2AutoStatWordsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200Response|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200Response|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV2AutoStatWordsGetWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2AutoStatWordsGet'][0])
@@ -13807,25 +13807,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -13847,7 +13847,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200Response',
                 $request,
                 $response,
             );
@@ -13856,7 +13856,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13864,7 +13864,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13872,7 +13872,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13880,7 +13880,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13940,7 +13940,7 @@ class DefaultApi
      */
     public function advV2AutoStatWordsGetAsyncWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2AutoStatWordsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV2AutoStatWordsGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV2AutoStatWordsGet200Response';
         $request = $this->advV2AutoStatWordsGetRequest($id, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -14118,14 +14118,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2FullstatsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPost200Response|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPost200Response|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      * @deprecated
      */
     public function advV2FullstatsPost($adv_v2_fullstats_post_request_inner, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2FullstatsPost'][0])
@@ -14143,14 +14143,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2FullstatsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPost200Response|\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPost200Response|\Wildberries\Sdk\Promotion\Model\ResponseAdvError1|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function advV2FullstatsPostWithHttpInfo($adv_v2_fullstats_post_request_inner, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2FullstatsPost'][0])
@@ -14183,25 +14183,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -14223,7 +14223,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPost200Response',
+                '\Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPost200Response',
                 $request,
                 $response,
             );
@@ -14232,7 +14232,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14240,7 +14240,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ResponseAdvError1',
+                        '\Wildberries\Sdk\Promotion\Model\ResponseAdvError1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14248,7 +14248,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14256,7 +14256,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14277,7 +14277,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2FullstatsPost'] to see the possible values for this operation
@@ -14305,7 +14305,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2FullstatsPost'] to see the possible values for this operation
@@ -14316,7 +14316,7 @@ class DefaultApi
      */
     public function advV2FullstatsPostAsyncWithHttpInfo($adv_v2_fullstats_post_request_inner, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2FullstatsPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPost200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPost200Response';
         $request = $this->advV2FullstatsPostRequest($adv_v2_fullstats_post_request_inner, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -14362,7 +14362,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2FullstatsPostRequestInner[] $adv_v2_fullstats_post_request_inner (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2FullstatsPost'] to see the possible values for this operation
@@ -14492,14 +14492,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request adv_v2_seacat_save_ad_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request adv_v2_seacat_save_ad_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2SeacatSaveAdPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return int|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return int|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV2SeacatSaveAdPost($adv_v2_seacat_save_ad_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2SeacatSaveAdPost'][0])
     {
@@ -14516,14 +14516,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2SeacatSaveAdPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of int|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of int|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV2SeacatSaveAdPostWithHttpInfo($adv_v2_seacat_save_ad_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2SeacatSaveAdPost'][0])
     {
@@ -14567,13 +14567,13 @@ class DefaultApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -14620,7 +14620,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14628,7 +14628,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14649,7 +14649,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2SeacatSaveAdPost'] to see the possible values for this operation
@@ -14676,7 +14676,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2SeacatSaveAdPost'] to see the possible values for this operation
@@ -14732,7 +14732,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV2SeacatSaveAdPostRequest|null $adv_v2_seacat_save_ad_post_request (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2SeacatSaveAdPost'] to see the possible values for this operation
@@ -14860,9 +14860,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2SupplierNmsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV2SupplierNmsPost($request_body = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2SupplierNmsPost'][0])
     {
@@ -14884,9 +14884,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV2SupplierNmsPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]|string|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV2SupplierNmsPostWithHttpInfo($request_body = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2SupplierNmsPost'][0])
     {
@@ -14918,7 +14918,7 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]',
                         $request,
                         $response,
                     );
@@ -14930,13 +14930,13 @@ class DefaultApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -14958,7 +14958,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]',
+                '\Wildberries\Sdk\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]',
                 $request,
                 $response,
             );
@@ -14967,7 +14967,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14983,7 +14983,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14991,7 +14991,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15049,7 +15049,7 @@ class DefaultApi
      */
     public function advV2SupplierNmsPostAsyncWithHttpInfo($request_body = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV2SupplierNmsPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\AdvV2SupplierNmsPost200ResponseInner[]';
         $request = $this->advV2SupplierNmsPostRequest($request_body, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -15225,9 +15225,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV3FullstatsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\FullStatsItem[]|\Wildberries\\Sdk\\Promotion\Model\FullStatsError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\FullStatsItem[]|\Wildberries\Sdk\Promotion\Model\FullStatsError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV3FullstatsGet($ids, $begin_date, $end_date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV3FullstatsGet'][0])
     {
@@ -15251,9 +15251,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['advV3FullstatsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\FullStatsItem[]|\Wildberries\\Sdk\\Promotion\Model\FullStatsError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\FullStatsItem[]|\Wildberries\Sdk\Promotion\Model\FullStatsError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV3FullstatsGetWithHttpInfo($ids, $begin_date, $end_date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV3FullstatsGet'][0])
     {
@@ -15285,25 +15285,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\FullStatsItem[]',
+                        '\Wildberries\Sdk\Promotion\Model\FullStatsItem[]',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\FullStatsError',
+                        '\Wildberries\Sdk\Promotion\Model\FullStatsError',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -15325,7 +15325,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\FullStatsItem[]',
+                '\Wildberries\Sdk\Promotion\Model\FullStatsItem[]',
                 $request,
                 $response,
             );
@@ -15334,7 +15334,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\FullStatsItem[]',
+                        '\Wildberries\Sdk\Promotion\Model\FullStatsItem[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15342,7 +15342,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\FullStatsError',
+                        '\Wildberries\Sdk\Promotion\Model\FullStatsError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15350,7 +15350,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15358,7 +15358,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15420,7 +15420,7 @@ class DefaultApi
      */
     public function advV3FullstatsGetAsyncWithHttpInfo($ids, $begin_date, $end_date, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV3FullstatsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\FullStatsItem[]';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\FullStatsItem[]';
         $request = $this->advV3FullstatsGetRequest($ids, $begin_date, $end_date, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -15631,14 +15631,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsMinPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiAdvertV1BidsMinPost($adv_v0_bids_min_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV1BidsMinPost'][0])
     {
@@ -15655,14 +15655,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsMinPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200Response|\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200Response|\Wildberries\Sdk\Promotion\Model\StandardizedBatchError|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiAdvertV1BidsMinPostWithHttpInfo($adv_v0_bids_min_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV1BidsMinPost'][0])
     {
@@ -15694,25 +15694,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -15734,7 +15734,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200Response',
+                '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200Response',
                 $request,
                 $response,
             );
@@ -15743,7 +15743,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15751,7 +15751,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\StandardizedBatchError',
+                        '\Wildberries\Sdk\Promotion\Model\StandardizedBatchError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15759,7 +15759,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15767,7 +15767,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15788,7 +15788,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsMinPost'] to see the possible values for this operation
@@ -15815,7 +15815,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsMinPost'] to see the possible values for this operation
@@ -15825,7 +15825,7 @@ class DefaultApi
      */
     public function apiAdvertV1BidsMinPostAsyncWithHttpInfo($adv_v0_bids_min_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV1BidsMinPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsMinPost200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsMinPost200Response';
         $request = $this->apiAdvertV1BidsMinPostRequest($adv_v0_bids_min_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -15871,7 +15871,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\AdvV0BidsMinPostRequest $adv_v0_bids_min_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsMinPost'] to see the possible values for this operation
@@ -16000,14 +16000,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request api_advert_v1_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request api_advert_v1_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200Response|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200Response|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiAdvertV1BidsPatch($api_advert_v1_bids_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV1BidsPatch'][0])
     {
@@ -16024,14 +16024,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsPatch'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200Response|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200Response|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiAdvertV1BidsPatchWithHttpInfo($api_advert_v1_bids_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV1BidsPatch'][0])
     {
@@ -16063,25 +16063,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -16103,7 +16103,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200Response',
+                '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200Response',
                 $request,
                 $response,
             );
@@ -16112,7 +16112,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16120,7 +16120,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16128,7 +16128,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16136,7 +16136,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16157,7 +16157,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsPatch'] to see the possible values for this operation
@@ -16184,7 +16184,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsPatch'] to see the possible values for this operation
@@ -16194,7 +16194,7 @@ class DefaultApi
      */
     public function apiAdvertV1BidsPatchAsyncWithHttpInfo($api_advert_v1_bids_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV1BidsPatch'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatch200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatch200Response';
         $request = $this->apiAdvertV1BidsPatchRequest($api_advert_v1_bids_patch_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -16240,7 +16240,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://advert-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiAdvertV1BidsPatchRequest $api_advert_v1_bids_patch_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV1BidsPatch'] to see the possible values for this operation
@@ -16376,9 +16376,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV2AdvertsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\GetAdverts|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\GetAdverts|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiAdvertV2AdvertsGet($ids = null, $statuses = null, $payment_type = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV2AdvertsGet'][0])
     {
@@ -16402,9 +16402,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiAdvertV2AdvertsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\GetAdverts|\Wildberries\\Sdk\\Promotion\Model\Response400|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\GetAdverts|\Wildberries\Sdk\Promotion\Model\Response400|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiAdvertV2AdvertsGetWithHttpInfo($ids = null, $statuses = null, $payment_type = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV2AdvertsGet'][0])
     {
@@ -16436,25 +16436,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\GetAdverts',
+                        '\Wildberries\Sdk\Promotion\Model\GetAdverts',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -16476,7 +16476,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\GetAdverts',
+                '\Wildberries\Sdk\Promotion\Model\GetAdverts',
                 $request,
                 $response,
             );
@@ -16485,7 +16485,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\GetAdverts',
+                        '\Wildberries\Sdk\Promotion\Model\GetAdverts',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16493,7 +16493,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\Response400',
+                        '\Wildberries\Sdk\Promotion\Model\Response400',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16501,7 +16501,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16509,7 +16509,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16571,7 +16571,7 @@ class DefaultApi
      */
     public function apiAdvertV2AdvertsGetAsyncWithHttpInfo($ids = null, $statuses = null, $payment_type = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiAdvertV2AdvertsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\GetAdverts';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\GetAdverts';
         $request = $this->apiAdvertV2AdvertsGetRequest($ids, $statuses, $payment_type, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -16769,9 +16769,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsDetailsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsDetailsGet($promotion_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsDetailsGet'][0])
     {
@@ -16793,9 +16793,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsDetailsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsDetailsGetWithHttpInfo($promotion_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsDetailsGet'][0])
     {
@@ -16827,25 +16827,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -16867,7 +16867,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response',
                 $request,
                 $response,
             );
@@ -16876,7 +16876,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16884,7 +16884,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16892,7 +16892,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16900,7 +16900,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16958,7 +16958,7 @@ class DefaultApi
      */
     public function apiV1CalendarPromotionsDetailsGetAsyncWithHttpInfo($promotion_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsDetailsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response';
         $request = $this->apiV1CalendarPromotionsDetailsGetRequest($promotion_ids, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -17150,9 +17150,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsGet($start_date_time, $end_date_time, $all_promo, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsGet'][0])
     {
@@ -17178,9 +17178,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsGetWithHttpInfo($start_date_time, $end_date_time, $all_promo, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsGet'][0])
     {
@@ -17212,25 +17212,25 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -17252,7 +17252,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response',
                 $request,
                 $response,
             );
@@ -17261,7 +17261,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17269,7 +17269,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17277,7 +17277,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17285,7 +17285,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17351,7 +17351,7 @@ class DefaultApi
      */
     public function apiV1CalendarPromotionsGetAsyncWithHttpInfo($start_date_time, $end_date_time, $all_promo, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response';
         $request = $this->apiV1CalendarPromotionsGetRequest($start_date_time, $end_date_time, $all_promo, $limit, $offset, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -17601,9 +17601,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsNomenclaturesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsNomenclaturesGet($promotion_id, $in_action, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsNomenclaturesGet'][0])
     {
@@ -17628,9 +17628,9 @@ class DefaultApi
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsNomenclaturesGet'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsNomenclaturesGetWithHttpInfo($promotion_id, $in_action, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsNomenclaturesGet'][0])
     {
@@ -17662,31 +17662,31 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -17708,7 +17708,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response',
+                '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response',
                 $request,
                 $response,
             );
@@ -17717,7 +17717,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17725,7 +17725,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17733,7 +17733,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17741,7 +17741,7 @@ class DefaultApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17749,7 +17749,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17813,7 +17813,7 @@ class DefaultApi
      */
     public function apiV1CalendarPromotionsNomenclaturesGetAsyncWithHttpInfo($promotion_id, $in_action, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsNomenclaturesGet'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response';
         $request = $this->apiV1CalendarPromotionsNomenclaturesGetRequest($promotion_id, $in_action, $limit, $offset, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -18038,14 +18038,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request api_v1_calendar_promotions_upload_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request api_v1_calendar_promotions_upload_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsUploadPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsUploadPost($api_v1_calendar_promotions_upload_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsUploadPost'][0])
     {
@@ -18062,14 +18062,14 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsUploadPost'] to see the possible values for this operation
      *
-     * @throws \Wildberries\\Sdk\\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsUploadPostWithHttpInfo($api_v1_calendar_promotions_upload_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsUploadPost'][0])
     {
@@ -18101,31 +18101,31 @@ class DefaultApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response',
                         $request,
                         $response,
                     );
                 case 429:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $request,
                         $response,
                     );
@@ -18147,7 +18147,7 @@ class DefaultApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response',
+                '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response',
                 $request,
                 $response,
             );
@@ -18156,7 +18156,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18164,7 +18164,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18172,7 +18172,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18180,7 +18180,7 @@ class DefaultApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response',
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18188,7 +18188,7 @@ class DefaultApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\\Sdk\\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18209,7 +18209,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsUploadPost'] to see the possible values for this operation
@@ -18236,7 +18236,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsUploadPost'] to see the possible values for this operation
@@ -18246,7 +18246,7 @@ class DefaultApi
      */
     public function apiV1CalendarPromotionsUploadPostAsyncWithHttpInfo($api_v1_calendar_promotions_upload_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsUploadPost'][0])
     {
-        $returnType = '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response';
+        $returnType = '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response';
         $request = $this->apiV1CalendarPromotionsUploadPostRequest($api_v1_calendar_promotions_upload_post_request, $hostIndex, $variables, $contentType);
 
         return $this->client
@@ -18292,7 +18292,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://dp-calendar-api.wildberries.ru
      *
-     * @param  \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
+     * @param  \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPostRequest $api_v1_calendar_promotions_upload_post_request (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1CalendarPromotionsUploadPost'] to see the possible values for this operation

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * GetUsersResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'total' => 'int',
         'count_in_response' => 'int',
-        'users' => '\Wildberries\\Sdk\\General\Model\GetUsersResponseUsersInner[]'
+        'users' => '\Wildberries\Sdk\General\Model\GetUsersResponseUsersInner[]'
     ];
 
     /**
@@ -369,7 +369,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets users
      *
-     * @return \Wildberries\\Sdk\\General\Model\GetUsersResponseUsersInner[]
+     * @return \Wildberries\Sdk\General\Model\GetUsersResponseUsersInner[]
      */
     public function getUsers()
     {
@@ -379,7 +379,7 @@ class GetUsersResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets users
      *
-     * @param \Wildberries\\Sdk\\General\Model\GetUsersResponseUsersInner[] $users Информация о пользователях
+     * @param \Wildberries\Sdk\General\Model\GetUsersResponseUsersInner[] $users Информация о пользователях
      *
      * @return self
      */

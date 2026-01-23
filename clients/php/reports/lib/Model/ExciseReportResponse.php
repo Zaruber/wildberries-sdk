@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * ExciseReportResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ExciseReportResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'response' => '\Wildberries\\Sdk\\Reports\Model\ModelsExciseReportResponse'
+        'response' => '\Wildberries\Sdk\Reports\Model\ModelsExciseReportResponse'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ExciseReportResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets response
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\ModelsExciseReportResponse|null
+     * @return \Wildberries\Sdk\Reports\Model\ModelsExciseReportResponse|null
      */
     public function getResponse()
     {
@@ -302,7 +302,7 @@ class ExciseReportResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets response
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\ModelsExciseReportResponse|null $response response
+     * @param \Wildberries\Sdk\Reports\Model\ModelsExciseReportResponse|null $response response
      *
      * @return self
      */

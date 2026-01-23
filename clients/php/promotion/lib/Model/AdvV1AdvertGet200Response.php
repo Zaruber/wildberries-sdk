@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1AdvertGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,8 +63,8 @@ class AdvV1AdvertGet200Response implements ModelInterface, ArrayAccess, \JsonSer
         'type' => 'int',
         'status' => 'int',
         'create_time' => '\DateTime',
-        'extended' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseExtended',
-        'items' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseItemsInner[]'
+        'extended' => '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseExtended',
+        'items' => '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseItemsInner[]'
     ];
 
     /**
@@ -503,7 +503,7 @@ class AdvV1AdvertGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets extended
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseExtended|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseExtended|null
      */
     public function getExtended()
     {
@@ -513,7 +513,7 @@ class AdvV1AdvertGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets extended
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseExtended|null $extended extended
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseExtended|null $extended extended
      *
      * @return self
      */
@@ -530,7 +530,7 @@ class AdvV1AdvertGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets items
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseItemsInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseItemsInner[]|null
      */
     public function getItems()
     {
@@ -540,7 +540,7 @@ class AdvV1AdvertGet200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets items
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1AdvertGet200ResponseItemsInner[]|null $items Информация о баннере. <br> Наличие в ответе тех или иных полей зависит от конфигурации медиакампании.
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200ResponseItemsInner[]|null $items Информация о баннере. <br> Наличие в ответе тех или иных полей зависит от конфигурации медиакампании.
      *
      * @return self
      */

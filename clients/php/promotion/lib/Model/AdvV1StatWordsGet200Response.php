@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * AdvV1StatWordsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class AdvV1StatWordsGet200Response implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'words' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseWords',
-        'stat' => '\Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseStatInner[]'
+        'words' => '\Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseWords',
+        'stat' => '\Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseStatInner[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class AdvV1StatWordsGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets words
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseWords|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseWords|null
      */
     public function getWords()
     {
@@ -309,7 +309,7 @@ class AdvV1StatWordsGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets words
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseWords|null $words words
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseWords|null $words words
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class AdvV1StatWordsGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets stat
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseStatInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseStatInner[]|null
      */
     public function getStat()
     {
@@ -336,7 +336,7 @@ class AdvV1StatWordsGet200Response implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets stat
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\AdvV1StatWordsGet200ResponseStatInner[]|null $stat Массив информации по статистике.<br> **Первый элемент массива** с `keyword: \"Всего по кампании\"` содержит суммарную информацию обо всех ключевых фразах.<br> **Каждый следующий элемент массива** содержит информацию об отдельных ключевых фразах.<br> Отображается 60 ключевых фраз с наибольшим количеством просмотров.
+     * @param \Wildberries\Sdk\Promotion\Model\AdvV1StatWordsGet200ResponseStatInner[]|null $stat Массив информации по статистике.<br> **Первый элемент массива** с `keyword: \"Всего по кампании\"` содержит суммарную информацию обо всех ключевых фразах.<br> **Каждый следующий элемент массива** содержит информацию об отдельных ключевых фразах.<br> Отображается 60 ключевых фраз с наибольшим количеством просмотров.
      *
      * @return self
      */

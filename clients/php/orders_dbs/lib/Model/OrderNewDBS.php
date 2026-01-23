@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * OrderNewDBS Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class OrderNewDBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'sale_price' => 'int',
         'required_meta' => 'string[]',
         'comment' => 'string',
-        'options' => '\Wildberries\\Sdk\\OrdersDbs\Model\OrderNewDBSOptions',
-        'address' => '\Wildberries\\Sdk\\OrdersDbs\Model\OrderNewDBSAddress',
+        'options' => '\Wildberries\Sdk\OrdersDbs\Model\OrderNewDBSOptions',
+        'address' => '\Wildberries\Sdk\OrdersDbs\Model\OrderNewDBSAddress',
         'order_uid' => 'string',
         'group_id' => 'string',
         'article' => 'string',
@@ -613,7 +613,7 @@ class OrderNewDBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets options
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\OrderNewDBSOptions|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\OrderNewDBSOptions|null
      */
     public function getOptions()
     {
@@ -623,7 +623,7 @@ class OrderNewDBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets options
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\OrderNewDBSOptions|null $options options
+     * @param \Wildberries\Sdk\OrdersDbs\Model\OrderNewDBSOptions|null $options options
      *
      * @return self
      */
@@ -640,7 +640,7 @@ class OrderNewDBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\OrderNewDBSAddress|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\OrderNewDBSAddress|null
      */
     public function getAddress()
     {
@@ -650,7 +650,7 @@ class OrderNewDBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\OrderNewDBSAddress|null $address address
+     * @param \Wildberries\Sdk\OrdersDbs\Model\OrderNewDBSAddress|null $address address
      *
      * @return self
      */

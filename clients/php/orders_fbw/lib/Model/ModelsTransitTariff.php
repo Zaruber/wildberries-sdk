@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Model;
+namespace Wildberries\Sdk\OrdersFbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * ModelsTransitTariff Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
         'transit_warehouse_name' => 'string',
         'destination_warehouse_name' => 'string',
         'active_from' => '\DateTime',
-        'box_tariff' => '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsVolumeTariff[]',
+        'box_tariff' => '\Wildberries\Sdk\OrdersFbw\Model\ModelsVolumeTariff[]',
         'pallet_tariff' => 'int'
     ];
 
@@ -401,7 +401,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets box_tariff
      *
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsVolumeTariff[]|null
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsVolumeTariff[]|null
      */
     public function getBoxTariff()
     {
@@ -411,7 +411,7 @@ class ModelsTransitTariff implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets box_tariff
      *
-     * @param \Wildberries\\Sdk\\OrdersFbw\Model\ModelsVolumeTariff[]|null $box_tariff Тариф за транзит коробов. Если `null`, транзит для коробов недоступен
+     * @param \Wildberries\Sdk\OrdersFbw\Model\ModelsVolumeTariff[]|null $box_tariff Тариф за транзит коробов. Если `null`, транзит для коробов недоступен
      *
      * @return self
      */

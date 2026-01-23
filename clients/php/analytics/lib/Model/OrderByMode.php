@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+namespace Wildberries\Sdk\Analytics\Model;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * OrderByMode Class Doc Comment
  *
  * @category Class
  * @description Порядок сортировки: - asc — по возрастанию - desc — по убыванию
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Communications\Model;
+namespace Wildberries\Sdk\Communications\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Communications\ObjectSerializer;
+use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
  * ApiFeedbacksV1PinsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Communications
+ * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiFeedbacksV1PinsGet200Response implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Communications\Model\OpenapiPinnedReviewItemResult[]',
+        'data' => '\Wildberries\Sdk\Communications\Model\OpenapiPinnedReviewItemResult[]',
         'next' => 'int'
     ];
 
@@ -302,7 +302,7 @@ class ApiFeedbacksV1PinsGet200Response implements ModelInterface, ArrayAccess, \
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Communications\Model\OpenapiPinnedReviewItemResult[]
+     * @return \Wildberries\Sdk\Communications\Model\OpenapiPinnedReviewItemResult[]
      */
     public function getData()
     {
@@ -312,7 +312,7 @@ class ApiFeedbacksV1PinsGet200Response implements ModelInterface, ArrayAccess, \
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\OpenapiPinnedReviewItemResult[] $data data
+     * @param \Wildberries\Sdk\Communications\Model\OpenapiPinnedReviewItemResult[] $data data
      *
      * @return self
      */

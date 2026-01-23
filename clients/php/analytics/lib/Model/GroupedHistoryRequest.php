@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * GroupedHistoryRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,12 +57,12 @@ class GroupedHistoryRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'selected_period' => '\Wildberries\\Sdk\\Analytics\Model\ProductsRequestSelectedPeriod',
+        'selected_period' => '\Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod',
         'brand_names' => 'string[]',
         'subject_ids' => 'int[]',
         'tag_ids' => 'int[]',
         'skip_deleted_nm' => 'bool',
-        'aggregation_level' => '\Wildberries\\Sdk\\Analytics\Model\Level'
+        'aggregation_level' => '\Wildberries\Sdk\Analytics\Model\Level'
     ];
 
     /**
@@ -330,7 +330,7 @@ class GroupedHistoryRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets selected_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductsRequestSelectedPeriod
+     * @return \Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod
      */
     public function getSelectedPeriod()
     {
@@ -340,7 +340,7 @@ class GroupedHistoryRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets selected_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductsRequestSelectedPeriod $selected_period selected_period
+     * @param \Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod $selected_period selected_period
      *
      * @return self
      */
@@ -465,7 +465,7 @@ class GroupedHistoryRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets aggregation_level
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\Level|null
+     * @return \Wildberries\Sdk\Analytics\Model\Level|null
      */
     public function getAggregationLevel()
     {
@@ -475,7 +475,7 @@ class GroupedHistoryRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets aggregation_level
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\Level|null $aggregation_level aggregation_level
+     * @param \Wildberries\Sdk\Analytics\Model\Level|null $aggregation_level aggregation_level
      *
      * @return self
      */

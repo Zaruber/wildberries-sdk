@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -70,7 +70,7 @@ class ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner implements
         'participation_percentage' => 'int',
         'type' => 'string',
         'exception_products_count' => 'int',
-        'ranging' => '\Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInnerRangingInner[]'
+        'ranging' => '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInnerRangingInner[]'
     ];
 
     /**
@@ -768,7 +768,7 @@ class ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner implements
     /**
      * Gets ranging
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInnerRangingInner[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInnerRangingInner[]|null
      */
     public function getRanging()
     {
@@ -778,7 +778,7 @@ class ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInner implements
     /**
      * Sets ranging
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInnerRangingInner[]|null $ranging Ранжирование (если подключено)
+     * @param \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200ResponseDataPromotionsInnerRangingInner[]|null $ranging Ранжирование (если подключено)
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * UserAccess Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class UserAccess implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'user_id' => 'int',
-        'access' => '\Wildberries\\Sdk\\General\Model\AccessInner[]'
+        'access' => '\Wildberries\Sdk\General\Model\AccessInner[]'
     ];
 
     /**
@@ -326,7 +326,7 @@ class UserAccess implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets access
      *
-     * @return \Wildberries\\Sdk\\General\Model\AccessInner[]|null
+     * @return \Wildberries\Sdk\General\Model\AccessInner[]|null
      */
     public function getAccess()
     {
@@ -336,7 +336,7 @@ class UserAccess implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets access
      *
-     * @param \Wildberries\\Sdk\\General\Model\AccessInner[]|null $access Настройки доступа к разделам профиля продавца
+     * @param \Wildberries\Sdk\General\Model\AccessInner[]|null $access Настройки доступа к разделам профиля продавца
      *
      * @return self
      */

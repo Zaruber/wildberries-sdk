@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,15 +26,15 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+namespace Wildberries\Sdk\Analytics\Model;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * Level Class Doc Comment
  *
  * @category Class
  * @description Тип агрегации. Если не указано, то по умолчанию используется агрегация по дням. &lt;br&gt; Доступные уровни агрегации &#x60;day&#x60;, &#x60;week&#x60;
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

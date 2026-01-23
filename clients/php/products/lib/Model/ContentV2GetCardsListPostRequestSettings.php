@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2GetCardsListPostRequestSettings Class Doc Comment
  *
  * @category Class
  * @description Настройки
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class ContentV2GetCardsListPostRequestSettings implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sort' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsSort',
-        'filter' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsFilter',
-        'cursor' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsCursor'
+        'sort' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsSort',
+        'filter' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsFilter',
+        'cursor' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsCursor'
     ];
 
     /**
@@ -307,7 +307,7 @@ class ContentV2GetCardsListPostRequestSettings implements ModelInterface, ArrayA
     /**
      * Gets sort
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsSort|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsSort|null
      */
     public function getSort()
     {
@@ -317,7 +317,7 @@ class ContentV2GetCardsListPostRequestSettings implements ModelInterface, ArrayA
     /**
      * Sets sort
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsSort|null $sort sort
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsSort|null $sort sort
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class ContentV2GetCardsListPostRequestSettings implements ModelInterface, ArrayA
     /**
      * Gets filter
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsFilter|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsFilter|null
      */
     public function getFilter()
     {
@@ -344,7 +344,7 @@ class ContentV2GetCardsListPostRequestSettings implements ModelInterface, ArrayA
     /**
      * Sets filter
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsFilter|null $filter filter
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsFilter|null $filter filter
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class ContentV2GetCardsListPostRequestSettings implements ModelInterface, ArrayA
     /**
      * Gets cursor
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsCursor|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsCursor|null
      */
     public function getCursor()
     {
@@ -371,7 +371,7 @@ class ContentV2GetCardsListPostRequestSettings implements ModelInterface, ArrayA
     /**
      * Sets cursor
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPostRequestSettingsCursor|null $cursor cursor
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPostRequestSettingsCursor|null $cursor cursor
      *
      * @return self
      */

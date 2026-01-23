@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * SearchReportProductReqParams Class Doc Comment
  *
  * @category Class
  * @description Параметры отчёта
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,14 +58,14 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'current_period' => '\Wildberries\\Sdk\\Analytics\Model\Period',
-        'past_period' => '\Wildberries\\Sdk\\Analytics\Model\PastPeriod',
+        'current_period' => '\Wildberries\Sdk\Analytics\Model\Period',
+        'past_period' => '\Wildberries\Sdk\Analytics\Model\PastPeriod',
         'subject_id' => 'int',
         'brand_name' => 'string',
         'tag_id' => 'int',
         'nm_ids' => 'int[]',
-        'position_cluster' => '\Wildberries\\Sdk\\Analytics\Model\PositionCluster',
-        'order_by' => '\Wildberries\\Sdk\\Analytics\Model\OrderBy',
+        'position_cluster' => '\Wildberries\Sdk\Analytics\Model\PositionCluster',
+        'order_by' => '\Wildberries\Sdk\Analytics\Model\OrderBy',
         'include_substituted_skus' => 'bool',
         'include_search_texts' => 'bool'
     ];
@@ -373,7 +373,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets current_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\Period
+     * @return \Wildberries\Sdk\Analytics\Model\Period
      */
     public function getCurrentPeriod()
     {
@@ -383,7 +383,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets current_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\Period $current_period current_period
+     * @param \Wildberries\Sdk\Analytics\Model\Period $current_period current_period
      *
      * @return self
      */
@@ -400,7 +400,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets past_period
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null
+     * @return \Wildberries\Sdk\Analytics\Model\PastPeriod|null
      */
     public function getPastPeriod()
     {
@@ -410,7 +410,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets past_period
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PastPeriod|null $past_period past_period
+     * @param \Wildberries\Sdk\Analytics\Model\PastPeriod|null $past_period past_period
      *
      * @return self
      */
@@ -542,7 +542,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets position_cluster
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\PositionCluster
+     * @return \Wildberries\Sdk\Analytics\Model\PositionCluster
      */
     public function getPositionCluster()
     {
@@ -552,7 +552,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets position_cluster
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\PositionCluster $position_cluster position_cluster
+     * @param \Wildberries\Sdk\Analytics\Model\PositionCluster $position_cluster position_cluster
      *
      * @return self
      */
@@ -569,7 +569,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets order_by
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\OrderBy
+     * @return \Wildberries\Sdk\Analytics\Model\OrderBy
      */
     public function getOrderBy()
     {
@@ -579,7 +579,7 @@ class SearchReportProductReqParams implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets order_by
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\OrderBy $order_by order_by
+     * @param \Wildberries\Sdk\Analytics\Model\OrderBy $order_by order_by
      *
      * @return self
      */

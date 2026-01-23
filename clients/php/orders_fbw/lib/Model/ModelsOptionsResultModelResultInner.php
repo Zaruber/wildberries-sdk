@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbw\Model;
+namespace Wildberries\Sdk\OrdersFbw\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbw\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbw\ObjectSerializer;
 
 /**
  * ModelsOptionsResultModelResultInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbw
+ * @package  Wildberries\Sdk\OrdersFbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class ModelsOptionsResultModelResultInner implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'barcode' => 'string',
-        'error' => '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInnerError',
+        'error' => '\Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInnerError',
         'is_error' => 'bool',
-        'warehouses' => '\Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInnerWarehousesInner[]'
+        'warehouses' => '\Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInnerWarehousesInner[]'
     ];
 
     /**
@@ -340,7 +340,7 @@ class ModelsOptionsResultModelResultInner implements ModelInterface, ArrayAccess
     /**
      * Gets error
      *
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInnerError|null
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInnerError|null
      */
     public function getError()
     {
@@ -350,7 +350,7 @@ class ModelsOptionsResultModelResultInner implements ModelInterface, ArrayAccess
     /**
      * Sets error
      *
-     * @param \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInnerError|null $error error
+     * @param \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInnerError|null $error error
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class ModelsOptionsResultModelResultInner implements ModelInterface, ArrayAccess
     /**
      * Gets warehouses
      *
-     * @return \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInnerWarehousesInner[]|null
+     * @return \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInnerWarehousesInner[]|null
      */
     public function getWarehouses()
     {
@@ -404,7 +404,7 @@ class ModelsOptionsResultModelResultInner implements ModelInterface, ArrayAccess
     /**
      * Sets warehouses
      *
-     * @param \Wildberries\\Sdk\\OrdersFbw\Model\ModelsOptionsResultModelResultInnerWarehousesInner[]|null $warehouses Список складов. При наличии ошибки будет `null`
+     * @param \Wildberries\Sdk\OrdersFbw\Model\ModelsOptionsResultModelResultInnerWarehousesInner[]|null $warehouses Список складов. При наличии ошибки будет `null`
      *
      * @return self
      */

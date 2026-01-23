@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ProductOrdersTextItem Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ProductOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'text' => 'string',
         'frequency' => 'int',
-        'date_items' => '\Wildberries\\Sdk\\Analytics\Model\ProductOrdersMetrics[]'
+        'date_items' => '\Wildberries\Sdk\Analytics\Model\ProductOrdersMetrics[]'
     ];
 
     /**
@@ -369,7 +369,7 @@ class ProductOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets date_items
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\ProductOrdersMetrics[]
+     * @return \Wildberries\Sdk\Analytics\Model\ProductOrdersMetrics[]
      */
     public function getDateItems()
     {
@@ -379,7 +379,7 @@ class ProductOrdersTextItem implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets date_items
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\ProductOrdersMetrics[] $date_items Статистика по датам
+     * @param \Wildberries\Sdk\Analytics\Model\ProductOrdersMetrics[] $date_items Статистика по датам
      *
      * @return self
      */

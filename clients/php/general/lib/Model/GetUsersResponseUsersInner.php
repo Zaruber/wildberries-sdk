@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * GetUsersResponseUsersInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -68,8 +68,8 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
         'patronymic' => 'string',
         'goods_return' => 'bool',
         'is_invitee' => 'bool',
-        'invitee_info' => '\Wildberries\\Sdk\\General\Model\GetUsersResponseUsersInnerInviteeInfo',
-        'access' => '\Wildberries\\Sdk\\General\Model\AccessInner[]'
+        'invitee_info' => '\Wildberries\Sdk\General\Model\GetUsersResponseUsersInnerInviteeInfo',
+        'access' => '\Wildberries\Sdk\General\Model\AccessInner[]'
     ];
 
     /**
@@ -746,7 +746,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets invitee_info
      *
-     * @return \Wildberries\\Sdk\\General\Model\GetUsersResponseUsersInnerInviteeInfo|null
+     * @return \Wildberries\Sdk\General\Model\GetUsersResponseUsersInnerInviteeInfo|null
      */
     public function getInviteeInfo()
     {
@@ -756,7 +756,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets invitee_info
      *
-     * @param \Wildberries\\Sdk\\General\Model\GetUsersResponseUsersInnerInviteeInfo|null $invitee_info invitee_info
+     * @param \Wildberries\Sdk\General\Model\GetUsersResponseUsersInnerInviteeInfo|null $invitee_info invitee_info
      *
      * @return self
      */
@@ -780,7 +780,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets access
      *
-     * @return \Wildberries\\Sdk\\General\Model\AccessInner[]
+     * @return \Wildberries\Sdk\General\Model\AccessInner[]
      */
     public function getAccess()
     {
@@ -790,7 +790,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets access
      *
-     * @param \Wildberries\\Sdk\\General\Model\AccessInner[] $access Настройки доступа к разделам профиля продавца
+     * @param \Wildberries\Sdk\General\Model\AccessInner[] $access Настройки доступа к разделам профиля продавца
      *
      * @return self
      */

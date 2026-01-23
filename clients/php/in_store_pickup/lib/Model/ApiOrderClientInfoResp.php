@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\InStorePickup\Model;
+namespace Wildberries\Sdk\InStorePickup\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\InStorePickup\ObjectSerializer;
+use \Wildberries\Sdk\InStorePickup\ObjectSerializer;
 
 /**
  * ApiOrderClientInfoResp Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\InStorePickup
+ * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiOrderClientInfoResp implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\InStorePickup\Model\ApiOrderClientInfo[]'
+        'orders' => '\Wildberries\Sdk\InStorePickup\Model\ApiOrderClientInfo[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiOrderClientInfoResp implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\InStorePickup\Model\ApiOrderClientInfo[]|null
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrderClientInfo[]|null
      */
     public function getOrders()
     {
@@ -302,7 +302,7 @@ class ApiOrderClientInfoResp implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\InStorePickup\Model\ApiOrderClientInfo[]|null $orders orders
+     * @param \Wildberries\Sdk\InStorePickup\Model\ApiOrderClientInfo[]|null $orders orders
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * ApiV1AnalyticsAntifraudDetailsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV1AnalyticsAntifraudDetailsGet200Response implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'details' => '\Wildberries\\Sdk\\Reports\Model\ApiV1AnalyticsAntifraudDetailsGet200ResponseDetailsInner[]'
+        'details' => '\Wildberries\Sdk\Reports\Model\ApiV1AnalyticsAntifraudDetailsGet200ResponseDetailsInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV1AnalyticsAntifraudDetailsGet200Response implements ModelInterface, Ar
     /**
      * Gets details
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\ApiV1AnalyticsAntifraudDetailsGet200ResponseDetailsInner[]|null
+     * @return \Wildberries\Sdk\Reports\Model\ApiV1AnalyticsAntifraudDetailsGet200ResponseDetailsInner[]|null
      */
     public function getDetails()
     {
@@ -302,7 +302,7 @@ class ApiV1AnalyticsAntifraudDetailsGet200Response implements ModelInterface, Ar
     /**
      * Sets details
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\ApiV1AnalyticsAntifraudDetailsGet200ResponseDetailsInner[]|null $details details
+     * @param \Wildberries\Sdk\Reports\Model\ApiV1AnalyticsAntifraudDetailsGet200ResponseDetailsInner[]|null $details details
      *
      * @return self
      */

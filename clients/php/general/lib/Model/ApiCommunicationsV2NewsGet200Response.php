@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\General\Model;
+namespace Wildberries\Sdk\General\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\General\ObjectSerializer;
+use \Wildberries\Sdk\General\ObjectSerializer;
 
 /**
  * ApiCommunicationsV2NewsGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\General
+ * @package  Wildberries\Sdk\General
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiCommunicationsV2NewsGet200Response implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInner[]'
+        'data' => '\Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiCommunicationsV2NewsGet200Response implements ModelInterface, ArrayAcce
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInner[]|null
+     * @return \Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInner[]|null
      */
     public function getData()
     {
@@ -302,7 +302,7 @@ class ApiCommunicationsV2NewsGet200Response implements ModelInterface, ArrayAcce
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInner[]|null $data Новости
+     * @param \Wildberries\Sdk\General\Model\ApiCommunicationsV2NewsGet200ResponseDataInner[]|null $data Новости
      *
      * @return self
      */

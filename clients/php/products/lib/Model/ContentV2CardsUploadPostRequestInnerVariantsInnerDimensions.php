@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions Class Doc Comment
  *
  * @category Class
  * @description Габариты и вес товара &#x60;c упаковкой&#x60;.&lt;br&gt; Укажите в &#x60;сантиметрах&#x60; и &#x60;килограммах&#x60; для любого товара.&lt;br&gt; Если данные не указаны, автоматически сгенерируются нулевые значения длины, ширины, высоты и веса.&lt;br&gt; Синхронизация данных новой карточки с сервисом может занимать до 30 минут
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

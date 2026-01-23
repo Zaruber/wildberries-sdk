@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * RequestPublicViewerPublicErrorsTableListV2 Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class RequestPublicViewerPublicErrorsTableListV2 implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cursor' => '\Wildberries\\Sdk\\Products\Model\SwaggerPublicErrorsCursorInput',
-        'order' => '\Wildberries\\Sdk\\Products\Model\SwaggerPublicErrorsOrderV2'
+        'cursor' => '\Wildberries\Sdk\Products\Model\SwaggerPublicErrorsCursorInput',
+        'order' => '\Wildberries\Sdk\Products\Model\SwaggerPublicErrorsOrderV2'
     ];
 
     /**
@@ -299,7 +299,7 @@ class RequestPublicViewerPublicErrorsTableListV2 implements ModelInterface, Arra
     /**
      * Gets cursor
      *
-     * @return \Wildberries\\Sdk\\Products\Model\SwaggerPublicErrorsCursorInput|null
+     * @return \Wildberries\Sdk\Products\Model\SwaggerPublicErrorsCursorInput|null
      */
     public function getCursor()
     {
@@ -309,7 +309,7 @@ class RequestPublicViewerPublicErrorsTableListV2 implements ModelInterface, Arra
     /**
      * Sets cursor
      *
-     * @param \Wildberries\\Sdk\\Products\Model\SwaggerPublicErrorsCursorInput|null $cursor cursor
+     * @param \Wildberries\Sdk\Products\Model\SwaggerPublicErrorsCursorInput|null $cursor cursor
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class RequestPublicViewerPublicErrorsTableListV2 implements ModelInterface, Arra
     /**
      * Gets order
      *
-     * @return \Wildberries\\Sdk\\Products\Model\SwaggerPublicErrorsOrderV2|null
+     * @return \Wildberries\Sdk\Products\Model\SwaggerPublicErrorsOrderV2|null
      */
     public function getOrder()
     {
@@ -336,7 +336,7 @@ class RequestPublicViewerPublicErrorsTableListV2 implements ModelInterface, Arra
     /**
      * Sets order
      *
-     * @param \Wildberries\\Sdk\\Products\Model\SwaggerPublicErrorsOrderV2|null $order order
+     * @param \Wildberries\Sdk\Products\Model\SwaggerPublicErrorsOrderV2|null $order order
      *
      * @return self
      */

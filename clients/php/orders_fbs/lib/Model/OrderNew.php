@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * OrderNew Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => '\Wildberries\\Sdk\\OrdersFbs\Model\OrderAddress',
+        'address' => '\Wildberries\Sdk\OrdersFbs\Model\OrderAddress',
         'ddate' => 'string',
         'seller_date' => 'string',
         'sale_price' => 'int',
@@ -86,7 +86,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'converted_currency_code' => 'int',
         'cargo_type' => 'int',
         'is_zero_order' => 'bool',
-        'options' => '\Wildberries\\Sdk\\OrdersFbs\Model\OrderOptions'
+        'options' => '\Wildberries\Sdk\OrdersFbs\Model\OrderOptions'
     ];
 
     /**
@@ -547,7 +547,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\OrderAddress|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\OrderAddress|null
      */
     public function getAddress()
     {
@@ -557,7 +557,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\OrderAddress|null $address address
+     * @param \Wildberries\Sdk\OrdersFbs\Model\OrderAddress|null $address address
      *
      * @return self
      */
@@ -1403,7 +1403,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets options
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\OrderOptions|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\OrderOptions|null
      */
     public function getOptions()
     {
@@ -1413,7 +1413,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets options
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\OrderOptions|null $options options
+     * @param \Wildberries\Sdk\OrdersFbs\Model\OrderOptions|null $options options
      *
      * @return self
      */

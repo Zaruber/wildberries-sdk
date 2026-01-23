@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * ApiV1AnalyticsBannedProductsShadowedGet200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiV1AnalyticsBannedProductsShadowedGet200Response implements ModelInterfa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'report' => '\Wildberries\\Sdk\\Reports\Model\ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner[]'
+        'report' => '\Wildberries\Sdk\Reports\Model\ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ApiV1AnalyticsBannedProductsShadowedGet200Response implements ModelInterfa
     /**
      * Gets report
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner[]|null
+     * @return \Wildberries\Sdk\Reports\Model\ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner[]|null
      */
     public function getReport()
     {
@@ -302,7 +302,7 @@ class ApiV1AnalyticsBannedProductsShadowedGet200Response implements ModelInterfa
     /**
      * Sets report
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner[]|null $report Отчёт
+     * @param \Wildberries\Sdk\Reports\Model\ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner[]|null $report Отчёт
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersDbs\Model;
+namespace Wildberries\Sdk\OrdersDbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersDbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersDbs\ObjectSerializer;
 
 /**
  * ApiOrdersUINSetRequest Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersDbs
+ * @package  Wildberries\Sdk\OrdersDbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiOrdersUINSetRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Wildberries\\Sdk\\OrdersDbs\Model\ApiUIN[]'
+        'orders' => '\Wildberries\Sdk\OrdersDbs\Model\ApiUIN[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class ApiOrdersUINSetRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets orders
      *
-     * @return \Wildberries\\Sdk\\OrdersDbs\Model\ApiUIN[]
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiUIN[]
      */
     public function getOrders()
     {
@@ -309,7 +309,7 @@ class ApiOrdersUINSetRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets orders
      *
-     * @param \Wildberries\\Sdk\\OrdersDbs\Model\ApiUIN[] $orders orders
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiUIN[] $orders orders
      *
      * @return self
      */

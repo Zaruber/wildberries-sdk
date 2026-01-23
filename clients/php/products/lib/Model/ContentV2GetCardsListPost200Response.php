@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2GetCardsListPost200Response Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class ContentV2GetCardsListPost200Response implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cards' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInner[]',
-        'cursor' => '\Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCursor'
+        'cards' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInner[]',
+        'cursor' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCursor'
     ];
 
     /**
@@ -299,7 +299,7 @@ class ContentV2GetCardsListPost200Response implements ModelInterface, ArrayAcces
     /**
      * Gets cards
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInner[]|null
      */
     public function getCards()
     {
@@ -309,7 +309,7 @@ class ContentV2GetCardsListPost200Response implements ModelInterface, ArrayAcces
     /**
      * Sets cards
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCardsInner[]|null $cards Список карточек товаров
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInner[]|null $cards Список карточек товаров
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class ContentV2GetCardsListPost200Response implements ModelInterface, ArrayAcces
     /**
      * Gets cursor
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCursor|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCursor|null
      */
     public function getCursor()
     {
@@ -336,7 +336,7 @@ class ContentV2GetCardsListPost200Response implements ModelInterface, ArrayAcces
     /**
      * Sets cursor
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2GetCardsListPost200ResponseCursor|null $cursor cursor
+     * @param \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCursor|null $cursor cursor
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => '\Wildberries\\Sdk\\Promotion\Model\PlacementType',
+        'type' => '\Wildberries\Sdk\Promotion\Model\PlacementType',
         'value' => 'int'
     ];
 
@@ -305,7 +305,7 @@ class ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner implements ModelInterf
     /**
      * Gets type
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\PlacementType
+     * @return \Wildberries\Sdk\Promotion\Model\PlacementType
      */
     public function getType()
     {
@@ -315,7 +315,7 @@ class ApiAdvertV1BidsMinPost200ResponseBidsInnerBidsInner implements ModelInterf
     /**
      * Sets type
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\PlacementType $type type
+     * @param \Wildberries\Sdk\Promotion\Model\PlacementType $type type
      *
      * @return self
      */

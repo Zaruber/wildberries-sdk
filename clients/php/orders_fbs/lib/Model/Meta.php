@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\OrdersFbs\Model;
+namespace Wildberries\Sdk\OrdersFbs\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\OrdersFbs\ObjectSerializer;
+use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
 
 /**
  * Meta Class Doc Comment
  *
  * @category Class
  * @description Метаданные сборочного задания
- * @package  Wildberries\\Sdk\\OrdersFbs
+ * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,12 +58,12 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'imei' => '\Wildberries\\Sdk\\OrdersFbs\Model\MetaImei',
-        'uin' => '\Wildberries\\Sdk\\OrdersFbs\Model\MetaUin',
-        'gtin' => '\Wildberries\\Sdk\\OrdersFbs\Model\MetaGtin',
-        'sgtin' => '\Wildberries\\Sdk\\OrdersFbs\Model\MetaSgtin',
-        'expiration' => '\Wildberries\\Sdk\\OrdersFbs\Model\MetaExpiration',
-        'customs_declaration' => '\Wildberries\\Sdk\\OrdersFbs\Model\MetaCustomsDeclaration'
+        'imei' => '\Wildberries\Sdk\OrdersFbs\Model\MetaImei',
+        'uin' => '\Wildberries\Sdk\OrdersFbs\Model\MetaUin',
+        'gtin' => '\Wildberries\Sdk\OrdersFbs\Model\MetaGtin',
+        'sgtin' => '\Wildberries\Sdk\OrdersFbs\Model\MetaSgtin',
+        'expiration' => '\Wildberries\Sdk\OrdersFbs\Model\MetaExpiration',
+        'customs_declaration' => '\Wildberries\Sdk\OrdersFbs\Model\MetaCustomsDeclaration'
     ];
 
     /**
@@ -328,7 +328,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets imei
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\MetaImei|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\MetaImei|null
      */
     public function getImei()
     {
@@ -338,7 +338,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets imei
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\MetaImei|null $imei imei
+     * @param \Wildberries\Sdk\OrdersFbs\Model\MetaImei|null $imei imei
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets uin
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\MetaUin|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\MetaUin|null
      */
     public function getUin()
     {
@@ -365,7 +365,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets uin
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\MetaUin|null $uin uin
+     * @param \Wildberries\Sdk\OrdersFbs\Model\MetaUin|null $uin uin
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gtin
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\MetaGtin|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\MetaGtin|null
      */
     public function getGtin()
     {
@@ -392,7 +392,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gtin
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\MetaGtin|null $gtin gtin
+     * @param \Wildberries\Sdk\OrdersFbs\Model\MetaGtin|null $gtin gtin
      *
      * @return self
      */
@@ -409,7 +409,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sgtin
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\MetaSgtin|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\MetaSgtin|null
      */
     public function getSgtin()
     {
@@ -419,7 +419,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sgtin
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\MetaSgtin|null $sgtin sgtin
+     * @param \Wildberries\Sdk\OrdersFbs\Model\MetaSgtin|null $sgtin sgtin
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets expiration
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\MetaExpiration|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\MetaExpiration|null
      */
     public function getExpiration()
     {
@@ -446,7 +446,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiration
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\MetaExpiration|null $expiration expiration
+     * @param \Wildberries\Sdk\OrdersFbs\Model\MetaExpiration|null $expiration expiration
      *
      * @return self
      */
@@ -463,7 +463,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets customs_declaration
      *
-     * @return \Wildberries\\Sdk\\OrdersFbs\Model\MetaCustomsDeclaration|null
+     * @return \Wildberries\Sdk\OrdersFbs\Model\MetaCustomsDeclaration|null
      */
     public function getCustomsDeclaration()
     {
@@ -473,7 +473,7 @@ class Meta implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customs_declaration
      *
-     * @param \Wildberries\\Sdk\\OrdersFbs\Model\MetaCustomsDeclaration|null $customs_declaration customs_declaration
+     * @param \Wildberries\Sdk\OrdersFbs\Model\MetaCustomsDeclaration|null $customs_declaration customs_declaration
      *
      * @return self
      */

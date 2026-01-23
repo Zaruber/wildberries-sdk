@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Wbd\Model;
+namespace Wildberries\Sdk\Wbd\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Wbd\ObjectSerializer;
+use \Wildberries\Sdk\Wbd\ObjectSerializer;
 
 /**
  * CatalogNode Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Wbd
+ * @package  Wildberries\Sdk\Wbd
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class CatalogNode implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'children' => '\Wildberries\\Sdk\\Wbd\Model\CatalogNode[]',
+        'children' => '\Wildberries\Sdk\Wbd\Model\CatalogNode[]',
         'img' => 'string',
         'name' => 'string',
         'parent_id' => 'int',
@@ -355,7 +355,7 @@ class CatalogNode implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets children
      *
-     * @return \Wildberries\\Sdk\\Wbd\Model\CatalogNode[]|null
+     * @return \Wildberries\Sdk\Wbd\Model\CatalogNode[]|null
      */
     public function getChildren()
     {
@@ -365,7 +365,7 @@ class CatalogNode implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets children
      *
-     * @param \Wildberries\\Sdk\\Wbd\Model\CatalogNode[]|null $children Список дочерних узлов
+     * @param \Wildberries\Sdk\Wbd\Model\CatalogNode[]|null $children Список дочерних узлов
      *
      * @return self
      */

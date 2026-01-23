@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ApiV2HistoryGoodsTaskGet200ResponseData Class Doc Comment
  *
  * @category Class
  * @description Данные ответа
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ApiV2HistoryGoodsTaskGet200ResponseData implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'upload_id' => 'int',
-        'history_goods' => '\Wildberries\\Sdk\\Products\Model\GoodHistory[]'
+        'history_goods' => '\Wildberries\Sdk\Products\Model\GoodHistory[]'
     ];
 
     /**
@@ -327,7 +327,7 @@ class ApiV2HistoryGoodsTaskGet200ResponseData implements ModelInterface, ArrayAc
     /**
      * Gets history_goods
      *
-     * @return \Wildberries\\Sdk\\Products\Model\GoodHistory[]|null
+     * @return \Wildberries\Sdk\Products\Model\GoodHistory[]|null
      */
     public function getHistoryGoods()
     {
@@ -337,7 +337,7 @@ class ApiV2HistoryGoodsTaskGet200ResponseData implements ModelInterface, ArrayAc
     /**
      * Sets history_goods
      *
-     * @param \Wildberries\\Sdk\\Products\Model\GoodHistory[]|null $history_goods Информация о товарах в загрузке
+     * @param \Wildberries\Sdk\Products\Model\GoodHistory[]|null $history_goods Информация о товарах в загрузке
      *
      * @return self
      */

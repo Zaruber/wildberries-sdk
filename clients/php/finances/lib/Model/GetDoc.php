@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Finances\Model;
+namespace Wildberries\Sdk\Finances\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Finances\ObjectSerializer;
+use \Wildberries\Sdk\Finances\ObjectSerializer;
 
 /**
  * GetDoc Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Finances
+ * @package  Wildberries\Sdk\Finances
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GetDoc implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\\Sdk\\Finances\Model\GetDocData'
+        'data' => '\Wildberries\Sdk\Finances\Model\GetDocData'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GetDoc implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \Wildberries\\Sdk\\Finances\Model\GetDocData|null
+     * @return \Wildberries\Sdk\Finances\Model\GetDocData|null
      */
     public function getData()
     {
@@ -302,7 +302,7 @@ class GetDoc implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \Wildberries\\Sdk\\Finances\Model\GetDocData|null $data data
+     * @param \Wildberries\Sdk\Finances\Model\GetDocData|null $data data
      *
      * @return self
      */

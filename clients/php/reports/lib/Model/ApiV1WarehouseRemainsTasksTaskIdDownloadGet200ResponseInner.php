@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Reports\Model;
+namespace Wildberries\Sdk\Reports\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Reports\ObjectSerializer;
+use \Wildberries\Sdk\Reports\ObjectSerializer;
 
 /**
  * ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Reports
+ * @package  Wildberries\Sdk\Reports
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,7 +64,7 @@ class ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner implements Mod
         'barcode' => 'string',
         'tech_size' => 'string',
         'volume' => 'float',
-        'warehouses' => '\Wildberries\\Sdk\\Reports\Model\ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner[]'
+        'warehouses' => '\Wildberries\Sdk\Reports\Model\ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner[]'
     ];
 
     /**
@@ -530,7 +530,7 @@ class ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner implements Mod
     /**
      * Gets warehouses
      *
-     * @return \Wildberries\\Sdk\\Reports\Model\ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner[]|null
+     * @return \Wildberries\Sdk\Reports\Model\ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner[]|null
      */
     public function getWarehouses()
     {
@@ -540,7 +540,7 @@ class ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner implements Mod
     /**
      * Sets warehouses
      *
-     * @param \Wildberries\\Sdk\\Reports\Model\ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner[]|null $warehouses Остатки на складах и товары в пути. Будут в ответе только при ненулевом `quantity`
+     * @param \Wildberries\Sdk\Reports\Model\ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner[]|null $warehouses Остатки на складах и товары в пути. Будут в ответе только при ненулевом `quantity`
      *
      * @return self
      */

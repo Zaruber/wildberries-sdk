@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * V0GetNormQueryMinusResponse Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class V0GetNormQueryMinusResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponseItem[]'
+        'items' => '\Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponseItem[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class V0GetNormQueryMinusResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets items
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponseItem[]
+     * @return \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponseItem[]
      */
     public function getItems()
     {
@@ -305,7 +305,7 @@ class V0GetNormQueryMinusResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets items
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\V0GetNormQueryMinusResponseItem[] $items items
+     * @param \Wildberries\Sdk\Promotion\Model\V0GetNormQueryMinusResponseItem[] $items items
      *
      * @return self
      */

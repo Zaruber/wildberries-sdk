@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Promotion\Model;
+namespace Wildberries\Sdk\Promotion\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Promotion\ObjectSerializer;
+use \Wildberries\Sdk\Promotion\ObjectSerializer;
 
 /**
  * Stat Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Promotion
+ * @package  Wildberries\Sdk\Promotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class Stat implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'stats' => '\Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]'
+        'stats' => '\Wildberries\Sdk\Promotion\Model\StatsBlok1[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class Stat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets stats
      *
-     * @return \Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]|null
+     * @return \Wildberries\Sdk\Promotion\Model\StatsBlok1[]|null
      */
     public function getStats()
     {
@@ -302,7 +302,7 @@ class Stat implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stats
      *
-     * @param \Wildberries\\Sdk\\Promotion\Model\StatsBlok1[]|null $stats Блок статистики
+     * @param \Wildberries\Sdk\Promotion\Model\StatsBlok1[]|null $stats Блок статистики
      *
      * @return self
      */

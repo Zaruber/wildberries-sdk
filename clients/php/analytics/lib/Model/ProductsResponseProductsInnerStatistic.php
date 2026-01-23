@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Analytics\Model;
+namespace Wildberries\Sdk\Analytics\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Analytics\ObjectSerializer;
+use \Wildberries\Sdk\Analytics\ObjectSerializer;
 
 /**
  * ProductsResponseProductsInnerStatistic Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Analytics
+ * @package  Wildberries\Sdk\Analytics
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,9 +57,9 @@ class ProductsResponseProductsInnerStatistic implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'selected' => '\Wildberries\\Sdk\\Analytics\Model\StatisticsSelected',
-        'past' => '\Wildberries\\Sdk\\Analytics\Model\StatisticsPast',
-        'comparison' => '\Wildberries\\Sdk\\Analytics\Model\StatisticsComparison'
+        'selected' => '\Wildberries\Sdk\Analytics\Model\StatisticsSelected',
+        'past' => '\Wildberries\Sdk\Analytics\Model\StatisticsPast',
+        'comparison' => '\Wildberries\Sdk\Analytics\Model\StatisticsComparison'
     ];
 
     /**
@@ -309,7 +309,7 @@ class ProductsResponseProductsInnerStatistic implements ModelInterface, ArrayAcc
     /**
      * Gets selected
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StatisticsSelected
+     * @return \Wildberries\Sdk\Analytics\Model\StatisticsSelected
      */
     public function getSelected()
     {
@@ -319,7 +319,7 @@ class ProductsResponseProductsInnerStatistic implements ModelInterface, ArrayAcc
     /**
      * Sets selected
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StatisticsSelected $selected selected
+     * @param \Wildberries\Sdk\Analytics\Model\StatisticsSelected $selected selected
      *
      * @return self
      */
@@ -336,7 +336,7 @@ class ProductsResponseProductsInnerStatistic implements ModelInterface, ArrayAcc
     /**
      * Gets past
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StatisticsPast|null
+     * @return \Wildberries\Sdk\Analytics\Model\StatisticsPast|null
      */
     public function getPast()
     {
@@ -346,7 +346,7 @@ class ProductsResponseProductsInnerStatistic implements ModelInterface, ArrayAcc
     /**
      * Sets past
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StatisticsPast|null $past past
+     * @param \Wildberries\Sdk\Analytics\Model\StatisticsPast|null $past past
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class ProductsResponseProductsInnerStatistic implements ModelInterface, ArrayAcc
     /**
      * Gets comparison
      *
-     * @return \Wildberries\\Sdk\\Analytics\Model\StatisticsComparison|null
+     * @return \Wildberries\Sdk\Analytics\Model\StatisticsComparison|null
      */
     public function getComparison()
     {
@@ -373,7 +373,7 @@ class ProductsResponseProductsInnerStatistic implements ModelInterface, ArrayAcc
     /**
      * Sets comparison
      *
-     * @param \Wildberries\\Sdk\\Analytics\Model\StatisticsComparison|null $comparison comparison
+     * @param \Wildberries\Sdk\Analytics\Model\StatisticsComparison|null $comparison comparison
      *
      * @return self
      */

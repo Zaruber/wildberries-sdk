@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ResponseCardCreate Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class ResponseCardCreate implements ModelInterface, ArrayAccess, \JsonSerializab
         'data' => 'object',
         'error' => 'bool',
         'error_text' => 'string',
-        'additional_errors' => '\Wildberries\\Sdk\\Products\Model\ResponseCardCreateAdditionalErrors'
+        'additional_errors' => '\Wildberries\Sdk\Products\Model\ResponseCardCreateAdditionalErrors'
     ];
 
     /**
@@ -401,7 +401,7 @@ class ResponseCardCreate implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets additional_errors
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ResponseCardCreateAdditionalErrors|null
+     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreateAdditionalErrors|null
      */
     public function getAdditionalErrors()
     {
@@ -411,7 +411,7 @@ class ResponseCardCreate implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets additional_errors
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ResponseCardCreateAdditionalErrors|null $additional_errors additional_errors
+     * @param \Wildberries\Sdk\Products\Model\ResponseCardCreateAdditionalErrors|null $additional_errors additional_errors
      *
      * @return self
      */

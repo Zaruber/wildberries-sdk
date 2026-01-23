@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Wildberries\\Sdk\\Products\Model;
+namespace Wildberries\Sdk\Products\Model;
 
 use \ArrayAccess;
-use \Wildberries\\Sdk\\Products\ObjectSerializer;
+use \Wildberries\Sdk\Products\ObjectSerializer;
 
 /**
  * ContentV2CardsUploadPostRequestInner Class Doc Comment
  *
  * @category Class
- * @package  Wildberries\\Sdk\\Products
+ * @package  Wildberries\Sdk\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ContentV2CardsUploadPostRequestInner implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'subject_id' => 'int',
-        'variants' => '\Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[]'
+        'variants' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[]'
     ];
 
     /**
@@ -332,7 +332,7 @@ class ContentV2CardsUploadPostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Gets variants
      *
-     * @return \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[]
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[]
      */
     public function getVariants()
     {
@@ -342,7 +342,7 @@ class ContentV2CardsUploadPostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Sets variants
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[] $variants [Объединённые](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров.<br>Чтобы создать отдельную карточку, передайте только один объект
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[] $variants [Объединённые](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров.<br>Чтобы создать отдельную карточку, передайте только один объект
      *
      * @return self
      */
