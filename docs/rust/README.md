@@ -6,9 +6,8 @@
 
 Каждая спецификация - отдельный crate (например, `wildberries_sdk_general`).
 
-```toml
-[dependencies]
-wildberries_sdk_general = "0.1.0"
+```bash
+cargo add wildberries_sdk_general
 ```
 
 Если крейты недоступны в registry, используйте локальные зависимости:

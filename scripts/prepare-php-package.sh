@@ -99,7 +99,7 @@ def find_requirements() -> dict:
 
 autoload = {}
 for module in modules:
-    namespace = f"Wildberries\\\\Sdk\\\\{to_pascal(module)}\\\\"
+    namespace = f"Wildberries\\Sdk\\{to_pascal(module)}\\"
     autoload[namespace] = f"clients/php/{module}/lib/"
 
 composer = {

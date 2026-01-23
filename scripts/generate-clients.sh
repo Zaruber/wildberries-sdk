@@ -214,6 +214,55 @@ fix_go_module() {
   mv "${tmp_file}" "${go_mod}"
 }
 
+fix_go_large_ids() {
+  local out_path="$1"
+  local py_bin=""
+
+  if command -v python3 >/dev/null 2>&1; then
+    py_bin="python3"
+  elif command -v python >/dev/null 2>&1; then
+    py_bin="python"
+  else
+    echo "Warning: python not found; skipping Go large-id fix in ${out_path}" >&2
+    return 0
+  fi
+
+  OUT_PATH="${out_path}" "${py_bin}" - <<'PY'
+import os
+import re
+from pathlib import Path
+
+root = Path(os.environ["OUT_PATH"])
+
+replacements = [
+    ("LastOrderShkId *int32", "LastOrderShkId *int64"),
+    ("GetLastOrderShkId() int32", "GetLastOrderShkId() int64"),
+    ("GetLastOrderShkIdOk() (*int32, bool)", "GetLastOrderShkIdOk() (*int64, bool)"),
+    ("SetLastOrderShkId gets a reference to the given int32", "SetLastOrderShkId gets a reference to the given int64"),
+    ("SetLastOrderShkId(v int32)", "SetLastOrderShkId(v int64)"),
+]
+
+for path in root.rglob("*.go"):
+    text = path.read_text(encoding="utf-8")
+    if "LastOrderShkId" not in text:
+        continue
+
+    new_text = text
+    for old, new in replacements:
+        new_text = new_text.replace(old, new)
+
+    new_text = re.sub(
+        r"(func \\(o \\*[^)]+\\) GetLastOrderShkId\\(\\) int64 \\{.*?)(var ret )int32",
+        r"\\1\\2int64",
+        new_text,
+        flags=re.S,
+    )
+
+    if new_text != text:
+        path.write_text(new_text, encoding="utf-8")
+PY
+}
+
 fix_typescript_enum_keys() {
   local dir="$1"
   python3 - <<PY
@@ -643,6 +692,35 @@ ensure_cargo_metadata(root)
 PY
 }
 
+fix_rust_large_ids() {
+  local out_path="$1"
+  local py_bin=""
+
+  if command -v python3 >/dev/null 2>&1; then
+    py_bin="python3"
+  elif command -v python >/dev/null 2>&1; then
+    py_bin="python"
+  else
+    echo "Warning: python not found; skipping Rust large-id fix in ${out_path}" >&2
+    return 0
+  fi
+
+  OUT_PATH="${out_path}" "${py_bin}" - <<'PY'
+import os
+from pathlib import Path
+
+root = Path(os.environ["OUT_PATH"])
+
+for path in root.rglob("*.rs"):
+    text = path.read_text(encoding="utf-8")
+    if "last_order_shk_id" not in text:
+        continue
+    new_text = text.replace("last_order_shk_id: Option<i32>", "last_order_shk_id: Option<i64>")
+    if new_text != text:
+        path.write_text(new_text, encoding="utf-8")
+PY
+}
+
 rewrite_typescript_index() {
   local out_path="$1"
   local index_file="${out_path}/src/index.ts"
@@ -898,7 +976,7 @@ for lang in "${langs[@]}"; do
     fi
     if [[ "${generator}" == "php" ]]; then
       module_ns="$(to_pascal_case "${dir_name}")"
-      additional_props="${additional_props},invokerPackage=Wildberries\\\\Sdk\\\\${module_ns}"
+      additional_props="${additional_props},invokerPackage=Wildberries\\Sdk\\${module_ns}"
     fi
 
     echo "Generating ${name} for ${filename}"
@@ -962,10 +1040,12 @@ for lang in "${langs[@]}"; do
         echo "Warning: GO_MODULE_BASE not set and git remote not detected; go.mod will keep default module path." >&2
         GO_MODULE_BASE_WARNED=1
       fi
+      fix_go_large_ids "${out_path}"
       fix_go_module "${out_path}"
     fi
     if [[ "${generator}" == "rust" ]]; then
       fix_rust_authors "${out_path}"
+      fix_rust_large_ids "${out_path}"
       fix_rust_code "${out_path}"
     fi
   done
