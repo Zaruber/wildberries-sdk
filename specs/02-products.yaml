@@ -6083,7 +6083,7 @@ components:
     '401':
       description: Не авторизован
       content:
-        application/json:
+        application/problem+json:
           schema:
             type: object
             properties:
@@ -6124,7 +6124,7 @@ components:
     '429':
       description: Слишком много запросов
       content:
-        application/json:
+        application/problem+json:
           schema:
             type: object
             properties:
