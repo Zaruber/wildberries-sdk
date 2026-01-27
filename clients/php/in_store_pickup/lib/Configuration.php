@@ -300,6 +300,7 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
+        $this->hostOverridden = true;
         return $this;
     }
 
@@ -311,6 +312,16 @@ class Configuration
     public function getHost()
     {
         return $this->host;
+    }
+
+    /**
+     * Returns whether setHost() has been explicitly called
+     *
+     * @return bool
+     */
+    public function isHostOverridden()
+    {
+        return $this->hostOverridden;
     }
 
     /**

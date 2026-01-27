@@ -26,7 +26,6 @@ import type {
   ApiV1AnalyticsGoodsLabelingGet200Response,
   ApiV1AnalyticsGoodsReturnGet200Response,
   ApiV1AnalyticsRegionSaleGet200Response,
-  ApiV1AnalyticsWarehouseMeasurementsGet200Response,
   ApiV1SupplierIncomesGet400Response,
   ApiV1SupplierIncomesGet401Response,
   ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner,
@@ -67,8 +66,6 @@ import {
     ApiV1AnalyticsGoodsReturnGet200ResponseToJSON,
     ApiV1AnalyticsRegionSaleGet200ResponseFromJSON,
     ApiV1AnalyticsRegionSaleGet200ResponseToJSON,
-    ApiV1AnalyticsWarehouseMeasurementsGet200ResponseFromJSON,
-    ApiV1AnalyticsWarehouseMeasurementsGet200ResponseToJSON,
     ApiV1SupplierIncomesGet400ResponseFromJSON,
     ApiV1SupplierIncomesGet400ResponseToJSON,
     ApiV1SupplierIncomesGet401ResponseFromJSON,
@@ -157,14 +154,6 @@ export interface ApiV1AnalyticsGoodsReturnGetRequest {
 export interface ApiV1AnalyticsRegionSaleGetRequest {
     dateFrom: string;
     dateTo: string;
-}
-
-export interface ApiV1AnalyticsWarehouseMeasurementsGetRequest {
-    dateTo: Date;
-    tab: ApiV1AnalyticsWarehouseMeasurementsGetTabEnum;
-    limit: number;
-    dateFrom?: Date;
-    offset?: number;
 }
 
 export interface ApiV1PaidStorageGetRequest {
@@ -992,93 +981,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async apiV1AnalyticsRegionSaleGet(requestParameters: ApiV1AnalyticsRegionSaleGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1AnalyticsRegionSaleGet200Response> {
         const response = await this.apiV1AnalyticsRegionSaleGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for apiV1AnalyticsWarehouseMeasurementsGet without sending the request
-     * @deprecated
-     */
-    async apiV1AnalyticsWarehouseMeasurementsGetRequestOpts(requestParameters: ApiV1AnalyticsWarehouseMeasurementsGetRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['dateTo'] == null) {
-            throw new runtime.RequiredError(
-                'dateTo',
-                'Required parameter "dateTo" was null or undefined when calling apiV1AnalyticsWarehouseMeasurementsGet().'
-            );
-        }
-
-        if (requestParameters['tab'] == null) {
-            throw new runtime.RequiredError(
-                'tab',
-                'Required parameter "tab" was null or undefined when calling apiV1AnalyticsWarehouseMeasurementsGet().'
-            );
-        }
-
-        if (requestParameters['limit'] == null) {
-            throw new runtime.RequiredError(
-                'limit',
-                'Required parameter "limit" was null or undefined when calling apiV1AnalyticsWarehouseMeasurementsGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['dateFrom'] != null) {
-            queryParameters['dateFrom'] = (requestParameters['dateFrom'] as any).toISOString();
-        }
-
-        if (requestParameters['dateTo'] != null) {
-            queryParameters['dateTo'] = (requestParameters['dateTo'] as any).toISOString();
-        }
-
-        if (requestParameters['tab'] != null) {
-            queryParameters['tab'] = requestParameters['tab'];
-        }
-
-        if (requestParameters['limit'] != null) {
-            queryParameters['limit'] = requestParameters['limit'];
-        }
-
-        if (requestParameters['offset'] != null) {
-            queryParameters['offset'] = requestParameters['offset'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v1/analytics/warehouse-measurements`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Метод будет отключён 27 января. Используйте [актуальные методы](https://dev.wildberries.ru/release-notes?id=430)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 5 запросов | 12 секунд | 1 запрос | </div> 
-     * Занижение габаритов упаковки
-     * @deprecated
-     */
-    async apiV1AnalyticsWarehouseMeasurementsGetRaw(requestParameters: ApiV1AnalyticsWarehouseMeasurementsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1AnalyticsWarehouseMeasurementsGet200Response>> {
-        const requestOptions = await this.apiV1AnalyticsWarehouseMeasurementsGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1AnalyticsWarehouseMeasurementsGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Метод будет отключён 27 января. Используйте [актуальные методы](https://dev.wildberries.ru/release-notes?id=430)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 5 запросов | 12 секунд | 1 запрос | </div> 
-     * Занижение габаритов упаковки
-     * @deprecated
-     */
-    async apiV1AnalyticsWarehouseMeasurementsGet(requestParameters: ApiV1AnalyticsWarehouseMeasurementsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1AnalyticsWarehouseMeasurementsGet200Response> {
-        const response = await this.apiV1AnalyticsWarehouseMeasurementsGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -1924,14 +1826,6 @@ export const ApiV1AnalyticsBannedProductsShadowedGetOrderEnum = {
     Asc: 'asc'
 } as const;
 export type ApiV1AnalyticsBannedProductsShadowedGetOrderEnum = typeof ApiV1AnalyticsBannedProductsShadowedGetOrderEnum[keyof typeof ApiV1AnalyticsBannedProductsShadowedGetOrderEnum];
-/**
- * @export
- */
-export const ApiV1AnalyticsWarehouseMeasurementsGetTabEnum = {
-    Penalty: 'penalty',
-    Measurement: 'measurement'
-} as const;
-export type ApiV1AnalyticsWarehouseMeasurementsGetTabEnum = typeof ApiV1AnalyticsWarehouseMeasurementsGetTabEnum[keyof typeof ApiV1AnalyticsWarehouseMeasurementsGetTabEnum];
 /**
  * @export
  */

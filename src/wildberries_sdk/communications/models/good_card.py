@@ -32,7 +32,7 @@ class GoodCard(BaseModel):
     price_currency: Optional[StrictStr] = Field(default=None, description="Валюта", alias="priceCurrency")
     rid: Optional[StrictStr] = Field(default=None, description="Уникальный ID заказа. <br> Примечание: `rid` — это `srid` в ответах методов:   - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)   - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)   - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)   - [Отчет о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)   - [Отчет о продажах по реализации](./financial-reports-and-accounting#tag/Finansovye-otchyoty/paths/~1api~1v5~1supplier~1reportDetailByPeriod/get) ")
     size: Optional[StrictStr] = Field(default=None, description="Размер товара, соответствует `wbSize` в [карточке товара](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post)")
-    status_id: Optional[StrictInt] = Field(default=None, description="Статус товара: - `0` — Товар активный - `1` — Товар оформлен - `2` — Товар собирается - `3` — Товар в пути - `4` — Товар ожидает в ПВЗ - `5` — Товар у курьера - `10` — Товар в архиве - `11` — Товар выкуплен - `12` — Товар отменён - `13` — Оформлен возврат - `14` — Товар отменён (нет на складе) ", alias="statusID")
+    status_id: Optional[StrictInt] = Field(default=None, description="Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469) ", alias="statusID")
     __properties: ClassVar[List[str]] = ["date", "nmID", "price", "priceCurrency", "rid", "size", "statusID"]
 
     model_config = ConfigDict(

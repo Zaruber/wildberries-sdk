@@ -498,6 +498,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets status_id
      *
      * @return int|null
+     * @deprecated
      */
     public function getStatusId()
     {
@@ -507,9 +508,10 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status_id
      *
-     * @param int|null $status_id Статус товара: - `0` — Товар активный - `1` — Товар оформлен - `2` — Товар собирается - `3` — Товар в пути - `4` — Товар ожидает в ПВЗ - `5` — Товар у курьера - `10` — Товар в архиве - `11` — Товар выкуплен - `12` — Товар отменён - `13` — Оформлен возврат - `14` — Товар отменён (нет на складе)
+     * @param int|null $status_id Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469)
      *
      * @return self
+     * @deprecated
      */
     public function setStatusId($status_id)
     {

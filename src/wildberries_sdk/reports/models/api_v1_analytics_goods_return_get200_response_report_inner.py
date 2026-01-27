@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date, datetime
+from datetime import date
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -29,15 +29,15 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner(BaseModel):
     """ # noqa: E501
     barcode: Optional[StrictStr] = Field(default=None, description="Баркод")
     brand: Optional[StrictStr] = Field(default=None, description="Бренд")
-    completed_dt: Optional[datetime] = Field(default=None, description="Дата и время выдачи возврата продавцу", alias="completedDt")
+    completed_dt: Optional[StrictStr] = Field(default=None, description="Дата и время выдачи возврата продавцу", alias="completedDt")
     dst_office_address: Optional[StrictStr] = Field(default=None, description="Адрес ПВЗ выдачи возврата", alias="dstOfficeAddress")
     dst_office_id: Optional[StrictInt] = Field(default=None, description="ID ПВЗ выдачи возврата", alias="dstOfficeId")
-    expired_dt: Optional[datetime] = Field(default=None, description="Дата и время истечения срока хранения возврата", alias="expiredDt")
+    expired_dt: Optional[StrictStr] = Field(default=None, description="Дата и время истечения срока хранения возврата", alias="expiredDt")
     is_status_active: Optional[StrictInt] = Field(default=None, description="Тип статуса возврата:    * `0` — архивный   * `1` — активный ", alias="isStatusActive")
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")
     order_dt: Optional[date] = Field(default=None, description="Дата заказа на возврат", alias="orderDt")
     order_id: Optional[StrictInt] = Field(default=None, description="Номер сборочного задания", alias="orderId")
-    ready_to_return_dt: Optional[datetime] = Field(default=None, description="Дата и время готовности возврата к выдаче", alias="readyToReturnDt")
+    ready_to_return_dt: Optional[StrictStr] = Field(default=None, description="Дата и время готовности возврата к выдаче", alias="readyToReturnDt")
     reason: Optional[StrictStr] = Field(default=None, description="Причина возврата")
     return_type: Optional[StrictStr] = Field(default=None, description="Тип возврата", alias="returnType")
     shk_id: Optional[StrictInt] = Field(default=None, description="Штрихкод", alias="shkId")

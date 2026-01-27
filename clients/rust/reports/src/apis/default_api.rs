@@ -136,17 +136,6 @@ pub enum ApiV1AnalyticsRegionSaleGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`api_v1_analytics_warehouse_measurements_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ApiV1AnalyticsWarehouseMeasurementsGetError {
-    Status400(models::Response400Retentions),
-    Status401(models::ApiV1SupplierIncomesGet401Response),
-    Status403(models::Response403Retentions),
-    Status429(models::ApiV1SupplierIncomesGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`api_v1_paid_storage_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -856,65 +845,6 @@ pub async fn api_v1_analytics_region_sale_get(configuration: &configuration::Con
     } else {
         let content = resp.text().await?;
         let entity: Option<ApiV1AnalyticsRegionSaleGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Метод будет отключён 27 января. Используйте [актуальные методы](https://dev.wildberries.ru/release-notes?id=430)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 5 запросов | 12 секунд | 1 запрос | </div> 
-#[deprecated]
-pub async fn api_v1_analytics_warehouse_measurements_get(configuration: &configuration::Configuration, date_to: String, tab: &str, limit: i32, date_from: Option<String>, offset: Option<i32>) -> Result<models::ApiV1AnalyticsWarehouseMeasurementsGet200Response, Error<ApiV1AnalyticsWarehouseMeasurementsGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_date_to = date_to;
-    let p_query_tab = tab;
-    let p_query_limit = limit;
-    let p_query_date_from = date_from;
-    let p_query_offset = offset;
-
-    let uri_str = format!("{}/api/v1/analytics/warehouse-measurements", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    if let Some(ref param_value) = p_query_date_from {
-        req_builder = req_builder.query(&[("dateFrom", &param_value.to_string())]);
-    }
-    req_builder = req_builder.query(&[("dateTo", &p_query_date_to.to_string())]);
-    req_builder = req_builder.query(&[("tab", &p_query_tab.to_string())]);
-    req_builder = req_builder.query(&[("limit", &p_query_limit.to_string())]);
-    if let Some(ref param_value) = p_query_offset {
-        req_builder = req_builder.query(&[("offset", &param_value.to_string())]);
-    }
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiV1AnalyticsWarehouseMeasurementsGet200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiV1AnalyticsWarehouseMeasurementsGet200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ApiV1AnalyticsWarehouseMeasurementsGetError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

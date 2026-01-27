@@ -59,15 +59,15 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     protected static $openAPITypes = [
         'barcode' => 'string',
         'brand' => 'string',
-        'completed_dt' => '\DateTime',
+        'completed_dt' => 'string',
         'dst_office_address' => 'string',
         'dst_office_id' => 'int',
-        'expired_dt' => '\DateTime',
+        'expired_dt' => 'string',
         'is_status_active' => 'int',
         'nm_id' => 'int',
         'order_dt' => '\DateTime',
         'order_id' => 'int',
-        'ready_to_return_dt' => '\DateTime',
+        'ready_to_return_dt' => 'string',
         'reason' => 'string',
         'return_type' => 'string',
         'shk_id' => 'int',
@@ -88,15 +88,15 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     protected static $openAPIFormats = [
         'barcode' => null,
         'brand' => null,
-        'completed_dt' => 'date-time',
+        'completed_dt' => null,
         'dst_office_address' => null,
         'dst_office_id' => null,
-        'expired_dt' => 'date-time',
+        'expired_dt' => null,
         'is_status_active' => null,
         'nm_id' => null,
         'order_dt' => 'date',
         'order_id' => null,
-        'ready_to_return_dt' => 'date-time',
+        'ready_to_return_dt' => null,
         'reason' => null,
         'return_type' => null,
         'shk_id' => null,
@@ -496,7 +496,7 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     /**
      * Gets completed_dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCompletedDt()
     {
@@ -506,7 +506,7 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     /**
      * Sets completed_dt
      *
-     * @param \DateTime|null $completed_dt Дата и время выдачи возврата продавцу
+     * @param string|null $completed_dt Дата и время выдачи возврата продавцу
      *
      * @return self
      */
@@ -584,7 +584,7 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     /**
      * Gets expired_dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getExpiredDt()
     {
@@ -594,7 +594,7 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     /**
      * Sets expired_dt
      *
-     * @param \DateTime|null $expired_dt Дата и время истечения срока хранения возврата
+     * @param string|null $expired_dt Дата и время истечения срока хранения возврата
      *
      * @return self
      */
@@ -736,7 +736,7 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     /**
      * Gets ready_to_return_dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getReadyToReturnDt()
     {
@@ -746,7 +746,7 @@ class ApiV1AnalyticsGoodsReturnGet200ResponseReportInner implements ModelInterfa
     /**
      * Sets ready_to_return_dt
      *
-     * @param \DateTime|null $ready_to_return_dt Дата и время готовности возврата к выдаче
+     * @param string|null $ready_to_return_dt Дата и время готовности возврата к выдаче
      *
      * @return self
      */

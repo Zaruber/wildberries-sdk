@@ -326,7 +326,6 @@ main().catch(console.error);
 - `reports.DefaultApi.apiV1AnalyticsGoodsLabelingGet` — Маркировка товара
 - `reports.DefaultApi.apiV1AnalyticsGoodsReturnGet` — Получить отчёт
 - `reports.DefaultApi.apiV1AnalyticsRegionSaleGet` — Получить отчёт
-- `reports.DefaultApi.apiV1AnalyticsWarehouseMeasurementsGet` — Занижение габаритов упаковки
 - `reports.DefaultApi.apiV1PaidStorageGet` — Создать отчёт
 - `reports.DefaultApi.apiV1PaidStorageTasksTaskIdDownloadGet` — Получить отчёт
 - `reports.DefaultApi.apiV1PaidStorageTasksTaskIdStatusGet` — Проверить статус

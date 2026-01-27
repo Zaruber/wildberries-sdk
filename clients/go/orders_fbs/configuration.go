@@ -1,7 +1,7 @@
 /*
 Заказы FBS
 
-<div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+<div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>  С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [метаданные](/openapi/orders-fbs#tag/Metadannye-FBS) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуски](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB <br>    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/127\">инструкции по работе с заказами FBS</a>   </div>  <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
 
 API version: order
 */
@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.30/go",
+		UserAgent:        "OpenAPI-Generator/0.1.31/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

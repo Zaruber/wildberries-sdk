@@ -1,7 +1,7 @@
 /*
 Работа с товарами
 
-С помощью методов этого раздела вы можете:   - [создать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получить [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загрузить [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настроить [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - установить [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции по работе с товарами</a>   </div> 
+С помощью методов этого раздела вы можете:   - [создать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получить [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загрузить [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настроить [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - установить [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции по работе с товарами</a>   </div> 
 
 API version: products
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ContentV2GetCardsListPostRequestSettingsFilter{}
 
 // ContentV2GetCardsListPostRequestSettingsFilter Параметры фильтрации
 type ContentV2GetCardsListPostRequestSettingsFilter struct {
-	// Фильтр по фото:    * `0` — только карточки без фото   * `1` — только карточки с фото   * `-1` — все карточки товара 
+	// Фильтр по фото:   * `0` — только карточки без фото   * `1` — только карточки с фото   * `-1` — все карточки товара 
 	WithPhoto *int32 `json:"withPhoto,omitempty"`
 	// Поиск по артикулу продавца, артикулу WB, баркоду
 	TextSearch *string `json:"textSearch,omitempty"`

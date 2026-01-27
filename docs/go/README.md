@@ -300,7 +300,6 @@
 - `reports.DefaultApiService.ApiV1AnalyticsGoodsLabelingGet` — `GET /api/v1/analytics/goods-labeling` — Маркировка товара
 - `reports.DefaultApiService.ApiV1AnalyticsGoodsReturnGet` — `GET /api/v1/analytics/goods-return` — Получить отчёт
 - `reports.DefaultApiService.ApiV1AnalyticsRegionSaleGet` — `GET /api/v1/analytics/region-sale` — Получить отчёт
-- `reports.DefaultApiService.ApiV1AnalyticsWarehouseMeasurementsGet` — `GET /api/v1/analytics/warehouse-measurements` — Занижение габаритов упаковки
 - `reports.DefaultApiService.ApiV1PaidStorageGet` — `GET /api/v1/paid_storage` — Создать отчёт
 - `reports.DefaultApiService.ApiV1PaidStorageTasksTaskIdDownloadGet` — `GET /api/v1/paid_storage/tasks/{task_id}/download` — Получить отчёт
 - `reports.DefaultApiService.ApiV1PaidStorageTasksTaskIdStatusGet` — `GET /api/v1/paid_storage/tasks/{task_id}/status` — Проверить статус

@@ -1,7 +1,7 @@
 /*
 Заказы DBW
 
-Управление [сборочными заданиями](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW) и [метаданными](/openapi/orders-dbw#tag/Metadannye-DBW) заказов DBW (Доставка курьером WB).
+С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/241\">инструкции по работе с заказами DBW</a> </div> 
 
 API version: ordersdbw
 */

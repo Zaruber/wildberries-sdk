@@ -32,7 +32,7 @@ pub struct GoodCard {
     /// Размер товара, соответствует `wbSize` в [карточке товара](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post)
     #[serde(rename = "size", skip_serializing_if = "Option::is_none")]
     pub size: Option<String>,
-    /// Статус товара: - `0` — Товар активный - `1` — Товар оформлен - `2` — Товар собирается - `3` — Товар в пути - `4` — Товар ожидает в ПВЗ - `5` — Товар у курьера - `10` — Товар в архиве - `11` — Товар выкуплен - `12` — Товар отменён - `13` — Оформлен возврат - `14` — Товар отменён (нет на складе) 
+    /// Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469) 
     #[serde(rename = "statusID", skip_serializing_if = "Option::is_none")]
     pub status_id: Option<i32>,
 }

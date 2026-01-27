@@ -12,7 +12,6 @@ package reports
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ApiV1AnalyticsGoodsReturnGet200ResponseReportInner type satisfies the MappedNullable interface at compile time
@@ -25,13 +24,13 @@ type ApiV1AnalyticsGoodsReturnGet200ResponseReportInner struct {
 	// Бренд
 	Brand *string `json:"brand,omitempty"`
 	// Дата и время выдачи возврата продавцу
-	CompletedDt NullableTime `json:"completedDt,omitempty"`
+	CompletedDt NullableString `json:"completedDt,omitempty"`
 	// Адрес ПВЗ выдачи возврата
 	DstOfficeAddress *string `json:"dstOfficeAddress,omitempty"`
 	// ID ПВЗ выдачи возврата
 	DstOfficeId *int32 `json:"dstOfficeId,omitempty"`
 	// Дата и время истечения срока хранения возврата
-	ExpiredDt NullableTime `json:"expiredDt,omitempty"`
+	ExpiredDt NullableString `json:"expiredDt,omitempty"`
 	// Тип статуса возврата:    * `0` — архивный   * `1` — активный 
 	IsStatusActive *int32 `json:"isStatusActive,omitempty"`
 	// Артикул WB
@@ -41,7 +40,7 @@ type ApiV1AnalyticsGoodsReturnGet200ResponseReportInner struct {
 	// Номер сборочного задания
 	OrderId *int32 `json:"orderId,omitempty"`
 	// Дата и время готовности возврата к выдаче
-	ReadyToReturnDt NullableTime `json:"readyToReturnDt,omitempty"`
+	ReadyToReturnDt NullableString `json:"readyToReturnDt,omitempty"`
 	// Причина возврата
 	Reason *string `json:"reason,omitempty"`
 	// Тип возврата
@@ -142,9 +141,9 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetBrand(v string) 
 }
 
 // GetCompletedDt returns the CompletedDt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetCompletedDt() time.Time {
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetCompletedDt() string {
 	if o == nil || IsNil(o.CompletedDt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.CompletedDt.Get()
@@ -153,7 +152,7 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetCompletedDt() ti
 // GetCompletedDtOk returns a tuple with the CompletedDt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetCompletedDtOk() (*time.Time, bool) {
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetCompletedDtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -169,8 +168,8 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) HasCompletedDt() bo
 	return false
 }
 
-// SetCompletedDt gets a reference to the given NullableTime and assigns it to the CompletedDt field.
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetCompletedDt(v time.Time) {
+// SetCompletedDt gets a reference to the given NullableString and assigns it to the CompletedDt field.
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetCompletedDt(v string) {
 	o.CompletedDt.Set(&v)
 }
 // SetCompletedDtNil sets the value for CompletedDt to be an explicit nil
@@ -248,9 +247,9 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetDstOfficeId(v in
 }
 
 // GetExpiredDt returns the ExpiredDt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetExpiredDt() time.Time {
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetExpiredDt() string {
 	if o == nil || IsNil(o.ExpiredDt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ExpiredDt.Get()
@@ -259,7 +258,7 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetExpiredDt() time
 // GetExpiredDtOk returns a tuple with the ExpiredDt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetExpiredDtOk() (*time.Time, bool) {
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetExpiredDtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -275,8 +274,8 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) HasExpiredDt() bool
 	return false
 }
 
-// SetExpiredDt gets a reference to the given NullableTime and assigns it to the ExpiredDt field.
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetExpiredDt(v time.Time) {
+// SetExpiredDt gets a reference to the given NullableString and assigns it to the ExpiredDt field.
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetExpiredDt(v string) {
 	o.ExpiredDt.Set(&v)
 }
 // SetExpiredDtNil sets the value for ExpiredDt to be an explicit nil
@@ -418,9 +417,9 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetOrderId(v int32)
 }
 
 // GetReadyToReturnDt returns the ReadyToReturnDt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetReadyToReturnDt() time.Time {
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetReadyToReturnDt() string {
 	if o == nil || IsNil(o.ReadyToReturnDt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ReadyToReturnDt.Get()
@@ -429,7 +428,7 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetReadyToReturnDt(
 // GetReadyToReturnDtOk returns a tuple with the ReadyToReturnDt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetReadyToReturnDtOk() (*time.Time, bool) {
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) GetReadyToReturnDtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -445,8 +444,8 @@ func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) HasReadyToReturnDt(
 	return false
 }
 
-// SetReadyToReturnDt gets a reference to the given NullableTime and assigns it to the ReadyToReturnDt field.
-func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetReadyToReturnDt(v time.Time) {
+// SetReadyToReturnDt gets a reference to the given NullableString and assigns it to the ReadyToReturnDt field.
+func (o *ApiV1AnalyticsGoodsReturnGet200ResponseReportInner) SetReadyToReturnDt(v string) {
 	o.ReadyToReturnDt.Set(&v)
 }
 // SetReadyToReturnDtNil sets the value for ReadyToReturnDt to be an explicit nil

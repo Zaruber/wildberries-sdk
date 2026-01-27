@@ -31,7 +31,8 @@ type GoodCard struct {
 	Rid *string `json:"rid,omitempty"`
 	// Размер товара, соответствует `wbSize` в [карточке товара](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post)
 	Size *string `json:"size,omitempty"`
-	// Статус товара: - `0` — Товар активный - `1` — Товар оформлен - `2` — Товар собирается - `3` — Товар в пути - `4` — Товар ожидает в ПВЗ - `5` — Товар у курьера - `10` — Товар в архиве - `11` — Товар выкуплен - `12` — Товар отменён - `13` — Оформлен возврат - `14` — Товар отменён (нет на складе) 
+	// Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469) 
+	// Deprecated
 	StatusID *int32 `json:"statusID,omitempty"`
 }
 
@@ -245,6 +246,7 @@ func (o *GoodCard) SetSize(v string) {
 }
 
 // GetStatusID returns the StatusID field value if set, zero value otherwise.
+// Deprecated
 func (o *GoodCard) GetStatusID() int32 {
 	if o == nil || IsNil(o.StatusID) {
 		var ret int32
@@ -255,6 +257,7 @@ func (o *GoodCard) GetStatusID() int32 {
 
 // GetStatusIDOk returns a tuple with the StatusID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *GoodCard) GetStatusIDOk() (*int32, bool) {
 	if o == nil || IsNil(o.StatusID) {
 		return nil, false
@@ -272,6 +275,7 @@ func (o *GoodCard) HasStatusID() bool {
 }
 
 // SetStatusID gets a reference to the given int32 and assigns it to the StatusID field.
+// Deprecated
 func (o *GoodCard) SetStatusID(v int32) {
 	o.StatusID = &v
 }

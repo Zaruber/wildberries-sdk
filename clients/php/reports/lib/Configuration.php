@@ -96,6 +96,13 @@ class Configuration
     protected $host = 'http://localhost';
 
     /**
+     * Whether setHost() has been called
+     *
+     * @var bool
+     */
+    protected $hostOverridden = false;
+
+    /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
      *
      * @var string
@@ -300,6 +307,7 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
+        $this->hostOverridden = true;
         return $this;
     }
 
@@ -311,6 +319,16 @@ class Configuration
     public function getHost()
     {
         return $this->host;
+    }
+
+    /**
+     * Returns whether setHost() has been explicitly called
+     *
+     * @return bool
+     */
+    public function isHostOverridden()
+    {
+        return $this->hostOverridden;
     }
 
     /**

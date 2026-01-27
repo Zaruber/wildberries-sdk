@@ -1059,141 +1059,6 @@ paths:
       x-category: contentanalytics
     servers:
     - url: https://seller-analytics-api.wildberries.ru
-  /api/v1/analytics/warehouse-measurements:
-    get:
-      deprecated: true
-      description: |
-        Метод будет отключён 27 января. Используйте [актуальные методы](https://dev.wildberries.ru/release-notes?id=430)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
-
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 1 минута | 5 запросов | 12 секунд | 1 запрос |
-        </div>
-      parameters:
-      - description: "Начало отчётного периода. По умолчанию используется дата, ко\
-          гда были впервые получены данные для отчёта"
-        example: 2025-02-01T15:00:00Z
-        explode: true
-        in: query
-        name: dateFrom
-        required: false
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - description: Конец отчётного периода
-        example: 2025-10-11T18:00:00Z
-        explode: true
-        in: query
-        name: dateTo
-        required: true
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: tab
-        required: true
-        schema:
-          description: |
-            Тип отчёта:
-              - `penalty` — Удержания за занижение габаритов упаковки
-              - `measurement` — Замеры склада
-          enum:
-          - penalty
-          - measurement
-          example: measurement
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: limit
-        required: true
-        schema:
-          description: Количество удержаний или замеров в ответе
-          example: 330
-          maximum: 1000
-          type: integer
-        style: form
-      - explode: true
-        in: query
-        name: offset
-        required: false
-        schema:
-          default: 0
-          description: "Сколько элементов пропустить. Например, для значения `10`\
-            \ ответ начнётся с 11 элемента"
-          example: 220
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                Penalty:
-                  $ref: "#/components/examples/Penalty"
-                Measurement:
-                  $ref: "#/components/examples/Measurement"
-              schema:
-                $ref: "#/components/schemas/_api_v1_analytics_warehouse_measurements_get_200_response"
-          description: Успешно
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Response400Retentions"
-          description: Неправильный запрос
-        "401":
-          content:
-            application/problem+json:
-              example:
-                title: unauthorized
-                detail: "token problem; token is malformed: could not base64 decode\
-                  \ signature: illegal base64 data at input byte 84"
-                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
-                requestId: 7b80742415072fe8b6b7f7761f1d1211
-                origin: s2s-api-auth-catalog
-                status: 401
-                statusText: Unauthorized
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
-          description: Не авторизован
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Response403Retentions"
-          description: Доступ запрещён
-        "429":
-          content:
-            application/problem+json:
-              example:
-                title: too many requests
-                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
-                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
-                requestId: 9d3c02cc698f8b041c661a7c28bed293
-                origin: s2s-api-auth-catalog
-                status: 429
-                statusText: Too Many Requests
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
-          description: Слишком много запросов
-      security:
-      - HeaderApiKey: []
-      summary: Занижение габаритов упаковки
-      tags:
-      - Отчёты об удержаниях
-      x-readonly-method: true
-      x-category: contentanalytics
-    servers:
-    - url: https://seller-analytics-api.wildberries.ru
   /api/analytics/v1/measurement-penalties:
     get:
       description: |
@@ -3289,115 +3154,6 @@ components:
         origin: api-statistics
         requestId: 51f24452bb940a004b5d40a076d5696d
         title: Bad Request
-    Penalty:
-      description: Удержания за занижение габаритов упаковки
-      value:
-        data:
-          reports:
-          - nmId: 9234567890
-            subject: Костюмы спортивные
-            dimId: 98151405
-            prcOver: 130.71
-            volume: 6.47
-            width: 7
-            length: 28
-            height: 33
-            volumeSup: 4.95
-            widthSup: 30
-            lengthSup: 33
-            heightSup: 5
-            photoUrls:
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-            dtBonus: 2025-06-02T00:00:00Z
-            isValid: true
-            isValidDt: 2025-05-29T13:35:57Z
-            reversalAmount: 0
-            penaltyAmount: 449.83
-          - nmId: 9123456789
-            subject: Масло топленое
-            dimId: 97079587
-            prcOver: 136.09
-            volume: 4.37
-            width: 14
-            length: 24
-            height: 13
-            volumeSup: 3.21
-            widthSup: 13
-            lengthSup: 13
-            heightSup: 19
-            photoUrls:
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/handheld-goods-measurements-photo/gId35619967012_em1178949_nphotoA_d037721f-62c2-4bdd-a5a8-4ad0905e3f8e.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/handheld-goods-measurements-photo/gId35619967012_em1178949_nphotoB_fb161a65-e4b0-08d7-bb01-1bdba1b4d741.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/handheld-goods-measurements-photo/gId35619967012_em1178949_nphotoC_9a8b10f7-26c4-4fc0-b2c5-a7e29a545aa4.webp
-            dtBonus: 2025-06-02T00:00:00Z
-            isValid: true
-            isValidDt: 2025-05-23T01:24:19Z
-            reversalAmount: 0
-            penaltyAmount: 350.08
-          - nmId: 9234567809
-            subject: Фонарики бытовые
-            dimId: 96989876
-            prcOver: 246.75
-            volume: 2.28
-            width: 12
-            length: 19
-            height: 10
-            volumeSup: 0.92
-            widthSup: 11
-            lengthSup: 14
-            heightSup: 6
-            photoUrls:
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/handheld-goods-measurements-photo/gId35776508795_em644504_nphotoA_1bdac868-a6c0-435a-950f-489f74acdb2e.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/handheld-goods-measurements-photo/gId35776508795_em644504_nphotoB_8f1802b8-5552-4aae-b930-19e8efbee597.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/handheld-goods-measurements-photo/gId35776508795_em644504_nphotoC_5d8f1832-e219-46cd-931b-d6d238d6784b.webp
-            dtBonus: 2025-06-02T00:00:00Z
-            isValid: true
-            isValidDt: 2025-05-23T01:24:19Z
-            reversalAmount: 0
-            penaltyAmount: 501.6
-          totalCount: 3
-    Measurement:
-      description: Замеры склада
-      value:
-        data:
-          reports:
-          - nmId: 9234567089
-            subject: ""
-            dimId: 4983331
-            prcOver: 469.65
-            volume: 16.25
-            width: 26
-            length: 25
-            height: 25
-            volumeSup: 3.46
-            widthSup: 8
-            lengthSup: 18
-            heightSup: 24
-            photoUrls: []
-            dt: 2025-06-05T00:00:00Z
-            dateEnd: 2025-06-01T00:00:00Z
-          - nmId: 9234560789
-            subject: ""
-            dimId: 86840305
-            prcOver: 1274.8
-            volume: 39.2
-            width: 66
-            length: 54
-            height: 11
-            volumeSup: 3.08
-            widthSup: 5
-            lengthSup: 15
-            heightSup: 41
-            photoUrls:
-            - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_a9f839da-c3b7-4ea6-737c-a9e731250fb0.jpg
-            - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_2aac23b7-c8f9-42db-74e9-b4a9c916017c.jpg
-            - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_ff93b7c4-19d6-e0a2-4dba-7c2f09f06b3.jpg
-            dt: 2025-04-01T00:06:00Z
-            dateStart: 2025-04-02T00:00:00Z
-            dateEnd: 2025-04-06T00:00:00Z
-          totalCount: 2
     MeasurementPenalties:
       value:
         data:
@@ -4237,66 +3993,6 @@ components:
       items:
         $ref: "#/components/schemas/models_ExciseReportResponseData_inner"
       type: array
-    Penalty:
-      example:
-        data:
-          reports:
-          - heightSup: 33
-            photoUrls:
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-            subject: Костюмы спортивные
-            isValid: true
-            length: 28
-            nmId: 123456789
-            prcOver: 130.71
-            volume: 6.47
-            volumeSup: 4.95
-            reversalAmount: 0
-            dimId: 123456789
-            lengthSup: 33
-            width: 7
-            dtBonus: 2025-06-02T00:00:00Z
-            widthSup: 8
-            isValidDt: 2025-05-29T13:35:57Z
-            penaltyAmount: 449.83
-            height: 33
-          - heightSup: 33
-            photoUrls:
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
-            - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-            subject: Костюмы спортивные
-            isValid: true
-            length: 28
-            nmId: 123456789
-            prcOver: 130.71
-            volume: 6.47
-            volumeSup: 4.95
-            reversalAmount: 0
-            dimId: 123456789
-            lengthSup: 33
-            width: 7
-            dtBonus: 2025-06-02T00:00:00Z
-            widthSup: 8
-            isValidDt: 2025-05-29T13:35:57Z
-            penaltyAmount: 449.83
-            height: 33
-          totalCount: 11
-      properties:
-        data:
-          $ref: "#/components/schemas/Penalty_data"
-      required:
-      - data
-      type: object
-    Measurement:
-      properties:
-        data:
-          $ref: "#/components/schemas/Measurement_data"
-      required:
-      - data
-      type: object
     MeasurementPenalties:
       example:
         data:
@@ -4632,10 +4328,6 @@ components:
             $ref: "#/components/schemas/_api_v1_warehouse_remains_tasks__task_id__download_get_200_response_inner_warehouses_inner"
           type: array
       type: object
-    _api_v1_analytics_warehouse_measurements_get_200_response:
-      oneOf:
-      - $ref: "#/components/schemas/Penalty"
-      - $ref: "#/components/schemas/Measurement"
     getDeductions_200_response_data_reports_inner:
       example:
         oldShkId: 26624352356
@@ -5285,7 +4977,7 @@ components:
       example:
         reason: Цвет
         orderId: 2034240826
-        completedDt: 2000-01-23T04:56:07.000+00:00
+        completedDt: 2025-03-31T11:33:53
         nmId: 12862181
         dstOfficeAddress: Жуковский Улица Маяковского 19
         dstOfficeId: 310105
@@ -5294,9 +4986,9 @@ components:
         stickerId: "33811984302"
         orderDt: 2024-08-26
         shkId: 23411783472
-        readyToReturnDt: 2000-01-23T04:56:07.000+00:00
+        readyToReturnDt: 2025-01-31T08:33:50
         techSize: "0"
-        expiredDt: 2000-01-23T04:56:07.000+00:00
+        expiredDt: 2025-03-31T11:33:53
         barcode: "1680063403480"
         brand: dub
         returnType: Возврат заблокированного товара
@@ -5313,7 +5005,7 @@ components:
           type: string
         completedDt:
           description: Дата и время выдачи возврата продавцу
-          format: date-time
+          example: 2025-03-31T11:33:53
           nullable: true
           type: string
         dstOfficeAddress:
@@ -5326,7 +5018,7 @@ components:
           type: integer
         expiredDt:
           description: Дата и время истечения срока хранения возврата
-          format: date-time
+          example: 2025-03-31T11:33:53
           nullable: true
           type: string
         isStatusActive:
@@ -5355,7 +5047,7 @@ components:
           type: integer
         readyToReturnDt:
           description: Дата и время готовности возврата к выдаче
-          format: date-time
+          example: 2025-01-31T08:33:50
           nullable: true
           type: string
         reason:
@@ -5396,7 +5088,7 @@ components:
         report:
         - reason: Цвет
           orderId: 2034240826
-          completedDt: 2000-01-23T04:56:07.000+00:00
+          completedDt: 2025-03-31T11:33:53
           nmId: 12862181
           dstOfficeAddress: Жуковский Улица Маяковского 19
           dstOfficeId: 310105
@@ -5405,9 +5097,9 @@ components:
           stickerId: "33811984302"
           orderDt: 2024-08-26
           shkId: 23411783472
-          readyToReturnDt: 2000-01-23T04:56:07.000+00:00
+          readyToReturnDt: 2025-01-31T08:33:50
           techSize: "0"
-          expiredDt: 2000-01-23T04:56:07.000+00:00
+          expiredDt: 2025-03-31T11:33:53
           barcode: "1680063403480"
           brand: dub
           returnType: Возврат заблокированного товара
@@ -5415,7 +5107,7 @@ components:
           subjectName: Багажные бирки
         - reason: Цвет
           orderId: 2034240826
-          completedDt: 2000-01-23T04:56:07.000+00:00
+          completedDt: 2025-03-31T11:33:53
           nmId: 12862181
           dstOfficeAddress: Жуковский Улица Маяковского 19
           dstOfficeId: 310105
@@ -5424,9 +5116,9 @@ components:
           stickerId: "33811984302"
           orderDt: 2024-08-26
           shkId: 23411783472
-          readyToReturnDt: 2000-01-23T04:56:07.000+00:00
+          readyToReturnDt: 2025-01-31T08:33:50
           techSize: "0"
-          expiredDt: 2000-01-23T04:56:07.000+00:00
+          expiredDt: 2025-03-31T11:33:53
           barcode: "1680063403480"
           brand: dub
           returnType: Возврат заблокированного товара
@@ -5508,266 +5200,6 @@ components:
             `Srid`
           example: 7513432034713632943.1.0
           type: string
-      type: object
-    Penalty_data_reports_inner:
-      example:
-        heightSup: 33
-        photoUrls:
-        - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
-        - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
-        - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-        subject: Костюмы спортивные
-        isValid: true
-        length: 28
-        nmId: 123456789
-        prcOver: 130.71
-        volume: 6.47
-        volumeSup: 4.95
-        reversalAmount: 0
-        dimId: 123456789
-        lengthSup: 33
-        width: 7
-        dtBonus: 2025-06-02T00:00:00Z
-        widthSup: 8
-        isValidDt: 2025-05-29T13:35:57Z
-        penaltyAmount: 449.83
-        height: 33
-      properties:
-        nmId:
-          description: Артикул WB
-          example: 123456789
-          type: integer
-        dimId:
-          description: ID замера
-          example: 123456789
-          type: integer
-        subject:
-          description: Предмет
-          example: Костюмы спортивные
-          type: string
-        prcOver:
-          description: "Разница в габаритах, %"
-          example: 130.71
-          type: number
-        volume:
-          description: "Объём, л (фактические габариты)"
-          example: 6.47
-          type: number
-        width:
-          description: "Ширина, см (фактические габариты)"
-          example: 7
-          type: integer
-        length:
-          description: "Длина, см (фактические габариты)"
-          example: 28
-          type: integer
-        height:
-          description: "Высота, см (фактические габариты)"
-          example: 33
-          type: integer
-        volumeSup:
-          description: "Объём, л (габариты карточки товара)"
-          example: 4.95
-          type: number
-        widthSup:
-          description: "Ширина, см (габариты карточки товара)"
-          example: 8
-          type: integer
-        lengthSup:
-          description: "Длина, см (габариты карточки товара)"
-          example: 33
-          type: integer
-        heightSup:
-          description: "Высота, см (габариты карточки товара)"
-          example: 33
-          type: integer
-        photoUrls:
-          description: Фото замеров
-          example:
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-          items:
-            type: string
-          type: array
-        dtBonus:
-          description: Дата штрафа
-          example: 2025-06-02T00:00:00Z
-          format: date-time
-          type: string
-        isValid:
-          description: |
-            Статус обмера:
-              - `false` — отменён
-              - `true` — подтверждён
-          example: true
-          type: boolean
-        isValidDt:
-          description: Дата и время подтверждения или отмены обмера
-          example: 2025-05-29T13:35:57Z
-          format: date-time
-          type: string
-        reversalAmount:
-          description: Сумма сторно
-          example: 0
-          type: number
-        penaltyAmount:
-          description: Сумма штрафа
-          example: 449.83
-          type: number
-      type: object
-    Penalty_data:
-      description: Данные ответа
-      example:
-        reports:
-        - heightSup: 33
-          photoUrls:
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-          subject: Костюмы спортивные
-          isValid: true
-          length: 28
-          nmId: 123456789
-          prcOver: 130.71
-          volume: 6.47
-          volumeSup: 4.95
-          reversalAmount: 0
-          dimId: 123456789
-          lengthSup: 33
-          width: 7
-          dtBonus: 2025-06-02T00:00:00Z
-          widthSup: 8
-          isValidDt: 2025-05-29T13:35:57Z
-          penaltyAmount: 449.83
-          height: 33
-        - heightSup: 33
-          photoUrls:
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
-          - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-          subject: Костюмы спортивные
-          isValid: true
-          length: 28
-          nmId: 123456789
-          prcOver: 130.71
-          volume: 6.47
-          volumeSup: 4.95
-          reversalAmount: 0
-          dimId: 123456789
-          lengthSup: 33
-          width: 7
-          dtBonus: 2025-06-02T00:00:00Z
-          widthSup: 8
-          isValidDt: 2025-05-29T13:35:57Z
-          penaltyAmount: 449.83
-          height: 33
-        totalCount: 11
-      properties:
-        reports:
-          description: Удержания
-          items:
-            $ref: "#/components/schemas/Penalty_data_reports_inner"
-          type: array
-        totalCount:
-          description: Количество удержаний в отчёте. Без учёта `limit` и `offset`
-          example: 11
-          type: integer
-      required:
-      - reports
-      - totalCount
-      type: object
-    Measurement_data_reports_inner:
-      properties:
-        nmId:
-          description: Артикул WB
-          example: 123456789
-          type: integer
-        subject:
-          description: Предмет
-          example: ""
-          type: string
-        dimId:
-          description: ID замера
-          example: 123456789
-          type: integer
-        prcOver:
-          description: "Разница в габаритах, %"
-          example: 1274.8
-          type: number
-        volume:
-          description: "Объём, л (фактические габариты)"
-          example: 39.2
-          type: number
-        width:
-          description: "Ширина, см (фактические габариты)"
-          example: 66
-          type: integer
-        length:
-          description: "Длина, см (фактические габариты)"
-          example: 54
-          type: integer
-        height:
-          description: "Высота, см (фактические габариты)"
-          example: 11
-          type: integer
-        volumeSup:
-          description: "Объём, л (габариты карточки товара)"
-          example: 3.08
-          type: number
-        widthSup:
-          description: "Ширина, см (габариты карточки товара)"
-          example: 5
-          type: integer
-        lengthSup:
-          description: "Длина, см (габариты карточки товара)"
-          example: 15
-          type: integer
-        heightSup:
-          description: "Высота, см (габариты карточки товара)"
-          example: 41
-          type: integer
-        photoUrls:
-          description: Фото замеров
-          example:
-          - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_a9f839da-c3b7-4ed6-737c-a9e731250fb0.jpg
-          - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_2aac23b7-c8f9-42db-74e9-b4a9c916017c.jpg
-          - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_ff93b7c4-19d6-e0a2-4dba-7c2f09f06b3.jpg
-          items:
-            type: string
-          type: array
-        dt:
-          description: Дата и время
-          example: 2025-04-01T00:06:00Z
-          format: date-time
-          type: string
-        dateStart:
-          description: |
-            Дата начала замера
-          example: 2025-04-02T00:00:00Z
-          format: date-time
-          type: string
-        dateEnd:
-          description: Дата конца замера
-          example: 2025-04-06T00:00:00Z
-          format: date-time
-          type: string
-      type: object
-    Measurement_data:
-      description: Данные ответа
-      properties:
-        reports:
-          description: Замеры
-          items:
-            $ref: "#/components/schemas/Measurement_data_reports_inner"
-          type: array
-        totalCount:
-          description: Количество замеров в отчёте. Без учёта `limit` и `offset`
-          example: 11
-          type: integer
-      required:
-      - reports
-      - totalCount
       type: object
     MeasurementPenalties_data_reports_inner:
       example:

@@ -33,10 +33,10 @@ export interface ApiV1AnalyticsGoodsReturnGet200ResponseReportInner {
     brand?: string;
     /**
      * Дата и время выдачи возврата продавцу
-     * @type {Date}
+     * @type {string}
      * @memberof ApiV1AnalyticsGoodsReturnGet200ResponseReportInner
      */
-    completedDt?: Date | null;
+    completedDt?: string | null;
     /**
      * Адрес ПВЗ выдачи возврата
      * @type {string}
@@ -51,10 +51,10 @@ export interface ApiV1AnalyticsGoodsReturnGet200ResponseReportInner {
     dstOfficeId?: number;
     /**
      * Дата и время истечения срока хранения возврата
-     * @type {Date}
+     * @type {string}
      * @memberof ApiV1AnalyticsGoodsReturnGet200ResponseReportInner
      */
-    expiredDt?: Date | null;
+    expiredDt?: string | null;
     /**
      * Тип статуса возврата:
      * 
@@ -85,10 +85,10 @@ export interface ApiV1AnalyticsGoodsReturnGet200ResponseReportInner {
     orderId?: number;
     /**
      * Дата и время готовности возврата к выдаче
-     * @type {Date}
+     * @type {string}
      * @memberof ApiV1AnalyticsGoodsReturnGet200ResponseReportInner
      */
-    readyToReturnDt?: Date | null;
+    readyToReturnDt?: string | null;
     /**
      * Причина возврата
      * @type {string}
@@ -169,15 +169,15 @@ export function ApiV1AnalyticsGoodsReturnGet200ResponseReportInnerFromJSONTyped(
         
         'barcode': json['barcode'] == null ? undefined : json['barcode'],
         'brand': json['brand'] == null ? undefined : json['brand'],
-        'completedDt': json['completedDt'] == null ? undefined : (new Date(json['completedDt'])),
+        'completedDt': json['completedDt'] == null ? undefined : json['completedDt'],
         'dstOfficeAddress': json['dstOfficeAddress'] == null ? undefined : json['dstOfficeAddress'],
         'dstOfficeId': json['dstOfficeId'] == null ? undefined : json['dstOfficeId'],
-        'expiredDt': json['expiredDt'] == null ? undefined : (new Date(json['expiredDt'])),
+        'expiredDt': json['expiredDt'] == null ? undefined : json['expiredDt'],
         'isStatusActive': json['isStatusActive'] == null ? undefined : json['isStatusActive'],
         'nmId': json['nmId'] == null ? undefined : json['nmId'],
         'orderDt': json['orderDt'] == null ? undefined : (new Date(json['orderDt'])),
         'orderId': json['orderId'] == null ? undefined : json['orderId'],
-        'readyToReturnDt': json['readyToReturnDt'] == null ? undefined : (new Date(json['readyToReturnDt'])),
+        'readyToReturnDt': json['readyToReturnDt'] == null ? undefined : json['readyToReturnDt'],
         'reason': json['reason'] == null ? undefined : json['reason'],
         'returnType': json['returnType'] == null ? undefined : json['returnType'],
         'shkId': json['shkId'] == null ? undefined : json['shkId'],
@@ -202,15 +202,15 @@ export function ApiV1AnalyticsGoodsReturnGet200ResponseReportInnerToJSONTyped(va
         
         'barcode': value['barcode'],
         'brand': value['brand'],
-        'completedDt': value['completedDt'] == null ? value['completedDt'] : value['completedDt'].toISOString(),
+        'completedDt': value['completedDt'],
         'dstOfficeAddress': value['dstOfficeAddress'],
         'dstOfficeId': value['dstOfficeId'],
-        'expiredDt': value['expiredDt'] == null ? value['expiredDt'] : value['expiredDt'].toISOString(),
+        'expiredDt': value['expiredDt'],
         'isStatusActive': value['isStatusActive'],
         'nmId': value['nmId'],
         'orderDt': value['orderDt'] == null ? value['orderDt'] : value['orderDt'].toISOString().substring(0,10),
         'orderId': value['orderId'],
-        'readyToReturnDt': value['readyToReturnDt'] == null ? value['readyToReturnDt'] : value['readyToReturnDt'].toISOString(),
+        'readyToReturnDt': value['readyToReturnDt'],
         'reason': value['reason'],
         'returnType': value['returnType'],
         'shkId': value['shkId'],

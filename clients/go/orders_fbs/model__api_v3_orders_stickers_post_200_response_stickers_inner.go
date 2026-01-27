@@ -1,7 +1,7 @@
 /*
 Заказы FBS
 
-<div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>   В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:   1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS): информация о сборочных заданиях, метаданные, стикеры и так далее.   2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.   3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB. <br> <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+<div class=\"description_important\"> <b>Методы для работы со сборочными заданиями модели DBW (Доставка курьером WB) теперь на <a href=\"https://dev.wildberries.ru/release-notes?id=312\">отдельном контуре</a>.</b> </div>  С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [метаданные](/openapi/orders-fbs#tag/Metadannye-FBS) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуски](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB <br>    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/127\">инструкции по работе с заказами FBS</a>   </div>  <div class=\"description_important\">     Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
 
 API version: order
 */
@@ -22,9 +22,9 @@ type ApiV3OrdersStickersPost200ResponseStickersInner struct {
 	// ID сборочного задания
 	OrderId *int64 `json:"orderId,omitempty"`
 	// Первая часть ID стикера (для печати подписи)
-	PartA *string `json:"partA,omitempty"`
+	PartA *int32 `json:"partA,omitempty"`
 	// Вторая часть ID стикера
-	PartB *string `json:"partB,omitempty"`
+	PartB *int32 `json:"partB,omitempty"`
 	// Закодированное значение стикера
 	Barcode *string `json:"barcode,omitempty"`
 	// Полное представление стикера в заданном формате (кодировка base64)
@@ -81,9 +81,9 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetOrderId(v int64) {
 }
 
 // GetPartA returns the PartA field value if set, zero value otherwise.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartA() string {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartA() int32 {
 	if o == nil || IsNil(o.PartA) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.PartA
@@ -91,7 +91,7 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartA() string {
 
 // GetPartAOk returns a tuple with the PartA field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartAOk() (*string, bool) {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartAOk() (*int32, bool) {
 	if o == nil || IsNil(o.PartA) {
 		return nil, false
 	}
@@ -107,15 +107,15 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) HasPartA() bool {
 	return false
 }
 
-// SetPartA gets a reference to the given string and assigns it to the PartA field.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartA(v string) {
+// SetPartA gets a reference to the given int32 and assigns it to the PartA field.
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartA(v int32) {
 	o.PartA = &v
 }
 
 // GetPartB returns the PartB field value if set, zero value otherwise.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartB() string {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartB() int32 {
 	if o == nil || IsNil(o.PartB) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.PartB
@@ -123,7 +123,7 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartB() string {
 
 // GetPartBOk returns a tuple with the PartB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartBOk() (*string, bool) {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartBOk() (*int32, bool) {
 	if o == nil || IsNil(o.PartB) {
 		return nil, false
 	}
@@ -139,8 +139,8 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) HasPartB() bool {
 	return false
 }
 
-// SetPartB gets a reference to the given string and assigns it to the PartB field.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartB(v string) {
+// SetPartB gets a reference to the given int32 and assigns it to the PartB field.
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartB(v int32) {
 	o.PartB = &v
 }
 

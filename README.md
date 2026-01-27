@@ -338,7 +338,6 @@
 - `GET /api/v1/analytics/goods-labeling` — Маркировка товара
 - `GET /api/v1/analytics/goods-return` — Получить отчёт
 - `GET /api/v1/analytics/region-sale` — Получить отчёт
-- `GET /api/v1/analytics/warehouse-measurements` — Занижение габаритов упаковки
 - `GET /api/v1/paid_storage` — Создать отчёт
 - `GET /api/v1/paid_storage/tasks/{task_id}/download` — Получить отчёт
 - `GET /api/v1/paid_storage/tasks/{task_id}/status` — Проверить статус

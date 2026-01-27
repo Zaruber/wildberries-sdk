@@ -1,7 +1,7 @@
 /*
  * Работа с товарами
  *
- * С помощью методов этого раздела вы можете:   - [создать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получить [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загрузить [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настроить [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - установить [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции по работе с товарами</a>   </div> 
+ * С помощью методов этого раздела вы можете:   - [создать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получить [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загрузить [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настроить [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - установить [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции по работе с товарами</a>   </div> 
  *
  * The version of the OpenAPI document: products
  * 
@@ -14,7 +14,7 @@ use serde::{Deserialize, Serialize};
 /// ContentV2GetCardsListPostRequestSettingsFilter : Параметры фильтрации
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ContentV2GetCardsListPostRequestSettingsFilter {
-    /// Фильтр по фото:    * `0` — только карточки без фото   * `1` — только карточки с фото   * `-1` — все карточки товара 
+    /// Фильтр по фото:   * `0` — только карточки без фото   * `1` — только карточки с фото   * `-1` — все карточки товара 
     #[serde(rename = "withPhoto", skip_serializing_if = "Option::is_none")]
     pub with_photo: Option<i32>,
     /// Поиск по артикулу продавца, артикулу WB, баркоду

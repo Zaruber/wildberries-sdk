@@ -339,7 +339,6 @@ print(feedbacks)
 - `reports.DefaultApi.api_v1_analytics_goods_labeling_get` — `GET /api/v1/analytics/goods-labeling` — Маркировка товара
 - `reports.DefaultApi.api_v1_analytics_goods_return_get` — `GET /api/v1/analytics/goods-return` — Получить отчёт
 - `reports.DefaultApi.api_v1_analytics_region_sale_get` — `GET /api/v1/analytics/region-sale` — Получить отчёт
-- `reports.DefaultApi.api_v1_analytics_warehouse_measurements_get` — `GET /api/v1/analytics/warehouse-measurements` — (Deprecated) Занижение габаритов упаковки
 - `reports.DefaultApi.api_v1_paid_storage_get` — `GET /api/v1/paid_storage` — Создать отчёт
 - `reports.DefaultApi.api_v1_paid_storage_tasks_task_id_download_get` — `GET /api/v1/paid_storage/tasks/{task_id}/download` — Получить отчёт
 - `reports.DefaultApi.api_v1_paid_storage_tasks_task_id_status_get` — `GET /api/v1/paid_storage/tasks/{task_id}/status` — Проверить статус
