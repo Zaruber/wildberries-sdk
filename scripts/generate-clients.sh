@@ -721,6 +721,87 @@ for path in root.rglob("*.rs"):
 PY
 }
 
+fix_php_host_override() {
+  local out_path="$1"
+  python3 - <<'PY' "${out_path}"
+import re
+import sys
+from pathlib import Path
+
+root = Path(sys.argv[1])
+
+# --- Fix Configuration.php ---
+for cfg in root.glob("lib/Configuration.php"):
+    text = cfg.read_text(encoding="utf-8")
+    if "hostOverridden" in text:
+        continue
+
+    # Add property after the existing $host property block
+    text = text.replace(
+        "protected $host = 'http://localhost';",
+        "protected $host = 'http://localhost';\n\n"
+        "    /**\n"
+        "     * Whether setHost() has been called\n"
+        "     *\n"
+        "     * @var bool\n"
+        "     */\n"
+        "    protected $hostOverridden = false;",
+    )
+
+    # Update setHost to track override
+    text = text.replace(
+        "    public function setHost($host)\n"
+        "    {\n"
+        "        $this->host = $host;\n"
+        "        return $this;\n"
+        "    }",
+        "    public function setHost($host)\n"
+        "    {\n"
+        "        $this->host = $host;\n"
+        "        $this->hostOverridden = true;\n"
+        "        return $this;\n"
+        "    }",
+    )
+
+    # Add isHostOverridden() after getHost()
+    text = text.replace(
+        "    public function getHost()\n"
+        "    {\n"
+        "        return $this->host;\n"
+        "    }",
+        "    public function getHost()\n"
+        "    {\n"
+        "        return $this->host;\n"
+        "    }\n"
+        "\n"
+        "    /**\n"
+        "     * Returns whether setHost() has been explicitly called\n"
+        "     *\n"
+        "     * @return bool\n"
+        "     */\n"
+        "    public function isHostOverridden()\n"
+        "    {\n"
+        "        return $this->hostOverridden;\n"
+        "    }",
+    )
+
+    cfg.write_text(text, encoding="utf-8")
+
+# --- Fix Api files ---
+for api in root.glob("lib/Api/*Api.php"):
+    text = api.read_text(encoding="utf-8")
+    if "$this->config->isHostOverridden()" in text:
+        continue
+    text = text.replace(
+        "$operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);",
+        "$operationHost = $this->config->isHostOverridden()\n"
+        "            ? $this->config->getHost()\n"
+        "            : Configuration::getHostString($hostSettings, $hostIndex, $variables);",
+    )
+    api.write_text(text, encoding="utf-8")
+PY
+}
+
 rewrite_typescript_index() {
   local out_path="$1"
   local index_file="${out_path}/src/index.ts"
@@ -1047,6 +1128,9 @@ for lang in "${langs[@]}"; do
       fix_rust_authors "${out_path}"
       fix_rust_large_ids "${out_path}"
       fix_rust_code "${out_path}"
+    fi
+    if [[ "${generator}" == "php" ]]; then
+      fix_php_host_override "${out_path}"
     fi
   done
 done
