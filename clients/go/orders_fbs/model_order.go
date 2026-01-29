@@ -61,6 +61,8 @@ type Order struct {
 	ConvertedCurrencyCode *int32 `json:"convertedCurrencyCode,omitempty"`
 	// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
 	CargoType *int32 `json:"cargoType,omitempty"`
+	// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+	CrossBorderType *int32 `json:"crossBorderType,omitempty"`
 	// Комментарий покупателя
 	Comment *string `json:"comment,omitempty"`
 	// Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену 
@@ -768,6 +770,38 @@ func (o *Order) SetCargoType(v int32) {
 	o.CargoType = &v
 }
 
+// GetCrossBorderType returns the CrossBorderType field value if set, zero value otherwise.
+func (o *Order) GetCrossBorderType() int32 {
+	if o == nil || IsNil(o.CrossBorderType) {
+		var ret int32
+		return ret
+	}
+	return *o.CrossBorderType
+}
+
+// GetCrossBorderTypeOk returns a tuple with the CrossBorderType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Order) GetCrossBorderTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.CrossBorderType) {
+		return nil, false
+	}
+	return o.CrossBorderType, true
+}
+
+// HasCrossBorderType returns a boolean if a field has been set.
+func (o *Order) HasCrossBorderType() bool {
+	if o != nil && !IsNil(o.CrossBorderType) {
+		return true
+	}
+
+	return false
+}
+
+// SetCrossBorderType gets a reference to the given int32 and assigns it to the CrossBorderType field.
+func (o *Order) SetCrossBorderType(v int32) {
+	o.CrossBorderType = &v
+}
+
 // GetComment returns the Comment field value if set, zero value otherwise.
 func (o *Order) GetComment() string {
 	if o == nil || IsNil(o.Comment) {
@@ -936,6 +970,9 @@ func (o Order) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CargoType) {
 		toSerialize["cargoType"] = o.CargoType
+	}
+	if !IsNil(o.CrossBorderType) {
+		toSerialize["crossBorderType"] = o.CrossBorderType
 	}
 	if !IsNil(o.Comment) {
 		toSerialize["comment"] = o.Comment

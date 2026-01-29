@@ -67,7 +67,7 @@ class DefaultApi:
     ) -> List[ModelsAcceptanceCoefficient]:
         """(Deprecated) Коэффициенты приёмки
 
-        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param warehouse_ids: ID складов.<br>По умолчанию возвращаются данные по всем складам
         :type warehouse_ids: str
@@ -140,7 +140,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ModelsAcceptanceCoefficient]]:
         """(Deprecated) Коэффициенты приёмки
 
-        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param warehouse_ids: ID складов.<br>По умолчанию возвращаются данные по всем складам
         :type warehouse_ids: str
@@ -213,7 +213,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """(Deprecated) Коэффициенты приёмки
 
-        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param warehouse_ids: ID складов.<br>По умолчанию возвращаются данные по всем складам
         :type warehouse_ids: str
@@ -353,7 +353,7 @@ class DefaultApi:
     ) -> ModelsOptionsResultModel:
         """Опции приёмки
 
-        Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param models_good: (required)
         :type models_good: List[ModelsGood]
@@ -429,7 +429,7 @@ class DefaultApi:
     ) -> ApiResponse[ModelsOptionsResultModel]:
         """Опции приёмки
 
-        Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param models_good: (required)
         :type models_good: List[ModelsGood]
@@ -505,7 +505,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Опции приёмки
 
-        Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param models_good: (required)
         :type models_good: List[ModelsGood]
@@ -664,7 +664,7 @@ class DefaultApi:
     ) -> ModelsSupplyDetails:
         """Детали поставки
 
-        Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки или заказа (required)
         :type id: int
@@ -739,7 +739,7 @@ class DefaultApi:
     ) -> ApiResponse[ModelsSupplyDetails]:
         """Детали поставки
 
-        Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки или заказа (required)
         :type id: int
@@ -814,7 +814,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Детали поставки
 
-        Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки или заказа (required)
         :type id: int
@@ -960,7 +960,7 @@ class DefaultApi:
     ) -> List[ModelsGoodInSupply]:
         """Товары поставки
 
-        Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки или заказа (required)
         :type id: int
@@ -1042,7 +1042,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ModelsGoodInSupply]]:
         """Товары поставки
 
-        Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки или заказа (required)
         :type id: int
@@ -1124,7 +1124,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Товары поставки
 
-        Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки или заказа (required)
         :type id: int
@@ -1282,7 +1282,7 @@ class DefaultApi:
     ) -> List[ModelsBox]:
         """Упаковка поставки
 
-        Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки (required)
         :type id: int
@@ -1352,7 +1352,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ModelsBox]]:
         """Упаковка поставки
 
-        Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки (required)
         :type id: int
@@ -1422,7 +1422,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Упаковка поставки
 
-        Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param id: ID поставки (required)
         :type id: int
@@ -1558,7 +1558,7 @@ class DefaultApi:
     ) -> List[ModelsSupply]:
         """Список поставок
 
-        Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param models_supplies_filters_request: (required)
         :type models_supplies_filters_request: ModelsSuppliesFiltersRequest
@@ -1636,7 +1636,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ModelsSupply]]:
         """Список поставок
 
-        Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param models_supplies_filters_request: (required)
         :type models_supplies_filters_request: ModelsSuppliesFiltersRequest
@@ -1714,7 +1714,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Список поставок
 
-        Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+        Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 
         :param models_supplies_filters_request: (required)
         :type models_supplies_filters_request: ModelsSuppliesFiltersRequest
@@ -1876,7 +1876,7 @@ class DefaultApi:
     ) -> List[ModelsTransitTariff]:
         """Транзитные направления
 
-        Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 10 запросов | </div> 
+        Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1941,7 +1941,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ModelsTransitTariff]]:
         """Транзитные направления
 
-        Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 10 запросов | </div> 
+        Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2006,7 +2006,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Транзитные направления
 
-        Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 10 запросов | </div> 
+        Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2132,7 +2132,7 @@ class DefaultApi:
     ) -> List[ModelsWarehousesResultItems]:
         """Список складов
 
-        Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2199,7 +2199,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ModelsWarehousesResultItems]]:
         """Список складов
 
-        Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2266,7 +2266,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Список складов
 
-        Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

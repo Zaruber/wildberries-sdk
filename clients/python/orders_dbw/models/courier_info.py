@@ -30,10 +30,8 @@ class CourierInfo(BaseModel):
     """ # noqa: E501
     contacts: Optional[CourierContactsResponse] = Field(default=None, description="Контактные данные курьера")
     must_be_assigned: Optional[StrictBool] = Field(default=None, description="Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да     Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2) ", alias="mustBeAssigned")
-    p_time_from: Optional[datetime] = Field(default=None, description="Дата и время, с которого прибудет курьер", alias="pTimeFrom")
-    p_time_to: Optional[datetime] = Field(default=None, description="Дата и время, до которого прибудет курьер", alias="pTimeTo")
     updated_at: Optional[datetime] = Field(default=None, description="Дата и время обновления информации о курьере. <br> Если `null`, информация не обновлялась", alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["contacts", "mustBeAssigned", "pTimeFrom", "pTimeTo", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["contacts", "mustBeAssigned", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,16 +80,6 @@ class CourierInfo(BaseModel):
         if self.contacts is None and "contacts" in self.model_fields_set:
             _dict['contacts'] = None
 
-        # set to None if p_time_from (nullable) is None
-        # and model_fields_set contains the field
-        if self.p_time_from is None and "p_time_from" in self.model_fields_set:
-            _dict['pTimeFrom'] = None
-
-        # set to None if p_time_to (nullable) is None
-        # and model_fields_set contains the field
-        if self.p_time_to is None and "p_time_to" in self.model_fields_set:
-            _dict['pTimeTo'] = None
-
         # set to None if updated_at (nullable) is None
         # and model_fields_set contains the field
         if self.updated_at is None and "updated_at" in self.model_fields_set:
@@ -111,8 +99,6 @@ class CourierInfo(BaseModel):
         _obj = cls.model_validate({
             "contacts": CourierContactsResponse.from_dict(obj["contacts"]) if obj.get("contacts") is not None else None,
             "mustBeAssigned": obj.get("mustBeAssigned"),
-            "pTimeFrom": obj.get("pTimeFrom"),
-            "pTimeTo": obj.get("pTimeTo"),
             "updatedAt": obj.get("updatedAt")
         })
         return _obj

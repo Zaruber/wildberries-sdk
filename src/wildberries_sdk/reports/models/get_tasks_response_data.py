@@ -27,7 +27,7 @@ class GetTasksResponseData(BaseModel):
     GetTasksResponseData
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="ID задания")
-    status: Optional[StrictStr] = Field(default=None, description="Статус задания:    * `new` — новое   * `processing` —  обрабатывается   * `done` — отчёт готов   * `purged` — отчёт удалён   * `canceled` — отклонено ")
+    status: Optional[StrictStr] = Field(default=None, description="Статус задания:   * `new` — новое   * `processing` —  обрабатывается   * `done` — отчёт готов   * `purged` — отчёт удалён   * `canceled` — отклонено ")
     __properties: ClassVar[List[str]] = ["id", "status"]
 
     model_config = ConfigDict(

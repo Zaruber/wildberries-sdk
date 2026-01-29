@@ -69,6 +69,16 @@ export interface Supply {
      */
     cargoType?: SupplyCargoTypeEnum;
     /**
+     * Тип поставки:
+     *   - `0` — не кроссбордер
+     *   - `1` — кроссбордер
+     *   - `null` — значение отсутствует
+     * 
+     * @type {number}
+     * @memberof Supply
+     */
+    crossBorderType?: SupplyCrossBorderTypeEnum | null;
+    /**
      * ID склада назначения поставки. Если `null`, склад назначения не указан
      * @type {number}
      * @memberof Supply
@@ -87,6 +97,15 @@ export const SupplyCargoTypeEnum = {
     NUMBER_3: 3
 } as const;
 export type SupplyCargoTypeEnum = typeof SupplyCargoTypeEnum[keyof typeof SupplyCargoTypeEnum];
+
+/**
+ * @export
+ */
+export const SupplyCrossBorderTypeEnum = {
+    NUMBER_0: 0,
+    NUMBER_1: 1
+} as const;
+export type SupplyCrossBorderTypeEnum = typeof SupplyCrossBorderTypeEnum[keyof typeof SupplyCrossBorderTypeEnum];
 
 
 /**
@@ -113,6 +132,7 @@ export function SupplyFromJSONTyped(json: any, ignoreDiscriminator: boolean): Su
         'scanDt': json['scanDt'] == null ? undefined : (new Date(json['scanDt'])),
         'name': json['name'] == null ? undefined : json['name'],
         'cargoType': json['cargoType'] == null ? undefined : json['cargoType'],
+        'crossBorderType': json['crossBorderType'] == null ? undefined : json['crossBorderType'],
         'destinationOfficeId': json['destinationOfficeId'] == null ? undefined : json['destinationOfficeId'],
     };
 }
@@ -135,6 +155,7 @@ export function SupplyToJSONTyped(value?: Supply | null, ignoreDiscriminator: bo
         'scanDt': value['scanDt'] == null ? value['scanDt'] : value['scanDt'].toISOString(),
         'name': value['name'],
         'cargoType': value['cargoType'],
+        'crossBorderType': value['crossBorderType'],
         'destinationOfficeId': value['destinationOfficeId'],
     };
 }

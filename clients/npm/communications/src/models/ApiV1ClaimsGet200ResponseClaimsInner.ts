@@ -76,7 +76,7 @@ export interface ApiV1ClaimsGet200ResponseClaimsInner {
      */
     wbComment?: string | null;
     /**
-     * Дата и время оформления заявки покупателем
+     * Дата и время оформления заявки покупателем. UTC+3
      * @type {string}
      * @memberof ApiV1ClaimsGet200ResponseClaimsInner
      */
@@ -94,7 +94,7 @@ export interface ApiV1ClaimsGet200ResponseClaimsInner {
      */
     orderDt?: string;
     /**
-     * Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
+     * Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления. UTC+3
      * @type {string}
      * @memberof ApiV1ClaimsGet200ResponseClaimsInner
      */

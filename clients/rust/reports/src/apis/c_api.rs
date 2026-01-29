@@ -26,7 +26,7 @@ pub enum ApiV1AnalyticsExciseReportPostError {
 }
 
 
-/// Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 часов | 10 запросов | 30 минут | 10 запросов | </div> 
+/// Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
 pub async fn api_v1_analytics_excise_report_post(configuration: &configuration::Configuration, date_from: &str, date_to: &str, excise_report_request: Option<models::ExciseReportRequest>) -> Result<models::ExciseReportResponse, Error<ApiV1AnalyticsExciseReportPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;

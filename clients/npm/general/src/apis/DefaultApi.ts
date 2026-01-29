@@ -97,7 +97,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+     * Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
      * Создать приглашение для нового пользователя
      */
     async apiV1InvitePostRaw(requestParameters: ApiV1InvitePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateInviteResponse>> {
@@ -108,7 +108,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+     * Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
      * Создать приглашение для нового пользователя
      */
     async apiV1InvitePost(requestParameters: ApiV1InvitePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateInviteResponse> {
@@ -140,7 +140,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+     * Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
      * Получение информации о продавце
      */
     async apiV1SellerInfoGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1SellerInfoGet200Response>> {
@@ -151,7 +151,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+     * Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
      * Получение информации о продавце
      */
     async apiV1SellerInfoGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1SellerInfoGet200Response> {
@@ -194,7 +194,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 10 запросов | </div> 
+     * Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
      * Удалить пользователя
      */
     async apiV1UserDeleteRaw(requestParameters: ApiV1UserDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -205,7 +205,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 10 запросов | </div> 
+     * Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
      * Удалить пользователя
      */
     async apiV1UserDelete(requestParameters: ApiV1UserDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
@@ -246,7 +246,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+     * Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
      * Изменить права доступа пользователей
      */
     async apiV1UsersAccessPutRaw(requestParameters: ApiV1UsersAccessPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -257,7 +257,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+     * Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
      * Изменить права доступа пользователей
      */
     async apiV1UsersAccessPut(requestParameters: ApiV1UsersAccessPutRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
@@ -300,7 +300,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+     * Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
      * Получить список активных или приглашённых пользователей продавца
      */
     async apiV1UsersGetRaw(requestParameters: ApiV1UsersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetUsersResponse>> {
@@ -311,7 +311,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+     * Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
      * Получить список активных или приглашённых пользователей продавца
      */
     async apiV1UsersGet(requestParameters: ApiV1UsersGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetUsersResponse> {

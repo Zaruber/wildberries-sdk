@@ -64,6 +64,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'scan_dt' => '\DateTime',
         'name' => 'string',
         'cargo_type' => 'int',
+        'cross_border_type' => 'int',
         'destination_office_id' => 'int'
     ];
 
@@ -82,6 +83,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'scan_dt' => 'date-time',
         'name' => null,
         'cargo_type' => null,
+        'cross_border_type' => 'int32',
         'destination_office_id' => 'int64'
     ];
 
@@ -98,6 +100,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'scan_dt' => true,
         'name' => false,
         'cargo_type' => false,
+        'cross_border_type' => true,
         'destination_office_id' => true
     ];
 
@@ -194,6 +197,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'scan_dt' => 'scanDt',
         'name' => 'name',
         'cargo_type' => 'cargoType',
+        'cross_border_type' => 'crossBorderType',
         'destination_office_id' => 'destinationOfficeId'
     ];
 
@@ -210,6 +214,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'scan_dt' => 'setScanDt',
         'name' => 'setName',
         'cargo_type' => 'setCargoType',
+        'cross_border_type' => 'setCrossBorderType',
         'destination_office_id' => 'setDestinationOfficeId'
     ];
 
@@ -226,6 +231,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'scan_dt' => 'getScanDt',
         'name' => 'getName',
         'cargo_type' => 'getCargoType',
+        'cross_border_type' => 'getCrossBorderType',
         'destination_office_id' => 'getDestinationOfficeId'
     ];
 
@@ -274,6 +280,8 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CARGO_TYPE_NUMBER_1 = 1;
     public const CARGO_TYPE_NUMBER_2 = 2;
     public const CARGO_TYPE_NUMBER_3 = 3;
+    public const CROSS_BORDER_TYPE_NUMBER_0 = 0;
+    public const CROSS_BORDER_TYPE_NUMBER_1 = 1;
 
     /**
      * Gets allowable values of the enum
@@ -287,6 +295,19 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CARGO_TYPE_NUMBER_1,
             self::CARGO_TYPE_NUMBER_2,
             self::CARGO_TYPE_NUMBER_3,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCrossBorderTypeAllowableValues()
+    {
+        return [
+            self::CROSS_BORDER_TYPE_NUMBER_0,
+            self::CROSS_BORDER_TYPE_NUMBER_1,
         ];
     }
 
@@ -312,6 +333,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('scan_dt', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('cargo_type', $data ?? [], null);
+        $this->setIfExists('cross_border_type', $data ?? [], null);
         $this->setIfExists('destination_office_id', $data ?? [], null);
     }
 
@@ -347,6 +369,15 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'cargo_type', must be one of '%s'",
                 $this->container['cargo_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getCrossBorderTypeAllowableValues();
+        if (!is_null($this->container['cross_border_type']) && !in_array($this->container['cross_border_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'cross_border_type', must be one of '%s'",
+                $this->container['cross_border_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -575,6 +606,50 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['cargo_type'] = $cargo_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets cross_border_type
+     *
+     * @return int|null
+     */
+    public function getCrossBorderType()
+    {
+        return $this->container['cross_border_type'];
+    }
+
+    /**
+     * Sets cross_border_type
+     *
+     * @param int|null $cross_border_type Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует
+     *
+     * @return self
+     */
+    public function setCrossBorderType($cross_border_type)
+    {
+        if (is_null($cross_border_type)) {
+            array_push($this->openAPINullablesSetToNull, 'cross_border_type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cross_border_type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getCrossBorderTypeAllowableValues();
+        if (!is_null($cross_border_type) && !in_array($cross_border_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'cross_border_type', must be one of '%s'",
+                    $cross_border_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['cross_border_type'] = $cross_border_type;
 
         return $this;
     }

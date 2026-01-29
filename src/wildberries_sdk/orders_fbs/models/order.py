@@ -51,10 +51,11 @@ class Order(BaseModel):
     currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты продажи", alias="currencyCode")
     converted_currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты страны продавца", alias="convertedCurrencyCode")
     cargo_type: Optional[StrictInt] = Field(default=None, description="Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) ", alias="cargoType")
+    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер ", alias="crossBorderType")
     comment: Optional[Annotated[str, Field(strict=True, max_length=300)]] = Field(default=None, description="Комментарий покупателя")
     is_zero_order: Optional[StrictBool] = Field(default=None, description="Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену ", alias="isZeroOrder")
     options: Optional[OrderOptions] = None
-    __properties: ClassVar[List[str]] = ["address", "scanPrice", "deliveryType", "supplyId", "orderUid", "article", "colorCode", "rid", "createdAt", "offices", "skus", "id", "warehouseId", "officeId", "nmId", "chrtId", "price", "convertedPrice", "currencyCode", "convertedCurrencyCode", "cargoType", "comment", "isZeroOrder", "options"]
+    __properties: ClassVar[List[str]] = ["address", "scanPrice", "deliveryType", "supplyId", "orderUid", "article", "colorCode", "rid", "createdAt", "offices", "skus", "id", "warehouseId", "officeId", "nmId", "chrtId", "price", "convertedPrice", "currencyCode", "convertedCurrencyCode", "cargoType", "crossBorderType", "comment", "isZeroOrder", "options"]
 
     @field_validator('delivery_type')
     def delivery_type_validate_enum(cls, value):
@@ -74,6 +75,16 @@ class Order(BaseModel):
 
         if value not in set([1, 2, 3]):
             raise ValueError("must be one of enum values (1, 2, 3)")
+        return value
+
+    @field_validator('cross_border_type')
+    def cross_border_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set([0, 1]):
+            raise ValueError("must be one of enum values (0, 1)")
         return value
 
     model_config = ConfigDict(
@@ -164,6 +175,7 @@ class Order(BaseModel):
             "currencyCode": obj.get("currencyCode"),
             "convertedCurrencyCode": obj.get("convertedCurrencyCode"),
             "cargoType": obj.get("cargoType"),
+            "crossBorderType": obj.get("crossBorderType"),
             "comment": obj.get("comment"),
             "isZeroOrder": obj.get("isZeroOrder"),
             "options": OrderOptions.from_dict(obj["options"]) if obj.get("options") is not None else None

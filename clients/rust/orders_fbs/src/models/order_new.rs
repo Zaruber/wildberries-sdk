@@ -96,6 +96,9 @@ pub struct OrderNew {
     /// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
     #[serde(rename = "cargoType", skip_serializing_if = "Option::is_none")]
     pub cargo_type: Option<CargoType>,
+    /// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+    #[serde(rename = "crossBorderType", skip_serializing_if = "Option::is_none")]
+    pub cross_border_type: Option<CrossBorderType>,
     /// Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену 
     #[serde(rename = "isZeroOrder", skip_serializing_if = "Option::is_none")]
     pub is_zero_order: Option<bool>,
@@ -134,6 +137,7 @@ impl OrderNew {
             currency_code: None,
             converted_currency_code: None,
             cargo_type: None,
+            cross_border_type: None,
             is_zero_order: None,
             options: None,
         }
@@ -165,6 +169,20 @@ pub enum CargoType {
 impl Default for CargoType {
     fn default() -> CargoType {
         Self::Variant1
+    }
+}
+/// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum CrossBorderType {
+    #[serde(rename = "0")]
+    Variant0,
+    #[serde(rename = "1")]
+    Variant1,
+}
+
+impl Default for CrossBorderType {
+    fn default() -> CrossBorderType {
+        Self::Variant0
     }
 }
 

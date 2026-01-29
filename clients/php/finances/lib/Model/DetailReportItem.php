@@ -746,6 +746,8 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
     public const REPORT_TYPE_NUMBER_1 = 1;
     public const REPORT_TYPE_NUMBER_2 = 2;
+    public const REPORT_TYPE_NUMBER_3 = 3;
+    public const REPORT_TYPE_NUMBER_4 = 4;
 
     /**
      * Gets allowable values of the enum
@@ -757,6 +759,8 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::REPORT_TYPE_NUMBER_1,
             self::REPORT_TYPE_NUMBER_2,
+            self::REPORT_TYPE_NUMBER_3,
+            self::REPORT_TYPE_NUMBER_4,
         ];
     }
 
@@ -2825,7 +2829,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets report_type
      *
-     * @param int|null $report_type Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе
+     * @param int|null $report_type Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии
      *
      * @return self
      */

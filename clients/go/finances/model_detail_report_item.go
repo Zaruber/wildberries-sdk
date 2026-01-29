@@ -160,7 +160,7 @@ type DetailReportItem struct {
 	Kiz *string `json:"kiz,omitempty"`
 	// Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. 
 	Srid *string `json:"srid,omitempty"`
-	// Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе 
+	// Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии 
 	ReportType *int32 `json:"report_type,omitempty"`
 	// Признак B2B-продажи
 	IsLegalEntity *bool `json:"is_legal_entity,omitempty"`

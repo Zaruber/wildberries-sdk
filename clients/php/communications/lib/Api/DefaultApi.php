@@ -2558,8 +2558,8 @@ class DefaultApi
      *
      * @param  bool $is_archive Состояние заявки:   * &#x60;false&#x60; — на рассмотрении   * &#x60;true&#x60; — в архиве (required)
      * @param  string|null $id ID заявки (optional)
-     * @param  int|null $limit Количество заявок в ответе. По умолчанию &#x60;50&#x60; (optional)
-     * @param  int|null $offset После какого элемента выдавать данные. По умолчанию &#x60;0&#x60; (optional)
+     * @param  int|null $limit Количество заявок в ответе (optional, default to 50)
+     * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -2569,7 +2569,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet200Response|\Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet400Response|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response
      */
-    public function apiV1ClaimsGet($is_archive, $id = null, $limit = null, $offset = null, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
+    public function apiV1ClaimsGet($is_archive, $id = null, $limit = 50, $offset = 0, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
     {
         list($response) = $this->apiV1ClaimsGetWithHttpInfo($is_archive, $id, $limit, $offset, $nm_id, $hostIndex, $variables, $contentType);
         return $response;
@@ -2586,8 +2586,8 @@ class DefaultApi
      *
      * @param  bool $is_archive Состояние заявки:   * &#x60;false&#x60; — на рассмотрении   * &#x60;true&#x60; — в архиве (required)
      * @param  string|null $id ID заявки (optional)
-     * @param  int|null $limit Количество заявок в ответе. По умолчанию &#x60;50&#x60; (optional)
-     * @param  int|null $offset После какого элемента выдавать данные. По умолчанию &#x60;0&#x60; (optional)
+     * @param  int|null $limit Количество заявок в ответе (optional, default to 50)
+     * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -2597,7 +2597,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet200Response|\Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet400Response|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiV1ClaimsGetWithHttpInfo($is_archive, $id = null, $limit = null, $offset = null, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
+    public function apiV1ClaimsGetWithHttpInfo($is_archive, $id = null, $limit = 50, $offset = 0, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
     {
         $request = $this->apiV1ClaimsGetRequest($is_archive, $id, $limit, $offset, $nm_id, $hostIndex, $variables, $contentType);
 
@@ -2723,8 +2723,8 @@ class DefaultApi
      *
      * @param  bool $is_archive Состояние заявки:   * &#x60;false&#x60; — на рассмотрении   * &#x60;true&#x60; — в архиве (required)
      * @param  string|null $id ID заявки (optional)
-     * @param  int|null $limit Количество заявок в ответе. По умолчанию &#x60;50&#x60; (optional)
-     * @param  int|null $offset После какого элемента выдавать данные. По умолчанию &#x60;0&#x60; (optional)
+     * @param  int|null $limit Количество заявок в ответе (optional, default to 50)
+     * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -2733,7 +2733,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiV1ClaimsGetAsync($is_archive, $id = null, $limit = null, $offset = null, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
+    public function apiV1ClaimsGetAsync($is_archive, $id = null, $limit = 50, $offset = 0, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
     {
         return $this->apiV1ClaimsGetAsyncWithHttpInfo($is_archive, $id, $limit, $offset, $nm_id, $hostIndex, $variables, $contentType)
             ->then(
@@ -2754,8 +2754,8 @@ class DefaultApi
      *
      * @param  bool $is_archive Состояние заявки:   * &#x60;false&#x60; — на рассмотрении   * &#x60;true&#x60; — в архиве (required)
      * @param  string|null $id ID заявки (optional)
-     * @param  int|null $limit Количество заявок в ответе. По умолчанию &#x60;50&#x60; (optional)
-     * @param  int|null $offset После какого элемента выдавать данные. По умолчанию &#x60;0&#x60; (optional)
+     * @param  int|null $limit Количество заявок в ответе (optional, default to 50)
+     * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -2764,7 +2764,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiV1ClaimsGetAsyncWithHttpInfo($is_archive, $id = null, $limit = null, $offset = null, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
+    public function apiV1ClaimsGetAsyncWithHttpInfo($is_archive, $id = null, $limit = 50, $offset = 0, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
     {
         $returnType = '\Wildberries\Sdk\Communications\Model\ApiV1ClaimsGet200Response';
         $request = $this->apiV1ClaimsGetRequest($is_archive, $id, $limit, $offset, $nm_id, $hostIndex, $variables, $contentType);
@@ -2814,8 +2814,8 @@ class DefaultApi
      *
      * @param  bool $is_archive Состояние заявки:   * &#x60;false&#x60; — на рассмотрении   * &#x60;true&#x60; — в архиве (required)
      * @param  string|null $id ID заявки (optional)
-     * @param  int|null $limit Количество заявок в ответе. По умолчанию &#x60;50&#x60; (optional)
-     * @param  int|null $offset После какого элемента выдавать данные. По умолчанию &#x60;0&#x60; (optional)
+     * @param  int|null $limit Количество заявок в ответе (optional, default to 50)
+     * @param  int|null $offset После какого элемента выдавать данные (optional, default to 0)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -2824,7 +2824,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiV1ClaimsGetRequest($is_archive, $id = null, $limit = null, $offset = null, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
+    public function apiV1ClaimsGetRequest($is_archive, $id = null, $limit = 50, $offset = 0, $nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1ClaimsGet'][0])
     {
 
         // verify the required parameter 'is_archive' is set
@@ -4397,7 +4397,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1FeedbacksCountGet'] to see the possible values for this operation
@@ -4406,7 +4406,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbacksCountGet200Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response
      */
-    public function apiV1FeedbacksCountGet($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
+    public function apiV1FeedbacksCountGet($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
     {
         list($response) = $this->apiV1FeedbacksCountGetWithHttpInfo($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType);
         return $response;
@@ -4423,7 +4423,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1FeedbacksCountGet'] to see the possible values for this operation
@@ -4432,7 +4432,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Wildberries\Sdk\Communications\Model\ApiV1FeedbacksCountGet200Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiV1FeedbacksCountGetWithHttpInfo($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
+    public function apiV1FeedbacksCountGetWithHttpInfo($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
     {
         $request = $this->apiV1FeedbacksCountGetRequest($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType);
 
@@ -4572,7 +4572,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1FeedbacksCountGet'] to see the possible values for this operation
@@ -4580,7 +4580,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiV1FeedbacksCountGetAsync($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
+    public function apiV1FeedbacksCountGetAsync($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
     {
         return $this->apiV1FeedbacksCountGetAsyncWithHttpInfo($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType)
             ->then(
@@ -4601,7 +4601,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1FeedbacksCountGet'] to see the possible values for this operation
@@ -4609,7 +4609,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiV1FeedbacksCountGetAsyncWithHttpInfo($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
+    public function apiV1FeedbacksCountGetAsyncWithHttpInfo($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
     {
         $returnType = '\Wildberries\Sdk\Communications\Model\ApiV1FeedbacksCountGet200Response';
         $request = $this->apiV1FeedbacksCountGetRequest($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType);
@@ -4659,7 +4659,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1FeedbacksCountGet'] to see the possible values for this operation
@@ -4667,7 +4667,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiV1FeedbacksCountGetRequest($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
+    public function apiV1FeedbacksCountGetRequest($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1FeedbacksCountGet'][0])
     {
 
 
@@ -5158,7 +5158,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество отзывов (max. 5 000) (required)
      * @param  int $skip Количество отзывов для пропуска (max. 199990) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -5188,7 +5188,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество отзывов (max. 5 000) (required)
      * @param  int $skip Количество отзывов для пропуска (max. 199990) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -5341,7 +5341,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество отзывов (max. 5 000) (required)
      * @param  int $skip Количество отзывов для пропуска (max. 199990) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -5374,7 +5374,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество отзывов (max. 5 000) (required)
      * @param  int $skip Количество отзывов для пропуска (max. 199990) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -5436,7 +5436,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Обработан ли отзыв:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество отзывов (max. 5 000) (required)
      * @param  int $skip Количество отзывов для пропуска (max. 199990) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -6773,7 +6773,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1QuestionsCountGet'] to see the possible values for this operation
@@ -6782,7 +6782,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Wildberries\Sdk\Communications\Model\ApiV1QuestionsCountGet200Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response
      */
-    public function apiV1QuestionsCountGet($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
+    public function apiV1QuestionsCountGet($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
     {
         list($response) = $this->apiV1QuestionsCountGetWithHttpInfo($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType);
         return $response;
@@ -6799,7 +6799,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1QuestionsCountGet'] to see the possible values for this operation
@@ -6808,7 +6808,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Wildberries\Sdk\Communications\Model\ApiV1QuestionsCountGet200Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response|\Wildberries\Sdk\Communications\Model\ResponsefeedbackErr|\Wildberries\Sdk\Communications\Model\ApiV1NewFeedbacksQuestionsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiV1QuestionsCountGetWithHttpInfo($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
+    public function apiV1QuestionsCountGetWithHttpInfo($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
     {
         $request = $this->apiV1QuestionsCountGetRequest($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType);
 
@@ -6948,7 +6948,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1QuestionsCountGet'] to see the possible values for this operation
@@ -6956,7 +6956,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiV1QuestionsCountGetAsync($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
+    public function apiV1QuestionsCountGetAsync($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
     {
         return $this->apiV1QuestionsCountGetAsyncWithHttpInfo($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType)
             ->then(
@@ -6977,7 +6977,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1QuestionsCountGet'] to see the possible values for this operation
@@ -6985,7 +6985,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiV1QuestionsCountGetAsyncWithHttpInfo($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
+    public function apiV1QuestionsCountGetAsyncWithHttpInfo($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
     {
         $returnType = '\Wildberries\Sdk\Communications\Model\ApiV1QuestionsCountGet200Response';
         $request = $this->apiV1QuestionsCountGetRequest($date_from, $date_to, $is_answered, $hostIndex, $variables, $contentType);
@@ -7035,7 +7035,7 @@ class DefaultApi
      *
      * @param  int|null $date_from Дата начала периода в формате Unix timestamp (optional)
      * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
-     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (optional)
+     * @param  bool|null $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (optional, default to true)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1QuestionsCountGet'] to see the possible values for this operation
@@ -7043,7 +7043,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apiV1QuestionsCountGetRequest($date_from = null, $date_to = null, $is_answered = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
+    public function apiV1QuestionsCountGetRequest($date_from = null, $date_to = null, $is_answered = true, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1QuestionsCountGet'][0])
     {
 
 
@@ -7534,7 +7534,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество запрашиваемых вопросов (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int $skip Количество вопросов для пропуска (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -7564,7 +7564,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество запрашиваемых вопросов (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int $skip Количество вопросов для пропуска (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -7717,7 +7717,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество запрашиваемых вопросов (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int $skip Количество вопросов для пропуска (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -7750,7 +7750,7 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество запрашиваемых вопросов (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int $skip Количество вопросов для пропуска (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int|null $nm_id Артикул WB (optional)
@@ -7812,7 +7812,7 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://feedbacks-api.wildberries.ru
      *
-     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да, по умолчанию   - &#x60;false&#x60; — нет (required)
+     * @param  bool $is_answered Есть ли ответ на вопрос:   - &#x60;true&#x60; — да   - &#x60;false&#x60; — нет (required)
      * @param  int $take Количество запрашиваемых вопросов (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int $skip Количество вопросов для пропуска (максимально допустимое значение для параметра - 10 000, при этом сумма значений параметров &#x60;take&#x60; и &#x60;skip&#x60; не должна превышать 10 000) (required)
      * @param  int|null $nm_id Артикул WB (optional)

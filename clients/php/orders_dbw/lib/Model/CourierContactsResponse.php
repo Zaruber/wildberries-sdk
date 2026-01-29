@@ -59,7 +59,9 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'car_number' => 'string',
         'full_name' => 'string',
-        'phone' => 'string'
+        'phone' => 'string',
+        'p_time_from' => '\DateTime',
+        'p_time_to' => '\DateTime'
     ];
 
     /**
@@ -72,7 +74,9 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'car_number' => null,
         'full_name' => null,
-        'phone' => null
+        'phone' => null,
+        'p_time_from' => 'date-time',
+        'p_time_to' => 'date-time'
     ];
 
     /**
@@ -83,7 +87,9 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     protected static array $openAPINullables = [
         'car_number' => false,
         'full_name' => false,
-        'phone' => false
+        'phone' => false,
+        'p_time_from' => true,
+        'p_time_to' => true
     ];
 
     /**
@@ -174,7 +180,9 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $attributeMap = [
         'car_number' => 'carNumber',
         'full_name' => 'fullName',
-        'phone' => 'phone'
+        'phone' => 'phone',
+        'p_time_from' => 'pTimeFrom',
+        'p_time_to' => 'pTimeTo'
     ];
 
     /**
@@ -185,7 +193,9 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $setters = [
         'car_number' => 'setCarNumber',
         'full_name' => 'setFullName',
-        'phone' => 'setPhone'
+        'phone' => 'setPhone',
+        'p_time_from' => 'setPTimeFrom',
+        'p_time_to' => 'setPTimeTo'
     ];
 
     /**
@@ -196,7 +206,9 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'car_number' => 'getCarNumber',
         'full_name' => 'getFullName',
-        'phone' => 'getPhone'
+        'phone' => 'getPhone',
+        'p_time_from' => 'getPTimeFrom',
+        'p_time_to' => 'getPTimeTo'
     ];
 
     /**
@@ -259,6 +271,8 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('car_number', $data ?? [], null);
         $this->setIfExists('full_name', $data ?? [], null);
         $this->setIfExists('phone', $data ?? [], null);
+        $this->setIfExists('p_time_from', $data ?? [], null);
+        $this->setIfExists('p_time_to', $data ?? [], null);
     }
 
     /**
@@ -380,6 +394,74 @@ class CourierContactsResponse implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable phone cannot be null');
         }
         $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets p_time_from
+     *
+     * @return \DateTime|null
+     */
+    public function getPTimeFrom()
+    {
+        return $this->container['p_time_from'];
+    }
+
+    /**
+     * Sets p_time_from
+     *
+     * @param \DateTime|null $p_time_from Дата и время, с которого прибудет курьер
+     *
+     * @return self
+     */
+    public function setPTimeFrom($p_time_from)
+    {
+        if (is_null($p_time_from)) {
+            array_push($this->openAPINullablesSetToNull, 'p_time_from');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_time_from', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['p_time_from'] = $p_time_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets p_time_to
+     *
+     * @return \DateTime|null
+     */
+    public function getPTimeTo()
+    {
+        return $this->container['p_time_to'];
+    }
+
+    /**
+     * Sets p_time_to
+     *
+     * @param \DateTime|null $p_time_to Дата и время, до которого прибудет курьер
+     *
+     * @return self
+     */
+    public function setPTimeTo($p_time_to)
+    {
+        if (is_null($p_time_to)) {
+            array_push($this->openAPINullablesSetToNull, 'p_time_to');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_time_to', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['p_time_to'] = $p_time_to;
 
         return $this;
     }

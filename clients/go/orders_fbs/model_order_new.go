@@ -75,6 +75,8 @@ type OrderNew struct {
 	ConvertedCurrencyCode *int32 `json:"convertedCurrencyCode,omitempty"`
 	// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
 	CargoType *int32 `json:"cargoType,omitempty"`
+	// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+	CrossBorderType *int32 `json:"crossBorderType,omitempty"`
 	// Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену 
 	IsZeroOrder *bool `json:"isZeroOrder,omitempty"`
 	Options *OrderOptions `json:"options,omitempty"`
@@ -1036,6 +1038,38 @@ func (o *OrderNew) SetCargoType(v int32) {
 	o.CargoType = &v
 }
 
+// GetCrossBorderType returns the CrossBorderType field value if set, zero value otherwise.
+func (o *OrderNew) GetCrossBorderType() int32 {
+	if o == nil || IsNil(o.CrossBorderType) {
+		var ret int32
+		return ret
+	}
+	return *o.CrossBorderType
+}
+
+// GetCrossBorderTypeOk returns a tuple with the CrossBorderType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderNew) GetCrossBorderTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.CrossBorderType) {
+		return nil, false
+	}
+	return o.CrossBorderType, true
+}
+
+// HasCrossBorderType returns a boolean if a field has been set.
+func (o *OrderNew) HasCrossBorderType() bool {
+	if o != nil && !IsNil(o.CrossBorderType) {
+		return true
+	}
+
+	return false
+}
+
+// SetCrossBorderType gets a reference to the given int32 and assigns it to the CrossBorderType field.
+func (o *OrderNew) SetCrossBorderType(v int32) {
+	o.CrossBorderType = &v
+}
+
 // GetIsZeroOrder returns the IsZeroOrder field value if set, zero value otherwise.
 func (o *OrderNew) GetIsZeroOrder() bool {
 	if o == nil || IsNil(o.IsZeroOrder) {
@@ -1193,6 +1227,9 @@ func (o OrderNew) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CargoType) {
 		toSerialize["cargoType"] = o.CargoType
+	}
+	if !IsNil(o.CrossBorderType) {
+		toSerialize["crossBorderType"] = o.CrossBorderType
 	}
 	if !IsNil(o.IsZeroOrder) {
 		toSerialize["isZeroOrder"] = o.IsZeroOrder

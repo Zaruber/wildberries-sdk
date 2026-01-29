@@ -223,7 +223,7 @@ pub struct DetailReportItem {
     /// Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. 
     #[serde(rename = "srid", skip_serializing_if = "Option::is_none")]
     pub srid: Option<String>,
-    /// Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе 
+    /// Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии 
     #[serde(rename = "report_type", skip_serializing_if = "Option::is_none")]
     pub report_type: Option<ReportType>,
     /// Признак B2B-продажи
@@ -369,13 +369,17 @@ impl DetailReportItem {
         }
     }
 }
-/// Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе 
+/// Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum ReportType {
     #[serde(rename = "1")]
     Variant1,
     #[serde(rename = "2")]
     Variant2,
+    #[serde(rename = "3")]
+    Variant3,
+    #[serde(rename = "4")]
+    Variant4,
 }
 
 impl Default for ReportType {

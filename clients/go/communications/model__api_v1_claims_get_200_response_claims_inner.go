@@ -33,13 +33,13 @@ type ApiV1ClaimsGet200ResponseClaimsInner struct {
 	UserComment *string `json:"user_comment,omitempty"`
 	// Ответ покупателю
 	WbComment NullableString `json:"wb_comment,omitempty"`
-	// Дата и время оформления заявки покупателем
+	// Дата и время оформления заявки покупателем. UTC+3
 	Dt *string `json:"dt,omitempty"`
 	// Название товара
 	ImtName NullableString `json:"imt_name,omitempty"`
 	// Дата и время заказа
 	OrderDt *string `json:"order_dt,omitempty"`
-	// Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
+	// Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления. UTC+3
 	DtUpdate *string `json:"dt_update,omitempty"`
 	// Фотографии из заявки покупателя
 	Photos []string `json:"photos,omitempty"`

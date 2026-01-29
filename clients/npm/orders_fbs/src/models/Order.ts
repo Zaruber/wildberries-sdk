@@ -175,6 +175,15 @@ export interface Order {
      */
     cargoType?: OrderCargoTypeEnum;
     /**
+     * Тип сборочного задания:
+     *   - `0` — не кроссбордер
+     *   - `1` — кроссбордер
+     * 
+     * @type {number}
+     * @memberof Order
+     */
+    crossBorderType?: OrderCrossBorderTypeEnum;
+    /**
      * Комментарий покупателя
      * @type {string}
      * @memberof Order
@@ -216,6 +225,15 @@ export const OrderCargoTypeEnum = {
 } as const;
 export type OrderCargoTypeEnum = typeof OrderCargoTypeEnum[keyof typeof OrderCargoTypeEnum];
 
+/**
+ * @export
+ */
+export const OrderCrossBorderTypeEnum = {
+    NUMBER_0: 0,
+    NUMBER_1: 1
+} as const;
+export type OrderCrossBorderTypeEnum = typeof OrderCrossBorderTypeEnum[keyof typeof OrderCrossBorderTypeEnum];
+
 
 /**
  * Check if a given object implements the Order interface.
@@ -255,6 +273,7 @@ export function OrderFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ord
         'currencyCode': json['currencyCode'] == null ? undefined : json['currencyCode'],
         'convertedCurrencyCode': json['convertedCurrencyCode'] == null ? undefined : json['convertedCurrencyCode'],
         'cargoType': json['cargoType'] == null ? undefined : json['cargoType'],
+        'crossBorderType': json['crossBorderType'] == null ? undefined : json['crossBorderType'],
         'comment': json['comment'] == null ? undefined : json['comment'],
         'isZeroOrder': json['isZeroOrder'] == null ? undefined : json['isZeroOrder'],
         'options': json['options'] == null ? undefined : OrderOptionsFromJSON(json['options']),
@@ -293,6 +312,7 @@ export function OrderToJSONTyped(value?: Order | null, ignoreDiscriminator: bool
         'currencyCode': value['currencyCode'],
         'convertedCurrencyCode': value['convertedCurrencyCode'],
         'cargoType': value['cargoType'],
+        'crossBorderType': value['crossBorderType'],
         'comment': value['comment'],
         'isZeroOrder': value['isZeroOrder'],
         'options': OrderOptionsToJSON(value['options']),

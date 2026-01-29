@@ -22,6 +22,12 @@ pub struct CourierContactsResponse {
     /// Номер телефона
     #[serde(rename = "phone", skip_serializing_if = "Option::is_none")]
     pub phone: Option<String>,
+    /// Дата и время, с которого прибудет курьер
+    #[serde(rename = "pTimeFrom", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub p_time_from: Option<Option<String>>,
+    /// Дата и время, до которого прибудет курьер
+    #[serde(rename = "pTimeTo", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub p_time_to: Option<Option<String>>,
 }
 
 impl CourierContactsResponse {
@@ -30,6 +36,8 @@ impl CourierContactsResponse {
             car_number: None,
             full_name: None,
             phone: None,
+            p_time_from: None,
+            p_time_to: None,
         }
     }
 }

@@ -452,6 +452,7 @@ export interface DetailReportItem {
      * Тип отчёта:
      *   - `1` — стандартный
      *   - `2` — для уведомления о выкупе
+     *   - `3`, `4` — для уведомления о выкупе для Грузии
      * 
      * @type {number}
      * @memberof DetailReportItem
@@ -561,7 +562,9 @@ export interface DetailReportItem {
  */
 export const DetailReportItemReportTypeEnum = {
     NUMBER_1: 1,
-    NUMBER_2: 2
+    NUMBER_2: 2,
+    NUMBER_3: 3,
+    NUMBER_4: 4
 } as const;
 export type DetailReportItemReportTypeEnum = typeof DetailReportItemReportTypeEnum[keyof typeof DetailReportItemReportTypeEnum];
 

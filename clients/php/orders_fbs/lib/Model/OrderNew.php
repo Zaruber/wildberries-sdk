@@ -85,6 +85,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_code' => 'int',
         'converted_currency_code' => 'int',
         'cargo_type' => 'int',
+        'cross_border_type' => 'int',
         'is_zero_order' => 'bool',
         'options' => '\Wildberries\Sdk\OrdersFbs\Model\OrderOptions'
     ];
@@ -125,6 +126,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_code' => 'ISO 4217',
         'converted_currency_code' => 'ISO 4217',
         'cargo_type' => null,
+        'cross_border_type' => 'int32',
         'is_zero_order' => null,
         'options' => null
     ];
@@ -163,6 +165,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_code' => false,
         'converted_currency_code' => false,
         'cargo_type' => false,
+        'cross_border_type' => false,
         'is_zero_order' => false,
         'options' => false
     ];
@@ -281,6 +284,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_code' => 'currencyCode',
         'converted_currency_code' => 'convertedCurrencyCode',
         'cargo_type' => 'cargoType',
+        'cross_border_type' => 'crossBorderType',
         'is_zero_order' => 'isZeroOrder',
         'options' => 'options'
     ];
@@ -319,6 +323,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_code' => 'setCurrencyCode',
         'converted_currency_code' => 'setConvertedCurrencyCode',
         'cargo_type' => 'setCargoType',
+        'cross_border_type' => 'setCrossBorderType',
         'is_zero_order' => 'setIsZeroOrder',
         'options' => 'setOptions'
     ];
@@ -357,6 +362,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_code' => 'getCurrencyCode',
         'converted_currency_code' => 'getConvertedCurrencyCode',
         'cargo_type' => 'getCargoType',
+        'cross_border_type' => 'getCrossBorderType',
         'is_zero_order' => 'getIsZeroOrder',
         'options' => 'getOptions'
     ];
@@ -406,6 +412,8 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CARGO_TYPE_NUMBER_1 = 1;
     public const CARGO_TYPE_NUMBER_2 = 2;
     public const CARGO_TYPE_NUMBER_3 = 3;
+    public const CROSS_BORDER_TYPE_NUMBER_0 = 0;
+    public const CROSS_BORDER_TYPE_NUMBER_1 = 1;
 
     /**
      * Gets allowable values of the enum
@@ -430,6 +438,19 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CARGO_TYPE_NUMBER_1,
             self::CARGO_TYPE_NUMBER_2,
             self::CARGO_TYPE_NUMBER_3,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCrossBorderTypeAllowableValues()
+    {
+        return [
+            self::CROSS_BORDER_TYPE_NUMBER_0,
+            self::CROSS_BORDER_TYPE_NUMBER_1,
         ];
     }
 
@@ -476,6 +497,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('currency_code', $data ?? [], null);
         $this->setIfExists('converted_currency_code', $data ?? [], null);
         $this->setIfExists('cargo_type', $data ?? [], null);
+        $this->setIfExists('cross_border_type', $data ?? [], null);
         $this->setIfExists('is_zero_order', $data ?? [], null);
         $this->setIfExists('options', $data ?? [], null);
     }
@@ -525,6 +547,15 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'cargo_type', must be one of '%s'",
                 $this->container['cargo_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getCrossBorderTypeAllowableValues();
+        if (!is_null($this->container['cross_border_type']) && !in_array($this->container['cross_border_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'cross_border_type', must be one of '%s'",
+                $this->container['cross_border_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -1369,6 +1400,43 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['cargo_type'] = $cargo_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets cross_border_type
+     *
+     * @return int|null
+     */
+    public function getCrossBorderType()
+    {
+        return $this->container['cross_border_type'];
+    }
+
+    /**
+     * Sets cross_border_type
+     *
+     * @param int|null $cross_border_type Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер
+     *
+     * @return self
+     */
+    public function setCrossBorderType($cross_border_type)
+    {
+        if (is_null($cross_border_type)) {
+            throw new \InvalidArgumentException('non-nullable cross_border_type cannot be null');
+        }
+        $allowedValues = $this->getCrossBorderTypeAllowableValues();
+        if (!in_array($cross_border_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'cross_border_type', must be one of '%s'",
+                    $cross_border_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['cross_border_type'] = $cross_border_type;
 
         return $this;
     }

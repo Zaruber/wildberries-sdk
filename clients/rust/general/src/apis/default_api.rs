@@ -65,7 +65,7 @@ pub enum ApiV1UsersGetError {
 }
 
 
-/// Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+/// Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn api_v1_invite_post(configuration: &configuration::Configuration, create_invite_request: models::CreateInviteRequest) -> Result<models::CreateInviteResponse, Error<ApiV1InvitePostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_create_invite_request = create_invite_request;
@@ -111,7 +111,7 @@ pub async fn api_v1_invite_post(configuration: &configuration::Configuration, cr
     }
 }
 
-/// Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+/// Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 pub async fn api_v1_seller_info_get(configuration: &configuration::Configuration, ) -> Result<models::ApiV1SellerInfoGet200Response, Error<ApiV1SellerInfoGetError>> {
 
     let uri_str = format!("{}/api/v1/seller-info", configuration.base_path);
@@ -154,7 +154,7 @@ pub async fn api_v1_seller_info_get(configuration: &configuration::Configuration
     }
 }
 
-/// Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 10 запросов | </div> 
+/// Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
 pub async fn api_v1_user_delete(configuration: &configuration::Configuration, deleted_user_id: i64) -> Result<(), Error<ApiV1UserDeleteError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_deleted_user_id = deleted_user_id;
@@ -189,7 +189,7 @@ pub async fn api_v1_user_delete(configuration: &configuration::Configuration, de
     }
 }
 
-/// Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+/// Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn api_v1_users_access_put(configuration: &configuration::Configuration, update_user_access_request: models::UpdateUserAccessRequest) -> Result<(), Error<ApiV1UsersAccessPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_update_user_access_request = update_user_access_request;
@@ -224,7 +224,7 @@ pub async fn api_v1_users_access_put(configuration: &configuration::Configuratio
     }
 }
 
-/// Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+/// Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn api_v1_users_get(configuration: &configuration::Configuration, limit: Option<i64>, offset: Option<i64>, is_invite_only: Option<bool>) -> Result<models::GetUsersResponse, Error<ApiV1UsersGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_limit = limit;

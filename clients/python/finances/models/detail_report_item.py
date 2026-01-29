@@ -97,7 +97,7 @@ class DetailReportItem(BaseModel):
     assembly_id: Optional[StrictInt] = Field(default=None, description="Номер сборочного задания")
     kiz: Optional[StrictStr] = Field(default=None, description="Код маркировки.<br> Поле будет в ответе при наличии значения ")
     srid: Optional[StrictStr] = Field(default=None, description="Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. ")
-    report_type: Optional[StrictInt] = Field(default=None, description="Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе ")
+    report_type: Optional[StrictInt] = Field(default=None, description="Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии ")
     is_legal_entity: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи")
     trbx_id: Optional[StrictStr] = Field(default=None, description="Номер короба для обработки товара")
     installment_cofinancing_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка по программе софинансирования")
@@ -122,8 +122,8 @@ class DetailReportItem(BaseModel):
         if value is None:
             return value
 
-        if value not in set([1, 2]):
-            raise ValueError("must be one of enum values (1, 2)")
+        if value not in set([1, 2, 3, 4]):
+            raise ValueError("must be one of enum values (1, 2, 3, 4)")
         return value
 
     model_config = ConfigDict(

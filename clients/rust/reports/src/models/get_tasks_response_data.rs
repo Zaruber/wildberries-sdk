@@ -16,7 +16,7 @@ pub struct GetTasksResponseData {
     /// ID задания
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
-    /// Статус задания:    * `new` — новое   * `processing` —  обрабатывается   * `done` — отчёт готов   * `purged` — отчёт удалён   * `canceled` — отклонено 
+    /// Статус задания:   * `new` — новое   * `processing` —  обрабатывается   * `done` — отчёт готов   * `purged` — отчёт удалён   * `canceled` — отклонено 
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 }

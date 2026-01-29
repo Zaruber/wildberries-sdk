@@ -225,6 +225,15 @@ export interface OrderNew {
      */
     cargoType?: OrderNewCargoTypeEnum;
     /**
+     * Тип сборочного задания:
+     *   - `0` — не кроссбордер
+     *   - `1` — кроссбордер
+     * 
+     * @type {number}
+     * @memberof OrderNew
+     */
+    crossBorderType?: OrderNewCrossBorderTypeEnum;
+    /**
      * Признак заказа товара с нулевым остатком:
      *   - `false` — заказ сделан на товар с ненулевым остатком
      *   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену
@@ -259,6 +268,15 @@ export const OrderNewCargoTypeEnum = {
     NUMBER_3: 3
 } as const;
 export type OrderNewCargoTypeEnum = typeof OrderNewCargoTypeEnum[keyof typeof OrderNewCargoTypeEnum];
+
+/**
+ * @export
+ */
+export const OrderNewCrossBorderTypeEnum = {
+    NUMBER_0: 0,
+    NUMBER_1: 1
+} as const;
+export type OrderNewCrossBorderTypeEnum = typeof OrderNewCrossBorderTypeEnum[keyof typeof OrderNewCrossBorderTypeEnum];
 
 
 /**
@@ -306,6 +324,7 @@ export function OrderNewFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
         'currencyCode': json['currencyCode'] == null ? undefined : json['currencyCode'],
         'convertedCurrencyCode': json['convertedCurrencyCode'] == null ? undefined : json['convertedCurrencyCode'],
         'cargoType': json['cargoType'] == null ? undefined : json['cargoType'],
+        'crossBorderType': json['crossBorderType'] == null ? undefined : json['crossBorderType'],
         'isZeroOrder': json['isZeroOrder'] == null ? undefined : json['isZeroOrder'],
         'options': json['options'] == null ? undefined : OrderOptionsFromJSON(json['options']),
     };
@@ -350,6 +369,7 @@ export function OrderNewToJSONTyped(value?: OrderNew | null, ignoreDiscriminator
         'currencyCode': value['currencyCode'],
         'convertedCurrencyCode': value['convertedCurrencyCode'],
         'cargoType': value['cargoType'],
+        'crossBorderType': value['crossBorderType'],
         'isZeroOrder': value['isZeroOrder'],
         'options': OrderOptionsToJSON(value['options']),
     };

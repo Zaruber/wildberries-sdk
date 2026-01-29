@@ -34,6 +34,8 @@ type Supply struct {
 	Name *string `json:"name,omitempty"`
 	// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
 	CargoType *int32 `json:"cargoType,omitempty"`
+	// Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует 
+	CrossBorderType NullableInt32 `json:"crossBorderType,omitempty"`
 	// ID склада назначения поставки. Если `null`, склад назначения не указан
 	DestinationOfficeId NullableInt64 `json:"destinationOfficeId,omitempty"`
 }
@@ -299,6 +301,48 @@ func (o *Supply) SetCargoType(v int32) {
 	o.CargoType = &v
 }
 
+// GetCrossBorderType returns the CrossBorderType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Supply) GetCrossBorderType() int32 {
+	if o == nil || IsNil(o.CrossBorderType.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.CrossBorderType.Get()
+}
+
+// GetCrossBorderTypeOk returns a tuple with the CrossBorderType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Supply) GetCrossBorderTypeOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CrossBorderType.Get(), o.CrossBorderType.IsSet()
+}
+
+// HasCrossBorderType returns a boolean if a field has been set.
+func (o *Supply) HasCrossBorderType() bool {
+	if o != nil && o.CrossBorderType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCrossBorderType gets a reference to the given NullableInt32 and assigns it to the CrossBorderType field.
+func (o *Supply) SetCrossBorderType(v int32) {
+	o.CrossBorderType.Set(&v)
+}
+// SetCrossBorderTypeNil sets the value for CrossBorderType to be an explicit nil
+func (o *Supply) SetCrossBorderTypeNil() {
+	o.CrossBorderType.Set(nil)
+}
+
+// UnsetCrossBorderType ensures that no value is present for CrossBorderType, not even an explicit nil
+func (o *Supply) UnsetCrossBorderType() {
+	o.CrossBorderType.Unset()
+}
+
 // GetDestinationOfficeId returns the DestinationOfficeId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Supply) GetDestinationOfficeId() int64 {
 	if o == nil || IsNil(o.DestinationOfficeId.Get()) {
@@ -371,6 +415,9 @@ func (o Supply) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CargoType) {
 		toSerialize["cargoType"] = o.CargoType
+	}
+	if o.CrossBorderType.IsSet() {
+		toSerialize["crossBorderType"] = o.CrossBorderType.Get()
 	}
 	if o.DestinationOfficeId.IsSet() {
 		toSerialize["destinationOfficeId"] = o.DestinationOfficeId.Get()

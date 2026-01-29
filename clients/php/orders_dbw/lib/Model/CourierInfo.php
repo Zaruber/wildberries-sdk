@@ -59,8 +59,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'contacts' => '\Wildberries\Sdk\OrdersDbw\Model\CourierContactsResponse',
         'must_be_assigned' => 'bool',
-        'p_time_from' => '\DateTime',
-        'p_time_to' => '\DateTime',
         'updated_at' => '\DateTime'
     ];
 
@@ -74,8 +72,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'contacts' => null,
         'must_be_assigned' => null,
-        'p_time_from' => 'date-time',
-        'p_time_to' => 'date-time',
         'updated_at' => 'date-time'
     ];
 
@@ -87,8 +83,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'contacts' => true,
         'must_be_assigned' => false,
-        'p_time_from' => true,
-        'p_time_to' => true,
         'updated_at' => true
     ];
 
@@ -180,8 +174,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'contacts' => 'contacts',
         'must_be_assigned' => 'mustBeAssigned',
-        'p_time_from' => 'pTimeFrom',
-        'p_time_to' => 'pTimeTo',
         'updated_at' => 'updatedAt'
     ];
 
@@ -193,8 +185,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'contacts' => 'setContacts',
         'must_be_assigned' => 'setMustBeAssigned',
-        'p_time_from' => 'setPTimeFrom',
-        'p_time_to' => 'setPTimeTo',
         'updated_at' => 'setUpdatedAt'
     ];
 
@@ -206,8 +196,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'contacts' => 'getContacts',
         'must_be_assigned' => 'getMustBeAssigned',
-        'p_time_from' => 'getPTimeFrom',
-        'p_time_to' => 'getPTimeTo',
         'updated_at' => 'getUpdatedAt'
     ];
 
@@ -270,8 +258,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('contacts', $data ?? [], null);
         $this->setIfExists('must_be_assigned', $data ?? [], null);
-        $this->setIfExists('p_time_from', $data ?? [], null);
-        $this->setIfExists('p_time_to', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
     }
 
@@ -374,74 +360,6 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable must_be_assigned cannot be null');
         }
         $this->container['must_be_assigned'] = $must_be_assigned;
-
-        return $this;
-    }
-
-    /**
-     * Gets p_time_from
-     *
-     * @return \DateTime|null
-     */
-    public function getPTimeFrom()
-    {
-        return $this->container['p_time_from'];
-    }
-
-    /**
-     * Sets p_time_from
-     *
-     * @param \DateTime|null $p_time_from Дата и время, с которого прибудет курьер
-     *
-     * @return self
-     */
-    public function setPTimeFrom($p_time_from)
-    {
-        if (is_null($p_time_from)) {
-            array_push($this->openAPINullablesSetToNull, 'p_time_from');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('p_time_from', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['p_time_from'] = $p_time_from;
-
-        return $this;
-    }
-
-    /**
-     * Gets p_time_to
-     *
-     * @return \DateTime|null
-     */
-    public function getPTimeTo()
-    {
-        return $this->container['p_time_to'];
-    }
-
-    /**
-     * Sets p_time_to
-     *
-     * @param \DateTime|null $p_time_to Дата и время, до которого прибудет курьер
-     *
-     * @return self
-     */
-    public function setPTimeTo($p_time_to)
-    {
-        if (is_null($p_time_to)) {
-            array_push($this->openAPINullablesSetToNull, 'p_time_to');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('p_time_to', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['p_time_to'] = $p_time_to;
 
         return $this;
     }

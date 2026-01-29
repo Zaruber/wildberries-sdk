@@ -336,7 +336,7 @@ class GetTasksResponseData implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets status
      *
-     * @param string|null $status Статус задания:    * `new` — новое   * `processing` —  обрабатывается   * `done` — отчёт готов   * `purged` — отчёт удалён   * `canceled` — отклонено
+     * @param string|null $status Статус задания:   * `new` — новое   * `processing` —  обрабатывается   * `done` — отчёт готов   * `purged` — отчёт удалён   * `canceled` — отклонено
      *
      * @return self
      */

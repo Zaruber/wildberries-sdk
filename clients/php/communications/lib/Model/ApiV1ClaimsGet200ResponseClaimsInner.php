@@ -642,7 +642,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Sets dt
      *
-     * @param string|null $dt Дата и время оформления заявки покупателем
+     * @param string|null $dt Дата и время оформления заявки покупателем. UTC+3
      *
      * @return self
      */
@@ -730,7 +730,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Sets dt_update
      *
-     * @param string|null $dt_update Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
+     * @param string|null $dt_update Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления. UTC+3
      *
      * @return self
      */

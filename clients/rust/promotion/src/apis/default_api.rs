@@ -629,7 +629,7 @@ pub async fn adv_v0_auction_bids_patch(configuration: &configuration::Configurat
     }
 }
 
-/// Метод добавляет и удаляет карточки товаров в кампаниях. <br><br> Для кампаний в статусах `4`, `9` и `11`. <br><br> Для добавляемых товаров устанавливается текущая минимальная ставка.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 1 запрос | </div> 
+/// Метод добавляет и удаляет карточки товаров в кампаниях. <br><br> Для кампаний в статусах `4`, `9` и `11`. <br><br> Для добавляемых товаров устанавливается текущая минимальная ставка.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 1 запрос | </div> 
 pub async fn adv_v0_auction_nms_patch(configuration: &configuration::Configuration, adv_v0_auction_nms_patch_request: models::AdvV0AuctionNmsPatchRequest) -> Result<models::AdvV0AuctionNmsPatch200Response, Error<AdvV0AuctionNmsPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_adv_v0_auction_nms_patch_request = adv_v0_auction_nms_patch_request;
@@ -675,7 +675,7 @@ pub async fn adv_v0_auction_nms_patch(configuration: &configuration::Configurati
     }
 }
 
-/// Метод меняет места размещения в кампаниях с ручной ставкой и моделью оплаты за показы — `cpm`. <br><br> Для кампаний в статусах `4`, `9` и `11`.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 1 запрос | </div> 
+/// Метод меняет места размещения в кампаниях с ручной ставкой и моделью оплаты за показы — `cpm`. <br><br> Для кампаний в статусах `4`, `9` и `11`.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 1 запрос | </div> 
 pub async fn adv_v0_auction_placements_put(configuration: &configuration::Configuration, adv_v0_auction_placements_put_request: models::AdvV0AuctionPlacementsPutRequest) -> Result<(), Error<AdvV0AuctionPlacementsPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_adv_v0_auction_placements_put_request = adv_v0_auction_placements_put_request;
@@ -837,7 +837,7 @@ pub async fn adv_v0_config_get(configuration: &configuration::Configuration, ) -
     }
 }
 
-/// Метод удаляет [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусе `4` — готова к запуску.<br><br>  После удаления кампания некоторое время будет находиться в статусе `-1` — кампания в процессе удаления. Полное удаление кампании занимает от 3 до 10 минут.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод удаляет [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусе `4` — готова к запуску.<br><br>  После удаления кампания некоторое время будет находиться в статусе `-1` — кампания в процессе удаления. Полное удаление кампании занимает от 3 до 10 минут.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v0_delete_get(configuration: &configuration::Configuration, id: i32) -> Result<(), Error<AdvV0DeleteGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -872,7 +872,7 @@ pub async fn adv_v0_delete_get(configuration: &configuration::Configuration, id:
     }
 }
 
-/// Метод удаляет ставки с поисковых кластеров.<br> Можно использовать только для кампаний с:   - ручной ставкой   - моделью оплаты `cpm` — за показы   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 10 запросов | </div> 
+/// Метод удаляет ставки с поисковых кластеров.<br> Можно использовать только для кампаний с:   - ручной ставкой   - моделью оплаты `cpm` — за показы   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 10 запросов | </div> 
 pub async fn adv_v0_normquery_bids_delete(configuration: &configuration::Configuration, v0_set_norm_query_bids_request: models::V0SetNormQueryBidsRequest) -> Result<(), Error<AdvV0NormqueryBidsDeleteError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_set_norm_query_bids_request = v0_set_norm_query_bids_request;
@@ -907,7 +907,7 @@ pub async fn adv_v0_normquery_bids_delete(configuration: &configuration::Configu
     }
 }
 
-/// Метод устанавливает ставки на поисковые кластеры.<br> Можно использовать только для кампаний с:   - ручной ставкой   - моделью оплаты `cpm` — за показы   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 2 запроса | 500 миллисекунд | 4 запроса | </div> 
+/// Метод устанавливает ставки на поисковые кластеры.<br> Можно использовать только для кампаний с:   - ручной ставкой   - моделью оплаты `cpm` — за показы   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 2 запроса | 500 мс | 4 запроса | </div> 
 pub async fn adv_v0_normquery_bids_post(configuration: &configuration::Configuration, v0_set_norm_query_bids_request: models::V0SetNormQueryBidsRequest) -> Result<(), Error<AdvV0NormqueryBidsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_set_norm_query_bids_request = v0_set_norm_query_bids_request;
@@ -942,7 +942,7 @@ pub async fn adv_v0_normquery_bids_post(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает список поисковых кластеров со ставками по:   - ID кампаний   - артикулам WB  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 10 запросов | </div> 
+/// Метод возвращает список поисковых кластеров со ставками по:   - ID кампаний   - артикулам WB  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 10 запросов | </div> 
 pub async fn adv_v0_normquery_get_bids_post(configuration: &configuration::Configuration, v0_get_norm_query_bids_request: models::V0GetNormQueryBidsRequest) -> Result<models::V0GetNormQueryBidsResponse, Error<AdvV0NormqueryGetBidsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_get_norm_query_bids_request = v0_get_norm_query_bids_request;
@@ -988,7 +988,7 @@ pub async fn adv_v0_normquery_get_bids_post(configuration: &configuration::Confi
     }
 }
 
-/// Метод возвращает список минус-фраз по:   - ID кампаний   - артикулам WB   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 10 запросов | </div> 
+/// Метод возвращает список минус-фраз по:   - ID кампаний   - артикулам WB   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 10 запросов | </div> 
 pub async fn adv_v0_normquery_get_minus_post(configuration: &configuration::Configuration, v0_get_norm_query_minus_request: models::V0GetNormQueryMinusRequest) -> Result<models::V0GetNormQueryMinusResponse, Error<AdvV0NormqueryGetMinusPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_get_norm_query_minus_request = v0_get_norm_query_minus_request;
@@ -1034,7 +1034,7 @@ pub async fn adv_v0_normquery_get_minus_post(configuration: &configuration::Conf
     }
 }
 
-/// Метод устанавливает и удаляет минус-фразы в кампаниях c:   - ручной ставкой   - моделью оплаты `cpm` — за показы  <div class=\"description_important\">   Отправка пустого массива удаляет все минус-фразы </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 10 запросов | </div> 
+/// Метод устанавливает и удаляет минус-фразы в кампаниях c:   - ручной ставкой   - моделью оплаты `cpm` — за показы  <div class=\"description_important\">   Отправка пустого массива удаляет все минус-фразы </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 10 запросов | </div> 
 pub async fn adv_v0_normquery_set_minus_post(configuration: &configuration::Configuration, v0_set_minus_norm_query_request: models::V0SetMinusNormQueryRequest) -> Result<(), Error<AdvV0NormquerySetMinusPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_set_minus_norm_query_request = v0_set_minus_norm_query_request;
@@ -1069,7 +1069,7 @@ pub async fn adv_v0_normquery_set_minus_post(configuration: &configuration::Conf
     }
 }
 
-/// Метод возвращает статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 10 запросов | 6 секунд | 20 запросов | </div> 
+/// Метод возвращает статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 pub async fn adv_v0_normquery_stats_post(configuration: &configuration::Configuration, v0_get_norm_query_stats_request: models::V0GetNormQueryStatsRequest) -> Result<models::V0GetNormQueryStatsResponse, Error<AdvV0NormqueryStatsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_get_norm_query_stats_request = v0_get_norm_query_stats_request;
@@ -1115,7 +1115,7 @@ pub async fn adv_v0_normquery_stats_post(configuration: &configuration::Configur
     }
 }
 
-/// Метод ставит [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусе `9` — активна — на паузу.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод ставит [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусе `9` — активна — на паузу.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v0_pause_get(configuration: &configuration::Configuration, id: i32) -> Result<(), Error<AdvV0PauseGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -1150,7 +1150,7 @@ pub async fn adv_v0_pause_get(configuration: &configuration::Configuration, id: 
     }
 }
 
-/// Метод меняет название [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get). Это можно сделать в любой момент существования кампании.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод меняет название [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get). Это можно сделать в любой момент существования кампании.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v0_rename_post(configuration: &configuration::Configuration, adv_v0_rename_post_request: Option<models::AdvV0RenamePostRequest>) -> Result<(), Error<AdvV0RenamePostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_adv_v0_rename_post_request = adv_v0_rename_post_request;
@@ -1185,7 +1185,7 @@ pub async fn adv_v0_rename_post(configuration: &configuration::Configuration, ad
     }
 }
 
-/// Метод запускает [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусах `4` — готово к запуску — или `11` — пауза.  Чтобы запустить кампанию со статусом `4`, необходимо выполнить два условия:   1. После создания кампании в кабинете **WB. Продвижение** нажать кнопку **Применить изменения**.   2. Установить бюджет — максимальную сумму затрат на кампанию.  Чтобы запустить кампанию со статусом `11`, проверьте ее бюджет. Если бюджета недостаточно, [пополните его](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget~1deposit/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод запускает [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусах `4` — готово к запуску — или `11` — пауза. Чтобы запустить кампанию, проверьте ее бюджет. Если бюджета недостаточно, [пополните его](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget~1deposit/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v0_start_get(configuration: &configuration::Configuration, id: i32) -> Result<(), Error<AdvV0StartGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -1271,7 +1271,7 @@ pub async fn adv_v0_stats_keywords_get(configuration: &configuration::Configurat
     }
 }
 
-/// Метод завершает [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусах:   - `4` — готово к запуску   - `9` — активна   - `11` — пауза  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод завершает [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусах:   - `4` — готово к запуску   - `9` — активна   - `11` — пауза  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v0_stop_get(configuration: &configuration::Configuration, id: i32) -> Result<(), Error<AdvV0StopGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -1306,7 +1306,7 @@ pub async fn adv_v0_stop_get(configuration: &configuration::Configuration, id: i
     }
 }
 
-/// Метод возвращает информацию о кампании [WB Медиа](https://cmp.wildberries.ru/cmpf/list). Вместо карточек товаров в медиакампаниях продвигаются рекламные баннеры продавца на сайте и в приложении WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 10 запросов | 100 миллисекунд | 10 запросов | </div> 
+/// Метод возвращает информацию о кампании [WB Медиа](https://cmp.wildberries.ru/cmpf/list). Вместо карточек товаров в медиакампаниях продвигаются рекламные баннеры продавца на сайте и в приложении WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 10 запросов | 100 мс | 10 запросов | </div> 
 pub async fn adv_v1_advert_get(configuration: &configuration::Configuration, id: i32) -> Result<models::AdvV1AdvertGet200Response, Error<AdvV1AdvertGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -1352,7 +1352,7 @@ pub async fn adv_v1_advert_get(configuration: &configuration::Configuration, id:
     }
 }
 
-/// Метод возвращает список всех [медиакампаний](/openapi/promotion#tag/Media/paths/~1adv~1v1~1advert/get) продавца по их типам и статусам.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 10 запросов | 100 миллисекунд | 10 запросов | </div> 
+/// Метод возвращает список всех [медиакампаний](/openapi/promotion#tag/Media/paths/~1adv~1v1~1advert/get) продавца по их типам и статусам.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 10 запросов | 100 мс | 10 запросов | </div> 
 pub async fn adv_v1_adverts_get(configuration: &configuration::Configuration, status: Option<i32>, r#type: Option<i32>, limit: Option<i32>, offset: Option<i32>, order: Option<&str>, direction: Option<&str>) -> Result<Vec<models::AdvV1AdvertsGet200ResponseInner>, Error<AdvV1AdvertsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_status = status;
@@ -1543,7 +1543,7 @@ pub async fn adv_v1_auto_updatenm_post(configuration: &configuration::Configurat
     }
 }
 
-/// Метод возвращает информацию о:   - счёте кабинета Продвижения WB. Его пополняет продавец.   - балансе — максимальной сумме для оплаты кампании по взаиморасчету: удержании средств из будущих продаж. Баланс пополнить нельзя, он рассчитывается автоматически на основе отчётов по продвижению.   - бонусных начислениях WB.  Информацию о бюджете кампаний можно получить в [отдельном методе](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+/// Метод возвращает информацию о:   - счёте кабинета Продвижения WB. Его пополняет продавец.   - балансе — максимальной сумме для оплаты кампании по взаиморасчету: удержании средств из будущих продаж. Баланс пополнить нельзя, он рассчитывается автоматически на основе отчётов по продвижению.   - бонусных начислениях WB.  Информацию о бюджете кампаний можно получить в [отдельном методе](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn adv_v1_balance_get(configuration: &configuration::Configuration, ) -> Result<models::AdvV1BalanceGet200Response, Error<AdvV1BalanceGetError>> {
 
     let uri_str = format!("{}/adv/v1/balance", configuration.base_path);
@@ -1586,7 +1586,7 @@ pub async fn adv_v1_balance_get(configuration: &configuration::Configuration, ) 
     }
 }
 
-/// Метод пополняет [бюджет](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget/get) кампании в статусе `11` — на паузе. <br> Чтобы запустить кампанию после пополнения бюджета, используйте метод [Запуск кампании](/openapi/promotion#tag/Upravlenie-kampaniyami/paths/~1adv~1v0~1start/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+/// Метод пополняет [бюджет](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget/get) кампании. <br> Чтобы запустить кампанию после пополнения бюджета, используйте метод [Запуск кампании](/openapi/promotion#tag/Upravlenie-kampaniyami/paths/~1adv~1v0~1start/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn adv_v1_budget_deposit_post(configuration: &configuration::Configuration, id: i32, adv_v1_budget_deposit_post_request: models::AdvV1BudgetDepositPostRequest) -> Result<models::ResponseWithReturn, Error<AdvV1BudgetDepositPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -1634,7 +1634,7 @@ pub async fn adv_v1_budget_deposit_post(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает информацию о бюджете [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) — максимальной сумме затрат на кампанию. Бюджет кампании можно [пополнить](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget~1deposit/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 4 запроса | 250 миллисекунд | 4 запроса | </div> 
+/// Метод возвращает информацию о бюджете [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) — максимальной сумме затрат на кампанию. Бюджет кампании можно [пополнить](/openapi/promotion#tag/Finansy/paths/~1adv~1v1~1budget~1deposit/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 4 запроса | 250 мс | 4 запроса | </div> 
 pub async fn adv_v1_budget_get(configuration: &configuration::Configuration, id: i32) -> Result<models::AdvV1BudgetGet200Response, Error<AdvV1BudgetGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -1680,7 +1680,7 @@ pub async fn adv_v1_budget_get(configuration: &configuration::Configuration, id:
     }
 }
 
-/// Метод возвращает количество [медиакампаний](/openapi/promotion#tag/Media/paths/~1adv~1v1~1advert/get) продавца с группировкой по статусам.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 10 запросов | 100 миллисекунд | 10 запросов | </div> 
+/// Метод возвращает количество [медиакампаний](/openapi/promotion#tag/Media/paths/~1adv~1v1~1advert/get) продавца с группировкой по статусам.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 10 запросов | 100 мс | 10 запросов | </div> 
 pub async fn adv_v1_count_get(configuration: &configuration::Configuration, ) -> Result<models::AdvV1CountGet200Response, Error<AdvV1CountGetError>> {
 
     let uri_str = format!("{}/adv/v1/count", configuration.base_path);
@@ -1723,7 +1723,7 @@ pub async fn adv_v1_count_get(configuration: &configuration::Configuration, ) ->
     }
 }
 
-/// Метод возвращает историю пополнений счёта **WB Продвижение** за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+/// Метод возвращает историю пополнений счёта **WB Продвижение** за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn adv_v1_payments_get(configuration: &configuration::Configuration, from: Option<String>, to: Option<String>) -> Result<Vec<models::AdvV1PaymentsGet200ResponseInner>, Error<AdvV1PaymentsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_from = from;
@@ -1838,7 +1838,7 @@ pub async fn adv_v1_promotion_adverts_post(configuration: &configuration::Config
     }
 }
 
-/// Метод возвращает списки всех [рекламных кампаний](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) продавца с их ID. Кампании сгруппированы по типу и статусу, у каждой указана дата последнего изменения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод возвращает списки всех [рекламных кампаний](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) продавца с их ID. Кампании сгруппированы по типу и статусу, у каждой указана дата последнего изменения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v1_promotion_count_get(configuration: &configuration::Configuration, ) -> Result<models::AdvV1PromotionCountGet200Response, Error<AdvV1PromotionCountGetError>> {
 
     let uri_str = format!("{}/adv/v1/promotion/count", configuration.base_path);
@@ -2055,7 +2055,7 @@ pub async fn adv_v1_stat_words_get(configuration: &configuration::Configuration,
     }
 }
 
-/// Метод формирует статистику кампаний сервиса [WB Медиа](https://cmp.wildberries.ru/cmpf/statistics). Статистику можно группировать по датам и/или интервалам.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 10 запросов | 100 миллисекунд | 10 запросов | </div> 
+/// Метод формирует статистику кампаний сервиса [WB Медиа](https://cmp.wildberries.ru/cmpf/statistics). Статистику можно группировать по датам и/или интервалам.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 10 запросов | 100 мс | 10 запросов | </div> 
 pub async fn adv_v1_stats_post(configuration: &configuration::Configuration, _adv_v2_fullstats_post_request_inner: Vec<models::AdvV2FullstatsPostRequestInner>) -> Result<Vec<models::AdvV1StatsPost200ResponseInner>, Error<AdvV1StatsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body__adv_v2_fullstats_post_request_inner = _adv_v2_fullstats_post_request_inner;
@@ -2101,7 +2101,7 @@ pub async fn adv_v1_stats_post(configuration: &configuration::Configuration, _ad
     }
 }
 
-/// Метод возвращает список [предметов](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get), которые можно добавить в рекламную [кампанию](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 12 секунд | 1 запрос | 12 секунд | 5 запросов | </div> 
+/// Метод возвращает список [предметов](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get), которые можно добавить в рекламную [кампанию](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 12 сек | 1 запрос | 12 сек | 5 запросов | </div> 
 pub async fn adv_v1_supplier_subjects_get(configuration: &configuration::Configuration, payment_type: Option<&str>) -> Result<Vec<models::AdvV1SupplierSubjectsGet200ResponseInner>, Error<AdvV1SupplierSubjectsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_payment_type = payment_type;
@@ -2149,7 +2149,7 @@ pub async fn adv_v1_supplier_subjects_get(configuration: &configuration::Configu
     }
 }
 
-/// Метод формирует список фактических затрат на рекламные кампании за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 1 запрос | 1 секунда | 5 запросов | </div> 
+/// Метод формирует список фактических затрат на рекламные кампании за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn adv_v1_upd_get(configuration: &configuration::Configuration, from: String, to: String) -> Result<Vec<models::AdvV1UpdGet200ResponseInner>, Error<AdvV1UpdGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_from = from;
@@ -2244,7 +2244,7 @@ pub async fn adv_v2_auto_stat_words_get(configuration: &configuration::Configura
     }
 }
 
-/// Метод будет отключён 30 сентября. Используйте [актуальный метод](/openapi/promotion#tag/Statistika/paths/~1adv~1v3~1fullstats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 5 запросов | </div> 
+/// Метод будет отключён 30 сентября. Используйте [актуальный метод](/openapi/promotion#tag/Statistika/paths/~1adv~1v3~1fullstats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
 #[deprecated]
 pub async fn adv_v2_fullstats_post(configuration: &configuration::Configuration, _adv_v2_fullstats_post_request_inner: Vec<models::AdvV2FullstatsPostRequestInner>) -> Result<models::AdvV2FullstatsPost200Response, Error<AdvV2FullstatsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -2291,7 +2291,7 @@ pub async fn adv_v2_fullstats_post(configuration: &configuration::Configuration,
     }
 }
 
-/// Метод создаёт кампанию:   - с ручной ставкой для продвижения товаров в поиске и/или рекомендациях   - с единой ставкой для продвижения товаров одновременно в поиске и рекомендациях  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 5 запросов | 12 секунд | 5 запросов | </div> 
+/// Метод создаёт кампанию:   - с ручной ставкой для продвижения товаров в поиске и/или рекомендациях   - с единой ставкой для продвижения товаров одновременно в поиске и рекомендациях  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 5 запросов | 12 сек | 5 запросов | </div> 
 pub async fn adv_v2_seacat_save_ad_post(configuration: &configuration::Configuration, adv_v2_seacat_save_ad_post_request: Option<models::AdvV2SeacatSaveAdPostRequest>) -> Result<i32, Error<AdvV2SeacatSaveAdPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_adv_v2_seacat_save_ad_post_request = adv_v2_seacat_save_ad_post_request;
@@ -2337,7 +2337,7 @@ pub async fn adv_v2_seacat_save_ad_post(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает список [карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), которые можно добавить в рекламную [кампанию](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get). Для получения карточек необходимы ID [предметов](/openapi/promotion#tag/Sozdanie-kampanij/paths/~1adv~1v1~1supplier~1subjects/get), также доступных для добавления в кампанию.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 5 запросов | 12 секунд | 5 запросов | </div> 
+/// Метод возвращает список [карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), которые можно добавить в рекламную [кампанию](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get). Для получения карточек необходимы ID [предметов](/openapi/promotion#tag/Sozdanie-kampanij/paths/~1adv~1v1~1supplier~1subjects/get), также доступных для добавления в кампанию.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 5 запросов | 12 сек | 5 запросов | </div> 
 pub async fn adv_v2_supplier_nms_post(configuration: &configuration::Configuration, request_body: Option<Vec<i32>>) -> Result<Vec<models::AdvV2SupplierNmsPost200ResponseInner>, Error<AdvV2SupplierNmsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_request_body = request_body;
@@ -2383,7 +2383,7 @@ pub async fn adv_v2_supplier_nms_post(configuration: &configuration::Configurati
     }
 }
 
-/// Метод формирует статистику для кампаний независимо от типа. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 3 запроса | 20 секунд | 1 запрос | </div> 
+/// Метод формирует статистику для кампаний независимо от типа. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос | </div> 
 pub async fn adv_v3_fullstats_get(configuration: &configuration::Configuration, ids: &str, begin_date: String, end_date: String) -> Result<Vec<models::FullStatsItem>, Error<AdvV3FullstatsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_ids = ids;
@@ -2433,7 +2433,7 @@ pub async fn adv_v3_fullstats_get(configuration: &configuration::Configuration, 
     }
 }
 
-/// Метод возвращает минимальные ставки для карточек товаров в копейках по типу оплаты и местам размещения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 20 запросов | 3 секунды | 5 запросов | </div> 
+/// Метод возвращает минимальные ставки для карточек товаров в копейках по типу оплаты и местам размещения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 5 запросов | </div> 
 pub async fn api_advert_v1_bids_min_post(configuration: &configuration::Configuration, adv_v0_bids_min_post_request: models::AdvV0BidsMinPostRequest) -> Result<models::ApiAdvertV1BidsMinPost200Response, Error<ApiAdvertV1BidsMinPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_adv_v0_bids_min_post_request = adv_v0_bids_min_post_request;
@@ -2479,7 +2479,7 @@ pub async fn api_advert_v1_bids_min_post(configuration: &configuration::Configur
     }
 }
 
-/// Метод меняет ставки карточек товаров по артикулам WB в кампаниях с единой или ручной ставкой. <br><br> Для кампаний в статусах `4`, `9` и `11`. <br><br> В запросе укажите место размещения в параметре `placement`:   - `combined` — в поиске и рекомендациях для кампаний с единой ставкой   - `search `или `recommendations` — в поиске или рекомендациях для кампаний с ручной ставкой  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод меняет ставки карточек товаров по артикулам WB в кампаниях с единой или ручной ставкой. <br><br> Для кампаний в статусах `4`, `9` и `11`. <br><br> В запросе укажите место размещения в параметре `placement`:   - `combined` — в поиске и рекомендациях для кампаний с единой ставкой   - `search `или `recommendations` — в поиске или рекомендациях для кампаний с ручной ставкой  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn api_advert_v1_bids_patch(configuration: &configuration::Configuration, api_advert_v1_bids_patch_request: models::ApiAdvertV1BidsPatchRequest) -> Result<models::ApiAdvertV1BidsPatch200Response, Error<ApiAdvertV1BidsPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_advert_v1_bids_patch_request = api_advert_v1_bids_patch_request;
@@ -2525,7 +2525,7 @@ pub async fn api_advert_v1_bids_patch(configuration: &configuration::Configurati
     }
 }
 
-/// Метод возвращает информацию о рекламных кампаниях с единой или ручной ставкой по их статусам, типам оплаты и ID.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 5 запросов | 200 миллисекунд | 5 запросов | </div> 
+/// Метод возвращает информацию о рекламных кампаниях с единой или ручной ставкой по их статусам, типам оплаты и ID.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn api_advert_v2_adverts_get(configuration: &configuration::Configuration, ids: Option<&str>, statuses: Option<&str>, payment_type: Option<&str>) -> Result<models::GetAdverts, Error<ApiAdvertV2AdvertsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_ids = ids;
@@ -2581,7 +2581,7 @@ pub async fn api_advert_v2_adverts_get(configuration: &configuration::Configurat
     }
 }
 
-/// Метод возвращает подробную информацию об [акции](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get) по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 секунд | 10 запросов | 600 миллисекунд | 5 запросов |  </div> 
+/// Метод возвращает подробную информацию об [акции](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get) по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
 pub async fn api_v1_calendar_promotions_details_get(configuration: &configuration::Configuration, promotion_ids: Vec<i32>) -> Result<models::ApiV1CalendarPromotionsDetailsGet200Response, Error<ApiV1CalendarPromotionsDetailsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_promotion_ids = promotion_ids;
@@ -2630,7 +2630,7 @@ pub async fn api_v1_calendar_promotions_details_get(configuration: &configuratio
     }
 }
 
-/// Метод возвращает список [акций](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get) в WB с датами и временем проведения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 секунд | 10 запросов | 600 миллисекунд | 5 запросов |  </div> 
+/// Метод возвращает список [акций](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get) в WB с датами и временем проведения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
 pub async fn api_v1_calendar_promotions_get(configuration: &configuration::Configuration, start_date_time: String, end_date_time: String, all_promo: bool, limit: Option<i32>, offset: Option<i32>) -> Result<models::ApiV1CalendarPromotionsGet200Response, Error<ApiV1CalendarPromotionsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_start_date_time = start_date_time;
@@ -2688,7 +2688,7 @@ pub async fn api_v1_calendar_promotions_get(configuration: &configuration::Confi
     }
 }
 
-/// Метод формирует список товаров, подходящих для участия в [акции](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get). Эти товары можно добавить в акцию с помощью [отдельного метода](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1upload/post).  <div class=\"description_important\">   Данный метод неприменим для автоакций. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 секунд | 10 запросов | 600 миллисекунд | 5 запросов |  </div> 
+/// Метод формирует список товаров, подходящих для участия в [акции](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get). Эти товары можно добавить в акцию с помощью [отдельного метода](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1upload/post).  <div class=\"description_important\">   Данный метод неприменим для автоакций. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
 pub async fn api_v1_calendar_promotions_nomenclatures_get(configuration: &configuration::Configuration, promotion_id: i32, in_action: bool, limit: Option<i32>, offset: Option<i32>) -> Result<models::ApiV1CalendarPromotionsNomenclaturesGet200Response, Error<ApiV1CalendarPromotionsNomenclaturesGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_promotion_id = promotion_id;
@@ -2744,7 +2744,7 @@ pub async fn api_v1_calendar_promotions_nomenclatures_get(configuration: &config
     }
 }
 
-/// Метод создаёт задание на загрузку товара в [акцию](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get).<br> Состояние загрузки можно проверить с помощью [отдельных методов](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get).  <div class=\"description_important\">   Данный метод неприменим для автоакций. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 секунд | 10 запросов | 600 миллисекунд | 5 запросов |  </div> 
+/// Метод создаёт задание на загрузку товара в [акцию](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get).<br> Состояние загрузки можно проверить с помощью [отдельных методов](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get).  <div class=\"description_important\">   Данный метод неприменим для автоакций. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
 pub async fn api_v1_calendar_promotions_upload_post(configuration: &configuration::Configuration, api_v1_calendar_promotions_upload_post_request: models::ApiV1CalendarPromotionsUploadPostRequest) -> Result<models::ApiV1CalendarPromotionsUploadPost200Response, Error<ApiV1CalendarPromotionsUploadPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v1_calendar_promotions_upload_post_request = api_v1_calendar_promotions_upload_post_request;

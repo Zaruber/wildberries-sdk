@@ -300,7 +300,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает количество закреплённых и откреплённых отзывов за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает количество закреплённых и откреплённых отзывов за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Количество закреплённых и откреплённых отзывов
      */
     async apiFeedbacksV1PinsCountGetRaw(requestParameters: ApiFeedbacksV1PinsCountGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiFeedbacksV1PinsCountGet200Response>> {
@@ -311,7 +311,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает количество закреплённых и откреплённых отзывов за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает количество закреплённых и откреплённых отзывов за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Количество закреплённых и откреплённых отзывов
      */
     async apiFeedbacksV1PinsCountGet(requestParameters: ApiFeedbacksV1PinsCountGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiFeedbacksV1PinsCountGet200Response> {
@@ -353,7 +353,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Открепить отзывы
      */
     async apiFeedbacksV1PinsDeleteRaw(requestParameters: ApiFeedbacksV1PinsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiFeedbacksV1PinsDelete200Response>> {
@@ -364,7 +364,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Открепить отзывы
      */
     async apiFeedbacksV1PinsDelete(requestParameters: ApiFeedbacksV1PinsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiFeedbacksV1PinsDelete200Response> {
@@ -432,7 +432,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод предоставляет список закреплённых и откреплённых отзывов. <br> Откреплёнными считаются только отзывы, которые были откреплены автоматически по причинам, указанным в ответе в поле `unpinnedCause`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод предоставляет список закреплённых и откреплённых отзывов. <br> Откреплёнными считаются только отзывы, которые были откреплены автоматически по причинам, указанным в ответе в поле `unpinnedCause`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список закреплённых и откреплённых отзывов
      */
     async apiFeedbacksV1PinsGetRaw(requestParameters: ApiFeedbacksV1PinsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiFeedbacksV1PinsGet200Response>> {
@@ -443,7 +443,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод предоставляет список закреплённых и откреплённых отзывов. <br> Откреплёнными считаются только отзывы, которые были откреплены автоматически по причинам, указанным в ответе в поле `unpinnedCause`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод предоставляет список закреплённых и откреплённых отзывов. <br> Откреплёнными считаются только отзывы, которые были откреплены автоматически по причинам, указанным в ответе в поле `unpinnedCause`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список закреплённых и откреплённых отзывов
      */
     async apiFeedbacksV1PinsGet(requestParameters: ApiFeedbacksV1PinsGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiFeedbacksV1PinsGet200Response> {
@@ -475,7 +475,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает лимиты закреплённых отзывов по тарифу и подписке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает лимиты закреплённых отзывов по тарифу и подписке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Лимиты закреплённых отзывов
      */
     async apiFeedbacksV1PinsLimitsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiFeedbacksV1PinsLimitsGet200Response>> {
@@ -486,7 +486,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает лимиты закреплённых отзывов по тарифу и подписке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает лимиты закреплённых отзывов по тарифу и подписке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Лимиты закреплённых отзывов
      */
     async apiFeedbacksV1PinsLimitsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiFeedbacksV1PinsLimitsGet200Response> {
@@ -528,7 +528,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Закрепить отзывы
      */
     async apiFeedbacksV1PinsPostRaw(requestParameters: ApiFeedbacksV1PinsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiFeedbacksV1PinsPost200Response>> {
@@ -539,7 +539,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Закрепить отзывы
      */
     async apiFeedbacksV1PinsPost(requestParameters: ApiFeedbacksV1PinsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiFeedbacksV1PinsPost200Response> {
@@ -581,7 +581,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отправляет ответ на [заявку](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get) покупателя на возврат товаров.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 20 запросов | 3 секунды | 10 запросов | </div> 
+     * Метод отправляет ответ на [заявку](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get) покупателя на возврат товаров.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 10 запросов | </div> 
      * Ответ на заявку покупателя
      */
     async apiV1ClaimPatchRaw(requestParameters: ApiV1ClaimPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -592,7 +592,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отправляет ответ на [заявку](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get) покупателя на возврат товаров.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 20 запросов | 3 секунды | 10 запросов | </div> 
+     * Метод отправляет ответ на [заявку](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get) покупателя на возврат товаров.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 10 запросов | </div> 
      * Ответ на заявку покупателя
      */
     async apiV1ClaimPatch(requestParameters: ApiV1ClaimPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
@@ -650,7 +650,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает заявки покупателей на возврат товаров за последние 14 дней. Вы можете [отвечать на эти заявки](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claim/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 20 запросов | 3 секунды | 10 запросов | </div> 
+     * Метод возвращает заявки покупателей на возврат товаров за последние 14 дней. Вы можете [отвечать на эти заявки](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claim/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 10 запросов | </div> 
      * Заявки покупателей на возврат
      */
     async apiV1ClaimsGetRaw(requestParameters: ApiV1ClaimsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ClaimsGet200Response>> {
@@ -661,7 +661,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает заявки покупателей на возврат товаров за последние 14 дней. Вы можете [отвечать на эти заявки](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claim/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 20 запросов | 3 секунды | 10 запросов | </div> 
+     * Метод возвращает заявки покупателей на возврат товаров за последние 14 дней. Вы можете [отвечать на эти заявки](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claim/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 10 запросов | </div> 
      * Заявки покупателей на возврат
      */
     async apiV1ClaimsGet(requestParameters: ApiV1ClaimsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ClaimsGet200Response> {
@@ -704,7 +704,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает данные [отзыва](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает данные [отзыва](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Получить отзыв по ID
      */
     async apiV1FeedbackGetRaw(requestParameters: ApiV1FeedbackGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1FeedbackGet200Response>> {
@@ -715,7 +715,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает данные [отзыва](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает данные [отзыва](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Получить отзыв по ID
      */
     async apiV1FeedbackGet(requestParameters: ApiV1FeedbackGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1FeedbackGet200Response> {
@@ -750,7 +750,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет отредактировать уже отправленный [ответ на отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks~1answer/post) покупателя. <br><br> Отредактировать ответ можно только один раз в течение 60 дней c момента отправки.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет отредактировать уже отправленный [ответ на отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks~1answer/post) покупателя. <br><br> Отредактировать ответ можно только один раз в течение 60 дней c момента отправки.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Отредактировать ответ на отзыв
      */
     async apiV1FeedbacksAnswerPatchRaw(requestParameters: ApiV1FeedbacksAnswerPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -761,7 +761,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет отредактировать уже отправленный [ответ на отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks~1answer/post) покупателя. <br><br> Отредактировать ответ можно только один раз в течение 60 дней c момента отправки.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет отредактировать уже отправленный [ответ на отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks~1answer/post) покупателя. <br><br> Отредактировать ответ можно только один раз в течение 60 дней c момента отправки.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Отредактировать ответ на отзыв
      */
     async apiV1FeedbacksAnswerPatch(requestParameters: ApiV1FeedbacksAnswerPatchOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
@@ -795,7 +795,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет ответить на [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) покупателя.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет ответить на [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) покупателя.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Ответить на отзыв
      */
     async apiV1FeedbacksAnswerPostRaw(requestParameters: ApiV1FeedbacksAnswerPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -806,7 +806,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет ответить на [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) покупателя.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод позволяет ответить на [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) покупателя.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Ответить на отзыв
      */
     async apiV1FeedbacksAnswerPost(requestParameters: ApiV1FeedbacksAnswerPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
@@ -867,7 +867,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список архивных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Отзыв становится архивным, если:   - на отзыв получен ответ   - на отзыв не получен ответ в течение 30 дней   - в отзыве нет текста и фото  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает список архивных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Отзыв становится архивным, если:   - на отзыв получен ответ   - на отзыв не получен ответ в течение 30 дней   - в отзыве нет текста и фото  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список архивных отзывов
      */
     async apiV1FeedbacksArchiveGetRaw(requestParameters: ApiV1FeedbacksArchiveGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1FeedbacksArchiveGet200Response>> {
@@ -878,7 +878,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список архивных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Отзыв становится архивным, если:   - на отзыв получен ответ   - на отзыв не получен ответ в течение 30 дней   - в отзыве нет текста и фото  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает список архивных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Отзыв становится архивным, если:   - на отзыв получен ответ   - на отзыв не получен ответ в течение 30 дней   - в отзыве нет текста и фото  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список архивных отзывов
      */
     async apiV1FeedbacksArchiveGet(requestParameters: ApiV1FeedbacksArchiveGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1FeedbacksArchiveGet200Response> {
@@ -922,7 +922,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает количество обработанных или необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает количество обработанных или необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Количество отзывов
      */
     async apiV1FeedbacksCountGetRaw(requestParameters: ApiV1FeedbacksCountGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1FeedbacksCountGet200Response>> {
@@ -933,7 +933,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает количество обработанных или необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает количество обработанных или необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Количество отзывов
      */
     async apiV1FeedbacksCountGet(requestParameters: ApiV1FeedbacksCountGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1FeedbacksCountGet200Response> {
@@ -965,7 +965,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Необработанные отзывы
      */
     async apiV1FeedbacksCountUnansweredGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1FeedbacksCountUnansweredGet200Response>> {
@@ -976,7 +976,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Необработанные отзывы
      */
     async apiV1FeedbacksCountUnansweredGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1FeedbacksCountUnansweredGet200Response> {
@@ -1057,7 +1057,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список отзывов по заданным фильтрам. Вы можете:   - получить данные обработанных и необработанных отзывов   - сортировать отзывы по дате   - настроить пагинацию и количество отзывов в ответе  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает список отзывов по заданным фильтрам. Вы можете:   - получить данные обработанных и необработанных отзывов   - сортировать отзывы по дате   - настроить пагинацию и количество отзывов в ответе  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список отзывов
      */
     async apiV1FeedbacksGetRaw(requestParameters: ApiV1FeedbacksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1FeedbacksGet200Response>> {
@@ -1068,7 +1068,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список отзывов по заданным фильтрам. Вы можете:   - получить данные обработанных и необработанных отзывов   - сортировать отзывы по дате   - настроить пагинацию и количество отзывов в ответе  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает список отзывов по заданным фильтрам. Вы можете:   - получить данные обработанных и необработанных отзывов   - сортировать отзывы по дате   - настроить пагинацию и количество отзывов в ответе  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список отзывов
      */
     async apiV1FeedbacksGet(requestParameters: ApiV1FeedbacksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1FeedbacksGet200Response> {
@@ -1110,7 +1110,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод запрашивает возврат товара, по которому оставлен [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Возврат доступен для отзывов с полем `\"isAbleReturnProductOrders\": true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод запрашивает возврат товара, по которому оставлен [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Возврат доступен для отзывов с полем `\"isAbleReturnProductOrders\": true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Возврат товара по ID отзыва
      */
     async apiV1FeedbacksOrderReturnPostRaw(requestParameters: ApiV1FeedbacksOrderReturnPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1QuestionsPatch200Response>> {
@@ -1121,7 +1121,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод запрашивает возврат товара, по которому оставлен [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Возврат доступен для отзывов с полем `\"isAbleReturnProductOrders\": true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод запрашивает возврат товара, по которому оставлен [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Возврат доступен для отзывов с полем `\"isAbleReturnProductOrders\": true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Возврат товара по ID отзыва
      */
     async apiV1FeedbacksOrderReturnPost(requestParameters: ApiV1FeedbacksOrderReturnPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1QuestionsPatch200Response> {
@@ -1153,7 +1153,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод проверяет наличие непросмотренных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) от покупателей. Если у продавца есть непросмотренные вопросы или отзывы, возвращает `true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод проверяет наличие непросмотренных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) от покупателей. Если у продавца есть непросмотренные вопросы или отзывы, возвращает `true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Непросмотренные отзывы и вопросы
      */
     async apiV1NewFeedbacksQuestionsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1NewFeedbacksQuestionsGet200Response>> {
@@ -1164,7 +1164,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод проверяет наличие непросмотренных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) от покупателей. Если у продавца есть непросмотренные вопросы или отзывы, возвращает `true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод проверяет наличие непросмотренных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) от покупателей. Если у продавца есть непросмотренные вопросы или отзывы, возвращает `true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Непросмотренные отзывы и вопросы
      */
     async apiV1NewFeedbacksQuestionsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1NewFeedbacksQuestionsGet200Response> {
@@ -1207,7 +1207,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает данные [вопроса](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) по его ID. Далее вы можете [работать с этим вопросом](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает данные [вопроса](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) по его ID. Далее вы можете [работать с этим вопросом](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Получить вопрос по ID
      */
     async apiV1QuestionGetRaw(requestParameters: ApiV1QuestionGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1QuestionGet200Response>> {
@@ -1218,7 +1218,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает данные [вопроса](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) по его ID. Далее вы можете [работать с этим вопросом](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает данные [вопроса](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) по его ID. Далее вы можете [работать с этим вопросом](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Получить вопрос по ID
      */
     async apiV1QuestionGet(requestParameters: ApiV1QuestionGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1QuestionGet200Response> {
@@ -1262,7 +1262,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает количество отвеченных или неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает количество отвеченных или неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Количество вопросов
      */
     async apiV1QuestionsCountGetRaw(requestParameters: ApiV1QuestionsCountGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1QuestionsCountGet200Response>> {
@@ -1273,7 +1273,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает количество отвеченных или неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает количество отвеченных или неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Количество вопросов
      */
     async apiV1QuestionsCountGet(requestParameters: ApiV1QuestionsCountGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1QuestionsCountGet200Response> {
@@ -1305,7 +1305,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает общее количество неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и количество неотвеченных вопросов за сегодня.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает общее количество неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и количество неотвеченных вопросов за сегодня.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Неотвеченные вопросы
      */
     async apiV1QuestionsCountUnansweredGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1QuestionsCountUnansweredGet200Response>> {
@@ -1316,7 +1316,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает общее количество неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и количество неотвеченных вопросов за сегодня.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает общее количество неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и количество неотвеченных вопросов за сегодня.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Неотвеченные вопросы
      */
     async apiV1QuestionsCountUnansweredGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1QuestionsCountUnansweredGet200Response> {
@@ -1397,7 +1397,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список вопросов по заданным фильтрам. Вы можете:   - получить данные отвеченных и неотвеченных вопросов   - сортировать вопросы по дате   - настроить пагинацию и количество вопросов в ответе  <div class=\"description_important\">   Можно получить максимум 10 000 вопросов в одном ответе </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает список вопросов по заданным фильтрам. Вы можете:   - получить данные отвеченных и неотвеченных вопросов   - сортировать вопросы по дате   - настроить пагинацию и количество вопросов в ответе  <div class=\"description_important\">   Можно получить максимум 10 000 вопросов в одном ответе </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список вопросов
      */
     async apiV1QuestionsGetRaw(requestParameters: ApiV1QuestionsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1QuestionsGet200Response>> {
@@ -1408,7 +1408,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список вопросов по заданным фильтрам. Вы можете:   - получить данные отвеченных и неотвеченных вопросов   - сортировать вопросы по дате   - настроить пагинацию и количество вопросов в ответе  <div class=\"description_important\">   Можно получить максимум 10 000 вопросов в одном ответе </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * Метод возвращает список вопросов по заданным фильтрам. Вы можете:   - получить данные отвеченных и неотвеченных вопросов   - сортировать вопросы по дате   - настроить пагинацию и количество вопросов в ответе  <div class=\"description_important\">   Можно получить максимум 10 000 вопросов в одном ответе </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Список вопросов
      */
     async apiV1QuestionsGet(requestParameters: ApiV1QuestionsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1QuestionsGet200Response> {
@@ -1443,7 +1443,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * В зависимости от тела запроса, метод позволяет:   - отметить [вопрос](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) как просмотренный   - отклонить вопрос   - ответить на вопрос или отредактировать ответ  <div class=\"description_important\">   Отредактировать ответ на вопрос можно 1 раз в течение 60 дней после отправки ответа </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * В зависимости от тела запроса, метод позволяет:   - отметить [вопрос](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) как просмотренный   - отклонить вопрос   - ответить на вопрос или отредактировать ответ  <div class=\"description_important\">   Отредактировать ответ на вопрос можно 1 раз в течение 60 дней после отправки ответа </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Работа с вопросами
      */
     async apiV1QuestionsPatchRaw(requestParameters: ApiV1QuestionsPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1QuestionsPatch200Response>> {
@@ -1454,7 +1454,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * В зависимости от тела запроса, метод позволяет:   - отметить [вопрос](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) как просмотренный   - отклонить вопрос   - ответить на вопрос или отредактировать ответ  <div class=\"description_important\">   Отредактировать ответ на вопрос можно 1 раз в течение 60 дней после отправки ответа </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+     * В зависимости от тела запроса, метод позволяет:   - отметить [вопрос](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) как просмотренный   - отклонить вопрос   - ответить на вопрос или отредактировать ответ  <div class=\"description_important\">   Отредактировать ответ на вопрос можно 1 раз в течение 60 дней после отправки ответа </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
      * Работа с вопросами
      */
     async apiV1QuestionsPatch(requestParameters: ApiV1QuestionsPatchOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1QuestionsPatch200Response> {
@@ -1486,7 +1486,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список всех чатов продавца. По этим данным можно получить [события чатов](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1events/get) или [отправить сообщение покупателю](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод возвращает список всех чатов продавца. По этим данным можно получить [события чатов](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1events/get) или [отправить сообщение покупателю](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * Список чатов
      */
     async apiV1SellerChatsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ChatsResponse>> {
@@ -1497,7 +1497,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список всех чатов продавца. По этим данным можно получить [события чатов](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1events/get) или [отправить сообщение покупателю](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод возвращает список всех чатов продавца. По этим данным можно получить [события чатов](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1events/get) или [отправить сообщение покупателю](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * Список чатов
      */
     async apiV1SellerChatsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ChatsResponse> {
@@ -1537,7 +1537,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает файл или изображение из сообщения по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод возвращает файл или изображение из сообщения по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * Получить файл из сообщения
      */
     async apiV1SellerDownloadIdGetRaw(requestParameters: ApiV1SellerDownloadIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>> {
@@ -1548,7 +1548,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает файл или изображение из сообщения по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод возвращает файл или изображение из сообщения по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * Получить файл из сообщения
      */
     async apiV1SellerDownloadIdGet(requestParameters: ApiV1SellerDownloadIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob> {
@@ -1584,7 +1584,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список событий всех [чатов с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  Чтобы получить все события:   1. Сделайте первый запрос без параметра `next`.   2. Повторяйте запрос со значением параметра `next` из ответа на предыдущий запрос, пока `totalEvents` не станет равным `0`. Это будет означать, что вы получили все события.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод возвращает список событий всех [чатов с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  Чтобы получить все события:   1. Сделайте первый запрос без параметра `next`.   2. Повторяйте запрос со значением параметра `next` из ответа на предыдущий запрос, пока `totalEvents` не станет равным `0`. Это будет означать, что вы получили все события.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * События чатов
      */
     async apiV1SellerEventsGetRaw(requestParameters: ApiV1SellerEventsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EventsResponse>> {
@@ -1595,7 +1595,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список событий всех [чатов с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  Чтобы получить все события:   1. Сделайте первый запрос без параметра `next`.   2. Повторяйте запрос со значением параметра `next` из ответа на предыдущий запрос, пока `totalEvents` не станет равным `0`. Это будет означать, что вы получили все события.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод возвращает список событий всех [чатов с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  Чтобы получить все события:   1. Сделайте первый запрос без параметра `next`.   2. Повторяйте запрос со значением параметра `next` из ответа на предыдущий запрос, пока `totalEvents` не станет равным `0`. Это будет означать, что вы получили все события.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * События чатов
      */
     async apiV1SellerEventsGet(requestParameters: ApiV1SellerEventsGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EventsResponse> {
@@ -1665,7 +1665,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отправляет сообщения в [чат с покупателем](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод отправляет сообщения в [чат с покупателем](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * Отправить сообщение
      */
     async apiV1SellerMessagePostRaw(requestParameters: ApiV1SellerMessagePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MessageResponse>> {
@@ -1676,7 +1676,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отправляет сообщения в [чат с покупателем](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 10 запросов | 1 секунда | 10 запросов | </div> 
+     * Метод отправляет сообщения в [чат с покупателем](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
      * Отправить сообщение
      */
     async apiV1SellerMessagePost(requestParameters: ApiV1SellerMessagePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MessageResponse> {

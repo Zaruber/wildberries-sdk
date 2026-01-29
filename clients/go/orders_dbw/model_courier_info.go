@@ -24,10 +24,6 @@ type CourierInfo struct {
 	Contacts NullableCourierContactsResponse `json:"contacts,omitempty"`
 	// Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да     Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2) 
 	MustBeAssigned *bool `json:"mustBeAssigned,omitempty"`
-	// Дата и время, с которого прибудет курьер
-	PTimeFrom NullableTime `json:"pTimeFrom,omitempty"`
-	// Дата и время, до которого прибудет курьер
-	PTimeTo NullableTime `json:"pTimeTo,omitempty"`
 	// Дата и время обновления информации о курьере. <br> Если `null`, информация не обновлялась
 	UpdatedAt NullableTime `json:"updatedAt,omitempty"`
 }
@@ -123,90 +119,6 @@ func (o *CourierInfo) SetMustBeAssigned(v bool) {
 	o.MustBeAssigned = &v
 }
 
-// GetPTimeFrom returns the PTimeFrom field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CourierInfo) GetPTimeFrom() time.Time {
-	if o == nil || IsNil(o.PTimeFrom.Get()) {
-		var ret time.Time
-		return ret
-	}
-	return *o.PTimeFrom.Get()
-}
-
-// GetPTimeFromOk returns a tuple with the PTimeFrom field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CourierInfo) GetPTimeFromOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.PTimeFrom.Get(), o.PTimeFrom.IsSet()
-}
-
-// HasPTimeFrom returns a boolean if a field has been set.
-func (o *CourierInfo) HasPTimeFrom() bool {
-	if o != nil && o.PTimeFrom.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetPTimeFrom gets a reference to the given NullableTime and assigns it to the PTimeFrom field.
-func (o *CourierInfo) SetPTimeFrom(v time.Time) {
-	o.PTimeFrom.Set(&v)
-}
-// SetPTimeFromNil sets the value for PTimeFrom to be an explicit nil
-func (o *CourierInfo) SetPTimeFromNil() {
-	o.PTimeFrom.Set(nil)
-}
-
-// UnsetPTimeFrom ensures that no value is present for PTimeFrom, not even an explicit nil
-func (o *CourierInfo) UnsetPTimeFrom() {
-	o.PTimeFrom.Unset()
-}
-
-// GetPTimeTo returns the PTimeTo field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CourierInfo) GetPTimeTo() time.Time {
-	if o == nil || IsNil(o.PTimeTo.Get()) {
-		var ret time.Time
-		return ret
-	}
-	return *o.PTimeTo.Get()
-}
-
-// GetPTimeToOk returns a tuple with the PTimeTo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CourierInfo) GetPTimeToOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.PTimeTo.Get(), o.PTimeTo.IsSet()
-}
-
-// HasPTimeTo returns a boolean if a field has been set.
-func (o *CourierInfo) HasPTimeTo() bool {
-	if o != nil && o.PTimeTo.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetPTimeTo gets a reference to the given NullableTime and assigns it to the PTimeTo field.
-func (o *CourierInfo) SetPTimeTo(v time.Time) {
-	o.PTimeTo.Set(&v)
-}
-// SetPTimeToNil sets the value for PTimeTo to be an explicit nil
-func (o *CourierInfo) SetPTimeToNil() {
-	o.PTimeTo.Set(nil)
-}
-
-// UnsetPTimeTo ensures that no value is present for PTimeTo, not even an explicit nil
-func (o *CourierInfo) UnsetPTimeTo() {
-	o.PTimeTo.Unset()
-}
-
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CourierInfo) GetUpdatedAt() time.Time {
 	if o == nil || IsNil(o.UpdatedAt.Get()) {
@@ -264,12 +176,6 @@ func (o CourierInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MustBeAssigned) {
 		toSerialize["mustBeAssigned"] = o.MustBeAssigned
-	}
-	if o.PTimeFrom.IsSet() {
-		toSerialize["pTimeFrom"] = o.PTimeFrom.Get()
-	}
-	if o.PTimeTo.IsSet() {
-		toSerialize["pTimeTo"] = o.PTimeTo.Get()
 	}
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updatedAt"] = o.UpdatedAt.Get()

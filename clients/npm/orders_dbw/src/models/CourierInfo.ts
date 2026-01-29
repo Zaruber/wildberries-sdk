@@ -46,18 +46,6 @@ export interface CourierInfo {
      */
     mustBeAssigned?: boolean;
     /**
-     * Дата и время, с которого прибудет курьер
-     * @type {Date}
-     * @memberof CourierInfo
-     */
-    pTimeFrom?: Date | null;
-    /**
-     * Дата и время, до которого прибудет курьер
-     * @type {Date}
-     * @memberof CourierInfo
-     */
-    pTimeTo?: Date | null;
-    /**
      * Дата и время обновления информации о курьере. <br> Если `null`, информация не обновлялась
      * @type {Date}
      * @memberof CourierInfo
@@ -84,8 +72,6 @@ export function CourierInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean
         
         'contacts': json['contacts'] == null ? undefined : CourierContactsResponseFromJSON(json['contacts']),
         'mustBeAssigned': json['mustBeAssigned'] == null ? undefined : json['mustBeAssigned'],
-        'pTimeFrom': json['pTimeFrom'] == null ? undefined : (new Date(json['pTimeFrom'])),
-        'pTimeTo': json['pTimeTo'] == null ? undefined : (new Date(json['pTimeTo'])),
         'updatedAt': json['updatedAt'] == null ? undefined : (new Date(json['updatedAt'])),
     };
 }
@@ -103,8 +89,6 @@ export function CourierInfoToJSONTyped(value?: CourierInfo | null, ignoreDiscrim
         
         'contacts': CourierContactsResponseToJSON(value['contacts']),
         'mustBeAssigned': value['mustBeAssigned'],
-        'pTimeFrom': value['pTimeFrom'] == null ? value['pTimeFrom'] : value['pTimeFrom'].toISOString(),
-        'pTimeTo': value['pTimeTo'] == null ? value['pTimeTo'] : value['pTimeTo'].toISOString(),
         'updatedAt': value['updatedAt'] == null ? value['updatedAt'] : value['updatedAt'].toISOString(),
     };
 }

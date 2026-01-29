@@ -101,7 +101,7 @@ pub enum ApiV1WarehousesGetError {
 }
 
 
-/// Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+/// Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 #[deprecated]
 pub async fn api_v1_acceptance_coefficients_get(configuration: &configuration::Configuration, warehouse_ids: Option<&str>) -> Result<Vec<models::ModelsAcceptanceCoefficient>, Error<ApiV1AcceptanceCoefficientsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -150,7 +150,7 @@ pub async fn api_v1_acceptance_coefficients_get(configuration: &configuration::C
     }
 }
 
-/// Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+/// Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 pub async fn api_v1_acceptance_options_post(configuration: &configuration::Configuration, models_good: Vec<models::ModelsGood>, warehouse_id: Option<i32>) -> Result<models::ModelsOptionsResultModel, Error<ApiV1AcceptanceOptionsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_models_good = models_good;
@@ -200,7 +200,7 @@ pub async fn api_v1_acceptance_options_post(configuration: &configuration::Confi
     }
 }
 
-/// Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+/// Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 pub async fn api_v1_supplies_id_get(configuration: &configuration::Configuration, id: i32, is_preorder_id: Option<bool>) -> Result<models::ModelsSupplyDetails, Error<ApiV1SuppliesIdGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_id = id;
@@ -249,7 +249,7 @@ pub async fn api_v1_supplies_id_get(configuration: &configuration::Configuration
     }
 }
 
-/// Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+/// Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 pub async fn api_v1_supplies_id_goods_get(configuration: &configuration::Configuration, id: i32, limit: Option<i32>, offset: Option<i32>, is_preorder_id: Option<bool>) -> Result<Vec<models::ModelsGoodInSupply>, Error<ApiV1SuppliesIdGoodsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_id = id;
@@ -306,7 +306,7 @@ pub async fn api_v1_supplies_id_goods_get(configuration: &configuration::Configu
     }
 }
 
-/// Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+/// Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 pub async fn api_v1_supplies_id_package_get(configuration: &configuration::Configuration, id: i32) -> Result<Vec<models::ModelsBox>, Error<ApiV1SuppliesIdPackageGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_id = id;
@@ -351,7 +351,7 @@ pub async fn api_v1_supplies_id_package_get(configuration: &configuration::Confi
     }
 }
 
-/// Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+/// Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
 pub async fn api_v1_supplies_post(configuration: &configuration::Configuration, models_supplies_filters_request: models::ModelsSuppliesFiltersRequest, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<models::ModelsSupply>, Error<ApiV1SuppliesPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_models_supplies_filters_request = models_supplies_filters_request;
@@ -405,7 +405,7 @@ pub async fn api_v1_supplies_post(configuration: &configuration::Configuration, 
     }
 }
 
-/// Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 10 запросов | </div> 
+/// Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 10 запросов | </div> 
 pub async fn api_v1_transit_tariffs_get(configuration: &configuration::Configuration, ) -> Result<Vec<models::ModelsTransitTariff>, Error<ApiV1TransitTariffsGetError>> {
 
     let uri_str = format!("{}/api/v1/transit-tariffs", configuration.base_path);
@@ -448,7 +448,7 @@ pub async fn api_v1_transit_tariffs_get(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+/// Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 pub async fn api_v1_warehouses_get(configuration: &configuration::Configuration, ) -> Result<Vec<models::ModelsWarehousesResultItems>, Error<ApiV1WarehousesGetError>> {
 
     let uri_str = format!("{}/api/v1/warehouses", configuration.base_path);

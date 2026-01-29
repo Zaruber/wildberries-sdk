@@ -34,8 +34,9 @@ class Supply(BaseModel):
     scan_dt: Optional[datetime] = Field(default=None, description="Дата скана поставки (RFC3339)", alias="scanDt")
     name: Optional[StrictStr] = Field(default=None, description="Наименование поставки")
     cargo_type: Optional[StrictInt] = Field(default=None, description="Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) ", alias="cargoType")
+    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует ", alias="crossBorderType")
     destination_office_id: Optional[StrictInt] = Field(default=None, description="ID склада назначения поставки. Если `null`, склад назначения не указан", alias="destinationOfficeId")
-    __properties: ClassVar[List[str]] = ["id", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "destinationOfficeId"]
+    __properties: ClassVar[List[str]] = ["id", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "crossBorderType", "destinationOfficeId"]
 
     @field_validator('cargo_type')
     def cargo_type_validate_enum(cls, value):
@@ -45,6 +46,16 @@ class Supply(BaseModel):
 
         if value not in set([0, 1, 2, 3]):
             raise ValueError("must be one of enum values (0, 1, 2, 3)")
+        return value
+
+    @field_validator('cross_border_type')
+    def cross_border_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set([0, 1]):
+            raise ValueError("must be one of enum values (0, 1)")
         return value
 
     model_config = ConfigDict(
@@ -96,6 +107,11 @@ class Supply(BaseModel):
         if self.scan_dt is None and "scan_dt" in self.model_fields_set:
             _dict['scanDt'] = None
 
+        # set to None if cross_border_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.cross_border_type is None and "cross_border_type" in self.model_fields_set:
+            _dict['crossBorderType'] = None
+
         # set to None if destination_office_id (nullable) is None
         # and model_fields_set contains the field
         if self.destination_office_id is None and "destination_office_id" in self.model_fields_set:
@@ -120,6 +136,7 @@ class Supply(BaseModel):
             "scanDt": obj.get("scanDt"),
             "name": obj.get("name"),
             "cargoType": obj.get("cargoType"),
+            "crossBorderType": obj.get("crossBorderType"),
             "destinationOfficeId": obj.get("destinationOfficeId")
         })
         return _obj

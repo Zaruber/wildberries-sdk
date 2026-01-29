@@ -27,7 +27,6 @@ export interface GetTasksResponseData {
     id?: string;
     /**
      * Статус задания:
-     * 
      *   * `new` — новое
      *   * `processing` —  обрабатывается
      *   * `done` — отчёт готов

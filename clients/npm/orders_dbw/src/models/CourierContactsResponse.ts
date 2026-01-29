@@ -37,6 +37,18 @@ export interface CourierContactsResponse {
      * @memberof CourierContactsResponse
      */
     phone?: string;
+    /**
+     * Дата и время, с которого прибудет курьер
+     * @type {Date}
+     * @memberof CourierContactsResponse
+     */
+    pTimeFrom?: Date | null;
+    /**
+     * Дата и время, до которого прибудет курьер
+     * @type {Date}
+     * @memberof CourierContactsResponse
+     */
+    pTimeTo?: Date | null;
 }
 
 /**
@@ -59,6 +71,8 @@ export function CourierContactsResponseFromJSONTyped(json: any, ignoreDiscrimina
         'carNumber': json['carNumber'] == null ? undefined : json['carNumber'],
         'fullName': json['fullName'] == null ? undefined : json['fullName'],
         'phone': json['phone'] == null ? undefined : json['phone'],
+        'pTimeFrom': json['pTimeFrom'] == null ? undefined : (new Date(json['pTimeFrom'])),
+        'pTimeTo': json['pTimeTo'] == null ? undefined : (new Date(json['pTimeTo'])),
     };
 }
 
@@ -76,6 +90,8 @@ export function CourierContactsResponseToJSONTyped(value?: CourierContactsRespon
         'carNumber': value['carNumber'],
         'fullName': value['fullName'],
         'phone': value['phone'],
+        'pTimeFrom': value['pTimeFrom'] == null ? value['pTimeFrom'] : value['pTimeFrom'].toISOString(),
+        'pTimeTo': value['pTimeTo'] == null ? value['pTimeTo'] : value['pTimeTo'].toISOString(),
     };
 }
 

@@ -82,7 +82,7 @@ class DefaultApi:
     ) -> CreateTaskResponse:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -156,7 +156,7 @@ class DefaultApi:
     ) -> ApiResponse[CreateTaskResponse]:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -230,7 +230,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -374,7 +374,7 @@ class DefaultApi:
     ) -> List[ApiV1AcceptanceReportTasksTaskIdDownloadGet200ResponseInner]:
         """Получить отчёт
 
-        Метод возвращает отчёт о [платной приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [платной приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -445,7 +445,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ApiV1AcceptanceReportTasksTaskIdDownloadGet200ResponseInner]]:
         """Получить отчёт
 
-        Метод возвращает отчёт о [платной приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [платной приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -516,7 +516,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт о [платной приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [платной приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -651,7 +651,7 @@ class DefaultApi:
     ) -> GetTasksResponse:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 1 запрос | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -722,7 +722,7 @@ class DefaultApi:
     ) -> ApiResponse[GetTasksResponse]:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 1 запрос | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -793,7 +793,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 1 запрос | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -928,7 +928,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsAntifraudDetailsGet200Response:
         """Самовыкупы
 
-        Метод возвращает отчёт об удержаниях за самовыкупы. Отчёт формируется каждую неделю по средам, до 7:00 по московскому времени, и содержит данные за одну неделю.<br><br>  Удержание за самовыкуп — 30% от стоимости товаров.<br>Минимальная сумма всех удержаний — 100 000 ₽, если за неделю в ПВЗ привезли ваших товаров больше, чем на сумму 100 000 ₽.<br><br>  Данные доступны с августа 2023.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 минут | 1 запрос | 10 минут | 10 запросов | </div> 
+        Метод возвращает отчёт об удержаниях за самовыкупы. Отчёт формируется каждую неделю по средам, до 7:00 по московскому времени, и содержит данные за одну неделю.<br><br>  Удержание за самовыкуп — 30% от стоимости товаров.<br>Минимальная сумма всех удержаний — 100 000 ₽, если за неделю в ПВЗ привезли ваших товаров больше, чем на сумму 100 000 ₽.<br><br>  Данные доступны с августа 2023.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 мин | 1 запрос | 10 мин | 10 запросов | </div> 
 
         :param var_date: Дата, которая входит в отчётный период, `ГГГГ-ММ-ДД`. <br/> Чтобы получить данные за всё время с августа 2023,  не указывайте этот параметр 
         :type var_date: str
@@ -998,7 +998,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsAntifraudDetailsGet200Response]:
         """Самовыкупы
 
-        Метод возвращает отчёт об удержаниях за самовыкупы. Отчёт формируется каждую неделю по средам, до 7:00 по московскому времени, и содержит данные за одну неделю.<br><br>  Удержание за самовыкуп — 30% от стоимости товаров.<br>Минимальная сумма всех удержаний — 100 000 ₽, если за неделю в ПВЗ привезли ваших товаров больше, чем на сумму 100 000 ₽.<br><br>  Данные доступны с августа 2023.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 минут | 1 запрос | 10 минут | 10 запросов | </div> 
+        Метод возвращает отчёт об удержаниях за самовыкупы. Отчёт формируется каждую неделю по средам, до 7:00 по московскому времени, и содержит данные за одну неделю.<br><br>  Удержание за самовыкуп — 30% от стоимости товаров.<br>Минимальная сумма всех удержаний — 100 000 ₽, если за неделю в ПВЗ привезли ваших товаров больше, чем на сумму 100 000 ₽.<br><br>  Данные доступны с августа 2023.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 мин | 1 запрос | 10 мин | 10 запросов | </div> 
 
         :param var_date: Дата, которая входит в отчётный период, `ГГГГ-ММ-ДД`. <br/> Чтобы получить данные за всё время с августа 2023,  не указывайте этот параметр 
         :type var_date: str
@@ -1068,7 +1068,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Самовыкупы
 
-        Метод возвращает отчёт об удержаниях за самовыкупы. Отчёт формируется каждую неделю по средам, до 7:00 по московскому времени, и содержит данные за одну неделю.<br><br>  Удержание за самовыкуп — 30% от стоимости товаров.<br>Минимальная сумма всех удержаний — 100 000 ₽, если за неделю в ПВЗ привезли ваших товаров больше, чем на сумму 100 000 ₽.<br><br>  Данные доступны с августа 2023.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 минут | 1 запрос | 10 минут | 10 запросов | </div> 
+        Метод возвращает отчёт об удержаниях за самовыкупы. Отчёт формируется каждую неделю по средам, до 7:00 по московскому времени, и содержит данные за одну неделю.<br><br>  Удержание за самовыкуп — 30% от стоимости товаров.<br>Минимальная сумма всех удержаний — 100 000 ₽, если за неделю в ПВЗ привезли ваших товаров больше, чем на сумму 100 000 ₽.<br><br>  Данные доступны с августа 2023.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 мин | 1 запрос | 10 мин | 10 запросов | </div> 
 
         :param var_date: Дата, которая входит в отчётный период, `ГГГГ-ММ-ДД`. <br/> Чтобы получить данные за всё время с августа 2023,  не указывайте этот параметр 
         :type var_date: str
@@ -1205,7 +1205,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsBannedProductsBlockedGet200Response:
         """Заблокированные карточки
 
-        Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
         :param sort: (required)
         :type sort: str
@@ -1279,7 +1279,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsBannedProductsBlockedGet200Response]:
         """Заблокированные карточки
 
-        Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
         :param sort: (required)
         :type sort: str
@@ -1353,7 +1353,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Заблокированные карточки
 
-        Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
         :param sort: (required)
         :type sort: str
@@ -1498,7 +1498,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsBannedProductsShadowedGet200Response:
         """Скрытые из каталога
 
-        Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
         :param sort: (required)
         :type sort: str
@@ -1572,7 +1572,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsBannedProductsShadowedGet200Response]:
         """Скрытые из каталога
 
-        Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
         :param sort: (required)
         :type sort: str
@@ -1646,7 +1646,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Скрытые из каталога
 
-        Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 6 запросов | </div> 
+        Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
         :param sort: (required)
         :type sort: str
@@ -1789,7 +1789,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsBrandShareBrandsGet200Response:
         """Бренды продавца
 
-        Метод возвращает список брендов продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить только бренды, которые: - Продавались за последние 90 дней. - Есть на складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает список брендов продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить только бренды, которые: - Продавались за последние 90 дней. - Есть на складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1854,7 +1854,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsBrandShareBrandsGet200Response]:
         """Бренды продавца
 
-        Метод возвращает список брендов продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить только бренды, которые: - Продавались за последние 90 дней. - Есть на складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает список брендов продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить только бренды, которые: - Продавались за последние 90 дней. - Есть на складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1919,7 +1919,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Бренды продавца
 
-        Метод возвращает список брендов продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить только бренды, которые: - Продавались за последние 90 дней. - Есть на складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает список брендов продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить только бренды, которые: - Продавались за последние 90 дней. - Есть на складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2049,7 +2049,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsBrandShareGet200Response:
         """Получить отчёт
 
-        Метод возвращает отчёт о [доле бренда продавца в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 20 запросов | </div> 
+        Метод возвращает отчёт о [доле бренда продавца в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 20 запросов | </div> 
 
         :param parent_id: ID родительской категории (required)
         :type parent_id: int
@@ -2131,7 +2131,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsBrandShareGet200Response]:
         """Получить отчёт
 
-        Метод возвращает отчёт о [доле бренда продавца в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 20 запросов | </div> 
+        Метод возвращает отчёт о [доле бренда продавца в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 20 запросов | </div> 
 
         :param parent_id: ID родительской категории (required)
         :type parent_id: int
@@ -2213,7 +2213,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт о [доле бренда продавца в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 20 запросов | </div> 
+        Метод возвращает отчёт о [доле бренда продавца в продажах](https://seller.wildberries.ru/analytics-reports/brand-share). <br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 20 запросов | </div> 
 
         :param parent_id: ID родительской категории (required)
         :type parent_id: int
@@ -2376,7 +2376,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsBrandShareParentSubjectsGet200Response:
         """Родительские категории бренда
 
-        Метод возвращает родительские категории бренда продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share).<br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 20 запросов | </div> 
+        Метод возвращает родительские категории бренда продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share).<br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 20 запросов | </div> 
 
         :param brand: Бренд (required)
         :type brand: str
@@ -2458,7 +2458,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsBrandShareParentSubjectsGet200Response]:
         """Родительские категории бренда
 
-        Метод возвращает родительские категории бренда продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share).<br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 20 запросов | </div> 
+        Метод возвращает родительские категории бренда продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share).<br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 20 запросов | </div> 
 
         :param brand: Бренд (required)
         :type brand: str
@@ -2540,7 +2540,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Родительские категории бренда
 
-        Метод возвращает родительские категории бренда продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share).<br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 20 запросов | </div> 
+        Метод возвращает родительские категории бренда продавца для отчёта о [доле бренда в продажах](https://seller.wildberries.ru/analytics-reports/brand-share).<br><br>  Можно получить отчёт максимум за 365 дней. Данные доступны с 1 ноября 2022.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 20 запросов | </div> 
 
         :param brand: Бренд (required)
         :type brand: str
@@ -2702,7 +2702,7 @@ class DefaultApi:
     ) -> ExciseReportResponse:
         """Получить отчёт
 
-        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 часов | 10 запросов | 30 минут | 10 запросов | </div> 
+        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -2780,7 +2780,7 @@ class DefaultApi:
     ) -> ApiResponse[ExciseReportResponse]:
         """Получить отчёт
 
-        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 часов | 10 запросов | 30 минут | 10 запросов | </div> 
+        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -2858,7 +2858,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 часов | 10 запросов | 30 минут | 10 запросов | </div> 
+        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -3022,7 +3022,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsGoodsLabelingGet200Response:
         """Маркировка товара
 
-        Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: date
@@ -3096,7 +3096,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsGoodsLabelingGet200Response]:
         """Маркировка товара
 
-        Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: date
@@ -3170,7 +3170,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Маркировка товара
 
-        Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: date
@@ -3333,7 +3333,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsGoodsReturnGet200Response:
         """Получить отчёт
 
-        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param date_from: Дата начала отчётного периода (required)
         :type date_from: date
@@ -3407,7 +3407,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsGoodsReturnGet200Response]:
         """Получить отчёт
 
-        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param date_from: Дата начала отчётного периода (required)
         :type date_from: date
@@ -3481,7 +3481,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param date_from: Дата начала отчётного периода (required)
         :type date_from: date
@@ -3644,7 +3644,7 @@ class DefaultApi:
     ) -> ApiV1AnalyticsRegionSaleGet200Response:
         """Получить отчёт
 
-        Метод возвращает отчёт с [данными продаж, сгруппированных по регионам стран](https://seller.wildberries.ru/analytics-reports/region-sale).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 5 запросов | </div> 
+        Метод возвращает отчёт с [данными продаж, сгруппированных по регионам стран](https://seller.wildberries.ru/analytics-reports/region-sale).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 5 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -3718,7 +3718,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1AnalyticsRegionSaleGet200Response]:
         """Получить отчёт
 
-        Метод возвращает отчёт с [данными продаж, сгруппированных по регионам стран](https://seller.wildberries.ru/analytics-reports/region-sale).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 5 запросов | </div> 
+        Метод возвращает отчёт с [данными продаж, сгруппированных по регионам стран](https://seller.wildberries.ru/analytics-reports/region-sale).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 5 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -3792,7 +3792,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт с [данными продаж, сгруппированных по регионам стран](https://seller.wildberries.ru/analytics-reports/region-sale).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 секунд | 1 запрос | 10 секунд | 5 запросов | </div> 
+        Метод возвращает отчёт с [данными продаж, сгруппированных по регионам стран](https://seller.wildberries.ru/analytics-reports/region-sale).<br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 5 запросов | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -3937,7 +3937,7 @@ class DefaultApi:
     ) -> CreateTaskResponse:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 8 дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 5 запросов | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 8 дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
 
         :param date_from: Начало отчётного периода в формате RFC3339. Можно передать дату или дату со временем. Примеры:    * `2019-06-20`   * `2019-06-20T23:59:59`   * `2019-06-20T00:00:00.12345`   * `2017-03-25T00:00:00`  (required)
         :type date_from: str
@@ -4011,7 +4011,7 @@ class DefaultApi:
     ) -> ApiResponse[CreateTaskResponse]:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 8 дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 5 запросов | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 8 дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
 
         :param date_from: Начало отчётного периода в формате RFC3339. Можно передать дату или дату со временем. Примеры:    * `2019-06-20`   * `2019-06-20T23:59:59`   * `2019-06-20T00:00:00.12345`   * `2017-03-25T00:00:00`  (required)
         :type date_from: str
@@ -4085,7 +4085,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 8 дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 5 запросов | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Можно получить отчёт максимум за 8 дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
 
         :param date_from: Начало отчётного периода в формате RFC3339. Можно передать дату или дату со временем. Примеры:    * `2019-06-20`   * `2019-06-20T23:59:59`   * `2019-06-20T00:00:00.12345`   * `2017-03-25T00:00:00`  (required)
         :type date_from: str
@@ -4229,7 +4229,7 @@ class DefaultApi:
     ) -> List[ResponsePaidStorageInner]:
         """Получить отчёт
 
-        Метод возвращает отчёт о [платном хранении](https://seller.wildberries.ru/analytics-reports/paid-storage/storage) по ID [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [платном хранении](https://seller.wildberries.ru/analytics-reports/paid-storage/storage) по ID [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -4300,7 +4300,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ResponsePaidStorageInner]]:
         """Получить отчёт
 
-        Метод возвращает отчёт о [платном хранении](https://seller.wildberries.ru/analytics-reports/paid-storage/storage) по ID [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [платном хранении](https://seller.wildberries.ru/analytics-reports/paid-storage/storage) по ID [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -4371,7 +4371,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт о [платном хранении](https://seller.wildberries.ru/analytics-reports/paid-storage/storage) по ID [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [платном хранении](https://seller.wildberries.ru/analytics-reports/paid-storage/storage) по ID [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -4506,7 +4506,7 @@ class DefaultApi:
     ) -> GetTasksResponse:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 5 запросов | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 5 запросов | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -4577,7 +4577,7 @@ class DefaultApi:
     ) -> ApiResponse[GetTasksResponse]:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 5 запросов | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 5 запросов | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -4648,7 +4648,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 5 запросов | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage/get) отчёта о [платном хранении](/openapi/reports#tag/Platnoe-hranenie/paths/~1api~1v1~1paid_storage~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 5 запросов | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -5056,7 +5056,7 @@ class DefaultApi:
     def api_v1_supplier_orders_get(
         self,
         date_from: Annotated[datetime, Field(description="Дата и время последнего изменения по заказу. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00` ")],
-        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
+        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5076,7 +5076,7 @@ class DefaultApi:
 
         :param date_from: Дата и время последнего изменения по заказу. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
-        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
+        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
         :type flag: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5130,7 +5130,7 @@ class DefaultApi:
     def api_v1_supplier_orders_get_with_http_info(
         self,
         date_from: Annotated[datetime, Field(description="Дата и время последнего изменения по заказу. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00` ")],
-        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
+        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5150,7 +5150,7 @@ class DefaultApi:
 
         :param date_from: Дата и время последнего изменения по заказу. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
-        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
+        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
         :type flag: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5204,7 +5204,7 @@ class DefaultApi:
     def api_v1_supplier_orders_get_without_preload_content(
         self,
         date_from: Annotated[datetime, Field(description="Дата и время последнего изменения по заказу. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00` ")],
-        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
+        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5224,7 +5224,7 @@ class DefaultApi:
 
         :param date_from: Дата и время последнего изменения по заказу. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
-        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
+        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
         :type flag: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5358,7 +5358,7 @@ class DefaultApi:
     def api_v1_supplier_sales_get(
         self,
         date_from: Annotated[datetime, Field(description="Дата и время последнего изменения по продаже/возврату. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00` ")],
-        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
+        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5378,7 +5378,7 @@ class DefaultApi:
 
         :param date_from: Дата и время последнего изменения по продаже/возврату. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
-        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
+        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
         :type flag: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5432,7 +5432,7 @@ class DefaultApi:
     def api_v1_supplier_sales_get_with_http_info(
         self,
         date_from: Annotated[datetime, Field(description="Дата и время последнего изменения по продаже/возврату. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00` ")],
-        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
+        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5452,7 +5452,7 @@ class DefaultApi:
 
         :param date_from: Дата и время последнего изменения по продаже/возврату. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
-        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
+        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
         :type flag: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5506,7 +5506,7 @@ class DefaultApi:
     def api_v1_supplier_sales_get_without_preload_content(
         self,
         date_from: Annotated[datetime, Field(description="Дата и время последнего изменения по продаже/возврату. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00` ")],
-        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
+        flag: Annotated[Optional[StrictInt], Field(description="Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5526,7 +5526,7 @@ class DefaultApi:
 
         :param date_from: Дата и время последнего изменения по продаже/возврату. <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
-        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 100 000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
+        :param flag: Если параметр `flag=0` (или не указан в строке запроса), при вызове API возвращаются данные, у которых значение поля `lastChangeDate` (дата время обновления информации в сервисе) больше или равно переданному значению параметра `dateFrom`. При этом количество возвращенных строк данных варьируется в интервале от 0 до примерно 80000. <br> Если параметр `flag=1`, то будет выгружена информация обо всех заказах или продажах с датой, равной переданному параметру `dateFrom` (в данном случае время в дате значения не имеет). При этом количество возвращенных строк данных будет равно количеству всех заказов или продаж, сделанных в указанную дату, переданную в параметре `dateFrom`. 
         :type flag: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5968,7 +5968,7 @@ class DefaultApi:
     ) -> CreateTaskResponse:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1status/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Параметры `groupBy` и `filter` (группировки и фильтры) можно задать в любой комбинации — аналогично [версии](https://seller.wildberries.ru/analytics-reports/warehouse-remains) в личном кабинете.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 5 запросов | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1status/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Параметры `groupBy` и `filter` (группировки и фильтры) можно задать в любой комбинации — аналогично [версии](https://seller.wildberries.ru/analytics-reports/warehouse-remains) в личном кабинете.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
 
         :param locale: Язык полей ответа `subjectName` и `warehouseName`:   - `ru` — русский   - `en` — английский   - `zh` — китайский. Значения `warehouseName` на английском 
         :type locale: str
@@ -6070,7 +6070,7 @@ class DefaultApi:
     ) -> ApiResponse[CreateTaskResponse]:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1status/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Параметры `groupBy` и `filter` (группировки и фильтры) можно задать в любой комбинации — аналогично [версии](https://seller.wildberries.ru/analytics-reports/warehouse-remains) в личном кабинете.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 5 запросов | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1status/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Параметры `groupBy` и `filter` (группировки и фильтры) можно задать в любой комбинации — аналогично [версии](https://seller.wildberries.ru/analytics-reports/warehouse-remains) в личном кабинете.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
 
         :param locale: Язык полей ответа `subjectName` и `warehouseName`:   - `ru` — русский   - `en` — английский   - `zh` — китайский. Значения `warehouseName` на английском 
         :type locale: str
@@ -6172,7 +6172,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Создать отчёт
 
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1status/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Параметры `groupBy` и `filter` (группировки и фильтры) можно задать в любой комбинации — аналогично [версии](https://seller.wildberries.ru/analytics-reports/warehouse-remains) в личном кабинете.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 5 запросов | </div> 
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1status/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).<br><br>  Параметры `groupBy` и `filter` (группировки и фильтры) можно задать в любой комбинации — аналогично [версии](https://seller.wildberries.ru/analytics-reports/warehouse-remains) в личном кабинете.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
 
         :param locale: Язык полей ответа `subjectName` и `warehouseName`:   - `ru` — русский   - `en` — английский   - `zh` — китайский. Значения `warehouseName` на английском 
         :type locale: str
@@ -6372,7 +6372,7 @@ class DefaultApi:
     ) -> List[ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner]:
         """Получить отчёт
 
-        Метод возвращает отчёт об [остатках на складах WB](https://seller.wildberries.ru/analytics-reports/warehouse-remains) по ID [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об [остатках на складах WB](https://seller.wildberries.ru/analytics-reports/warehouse-remains) по ID [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -6443,7 +6443,7 @@ class DefaultApi:
     ) -> ApiResponse[List[ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner]]:
         """Получить отчёт
 
-        Метод возвращает отчёт об [остатках на складах WB](https://seller.wildberries.ru/analytics-reports/warehouse-remains) по ID [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об [остатках на складах WB](https://seller.wildberries.ru/analytics-reports/warehouse-remains) по ID [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -6514,7 +6514,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт об [остатках на складах WB](https://seller.wildberries.ru/analytics-reports/warehouse-remains) по ID [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об [остатках на складах WB](https://seller.wildberries.ru/analytics-reports/warehouse-remains) по ID [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -6649,7 +6649,7 @@ class DefaultApi:
     ) -> GetTasksResponse:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 5 запросов | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 5 запросов | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -6720,7 +6720,7 @@ class DefaultApi:
     ) -> ApiResponse[GetTasksResponse]:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 5 запросов | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 5 запросов | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -6791,7 +6791,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Проверить статус
 
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 секунд | 1 запрос | 5 секунд | 5 запросов | </div> 
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains/get) отчёта об [остатках на складах WB](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah/paths/~1api~1v1~1warehouse_remains~1tasks~1%7Btask_id%7D~1download/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 сек | 1 запрос | 5 сек | 5 запросов | </div> 
 
         :param task_id: ID задания на генерацию  (required)
         :type task_id: str
@@ -6931,7 +6931,7 @@ class DefaultApi:
     ) -> GetDeductions200Response:
         """Подмены и неверные вложения
 
-        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7022,7 +7022,7 @@ class DefaultApi:
     ) -> ApiResponse[GetDeductions200Response]:
         """Подмены и неверные вложения
 
-        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7113,7 +7113,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Подмены и неверные вложения
 
-        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7311,7 +7311,7 @@ class DefaultApi:
     ) -> MeasurementPenalties:
         """Удержания за занижение габаритов упаковки
 
-        Метод возвращает отчёт об [удержаниях за занижение габаритов упаковки](https://seller.wildberries.ru/analytics-reports/dimensions-penalties)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об [удержаниях за занижение габаритов упаковки](https://seller.wildberries.ru/analytics-reports/dimensions-penalties)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7394,7 +7394,7 @@ class DefaultApi:
     ) -> ApiResponse[MeasurementPenalties]:
         """Удержания за занижение габаритов упаковки
 
-        Метод возвращает отчёт об [удержаниях за занижение габаритов упаковки](https://seller.wildberries.ru/analytics-reports/dimensions-penalties)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об [удержаниях за занижение габаритов упаковки](https://seller.wildberries.ru/analytics-reports/dimensions-penalties)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7477,7 +7477,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Удержания за занижение габаритов упаковки
 
-        Метод возвращает отчёт об [удержаниях за занижение габаритов упаковки](https://seller.wildberries.ru/analytics-reports/dimensions-penalties)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт об [удержаниях за занижение габаритов упаковки](https://seller.wildberries.ru/analytics-reports/dimensions-penalties)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7659,7 +7659,7 @@ class DefaultApi:
     ) -> WHM:
         """Замеры склада
 
-        Метод возвращает отчёт о [замерах склада](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/warehouse-measurements)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [замерах склада](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/warehouse-measurements)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7742,7 +7742,7 @@ class DefaultApi:
     ) -> ApiResponse[WHM]:
         """Замеры склада
 
-        Метод возвращает отчёт о [замерах склада](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/warehouse-measurements)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [замерах склада](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/warehouse-measurements)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -7825,7 +7825,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Замеры склада
 
-        Метод возвращает отчёт о [замерах склада](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/warehouse-measurements)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Метод возвращает отчёт о [замерах склада](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/warehouse-measurements)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime

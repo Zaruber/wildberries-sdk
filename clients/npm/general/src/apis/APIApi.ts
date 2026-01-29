@@ -67,7 +67,7 @@ export class APIApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+     * Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
      * Получение новостей портала продавцов
      */
     async apiCommunicationsV2NewsGetRaw(requestParameters: ApiCommunicationsV2NewsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiCommunicationsV2NewsGet200Response>> {
@@ -78,7 +78,7 @@ export class APIApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
+     * Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
      * Получение новостей портала продавцов
      */
     async apiCommunicationsV2NewsGet(requestParameters: ApiCommunicationsV2NewsGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiCommunicationsV2NewsGet200Response> {

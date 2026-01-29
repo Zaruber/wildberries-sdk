@@ -34,7 +34,7 @@ pub struct ApiV1ClaimsGet200ResponseClaimsInner {
     /// Ответ покупателю
     #[serde(rename = "wb_comment", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub wb_comment: Option<Option<String>>,
-    /// Дата и время оформления заявки покупателем
+    /// Дата и время оформления заявки покупателем. UTC+3
     #[serde(rename = "dt", skip_serializing_if = "Option::is_none")]
     pub dt: Option<String>,
     /// Название товара
@@ -43,7 +43,7 @@ pub struct ApiV1ClaimsGet200ResponseClaimsInner {
     /// Дата и время заказа
     #[serde(rename = "order_dt", skip_serializing_if = "Option::is_none")]
     pub order_dt: Option<String>,
-    /// Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
+    /// Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления. UTC+3
     #[serde(rename = "dt_update", skip_serializing_if = "Option::is_none")]
     pub dt_update: Option<String>,
     /// Фотографии из заявки покупателя

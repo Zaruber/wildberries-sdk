@@ -120,7 +120,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+     * Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
      * Коэффициенты приёмки
      * @deprecated
      */
@@ -132,7 +132,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+     * Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
      * Коэффициенты приёмки
      * @deprecated
      */
@@ -179,7 +179,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+     * Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
      * Опции приёмки
      */
     async apiV1AcceptanceOptionsPostRaw(requestParameters: ApiV1AcceptanceOptionsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ModelsOptionsResultModel>> {
@@ -190,7 +190,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+     * Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
      * Опции приёмки
      */
     async apiV1AcceptanceOptionsPost(requestParameters: ApiV1AcceptanceOptionsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ModelsOptionsResultModel> {
@@ -234,7 +234,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Детали поставки
      */
     async apiV1SuppliesIDGetRaw(requestParameters: ApiV1SuppliesIDGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ModelsSupplyDetails>> {
@@ -245,7 +245,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает детали поставки по ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Детали поставки
      */
     async apiV1SuppliesIDGet(requestParameters: ApiV1SuppliesIDGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ModelsSupplyDetails> {
@@ -297,7 +297,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Товары поставки
      */
     async apiV1SuppliesIDGoodsGetRaw(requestParameters: ApiV1SuppliesIDGoodsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ModelsGoodInSupply>>> {
@@ -308,7 +308,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает информацию о товарах в поставке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Товары поставки
      */
     async apiV1SuppliesIDGoodsGet(requestParameters: ApiV1SuppliesIDGoodsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ModelsGoodInSupply>> {
@@ -348,7 +348,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Упаковка поставки
      */
     async apiV1SuppliesIDPackageGetRaw(requestParameters: ApiV1SuppliesIDPackageGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ModelsBox>>> {
@@ -359,7 +359,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает информацию об упаковке поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Упаковка поставки
      */
     async apiV1SuppliesIDPackageGet(requestParameters: ApiV1SuppliesIDPackageGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ModelsBox>> {
@@ -409,7 +409,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Список поставок
      */
     async apiV1SuppliesPostRaw(requestParameters: ApiV1SuppliesPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ModelsSupply>>> {
@@ -420,7 +420,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 30 запросов | 2 секунды | 10 запросов | </div> 
+     * Метод возвращает список поставок, по умолчанию — последние 1000 поставок.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 30 запросов | 2 сек | 10 запросов | </div> 
      * Список поставок
      */
     async apiV1SuppliesPost(requestParameters: ApiV1SuppliesPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ModelsSupply>> {
@@ -452,7 +452,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 10 запросов | </div> 
+     * Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 10 запросов | </div> 
      * Транзитные направления
      */
     async apiV1TransitTariffsGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ModelsTransitTariff>>> {
@@ -463,7 +463,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 10 запросов | </div> 
+     * Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 10 запросов | </div> 
      * Транзитные направления
      */
     async apiV1TransitTariffsGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ModelsTransitTariff>> {
@@ -495,7 +495,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+     * Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
      * Список складов
      */
     async apiV1WarehousesGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ModelsWarehousesResultItems>>> {
@@ -506,7 +506,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 6 запросов | 10 секунд | 6 запросов | </div> 
+     * Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
      * Список складов
      */
     async apiV1WarehousesGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ModelsWarehousesResultItems>> {

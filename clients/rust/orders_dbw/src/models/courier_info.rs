@@ -19,12 +19,6 @@ pub struct CourierInfo {
     /// Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да     Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2) 
     #[serde(rename = "mustBeAssigned", skip_serializing_if = "Option::is_none")]
     pub must_be_assigned: Option<bool>,
-    /// Дата и время, с которого прибудет курьер
-    #[serde(rename = "pTimeFrom", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub p_time_from: Option<Option<String>>,
-    /// Дата и время, до которого прибудет курьер
-    #[serde(rename = "pTimeTo", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub p_time_to: Option<Option<String>>,
     /// Дата и время обновления информации о курьере. <br> Если `null`, информация не обновлялась
     #[serde(rename = "updatedAt", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub updated_at: Option<Option<String>>,
@@ -35,8 +29,6 @@ impl CourierInfo {
         CourierInfo {
             contacts: None,
             must_be_assigned: None,
-            p_time_from: None,
-            p_time_to: None,
             updated_at: None,
         }
     }
