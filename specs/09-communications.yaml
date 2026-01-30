@@ -210,10 +210,11 @@ paths:
           in: query
           description: |
             Есть ли ответ на вопрос:
-              - `true` — да, по умолчанию
+              - `true` — да
               - `false` — нет
           schema:
             type: boolean
+            default: true
             example: false
       responses:
         '200':
@@ -302,7 +303,7 @@ paths:
           in: query
           description: |
             Есть ли ответ на вопрос:
-              - `true` — да, по умолчанию
+              - `true` — да
               - `false` — нет
           schema:
             type: boolean
@@ -772,7 +773,6 @@ paths:
                     supplierArticle: 12113156uw
                     supplierName: ''
                     brandName: Brand
-                    size: ''
                   wasViewed: true
                   isWarned: false
                 error: false
@@ -909,10 +909,11 @@ paths:
           in: query
           description: |
             Обработан ли отзыв:
-              - `true` — да, по умолчанию
+              - `true` — да
               - `false` — нет
           schema:
             type: boolean
+            default: true
             example: false
       responses:
         '200':
@@ -998,7 +999,7 @@ paths:
           required: true
           description: |
             Обработан ли отзыв:
-              - `true` — да, по умолчанию
+              - `true` — да
               - `false` — нет
           schema:
             type: boolean
@@ -3820,7 +3821,7 @@ components:
                       description: Ответ покупателю
                     dt:
                       type: string
-                      description: Дата и время оформления заявки покупателем
+                      description: Дата и время оформления заявки покупателем. UTC+3
                     imt_name:
                       nullable: true
                       type: string
@@ -3830,7 +3831,7 @@ components:
                       description: Дата и время заказа
                     dt_update:
                       type: string
-                      description: Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
+                      description: Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления. UTC+3
                     photos:
                       type: array
                       description: Фотографии из заявки покупателя
@@ -3943,20 +3944,22 @@ components:
     limit:
       in: query
       name: limit
-      description: Количество заявок в ответе. По умолчанию `50`
+      description: Количество заявок в ответе
       schema:
         type: integer
         format: uint
+        default: 50
         minimum: 1
         maximum: 200
         example: 50
     offset:
       in: query
       name: offset
-      description: После какого элемента выдавать данные. По умолчанию `0`
+      description: После какого элемента выдавать данные
       schema:
         type: integer
         format: uint
+        default: 0
         minimum: 0
         example: 0
     is_archive:
