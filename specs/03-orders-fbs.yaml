@@ -1878,6 +1878,11 @@ paths:
         <div class="description_important">
         В поставку нельзя добавить сборочные задания, поступившие на разные склады.
         </div>
+        <div class="description_important">
+        В пустую поставку можно добавить сборочные задания любого типа: кроссбордер или не кроссбордер.
+        После этого поставка приобретает тип первого добавленного сборочного задания из поля <code>crossBorderType</code>.
+        Далее в неё можно добавить только сборочные задания такого же типа.
+        </div>
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -2923,6 +2928,18 @@ components:
             - 1
             - 2
             - 3
+        crossBorderType:
+          description: |
+            Тип сборочного задания:
+              - `0` — не кроссбордер
+              - `1` — кроссбордер
+          enum:
+            - 0
+            - 1
+          format: int32
+          type: integer
+          example: 1
+          nullable: false
         comment:
           description: Комментарий покупателя
           type: string
@@ -2997,6 +3014,19 @@ components:
             - 1
             - 2
             - 3
+        crossBorderType:
+          description: |
+            Тип поставки:
+              - `0` — не кроссбордер
+              - `1` — кроссбордер
+              - `null` — значение отсутствует
+          enum:
+            - 0
+            - 1
+          format: int32
+          type: integer
+          example: 1
+          nullable: true
         destinationOfficeId:
           type: integer
           format: int64
@@ -3202,6 +3232,18 @@ components:
             - 1
             - 2
             - 3
+        crossBorderType:
+          description: |
+            Тип сборочного задания:
+              - `0` — не кроссбордер
+              - `1` — кроссбордер
+          enum:
+            - 0
+            - 1
+          format: int32
+          type: integer
+          example: 1
+          nullable: false
         isZeroOrder:
           type: boolean
           description: |
