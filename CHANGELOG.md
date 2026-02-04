@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.02.04)
+- Orders DBS: сокращены единицы времени в таблице rate-лимитов (`1 минута` → `1 мин`, `200 миллисекунд` → `200 мс`).
+
 ### Changed (2026.01.31)
 - Сборочные задания DBS: добавлен новый readonly-метод `POST /api/marketplace/v3/dbs/orders/b2b/info` для получения B2B-данных покупателя по ID сборочных заданий (ИНН, КПП, наименование организации); лимит: 300 запросов/мин, интервал 200 мс, всплеск 20
 - Сборочные задания DBS: изменён путь метода закрепления ГТД — `POST /api/marketplace/v3/dbs/meta/customs-declaration` → `POST /api/marketplace/v3/dbs/orders/meta/customs-declaration` (старый путь фактически удалён/заменён)
