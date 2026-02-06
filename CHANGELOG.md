@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.02.06)
+- Аналитика: во все CSV-отчёты добавлено поле валюты — в «Воронке продаж» добавлена колонка `currency`, в отчёте по поиску по артикулам WB добавлена колонка `Currency`, в отчёте по текстам поисковых запросов добавлена колонка `Currency`, в отчёте по истории остатков добавлена колонка `Currency` (обновлены примеры CSV).
+- Аналитика: в ответы табличных методов добавлено обязательное поле `currency` (schema `Currency`, пример `RUB`): `TableResponse` (required), `TableDetailsResponse` (required), `TableProductResponse` (required), `ProductSearchTextsResponse` (required), `ProductOrdersTextResponse` (required), `TableGroupsResponse` (required), `TableSizeResponse` (required), `TableShippingOfficeResponse` (required), а также в `ProductHistoryResponse` и `GroupedHistoryResponse` (required на уровне элемента массива).
+
 ### Changed (2026.02.04)
 - Orders DBS: сокращены единицы времени в таблице rate-лимитов (`1 минута` → `1 мин`, `200 миллисекунд` → `200 мс`).
 
