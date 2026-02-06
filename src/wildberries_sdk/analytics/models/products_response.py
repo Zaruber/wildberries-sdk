@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from wildberries_sdk.analytics.models.products_response_products_inner import ProductsResponseProductsInner
 from typing import Optional, Set
@@ -28,7 +28,8 @@ class ProductsResponse(BaseModel):
     ProductsResponse
     """ # noqa: E501
     products: List[ProductsResponseProductsInner] = Field(description="Список карточек товаров")
-    __properties: ClassVar[List[str]] = ["products"]
+    currency: StrictStr = Field(description="Валюта отчёта")
+    __properties: ClassVar[List[str]] = ["products", "currency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class ProductsResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "products": [ProductsResponseProductsInner.from_dict(_item) for _item in obj["products"]] if obj.get("products") is not None else None
+            "products": [ProductsResponseProductsInner.from_dict(_item) for _item in obj["products"]] if obj.get("products") is not None else None,
+            "currency": obj.get("currency")
         })
         return _obj
 

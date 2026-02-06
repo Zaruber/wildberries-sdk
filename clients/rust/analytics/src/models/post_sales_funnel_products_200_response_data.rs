@@ -16,12 +16,16 @@ pub struct PostSalesFunnelProducts200ResponseData {
     /// Список карточек товаров
     #[serde(rename = "products")]
     pub products: Vec<models::ProductsResponseProductsInner>,
+    /// Валюта отчёта
+    #[serde(rename = "currency")]
+    pub currency: String,
 }
 
 impl PostSalesFunnelProducts200ResponseData {
-    pub fn new(products: Vec<models::ProductsResponseProductsInner>) -> PostSalesFunnelProducts200ResponseData {
+    pub fn new(products: Vec<models::ProductsResponseProductsInner>, currency: String) -> PostSalesFunnelProducts200ResponseData {
         PostSalesFunnelProducts200ResponseData {
             products,
+            currency,
         }
     }
 }

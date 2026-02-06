@@ -18,13 +18,17 @@ pub struct ProductHistoryResponseInner {
     /// Статистика за период
     #[serde(rename = "history")]
     pub history: Vec<models::History>,
+    /// Валюта отчёта
+    #[serde(rename = "currency")]
+    pub currency: String,
 }
 
 impl ProductHistoryResponseInner {
-    pub fn new(product: models::ProductHistoryResponseInnerProduct, history: Vec<models::History>) -> ProductHistoryResponseInner {
+    pub fn new(product: models::ProductHistoryResponseInnerProduct, history: Vec<models::History>, currency: String) -> ProductHistoryResponseInner {
         ProductHistoryResponseInner {
             product: Box::new(product),
             history,
+            currency,
         }
     }
 }

@@ -23,6 +23,8 @@ var _ MappedNullable = &TableGroupResponseSt{}
 type TableGroupResponseSt struct {
 	// Множество данных по группам
 	Groups []TableGroupItemSt `json:"groups"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _TableGroupResponseSt TableGroupResponseSt
@@ -31,9 +33,10 @@ type _TableGroupResponseSt TableGroupResponseSt
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTableGroupResponseSt(groups []TableGroupItemSt) *TableGroupResponseSt {
+func NewTableGroupResponseSt(groups []TableGroupItemSt, currency string) *TableGroupResponseSt {
 	this := TableGroupResponseSt{}
 	this.Groups = groups
+	this.Currency = currency
 	return &this
 }
 
@@ -69,6 +72,30 @@ func (o *TableGroupResponseSt) SetGroups(v []TableGroupItemSt) {
 	o.Groups = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *TableGroupResponseSt) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *TableGroupResponseSt) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *TableGroupResponseSt) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o TableGroupResponseSt) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -80,6 +107,7 @@ func (o TableGroupResponseSt) MarshalJSON() ([]byte, error) {
 func (o TableGroupResponseSt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["groups"] = o.Groups
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -89,6 +117,7 @@ func (o *TableGroupResponseSt) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"groups",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -33,6 +33,12 @@ export interface TableGroupResponseSt {
      * @memberof TableGroupResponseSt
      */
     groups: Array<TableGroupItemSt>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof TableGroupResponseSt
+     */
+    currency: string;
 }
 
 /**
@@ -40,6 +46,7 @@ export interface TableGroupResponseSt {
  */
 export function instanceOfTableGroupResponseSt(value: object): value is TableGroupResponseSt {
     if (!('groups' in value) || value['groups'] === undefined) return false;
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -54,6 +61,7 @@ export function TableGroupResponseStFromJSONTyped(json: any, ignoreDiscriminator
     return {
         
         'groups': ((json['groups'] as Array<any>).map(TableGroupItemStFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -69,6 +77,7 @@ export function TableGroupResponseStToJSONTyped(value?: TableGroupResponseSt | n
     return {
         
         'groups': ((value['groups'] as Array<any>).map(TableGroupItemStToJSON)),
+        'currency': value['currency'],
     };
 }
 

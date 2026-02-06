@@ -57,7 +57,8 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'products' => '\Wildberries\Sdk\Analytics\Model\ProductsResponseProductsInner[]'
+        'products' => '\Wildberries\Sdk\Analytics\Model\ProductsResponseProductsInner[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'products' => null
+        'products' => null,
+        'currency' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'products' => false
+        'products' => false,
+        'currency' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'products' => 'products'
+        'products' => 'products',
+        'currency' => 'currency'
     ];
 
     /**
@@ -175,7 +179,8 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'products' => 'setProducts'
+        'products' => 'setProducts',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -184,7 +189,8 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'products' => 'getProducts'
+        'products' => 'getProducts',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -245,6 +251,7 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('products', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -276,6 +283,9 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['products'] === null) {
             $invalidProperties[] = "'products' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
         return $invalidProperties;
     }
@@ -315,6 +325,33 @@ class ProductsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable products cannot be null');
         }
         $this->container['products'] = $products;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

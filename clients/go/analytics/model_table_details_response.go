@@ -23,6 +23,8 @@ var _ MappedNullable = &TableDetailsResponse{}
 type TableDetailsResponse struct {
 	// Список товаров в группе по фильтру 
 	Products []TableProductItem `json:"products"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _TableDetailsResponse TableDetailsResponse
@@ -31,9 +33,10 @@ type _TableDetailsResponse TableDetailsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTableDetailsResponse(products []TableProductItem) *TableDetailsResponse {
+func NewTableDetailsResponse(products []TableProductItem, currency string) *TableDetailsResponse {
 	this := TableDetailsResponse{}
 	this.Products = products
+	this.Currency = currency
 	return &this
 }
 
@@ -69,6 +72,30 @@ func (o *TableDetailsResponse) SetProducts(v []TableProductItem) {
 	o.Products = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *TableDetailsResponse) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *TableDetailsResponse) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *TableDetailsResponse) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o TableDetailsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -80,6 +107,7 @@ func (o TableDetailsResponse) MarshalJSON() ([]byte, error) {
 func (o TableDetailsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["products"] = o.Products
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -89,6 +117,7 @@ func (o *TableDetailsResponse) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"products",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

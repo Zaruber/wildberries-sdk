@@ -23,6 +23,8 @@ var _ MappedNullable = &TableProductResponse{}
 type TableProductResponse struct {
 	// Множество данных по товарам
 	Items []TableProductItemSt `json:"items"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _TableProductResponse TableProductResponse
@@ -31,9 +33,10 @@ type _TableProductResponse TableProductResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTableProductResponse(items []TableProductItemSt) *TableProductResponse {
+func NewTableProductResponse(items []TableProductItemSt, currency string) *TableProductResponse {
 	this := TableProductResponse{}
 	this.Items = items
+	this.Currency = currency
 	return &this
 }
 
@@ -69,6 +72,30 @@ func (o *TableProductResponse) SetItems(v []TableProductItemSt) {
 	o.Items = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *TableProductResponse) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *TableProductResponse) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *TableProductResponse) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o TableProductResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -80,6 +107,7 @@ func (o TableProductResponse) MarshalJSON() ([]byte, error) {
 func (o TableProductResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["items"] = o.Items
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -89,6 +117,7 @@ func (o *TableProductResponse) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"items",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

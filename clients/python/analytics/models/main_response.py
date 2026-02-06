@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from wildberries_sdk.analytics.models.common_info import CommonInfo
 from wildberries_sdk.analytics.models.position_info import PositionInfo
@@ -34,7 +34,8 @@ class MainResponse(BaseModel):
     position_info: PositionInfo = Field(alias="positionInfo")
     visibility_info: VisibilityInfo = Field(alias="visibilityInfo")
     groups: Optional[List[TableGroupItem]] = Field(default=None, description="Список элементов таблицы ")
-    __properties: ClassVar[List[str]] = ["commonInfo", "positionInfo", "visibilityInfo", "groups"]
+    currency: StrictStr = Field(description="Валюта отчёта")
+    __properties: ClassVar[List[str]] = ["commonInfo", "positionInfo", "visibilityInfo", "groups", "currency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,7 +107,8 @@ class MainResponse(BaseModel):
             "commonInfo": CommonInfo.from_dict(obj["commonInfo"]) if obj.get("commonInfo") is not None else None,
             "positionInfo": PositionInfo.from_dict(obj["positionInfo"]) if obj.get("positionInfo") is not None else None,
             "visibilityInfo": VisibilityInfo.from_dict(obj["visibilityInfo"]) if obj.get("visibilityInfo") is not None else None,
-            "groups": [TableGroupItem.from_dict(_item) for _item in obj["groups"]] if obj.get("groups") is not None else None
+            "groups": [TableGroupItem.from_dict(_item) for _item in obj["groups"]] if obj.get("groups") is not None else None,
+            "currency": obj.get("currency")
         })
         return _obj
 

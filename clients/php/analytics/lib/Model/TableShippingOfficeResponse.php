@@ -57,7 +57,8 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'regions' => '\Wildberries\Sdk\Analytics\Model\TableShippingOfficeItem[]'
+        'regions' => '\Wildberries\Sdk\Analytics\Model\TableShippingOfficeItem[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'regions' => null
+        'regions' => null,
+        'currency' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'regions' => false
+        'regions' => false,
+        'currency' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'regions' => 'regions'
+        'regions' => 'regions',
+        'currency' => 'currency'
     ];
 
     /**
@@ -175,7 +179,8 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'regions' => 'setRegions'
+        'regions' => 'setRegions',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -184,7 +189,8 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'regions' => 'getRegions'
+        'regions' => 'getRegions',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -245,6 +251,7 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(?array $data = null)
     {
         $this->setIfExists('regions', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -274,6 +281,9 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -312,6 +322,33 @@ class TableShippingOfficeResponse implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable regions cannot be null');
         }
         $this->container['regions'] = $regions;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

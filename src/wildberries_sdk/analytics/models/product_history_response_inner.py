@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from wildberries_sdk.analytics.models.history import History
 from wildberries_sdk.analytics.models.product_history_response_inner_product import ProductHistoryResponseInnerProduct
@@ -30,7 +30,8 @@ class ProductHistoryResponseInner(BaseModel):
     """ # noqa: E501
     product: ProductHistoryResponseInnerProduct
     history: List[History] = Field(description="Статистика за период")
-    __properties: ClassVar[List[str]] = ["product", "history"]
+    currency: StrictStr = Field(description="Валюта отчёта")
+    __properties: ClassVar[List[str]] = ["product", "history", "currency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +95,8 @@ class ProductHistoryResponseInner(BaseModel):
 
         _obj = cls.model_validate({
             "product": ProductHistoryResponseInnerProduct.from_dict(obj["product"]) if obj.get("product") is not None else None,
-            "history": [History.from_dict(_item) for _item in obj["history"]] if obj.get("history") is not None else None
+            "history": [History.from_dict(_item) for _item in obj["history"]] if obj.get("history") is not None else None,
+            "currency": obj.get("currency")
         })
         return _obj
 

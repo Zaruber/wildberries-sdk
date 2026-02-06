@@ -57,7 +57,8 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'groups' => '\Wildberries\Sdk\Analytics\Model\TableGroupItemSt[]'
+        'groups' => '\Wildberries\Sdk\Analytics\Model\TableGroupItemSt[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'groups' => null
+        'groups' => null,
+        'currency' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'groups' => false
+        'groups' => false,
+        'currency' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'groups' => 'groups'
+        'groups' => 'groups',
+        'currency' => 'currency'
     ];
 
     /**
@@ -175,7 +179,8 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'groups' => 'setGroups'
+        'groups' => 'setGroups',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -184,7 +189,8 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'groups' => 'getGroups'
+        'groups' => 'getGroups',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -245,6 +251,7 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(?array $data = null)
     {
         $this->setIfExists('groups', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -276,6 +283,9 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
 
         if ($this->container['groups'] === null) {
             $invalidProperties[] = "'groups' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
         return $invalidProperties;
     }
@@ -315,6 +325,33 @@ class TableGroupResponseSt implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable groups cannot be null');
         }
         $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

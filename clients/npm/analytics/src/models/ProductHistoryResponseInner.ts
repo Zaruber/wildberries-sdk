@@ -46,6 +46,12 @@ export interface ProductHistoryResponseInner {
      * @memberof ProductHistoryResponseInner
      */
     history: Array<History>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof ProductHistoryResponseInner
+     */
+    currency: string;
 }
 
 /**
@@ -54,6 +60,7 @@ export interface ProductHistoryResponseInner {
 export function instanceOfProductHistoryResponseInner(value: object): value is ProductHistoryResponseInner {
     if (!('product' in value) || value['product'] === undefined) return false;
     if (!('history' in value) || value['history'] === undefined) return false;
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -69,6 +76,7 @@ export function ProductHistoryResponseInnerFromJSONTyped(json: any, ignoreDiscri
         
         'product': ProductHistoryResponseInnerProductFromJSON(json['product']),
         'history': ((json['history'] as Array<any>).map(HistoryFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -85,6 +93,7 @@ export function ProductHistoryResponseInnerToJSONTyped(value?: ProductHistoryRes
         
         'product': ProductHistoryResponseInnerProductToJSON(value['product']),
         'history': ((value['history'] as Array<any>).map(HistoryToJSON)),
+        'currency': value['currency'],
     };
 }
 

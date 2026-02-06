@@ -832,25 +832,66 @@ paths:
                   \ | integer | int32 | Процент выкупа, % (Какой процент посетител\
                   ей, заказавших товар, его выкупили. Без учёта товаров, которые е\
                   ще доставляются покупателю) |\n| addToWishlist | integer | int32\
-                  \ | Добавили в **Отложенные**|\n\n\n**Отчёт по параметрам поиска\
-                  . По предметам, брендам и ярлыкам**\n\n| Имя | Поле | Формат | О\
-                  писание |\n|-----------------| --- | --- | --- |\n| SubjectName\
-                  \ |\tstring | string | Название предмета |\n| SubjectID | integer\
-                  \ | int32 | ID предмета |\n| BrandName | string | string  | Брен\
-                  д |\n| TagID | integer | int64 | ID ярлыка |\n| AveragePosition\
-                  \ | integer | uint64 | Средняя позиция в поиске в текущий период\
-                  \ |\n| OpenCard | integer | uint64 | Количество переходов в карт\
-                  очку товара из поиска в текущий период |\n| AddToCart | integer\
+                  \ | Добавили в **Отложенные**|\n| currency | string | string | В\
+                  алюта отчёта |\n\n\n**Отчёт по параметрам поиска. По предметам,\
+                  \ брендам и ярлыкам**\n\n| Имя | Поле | Формат | Описание |\n|-----------------|\
+                  \ --- | --- | --- |\n| SubjectName |\tstring | string | Название\
+                  \ предмета |\n| SubjectID | integer | int32 | ID предмета |\n| BrandName\
+                  \ | string | string  | Бренд |\n| TagID | integer | int64 | ID я\
+                  рлыка |\n| AveragePosition | integer | uint64 | Средняя позиция\
+                  \ в поиске в текущий период |\n| OpenCard | integer | uint64 | К\
+                  оличество переходов в карточку товара из поиска в текущий период\
+                  \ |\n| AddToCart | integer | uint64 | Количество добавлений това\
+                  ра в корзину из поиска в текущий период |\n| OpenToCart | integer\
+                  \ | uint64 |\tКонверсия в корзину из поиска в текущий период |\n\
+                  | Orders | integer | uint64 | Заказали товар из поиска в текущий\
+                  \ период |\n| CartToOrder | integer | uint64 | Конверсия в заказ\
+                  \ из поиска в текущий период |\n| Visibility | integer | uint64\
+                  \ | Видимость товара в поиске в текущий период. Процент вероятно\
+                  сти, что пользователь увидит карточку товара. Зависит от средней\
+                  \ позиции |\n| AveragePositionPast | integer | uint64 | Средняя\
+                  \ позиция в поиске в предыдущий период (заполняется, если указан\
+                  \ прошлый период) |\n| OpenCardPast | integer | uint64 | Количес\
+                  тво переходов в карточку товара из поиска в предыдущий период (з\
+                  аполняется, если указан прошлый период) |\n| AddToCartPast | integer\
                   \ | uint64 | Количество добавлений товара в корзину из поиска в\
-                  \ текущий период |\n| OpenToCart | integer | uint64 |\tКонверсия\
-                  \ в корзину из поиска в текущий период |\n| Orders | integer | uint64\
-                  \ | Заказали товар из поиска в текущий период |\n| CartToOrder |\
-                  \ integer | uint64 | Конверсия в заказ из поиска в текущий перио\
-                  д |\n| Visibility | integer | uint64 | Видимость товара в поиске\
-                  \ в текущий период. Процент вероятности, что пользователь увидит\
-                  \ карточку товара. Зависит от средней позиции |\n| AveragePositionPast\
-                  \ | integer | uint64 | Средняя позиция в поиске в предыдущий пер\
-                  иод (заполняется, если указан прошлый период) |\n| OpenCardPast\
+                  \ предыдущий период (заполняется, если указан прошлый период) |\n\
+                  | OpenToCartPast | integer | uint64 | Конверсия в корзину из пои\
+                  ска в предыдущий период (заполняется, если указан прошлый период\
+                  ) |\n| OrdersPast | integer | uint64 | Заказали товар из поиска\
+                  \ в предыдущий период (заполняется, если указан прошлый период)\
+                  \ |\n| CartToOrderPast | integer | uint64 | Конверсия в заказ из\
+                  \ поиска в предыдущий период (заполняется, если указан прошлый п\
+                  ериод) |\n| VisibilityPast | integer | uint64 | Видимость товара\
+                  \ в поиске в предыдущий период. Процент вероятности, что пользов\
+                  атель увидит карточку товара. Зависит от средней позиции (заполн\
+                  яется, если указан прошлый период), % |\n\n\n**Отчёт по параметр\
+                  ам поиска. По артикулам WB**\n\n| Имя | Поле | Формат | Описание\
+                  \ |\n|-----------------| --- | --- | --- |\n| NmID | integer | int64\
+                  \ | Артикул WB |\n| VendorCode | string | string | Артикул прода\
+                  вца |\n| Name | string\t| string | Название товара |\n| SubjectName\
+                  \ | string\t| string | Название предмета |\n| BrandName | string\
+                  \ | string  | Бренд |\n| IsAdvertised | boolean | bool\t| Реклам\
+                  ируется ли товар |\n| IsRated | boolean | bool | Есть ли возможн\
+                  ость оценить качество карточки товара |\n| Rating | float | float64\
+                  \ | Рейтинг карточки товара |\n| FeedbackRating | float | float64\
+                  \ | Рейтинг по отзывам |\n| MinPrice | integer | uint64 | Минима\
+                  льная цена продавца со скидкой продавца (без учёта скидки WB Клу\
+                  ба |\n| MaxPrice | integer | uint64 | Максимальная цена продавца\
+                  \ со скидкой продавца (без учёта скидки WB Клуба) |\n| AveragePosition\
+                  \ | integer | uint64 | Средняя позиция товара в поиске в текущий\
+                  \ период |\n| OpenCard | integer | uint64 | Количество переходов\
+                  \ в карточку товара из поиска в текущий период |\n| AddToCart |\
+                  \ integer | uint64 | Количество добавлений товара в корзину из п\
+                  оиска в текущий период |\n| OpenToCart | integer | uint64 | Конв\
+                  ерсия в корзину из поиска в текущий период |\n| Orders | integer\
+                  \ | uint64 | Заказали товар из поиска в текущий период |\n| CartToOrder\
+                  \ | integer | uint64 | Конверсия в заказ из поиска в текущий пер\
+                  иод |\n| Visibility | integer | uint64 | Видимость товара в поис\
+                  ке в текущий период. Процент вероятности, что пользователь увиди\
+                  т карточку товара. Зависит от средней позиции |\n| AveragePositionPast\
+                  \ | integer | uint64 | Средняя позиция товара в поиске в предыду\
+                  щий период (заполняется, если указан прошлый период) |\n| OpenCardPast\
                   \ | integer | uint64 | Количество переходов в карточку товара из\
                   \ поиска в предыдущий период (заполняется, если указан прошлый п\
                   ериод) |\n| AddToCartPast | integer | uint64 | Количество добавл\
@@ -864,52 +905,12 @@ paths:
                   , если указан прошлый период) |\n| VisibilityPast | integer | uint64\
                   \ | Видимость товара в поиске в предыдущий период. Процент вероя\
                   тности, что пользователь увидит карточку товара. Зависит от сред\
-                  ней позиции (заполняется, если указан прошлый период), % |\n\n\n\
-                  **Отчёт по параметрам поиска. По артикулам WB**\n\n| Имя | Поле\
-                  \ | Формат | Описание |\n|-----------------| --- | --- | --- |\n\
-                  | NmID | integer | int64 | Артикул WB |\n| VendorCode | string |\
-                  \ string | Артикул продавца |\n| Name | string\t| string | Назва\
-                  ние товара |\n| SubjectName | string\t| string | Название предме\
-                  та |\n| BrandName | string | string  | Бренд |\n| IsAdvertised |\
-                  \ boolean | bool\t| Рекламируется ли товар |\n| IsRated | boolean\
-                  \ | bool | Есть ли возможность оценить качество карточки товара\
-                  \ |\n| Rating | float | float64 | Рейтинг карточки товара |\n| FeedbackRating\
-                  \ | float | float64 | Рейтинг по отзывам |\n| MinPrice | integer\
-                  \ | uint64 | Минимальная цена продавца со скидкой продавца (без\
-                  \ учёта скидки WB Клуба |\n| MaxPrice | integer | uint64 | Макси\
-                  мальная цена продавца со скидкой продавца (без учёта скидки WB К\
-                  луба) |\n| AveragePosition | integer | uint64 | Средняя позиция\
-                  \ товара в поиске в текущий период |\n| OpenCard | integer | uint64\
-                  \ | Количество переходов в карточку товара из поиска в текущий п\
-                  ериод |\n| AddToCart | integer | uint64 | Количество добавлений\
-                  \ товара в корзину из поиска в текущий период |\n| OpenToCart |\
-                  \ integer | uint64 | Конверсия в корзину из поиска в текущий пер\
-                  иод |\n| Orders | integer | uint64 | Заказали товар из поиска в\
-                  \ текущий период |\n| CartToOrder | integer | uint64 | Конверсия\
-                  \ в заказ из поиска в текущий период |\n| Visibility | integer |\
-                  \ uint64 | Видимость товара в поиске в текущий период. Процент в\
-                  ероятности, что пользователь увидит карточку товара. Зависит от\
-                  \ средней позиции |\n| AveragePositionPast | integer | uint64 |\
-                  \ Средняя позиция товара в поиске в предыдущий период (заполняет\
-                  ся, если указан прошлый период) |\n| OpenCardPast | integer | uint64\
-                  \ | Количество переходов в карточку товара из поиска в предыдущи\
-                  й период (заполняется, если указан прошлый период) |\n| AddToCartPast\
-                  \ | integer | uint64 | Количество добавлений товара в корзину из\
-                  \ поиска в предыдущий период (заполняется, если указан прошлый п\
-                  ериод) |\n| OpenToCartPast | integer | uint64 | Конверсия в корз\
-                  ину из поиска в предыдущий период (заполняется, если указан прош\
-                  лый период) |\n| OrdersPast | integer | uint64 | Заказали товар\
-                  \ из поиска в предыдущий период (заполняется, если указан прошлы\
-                  й период) |\n| CartToOrderPast | integer | uint64 | Конверсия в\
-                  \ заказ из поиска в предыдущий период (заполняется, если указан\
-                  \ прошлый период) |\n| VisibilityPast | integer | uint64 | Видим\
-                  ость товара в поиске в предыдущий период. Процент вероятности, ч\
-                  то пользователь увидит карточку товара. Зависит от средней позиц\
-                  ии (заполняется, если указан прошлый период), % |\n| IsSubstitutedSKU\
+                  ней позиции (заполняется, если указан прошлый период), % |\n| IsSubstitutedSKU\
                   \ | boolean | bool | Искали ли товар по подменному артикулу. Буд\
                   ет в ответе при наличии в запросе `includeSubstitutedSKUs` и/или\
-                  \ `includeSearchTexts` |\n\n\n**Отчёт по текстам поисковых запро\
-                  сов по вашим товарам**\n\n| Имя | Поле | Формат | Описание |\n|-----------------|\
+                  \ `includeSearchTexts` |\n| Currency | string | string | Валюта\
+                  \ отчёта |\n\n\n**Отчёт по текстам поисковых запросов по вашим т\
+                  оварам**\n\n| Имя | Поле | Формат | Описание |\n|-----------------|\
                   \ --- | --- | --- |\n| Text | string\t| string | Текст поисковог\
                   о запроса |\n| NmID | integer | int64 | Артикул WB |\n| SubjectName\
                   \ | string\t| string | Название предмета |\n| BrandName | string\
@@ -973,19 +974,20 @@ paths:
                   \ uint64 | Видимость товара в поиске в предыдущий период. Процен\
                   т вероятности, что пользователь увидит карточку товара. Зависит\
                   \ от средней позиции (заполняется, если указан прошлый период),\
-                  \ % |\n\n\n**Отчёт по истории остатков**\n\n| Имя | Поле | Форма\
-                  т | Описание |\n|-----------------| --- | --- | --- |\n| VendorCode\
-                  \ | string | string | Артикул продавца |\n| Name | string\t| string\
-                  \ | Название товара |\n| NmID | integer | int64 | Артикул WB |\n\
-                  | SubjectName | string\t| string | Название предмета |\n| BrandName\
-                  \ | string | string  | Бренд |\n| SizeName | string\t| string |\
-                  \ Название размера |\n| ChrtID | integer | int64 | ID размера |\n\
-                  | RegionName | string\t| string | Регион отгрузки |\n| OfficeName\
-                  \ | string\t| string | Название склада |\n| Availability | string\t\
-                  | enum | Доступность товара |\n| OrdersCount | integer\t| uint64\
-                  \ | Заказы, шт. |\n| OrdersSum | integer\t| uint64 | Заказы, сум\
-                  ма |\n| BuyoutCount | integer\t| uint64 | Выкупы, шт. |\n| BuyoutSum\
-                  \ | integer\t| uint64 | Выкупы, сумма |\n| BuyoutPercent | integer\t\
+                  \ % |\n| Currency | string | string | Валюта отчёта |\n\n\n**Отч\
+                  ёт по истории остатков**\n\n| Имя | Поле | Формат | Описание |\n\
+                  |-----------------| --- | --- | --- |\n| VendorCode | string | string\
+                  \ | Артикул продавца |\n| Name | string\t| string | Название тов\
+                  ара |\n| NmID | integer | int64 | Артикул WB |\n| SubjectName |\
+                  \ string\t| string | Название предмета |\n| BrandName | string |\
+                  \ string  | Бренд |\n| SizeName | string\t| string | Название ра\
+                  змера |\n| ChrtID | integer | int64 | ID размера |\n| RegionName\
+                  \ | string\t| string | Регион отгрузки |\n| OfficeName | string\t\
+                  | string | Название склада |\n| Availability | string\t| enum |\
+                  \ Доступность товара |\n| OrdersCount | integer\t| uint64 | Зака\
+                  зы, шт. |\n| OrdersSum | integer\t| uint64 | Заказы, сумма |\n|\
+                  \ BuyoutCount | integer\t| uint64 | Выкупы, шт. |\n| BuyoutSum |\
+                  \ integer\t| uint64 | Выкупы, сумма |\n| BuyoutPercent | integer\t\
                   | uint32 | Процент выкупа |\n| AvgOrders | number\t| float64 | С\
                   реднее количество заказов в день |\n| StockCount | integer\t| uint64\
                   \ | Остатки на текущий день, шт. |\n| StockSum | integer\t| uint64\
@@ -1006,7 +1008,7 @@ paths:
                   ки в зависимости от переданного текущего периода. Каждому месяцу\
                   \ текущего периода соответствует один столбец. В случае, если то\
                   вар не существовал на момент конкретного месяца, то значение буд\
-                  ет пропущено |\n"
+                  ет пропущено |\n| Currency | string | string | Валюта отчёта |\n"
                 format: binary
                 type: string
           description: Успешно
@@ -1803,16 +1805,16 @@ components:
     SalesFunnelProductRes:
       description: ""
       value: |
-        nmID, dt, openCardCount, addToCartCount, ordersCount, ordersSumRub, buyoutsCount, buyoutsSumRub, cancelCount, cancelSumRub, addToCartConversion, cartToOrderConversion, buyoutPercent, addToWishlist
-        70027655,2024-11-21,1,0,0,0,0,0,0,0,0,0,0,0
+        nmID, dt, openCardCount, addToCartCount, ordersCount, ordersSumRub, buyoutsCount, buyoutsSumRub, cancelCount, cancelSumRub, addToCartConversion, cartToOrderConversion, buyoutPercent, addToWishlist, currency
+        70027655,2024-11-21,1,0,0,0,0,0,0,0,0,0,0,0,RUB
         ...
         ...
         150317666,2024-11-21,2,0,0,0,0,0,0,0,0,0,0,0
     SalesFunnelGroupRes:
       description: ""
       value: |
-        dt, openCardCount, addToCartCount, ordersCount, ordersSumRub, buyoutsCount, buyoutsSumRub, cancelCount, cancelSumRub, addToCartConversion, cartToOrderConversion, buyoutPercent, addToWishlist
-        2024-11-21,1,0,0,0,0,0,0,0,0,0,0,0
+        dt, openCardCount, addToCartCount, ordersCount, ordersSumRub, buyoutsCount, buyoutsSumRub, cancelCount, cancelSumRub, addToCartConversion, cartToOrderConversion, buyoutPercent, addToWishlist, currency
+        2024-11-21,1,0,0,0,0,0,0,0,0,0,0,0,RUB
         ...
         ...
         2024-11-21,2,0,0,0,0,0,0,0,0,0,0,0
@@ -1825,14 +1827,14 @@ components:
     SearchReportProductRes:
       description: ""
       value: |
-        NmID,VendorCode,Name,Subject,Brand,IsAdvertised,IsRated,Rating,FeedbackRating,MinPrice,MaxPrice,AveragePosition,OpenCard,AddToCart,OpenToCart,Orders,CartToOrder,Visibility,AveragePositionPast,OpenCardPast,AddToCartPast,OpenToCartPast,OrdersPast,CartToOrderPast,VisibilityPast,IsSubstitutedSKU
-        268913787,wb3ha2668w,iPhone 13 256 ГБ Серебристый,Смартфоны,abble,false,true,10,0,140000,140000,1,51,0,0,0,0,100,1,91,0,0,0,0,100
+        NmID,VendorCode,Name,Subject,Brand,IsAdvertised,IsRated,Rating,FeedbackRating,MinPrice,MaxPrice,AveragePosition,OpenCard,AddToCart,OpenToCart,Orders,CartToOrder,Visibility,AveragePositionPast,OpenCardPast,AddToCartPast,OpenToCartPast,OrdersPast,CartToOrderPast,VisibilityPast,IsSubstitutedSKU,Currency
+        268913787,wb3ha2668w,iPhone 13 256 ГБ Серебристый,Смартфоны,abble,false,true,10,0,140000,140000,1,51,0,0,0,0,100,1,91,0,0,0,0,100,true,RUB
         246935327,wb729wy604,,Бирки для ключей,,false,true,1.5,0,89,89,1,37,19,51,6,32,100,1,14,21,150,3,14,100,true
     SearchReportTextRes:
       description: ""
       value: |
-        Text,NmID,SubjectName,BrandName,VendorCode,Name,Rating,FeedbackRating,MinPrice,MaxPrice,Frequency,MedianPosition,AveragePosition,OpenCard,OpenCardPercentile,AddToCart,AddToCartPercentile,OpenToCart,OpenToCartPercentile,Orders,OrdersPercentile,CartToOrder,CartToOrderPercentile,Visibility,FrequencyPast,MedianPositionPast,AveragePositionPast,OpenCardPast,AddToCartPast,OpenToCartPast,OrdersPast,CartToOrderPast,VisibilityPast
-        267945415,267945415,Термокомплекты для малышей,Lopsa,wb44h5ku68,1,5.5,0.0,47,47,156,1,1,235,100,98,100,42,100,0,100,0,100,100,15,1,1,19,16,84,0,0,100
+        Text,NmID,SubjectName,BrandName,VendorCode,Name,Rating,FeedbackRating,MinPrice,MaxPrice,Frequency,MedianPosition,AveragePosition,OpenCard,OpenCardPercentile,AddToCart,AddToCartPercentile,OpenToCart,OpenToCartPercentile,Orders,OrdersPercentile,CartToOrder,CartToOrderPercentile,Visibility,FrequencyPast,MedianPositionPast,AveragePositionPast,OpenCardPast,AddToCartPast,OpenToCartPast,OrdersPast,CartToOrderPast,VisibilityPast,Currency
+        267945415,267945415,Термокомплекты для малышей,Lopsa,wb44h5ku68,1,5.5,0.0,47,47,156,1,1,235,100,98,100,42,100,0,100,0,100,100,15,1,1,19,16,84,0,0,100,RUB
         термобелье мужское,267945415,Термокомплекты для малышей,Lopsa,wb44h5ku68,1,5.5,0.0,47,47,52633,2,2,5,0,0,0,0,0,0,0,0,0,100,49975,0,0,0,0,0,0,0,0
         267945415,296070764,Термокомплекты для малышей,Lopsa,wb51k31eyg,2,1.5,0.0,88,88,156,1,1,82,100,22,100,27,100,0,100,0,100,100,15,5,5,1,1,100,0,0,100
         термобелье мужское,296070764,Термокомплекты для малышей,Lopsa,wb51k31eyg,2,1.5,0.0,88,88,52633,3,3,2,0,0,0,0,0,0,0,0,0,100,49975,0,0,0,0,0,0,0,0
@@ -1842,12 +1844,12 @@ components:
     StocksReportRes:
       description: ""
       value: |
-        VendorCode,Name,NmID,SubjectName,BrandName,SizeName,ChrtID,RegionName,OfficeName,Availability,OrdersCount,OrdersSum,BuyoutCount,BuyoutSum,BuyoutPercent,AvgOrders,StockCount,StockSum,SaleRate,AvgStockTurnover,ToClientCount,FromClientCount,Price,OfficeMissingTime,LostOrdersCount,LostOrdersSum,LostBuyoutsCount,LostBuyoutsSum,AvgOrdersByMonth_11.2013,AvgOrdersByMonth_12.2013,AvgOrdersByMonth_01.2014,AvgOrdersByMonth_02.2014,AvgOrdersByMonth_03.2014,AvgOrdersByMonth_04.2014,AvgOrdersByMonth_05.2014,AvgOrdersByMonth_06.2014,AvgOrdersByMonth_07.2014
-        037456337500,Robust High-Performance Robot,1031126854494603033,Термокомплекты,Amazon Web Services,67-69,987654321,Central,Office1,nonLiquid,521124,521124000,123,123000,10,0.57,20,20000,-3,5,111,222,14008,-3,0.71,0.77,0.93,0.68,74067.12,29935.79,8895.27,37019.65,37934.89,62412.64,29857.97,0.00,72465.85
-        089201683406,Luxe Blender Nexus,8904325039176595105,Термокомплекты,iRecycle,54-56,987654071,North,Office2,nonLiquid,1231,1231000,456,456000,20,0.71,30,30000,2,-3,333,444,85162,-2,0.90,0.96,0.31,0.93,,,,,,2628.77,0.00,70534.86,0.00
-        059509746730,Pure Quartz Speaker,6780550382946145952,Термокомплекты,Next Step Living,60-62,984574321,South,Office3,balanced,3214,3214000,789,789000,30,0.30,40,40000,1,11,555,666,66484,-3,0.03,0.08,0.71,0.48,,,47297.22,55308.71,6463.43,48664.95,0.00,0.00,74502.72
-        058266400986,Modular Stainless Monitor,3475827302459171321,Термокомплекты,TagniFi,65-67,926554321,East,Office4,nonActual,312,312000,123,123000,40,0.71,50,50000,13,-2,666,888,53254,-3,0.96,0.01,0.97,0.92,,67227.50,4608.98,90300.06,15890.52,0.00,0.00,41891.11,0.00
-        070198970053,Microwave Quick Eco-Friendly,4734922922328623947,Термокомплекты,Boston Consulting Group,46-48,983234321,West,Office5,nonLiquid,343,343000,456,456000,50,0.92,60,60000,17,-2,777,101010,43823,-1,0.84,0.14,0.26,0.75,30463.57,8073.43,26678.35,0.00,339.99,56237.24,2172.75,74665.30,14296.76
+        VendorCode,Name,NmID,SubjectName,BrandName,SizeName,ChrtID,RegionName,OfficeName,Availability,OrdersCount,OrdersSum,BuyoutCount,BuyoutSum,BuyoutPercent,AvgOrders,StockCount,StockSum,SaleRate,AvgStockTurnover,ToClientCount,FromClientCount,Price,OfficeMissingTime,LostOrdersCount,LostOrdersSum,LostBuyoutsCount,LostBuyoutsSum,AvgOrdersByMonth_11.2013,AvgOrdersByMonth_12.2013,AvgOrdersByMonth_01.2014,AvgOrdersByMonth_02.2014,AvgOrdersByMonth_03.2014,AvgOrdersByMonth_04.2014,AvgOrdersByMonth_05.2014,AvgOrdersByMonth_06.2014,AvgOrdersByMonth_07.2014,Currency
+        037456337500,Robust High-Performance Robot,1031126854494603033,Термокомплекты,Amazon Web Services,67-69,987654321,Central,Office1,nonLiquid,521124,521124000,123,123000,10,0.57,20,20000,-3,5,111,222,14008,-3,0.71,0.77,0.93,0.68,74067.12,29935.79,8895.27,37019.65,37934.89,62412.64,29857.97,0.00,72465.85,RUB
+        089201683406,Luxe Blender Nexus,8904325039176595105,Термокомплекты,iRecycle,54-56,987654071,North,Office2,nonLiquid,1231,1231000,456,456000,20,0.71,30,30000,2,-3,333,444,85162,-2,0.90,0.96,0.31,0.93,,,,,,2628.77,0.00,70534.86,0.00,RUB
+        059509746730,Pure Quartz Speaker,6780550382946145952,Термокомплекты,Next Step Living,60-62,984574321,South,Office3,balanced,3214,3214000,789,789000,30,0.30,40,40000,1,11,555,666,66484,-3,0.03,0.08,0.71,0.48,,,47297.22,55308.71,6463.43,48664.95,0.00,0.00,74502.72,RUB
+        058266400986,Modular Stainless Monitor,3475827302459171321,Термокомплекты,TagniFi,65-67,926554321,East,Office4,nonActual,312,312000,123,123000,40,0.71,50,50000,13,-2,666,888,53254,-3,0.96,0.01,0.97,0.92,,67227.50,4608.98,90300.06,15890.52,0.00,0.00,41891.11,0.00,RUB
+        070198970053,Microwave Quick Eco-Friendly,4734922922328623947,Термокомплекты,Boston Consulting Group,46-48,983234321,West,Office5,nonLiquid,343,343000,456,456000,50,0.92,60,60000,17,-2,777,101010,43823,-1,0.84,0.14,0.26,0.75,30463.57,8073.43,26678.35,0.00,339.99,56237.24,2172.75,74665.30,14296.76,RUB
   responses:
     "401":
       content:
@@ -2239,6 +2241,7 @@ components:
             subjectName: Смартфоны
           subjectId: 50
           subjectName: Phones
+        currency: RUB
         commonInfo:
           advertisedProducts:
             current: 5
@@ -2288,8 +2291,13 @@ components:
           items:
             $ref: "#/components/schemas/TableGroupItem"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
       - commonInfo
+      - currency
       - positionInfo
       - visibilityInfo
       type: object
@@ -3039,6 +3047,7 @@ components:
             subjectName: Смартфоны
           subjectId: 50
           subjectName: Phones
+        currency: RUB
       properties:
         groups:
           description: |
@@ -3046,7 +3055,12 @@ components:
           items:
             $ref: "#/components/schemas/TableGroupItem"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - groups
       type: object
     TableDetailsRequest:
@@ -3151,6 +3165,7 @@ components:
       type: object
     TableDetailsResponse:
       example:
+        currency: RUB
         products:
         - brandName: Apple
           visibility:
@@ -3229,7 +3244,12 @@ components:
           items:
             $ref: "#/components/schemas/TableProductItem"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - products
       type: object
     ProductSearchTextsRequest:
@@ -3310,6 +3330,7 @@ components:
       type: object
     ProductSearchTextsResponse:
       example:
+        currency: RUB
         items:
         - brandName: Apple
           visibility:
@@ -3407,7 +3428,12 @@ components:
           items:
             $ref: "#/components/schemas/TableSearchTextItem"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - items
       type: object
     TableSearchTextItem:
@@ -3588,6 +3614,7 @@ components:
         - dt: 2024-02-10
           orders: 20
           avgPosition: 10
+        currency: RUB
         items:
         - dateItems:
           - dt: 2024-02-10
@@ -3618,7 +3645,12 @@ components:
           items:
             $ref: "#/components/schemas/ProductOrdersTextItem"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - items
       - total
       type: object
@@ -4616,13 +4648,19 @@ components:
             hasSizes: true
           subjectID: 123456789
           subjectName: Кружка
+        currency: RUB
       properties:
         groups:
           description: Множество данных по группам
           items:
             $ref: "#/components/schemas/TableGroupItemSt"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - groups
       type: object
     TableGroups:
@@ -5111,6 +5149,7 @@ components:
       type: object
     TableProductResponse:
       example:
+        currency: RUB
         items:
         - brandName: Компик
           isDeleted: false
@@ -5204,7 +5243,12 @@ components:
           items:
             $ref: "#/components/schemas/TableProductItemSt"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - items
       type: object
     TableSizeRequest:
@@ -5346,6 +5390,7 @@ components:
           officeID: 123456
           regionName: Центральный
           metrics: ""
+        currency: RUB
       properties:
         offices:
           description: Множество данных по складам
@@ -5357,6 +5402,12 @@ components:
           items:
             $ref: "#/components/schemas/TableSizeResponse_sizes_inner"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
+      required:
+      - currency
       type: object
     TableOfficeItem:
       description: Данные по складу
@@ -5487,12 +5538,19 @@ components:
             officeID: 123456
             metrics: ""
           metrics: ""
+        currency: RUB
       properties:
         regions:
           description: Множество данных по регионам отгрузки
           items:
             $ref: "#/components/schemas/TableShippingOfficeItem"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
+      required:
+      - currency
       type: object
     TableShippingOfficeItem:
       description: Данные по региону отгрузки
@@ -5742,7 +5800,12 @@ components:
           items:
             $ref: "#/components/schemas/ProductsResponse_products_inner"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - products
     ProductHistoryResponse:
       items:
@@ -6424,12 +6487,17 @@ components:
       - requestId
       - title
       type: object
+    Currency:
+      description: Валюта отчёта
+      example: RUB
+      type: string
     postSalesFunnelProducts_200_response_data:
       allOf:
       - description: Статистика
         type: object
       - $ref: "#/components/schemas/ProductsResponse"
       example:
+        currency: RUB
         products:
         - product:
             brandName: Demix
@@ -6668,6 +6736,7 @@ components:
     postSalesFunnelProducts_200_response:
       example:
         data:
+          currency: RUB
           products:
           - product:
               brandName: Demix
@@ -6947,6 +7016,7 @@ components:
             subjectId: 105
             vendorCode: "12345456"
             subjectName: Кроссовки
+          currency: RUB
           history:
           - date: 2024-10-23
             buyoutCount: 19
@@ -6977,6 +7047,7 @@ components:
             subjectId: 105
             vendorCode: "12345456"
             subjectName: Кроссовки
+          currency: RUB
           history:
           - date: 2024-10-23
             buyoutCount: 19
@@ -7306,6 +7377,7 @@ components:
               subjectName: Смартфоны
             subjectId: 50
             subjectName: Phones
+          currency: RUB
           commonInfo:
             advertisedProducts:
               current: 5
@@ -7550,6 +7622,7 @@ components:
               subjectName: Смартфоны
             subjectId: 50
             subjectName: Phones
+          currency: RUB
     _api_v2_search_report_table_details_post_200_response:
       allOf:
       - $ref: "#/components/schemas/CommonResponseProperties"
@@ -7561,6 +7634,7 @@ components:
         type: object
       example:
         data:
+          currency: RUB
           products:
           - brandName: Apple
             visibility:
@@ -7643,6 +7717,7 @@ components:
         type: object
       example:
         data:
+          currency: RUB
           items:
           - brandName: Apple
             visibility:
@@ -7752,6 +7827,7 @@ components:
           - dt: 2024-02-10
             orders: 20
             avgPosition: 10
+          currency: RUB
           items:
           - dateItems:
             - dt: 2024-02-10
@@ -7961,6 +8037,7 @@ components:
               hasSizes: true
             subjectID: 123456789
             subjectName: Кружка
+          currency: RUB
       properties:
         data:
           $ref: "#/components/schemas/TableGroupResponseSt"
@@ -7970,6 +8047,7 @@ components:
     _api_v2_stocks_report_products_products_post_200_response:
       example:
         data:
+          currency: RUB
           items:
           - brandName: Компик
             isDeleted: false
@@ -8167,6 +8245,7 @@ components:
             officeID: 123456
             regionName: Центральный
             metrics: ""
+          currency: RUB
       properties:
         data:
           $ref: "#/components/schemas/TableSizeResponse"
@@ -8195,6 +8274,7 @@ components:
               officeID: 123456
               metrics: ""
             metrics: ""
+          currency: RUB
       properties:
         data:
           $ref: "#/components/schemas/TableShippingOfficeResponse"
@@ -9706,6 +9786,7 @@ components:
           subjectId: 105
           vendorCode: "12345456"
           subjectName: Кроссовки
+        currency: RUB
         history:
         - date: 2024-10-23
           buyoutCount: 19
@@ -9737,7 +9818,12 @@ components:
           items:
             $ref: "#/components/schemas/History"
           type: array
+        currency:
+          description: Валюта отчёта
+          example: RUB
+          type: string
       required:
+      - currency
       - history
       - product
       type: object

@@ -16,12 +16,16 @@ pub struct TableShippingOfficeResponse {
     /// Множество данных по регионам отгрузки
     #[serde(rename = "regions", skip_serializing_if = "Option::is_none")]
     pub regions: Option<Vec<models::TableShippingOfficeItem>>,
+    /// Валюта отчёта
+    #[serde(rename = "currency")]
+    pub currency: String,
 }
 
 impl TableShippingOfficeResponse {
-    pub fn new() -> TableShippingOfficeResponse {
+    pub fn new(currency: String) -> TableShippingOfficeResponse {
         TableShippingOfficeResponse {
             regions: None,
+            currency,
         }
     }
 }

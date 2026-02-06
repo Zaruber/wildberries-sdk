@@ -58,7 +58,8 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'product' => '\Wildberries\Sdk\Analytics\Model\ProductHistoryResponseInnerProduct',
-        'history' => '\Wildberries\Sdk\Analytics\Model\History[]'
+        'history' => '\Wildberries\Sdk\Analytics\Model\History[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'product' => null,
-        'history' => null
+        'history' => null,
+        'currency' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPINullables = [
         'product' => false,
-        'history' => false
+        'history' => false,
+        'currency' => false
     ];
 
     /**
@@ -170,7 +173,8 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $attributeMap = [
         'product' => 'product',
-        'history' => 'history'
+        'history' => 'history',
+        'currency' => 'currency'
     ];
 
     /**
@@ -180,7 +184,8 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'product' => 'setProduct',
-        'history' => 'setHistory'
+        'history' => 'setHistory',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -190,7 +195,8 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'product' => 'getProduct',
-        'history' => 'getHistory'
+        'history' => 'getHistory',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -252,6 +258,7 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->setIfExists('product', $data ?? [], null);
         $this->setIfExists('history', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -286,6 +293,9 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
         }
         if ($this->container['history'] === null) {
             $invalidProperties[] = "'history' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
         return $invalidProperties;
     }
@@ -352,6 +362,33 @@ class ProductHistoryResponseInner implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable history cannot be null');
         }
         $this->container['history'] = $history;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

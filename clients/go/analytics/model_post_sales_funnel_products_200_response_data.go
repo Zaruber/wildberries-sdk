@@ -23,6 +23,8 @@ var _ MappedNullable = &PostSalesFunnelProducts200ResponseData{}
 type PostSalesFunnelProducts200ResponseData struct {
 	// Список карточек товаров
 	Products []ProductsResponseProductsInner `json:"products"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _PostSalesFunnelProducts200ResponseData PostSalesFunnelProducts200ResponseData
@@ -31,9 +33,10 @@ type _PostSalesFunnelProducts200ResponseData PostSalesFunnelProducts200ResponseD
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPostSalesFunnelProducts200ResponseData(products []ProductsResponseProductsInner) *PostSalesFunnelProducts200ResponseData {
+func NewPostSalesFunnelProducts200ResponseData(products []ProductsResponseProductsInner, currency string) *PostSalesFunnelProducts200ResponseData {
 	this := PostSalesFunnelProducts200ResponseData{}
 	this.Products = products
+	this.Currency = currency
 	return &this
 }
 
@@ -69,6 +72,30 @@ func (o *PostSalesFunnelProducts200ResponseData) SetProducts(v []ProductsRespons
 	o.Products = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *PostSalesFunnelProducts200ResponseData) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *PostSalesFunnelProducts200ResponseData) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *PostSalesFunnelProducts200ResponseData) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o PostSalesFunnelProducts200ResponseData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -80,6 +107,7 @@ func (o PostSalesFunnelProducts200ResponseData) MarshalJSON() ([]byte, error) {
 func (o PostSalesFunnelProducts200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["products"] = o.Products
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -89,6 +117,7 @@ func (o *PostSalesFunnelProducts200ResponseData) UnmarshalJSON(data []byte) (err
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"products",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

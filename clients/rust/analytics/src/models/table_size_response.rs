@@ -19,13 +19,17 @@ pub struct TableSizeResponse {
     /// Множество данных по размерам товара
     #[serde(rename = "sizes", skip_serializing_if = "Option::is_none")]
     pub sizes: Option<Vec<models::TableSizeResponseSizesInner>>,
+    /// Валюта отчёта
+    #[serde(rename = "currency")]
+    pub currency: String,
 }
 
 impl TableSizeResponse {
-    pub fn new() -> TableSizeResponse {
+    pub fn new(currency: String) -> TableSizeResponse {
         TableSizeResponse {
             offices: None,
             sizes: None,
+            currency,
         }
     }
 }

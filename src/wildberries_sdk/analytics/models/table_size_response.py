@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from wildberries_sdk.analytics.models.table_office_item import TableOfficeItem
 from wildberries_sdk.analytics.models.table_size_response_sizes_inner import TableSizeResponseSizesInner
@@ -30,7 +30,8 @@ class TableSizeResponse(BaseModel):
     """ # noqa: E501
     offices: Optional[List[TableOfficeItem]] = Field(default=None, description="Множество данных по складам")
     sizes: Optional[List[TableSizeResponseSizesInner]] = Field(default=None, description="Множество данных по размерам товара")
-    __properties: ClassVar[List[str]] = ["offices", "sizes"]
+    currency: StrictStr = Field(description="Валюта отчёта")
+    __properties: ClassVar[List[str]] = ["offices", "sizes", "currency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +99,8 @@ class TableSizeResponse(BaseModel):
 
         _obj = cls.model_validate({
             "offices": [TableOfficeItem.from_dict(_item) for _item in obj["offices"]] if obj.get("offices") is not None else None,
-            "sizes": [TableSizeResponseSizesInner.from_dict(_item) for _item in obj["sizes"]] if obj.get("sizes") is not None else None
+            "sizes": [TableSizeResponseSizesInner.from_dict(_item) for _item in obj["sizes"]] if obj.get("sizes") is not None else None,
+            "currency": obj.get("currency")
         })
         return _obj
 

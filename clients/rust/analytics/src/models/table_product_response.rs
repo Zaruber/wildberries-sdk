@@ -16,12 +16,16 @@ pub struct TableProductResponse {
     /// Множество данных по товарам
     #[serde(rename = "items")]
     pub items: Vec<models::TableProductItemSt>,
+    /// Валюта отчёта
+    #[serde(rename = "currency")]
+    pub currency: String,
 }
 
 impl TableProductResponse {
-    pub fn new(items: Vec<models::TableProductItemSt>) -> TableProductResponse {
+    pub fn new(items: Vec<models::TableProductItemSt>, currency: String) -> TableProductResponse {
         TableProductResponse {
             items,
+            currency,
         }
     }
 }

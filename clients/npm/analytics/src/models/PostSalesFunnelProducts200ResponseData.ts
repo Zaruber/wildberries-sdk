@@ -33,6 +33,12 @@ export interface PostSalesFunnelProducts200ResponseData {
      * @memberof PostSalesFunnelProducts200ResponseData
      */
     products: Array<ProductsResponseProductsInner>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof PostSalesFunnelProducts200ResponseData
+     */
+    currency: string;
 }
 
 /**
@@ -40,6 +46,7 @@ export interface PostSalesFunnelProducts200ResponseData {
  */
 export function instanceOfPostSalesFunnelProducts200ResponseData(value: object): value is PostSalesFunnelProducts200ResponseData {
     if (!('products' in value) || value['products'] === undefined) return false;
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -54,6 +61,7 @@ export function PostSalesFunnelProducts200ResponseDataFromJSONTyped(json: any, i
     return {
         
         'products': ((json['products'] as Array<any>).map(ProductsResponseProductsInnerFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -69,6 +77,7 @@ export function PostSalesFunnelProducts200ResponseDataToJSONTyped(value?: PostSa
     return {
         
         'products': ((value['products'] as Array<any>).map(ProductsResponseProductsInnerToJSON)),
+        'currency': value['currency'],
     };
 }
 

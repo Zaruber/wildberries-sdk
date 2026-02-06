@@ -23,6 +23,8 @@ var _ MappedNullable = &ProductSearchTextsResponse{}
 type ProductSearchTextsResponse struct {
 	// Элементы таблицы
 	Items []TableSearchTextItem `json:"items"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _ProductSearchTextsResponse ProductSearchTextsResponse
@@ -31,9 +33,10 @@ type _ProductSearchTextsResponse ProductSearchTextsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductSearchTextsResponse(items []TableSearchTextItem) *ProductSearchTextsResponse {
+func NewProductSearchTextsResponse(items []TableSearchTextItem, currency string) *ProductSearchTextsResponse {
 	this := ProductSearchTextsResponse{}
 	this.Items = items
+	this.Currency = currency
 	return &this
 }
 
@@ -69,6 +72,30 @@ func (o *ProductSearchTextsResponse) SetItems(v []TableSearchTextItem) {
 	o.Items = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *ProductSearchTextsResponse) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *ProductSearchTextsResponse) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *ProductSearchTextsResponse) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o ProductSearchTextsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -80,6 +107,7 @@ func (o ProductSearchTextsResponse) MarshalJSON() ([]byte, error) {
 func (o ProductSearchTextsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["items"] = o.Items
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -89,6 +117,7 @@ func (o *ProductSearchTextsResponse) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"items",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -25,6 +25,8 @@ type ProductOrdersResponse struct {
 	Total []ProductOrdersMetrics `json:"total"`
 	// Элементы таблицы
 	Items []ProductOrdersTextItem `json:"items"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _ProductOrdersResponse ProductOrdersResponse
@@ -33,10 +35,11 @@ type _ProductOrdersResponse ProductOrdersResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductOrdersResponse(total []ProductOrdersMetrics, items []ProductOrdersTextItem) *ProductOrdersResponse {
+func NewProductOrdersResponse(total []ProductOrdersMetrics, items []ProductOrdersTextItem, currency string) *ProductOrdersResponse {
 	this := ProductOrdersResponse{}
 	this.Total = total
 	this.Items = items
+	this.Currency = currency
 	return &this
 }
 
@@ -96,6 +99,30 @@ func (o *ProductOrdersResponse) SetItems(v []ProductOrdersTextItem) {
 	o.Items = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *ProductOrdersResponse) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *ProductOrdersResponse) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *ProductOrdersResponse) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o ProductOrdersResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -108,6 +135,7 @@ func (o ProductOrdersResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["total"] = o.Total
 	toSerialize["items"] = o.Items
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -118,6 +146,7 @@ func (o *ProductOrdersResponse) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"total",
 		"items",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

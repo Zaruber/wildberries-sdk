@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from wildberries_sdk.analytics.models.table_shipping_office_item import TableShippingOfficeItem
 from typing import Optional, Set
@@ -28,7 +28,8 @@ class TableShippingOfficeResponse(BaseModel):
     TableShippingOfficeResponse
     """ # noqa: E501
     regions: Optional[List[TableShippingOfficeItem]] = Field(default=None, description="Множество данных по регионам отгрузки")
-    __properties: ClassVar[List[str]] = ["regions"]
+    currency: StrictStr = Field(description="Валюта отчёта")
+    __properties: ClassVar[List[str]] = ["regions", "currency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class TableShippingOfficeResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "regions": [TableShippingOfficeItem.from_dict(_item) for _item in obj["regions"]] if obj.get("regions") is not None else None
+            "regions": [TableShippingOfficeItem.from_dict(_item) for _item in obj["regions"]] if obj.get("regions") is not None else None,
+            "currency": obj.get("currency")
         })
         return _obj
 

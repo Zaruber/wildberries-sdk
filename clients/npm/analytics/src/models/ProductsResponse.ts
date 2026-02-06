@@ -33,6 +33,12 @@ export interface ProductsResponse {
      * @memberof ProductsResponse
      */
     products: Array<ProductsResponseProductsInner>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof ProductsResponse
+     */
+    currency: string;
 }
 
 /**
@@ -40,6 +46,7 @@ export interface ProductsResponse {
  */
 export function instanceOfProductsResponse(value: object): value is ProductsResponse {
     if (!('products' in value) || value['products'] === undefined) return false;
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -54,6 +61,7 @@ export function ProductsResponseFromJSONTyped(json: any, ignoreDiscriminator: bo
     return {
         
         'products': ((json['products'] as Array<any>).map(ProductsResponseProductsInnerFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -69,6 +77,7 @@ export function ProductsResponseToJSONTyped(value?: ProductsResponse | null, ign
     return {
         
         'products': ((value['products'] as Array<any>).map(ProductsResponseProductsInnerToJSON)),
+        'currency': value['currency'],
     };
 }
 

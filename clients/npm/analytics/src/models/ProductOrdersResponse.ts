@@ -46,6 +46,12 @@ export interface ProductOrdersResponse {
      * @memberof ProductOrdersResponse
      */
     items: Array<ProductOrdersTextItem>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof ProductOrdersResponse
+     */
+    currency: string;
 }
 
 /**
@@ -54,6 +60,7 @@ export interface ProductOrdersResponse {
 export function instanceOfProductOrdersResponse(value: object): value is ProductOrdersResponse {
     if (!('total' in value) || value['total'] === undefined) return false;
     if (!('items' in value) || value['items'] === undefined) return false;
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -69,6 +76,7 @@ export function ProductOrdersResponseFromJSONTyped(json: any, ignoreDiscriminato
         
         'total': ((json['total'] as Array<any>).map(ProductOrdersMetricsFromJSON)),
         'items': ((json['items'] as Array<any>).map(ProductOrdersTextItemFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -85,6 +93,7 @@ export function ProductOrdersResponseToJSONTyped(value?: ProductOrdersResponse |
         
         'total': ((value['total'] as Array<any>).map(ProductOrdersMetricsToJSON)),
         'items': ((value['items'] as Array<any>).map(ProductOrdersTextItemToJSON)),
+        'currency': value['currency'],
     };
 }
 

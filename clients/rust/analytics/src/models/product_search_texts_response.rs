@@ -16,12 +16,16 @@ pub struct ProductSearchTextsResponse {
     /// Элементы таблицы
     #[serde(rename = "items")]
     pub items: Vec<models::TableSearchTextItem>,
+    /// Валюта отчёта
+    #[serde(rename = "currency")]
+    pub currency: String,
 }
 
 impl ProductSearchTextsResponse {
-    pub fn new(items: Vec<models::TableSearchTextItem>) -> ProductSearchTextsResponse {
+    pub fn new(items: Vec<models::TableSearchTextItem>, currency: String) -> ProductSearchTextsResponse {
         ProductSearchTextsResponse {
             items,
+            currency,
         }
     }
 }

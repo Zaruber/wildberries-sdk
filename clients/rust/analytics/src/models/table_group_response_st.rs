@@ -16,12 +16,16 @@ pub struct TableGroupResponseSt {
     /// Множество данных по группам
     #[serde(rename = "groups")]
     pub groups: Vec<models::TableGroupItemSt>,
+    /// Валюта отчёта
+    #[serde(rename = "currency")]
+    pub currency: String,
 }
 
 impl TableGroupResponseSt {
-    pub fn new(groups: Vec<models::TableGroupItemSt>) -> TableGroupResponseSt {
+    pub fn new(groups: Vec<models::TableGroupItemSt>, currency: String) -> TableGroupResponseSt {
         TableGroupResponseSt {
             groups,
+            currency,
         }
     }
 }

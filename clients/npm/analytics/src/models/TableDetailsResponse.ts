@@ -34,6 +34,12 @@ export interface TableDetailsResponse {
      * @memberof TableDetailsResponse
      */
     products: Array<TableProductItem>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof TableDetailsResponse
+     */
+    currency: string;
 }
 
 /**
@@ -41,6 +47,7 @@ export interface TableDetailsResponse {
  */
 export function instanceOfTableDetailsResponse(value: object): value is TableDetailsResponse {
     if (!('products' in value) || value['products'] === undefined) return false;
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -55,6 +62,7 @@ export function TableDetailsResponseFromJSONTyped(json: any, ignoreDiscriminator
     return {
         
         'products': ((json['products'] as Array<any>).map(TableProductItemFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -70,6 +78,7 @@ export function TableDetailsResponseToJSONTyped(value?: TableDetailsResponse | n
     return {
         
         'products': ((value['products'] as Array<any>).map(TableProductItemToJSON)),
+        'currency': value['currency'],
     };
 }
 

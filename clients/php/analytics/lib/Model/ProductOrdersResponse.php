@@ -58,7 +58,8 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'total' => '\Wildberries\Sdk\Analytics\Model\ProductOrdersMetrics[]',
-        'items' => '\Wildberries\Sdk\Analytics\Model\ProductOrdersTextItem[]'
+        'items' => '\Wildberries\Sdk\Analytics\Model\ProductOrdersTextItem[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'total' => null,
-        'items' => null
+        'items' => null,
+        'currency' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPINullables = [
         'total' => false,
-        'items' => false
+        'items' => false,
+        'currency' => false
     ];
 
     /**
@@ -170,7 +173,8 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'total' => 'total',
-        'items' => 'items'
+        'items' => 'items',
+        'currency' => 'currency'
     ];
 
     /**
@@ -180,7 +184,8 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'total' => 'setTotal',
-        'items' => 'setItems'
+        'items' => 'setItems',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -190,7 +195,8 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'total' => 'getTotal',
-        'items' => 'getItems'
+        'items' => 'getItems',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -252,6 +258,7 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -286,6 +293,9 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if ($this->container['items'] === null) {
             $invalidProperties[] = "'items' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
         return $invalidProperties;
     }
@@ -352,6 +362,33 @@ class ProductOrdersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

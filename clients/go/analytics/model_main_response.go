@@ -26,6 +26,8 @@ type MainResponse struct {
 	VisibilityInfo VisibilityInfo `json:"visibilityInfo"`
 	// Список элементов таблицы 
 	Groups []TableGroupItem `json:"groups,omitempty"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _MainResponse MainResponse
@@ -34,11 +36,12 @@ type _MainResponse MainResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMainResponse(commonInfo CommonInfo, positionInfo PositionInfo, visibilityInfo VisibilityInfo) *MainResponse {
+func NewMainResponse(commonInfo CommonInfo, positionInfo PositionInfo, visibilityInfo VisibilityInfo, currency string) *MainResponse {
 	this := MainResponse{}
 	this.CommonInfo = commonInfo
 	this.PositionInfo = positionInfo
 	this.VisibilityInfo = visibilityInfo
+	this.Currency = currency
 	return &this
 }
 
@@ -154,6 +157,30 @@ func (o *MainResponse) SetGroups(v []TableGroupItem) {
 	o.Groups = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *MainResponse) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *MainResponse) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *MainResponse) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o MainResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -170,6 +197,7 @@ func (o MainResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -181,6 +209,7 @@ func (o *MainResponse) UnmarshalJSON(data []byte) (err error) {
 		"commonInfo",
 		"positionInfo",
 		"visibilityInfo",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

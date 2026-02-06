@@ -46,12 +46,19 @@ export interface TableSizeResponse {
      * @memberof TableSizeResponse
      */
     sizes?: Array<TableSizeResponseSizesInner>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof TableSizeResponse
+     */
+    currency: string;
 }
 
 /**
  * Check if a given object implements the TableSizeResponse interface.
  */
 export function instanceOfTableSizeResponse(value: object): value is TableSizeResponse {
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -67,6 +74,7 @@ export function TableSizeResponseFromJSONTyped(json: any, ignoreDiscriminator: b
         
         'offices': json['offices'] == null ? undefined : ((json['offices'] as Array<any>).map(TableOfficeItemFromJSON)),
         'sizes': json['sizes'] == null ? undefined : ((json['sizes'] as Array<any>).map(TableSizeResponseSizesInnerFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -83,6 +91,7 @@ export function TableSizeResponseToJSONTyped(value?: TableSizeResponse | null, i
         
         'offices': value['offices'] == null ? undefined : ((value['offices'] as Array<any>).map(TableOfficeItemToJSON)),
         'sizes': value['sizes'] == null ? undefined : ((value['sizes'] as Array<any>).map(TableSizeResponseSizesInnerToJSON)),
+        'currency': value['currency'],
     };
 }
 

@@ -24,6 +24,8 @@ type ProductHistoryResponseInner struct {
 	Product ProductHistoryResponseInnerProduct `json:"product"`
 	// Статистика за период
 	History []History `json:"history"`
+	// Валюта отчёта
+	Currency string `json:"currency"`
 }
 
 type _ProductHistoryResponseInner ProductHistoryResponseInner
@@ -32,10 +34,11 @@ type _ProductHistoryResponseInner ProductHistoryResponseInner
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProductHistoryResponseInner(product ProductHistoryResponseInnerProduct, history []History) *ProductHistoryResponseInner {
+func NewProductHistoryResponseInner(product ProductHistoryResponseInnerProduct, history []History, currency string) *ProductHistoryResponseInner {
 	this := ProductHistoryResponseInner{}
 	this.Product = product
 	this.History = history
+	this.Currency = currency
 	return &this
 }
 
@@ -95,6 +98,30 @@ func (o *ProductHistoryResponseInner) SetHistory(v []History) {
 	o.History = v
 }
 
+// GetCurrency returns the Currency field value
+func (o *ProductHistoryResponseInner) GetCurrency() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value
+// and a boolean to check if the value has been set.
+func (o *ProductHistoryResponseInner) GetCurrencyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Currency, true
+}
+
+// SetCurrency sets field value
+func (o *ProductHistoryResponseInner) SetCurrency(v string) {
+	o.Currency = v
+}
+
 func (o ProductHistoryResponseInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -107,6 +134,7 @@ func (o ProductHistoryResponseInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["product"] = o.Product
 	toSerialize["history"] = o.History
+	toSerialize["currency"] = o.Currency
 	return toSerialize, nil
 }
 
@@ -117,6 +145,7 @@ func (o *ProductHistoryResponseInner) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"product",
 		"history",
+		"currency",
 	}
 
 	allProperties := make(map[string]interface{})

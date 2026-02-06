@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from wildberries_sdk.analytics.models.table_group_item import TableGroupItem
 from typing import Optional, Set
@@ -28,7 +28,8 @@ class TableGroupResponse(BaseModel):
     TableGroupResponse
     """ # noqa: E501
     groups: List[TableGroupItem] = Field(description="Список групп товаров для таблицы ")
-    __properties: ClassVar[List[str]] = ["groups"]
+    currency: StrictStr = Field(description="Валюта отчёта")
+    __properties: ClassVar[List[str]] = ["groups", "currency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class TableGroupResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "groups": [TableGroupItem.from_dict(_item) for _item in obj["groups"]] if obj.get("groups") is not None else None
+            "groups": [TableGroupItem.from_dict(_item) for _item in obj["groups"]] if obj.get("groups") is not None else None,
+            "currency": obj.get("currency")
         })
         return _obj
 

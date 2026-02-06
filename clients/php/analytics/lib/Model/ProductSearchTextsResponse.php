@@ -57,7 +57,8 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItem[]'
+        'items' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItem[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'items' => null
+        'items' => null,
+        'currency' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'items' => false
+        'items' => false,
+        'currency' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'items' => 'items'
+        'items' => 'items',
+        'currency' => 'currency'
     ];
 
     /**
@@ -175,7 +179,8 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'items' => 'setItems'
+        'items' => 'setItems',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -184,7 +189,8 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'items' => 'getItems'
+        'items' => 'getItems',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -245,6 +251,7 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(?array $data = null)
     {
         $this->setIfExists('items', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -276,6 +283,9 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         if ($this->container['items'] === null) {
             $invalidProperties[] = "'items' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
         return $invalidProperties;
     }
@@ -315,6 +325,33 @@ class ProductSearchTextsResponse implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

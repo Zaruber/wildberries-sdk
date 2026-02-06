@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from wildberries_sdk.analytics.models.table_search_text_item import TableSearchTextItem
 from typing import Optional, Set
@@ -28,7 +28,8 @@ class ProductSearchTextsResponse(BaseModel):
     ProductSearchTextsResponse
     """ # noqa: E501
     items: List[TableSearchTextItem] = Field(description="Элементы таблицы")
-    __properties: ClassVar[List[str]] = ["items"]
+    currency: StrictStr = Field(description="Валюта отчёта")
+    __properties: ClassVar[List[str]] = ["items", "currency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class ProductSearchTextsResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "items": [TableSearchTextItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [TableSearchTextItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "currency": obj.get("currency")
         })
         return _obj
 

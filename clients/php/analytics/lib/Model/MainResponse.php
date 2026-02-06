@@ -60,7 +60,8 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'common_info' => '\Wildberries\Sdk\Analytics\Model\CommonInfo',
         'position_info' => '\Wildberries\Sdk\Analytics\Model\PositionInfo',
         'visibility_info' => '\Wildberries\Sdk\Analytics\Model\VisibilityInfo',
-        'groups' => '\Wildberries\Sdk\Analytics\Model\TableGroupItem[]'
+        'groups' => '\Wildberries\Sdk\Analytics\Model\TableGroupItem[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'common_info' => null,
         'position_info' => null,
         'visibility_info' => null,
-        'groups' => null
+        'groups' => null,
+        'currency' => null
     ];
 
     /**
@@ -86,7 +88,8 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'common_info' => false,
         'position_info' => false,
         'visibility_info' => false,
-        'groups' => false
+        'groups' => false,
+        'currency' => false
     ];
 
     /**
@@ -178,7 +181,8 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'common_info' => 'commonInfo',
         'position_info' => 'positionInfo',
         'visibility_info' => 'visibilityInfo',
-        'groups' => 'groups'
+        'groups' => 'groups',
+        'currency' => 'currency'
     ];
 
     /**
@@ -190,7 +194,8 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'common_info' => 'setCommonInfo',
         'position_info' => 'setPositionInfo',
         'visibility_info' => 'setVisibilityInfo',
-        'groups' => 'setGroups'
+        'groups' => 'setGroups',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -202,7 +207,8 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'common_info' => 'getCommonInfo',
         'position_info' => 'getPositionInfo',
         'visibility_info' => 'getVisibilityInfo',
-        'groups' => 'getGroups'
+        'groups' => 'getGroups',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -266,6 +272,7 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('position_info', $data ?? [], null);
         $this->setIfExists('visibility_info', $data ?? [], null);
         $this->setIfExists('groups', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -303,6 +310,9 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['visibility_info'] === null) {
             $invalidProperties[] = "'visibility_info' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
         return $invalidProperties;
     }
@@ -423,6 +433,33 @@ class MainResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable groups cannot be null');
         }
         $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

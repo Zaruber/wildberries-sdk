@@ -33,6 +33,12 @@ export interface ProductSearchTextsResponse {
      * @memberof ProductSearchTextsResponse
      */
     items: Array<TableSearchTextItem>;
+    /**
+     * Валюта отчёта
+     * @type {string}
+     * @memberof ProductSearchTextsResponse
+     */
+    currency: string;
 }
 
 /**
@@ -40,6 +46,7 @@ export interface ProductSearchTextsResponse {
  */
 export function instanceOfProductSearchTextsResponse(value: object): value is ProductSearchTextsResponse {
     if (!('items' in value) || value['items'] === undefined) return false;
+    if (!('currency' in value) || value['currency'] === undefined) return false;
     return true;
 }
 
@@ -54,6 +61,7 @@ export function ProductSearchTextsResponseFromJSONTyped(json: any, ignoreDiscrim
     return {
         
         'items': ((json['items'] as Array<any>).map(TableSearchTextItemFromJSON)),
+        'currency': json['currency'],
     };
 }
 
@@ -69,6 +77,7 @@ export function ProductSearchTextsResponseToJSONTyped(value?: ProductSearchTexts
     return {
         
         'items': ((value['items'] as Array<any>).map(TableSearchTextItemToJSON)),
+        'currency': value['currency'],
     };
 }
 

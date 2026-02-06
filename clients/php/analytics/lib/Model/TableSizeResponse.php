@@ -58,7 +58,8 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'offices' => '\Wildberries\Sdk\Analytics\Model\TableOfficeItem[]',
-        'sizes' => '\Wildberries\Sdk\Analytics\Model\TableSizeResponseSizesInner[]'
+        'sizes' => '\Wildberries\Sdk\Analytics\Model\TableSizeResponseSizesInner[]',
+        'currency' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'offices' => null,
-        'sizes' => null
+        'sizes' => null,
+        'currency' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'offices' => false,
-        'sizes' => false
+        'sizes' => false,
+        'currency' => false
     ];
 
     /**
@@ -170,7 +173,8 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'offices' => 'offices',
-        'sizes' => 'sizes'
+        'sizes' => 'sizes',
+        'currency' => 'currency'
     ];
 
     /**
@@ -180,7 +184,8 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'offices' => 'setOffices',
-        'sizes' => 'setSizes'
+        'sizes' => 'setSizes',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -190,7 +195,8 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'offices' => 'getOffices',
-        'sizes' => 'getSizes'
+        'sizes' => 'getSizes',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -252,6 +258,7 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $this->setIfExists('offices', $data ?? [], null);
         $this->setIfExists('sizes', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -281,6 +288,9 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -346,6 +356,33 @@ class TableSizeResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable sizes cannot be null');
         }
         $this->container['sizes'] = $sizes;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency Валюта отчёта
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }
