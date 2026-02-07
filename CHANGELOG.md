@@ -1,6 +1,15 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.02.07)
+- Аналитика
+  - Схема `ProductOrdersTextRes`: удалено поле `currency` (и исключено из `required`), теперь валюта не возвращается на уровне объекта ответа
+  - CSV-ответы отчётов: в примерах добавлен/восстановлен столбец `Currency` (значение `RUB`) в строках `SalesFunnel*`, `SearchReport*` — ранее встречались строки без валюты
+
+- Отчёты (Основные отчёты)
+  - Обновлено описание метода получения заказов: вместо ссылки на метод «Продажи» указано получение продаж через «детализации к отчётам реализации» (`/api/v5/supplier/reportDetailByPeriod`)
+  - В описание отчёта добавлено уточнение: в ответах могут отсутствовать заказы без подтверждённой оплаты (отложенные платежи/рассрочка) даже при наличии этих заказов в детализациях к отчётам реализации
+
 ### Changed (2026.02.06)
 - Аналитика: во все CSV-отчёты добавлено поле валюты — в «Воронке продаж» добавлена колонка `currency`, в отчёте по поиску по артикулам WB добавлена колонка `Currency`, в отчёте по текстам поисковых запросов добавлена колонка `Currency`, в отчёте по истории остатков добавлена колонка `Currency` (обновлены примеры CSV).
 - Аналитика: в ответы табличных методов добавлено обязательное поле `currency` (schema `Currency`, пример `RUB`): `TableResponse` (required), `TableDetailsResponse` (required), `TableProductResponse` (required), `ProductSearchTextsResponse` (required), `ProductOrdersTextResponse` (required), `TableGroupsResponse` (required), `TableSizeResponse` (required), `TableShippingOfficeResponse` (required), а также в `ProductHistoryResponse` и `GroupedHistoryResponse` (required на уровне элемента массива).
