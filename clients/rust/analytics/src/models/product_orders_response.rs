@@ -19,17 +19,13 @@ pub struct ProductOrdersResponse {
     /// Элементы таблицы
     #[serde(rename = "items")]
     pub items: Vec<models::ProductOrdersTextItem>,
-    /// Валюта отчёта
-    #[serde(rename = "currency")]
-    pub currency: String,
 }
 
 impl ProductOrdersResponse {
-    pub fn new(total: Vec<models::ProductOrdersMetrics>, items: Vec<models::ProductOrdersTextItem>, currency: String) -> ProductOrdersResponse {
+    pub fn new(total: Vec<models::ProductOrdersMetrics>, items: Vec<models::ProductOrdersTextItem>) -> ProductOrdersResponse {
         ProductOrdersResponse {
             total,
             items,
-            currency,
         }
     }
 }
