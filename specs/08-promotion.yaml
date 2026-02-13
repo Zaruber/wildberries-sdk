@@ -1803,7 +1803,7 @@ paths:
         - Статистика
       summary: Статистика поисковых кластеров
       description: |
-        Метод возвращает статистику по поисковым кластерам за указанный период.<br>
+        Метод формирует статистику по поисковым кластерам за указанный период.<br>
         Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.
 
         <div class="description_limit">
@@ -3472,8 +3472,338 @@ paths:
           $ref: '#/components/responses/UnprocessableEntity'
         '429':
           $ref: '#/components/responses/429'
+  /adv/v0/normquery/list:
+    servers:
+      - url: https://advert-api.wildberries.ru
+    post:
+      x-readonly-method: true
+      x-category: advert
+      tags:
+        - Поисковые кластеры
+      summary: Списки активных и неактивных поисковых кластеров
+      description: |
+        Метод возвращает списки активных и неактивных поисковых кластеров, по которым было не меньше 100 показов.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V0GetNormQueryListRequest'
+            example:
+              items:
+                - advertId: 123456789
+                  nmId: 987654321
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V0GetNormQueryListResponse'
+              example:
+                items:
+                  - advertId: 123456789
+                    nmId: 987654321
+                    normQueries:
+                      active: null
+                      excluded:
+                        - бест трикотаж
+                        - горы футболка для мужчин
+                        - одежда для моря
+                        - одежда на море
+                        - поло мужское
+                        - поло мужское летнее
+                        - футболка дельфин
+                        - футболка мужская с принтом светлая
+                        - футболка поло
+                        - футболка поло мужская
+                        - футболка с воротником мужские
+        '400':
+          description: Неправильный запрос
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response400'
+              example:
+                detail: incorrect request body, please check API documentation
+                origin: camp-api-public-cache
+                request_id: 33e7d9f3fc221648cdf096bf8e62e482
+                status: 400
+                title: invalid request body
+        '401':
+          $ref: '#/components/responses/401'
+        '429':
+          $ref: '#/components/responses/429'
+  /adv/v1/normquery/stats:
+    servers:
+      - url: https://advert-api.wildberries.ru
+    post:
+      x-readonly-method: true
+      x-category: advert
+      tags:
+        - Статистика
+      summary: Статистика по поисковым кластерам с детализацией по дням
+      description: |
+        Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V1GetNormQueryStatsRequest'
+            example:
+              from: '2026-01-01'
+              to: '2026-01-30'
+              items:
+                - advertId: 123456789
+                  nmId: 987654321
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V1GetNormQueryStatsResponse'
+              example:
+                items:
+                  - advertId: 123456789
+                    dailyStats:
+                      - date: '2026-01-27'
+                        stat:
+                          atbs: 39
+                          avgPos: 3.3
+                          clicks: 75
+                          cpc: 1.44
+                          cpm: 562.5
+                          ctr: 39.06
+                          normQuery: Поисковый кластер 0
+                          orders: 9
+                          shks: 5
+                          spend: 108
+                          views: 192
+                      - date: '2026-01-27'
+                        stat:
+                          atbs: 71
+                          avgPos: 7.9
+                          clicks: 56
+                          cpc: 4.38
+                          cpm: 1290.95
+                          ctr: 29.47
+                          normQuery: румяна для лица vivienne sabo
+                          orders: 2
+                          shks: 44
+                          spend: 245.28
+                          views: 190
+                      - date: '2026-01-27'
+                        stat:
+                          atbs: 39
+                          avgPos: 3.3
+                          clicks: 75
+                          cpc: 1.44
+                          cpm: 562.5
+                          ctr: 39.06
+                          normQuery: Поисковый кластер 2
+                          orders: 9
+                          shks: 345345
+                          spend: 108
+                          views: 192
+                    nmId: 987654321
+        '400':
+          description: Неправильный запрос
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response400'
+              example:
+                detail: incorrect request body, please check API documentation
+                origin: camp-api-public-cache
+                request_id: 33e7d9f3fc221648cdf096bf8e62e482
+                status: 400
+                title: invalid request body
+        '401':
+          $ref: '#/components/responses/401'
+        '429':
+          $ref: '#/components/responses/429'
 components:
   schemas:
+    V0GetNormQueryListRequest:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/V0GetNormQueryListRequestItem'
+    V0GetNormQueryListRequestItem:
+      type: object
+      required:
+        - advertId
+        - nmId
+      properties:
+        advertId:
+          type: integer
+          format: int64
+          description: ID кампании
+        nmId:
+          type: integer
+          format: int64
+          description: Артикул WB
+    V0GetNormQueryListResponse:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/V0GetNormQueryListResponseItem'
+    V0GetNormQueryListResponseItem:
+      type: object
+      properties:
+        advertId:
+          type: integer
+          format: int64
+          description: ID кампании
+        nmId:
+          type: integer
+          format: int64
+          description: Артикул WB
+        normQueries:
+          $ref: '#/components/schemas/V0GetNormQueryListResponseItemNormQueries'
+    V0GetNormQueryListResponseItemNormQueries:
+      type: object
+      description: Поисковые кластеры
+      properties:
+        active:
+          type: array
+          items:
+            type: string
+          description: Активные поисковые кластеры
+          nullable: true
+        excluded:
+          type: array
+          nullable: true
+          items:
+            type: string
+          description: Неактивные поисковые кластеры
+    V1GetNormQueryStatsRequest:
+      type: object
+      required:
+        - from
+        - to
+        - items
+      properties:
+        from:
+          type: string
+          format: date
+          description: Дата начала периода
+          example: '2025-01-01'
+        to:
+          type: string
+          format: date
+          description: Дата окончания периода периода
+          example: '2025-01-31'
+        items:
+          type: array
+          maxItems: 100
+          items:
+            type: object
+            required:
+              - advertId
+              - nmId
+            properties:
+              advertId:
+                type: integer
+                format: int64
+                description: ID кампании
+              nmId:
+                type: integer
+                format: int64
+                description: Артикул WB
+    V1GetNormQueryStatsResponse:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/V1GetNormQueryStatsResponseItem'
+    V1GetNormQueryStatsResponseItem:
+      type: object
+      required:
+        - advertId
+        - nmId
+      properties:
+        advertId:
+          type: integer
+          format: int64
+          description: ID кампании
+        nmId:
+          type: integer
+          format: int64
+          description: Артикул WB
+        dailyStats:
+          type: array
+          items:
+            $ref: '#/components/schemas/V1GetNormQueryStatsResponseItemDailyStat'
+          description: Статистика с детализацией по дням
+    V1GetNormQueryStatsResponseItemDailyStat:
+      type: object
+      required:
+        - date
+      properties:
+        date:
+          type: string
+          format: date
+          description: Дата
+        stat:
+          $ref: '#/components/schemas/V1GetNormQueryStatsResponseItemStat'
+    V1GetNormQueryStatsResponseItemStat:
+      type: object
+      properties:
+        normQuery:
+          type: string
+          description: Поисковый кластер
+        views:
+          type: integer
+          description: Количество просмотров
+        clicks:
+          type: integer
+          description: Количество кликов
+        atbs:
+          type: integer
+          description: Количество добавлений товаров в корзину
+        orders:
+          type: integer
+          description: Количество заказов
+        ctr:
+          type: number
+          format: float
+          description: CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+        cpc:
+          type: number
+          format: float
+          description: Средняя стоимость клика, ₽
+        cpm:
+          type: number
+          format: float
+          description: Средняя стоимость за тысячу показов, ₽
+        avgPos:
+          type: number
+          format: float
+          description: Средняя позиция товара на страницах поисковой выдачи
+        shks:
+          type: integer
+          description: Количество заказанных товаров, шт.
+        spend:
+          type: number
+          format: double
+          description: |
+            Затраты на продвижение товаров в конкретном поисковом кластере кампании
     400Response:
       type: object
       properties:
@@ -3574,6 +3904,14 @@ components:
           type: number
           format: double
           description: Средняя позиция товара на страницах поисковой выдачи
+        shks:
+          type: integer
+          description: Количество заказанных товаров, шт.
+        spend:
+          type: number
+          format: double
+          description: |
+            Затраты на продвижение товаров в конкретном поисковом кластере кампании
     V0GetNormQueryStatsResponse:
       type: object
       description: Статистика по поисковым кластерам
