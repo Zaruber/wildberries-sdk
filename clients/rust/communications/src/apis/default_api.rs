@@ -1493,13 +1493,13 @@ pub async fn api_v1_seller_message_post(configuration: &configuration::Configura
         multipart_form = multipart_form.text("message", param_value.to_string());
     }
     if let Some(ref param_value) = p_form_file {
-        for file_path in param_value {
-            let file = TokioFile::open(file_path).await?;
-            let stream = FramedRead::new(file, BytesCodec::new());
-            let file_name = file_path.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
-            let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);
-            multipart_form = multipart_form.part("file", file_part);
-        }
+                for value in param_value {
+                let file = TokioFile::open(value).await?;
+                let stream = FramedRead::new(file, BytesCodec::new());
+                let file_name = value.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+                let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);
+                multipart_form = multipart_form.part("file", file_part);
+                }
     }
     req_builder = req_builder.multipart(multipart_form);
 

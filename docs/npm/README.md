@@ -217,6 +217,7 @@ main().catch(console.error);
 - `promotion.DefaultApi.advV0NormqueryBidsPost` — Установить ставки для поисковых кластеров
 - `promotion.DefaultApi.advV0NormqueryGetBidsPost` — Список ставок поисковых кластеров
 - `promotion.DefaultApi.advV0NormqueryGetMinusPost` — Список минус-фраз кампаний
+- `promotion.DefaultApi.advV0NormqueryListPost` — Списки активных и неактивных поисковых кластеров
 - `promotion.DefaultApi.advV0NormquerySetMinusPost` — Установка и удаление минус-фраз
 - `promotion.DefaultApi.advV0NormqueryStatsPost` — Статистика поисковых кластеров
 - `promotion.DefaultApi.advV0PauseGet` — Пауза кампании
@@ -229,6 +230,7 @@ main().catch(console.error);
 - `promotion.DefaultApi.advV1BudgetDepositPost` — Пополнение бюджета кампании
 - `promotion.DefaultApi.advV1BudgetGet` — Бюджет кампании
 - `promotion.DefaultApi.advV1CountGet` — Количество медиакампаний
+- `promotion.DefaultApi.advV1NormqueryStatsPost` — Статистика по поисковым кластерам с детализацией по дням
 - `promotion.DefaultApi.advV1PaymentsGet` — Получение истории пополнений счёта
 - `promotion.DefaultApi.advV1PromotionCountGet` — Списки кампаний
 - `promotion.DefaultApi.advV1StatsPost` — Статистика медиакампаний

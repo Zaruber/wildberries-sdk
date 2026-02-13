@@ -40,6 +40,12 @@ pub struct V0GetNormQueryStatsItemStat {
     /// Средняя позиция товара на страницах поисковой выдачи
     #[serde(rename = "avg_pos", skip_serializing_if = "Option::is_none")]
     pub avg_pos: Option<f64>,
+    /// Количество заказанных товаров, шт.
+    #[serde(rename = "shks", skip_serializing_if = "Option::is_none")]
+    pub shks: Option<i32>,
+    /// Затраты на продвижение товаров в конкретном поисковом кластере кампании 
+    #[serde(rename = "spend", skip_serializing_if = "Option::is_none")]
+    pub spend: Option<f64>,
 }
 
 impl V0GetNormQueryStatsItemStat {
@@ -54,6 +60,8 @@ impl V0GetNormQueryStatsItemStat {
             cpc: None,
             cpm: None,
             avg_pos: None,
+            shks: None,
+            spend: None,
         }
     }
 }

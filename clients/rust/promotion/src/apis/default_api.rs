@@ -89,6 +89,16 @@ pub enum AdvV0NormqueryGetMinusPostError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`adv_v0_normquery_list_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AdvV0NormqueryListPostError {
+    Status400(models::Response400),
+    Status401(models::AdvV1PromotionCountGet401Response),
+    Status429(models::AdvV1PromotionCountGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`adv_v0_normquery_set_minus_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -207,6 +217,16 @@ pub enum AdvV1BudgetGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum AdvV1CountGetError {
+    Status401(models::AdvV1PromotionCountGet401Response),
+    Status429(models::AdvV1PromotionCountGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`adv_v1_normquery_stats_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AdvV1NormqueryStatsPostError {
+    Status400(models::Response400),
     Status401(models::AdvV1PromotionCountGet401Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
@@ -642,6 +662,52 @@ pub async fn adv_v0_normquery_get_minus_post(configuration: &configuration::Conf
     }
 }
 
+/// Метод возвращает списки активных и неактивных поисковых кластеров, по которым было не меньше 100 показов. 
+pub async fn adv_v0_normquery_list_post(configuration: &configuration::Configuration, v0_get_norm_query_list_request: models::V0GetNormQueryListRequest) -> Result<models::V0GetNormQueryListResponse, Error<AdvV0NormqueryListPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_v0_get_norm_query_list_request = v0_get_norm_query_list_request;
+
+    let uri_str = format!("{}/adv/v0/normquery/list", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_v0_get_norm_query_list_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::V0GetNormQueryListResponse`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::V0GetNormQueryListResponse`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<AdvV0NormqueryListPostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
 /// Метод устанавливает и удаляет минус-фразы в кампаниях c:   - ручной ставкой   - моделью оплаты `cpm` — за показы  <div class=\"description_important\">   Отправка пустого массива удаляет все минус-фразы </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 10 запросов | </div> 
 pub async fn adv_v0_normquery_set_minus_post(configuration: &configuration::Configuration, v0_set_minus_norm_query_request: models::V0SetMinusNormQueryRequest) -> Result<(), Error<AdvV0NormquerySetMinusPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -677,7 +743,7 @@ pub async fn adv_v0_normquery_set_minus_post(configuration: &configuration::Conf
     }
 }
 
-/// Метод возвращает статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+/// Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 pub async fn adv_v0_normquery_stats_post(configuration: &configuration::Configuration, v0_get_norm_query_stats_request: models::V0GetNormQueryStatsRequest) -> Result<models::V0GetNormQueryStatsResponse, Error<AdvV0NormqueryStatsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_get_norm_query_stats_request = v0_get_norm_query_stats_request;
@@ -1153,6 +1219,52 @@ pub async fn adv_v1_count_get(configuration: &configuration::Configuration, ) ->
     } else {
         let content = resp.text().await?;
         let entity: Option<AdvV1CountGetError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. 
+pub async fn adv_v1_normquery_stats_post(configuration: &configuration::Configuration, v1_get_norm_query_stats_request: models::V1GetNormQueryStatsRequest) -> Result<models::V1GetNormQueryStatsResponse, Error<AdvV1NormqueryStatsPostError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_v1_get_norm_query_stats_request = v1_get_norm_query_stats_request;
+
+    let uri_str = format!("{}/adv/v1/normquery/stats", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_v1_get_norm_query_stats_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::V1GetNormQueryStatsResponse`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::V1GetNormQueryStatsResponse`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<AdvV1NormqueryStatsPostError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

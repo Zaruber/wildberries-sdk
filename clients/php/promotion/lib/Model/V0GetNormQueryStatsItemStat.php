@@ -65,7 +65,9 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
         'ctr' => 'float',
         'cpc' => 'float',
         'cpm' => 'float',
-        'avg_pos' => 'float'
+        'avg_pos' => 'float',
+        'shks' => 'int',
+        'spend' => 'float'
     ];
 
     /**
@@ -84,7 +86,9 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
         'ctr' => 'double',
         'cpc' => 'double',
         'cpm' => 'double',
-        'avg_pos' => 'double'
+        'avg_pos' => 'double',
+        'shks' => null,
+        'spend' => 'double'
     ];
 
     /**
@@ -101,7 +105,9 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
         'ctr' => false,
         'cpc' => false,
         'cpm' => false,
-        'avg_pos' => false
+        'avg_pos' => false,
+        'shks' => false,
+        'spend' => false
     ];
 
     /**
@@ -198,7 +204,9 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
         'ctr' => 'ctr',
         'cpc' => 'cpc',
         'cpm' => 'cpm',
-        'avg_pos' => 'avg_pos'
+        'avg_pos' => 'avg_pos',
+        'shks' => 'shks',
+        'spend' => 'spend'
     ];
 
     /**
@@ -215,7 +223,9 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
         'ctr' => 'setCtr',
         'cpc' => 'setCpc',
         'cpm' => 'setCpm',
-        'avg_pos' => 'setAvgPos'
+        'avg_pos' => 'setAvgPos',
+        'shks' => 'setShks',
+        'spend' => 'setSpend'
     ];
 
     /**
@@ -232,7 +242,9 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
         'ctr' => 'getCtr',
         'cpc' => 'getCpc',
         'cpm' => 'getCpm',
-        'avg_pos' => 'getAvgPos'
+        'avg_pos' => 'getAvgPos',
+        'shks' => 'getShks',
+        'spend' => 'getSpend'
     ];
 
     /**
@@ -301,6 +313,8 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('cpc', $data ?? [], null);
         $this->setIfExists('cpm', $data ?? [], null);
         $this->setIfExists('avg_pos', $data ?? [], null);
+        $this->setIfExists('shks', $data ?? [], null);
+        $this->setIfExists('spend', $data ?? [], null);
     }
 
     /**
@@ -584,6 +598,60 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable avg_pos cannot be null');
         }
         $this->container['avg_pos'] = $avg_pos;
+
+        return $this;
+    }
+
+    /**
+     * Gets shks
+     *
+     * @return int|null
+     */
+    public function getShks()
+    {
+        return $this->container['shks'];
+    }
+
+    /**
+     * Sets shks
+     *
+     * @param int|null $shks Количество заказанных товаров, шт.
+     *
+     * @return self
+     */
+    public function setShks($shks)
+    {
+        if (is_null($shks)) {
+            throw new \InvalidArgumentException('non-nullable shks cannot be null');
+        }
+        $this->container['shks'] = $shks;
+
+        return $this;
+    }
+
+    /**
+     * Gets spend
+     *
+     * @return float|null
+     */
+    public function getSpend()
+    {
+        return $this->container['spend'];
+    }
+
+    /**
+     * Sets spend
+     *
+     * @param float|null $spend Затраты на продвижение товаров в конкретном поисковом кластере кампании
+     *
+     * @return self
+     */
+    public function setSpend($spend)
+    {
+        if (is_null($spend)) {
+            throw new \InvalidArgumentException('non-nullable spend cannot be null');
+        }
+        $this->container['spend'] = $spend;
 
         return $this;
     }

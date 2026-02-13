@@ -410,10 +410,10 @@ pub async fn content_gallery(configuration: &configuration::Configuration, files
         req_builder = req_builder.header("Authorization", value);
     };
     let mut multipart_form = reqwest::multipart::Form::new();
-    for file_path in &p_form_files {
-        let file = TokioFile::open(file_path).await?;
+    for value in &p_form_files {
+        let file = TokioFile::open(value).await?;
         let stream = FramedRead::new(file, BytesCodec::new());
-        let file_name = file_path.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+        let file_name = value.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
         let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);
         multipart_form = multipart_form.part("files", file_part);
     }

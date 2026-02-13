@@ -58,12 +58,16 @@ import type {
   StandardizedBatchError,
   V0GetNormQueryBidsRequest,
   V0GetNormQueryBidsResponse,
+  V0GetNormQueryListRequest,
+  V0GetNormQueryListResponse,
   V0GetNormQueryMinusRequest,
   V0GetNormQueryMinusResponse,
   V0GetNormQueryStatsRequest,
   V0GetNormQueryStatsResponse,
   V0SetMinusNormQueryRequest,
   V0SetNormQueryBidsRequest,
+  V1GetNormQueryStatsRequest,
+  V1GetNormQueryStatsResponse,
 } from '../models/index';
 import {
     AdvV0AuctionNmsPatch200ResponseFromJSON,
@@ -152,6 +156,10 @@ import {
     V0GetNormQueryBidsRequestToJSON,
     V0GetNormQueryBidsResponseFromJSON,
     V0GetNormQueryBidsResponseToJSON,
+    V0GetNormQueryListRequestFromJSON,
+    V0GetNormQueryListRequestToJSON,
+    V0GetNormQueryListResponseFromJSON,
+    V0GetNormQueryListResponseToJSON,
     V0GetNormQueryMinusRequestFromJSON,
     V0GetNormQueryMinusRequestToJSON,
     V0GetNormQueryMinusResponseFromJSON,
@@ -164,6 +172,10 @@ import {
     V0SetMinusNormQueryRequestToJSON,
     V0SetNormQueryBidsRequestFromJSON,
     V0SetNormQueryBidsRequestToJSON,
+    V1GetNormQueryStatsRequestFromJSON,
+    V1GetNormQueryStatsRequestToJSON,
+    V1GetNormQueryStatsResponseFromJSON,
+    V1GetNormQueryStatsResponseToJSON,
 } from '../models/index';
 
 export interface AdvV0AuctionNmsPatchOperationRequest {
@@ -192,6 +204,10 @@ export interface AdvV0NormqueryGetBidsPostRequest {
 
 export interface AdvV0NormqueryGetMinusPostRequest {
     v0GetNormQueryMinusRequest: V0GetNormQueryMinusRequest;
+}
+
+export interface AdvV0NormqueryListPostRequest {
+    v0GetNormQueryListRequest: V0GetNormQueryListRequest;
 }
 
 export interface AdvV0NormquerySetMinusPostRequest {
@@ -238,6 +254,10 @@ export interface AdvV1BudgetDepositPostOperationRequest {
 
 export interface AdvV1BudgetGetRequest {
     id: number;
+}
+
+export interface AdvV1NormqueryStatsPostRequest {
+    v1GetNormQueryStatsRequest: V1GetNormQueryStatsRequest;
 }
 
 export interface AdvV1PaymentsGetRequest {
@@ -683,6 +703,59 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for advV0NormqueryListPost without sending the request
+     */
+    async advV0NormqueryListPostRequestOpts(requestParameters: AdvV0NormqueryListPostRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['v0GetNormQueryListRequest'] == null) {
+            throw new runtime.RequiredError(
+                'v0GetNormQueryListRequest',
+                'Required parameter "v0GetNormQueryListRequest" was null or undefined when calling advV0NormqueryListPost().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/adv/v0/normquery/list`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: V0GetNormQueryListRequestToJSON(requestParameters['v0GetNormQueryListRequest']),
+        };
+    }
+
+    /**
+     * Метод возвращает списки активных и неактивных поисковых кластеров, по которым было не меньше 100 показов. 
+     * Списки активных и неактивных поисковых кластеров
+     */
+    async advV0NormqueryListPostRaw(requestParameters: AdvV0NormqueryListPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V0GetNormQueryListResponse>> {
+        const requestOptions = await this.advV0NormqueryListPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => V0GetNormQueryListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод возвращает списки активных и неактивных поисковых кластеров, по которым было не меньше 100 показов. 
+     * Списки активных и неактивных поисковых кластеров
+     */
+    async advV0NormqueryListPost(requestParameters: AdvV0NormqueryListPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V0GetNormQueryListResponse> {
+        const response = await this.advV0NormqueryListPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Creates request options for advV0NormquerySetMinusPost without sending the request
      */
     async advV0NormquerySetMinusPostRequestOpts(requestParameters: AdvV0NormquerySetMinusPostRequest): Promise<runtime.RequestOpts> {
@@ -768,7 +841,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+     * Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
      * Статистика поисковых кластеров
      */
     async advV0NormqueryStatsPostRaw(requestParameters: AdvV0NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V0GetNormQueryStatsResponse>> {
@@ -779,7 +852,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+     * Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
      * Статистика поисковых кластеров
      */
     async advV0NormqueryStatsPost(requestParameters: AdvV0NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V0GetNormQueryStatsResponse> {
@@ -1327,6 +1400,59 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async advV1CountGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AdvV1CountGet200Response> {
         const response = await this.advV1CountGetRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for advV1NormqueryStatsPost without sending the request
+     */
+    async advV1NormqueryStatsPostRequestOpts(requestParameters: AdvV1NormqueryStatsPostRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['v1GetNormQueryStatsRequest'] == null) {
+            throw new runtime.RequiredError(
+                'v1GetNormQueryStatsRequest',
+                'Required parameter "v1GetNormQueryStatsRequest" was null or undefined when calling advV1NormqueryStatsPost().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/adv/v1/normquery/stats`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: V1GetNormQueryStatsRequestToJSON(requestParameters['v1GetNormQueryStatsRequest']),
+        };
+    }
+
+    /**
+     * Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. 
+     * Статистика по поисковым кластерам с детализацией по дням
+     */
+    async advV1NormqueryStatsPostRaw(requestParameters: AdvV1NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1GetNormQueryStatsResponse>> {
+        const requestOptions = await this.advV1NormqueryStatsPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => V1GetNormQueryStatsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. 
+     * Статистика по поисковым кластерам с детализацией по дням
+     */
+    async advV1NormqueryStatsPost(requestParameters: AdvV1NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1GetNormQueryStatsResponse> {
+        const response = await this.advV1NormqueryStatsPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

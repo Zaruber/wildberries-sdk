@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.40"
+__version__ = "0.1.41"
 
 # Define package exports
 __all__ = [
@@ -128,6 +128,11 @@ __all__ = [
     "V0GetNormQueryBidsRequest",
     "V0GetNormQueryBidsRequestItem",
     "V0GetNormQueryBidsResponse",
+    "V0GetNormQueryListRequest",
+    "V0GetNormQueryListRequestItem",
+    "V0GetNormQueryListResponse",
+    "V0GetNormQueryListResponseItem",
+    "V0GetNormQueryListResponseItemNormQueries",
     "V0GetNormQueryMinusRequest",
     "V0GetNormQueryMinusRequestItem",
     "V0GetNormQueryMinusResponse",
@@ -140,6 +145,12 @@ __all__ = [
     "V0SetMinusNormQueryRequest",
     "V0SetNormQueryBidsRequest",
     "V0SetNormQueryBidsRequestItem",
+    "V1GetNormQueryStatsRequest",
+    "V1GetNormQueryStatsRequestItemsInner",
+    "V1GetNormQueryStatsResponse",
+    "V1GetNormQueryStatsResponseItem",
+    "V1GetNormQueryStatsResponseItemDailyStat",
+    "V1GetNormQueryStatsResponseItemStat",
 ]
 
 # import apis into sdk package
@@ -257,6 +268,11 @@ from wildberries_sdk.promotion.models.v0_get_norm_query_bids_item import V0GetNo
 from wildberries_sdk.promotion.models.v0_get_norm_query_bids_request import V0GetNormQueryBidsRequest as V0GetNormQueryBidsRequest
 from wildberries_sdk.promotion.models.v0_get_norm_query_bids_request_item import V0GetNormQueryBidsRequestItem as V0GetNormQueryBidsRequestItem
 from wildberries_sdk.promotion.models.v0_get_norm_query_bids_response import V0GetNormQueryBidsResponse as V0GetNormQueryBidsResponse
+from wildberries_sdk.promotion.models.v0_get_norm_query_list_request import V0GetNormQueryListRequest as V0GetNormQueryListRequest
+from wildberries_sdk.promotion.models.v0_get_norm_query_list_request_item import V0GetNormQueryListRequestItem as V0GetNormQueryListRequestItem
+from wildberries_sdk.promotion.models.v0_get_norm_query_list_response import V0GetNormQueryListResponse as V0GetNormQueryListResponse
+from wildberries_sdk.promotion.models.v0_get_norm_query_list_response_item import V0GetNormQueryListResponseItem as V0GetNormQueryListResponseItem
+from wildberries_sdk.promotion.models.v0_get_norm_query_list_response_item_norm_queries import V0GetNormQueryListResponseItemNormQueries as V0GetNormQueryListResponseItemNormQueries
 from wildberries_sdk.promotion.models.v0_get_norm_query_minus_request import V0GetNormQueryMinusRequest as V0GetNormQueryMinusRequest
 from wildberries_sdk.promotion.models.v0_get_norm_query_minus_request_item import V0GetNormQueryMinusRequestItem as V0GetNormQueryMinusRequestItem
 from wildberries_sdk.promotion.models.v0_get_norm_query_minus_response import V0GetNormQueryMinusResponse as V0GetNormQueryMinusResponse
@@ -269,4 +285,10 @@ from wildberries_sdk.promotion.models.v0_get_norm_query_stats_response import V0
 from wildberries_sdk.promotion.models.v0_set_minus_norm_query_request import V0SetMinusNormQueryRequest as V0SetMinusNormQueryRequest
 from wildberries_sdk.promotion.models.v0_set_norm_query_bids_request import V0SetNormQueryBidsRequest as V0SetNormQueryBidsRequest
 from wildberries_sdk.promotion.models.v0_set_norm_query_bids_request_item import V0SetNormQueryBidsRequestItem as V0SetNormQueryBidsRequestItem
+from wildberries_sdk.promotion.models.v1_get_norm_query_stats_request import V1GetNormQueryStatsRequest as V1GetNormQueryStatsRequest
+from wildberries_sdk.promotion.models.v1_get_norm_query_stats_request_items_inner import V1GetNormQueryStatsRequestItemsInner as V1GetNormQueryStatsRequestItemsInner
+from wildberries_sdk.promotion.models.v1_get_norm_query_stats_response import V1GetNormQueryStatsResponse as V1GetNormQueryStatsResponse
+from wildberries_sdk.promotion.models.v1_get_norm_query_stats_response_item import V1GetNormQueryStatsResponseItem as V1GetNormQueryStatsResponseItem
+from wildberries_sdk.promotion.models.v1_get_norm_query_stats_response_item_daily_stat import V1GetNormQueryStatsResponseItemDailyStat as V1GetNormQueryStatsResponseItemDailyStat
+from wildberries_sdk.promotion.models.v1_get_norm_query_stats_response_item_stat import V1GetNormQueryStatsResponseItemStat as V1GetNormQueryStatsResponseItemStat
 

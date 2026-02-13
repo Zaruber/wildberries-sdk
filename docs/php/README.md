@@ -231,6 +231,7 @@ var_dump($response);
 - `promotion.DefaultApi.advV0NormqueryBidsPost` — `POST /adv/v0/normquery/bids` — Установить ставки для поисковых кластеров
 - `promotion.DefaultApi.advV0NormqueryGetBidsPost` — `POST /adv/v0/normquery/get-bids` — Список ставок поисковых кластеров
 - `promotion.DefaultApi.advV0NormqueryGetMinusPost` — `POST /adv/v0/normquery/get-minus` — Список минус-фраз кампаний
+- `promotion.DefaultApi.advV0NormqueryListPost` — `POST /adv/v0/normquery/list` — Списки активных и неактивных поисковых кластеров
 - `promotion.DefaultApi.advV0NormquerySetMinusPost` — `POST /adv/v0/normquery/set-minus` — Установка и удаление минус-фраз
 - `promotion.DefaultApi.advV0NormqueryStatsPost` — `POST /adv/v0/normquery/stats` — Статистика поисковых кластеров
 - `promotion.DefaultApi.advV0PauseGet` — `GET /adv/v0/pause` — Пауза кампании
@@ -243,6 +244,7 @@ var_dump($response);
 - `promotion.DefaultApi.advV1BudgetDepositPost` — `POST /adv/v1/budget/deposit` — Пополнение бюджета кампании
 - `promotion.DefaultApi.advV1BudgetGet` — `GET /adv/v1/budget` — Бюджет кампании
 - `promotion.DefaultApi.advV1CountGet` — `GET /adv/v1/count` — Количество медиакампаний
+- `promotion.DefaultApi.advV1NormqueryStatsPost` — `POST /adv/v1/normquery/stats` — Статистика по поисковым кластерам с детализацией по дням
 - `promotion.DefaultApi.advV1PaymentsGet` — `GET /adv/v1/payments` — Получение истории пополнений счёта
 - `promotion.DefaultApi.advV1PromotionCountGet` — `GET /adv/v1/promotion/count` — Списки кампаний
 - `promotion.DefaultApi.advV1StatsPost` — `POST /adv/v1/stats` — Статистика медиакампаний

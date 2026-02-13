@@ -226,6 +226,7 @@
 - `DELETE /adv/v0/normquery/bids` — Удалить ставки поисковых кластеров
 - `POST /adv/v0/normquery/get-bids` — Список ставок поисковых кластеров
 - `POST /adv/v0/normquery/get-minus` — Список минус-фраз кампаний
+- `POST /adv/v0/normquery/list` — Списки активных и неактивных поисковых кластеров
 - `POST /adv/v0/normquery/set-minus` — Установка и удаление минус-фраз
 - `POST /adv/v0/normquery/stats` — Статистика поисковых кластеров
 - `GET /adv/v0/pause` — Пауза кампании
@@ -238,6 +239,7 @@
 - `GET /adv/v1/budget` — Бюджет кампании
 - `POST /adv/v1/budget/deposit` — Пополнение бюджета кампании
 - `GET /adv/v1/count` — Количество медиакампаний
+- `POST /adv/v1/normquery/stats` — Статистика по поисковым кластерам с детализацией по дням
 - `GET /adv/v1/payments` — Получение истории пополнений счёта
 - `GET /adv/v1/promotion/count` — Списки кампаний
 - `POST /adv/v1/stats` — Статистика медиакампаний

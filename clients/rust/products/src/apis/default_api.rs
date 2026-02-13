@@ -2778,11 +2778,11 @@ pub async fn content_v3_media_file_post(configuration: &configuration::Configura
     };
     let mut multipart_form = reqwest::multipart::Form::new();
     if let Some(ref param_value) = p_form_uploadfile {
-        let file = TokioFile::open(param_value).await?;
-        let stream = FramedRead::new(file, BytesCodec::new());
-        let file_name = param_value.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
-        let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);
-        multipart_form = multipart_form.part("uploadfile", file_part);
+                let file = TokioFile::open(param_value).await?;
+                let stream = FramedRead::new(file, BytesCodec::new());
+                let file_name = param_value.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+                let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);
+                multipart_form = multipart_form.part("uploadfile", file_part);
     }
     req_builder = req_builder.multipart(multipart_form);
 

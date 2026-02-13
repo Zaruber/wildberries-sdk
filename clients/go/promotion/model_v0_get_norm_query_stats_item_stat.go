@@ -37,6 +37,10 @@ type V0GetNormQueryStatsItemStat struct {
 	Cpm *float64 `json:"cpm,omitempty"`
 	// Средняя позиция товара на страницах поисковой выдачи
 	AvgPos *float64 `json:"avg_pos,omitempty"`
+	// Количество заказанных товаров, шт.
+	Shks *int32 `json:"shks,omitempty"`
+	// Затраты на продвижение товаров в конкретном поисковом кластере кампании 
+	Spend *float64 `json:"spend,omitempty"`
 }
 
 // NewV0GetNormQueryStatsItemStat instantiates a new V0GetNormQueryStatsItemStat object
@@ -344,6 +348,70 @@ func (o *V0GetNormQueryStatsItemStat) SetAvgPos(v float64) {
 	o.AvgPos = &v
 }
 
+// GetShks returns the Shks field value if set, zero value otherwise.
+func (o *V0GetNormQueryStatsItemStat) GetShks() int32 {
+	if o == nil || IsNil(o.Shks) {
+		var ret int32
+		return ret
+	}
+	return *o.Shks
+}
+
+// GetShksOk returns a tuple with the Shks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *V0GetNormQueryStatsItemStat) GetShksOk() (*int32, bool) {
+	if o == nil || IsNil(o.Shks) {
+		return nil, false
+	}
+	return o.Shks, true
+}
+
+// HasShks returns a boolean if a field has been set.
+func (o *V0GetNormQueryStatsItemStat) HasShks() bool {
+	if o != nil && !IsNil(o.Shks) {
+		return true
+	}
+
+	return false
+}
+
+// SetShks gets a reference to the given int32 and assigns it to the Shks field.
+func (o *V0GetNormQueryStatsItemStat) SetShks(v int32) {
+	o.Shks = &v
+}
+
+// GetSpend returns the Spend field value if set, zero value otherwise.
+func (o *V0GetNormQueryStatsItemStat) GetSpend() float64 {
+	if o == nil || IsNil(o.Spend) {
+		var ret float64
+		return ret
+	}
+	return *o.Spend
+}
+
+// GetSpendOk returns a tuple with the Spend field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *V0GetNormQueryStatsItemStat) GetSpendOk() (*float64, bool) {
+	if o == nil || IsNil(o.Spend) {
+		return nil, false
+	}
+	return o.Spend, true
+}
+
+// HasSpend returns a boolean if a field has been set.
+func (o *V0GetNormQueryStatsItemStat) HasSpend() bool {
+	if o != nil && !IsNil(o.Spend) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpend gets a reference to the given float64 and assigns it to the Spend field.
+func (o *V0GetNormQueryStatsItemStat) SetSpend(v float64) {
+	o.Spend = &v
+}
+
 func (o V0GetNormQueryStatsItemStat) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -380,6 +448,12 @@ func (o V0GetNormQueryStatsItemStat) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AvgPos) {
 		toSerialize["avg_pos"] = o.AvgPos
+	}
+	if !IsNil(o.Shks) {
+		toSerialize["shks"] = o.Shks
+	}
+	if !IsNil(o.Spend) {
+		toSerialize["spend"] = o.Spend
 	}
 	return toSerialize, nil
 }

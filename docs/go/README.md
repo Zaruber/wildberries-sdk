@@ -218,6 +218,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `promotion.DefaultApiService.AdvV0NormqueryBidsPost` — `POST /adv/v0/normquery/bids` — Установить ставки для поисковых кластеров
 - `promotion.DefaultApiService.AdvV0NormqueryGetBidsPost` — `POST /adv/v0/normquery/get-bids` — Список ставок поисковых кластеров
 - `promotion.DefaultApiService.AdvV0NormqueryGetMinusPost` — `POST /adv/v0/normquery/get-minus` — Список минус-фраз кампаний
+- `promotion.DefaultApiService.AdvV0NormqueryListPost` — `POST /adv/v0/normquery/list` — Списки активных и неактивных поисковых кластеров
 - `promotion.DefaultApiService.AdvV0NormquerySetMinusPost` — `POST /adv/v0/normquery/set-minus` — Установка и удаление минус-фраз
 - `promotion.DefaultApiService.AdvV0NormqueryStatsPost` — `POST /adv/v0/normquery/stats` — Статистика поисковых кластеров
 - `promotion.DefaultApiService.AdvV0PauseGet` — `GET /adv/v0/pause` — Пауза кампании
@@ -230,6 +231,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `promotion.DefaultApiService.AdvV1BudgetDepositPost` — `POST /adv/v1/budget/deposit` — Пополнение бюджета кампании
 - `promotion.DefaultApiService.AdvV1BudgetGet` — `GET /adv/v1/budget` — Бюджет кампании
 - `promotion.DefaultApiService.AdvV1CountGet` — `GET /adv/v1/count` — Количество медиакампаний
+- `promotion.DefaultApiService.AdvV1NormqueryStatsPost` — `POST /adv/v1/normquery/stats` — Статистика по поисковым кластерам с детализацией по дням
 - `promotion.DefaultApiService.AdvV1PaymentsGet` — `GET /adv/v1/payments` — Получение истории пополнений счёта
 - `promotion.DefaultApiService.AdvV1PromotionCountGet` — `GET /adv/v1/promotion/count` — Списки кампаний
 - `promotion.DefaultApiService.AdvV1StatsPost` — `POST /adv/v1/stats` — Статистика медиакампаний

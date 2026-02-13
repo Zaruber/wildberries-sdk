@@ -230,6 +230,7 @@ print(feedbacks)
 - `promotion.DefaultApi.adv_v0_normquery_bids_post` — `POST /adv/v0/normquery/bids` — Установить ставки для поисковых кластеров
 - `promotion.DefaultApi.adv_v0_normquery_get_bids_post` — `POST /adv/v0/normquery/get-bids` — Список ставок поисковых кластеров
 - `promotion.DefaultApi.adv_v0_normquery_get_minus_post` — `POST /adv/v0/normquery/get-minus` — Список минус-фраз кампаний
+- `promotion.DefaultApi.adv_v0_normquery_list_post` — `POST /adv/v0/normquery/list` — Списки активных и неактивных поисковых кластеров
 - `promotion.DefaultApi.adv_v0_normquery_set_minus_post` — `POST /adv/v0/normquery/set-minus` — Установка и удаление минус-фраз
 - `promotion.DefaultApi.adv_v0_normquery_stats_post` — `POST /adv/v0/normquery/stats` — Статистика поисковых кластеров
 - `promotion.DefaultApi.adv_v0_pause_get` — `GET /adv/v0/pause` — Пауза кампании
@@ -242,6 +243,7 @@ print(feedbacks)
 - `promotion.DefaultApi.adv_v1_budget_deposit_post` — `POST /adv/v1/budget/deposit` — Пополнение бюджета кампании
 - `promotion.DefaultApi.adv_v1_budget_get` — `GET /adv/v1/budget` — Бюджет кампании
 - `promotion.DefaultApi.adv_v1_count_get` — `GET /adv/v1/count` — Количество медиакампаний
+- `promotion.DefaultApi.adv_v1_normquery_stats_post` — `POST /adv/v1/normquery/stats` — Статистика по поисковым кластерам с детализацией по дням
 - `promotion.DefaultApi.adv_v1_payments_get` — `GET /adv/v1/payments` — Получение истории пополнений счёта
 - `promotion.DefaultApi.adv_v1_promotion_count_get` — `GET /adv/v1/promotion/count` — Списки кампаний
 - `promotion.DefaultApi.adv_v1_stats_post` — `POST /adv/v1/stats` — Статистика медиакампаний

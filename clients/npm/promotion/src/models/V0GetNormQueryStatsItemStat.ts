@@ -74,6 +74,19 @@ export interface V0GetNormQueryStatsItemStat {
      * @memberof V0GetNormQueryStatsItemStat
      */
     avgPos?: number;
+    /**
+     * Количество заказанных товаров, шт.
+     * @type {number}
+     * @memberof V0GetNormQueryStatsItemStat
+     */
+    shks?: number;
+    /**
+     * Затраты на продвижение товаров в конкретном поисковом кластере кампании
+     * 
+     * @type {number}
+     * @memberof V0GetNormQueryStatsItemStat
+     */
+    spend?: number;
 }
 
 /**
@@ -102,6 +115,8 @@ export function V0GetNormQueryStatsItemStatFromJSONTyped(json: any, ignoreDiscri
         'cpc': json['cpc'] == null ? undefined : json['cpc'],
         'cpm': json['cpm'] == null ? undefined : json['cpm'],
         'avgPos': json['avg_pos'] == null ? undefined : json['avg_pos'],
+        'shks': json['shks'] == null ? undefined : json['shks'],
+        'spend': json['spend'] == null ? undefined : json['spend'],
     };
 }
 
@@ -125,6 +140,8 @@ export function V0GetNormQueryStatsItemStatToJSONTyped(value?: V0GetNormQuerySta
         'cpc': value['cpc'],
         'cpm': value['cpm'],
         'avg_pos': value['avgPos'],
+        'shks': value['shks'],
+        'spend': value['spend'],
     };
 }
 

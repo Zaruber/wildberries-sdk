@@ -35,7 +35,9 @@ class V0GetNormQueryStatsItemStat(BaseModel):
     cpc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Стоимость одного клика, ₽")
     cpm: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Средняя стоимость за тысячу показов, ₽")
     avg_pos: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Средняя позиция товара на страницах поисковой выдачи")
-    __properties: ClassVar[List[str]] = ["norm_query", "views", "clicks", "atbs", "orders", "ctr", "cpc", "cpm", "avg_pos"]
+    shks: Optional[StrictInt] = Field(default=None, description="Количество заказанных товаров, шт.")
+    spend: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Затраты на продвижение товаров в конкретном поисковом кластере кампании ")
+    __properties: ClassVar[List[str]] = ["norm_query", "views", "clicks", "atbs", "orders", "ctr", "cpc", "cpm", "avg_pos", "shks", "spend"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,7 +98,9 @@ class V0GetNormQueryStatsItemStat(BaseModel):
             "ctr": obj.get("ctr"),
             "cpc": obj.get("cpc"),
             "cpm": obj.get("cpm"),
-            "avg_pos": obj.get("avg_pos")
+            "avg_pos": obj.get("avg_pos"),
+            "shks": obj.get("shks"),
+            "spend": obj.get("spend")
         })
         return _obj
 
