@@ -791,7 +791,7 @@ paths:
       description: |
         Метод обновляет IMEI сборочного задания. У одного сборочного задания может
         быть только один IMEI. Добавлять IMEI можно только для сборочных заданий в
-        статусах `confirm` и `prepare`, доставка которых осуществляется силами WB.
+        статусе `confirm`, доставка которых осуществляется силами WB.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
@@ -1059,8 +1059,7 @@ components:
           type: array
           nullable: true
           description: |
-            Список метаданных, доступных для сборочного задания. <br>
-            [Указывать IMEI](./in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1%7BorderId%7D~1meta~1imei/put) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
+            Список метаданных, доступных для сборочного задания
           items:
             type: string
         article:

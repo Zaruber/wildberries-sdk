@@ -1112,6 +1112,7 @@ paths:
                         - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.jpg
                           miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.jpg
                       userName: Николай
+                      orderStatus: buyout
                       matchingSize: ok
                       isAbleSupplierFeedbackValuation: false
                       supplierFeedbackValuation: 1
@@ -1402,10 +1403,9 @@ paths:
                       id:
                         type: string
                         description: ID отзыва
-                      userName:
+                      text:
                         type: string
-                        description: Имя автора отзыва
-                        nullable: false
+                        description: Текст отзыва
                       pros:
                         type: string
                         description: Достоинства товара
@@ -1423,9 +1423,6 @@ paths:
                           - `ок` - соответствует размеру
                           - `smaller` - маломерит
                           - `bigger` - большемерит
-                      text:
-                        type: string
-                        description: Текст отзыва
                       productValuation:
                         type: integer
                         description: Оценка товара
@@ -1502,6 +1499,19 @@ paths:
                             miniSize:
                               type: string
                               description: Адрес фотографии маленького размера
+                      userName:
+                        type: string
+                        description: Имя автора отзыва
+                        nullable: false
+                      orderStatus:
+                        type: string
+                        description: |
+                          Статус заказа.
+                          <br>Возможные значения:
+                          - `buyout` — выкуплен
+                          - `rejected` — отказались
+                          - `returned` — возврат
+                          - `notSpecified` — статус не присвоен
                       video:
                         nullable: true
                         description: Структура видео
@@ -1621,6 +1631,7 @@ paths:
                     - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.jpg
                       miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.jpg
                   userName: Николай
+                  orderStatus: returned
                   matchingSize: ok
                   isAbleSupplierFeedbackValuation: false
                   supplierFeedbackValuation: 1
@@ -1769,6 +1780,7 @@ paths:
                         - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.jpg
                           miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.jpg
                       userName: Николай
+                      orderStatus: returned
                       matchingSize: ok
                       isAbleSupplierFeedbackValuation: false
                       supplierFeedbackValuation: 1
@@ -3018,17 +3030,26 @@ components:
           userName:
             type: string
             description: Имя автора отзыва
+          orderStatus:
+            type: string
+            description: |
+              Статус заказа.
+              <br>Возможные значения:
+              - `buyout` — выкуплен
+              - `rejected` — отказались
+              - `returned` — возврат
+              - `notSpecified` — статус не присвоен
           matchingSize:
             type: string
             description: |
               Соответствие заявленного размера реальному.
               <br>Возможные значения:
-              - ` ` - для безразмерных товаров
-              - `ок` - соответствует размеру
-              - `smaller` - маломерит
-              - `bigger` - большемерит
+              - ` ` — для безразмерных товаров
+              - `ок` — соответствует размеру
+              - `smaller` — маломерит
+              - `bigger` — большемерит
           isAbleSupplierFeedbackValuation:
-            description: Доступна ли продавцу возможность оставить жалобу на отзыв (`true` - доступна, `false` - не доступна)
+            description: Доступна ли продавцу возможность оставить жалобу на отзыв (`true` — доступна, `false` — не доступна)
             type: boolean
           supplierFeedbackValuation:
             description: |
