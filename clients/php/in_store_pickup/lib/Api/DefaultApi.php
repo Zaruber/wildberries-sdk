@@ -74,6 +74,42 @@ class DefaultApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
+        'apiMarketplaceV3ClickCollectOrdersMetaDeletePost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersMetaGtinPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersMetaImeiPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersMetaInfoPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersMetaSgtinPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersMetaUinPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersStatusCancelPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersStatusConfirmPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersStatusInfoPost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersStatusPreparePost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersStatusReceivePost' => [
+            'application/json',
+        ],
+        'apiMarketplaceV3ClickCollectOrdersStatusRejectPost' => [
+            'application/json',
+        ],
         'apiV3ClickCollectOrdersClientIdentityPost' => [
             'application/json',
         ],
@@ -168,6 +204,3900 @@ class DefaultApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaDeletePost
+     *
+     * Удалить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaDeleteRequest|null $api_orders_meta_delete_request api_orders_meta_delete_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaDeletePost($api_orders_meta_delete_request = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersMetaDeletePostWithHttpInfo($api_orders_meta_delete_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaDeletePostWithHttpInfo
+     *
+     * Удалить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaDeleteRequest|null $api_orders_meta_delete_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaDeletePostWithHttpInfo($api_orders_meta_delete_request = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaDeletePostRequest($api_orders_meta_delete_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaDeletePostAsync
+     *
+     * Удалить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaDeleteRequest|null $api_orders_meta_delete_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaDeletePostAsync($api_orders_meta_delete_request = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersMetaDeletePostAsyncWithHttpInfo($api_orders_meta_delete_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaDeletePostAsyncWithHttpInfo
+     *
+     * Удалить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaDeleteRequest|null $api_orders_meta_delete_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaDeletePostAsyncWithHttpInfo($api_orders_meta_delete_request = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaDeletePostRequest($api_orders_meta_delete_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersMetaDeletePost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaDeleteRequest|null $api_orders_meta_delete_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaDeletePostRequest($api_orders_meta_delete_request = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'][0])
+    {
+
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/meta/delete';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_meta_delete_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_meta_delete_request));
+            } else {
+                $httpBody = $api_orders_meta_delete_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaGtinPost
+     *
+     * Закрепить GTIN за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersGTINSetRequest $api_orders_gtin_set_request api_orders_gtin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaGtinPost($api_orders_gtin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersMetaGtinPostWithHttpInfo($api_orders_gtin_set_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaGtinPostWithHttpInfo
+     *
+     * Закрепить GTIN за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersGTINSetRequest $api_orders_gtin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaGtinPostWithHttpInfo($api_orders_gtin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaGtinPostRequest($api_orders_gtin_set_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaGtinPostAsync
+     *
+     * Закрепить GTIN за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersGTINSetRequest $api_orders_gtin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaGtinPostAsync($api_orders_gtin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersMetaGtinPostAsyncWithHttpInfo($api_orders_gtin_set_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaGtinPostAsyncWithHttpInfo
+     *
+     * Закрепить GTIN за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersGTINSetRequest $api_orders_gtin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaGtinPostAsyncWithHttpInfo($api_orders_gtin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaGtinPostRequest($api_orders_gtin_set_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersMetaGtinPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersGTINSetRequest $api_orders_gtin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaGtinPostRequest($api_orders_gtin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'][0])
+    {
+
+        // verify the required parameter 'api_orders_gtin_set_request' is set
+        if ($api_orders_gtin_set_request === null || (is_array($api_orders_gtin_set_request) && count($api_orders_gtin_set_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $api_orders_gtin_set_request when calling apiMarketplaceV3ClickCollectOrdersMetaGtinPost'
+            );
+        }
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/meta/gtin';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_gtin_set_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_gtin_set_request));
+            } else {
+                $httpBody = $api_orders_gtin_set_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaImeiPost
+     *
+     * Закрепить IMEI за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersIMEISetRequest $api_orders_imei_set_request api_orders_imei_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaImeiPost($api_orders_imei_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersMetaImeiPostWithHttpInfo($api_orders_imei_set_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaImeiPostWithHttpInfo
+     *
+     * Закрепить IMEI за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersIMEISetRequest $api_orders_imei_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaImeiPostWithHttpInfo($api_orders_imei_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaImeiPostRequest($api_orders_imei_set_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaImeiPostAsync
+     *
+     * Закрепить IMEI за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersIMEISetRequest $api_orders_imei_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaImeiPostAsync($api_orders_imei_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersMetaImeiPostAsyncWithHttpInfo($api_orders_imei_set_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaImeiPostAsyncWithHttpInfo
+     *
+     * Закрепить IMEI за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersIMEISetRequest $api_orders_imei_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaImeiPostAsyncWithHttpInfo($api_orders_imei_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaImeiPostRequest($api_orders_imei_set_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersMetaImeiPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersIMEISetRequest $api_orders_imei_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaImeiPostRequest($api_orders_imei_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'][0])
+    {
+
+        // verify the required parameter 'api_orders_imei_set_request' is set
+        if ($api_orders_imei_set_request === null || (is_array($api_orders_imei_set_request) && count($api_orders_imei_set_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $api_orders_imei_set_request when calling apiMarketplaceV3ClickCollectOrdersMetaImeiPost'
+            );
+        }
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/meta/imei';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_imei_set_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_imei_set_request));
+            } else {
+                $httpBody = $api_orders_imei_set_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaInfoPost
+     *
+     * Получить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaInfoPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersMetaInfoPostWithHttpInfo($api_orders_request_v2, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaInfoPostWithHttpInfo
+     *
+     * Получить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaInfoPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaInfoPostRequest($api_orders_request_v2, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaInfoPostAsync
+     *
+     * Получить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaInfoPostAsync($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersMetaInfoPostAsyncWithHttpInfo($api_orders_request_v2, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaInfoPostAsyncWithHttpInfo
+     *
+     * Получить метаданные сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaInfoPostAsyncWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaInfoPostRequest($api_orders_request_v2, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersMetaInfoPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaInfoPostRequest($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'][0])
+    {
+
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/meta/info';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_request_v2)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_request_v2));
+            } else {
+                $httpBody = $api_orders_request_v2;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPost
+     *
+     * Закрепить коды маркировки товара за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request api_orders_sgtins_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaSgtinPost($api_orders_sgtins_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersMetaSgtinPostWithHttpInfo($api_orders_sgtins_set_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPostWithHttpInfo
+     *
+     * Закрепить коды маркировки товара за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaSgtinPostWithHttpInfo($api_orders_sgtins_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaSgtinPostRequest($api_orders_sgtins_set_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPostAsync
+     *
+     * Закрепить коды маркировки товара за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaSgtinPostAsync($api_orders_sgtins_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersMetaSgtinPostAsyncWithHttpInfo($api_orders_sgtins_set_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPostAsyncWithHttpInfo
+     *
+     * Закрепить коды маркировки товара за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaSgtinPostAsyncWithHttpInfo($api_orders_sgtins_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaSgtinPostRequest($api_orders_sgtins_set_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaSgtinPostRequest($api_orders_sgtins_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'][0])
+    {
+
+        // verify the required parameter 'api_orders_sgtins_set_request' is set
+        if ($api_orders_sgtins_set_request === null || (is_array($api_orders_sgtins_set_request) && count($api_orders_sgtins_set_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $api_orders_sgtins_set_request when calling apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'
+            );
+        }
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/meta/sgtin';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_sgtins_set_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_sgtins_set_request));
+            } else {
+                $httpBody = $api_orders_sgtins_set_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaUinPost
+     *
+     * Закрепить УИН за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersUINSetRequest $api_orders_uin_set_request api_orders_uin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaUinPost($api_orders_uin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersMetaUinPostWithHttpInfo($api_orders_uin_set_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaUinPostWithHttpInfo
+     *
+     * Закрепить УИН за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersUINSetRequest $api_orders_uin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaUinPostWithHttpInfo($api_orders_uin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaUinPostRequest($api_orders_uin_set_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaUinPostAsync
+     *
+     * Закрепить УИН за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersUINSetRequest $api_orders_uin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaUinPostAsync($api_orders_uin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersMetaUinPostAsyncWithHttpInfo($api_orders_uin_set_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersMetaUinPostAsyncWithHttpInfo
+     *
+     * Закрепить УИН за сборочными заданиями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersUINSetRequest $api_orders_uin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaUinPostAsyncWithHttpInfo($api_orders_uin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersMetaUinPostRequest($api_orders_uin_set_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersMetaUinPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersUINSetRequest $api_orders_uin_set_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersMetaUinPostRequest($api_orders_uin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'][0])
+    {
+
+        // verify the required parameter 'api_orders_uin_set_request' is set
+        if ($api_orders_uin_set_request === null || (is_array($api_orders_uin_set_request) && count($api_orders_uin_set_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $api_orders_uin_set_request when calling apiMarketplaceV3ClickCollectOrdersMetaUinPost'
+            );
+        }
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/meta/uin';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_uin_set_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_uin_set_request));
+            } else {
+                $httpBody = $api_orders_uin_set_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusCancelPost
+     *
+     * Отменить сборочные задания
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusCancelPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersStatusCancelPostWithHttpInfo($api_orders_request_v2, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusCancelPostWithHttpInfo
+     *
+     * Отменить сборочные задания
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusCancelPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusCancelPostRequest($api_orders_request_v2, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusCancelPostAsync
+     *
+     * Отменить сборочные задания
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusCancelPostAsync($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersStatusCancelPostAsyncWithHttpInfo($api_orders_request_v2, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusCancelPostAsyncWithHttpInfo
+     *
+     * Отменить сборочные задания
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusCancelPostAsyncWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusCancelPostRequest($api_orders_request_v2, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersStatusCancelPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusCancelPostRequest($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'][0])
+    {
+
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/status/cancel';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_request_v2)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_request_v2));
+            } else {
+                $httpBody = $api_orders_request_v2;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusConfirmPost
+     *
+     * Перевести сборочные задания на сборку
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusConfirmPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersStatusConfirmPostWithHttpInfo($api_orders_request_v2, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusConfirmPostWithHttpInfo
+     *
+     * Перевести сборочные задания на сборку
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusConfirmPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusConfirmPostRequest($api_orders_request_v2, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusConfirmPostAsync
+     *
+     * Перевести сборочные задания на сборку
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusConfirmPostAsync($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersStatusConfirmPostAsyncWithHttpInfo($api_orders_request_v2, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusConfirmPostAsyncWithHttpInfo
+     *
+     * Перевести сборочные задания на сборку
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusConfirmPostAsyncWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusConfirmPostRequest($api_orders_request_v2, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusConfirmPostRequest($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'][0])
+    {
+
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/status/confirm';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_request_v2)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_request_v2));
+            } else {
+                $httpBody = $api_orders_request_v2;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusInfoPost
+     *
+     * Получить статусы сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2 $api_orders_request_v2 api_orders_request_v2 (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusInfoPost($api_orders_request_v2, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersStatusInfoPostWithHttpInfo($api_orders_request_v2, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusInfoPostWithHttpInfo
+     *
+     * Получить статусы сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2 $api_orders_request_v2 (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusInfoPostWithHttpInfo($api_orders_request_v2, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusInfoPostRequest($api_orders_request_v2, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusInfoPostAsync
+     *
+     * Получить статусы сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2 $api_orders_request_v2 (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusInfoPostAsync($api_orders_request_v2, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersStatusInfoPostAsyncWithHttpInfo($api_orders_request_v2, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusInfoPostAsyncWithHttpInfo
+     *
+     * Получить статусы сборочных заданий
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2 $api_orders_request_v2 (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusInfoPostAsyncWithHttpInfo($api_orders_request_v2, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusInfoPostRequest($api_orders_request_v2, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersStatusInfoPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2 $api_orders_request_v2 (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusInfoPostRequest($api_orders_request_v2, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'][0])
+    {
+
+        // verify the required parameter 'api_orders_request_v2' is set
+        if ($api_orders_request_v2 === null || (is_array($api_orders_request_v2) && count($api_orders_request_v2) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $api_orders_request_v2 when calling apiMarketplaceV3ClickCollectOrdersStatusInfoPost'
+            );
+        }
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/status/info';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_request_v2)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_request_v2));
+            } else {
+                $httpBody = $api_orders_request_v2;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusPreparePost
+     *
+     * Сообщить, что сборочные задания готовы к выдаче
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusPreparePost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersStatusPreparePostWithHttpInfo($api_orders_request_v2, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusPreparePostWithHttpInfo
+     *
+     * Сообщить, что сборочные задания готовы к выдаче
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusPreparePostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusPreparePostRequest($api_orders_request_v2, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusPreparePostAsync
+     *
+     * Сообщить, что сборочные задания готовы к выдаче
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusPreparePostAsync($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersStatusPreparePostAsyncWithHttpInfo($api_orders_request_v2, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusPreparePostAsyncWithHttpInfo
+     *
+     * Сообщить, что сборочные задания готовы к выдаче
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusPreparePostAsyncWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusPreparePostRequest($api_orders_request_v2, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersStatusPreparePost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusPreparePostRequest($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'][0])
+    {
+
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/status/prepare';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_request_v2)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_request_v2));
+            } else {
+                $httpBody = $api_orders_request_v2;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusReceivePost
+     *
+     * Сообщить, что заказы приняты покупателями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusReceivePost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersStatusReceivePostWithHttpInfo($api_orders_request_v2, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusReceivePostWithHttpInfo
+     *
+     * Сообщить, что заказы приняты покупателями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusReceivePostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusReceivePostRequest($api_orders_request_v2, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusReceivePostAsync
+     *
+     * Сообщить, что заказы приняты покупателями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusReceivePostAsync($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersStatusReceivePostAsyncWithHttpInfo($api_orders_request_v2, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusReceivePostAsyncWithHttpInfo
+     *
+     * Сообщить, что заказы приняты покупателями
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusReceivePostAsyncWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusReceivePostRequest($api_orders_request_v2, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersStatusReceivePost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusReceivePostRequest($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'][0])
+    {
+
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/status/receive';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_request_v2)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_request_v2));
+            } else {
+                $httpBody = $api_orders_request_v2;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusRejectPost
+     *
+     * Сообщить об отказе от заказов
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusRejectPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'][0])
+    {
+        list($response) = $this->apiMarketplaceV3ClickCollectOrdersStatusRejectPostWithHttpInfo($api_orders_request_v2, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusRejectPostWithHttpInfo
+     *
+     * Сообщить об отказе от заказов
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusRejectPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'][0])
+    {
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusRejectPostRequest($api_orders_request_v2, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiBatchError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusRejectPostAsync
+     *
+     * Сообщить об отказе от заказов
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusRejectPostAsync($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'][0])
+    {
+        return $this->apiMarketplaceV3ClickCollectOrdersStatusRejectPostAsyncWithHttpInfo($api_orders_request_v2, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMarketplaceV3ClickCollectOrdersStatusRejectPostAsyncWithHttpInfo
+     *
+     * Сообщить об отказе от заказов
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusRejectPostAsyncWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'][0])
+    {
+        $returnType = '\Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses';
+        $request = $this->apiMarketplaceV3ClickCollectOrdersStatusRejectPostRequest($api_orders_request_v2, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMarketplaceV3ClickCollectOrdersStatusRejectPost'
+     *
+     * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersRequestV2|null $api_orders_request_v2 (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apiMarketplaceV3ClickCollectOrdersStatusRejectPostRequest($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'][0])
+    {
+
+
+
+        $resourcePath = '/api/marketplace/v3/click-collect/orders/status/reject';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($api_orders_request_v2)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($api_orders_request_v2));
+            } else {
+                $httpBody = $api_orders_request_v2;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
     /**
@@ -1559,6 +5489,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdCancelPatch($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdCancelPatch'][0])
     {
@@ -1576,6 +5507,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdCancelPatchWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdCancelPatch'][0])
     {
@@ -1672,6 +5604,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdCancelPatchAsync($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdCancelPatch'][0])
     {
@@ -1693,6 +5626,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdCancelPatchAsyncWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdCancelPatch'][0])
     {
@@ -1730,6 +5664,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdCancelPatchRequest($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdCancelPatch'][0])
     {
@@ -1830,6 +5765,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdConfirmPatch($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdConfirmPatch'][0])
     {
@@ -1847,6 +5783,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdConfirmPatchWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdConfirmPatch'][0])
     {
@@ -1943,6 +5880,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdConfirmPatchAsync($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdConfirmPatch'][0])
     {
@@ -1964,6 +5902,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdConfirmPatchAsyncWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdConfirmPatch'][0])
     {
@@ -2001,6 +5940,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdConfirmPatchRequest($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdConfirmPatch'][0])
     {
@@ -2102,6 +6042,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaDelete($order_id, $key, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaDelete'][0])
     {
@@ -2120,6 +6061,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaDeleteWithHttpInfo($order_id, $key, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaDelete'][0])
     {
@@ -2201,6 +6143,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaDeleteAsync($order_id, $key, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaDelete'][0])
     {
@@ -2223,6 +6166,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaDeleteAsyncWithHttpInfo($order_id, $key, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaDelete'][0])
     {
@@ -2261,6 +6205,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaDeleteRequest($order_id, $key, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaDelete'][0])
     {
@@ -2377,6 +6322,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMeta|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGet($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGet'][0])
     {
@@ -2395,6 +6341,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMeta|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGetWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGet'][0])
     {
@@ -2535,6 +6482,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGetAsync($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGet'][0])
     {
@@ -2556,6 +6504,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGetAsyncWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGet'][0])
     {
@@ -2606,6 +6555,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGetRequest($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGet'][0])
     {
@@ -2707,6 +6657,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGtinPut($order_id, $api_gtin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGtinPut'][0])
     {
@@ -2725,6 +6676,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGtinPutWithHttpInfo($order_id, $api_gtin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGtinPut'][0])
     {
@@ -2822,6 +6774,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGtinPutAsync($order_id, $api_gtin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGtinPut'][0])
     {
@@ -2844,6 +6797,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGtinPutAsyncWithHttpInfo($order_id, $api_gtin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGtinPut'][0])
     {
@@ -2882,6 +6836,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaGtinPutRequest($order_id, $api_gtin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaGtinPut'][0])
     {
@@ -2997,6 +6952,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaImeiPut($order_id, $api_imei_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaImeiPut'][0])
     {
@@ -3015,6 +6971,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaImeiPutWithHttpInfo($order_id, $api_imei_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaImeiPut'][0])
     {
@@ -3112,6 +7069,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaImeiPutAsync($order_id, $api_imei_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaImeiPut'][0])
     {
@@ -3134,6 +7092,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaImeiPutAsyncWithHttpInfo($order_id, $api_imei_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaImeiPut'][0])
     {
@@ -3172,6 +7131,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaImeiPutRequest($order_id, $api_imei_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaImeiPut'][0])
     {
@@ -3287,6 +7247,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaSgtinPut($order_id, $api_sgtins_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaSgtinPut'][0])
     {
@@ -3305,6 +7266,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaSgtinPutWithHttpInfo($order_id, $api_sgtins_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaSgtinPut'][0])
     {
@@ -3402,6 +7364,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaSgtinPutAsync($order_id, $api_sgtins_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaSgtinPut'][0])
     {
@@ -3424,6 +7387,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaSgtinPutAsyncWithHttpInfo($order_id, $api_sgtins_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaSgtinPut'][0])
     {
@@ -3462,6 +7426,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaSgtinPutRequest($order_id, $api_sgtins_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaSgtinPut'][0])
     {
@@ -3577,6 +7542,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaUinPut($order_id, $api_uin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaUinPut'][0])
     {
@@ -3595,6 +7561,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaUinPutWithHttpInfo($order_id, $api_uin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaUinPut'][0])
     {
@@ -3692,6 +7659,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaUinPutAsync($order_id, $api_uin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaUinPut'][0])
     {
@@ -3714,6 +7682,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaUinPutAsyncWithHttpInfo($order_id, $api_uin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaUinPut'][0])
     {
@@ -3752,6 +7721,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdMetaUinPutRequest($order_id, $api_uin_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdMetaUinPut'][0])
     {
@@ -3866,6 +7836,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdPreparePatch($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdPreparePatch'][0])
     {
@@ -3883,6 +7854,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdPreparePatchWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdPreparePatch'][0])
     {
@@ -3979,6 +7951,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdPreparePatchAsync($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdPreparePatch'][0])
     {
@@ -4000,6 +7973,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdPreparePatchAsyncWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdPreparePatch'][0])
     {
@@ -4037,6 +8011,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdPreparePatchRequest($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdPreparePatch'][0])
     {
@@ -4137,6 +8112,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdReceivePatch($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdReceivePatch'][0])
     {
@@ -4154,6 +8130,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdReceivePatchWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdReceivePatch'][0])
     {
@@ -4250,6 +8227,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdReceivePatchAsync($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdReceivePatch'][0])
     {
@@ -4271,6 +8249,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdReceivePatchAsyncWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdReceivePatch'][0])
     {
@@ -4308,6 +8287,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdReceivePatchRequest($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdReceivePatch'][0])
     {
@@ -4408,6 +8388,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdRejectPatch($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdRejectPatch'][0])
     {
@@ -4425,6 +8406,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdRejectPatchWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdRejectPatch'][0])
     {
@@ -4521,6 +8503,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdRejectPatchAsync($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdRejectPatch'][0])
     {
@@ -4542,6 +8525,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdRejectPatchAsyncWithHttpInfo($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdRejectPatch'][0])
     {
@@ -4579,6 +8563,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersOrderIdRejectPatchRequest($order_id, string $contentType = self::contentTypes['apiV3ClickCollectOrdersOrderIdRejectPatch'][0])
     {
@@ -4679,6 +8664,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatuses|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersStatusPost($api_orders_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersStatusPost'][0])
     {
@@ -4697,6 +8683,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatuses|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersStatusPostWithHttpInfo($api_orders_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersStatusPost'][0])
     {
@@ -4837,6 +8824,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersStatusPostAsync($api_orders_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersStatusPost'][0])
     {
@@ -4858,6 +8846,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersStatusPostAsyncWithHttpInfo($api_orders_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersStatusPost'][0])
     {
@@ -4908,6 +8897,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV3ClickCollectOrdersStatusPostRequest($api_orders_request, string $contentType = self::contentTypes['apiV3ClickCollectOrdersStatusPost'][0])
     {

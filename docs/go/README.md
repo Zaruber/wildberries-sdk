@@ -183,6 +183,18 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersStatusPost` — `POST /api/v3/dbs/orders/status` — Получить статусы сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaDeletePost` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaGtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaImeiPost` — `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaInfoPost` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить метаданные сборочных заданий
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaSgtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки товара за сборочными заданиями
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaUinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersStatusCancelPost` — `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersStatusConfirmPost` — `POST /api/marketplace/v3/click-collect/orders/status/confirm` — Перевести сборочные задания на сборку
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersStatusInfoPost` — `POST /api/marketplace/v3/click-collect/orders/status/info` — Получить статусы сборочных заданий
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersStatusPreparePost` — `POST /api/marketplace/v3/click-collect/orders/status/prepare` — Сообщить, что сборочные задания готовы к выдаче
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersStatusReceivePost` — `POST /api/marketplace/v3/click-collect/orders/status/receive` — Сообщить, что заказы приняты покупателями
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersStatusRejectPost` — `POST /api/marketplace/v3/click-collect/orders/status/reject` — Сообщить об отказе от заказов
 - `in_store_pickup.DefaultApiService.ApiV3ClickCollectOrdersClientIdentityPost` — `POST /api/v3/click-collect/orders/client/identity` — Проверить, что заказ принадлежит покупателю
 - `in_store_pickup.DefaultApiService.ApiV3ClickCollectOrdersClientPost` — `POST /api/v3/click-collect/orders/client` — Информация о покупателе
 - `in_store_pickup.DefaultApiService.ApiV3ClickCollectOrdersGet` — `GET /api/v3/click-collect/orders` — Получить информацию о завершённых сборочных заданиях

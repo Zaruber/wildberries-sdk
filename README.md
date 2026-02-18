@@ -191,6 +191,18 @@
 - `PATCH /api/v3/dbs/orders/{orderId}/reject` — Сообщить, что покупатель отказался от заказа
 
 ### Заказы Самовывоз (`06-in-store-pickup.yaml`)
+- `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
+- `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
+- `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки товара за сборочными заданиями
+- `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
+- `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания
+- `POST /api/marketplace/v3/click-collect/orders/status/confirm` — Перевести сборочные задания на сборку
+- `POST /api/marketplace/v3/click-collect/orders/status/info` — Получить статусы сборочных заданий
+- `POST /api/marketplace/v3/click-collect/orders/status/prepare` — Сообщить, что сборочные задания готовы к выдаче
+- `POST /api/marketplace/v3/click-collect/orders/status/receive` — Сообщить, что заказы приняты покупателями
+- `POST /api/marketplace/v3/click-collect/orders/status/reject` — Сообщить об отказе от заказов
 - `GET /api/v3/click-collect/orders` — Получить информацию о завершённых сборочных заданиях
 - `POST /api/v3/click-collect/orders/client` — Информация о покупателе
 - `POST /api/v3/click-collect/orders/client/identity` — Проверить, что заказ принадлежит покупателю

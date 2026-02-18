@@ -182,6 +182,18 @@ main().catch(console.error);
 - `orders_dbs.DBSApi.apiV3DbsOrdersStatusPost` — Получить статусы сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaDeletePost` — Удалить метаданные сборочных заданий
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaGtinPost` — Закрепить GTIN за сборочными заданиями
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaImeiPost` — Закрепить IMEI за сборочными заданиями
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaInfoPost` — Получить метаданные сборочных заданий
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaSgtinPost` — Закрепить коды маркировки товара за сборочными заданиями
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaUinPost` — Закрепить УИН за сборочными заданиями
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusCancelPost` — Отменить сборочные задания
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusConfirmPost` — Перевести сборочные задания на сборку
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusInfoPost` — Получить статусы сборочных заданий
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusPreparePost` — Сообщить, что сборочные задания готовы к выдаче
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusReceivePost` — Сообщить, что заказы приняты покупателями
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusRejectPost` — Сообщить об отказе от заказов
 - `in_store_pickup.DefaultApi.apiV3ClickCollectOrdersClientIdentityPost` — Проверить, что заказ принадлежит покупателю
 - `in_store_pickup.DefaultApi.apiV3ClickCollectOrdersClientPost` — Информация о покупателе
 - `in_store_pickup.DefaultApi.apiV3ClickCollectOrdersGet` — Получить информацию о завершённых сборочных заданиях
