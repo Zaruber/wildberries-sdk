@@ -1,6 +1,16 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.02.18)
+- Сборочные задания Самовывоз: добавлены batch-эндпоинты смены статуса (POST) с телом `api.OrdersRequestV2(ordersIds[])` и ответом `api.StatusSetResponses`: `/api/marketplace/v3/click-collect/orders/status/confirm` (new→confirm), `/status/prepare` (confirm→prepare), `/status/receive` (prepare→receive), `/status/reject` (prepare→reject), `/status/cancel` (new|confirm|prepare→cancel); лимит для этих методов изменён на 1 запрос/сек (burst 10), при 409 запрос считается за 10
+- Сборочные задания Самовывоз: добавлен новый метод получения статусов по списку ID — `POST /api/marketplace/v3/click-collect/orders/status/info` (request `api.OrdersRequestV2`, response `api.OrderStatusesV2`); лимит 1 запрос/сек (burst 10), 409=10 запросов
+- Сборочные задания Самовывоз: помечены как устаревшие и запланированы к удалению 19 мая старые single-order методы (PATCH): `/api/v3/click-collect/orders/{orderId}/confirm`, `/prepare`, `/receive`, `/reject`, а также `POST /api/v3/click-collect/orders/status`
+- Метаданные Самовывоз: добавлены batch-эндпоинты (POST) — `/api/marketplace/v3/click-collect/orders/meta/info` (получение метаданных, response `api.OrdersMetaResponse`) и `/meta/delete` (удаление метаданных по `key` для списка `ordersIds`, request `api.OrdersMetaDeleteRequest`, response `api.OrdersResponses`); общий лимит для получения/удаления метаданных: 150 запросов/мин (интервал 400 мс, burst 20), 409=10 запросов
+- Метаданные Самовывоз: добавлены batch-эндпоинты закрепления метаданных (POST) — `/meta/sgtin` (`api.OrdersSGTINsSetRequest`), `/meta/uin` (`api.OrdersUINSetRequest`), `/meta/imei` (`api.OrdersIMEISetRequest`), `/meta/gtin` (`api.OrdersGTINSetRequest`), ответы `api.MetaSetResponses`; лимит для закрепления метаданных: 20 запросов/мин (интервал 3 сек, burst 500), 409=10 запросов
+- Метаданные Самовывоз: помечены как устаревшие и запланированы к удалению 19 мая старые single-order методы: `GET /api/v3/click-collect/orders/{orderId}/meta`, `DELETE /api/v3/click-collect/orders/{orderId}/meta`, `PATCH /api/v3/click-collect/orders/{orderId}/meta/sgtins`, `/meta/uin`, `/meta/imei`, `/meta/gtin`
+- Схемы/контракты: добавлены новые модели для batch-операций и ошибок (`api.OrdersRequestV2`, `api.StatusSetResponses`, `api.OrderStatusesV2`, `api.OrdersMetaResponse`, `api.OrdersMetaDeleteRequest`, `api.MetaSetResponses`, `api.BatchError*`, `api.*ErrorResponse`) и новые ответы `IncorrectRequest` и `AccessDeniedBatch` (для batch-методов)
+- Схемы/примеры: обновлены примеры `api.GTINRequest`, `api.IMEIRequest`, `api.UINRequest` — значения больше не массивы, а строки (`gtin`, `imei`, `uin`)
+
 ### Changed (2026.02.17)
 - Самовывоз: в методе обновления IMEI для сборочного задания уточнено ограничение по статусам — теперь IMEI можно добавлять только для заданий в статусе `confirm` (ранее `confirm` и `prepare`) при доставке силами WB
 - Самовывоз: описание поля `availableMeta` упрощено — удалено примечание про обязательность IMEI для предмета «Смартфоны» (`subjectId: 515`) и ссылки на связанные методы/разделы
