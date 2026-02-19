@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.02.19)
+- Products: в ответах ошибок для метода управления остатками/складом удалены примеры `SubjectDBSRestriction` и `SubjectFBSRestriction`; добавлены новые примеры ошибок `ProductPropertyConflict` (оптовый товар доступен только по схеме DBS) и `DeliveryTypeRestriction` (категория недоступна для выбранного типа доставки, возвращает `data` со `sku/chrtId/amount`).
+- Orders FBW (Поставки): удалён (ранее `deprecated`) endpoint `GET /api/v1/acceptance/coefficients` на домене `supplies-api.wildberries.ru` (коэффициенты приёмки; в описании был указан перенос в Tariffs API).
+
 ### Changed (2026.02.18)
 - Сборочные задания Самовывоз: добавлены batch-эндпоинты смены статуса (POST) с телом `api.OrdersRequestV2(ordersIds[])` и ответом `api.StatusSetResponses`: `/api/marketplace/v3/click-collect/orders/status/confirm` (new→confirm), `/status/prepare` (confirm→prepare), `/status/receive` (prepare→receive), `/status/reject` (prepare→reject), `/status/cancel` (new|confirm|prepare→cancel); лимит для этих методов изменён на 1 запрос/сек (burst 10), при 409 запрос считается за 10
 - Сборочные задания Самовывоз: добавлен новый метод получения статусов по списку ID — `POST /api/marketplace/v3/click-collect/orders/status/info` (request `api.OrdersRequestV2`, response `api.OrderStatusesV2`); лимит 1 запрос/сек (burst 10), 409=10 запросов
