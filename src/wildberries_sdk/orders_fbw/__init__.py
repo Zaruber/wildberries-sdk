@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.44"
+__version__ = "0.1.45"
 
 # Define package exports
 __all__ = [
@@ -28,7 +28,7 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
-    "ApiV1AcceptanceCoefficientsGet401Response",
+    "ApiV1AcceptanceOptionsPost401Response",
     "ModelsAcceptanceCoefficient",
     "ModelsBox",
     "ModelsDateFilterRequest",
@@ -64,7 +64,7 @@ from wildberries_sdk.orders_fbw.exceptions import ApiAttributeError as ApiAttrib
 from wildberries_sdk.orders_fbw.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from wildberries_sdk.orders_fbw.models.api_v1_acceptance_coefficients_get401_response import ApiV1AcceptanceCoefficientsGet401Response as ApiV1AcceptanceCoefficientsGet401Response
+from wildberries_sdk.orders_fbw.models.api_v1_acceptance_options_post401_response import ApiV1AcceptanceOptionsPost401Response as ApiV1AcceptanceOptionsPost401Response
 from wildberries_sdk.orders_fbw.models.models_acceptance_coefficient import ModelsAcceptanceCoefficient as ModelsAcceptanceCoefficient
 from wildberries_sdk.orders_fbw.models.models_box import ModelsBox as ModelsBox
 from wildberries_sdk.orders_fbw.models.models_date_filter_request import ModelsDateFilterRequest as ModelsDateFilterRequest

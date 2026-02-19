@@ -1,5 +1,5 @@
-pub mod _api_v1_acceptance_coefficients_get_401_response;
-pub use self::_api_v1_acceptance_coefficients_get_401_response::ApiV1AcceptanceCoefficientsGet401Response;
+pub mod _api_v1_acceptance_options_post_401_response;
+pub use self::_api_v1_acceptance_options_post_401_response::ApiV1AcceptanceOptionsPost401Response;
 pub mod models_acceptance_coefficient;
 pub use self::models_acceptance_coefficient::ModelsAcceptanceCoefficient;
 pub mod models_box;

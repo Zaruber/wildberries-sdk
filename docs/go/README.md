@@ -213,7 +213,6 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `in_store_pickup.DefaultApiService.ApiV3ClickCollectOrdersStatusPost` — `POST /api/v3/click-collect/orders/status` — Получить статусы сборочных заданий
 
 ### orders_fbw (`orders_fbw`)
-- `orders_fbw.DefaultApiService.ApiV1AcceptanceCoefficientsGet` — `GET /api/v1/acceptance/coefficients` — Коэффициенты приёмки
 - `orders_fbw.DefaultApiService.ApiV1AcceptanceOptionsPost` — `POST /api/v1/acceptance/options` — Опции приёмки
 - `orders_fbw.DefaultApiService.ApiV1SuppliesIDGet` — `GET /api/v1/supplies/{ID}` — Детали поставки
 - `orders_fbw.DefaultApiService.ApiV1SuppliesIDGoodsGet` — `GET /api/v1/supplies/{ID}/goods` — Товары поставки

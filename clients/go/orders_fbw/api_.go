@@ -23,175 +23,6 @@ import (
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
-type ApiApiV1AcceptanceCoefficientsGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	warehouseIDs *string
-}
-
-// ID складов.&lt;br&gt;По умолчанию возвращаются данные по всем складам
-func (r ApiApiV1AcceptanceCoefficientsGetRequest) WarehouseIDs(warehouseIDs string) ApiApiV1AcceptanceCoefficientsGetRequest {
-	r.warehouseIDs = &warehouseIDs
-	return r
-}
-
-func (r ApiApiV1AcceptanceCoefficientsGetRequest) Execute() ([]ModelsAcceptanceCoefficient, *http.Response, error) {
-	return r.ApiService.ApiV1AcceptanceCoefficientsGetExecute(r)
-}
-
-/*
-ApiV1AcceptanceCoefficientsGet Коэффициенты приёмки
-
-Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории.
-
-Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)
-
-<div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
-
-| Период | Лимит | Интервал | Всплеск |
-| --- | --- | --- | --- |
-| 1 мин | 6 запросов | 10 сек | 6 запросов |
-</div>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiV1AcceptanceCoefficientsGetRequest
-
-Deprecated
-*/
-func (a *DefaultApiService) ApiV1AcceptanceCoefficientsGet(ctx context.Context) ApiApiV1AcceptanceCoefficientsGetRequest {
-	return ApiApiV1AcceptanceCoefficientsGetRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return []ModelsAcceptanceCoefficient
-// Deprecated
-func (a *DefaultApiService) ApiV1AcceptanceCoefficientsGetExecute(r ApiApiV1AcceptanceCoefficientsGetRequest) ([]ModelsAcceptanceCoefficient, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsAcceptanceCoefficient
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApiV1AcceptanceCoefficientsGet")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/acceptance/coefficients"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.warehouseIDs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "warehouseIDs", r.warehouseIDs, "form", "")
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["HeaderApiKey"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v ModelsErrorModel
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ApiApiV1AcceptanceOptionsPostRequest struct {
 	ctx context.Context
 	ApiService *DefaultApiService
@@ -335,7 +166,7 @@ func (a *DefaultApiService) ApiV1AcceptanceOptionsPostExecute(r ApiApiV1Acceptan
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -346,7 +177,7 @@ func (a *DefaultApiService) ApiV1AcceptanceOptionsPostExecute(r ApiApiV1Acceptan
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -507,7 +338,7 @@ func (a *DefaultApiService) ApiV1SuppliesIDGetExecute(r ApiApiV1SuppliesIDGetReq
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -529,7 +360,7 @@ func (a *DefaultApiService) ApiV1SuppliesIDGetExecute(r ApiApiV1SuppliesIDGetReq
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -718,7 +549,7 @@ func (a *DefaultApiService) ApiV1SuppliesIDGoodsGetExecute(r ApiApiV1SuppliesIDG
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -729,7 +560,7 @@ func (a *DefaultApiService) ApiV1SuppliesIDGoodsGetExecute(r ApiApiV1SuppliesIDG
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -876,7 +707,7 @@ func (a *DefaultApiService) ApiV1SuppliesIDPackageGetExecute(r ApiApiV1SuppliesI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -887,7 +718,7 @@ func (a *DefaultApiService) ApiV1SuppliesIDPackageGetExecute(r ApiApiV1SuppliesI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1069,7 +900,7 @@ func (a *DefaultApiService) ApiV1SuppliesPostExecute(r ApiApiV1SuppliesPostReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1080,7 +911,7 @@ func (a *DefaultApiService) ApiV1SuppliesPostExecute(r ApiApiV1SuppliesPostReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1212,7 +1043,7 @@ func (a *DefaultApiService) ApiV1TransitTariffsGetExecute(r ApiApiV1TransitTarif
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1223,7 +1054,7 @@ func (a *DefaultApiService) ApiV1TransitTariffsGetExecute(r ApiApiV1TransitTarif
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1355,7 +1186,7 @@ func (a *DefaultApiService) ApiV1WarehousesGetExecute(r ApiApiV1WarehousesGetReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1366,7 +1197,7 @@ func (a *DefaultApiService) ApiV1WarehousesGetExecute(r ApiApiV1WarehousesGetReq
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v ApiV1AcceptanceCoefficientsGet401Response
+			var v ApiV1AcceptanceOptionsPost401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

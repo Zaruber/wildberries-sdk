@@ -226,7 +226,6 @@ var_dump($response);
 - `in_store_pickup.DefaultApi.apiV3ClickCollectOrdersStatusPost` — `POST /api/v3/click-collect/orders/status` — Получить статусы сборочных заданий
 
 ### orders_fbw (`orders_fbw`)
-- `orders_fbw.DefaultApi.apiV1AcceptanceCoefficientsGet` — `GET /api/v1/acceptance/coefficients` — Коэффициенты приёмки
 - `orders_fbw.DefaultApi.apiV1AcceptanceOptionsPost` — `POST /api/v1/acceptance/options` — Опции приёмки
 - `orders_fbw.DefaultApi.apiV1SuppliesIDGet` — `GET /api/v1/supplies/{ID}` — Детали поставки
 - `orders_fbw.DefaultApi.apiV1SuppliesIDGoodsGet` — `GET /api/v1/supplies/{ID}/goods` — Товары поставки

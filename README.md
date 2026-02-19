@@ -221,7 +221,6 @@
 - `PATCH /api/v3/click-collect/orders/{orderId}/reject` — Сообщить, что покупатель отказался от заказа
 
 ### Поставки FBW (`07-orders-fbw.yaml`)
-- `GET /api/v1/acceptance/coefficients` — Коэффициенты приёмки
 - `POST /api/v1/acceptance/options` — Опции приёмки
 - `POST /api/v1/supplies` — Список поставок
 - `GET /api/v1/supplies/{ID}` — Детали поставки

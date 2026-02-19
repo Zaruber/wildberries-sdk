@@ -15,10 +15,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictInt
 from typing import List, Optional
 from typing_extensions import Annotated
-from wildberries_sdk.orders_fbw.models.models_acceptance_coefficient import ModelsAcceptanceCoefficient
 from wildberries_sdk.orders_fbw.models.models_box import ModelsBox
 from wildberries_sdk.orders_fbw.models.models_good import ModelsGood
 from wildberries_sdk.orders_fbw.models.models_good_in_supply import ModelsGoodInSupply
@@ -45,291 +44,6 @@ class DefaultApi:
         if api_client is None:
             api_client = ApiClient.get_default()
         self.api_client = api_client
-
-
-    @validate_call
-    def api_v1_acceptance_coefficients_get(
-        self,
-        warehouse_ids: Annotated[Optional[StrictStr], Field(description="ID складов.<br>По умолчанию возвращаются данные по всем складам")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> List[ModelsAcceptanceCoefficient]:
-        """(Deprecated) Коэффициенты приёмки
-
-        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
-
-        :param warehouse_ids: ID складов.<br>По умолчанию возвращаются данные по всем складам
-        :type warehouse_ids: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-        warnings.warn("GET /api/v1/acceptance/coefficients is deprecated.", DeprecationWarning)
-
-        _param = self._api_v1_acceptance_coefficients_get_serialize(
-            warehouse_ids=warehouse_ids,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ModelsAcceptanceCoefficient]",
-            '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '403': None,
-            '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def api_v1_acceptance_coefficients_get_with_http_info(
-        self,
-        warehouse_ids: Annotated[Optional[StrictStr], Field(description="ID складов.<br>По умолчанию возвращаются данные по всем складам")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> ApiResponse[List[ModelsAcceptanceCoefficient]]:
-        """(Deprecated) Коэффициенты приёмки
-
-        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
-
-        :param warehouse_ids: ID складов.<br>По умолчанию возвращаются данные по всем складам
-        :type warehouse_ids: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-        warnings.warn("GET /api/v1/acceptance/coefficients is deprecated.", DeprecationWarning)
-
-        _param = self._api_v1_acceptance_coefficients_get_serialize(
-            warehouse_ids=warehouse_ids,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ModelsAcceptanceCoefficient]",
-            '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '403': None,
-            '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def api_v1_acceptance_coefficients_get_without_preload_content(
-        self,
-        warehouse_ids: Annotated[Optional[StrictStr], Field(description="ID складов.<br>По умолчанию возвращаются данные по всем складам")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> RESTResponseType:
-        """(Deprecated) Коэффициенты приёмки
-
-        Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
-
-        :param warehouse_ids: ID складов.<br>По умолчанию возвращаются данные по всем складам
-        :type warehouse_ids: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-        warnings.warn("GET /api/v1/acceptance/coefficients is deprecated.", DeprecationWarning)
-
-        _param = self._api_v1_acceptance_coefficients_get_serialize(
-            warehouse_ids=warehouse_ids,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ModelsAcceptanceCoefficient]",
-            '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '403': None,
-            '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _api_v1_acceptance_coefficients_get_serialize(
-        self,
-        warehouse_ids,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _hosts = [
-            'https://supplies-api.wildberries.ru'
-        ]
-        _host = _hosts[_host_index]
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if warehouse_ids is not None:
-            
-            _query_params.append(('warehouseIDs', warehouse_ids))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json', 
-                    'application/problem+json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'HeaderApiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/acceptance/coefficients',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
 
 
     @validate_call
@@ -392,10 +106,10 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOptionsResultModel",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '403': None,
             '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -468,10 +182,10 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOptionsResultModel",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '403': None,
             '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -544,10 +258,10 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOptionsResultModel",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '403': None,
             '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -703,9 +417,9 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsSupplyDetails",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '404': "ModelsErrorModel",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -778,9 +492,9 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsSupplyDetails",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '404': "ModelsErrorModel",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -853,9 +567,9 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsSupplyDetails",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '404': "ModelsErrorModel",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1005,8 +719,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsGoodInSupply]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1087,8 +801,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsGoodInSupply]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1169,8 +883,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsGoodInSupply]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1318,8 +1032,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsBox]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1388,8 +1102,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsBox]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1458,8 +1172,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsBox]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1600,8 +1314,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsSupply]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1678,8 +1392,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsSupply]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1756,8 +1470,8 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsSupply]",
             '400': "ModelsErrorModel",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1908,8 +1622,8 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsTransitTariff]",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1973,8 +1687,8 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsTransitTariff]",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2038,8 +1752,8 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsTransitTariff]",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2164,10 +1878,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsWarehousesResultItems]",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '403': None,
             '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2231,10 +1945,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsWarehousesResultItems]",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '403': None,
             '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2298,10 +2012,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelsWarehousesResultItems]",
-            '401': "ApiV1AcceptanceCoefficientsGet401Response",
+            '401': "ApiV1AcceptanceOptionsPost401Response",
             '403': None,
             '404': None,
-            '429': "ApiV1AcceptanceCoefficientsGet401Response",
+            '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
             *_param,

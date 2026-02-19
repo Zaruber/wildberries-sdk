@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiV1AcceptanceCoefficientsGet401Response(BaseModel):
+class ApiV1AcceptanceOptionsPost401Response(BaseModel):
     """
-    ApiV1AcceptanceCoefficientsGet401Response
+    ApiV1AcceptanceOptionsPost401Response
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки")
     detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
@@ -55,7 +55,7 @@ class ApiV1AcceptanceCoefficientsGet401Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiV1AcceptanceCoefficientsGet401Response from a JSON string"""
+        """Create an instance of ApiV1AcceptanceOptionsPost401Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,7 +80,7 @@ class ApiV1AcceptanceCoefficientsGet401Response(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiV1AcceptanceCoefficientsGet401Response from a dict"""
+        """Create an instance of ApiV1AcceptanceOptionsPost401Response from a dict"""
         if obj is None:
             return None
 

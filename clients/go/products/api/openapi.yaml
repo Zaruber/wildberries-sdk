@@ -4835,10 +4835,6 @@ paths:
           content:
             application/json:
               examples:
-                SubjectDBSRestriction:
-                  $ref: "#/components/examples/SubjectDBSRestriction"
-                SubjectFBSRestriction:
-                  $ref: "#/components/examples/SubjectFBSRestriction"
                 UploadDataLimit:
                   $ref: "#/components/examples/UploadDataLimit"
                 CargoWarehouseRestrictionMGT:
@@ -4853,6 +4849,10 @@ paths:
                   $ref: "#/components/examples/NotFound"
                 StoreIsProcessing:
                   $ref: "#/components/examples/StoreIsProcessing1"
+                ProductPropertyConflict:
+                  $ref: "#/components/examples/ProductPropertyConflict"
+                DeliveryTypeRestriction:
+                  $ref: "#/components/examples/DeliveryTypeRestriction"
               schema:
                 $ref: "#/components/schemas/StocksWarehouseError"
           description: Ошибка обновления остатков
@@ -5528,6 +5528,11 @@ components:
       value:
       - code: StoreIsProcessing
         message: The store is processing
+    ProductPropertyConflict:
+      description: Продажа оптового товара возможна только по схеме DBS
+      value:
+      - code: ProductPropertyConflict
+        message: Products are not allowed for sale under the selected supply scheme.
     IncorrectRequestBody:
       value:
         code: IncorrectRequestBody
@@ -5536,22 +5541,17 @@ components:
       value:
         code: IncorrectRequest
         message: Переданы некорректные данные
-    SubjectDBSRestriction:
-      description: Категория товара недоступна для продажи по модели FBS
+    DeliveryTypeRestriction:
+      description: Категория товара недоступна для продажи с использованием этого
+        типа доставки
       value:
-      - code: SubjectDBSRestriction
-        message: The product category cannot be sold with 'Fulfillment By Wildberries'.
-        data:
-        - sku: skuTest1
-          amount: 0
-    SubjectFBSRestriction:
-      description: Категория товара недоступна для продажи по модели DBS
-      value:
-      - code: SubjectFBSRestriction
-        message: The product category cannot be sold with 'Delivery By Supplier'.
-        data:
-        - sku: skuTest2
-          amount: 1
+      - data:
+        - sku: ""
+          chrtId: 123456789
+          amount: 10
+        code: DeliveryTypeRestriction
+        message: This product category is not available for sale under this delivery
+          type.
     UploadDataLimit:
       description: Превышен лимит загружаемых данных
       value:

@@ -225,7 +225,6 @@ print(feedbacks)
 - `in_store_pickup.DefaultApi.api_v3_click_collect_orders_status_post` — `POST /api/v3/click-collect/orders/status` — (Deprecated) Получить статусы сборочных заданий
 
 ### orders_fbw (`orders_fbw`)
-- `orders_fbw.DefaultApi.api_v1_acceptance_coefficients_get` — `GET /api/v1/acceptance/coefficients` — (Deprecated) Коэффициенты приёмки
 - `orders_fbw.DefaultApi.api_v1_acceptance_options_post` — `POST /api/v1/acceptance/options` — Опции приёмки
 - `orders_fbw.DefaultApi.api_v1_supplies_id_get` — `GET /api/v1/supplies/{ID}` — Детали поставки
 - `orders_fbw.DefaultApi.api_v1_supplies_id_goods_get` — `GET /api/v1/supplies/{ID}/goods` — Товары поставки

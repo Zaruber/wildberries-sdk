@@ -15,8 +15,7 @@
 
 import * as runtime from '../runtime';
 import type {
-  ApiV1AcceptanceCoefficientsGet401Response,
-  ModelsAcceptanceCoefficient,
+  ApiV1AcceptanceOptionsPost401Response,
   ModelsBox,
   ModelsErrorModel,
   ModelsGood,
@@ -29,10 +28,8 @@ import type {
   ModelsWarehousesResultItems,
 } from '../models/index';
 import {
-    ApiV1AcceptanceCoefficientsGet401ResponseFromJSON,
-    ApiV1AcceptanceCoefficientsGet401ResponseToJSON,
-    ModelsAcceptanceCoefficientFromJSON,
-    ModelsAcceptanceCoefficientToJSON,
+    ApiV1AcceptanceOptionsPost401ResponseFromJSON,
+    ApiV1AcceptanceOptionsPost401ResponseToJSON,
     ModelsBoxFromJSON,
     ModelsBoxToJSON,
     ModelsErrorModelFromJSON,
@@ -54,10 +51,6 @@ import {
     ModelsWarehousesResultItemsFromJSON,
     ModelsWarehousesResultItemsToJSON,
 } from '../models/index';
-
-export interface ApiV1AcceptanceCoefficientsGetRequest {
-    warehouseIDs?: string;
-}
 
 export interface ApiV1AcceptanceOptionsPostRequest {
     modelsGood: Array<ModelsGood>;
@@ -90,56 +83,6 @@ export interface ApiV1SuppliesPostRequest {
  * 
  */
 export class DefaultApi extends runtime.BaseAPI {
-
-    /**
-     * Creates request options for apiV1AcceptanceCoefficientsGet without sending the request
-     * @deprecated
-     */
-    async apiV1AcceptanceCoefficientsGetRequestOpts(requestParameters: ApiV1AcceptanceCoefficientsGetRequest): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        if (requestParameters['warehouseIDs'] != null) {
-            queryParameters['warehouseIDs'] = requestParameters['warehouseIDs'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v1/acceptance/coefficients`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
-     * Коэффициенты приёмки
-     * @deprecated
-     */
-    async apiV1AcceptanceCoefficientsGetRaw(requestParameters: ApiV1AcceptanceCoefficientsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ModelsAcceptanceCoefficient>>> {
-        const requestOptions = await this.apiV1AcceptanceCoefficientsGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(ModelsAcceptanceCoefficientFromJSON));
-    }
-
-    /**
-     * Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
-     * Коэффициенты приёмки
-     * @deprecated
-     */
-    async apiV1AcceptanceCoefficientsGet(requestParameters: ApiV1AcceptanceCoefficientsGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ModelsAcceptanceCoefficient>> {
-        const response = await this.apiV1AcceptanceCoefficientsGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
 
     /**
      * Creates request options for apiV1AcceptanceOptionsPost without sending the request

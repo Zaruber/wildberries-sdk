@@ -15,27 +15,15 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`api_v1_acceptance_coefficients_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ApiV1AcceptanceCoefficientsGetError {
-    Status400(models::ModelsErrorModel),
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
-    Status403(),
-    Status404(),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`api_v1_acceptance_options_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1AcceptanceOptionsPostError {
     Status400(models::ModelsErrorModel),
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status401(models::ApiV1AcceptanceOptionsPost401Response),
     Status403(),
     Status404(),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
 
@@ -44,9 +32,9 @@ pub enum ApiV1AcceptanceOptionsPostError {
 #[serde(untagged)]
 pub enum ApiV1SuppliesIdGetError {
     Status400(models::ModelsErrorModel),
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status401(models::ApiV1AcceptanceOptionsPost401Response),
     Status404(models::ModelsErrorModel),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
 
@@ -55,8 +43,8 @@ pub enum ApiV1SuppliesIdGetError {
 #[serde(untagged)]
 pub enum ApiV1SuppliesIdGoodsGetError {
     Status400(models::ModelsErrorModel),
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
 
@@ -65,8 +53,8 @@ pub enum ApiV1SuppliesIdGoodsGetError {
 #[serde(untagged)]
 pub enum ApiV1SuppliesIdPackageGetError {
     Status400(models::ModelsErrorModel),
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
 
@@ -75,8 +63,8 @@ pub enum ApiV1SuppliesIdPackageGetError {
 #[serde(untagged)]
 pub enum ApiV1SuppliesPostError {
     Status400(models::ModelsErrorModel),
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
 
@@ -84,8 +72,8 @@ pub enum ApiV1SuppliesPostError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1TransitTariffsGetError {
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
 
@@ -93,62 +81,13 @@ pub enum ApiV1TransitTariffsGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1WarehousesGetError {
-    Status401(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status401(models::ApiV1AcceptanceOptionsPost401Response),
     Status403(),
     Status404(),
-    Status429(models::ApiV1AcceptanceCoefficientsGet401Response),
+    Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
 
-
-/// Метод находится в разделе [Тарифы](/openapi/wb-tariffs#tag/Tarify-na-postavku/paths/~1api~1tariffs~1v1~1acceptance~1coefficients/get) и называется **Тарифы на поставку** `GET /api/tariffs/v1/acceptance/coefficients`. Он доступен по домену `common-api.wildberries.ru` с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории.  Доступ к этому методу с доменом `supplies-api.wildberries.ru` будет отключен [3 февраля](https://dev.wildberries.ru/release-notes?id=370)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
-#[deprecated]
-pub async fn api_v1_acceptance_coefficients_get(configuration: &configuration::Configuration, warehouse_ids: Option<&str>) -> Result<Vec<models::ModelsAcceptanceCoefficient>, Error<ApiV1AcceptanceCoefficientsGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_warehouse_ids = warehouse_ids;
-
-    let uri_str = format!("{}/api/v1/acceptance/coefficients", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    if let Some(ref param_value) = p_query_warehouse_ids {
-        req_builder = req_builder.query(&[("warehouseIDs", &param_value.to_string())]);
-    }
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::ModelsAcceptanceCoefficient&gt;`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::ModelsAcceptanceCoefficient&gt;`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ApiV1AcceptanceCoefficientsGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
 
 /// Метод возвращает информацию о том, какие склады и типы упаковки доступны для поставки. Список складов определяется по баркоду и количеству товара.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
 pub async fn api_v1_acceptance_options_post(configuration: &configuration::Configuration, models_good: Vec<models::ModelsGood>, warehouse_id: Option<i32>) -> Result<models::ModelsOptionsResultModel, Error<ApiV1AcceptanceOptionsPostError>> {

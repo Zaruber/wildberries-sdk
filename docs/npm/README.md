@@ -212,7 +212,6 @@ main().catch(console.error);
 - `in_store_pickup.DefaultApi.apiV3ClickCollectOrdersStatusPost` — Получить статусы сборочных заданий
 
 ### orders_fbw (`orders_fbw`)
-- `orders_fbw.DefaultApi.apiV1AcceptanceCoefficientsGet` — Коэффициенты приёмки
 - `orders_fbw.DefaultApi.apiV1AcceptanceOptionsPost` — Опции приёмки
 - `orders_fbw.DefaultApi.apiV1SuppliesIDGet` — Детали поставки
 - `orders_fbw.DefaultApi.apiV1SuppliesIDGoodsGet` — Товары поставки
