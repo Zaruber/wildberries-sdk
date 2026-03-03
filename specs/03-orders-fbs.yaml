@@ -2972,6 +2972,14 @@ components:
           nullable: false
           description: ID поставки
           example: WB-GI-1234567
+        isB2b:
+          type: boolean
+          nullable: true
+          description: |
+            Признак B2B-продажи:
+              - `true` — B2B-продажа
+              - `false` — не B2B-продажа
+              - `null` — признак отсутствует, сборочные задания не добавлены к поставке
         done:
           type: boolean
           nullable: false
