@@ -76,7 +76,7 @@ class ApiV3DbwOrdersStickersPost200ResponseStickersInner implements ModelInterfa
         'part_a' => null,
         'part_b' => null,
         'barcode' => null,
-        'file' => 'byte'
+        'file' => null
     ];
 
     /**

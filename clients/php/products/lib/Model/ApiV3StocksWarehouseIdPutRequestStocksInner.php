@@ -58,7 +58,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
       */
     protected static $openAPITypes = [
         'chrt_id' => 'int',
-        'sku' => 'string',
         'amount' => 'int'
     ];
 
@@ -71,7 +70,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
       */
     protected static $openAPIFormats = [
         'chrt_id' => null,
-        'sku' => null,
         'amount' => null
     ];
 
@@ -82,7 +80,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
       */
     protected static array $openAPINullables = [
         'chrt_id' => false,
-        'sku' => false,
         'amount' => false
     ];
 
@@ -173,7 +170,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
      */
     protected static $attributeMap = [
         'chrt_id' => 'chrtId',
-        'sku' => 'sku',
         'amount' => 'amount'
     ];
 
@@ -184,7 +180,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
      */
     protected static $setters = [
         'chrt_id' => 'setChrtId',
-        'sku' => 'setSku',
         'amount' => 'setAmount'
     ];
 
@@ -195,7 +190,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
      */
     protected static $getters = [
         'chrt_id' => 'getChrtId',
-        'sku' => 'getSku',
         'amount' => 'getAmount'
     ];
 
@@ -257,7 +251,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
     public function __construct(?array $data = null)
     {
         $this->setIfExists('chrt_id', $data ?? [], null);
-        $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
     }
 
@@ -330,35 +323,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner implements ModelInterface, Arr
             throw new \InvalidArgumentException('non-nullable chrt_id cannot be null');
         }
         $this->container['chrt_id'] = $chrt_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets sku
-     *
-     * @return string|null
-     * @deprecated
-     */
-    public function getSku()
-    {
-        return $this->container['sku'];
-    }
-
-    /**
-     * Sets sku
-     *
-     * @param string|null $sku Баркод. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setSku($sku)
-    {
-        if (is_null($sku)) {
-            throw new \InvalidArgumentException('non-nullable sku cannot be null');
-        }
-        $this->container['sku'] = $sku;
 
         return $this;
     }

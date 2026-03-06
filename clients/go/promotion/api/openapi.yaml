@@ -145,13 +145,6 @@ paths:
         name: statuses
         required: false
         schema:
-          enum:
-          - "-1"
-          - "4"
-          - "7"
-          - "8"
-          - "9"
-          - "11"
           example: "-1,4,8"
           type: string
         style: form
@@ -7821,7 +7814,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     _api_v1_calendar_promotions_details_get_200_response_data_promotions_inner_ranging_inner:

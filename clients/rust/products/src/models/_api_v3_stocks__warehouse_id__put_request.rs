@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV3StocksWarehouseIdPutRequest {
-    /// Массив баркодов товаров и их остатков
+    /// Массив ID размеров товаров и их остатков
     #[serde(rename = "stocks")]
     pub stocks: Vec<models::ApiV3StocksWarehouseIdPutRequestStocksInner>,
 }

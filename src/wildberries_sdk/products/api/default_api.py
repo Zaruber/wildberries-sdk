@@ -11594,8 +11594,8 @@ class DefaultApi:
         self,
         locale: Annotated[Optional[StrictStr], Field(description="Язык полей ответа:   - `ru` — русский   - `en` — английский   - `zh` — китайский  Не используется в песочнице ")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков")] = None,
-        limit: Optional[StrictInt] = None,
-        offset: Optional[StrictInt] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Количество предметов, максимум 1000")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента")] = None,
         parent_id: Annotated[Optional[StrictInt], Field(description="ID родительской категории предмета")] = None,
         _request_timeout: Union[
             None,
@@ -11618,9 +11618,9 @@ class DefaultApi:
         :type locale: str
         :param name: Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков
         :type name: str
-        :param limit:
+        :param limit: Количество предметов, максимум 1000
         :type limit: int
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента
         :type offset: int
         :param parent_id: ID родительской категории предмета
         :type parent_id: int
@@ -11679,8 +11679,8 @@ class DefaultApi:
         self,
         locale: Annotated[Optional[StrictStr], Field(description="Язык полей ответа:   - `ru` — русский   - `en` — английский   - `zh` — китайский  Не используется в песочнице ")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков")] = None,
-        limit: Optional[StrictInt] = None,
-        offset: Optional[StrictInt] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Количество предметов, максимум 1000")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента")] = None,
         parent_id: Annotated[Optional[StrictInt], Field(description="ID родительской категории предмета")] = None,
         _request_timeout: Union[
             None,
@@ -11703,9 +11703,9 @@ class DefaultApi:
         :type locale: str
         :param name: Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков
         :type name: str
-        :param limit:
+        :param limit: Количество предметов, максимум 1000
         :type limit: int
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента
         :type offset: int
         :param parent_id: ID родительской категории предмета
         :type parent_id: int
@@ -11764,8 +11764,8 @@ class DefaultApi:
         self,
         locale: Annotated[Optional[StrictStr], Field(description="Язык полей ответа:   - `ru` — русский   - `en` — английский   - `zh` — китайский  Не используется в песочнице ")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков")] = None,
-        limit: Optional[StrictInt] = None,
-        offset: Optional[StrictInt] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Количество предметов, максимум 1000")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента")] = None,
         parent_id: Annotated[Optional[StrictInt], Field(description="ID родительской категории предмета")] = None,
         _request_timeout: Union[
             None,
@@ -11788,9 +11788,9 @@ class DefaultApi:
         :type locale: str
         :param name: Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков
         :type name: str
-        :param limit:
+        :param limit: Количество предметов, максимум 1000
         :type limit: int
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента
         :type offset: int
         :param parent_id: ID родительской категории предмета
         :type parent_id: int

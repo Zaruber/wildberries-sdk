@@ -4257,7 +4257,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     _api_v1_questions_count_unanswered_get_200_response_data:

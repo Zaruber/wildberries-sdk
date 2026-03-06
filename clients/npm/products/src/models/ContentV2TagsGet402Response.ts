@@ -26,7 +26,7 @@ export interface ContentV2TagsGet402Response {
      */
     title?: string;
     /**
-     * Детали ошибки
+     * Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
      * @type {string}
      * @memberof ContentV2TagsGet402Response
      */

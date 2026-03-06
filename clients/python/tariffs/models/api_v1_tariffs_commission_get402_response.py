@@ -27,7 +27,7 @@ class ApiV1TariffsCommissionGet402Response(BaseModel):
     ApiV1TariffsCommissionGet402Response
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
+    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств")
     __properties: ClassVar[List[str]] = ["title", "detail"]
 
     model_config = ConfigDict(

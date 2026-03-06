@@ -2,8 +2,6 @@ pub mod _api_v1_acceptance_options_post_401_response;
 pub use self::_api_v1_acceptance_options_post_401_response::ApiV1AcceptanceOptionsPost401Response;
 pub mod _api_v1_acceptance_options_post_402_response;
 pub use self::_api_v1_acceptance_options_post_402_response::ApiV1AcceptanceOptionsPost402Response;
-pub mod models_acceptance_coefficient;
-pub use self::models_acceptance_coefficient::ModelsAcceptanceCoefficient;
 pub mod models_box;
 pub use self::models_box::ModelsBox;
 pub mod models_date_filter_request;

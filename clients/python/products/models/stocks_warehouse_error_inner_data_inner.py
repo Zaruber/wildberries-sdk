@@ -27,8 +27,9 @@ class StocksWarehouseErrorInnerDataInner(BaseModel):
     StocksWarehouseErrorInnerDataInner
     """ # noqa: E501
     sku: Optional[StrictStr] = Field(default=None, description="Баркод")
+    chrt_id: Optional[StrictInt] = Field(default=None, description="ID размера товара", alias="chrtId")
     amount: Optional[StrictInt] = Field(default=None, description="Остаток")
-    __properties: ClassVar[List[str]] = ["sku", "amount"]
+    __properties: ClassVar[List[str]] = ["sku", "chrtId", "amount"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -83,6 +84,7 @@ class StocksWarehouseErrorInnerDataInner(BaseModel):
 
         _obj = cls.model_validate({
             "sku": obj.get("sku"),
+            "chrtId": obj.get("chrtId"),
             "amount": obj.get("amount")
         })
         return _obj

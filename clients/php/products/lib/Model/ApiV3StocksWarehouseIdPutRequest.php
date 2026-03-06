@@ -313,7 +313,7 @@ class ApiV3StocksWarehouseIdPutRequest implements ModelInterface, ArrayAccess, \
     /**
      * Sets stocks
      *
-     * @param \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[] $stocks Массив баркодов товаров и их остатков
+     * @param \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPutRequestStocksInner[] $stocks Массив ID размеров товаров и их остатков
      *
      * @return self
      */

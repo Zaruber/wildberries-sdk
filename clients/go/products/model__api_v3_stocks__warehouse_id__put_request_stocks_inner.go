@@ -21,9 +21,6 @@ var _ MappedNullable = &ApiV3StocksWarehouseIdPutRequestStocksInner{}
 type ApiV3StocksWarehouseIdPutRequestStocksInner struct {
 	// ID размера товара
 	ChrtId *int32 `json:"chrtId,omitempty"`
-	// Баркод. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-	// Deprecated
-	Sku *string `json:"sku,omitempty"`
 	// Остаток
 	Amount *int32 `json:"amount,omitempty"`
 }
@@ -77,41 +74,6 @@ func (o *ApiV3StocksWarehouseIdPutRequestStocksInner) SetChrtId(v int32) {
 	o.ChrtId = &v
 }
 
-// GetSku returns the Sku field value if set, zero value otherwise.
-// Deprecated
-func (o *ApiV3StocksWarehouseIdPutRequestStocksInner) GetSku() string {
-	if o == nil || IsNil(o.Sku) {
-		var ret string
-		return ret
-	}
-	return *o.Sku
-}
-
-// GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ApiV3StocksWarehouseIdPutRequestStocksInner) GetSkuOk() (*string, bool) {
-	if o == nil || IsNil(o.Sku) {
-		return nil, false
-	}
-	return o.Sku, true
-}
-
-// HasSku returns a boolean if a field has been set.
-func (o *ApiV3StocksWarehouseIdPutRequestStocksInner) HasSku() bool {
-	if o != nil && !IsNil(o.Sku) {
-		return true
-	}
-
-	return false
-}
-
-// SetSku gets a reference to the given string and assigns it to the Sku field.
-// Deprecated
-func (o *ApiV3StocksWarehouseIdPutRequestStocksInner) SetSku(v string) {
-	o.Sku = &v
-}
-
 // GetAmount returns the Amount field value if set, zero value otherwise.
 func (o *ApiV3StocksWarehouseIdPutRequestStocksInner) GetAmount() int32 {
 	if o == nil || IsNil(o.Amount) {
@@ -156,9 +118,6 @@ func (o ApiV3StocksWarehouseIdPutRequestStocksInner) ToMap() (map[string]interfa
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ChrtId) {
 		toSerialize["chrtId"] = o.ChrtId
-	}
-	if !IsNil(o.Sku) {
-		toSerialize["sku"] = o.Sku
 	}
 	if !IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount

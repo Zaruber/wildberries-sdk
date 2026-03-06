@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -28,9 +28,8 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner(BaseModel):
     ApiV3StocksWarehouseIdPutRequestStocksInner
     """ # noqa: E501
     chrt_id: Optional[StrictInt] = Field(default=None, description="ID размера товара", alias="chrtId")
-    sku: Optional[StrictStr] = Field(default=None, description="Баркод. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)")
     amount: Optional[Annotated[int, Field(le=100000, strict=True)]] = Field(default=None, description="Остаток")
-    __properties: ClassVar[List[str]] = ["chrtId", "sku", "amount"]
+    __properties: ClassVar[List[str]] = ["chrtId", "amount"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -85,7 +84,6 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner(BaseModel):
 
         _obj = cls.model_validate({
             "chrtId": obj.get("chrtId"),
-            "sku": obj.get("sku"),
             "amount": obj.get("amount")
         })
         return _obj

@@ -1233,8 +1233,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://documents-api.wildberries.ru
      *
-     * @param  string $service_name service_name (required)
-     * @param  string $extension extension (required)
+     * @param  string $service_name Уникальный ID документа (required)
+     * @param  string $extension Формат документа (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsDownloadGet'] to see the possible values for this operation
@@ -1258,8 +1258,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://documents-api.wildberries.ru
      *
-     * @param  string $service_name (required)
-     * @param  string $extension (required)
+     * @param  string $service_name Уникальный ID документа (required)
+     * @param  string $extension Формат документа (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsDownloadGet'] to see the possible values for this operation
@@ -1406,8 +1406,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://documents-api.wildberries.ru
      *
-     * @param  string $service_name (required)
-     * @param  string $extension (required)
+     * @param  string $service_name Уникальный ID документа (required)
+     * @param  string $extension Формат документа (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsDownloadGet'] to see the possible values for this operation
@@ -1434,8 +1434,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://documents-api.wildberries.ru
      *
-     * @param  string $service_name (required)
-     * @param  string $extension (required)
+     * @param  string $service_name Уникальный ID документа (required)
+     * @param  string $extension Формат документа (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsDownloadGet'] to see the possible values for this operation
@@ -1491,8 +1491,8 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://documents-api.wildberries.ru
      *
-     * @param  string $service_name (required)
-     * @param  string $extension (required)
+     * @param  string $service_name Уникальный ID документа (required)
+     * @param  string $extension Формат документа (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsDownloadGet'] to see the possible values for this operation
@@ -1642,14 +1642,14 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string|null $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime|null $begin_time begin_time (optional)
-     * @param  \DateTime|null $end_time end_time (optional)
-     * @param  string|null $sort sort (optional, default to 'date')
-     * @param  string|null $order order (optional, default to 'desc')
-     * @param  string|null $category category (optional)
-     * @param  string|null $service_name service_name (optional)
-     * @param  int|null $limit limit (optional, default to 50)
-     * @param  int|null $offset offset (optional, default to 0)
+     * @param  \DateTime|null $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  \DateTime|null $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string|null $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
+     * @param  string|null $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
+     * @param  string|null $category ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля &#x60;name&#x60; (optional)
+     * @param  string|null $service_name Уникальный ID документа (optional)
+     * @param  int|null $limit Максимальное количество строк ответа (optional, default to 50)
+     * @param  int|null $offset После какой строки выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsListGet'] to see the possible values for this operation
@@ -1674,14 +1674,14 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string|null $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime|null $begin_time (optional)
-     * @param  \DateTime|null $end_time (optional)
-     * @param  string|null $sort (optional, default to 'date')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  string|null $category (optional)
-     * @param  string|null $service_name (optional)
-     * @param  int|null $limit (optional, default to 50)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  \DateTime|null $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  \DateTime|null $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string|null $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
+     * @param  string|null $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
+     * @param  string|null $category ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля &#x60;name&#x60; (optional)
+     * @param  string|null $service_name Уникальный ID документа (optional)
+     * @param  int|null $limit Максимальное количество строк ответа (optional, default to 50)
+     * @param  int|null $offset После какой строки выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsListGet'] to see the possible values for this operation
@@ -1829,14 +1829,14 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string|null $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime|null $begin_time (optional)
-     * @param  \DateTime|null $end_time (optional)
-     * @param  string|null $sort (optional, default to 'date')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  string|null $category (optional)
-     * @param  string|null $service_name (optional)
-     * @param  int|null $limit (optional, default to 50)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  \DateTime|null $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  \DateTime|null $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string|null $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
+     * @param  string|null $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
+     * @param  string|null $category ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля &#x60;name&#x60; (optional)
+     * @param  string|null $service_name Уникальный ID документа (optional)
+     * @param  int|null $limit Максимальное количество строк ответа (optional, default to 50)
+     * @param  int|null $offset После какой строки выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsListGet'] to see the possible values for this operation
@@ -1864,14 +1864,14 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string|null $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime|null $begin_time (optional)
-     * @param  \DateTime|null $end_time (optional)
-     * @param  string|null $sort (optional, default to 'date')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  string|null $category (optional)
-     * @param  string|null $service_name (optional)
-     * @param  int|null $limit (optional, default to 50)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  \DateTime|null $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  \DateTime|null $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string|null $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
+     * @param  string|null $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
+     * @param  string|null $category ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля &#x60;name&#x60; (optional)
+     * @param  string|null $service_name Уникальный ID документа (optional)
+     * @param  int|null $limit Максимальное количество строк ответа (optional, default to 50)
+     * @param  int|null $offset После какой строки выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsListGet'] to see the possible values for this operation
@@ -1928,14 +1928,14 @@ class DefaultApi
      * URL: https://documents-api.wildberries.ru
      *
      * @param  string|null $locale Язык поля &#x60;category&#x60;:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский (optional, default to 'en')
-     * @param  \DateTime|null $begin_time (optional)
-     * @param  \DateTime|null $end_time (optional)
-     * @param  string|null $sort (optional, default to 'date')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  string|null $category (optional)
-     * @param  string|null $service_name (optional)
-     * @param  int|null $limit (optional, default to 50)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  \DateTime|null $begin_time Начало периода. Только вместе с &#x60;endTime&#x60; (optional)
+     * @param  \DateTime|null $end_time Конец периода. Только вместе с &#x60;beginTime&#x60; (optional)
+     * @param  string|null $sort Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; (optional, default to 'date')
+     * @param  string|null $order Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; (optional, default to 'desc')
+     * @param  string|null $category ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля &#x60;name&#x60; (optional)
+     * @param  string|null $service_name Уникальный ID документа (optional)
+     * @param  int|null $limit Максимальное количество строк ответа (optional, default to 50)
+     * @param  int|null $offset После какой строки выдавать данные (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1DocumentsListGet'] to see the possible values for this operation

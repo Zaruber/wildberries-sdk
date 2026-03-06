@@ -515,11 +515,13 @@ type ApiApiV1DocumentsDownloadGetRequest struct {
 	extension *string
 }
 
+// Уникальный ID документа
 func (r ApiApiV1DocumentsDownloadGetRequest) ServiceName(serviceName string) ApiApiV1DocumentsDownloadGetRequest {
 	r.serviceName = &serviceName
 	return r
 }
 
+// Формат документа
 func (r ApiApiV1DocumentsDownloadGetRequest) Extension(extension string) ApiApiV1DocumentsDownloadGetRequest {
 	r.extension = &extension
 	return r
@@ -713,41 +715,49 @@ func (r ApiApiV1DocumentsListGetRequest) Locale(locale string) ApiApiV1Documents
 	return r
 }
 
+// Начало периода. Только вместе с &#x60;endTime&#x60;
 func (r ApiApiV1DocumentsListGetRequest) BeginTime(beginTime string) ApiApiV1DocumentsListGetRequest {
 	r.beginTime = &beginTime
 	return r
 }
 
+// Конец периода. Только вместе с &#x60;beginTime&#x60;
 func (r ApiApiV1DocumentsListGetRequest) EndTime(endTime string) ApiApiV1DocumentsListGetRequest {
 	r.endTime = &endTime
 	return r
 }
 
+// Сортировка:   - &#x60;date&#x60; — по дате создания документа   - &#x60;category&#x60; — по категории (только при &#x60;locale&#x3D;ru&#x60;)  Только вместе с &#x60;order&#x60; 
 func (r ApiApiV1DocumentsListGetRequest) Sort(sort string) ApiApiV1DocumentsListGetRequest {
 	r.sort = &sort
 	return r
 }
 
+// Сортировка:   - &#x60;desc&#x60; — по убыванию   - &#x60;asc&#x60; — по возрастанию  Только вместе с &#x60;sort&#x60; 
 func (r ApiApiV1DocumentsListGetRequest) Order(order string) ApiApiV1DocumentsListGetRequest {
 	r.order = &order
 	return r
 }
 
+// ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля &#x60;name&#x60;
 func (r ApiApiV1DocumentsListGetRequest) Category(category string) ApiApiV1DocumentsListGetRequest {
 	r.category = &category
 	return r
 }
 
+// Уникальный ID документа
 func (r ApiApiV1DocumentsListGetRequest) ServiceName(serviceName string) ApiApiV1DocumentsListGetRequest {
 	r.serviceName = &serviceName
 	return r
 }
 
+// Максимальное количество строк ответа
 func (r ApiApiV1DocumentsListGetRequest) Limit(limit int32) ApiApiV1DocumentsListGetRequest {
 	r.limit = &limit
 	return r
 }
 
+// После какой строки выдавать данные
 func (r ApiApiV1DocumentsListGetRequest) Offset(offset int32) ApiApiV1DocumentsListGetRequest {
 	r.offset = &offset
 	return r

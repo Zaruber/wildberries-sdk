@@ -58,6 +58,7 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'sku' => 'string',
+        'chrt_id' => 'int',
         'amount' => 'int'
     ];
 
@@ -70,6 +71,7 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'sku' => null,
+        'chrt_id' => null,
         'amount' => null
     ];
 
@@ -80,6 +82,7 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPINullables = [
         'sku' => false,
+        'chrt_id' => false,
         'amount' => false
     ];
 
@@ -170,6 +173,7 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
      */
     protected static $attributeMap = [
         'sku' => 'sku',
+        'chrt_id' => 'chrtId',
         'amount' => 'amount'
     ];
 
@@ -180,6 +184,7 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
      */
     protected static $setters = [
         'sku' => 'setSku',
+        'chrt_id' => 'setChrtId',
         'amount' => 'setAmount'
     ];
 
@@ -190,6 +195,7 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
      */
     protected static $getters = [
         'sku' => 'getSku',
+        'chrt_id' => 'getChrtId',
         'amount' => 'getAmount'
     ];
 
@@ -251,6 +257,7 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
     public function __construct(?array $data = null)
     {
         $this->setIfExists('sku', $data ?? [], null);
+        $this->setIfExists('chrt_id', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
     }
 
@@ -319,6 +326,33 @@ class StocksWarehouseErrorInnerDataInner implements ModelInterface, ArrayAccess,
             throw new \InvalidArgumentException('non-nullable sku cannot be null');
         }
         $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets chrt_id
+     *
+     * @return int|null
+     */
+    public function getChrtId()
+    {
+        return $this->container['chrt_id'];
+    }
+
+    /**
+     * Sets chrt_id
+     *
+     * @param int|null $chrt_id ID размера товара
+     *
+     * @return self
+     */
+    public function setChrtId($chrt_id)
+    {
+        if (is_null($chrt_id)) {
+            throw new \InvalidArgumentException('non-nullable chrt_id cannot be null');
+        }
+        $this->container['chrt_id'] = $chrt_id;
 
         return $this;
     }

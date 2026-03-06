@@ -350,99 +350,99 @@ paths:
           example: ru
           type: string
         style: form
-      - explode: true
+      - description: Начало периода. Только вместе с `endTime`
+        explode: true
         in: query
         name: beginTime
         required: false
         schema:
-          description: Начало периода. Только вместе с `endTime`
           example: 2024-07-09
           format: date
           type: string
         style: form
-      - explode: true
+      - description: Конец периода. Только вместе с `beginTime`
+        explode: true
         in: query
         name: endTime
         required: false
         schema:
-          description: Конец периода. Только вместе с `beginTime`
           example: 2024-07-15
           format: date
           type: string
         style: form
-      - explode: true
+      - description: |
+          Сортировка:
+            - `date` — по дате создания документа
+            - `category` — по категории (только при `locale=ru`)
+
+          Только вместе с `order`
+        explode: true
         in: query
         name: sort
         required: false
         schema:
           default: date
-          description: |
-            Сортировка:
-              - `date` — по дате создания документа
-              - `category` — по категории (только при `locale=ru`)
-
-            Только вместе с `order`
           enum:
           - date
           - category
           example: category
           type: string
         style: form
-      - explode: true
+      - description: |
+          Сортировка:
+            - `desc` — по убыванию
+            - `asc` — по возрастанию
+
+          Только вместе с `sort`
+        explode: true
         in: query
         name: order
         required: false
         schema:
           default: desc
-          description: |
-            Сортировка:
-              - `desc` — по убыванию
-              - `asc` — по возрастанию
-
-            Только вместе с `sort`
           enum:
           - desc
           - asc
           example: asc
           type: string
         style: form
-      - explode: true
+      - description: "ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get)\
+          \ из поля `name`"
+        explode: true
         in: query
         name: category
         required: false
         schema:
-          description: "ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get)\
-            \ из поля `name`"
           example: redeem-notification
           type: string
         style: form
-      - explode: true
+      - description: Уникальный ID документа
+        explode: true
         in: query
         name: serviceName
         required: false
         schema:
-          description: Уникальный ID документа
           example: redeem-notification-44841941
           type: string
         style: form
-      - explode: true
+      - description: Максимальное количество строк ответа
+        explode: true
         in: query
         name: limit
         required: false
         schema:
           default: 50
-          description: Максимальное количество строк ответа
           example: 10
           maximum: 50
           type: integer
         style: form
-      - explode: true
+      - description: После какой строки выдавать данные
+        explode: true
         in: query
         name: offset
         required: false
         schema:
           default: 0
-          description: После какой строки выдавать данные
           example: 90
           type: integer
         style: form
@@ -539,21 +539,21 @@ paths:
         | 10 сек | 1 запрос | 10 сек | 5 запросов |
         </div>
       parameters:
-      - explode: true
+      - description: Уникальный ID документа
+        explode: true
         in: query
         name: serviceName
         required: true
         schema:
-          description: Уникальный ID документа
           example: redeem-notification-44841941
           type: string
         style: form
-      - explode: true
+      - description: Формат документа
+        explode: true
         in: query
         name: extension
         required: true
         schema:
-          description: Формат документа
           example: zip
           type: string
         style: form
@@ -1461,7 +1461,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     _api_v5_supplier_reportDetailByPeriod_get_400_response:

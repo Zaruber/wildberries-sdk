@@ -26,6 +26,12 @@ export interface StocksWarehouseErrorInnerDataInner {
      */
     sku?: string;
     /**
+     * ID размера товара
+     * @type {number}
+     * @memberof StocksWarehouseErrorInnerDataInner
+     */
+    chrtId?: number;
+    /**
      * Остаток
      * @type {number}
      * @memberof StocksWarehouseErrorInnerDataInner
@@ -51,6 +57,7 @@ export function StocksWarehouseErrorInnerDataInnerFromJSONTyped(json: any, ignor
     return {
         
         'sku': json['sku'] == null ? undefined : json['sku'],
+        'chrtId': json['chrtId'] == null ? undefined : json['chrtId'],
         'amount': json['amount'] == null ? undefined : json['amount'],
     };
 }
@@ -67,6 +74,7 @@ export function StocksWarehouseErrorInnerDataInnerToJSONTyped(value?: StocksWare
     return {
         
         'sku': value['sku'],
+        'chrtId': value['chrtId'],
         'amount': value['amount'],
     };
 }

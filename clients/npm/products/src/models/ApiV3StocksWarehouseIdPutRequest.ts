@@ -28,7 +28,7 @@ import {
  */
 export interface ApiV3StocksWarehouseIdPutRequest {
     /**
-     * Массив баркодов товаров и их остатков
+     * Массив ID размеров товаров и их остатков
      * @type {Array<ApiV3StocksWarehouseIdPutRequestStocksInner>}
      * @memberof ApiV3StocksWarehouseIdPutRequest
      */

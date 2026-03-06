@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiV3StocksWarehouseIdPutRequest{}
 
 // ApiV3StocksWarehouseIdPutRequest struct for ApiV3StocksWarehouseIdPutRequest
 type ApiV3StocksWarehouseIdPutRequest struct {
-	// Массив баркодов товаров и их остатков
+	// Массив ID размеров товаров и их остатков
 	Stocks []ApiV3StocksWarehouseIdPutRequestStocksInner `json:"stocks"`
 }
 

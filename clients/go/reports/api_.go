@@ -748,11 +748,13 @@ type ApiApiV1AnalyticsBannedProductsBlockedGetRequest struct {
 	order *string
 }
 
+// Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;reason&#x60; — по причине блокировки 
 func (r ApiApiV1AnalyticsBannedProductsBlockedGetRequest) Sort(sort string) ApiApiV1AnalyticsBannedProductsBlockedGetRequest {
 	r.sort = &sort
 	return r
 }
 
+// Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему 
 func (r ApiApiV1AnalyticsBannedProductsBlockedGetRequest) Order(order string) ApiApiV1AnalyticsBannedProductsBlockedGetRequest {
 	r.order = &order
 	return r
@@ -933,11 +935,13 @@ type ApiApiV1AnalyticsBannedProductsShadowedGetRequest struct {
 	order *string
 }
 
+// Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;nmRating&#x60; — по рейтингу товара 
 func (r ApiApiV1AnalyticsBannedProductsShadowedGetRequest) Sort(sort string) ApiApiV1AnalyticsBannedProductsShadowedGetRequest {
 	r.sort = &sort
 	return r
 }
 
+// Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему 
 func (r ApiApiV1AnalyticsBannedProductsShadowedGetRequest) Order(order string) ApiApiV1AnalyticsBannedProductsShadowedGetRequest {
 	r.order = &order
 	return r
@@ -4227,6 +4231,7 @@ func (r ApiGetDeductionsRequest) DateTo(dateTo time.Time) ApiGetDeductionsReques
 	return r
 }
 
+// Количество удержаний в ответе
 func (r ApiGetDeductionsRequest) Limit(limit int32) ApiGetDeductionsRequest {
 	r.limit = &limit
 	return r
@@ -4238,16 +4243,19 @@ func (r ApiGetDeductionsRequest) DateFrom(dateFrom time.Time) ApiGetDeductionsRe
 	return r
 }
 
+// Сортировка: - &#x60;nmId&#x60; — по артикулу WB - &#x60;dtBonus&#x60; — по дате и времени удержания - &#x60;bonusSumm&#x60; — по сумме удержания 
 func (r ApiGetDeductionsRequest) Sort(sort string) ApiGetDeductionsRequest {
 	r.sort = &sort
 	return r
 }
 
+// Порядок выдачи: - &#x60;desc&#x60; — по убыванию - &#x60;asc&#x60; — по возрастанию 
 func (r ApiGetDeductionsRequest) Order(order string) ApiGetDeductionsRequest {
 	r.order = &order
 	return r
 }
 
+// Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента
 func (r ApiGetDeductionsRequest) Offset(offset int32) ApiGetDeductionsRequest {
 	r.offset = &offset
 	return r
@@ -4463,6 +4471,7 @@ func (r ApiGetMeasurementPenaltiesRequest) DateTo(dateTo time.Time) ApiGetMeasur
 	return r
 }
 
+// Количество удержаний в ответе
 func (r ApiGetMeasurementPenaltiesRequest) Limit(limit int32) ApiGetMeasurementPenaltiesRequest {
 	r.limit = &limit
 	return r
@@ -4474,6 +4483,7 @@ func (r ApiGetMeasurementPenaltiesRequest) DateFrom(dateFrom time.Time) ApiGetMe
 	return r
 }
 
+// Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента
 func (r ApiGetMeasurementPenaltiesRequest) Offset(offset int32) ApiGetMeasurementPenaltiesRequest {
 	r.offset = &offset
 	return r
@@ -4675,6 +4685,7 @@ func (r ApiGetWarehouseMeasurementsRequest) DateTo(dateTo time.Time) ApiGetWareh
 	return r
 }
 
+// Количество замеров в ответе
 func (r ApiGetWarehouseMeasurementsRequest) Limit(limit int32) ApiGetWarehouseMeasurementsRequest {
 	r.limit = &limit
 	return r
@@ -4686,6 +4697,7 @@ func (r ApiGetWarehouseMeasurementsRequest) DateFrom(dateFrom time.Time) ApiGetW
 	return r
 }
 
+// Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента
 func (r ApiGetWarehouseMeasurementsRequest) Offset(offset int32) ApiGetWarehouseMeasurementsRequest {
 	r.offset = &offset
 	return r

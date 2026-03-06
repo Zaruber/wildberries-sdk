@@ -21,6 +21,8 @@ var _ MappedNullable = &StocksWarehouseErrorInnerDataInner{}
 type StocksWarehouseErrorInnerDataInner struct {
 	// Баркод
 	Sku *string `json:"sku,omitempty"`
+	// ID размера товара
+	ChrtId *int32 `json:"chrtId,omitempty"`
 	// Остаток
 	Amount *int32 `json:"amount,omitempty"`
 }
@@ -74,6 +76,38 @@ func (o *StocksWarehouseErrorInnerDataInner) SetSku(v string) {
 	o.Sku = &v
 }
 
+// GetChrtId returns the ChrtId field value if set, zero value otherwise.
+func (o *StocksWarehouseErrorInnerDataInner) GetChrtId() int32 {
+	if o == nil || IsNil(o.ChrtId) {
+		var ret int32
+		return ret
+	}
+	return *o.ChrtId
+}
+
+// GetChrtIdOk returns a tuple with the ChrtId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StocksWarehouseErrorInnerDataInner) GetChrtIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChrtId) {
+		return nil, false
+	}
+	return o.ChrtId, true
+}
+
+// HasChrtId returns a boolean if a field has been set.
+func (o *StocksWarehouseErrorInnerDataInner) HasChrtId() bool {
+	if o != nil && !IsNil(o.ChrtId) {
+		return true
+	}
+
+	return false
+}
+
+// SetChrtId gets a reference to the given int32 and assigns it to the ChrtId field.
+func (o *StocksWarehouseErrorInnerDataInner) SetChrtId(v int32) {
+	o.ChrtId = &v
+}
+
 // GetAmount returns the Amount field value if set, zero value otherwise.
 func (o *StocksWarehouseErrorInnerDataInner) GetAmount() int32 {
 	if o == nil || IsNil(o.Amount) {
@@ -118,6 +152,9 @@ func (o StocksWarehouseErrorInnerDataInner) ToMap() (map[string]interface{}, err
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Sku) {
 		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.ChrtId) {
+		toSerialize["chrtId"] = o.ChrtId
 	}
 	if !IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount

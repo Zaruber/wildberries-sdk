@@ -15,7 +15,6 @@
 # import models into model package
 from wildberries_sdk.orders_fbw.models.api_v1_acceptance_options_post401_response import ApiV1AcceptanceOptionsPost401Response
 from wildberries_sdk.orders_fbw.models.api_v1_acceptance_options_post402_response import ApiV1AcceptanceOptionsPost402Response
-from wildberries_sdk.orders_fbw.models.models_acceptance_coefficient import ModelsAcceptanceCoefficient
 from wildberries_sdk.orders_fbw.models.models_box import ModelsBox
 from wildberries_sdk.orders_fbw.models.models_date_filter_request import ModelsDateFilterRequest
 from wildberries_sdk.orders_fbw.models.models_error_model import ModelsErrorModel

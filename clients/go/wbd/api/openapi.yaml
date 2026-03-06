@@ -3206,8 +3206,8 @@ components:
             format: int64
             type: integer
             x-omitempty: false
+          nullable: true
           type: array
-          x-nullable: true
           example: null
         id:
           description: |

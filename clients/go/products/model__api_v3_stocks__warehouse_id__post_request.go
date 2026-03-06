@@ -23,9 +23,6 @@ var _ MappedNullable = &ApiV3StocksWarehouseIdPostRequest{}
 type ApiV3StocksWarehouseIdPostRequest struct {
 	// Массив ID размеров товаров
 	ChrtIds []int32 `json:"chrtIds"`
-	// Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-	// Deprecated
-	Skus []string `json:"skus,omitempty"`
 }
 
 type _ApiV3StocksWarehouseIdPostRequest ApiV3StocksWarehouseIdPostRequest
@@ -72,41 +69,6 @@ func (o *ApiV3StocksWarehouseIdPostRequest) SetChrtIds(v []int32) {
 	o.ChrtIds = v
 }
 
-// GetSkus returns the Skus field value if set, zero value otherwise.
-// Deprecated
-func (o *ApiV3StocksWarehouseIdPostRequest) GetSkus() []string {
-	if o == nil || IsNil(o.Skus) {
-		var ret []string
-		return ret
-	}
-	return o.Skus
-}
-
-// GetSkusOk returns a tuple with the Skus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ApiV3StocksWarehouseIdPostRequest) GetSkusOk() ([]string, bool) {
-	if o == nil || IsNil(o.Skus) {
-		return nil, false
-	}
-	return o.Skus, true
-}
-
-// HasSkus returns a boolean if a field has been set.
-func (o *ApiV3StocksWarehouseIdPostRequest) HasSkus() bool {
-	if o != nil && !IsNil(o.Skus) {
-		return true
-	}
-
-	return false
-}
-
-// SetSkus gets a reference to the given []string and assigns it to the Skus field.
-// Deprecated
-func (o *ApiV3StocksWarehouseIdPostRequest) SetSkus(v []string) {
-	o.Skus = v
-}
-
 func (o ApiV3StocksWarehouseIdPostRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -118,9 +80,6 @@ func (o ApiV3StocksWarehouseIdPostRequest) MarshalJSON() ([]byte, error) {
 func (o ApiV3StocksWarehouseIdPostRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["chrtIds"] = o.ChrtIds
-	if !IsNil(o.Skus) {
-		toSerialize["skus"] = o.Skus
-	}
 	return toSerialize, nil
 }
 

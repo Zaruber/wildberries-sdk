@@ -1781,8 +1781,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort sort (required)
-     * @param  string $order order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;reason&#x60; — по причине блокировки (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsBlockedGet'] to see the possible values for this operation
@@ -1806,8 +1806,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;reason&#x60; — по причине блокировки (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsBlockedGet'] to see the possible values for this operation
@@ -1954,8 +1954,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;reason&#x60; — по причине блокировки (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsBlockedGet'] to see the possible values for this operation
@@ -1982,8 +1982,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;reason&#x60; — по причине блокировки (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsBlockedGet'] to see the possible values for this operation
@@ -2039,8 +2039,8 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;reason&#x60; — по причине блокировки (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsBlockedGet'] to see the possible values for this operation
@@ -2189,8 +2189,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort sort (required)
-     * @param  string $order order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;nmRating&#x60; — по рейтингу товара (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsShadowedGet'] to see the possible values for this operation
@@ -2214,8 +2214,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;nmRating&#x60; — по рейтингу товара (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsShadowedGet'] to see the possible values for this operation
@@ -2362,8 +2362,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;nmRating&#x60; — по рейтингу товара (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsShadowedGet'] to see the possible values for this operation
@@ -2390,8 +2390,8 @@ class DefaultApi
      * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;nmRating&#x60; — по рейтингу товара (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsShadowedGet'] to see the possible values for this operation
@@ -2447,8 +2447,8 @@ class DefaultApi
     * if needed, use the 'variables' parameter to pass variables to the host.
      * URL: https://seller-analytics-api.wildberries.ru
      *
-     * @param  string $sort (required)
-     * @param  string $order (required)
+     * @param  string $sort Сортировка - &#x60;brand&#x60; — по бренду - &#x60;nmId&#x60; — по артикулу WB - &#x60;title&#x60; — по наименованию товара - &#x60;vendorCode&#x60; — по артикулу продавца - &#x60;nmRating&#x60; — по рейтингу товара (required)
+     * @param  string $order Порядок выдачи - &#x60;desc&#x60; — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - &#x60;asc&#x60; — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему (required)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV1AnalyticsBannedProductsShadowedGet'] to see the possible values for this operation
@@ -9132,11 +9132,11 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта (optional)
-     * @param  string|null $sort sort (optional, default to 'dtBonus')
-     * @param  string|null $order order (optional, default to 'desc')
-     * @param  int|null $offset offset (optional, default to 0)
+     * @param  string|null $sort Сортировка: - &#x60;nmId&#x60; — по артикулу WB - &#x60;dtBonus&#x60; — по дате и времени удержания - &#x60;bonusSumm&#x60; — по сумме удержания (optional, default to 'dtBonus')
+     * @param  string|null $order Порядок выдачи: - &#x60;desc&#x60; — по убыванию - &#x60;asc&#x60; — по возрастанию (optional, default to 'desc')
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDeductions'] to see the possible values for this operation
@@ -9161,11 +9161,11 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта (optional)
-     * @param  string|null $sort (optional, default to 'dtBonus')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  int|null $offset (optional, default to 0)
+     * @param  string|null $sort Сортировка: - &#x60;nmId&#x60; — по артикулу WB - &#x60;dtBonus&#x60; — по дате и времени удержания - &#x60;bonusSumm&#x60; — по сумме удержания (optional, default to 'dtBonus')
+     * @param  string|null $order Порядок выдачи: - &#x60;desc&#x60; — по убыванию - &#x60;asc&#x60; — по возрастанию (optional, default to 'desc')
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDeductions'] to see the possible values for this operation
@@ -9313,11 +9313,11 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта (optional)
-     * @param  string|null $sort (optional, default to 'dtBonus')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  int|null $offset (optional, default to 0)
+     * @param  string|null $sort Сортировка: - &#x60;nmId&#x60; — по артикулу WB - &#x60;dtBonus&#x60; — по дате и времени удержания - &#x60;bonusSumm&#x60; — по сумме удержания (optional, default to 'dtBonus')
+     * @param  string|null $order Порядок выдачи: - &#x60;desc&#x60; — по убыванию - &#x60;asc&#x60; — по возрастанию (optional, default to 'desc')
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDeductions'] to see the possible values for this operation
@@ -9345,11 +9345,11 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта (optional)
-     * @param  string|null $sort (optional, default to 'dtBonus')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  int|null $offset (optional, default to 0)
+     * @param  string|null $sort Сортировка: - &#x60;nmId&#x60; — по артикулу WB - &#x60;dtBonus&#x60; — по дате и времени удержания - &#x60;bonusSumm&#x60; — по сумме удержания (optional, default to 'dtBonus')
+     * @param  string|null $order Порядок выдачи: - &#x60;desc&#x60; — по убыванию - &#x60;asc&#x60; — по возрастанию (optional, default to 'desc')
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDeductions'] to see the possible values for this operation
@@ -9406,11 +9406,11 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта (optional)
-     * @param  string|null $sort (optional, default to 'dtBonus')
-     * @param  string|null $order (optional, default to 'desc')
-     * @param  int|null $offset (optional, default to 0)
+     * @param  string|null $sort Сортировка: - &#x60;nmId&#x60; — по артикулу WB - &#x60;dtBonus&#x60; — по дате и времени удержания - &#x60;bonusSumm&#x60; — по сумме удержания (optional, default to 'dtBonus')
+     * @param  string|null $order Порядок выдачи: - &#x60;desc&#x60; — по убыванию - &#x60;asc&#x60; — по возрастанию (optional, default to 'desc')
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDeductions'] to see the possible values for this operation
@@ -9603,9 +9603,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeasurementPenalties'] to see the possible values for this operation
@@ -9630,9 +9630,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeasurementPenalties'] to see the possible values for this operation
@@ -9780,9 +9780,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeasurementPenalties'] to see the possible values for this operation
@@ -9810,9 +9810,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeasurementPenalties'] to see the possible values for this operation
@@ -9869,9 +9869,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество удержаний в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMeasurementPenalties'] to see the possible values for this operation
@@ -10044,9 +10044,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit limit (required)
+     * @param  int $limit Количество замеров в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouseMeasurements'] to see the possible values for this operation
@@ -10071,9 +10071,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество замеров в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouseMeasurements'] to see the possible values for this operation
@@ -10221,9 +10221,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество замеров в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouseMeasurements'] to see the possible values for this operation
@@ -10251,9 +10251,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество замеров в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouseMeasurements'] to see the possible values for this operation
@@ -10310,9 +10310,9 @@ class DefaultApi
      * URL: https://seller-analytics-api.wildberries.ru
      *
      * @param  \DateTime $date_to Конец отчётного периода (required)
-     * @param  int $limit (required)
+     * @param  int $limit Количество замеров в ответе (required)
      * @param  \DateTime|null $date_from Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта (optional)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнётся с 11 элемента (optional, default to 0)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouseMeasurements'] to see the possible values for this operation

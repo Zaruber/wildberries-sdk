@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiV1AccountBalanceGet402Response{}
 type ApiV1AccountBalanceGet402Response struct {
 	// Заголовок ошибки
 	Title *string `json:"title,omitempty"`
-	// Детали ошибки
+	// Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
 	Detail *string `json:"detail,omitempty"`
 }
 

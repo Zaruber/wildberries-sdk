@@ -29,6 +29,7 @@ type ApiApiCommunicationsV2NewsGetRequest struct {
 	fromID *int32
 }
 
+// Дата, от которой необходимо выдать новости
 func (r ApiApiCommunicationsV2NewsGetRequest) From(from string) ApiApiCommunicationsV2NewsGetRequest {
 	r.from = &from
 	return r

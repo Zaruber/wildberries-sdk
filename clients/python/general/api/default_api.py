@@ -48,7 +48,7 @@ class DefaultApi:
     @validate_call
     def api_communications_v2_news_get(
         self,
-        var_from: Optional[date] = None,
+        var_from: Annotated[Optional[date], Field(description="Дата, от которой необходимо выдать новости")] = None,
         from_id: Annotated[Optional[StrictInt], Field(description="ID новости, начиная с которой — включая её — нужно получить список новостей")] = None,
         _request_timeout: Union[
             None,
@@ -67,7 +67,7 @@ class DefaultApi:
 
         Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
-        :param var_from:
+        :param var_from: Дата, от которой необходимо выдать новости
         :type var_from: date
         :param from_id: ID новости, начиная с которой — включая её — нужно получить список новостей
         :type from_id: int
@@ -122,7 +122,7 @@ class DefaultApi:
     @validate_call
     def api_communications_v2_news_get_with_http_info(
         self,
-        var_from: Optional[date] = None,
+        var_from: Annotated[Optional[date], Field(description="Дата, от которой необходимо выдать новости")] = None,
         from_id: Annotated[Optional[StrictInt], Field(description="ID новости, начиная с которой — включая её — нужно получить список новостей")] = None,
         _request_timeout: Union[
             None,
@@ -141,7 +141,7 @@ class DefaultApi:
 
         Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
-        :param var_from:
+        :param var_from: Дата, от которой необходимо выдать новости
         :type var_from: date
         :param from_id: ID новости, начиная с которой — включая её — нужно получить список новостей
         :type from_id: int
@@ -196,7 +196,7 @@ class DefaultApi:
     @validate_call
     def api_communications_v2_news_get_without_preload_content(
         self,
-        var_from: Optional[date] = None,
+        var_from: Annotated[Optional[date], Field(description="Дата, от которой необходимо выдать новости")] = None,
         from_id: Annotated[Optional[StrictInt], Field(description="ID новости, начиная с которой — включая её — нужно получить список новостей")] = None,
         _request_timeout: Union[
             None,
@@ -215,7 +215,7 @@ class DefaultApi:
 
         Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
-        :param var_from:
+        :param var_from: Дата, от которой необходимо выдать новости
         :type var_from: date
         :param from_id: ID новости, начиная с которой — включая её — нужно получить список новостей
         :type from_id: int

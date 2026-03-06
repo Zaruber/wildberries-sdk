@@ -7292,7 +7292,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     postSalesFunnelGroupedHistory_200_response:

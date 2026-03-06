@@ -25,13 +25,6 @@ export interface ApiV3StocksWarehouseIdDeleteRequest {
      * @memberof ApiV3StocksWarehouseIdDeleteRequest
      */
     chrtIds: Array<number>;
-    /**
-     * Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-     * @type {Array<string>}
-     * @memberof ApiV3StocksWarehouseIdDeleteRequest
-     * @deprecated
-     */
-    skus?: Array<string>;
 }
 
 /**
@@ -53,7 +46,6 @@ export function ApiV3StocksWarehouseIdDeleteRequestFromJSONTyped(json: any, igno
     return {
         
         'chrtIds': json['chrtIds'],
-        'skus': json['skus'] == null ? undefined : json['skus'],
     };
 }
 
@@ -69,7 +61,6 @@ export function ApiV3StocksWarehouseIdDeleteRequestToJSONTyped(value?: ApiV3Stoc
     return {
         
         'chrtIds': value['chrtIds'],
-        'skus': value['skus'],
     };
 }
 

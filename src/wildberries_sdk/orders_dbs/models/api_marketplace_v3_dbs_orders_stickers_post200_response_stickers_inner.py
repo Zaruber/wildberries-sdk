@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBytes, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Union
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner(BaseModel):
     part_a: StrictStr = Field(description="Первая часть ID стикера", alias="partA")
     part_b: StrictStr = Field(description="Вторая часть ID стикера", alias="partB")
     barcode: StrictStr = Field(description="Закодированное значение стикера")
-    file: Union[StrictBytes, StrictStr] = Field(description="Полное представление стикера, кодировка base64")
+    file: StrictStr = Field(description="Полное представление стикера, кодировка base64")
     __properties: ClassVar[List[str]] = ["orderId", "partA", "partB", "barcode", "file"]
 
     model_config = ConfigDict(

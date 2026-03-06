@@ -16,7 +16,7 @@ pub struct ApiV1NewFeedbacksQuestionsGet402Response {
     /// Заголовок ошибки
     #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
-    /// Детали ошибки
+    /// Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
     #[serde(rename = "detail", skip_serializing_if = "Option::is_none")]
     pub detail: Option<String>,
 }

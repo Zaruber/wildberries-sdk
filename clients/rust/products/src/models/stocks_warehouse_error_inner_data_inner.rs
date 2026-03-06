@@ -16,6 +16,9 @@ pub struct StocksWarehouseErrorInnerDataInner {
     /// Баркод
     #[serde(rename = "sku", skip_serializing_if = "Option::is_none")]
     pub sku: Option<String>,
+    /// ID размера товара
+    #[serde(rename = "chrtId", skip_serializing_if = "Option::is_none")]
+    pub chrt_id: Option<i32>,
     /// Остаток
     #[serde(rename = "amount", skip_serializing_if = "Option::is_none")]
     pub amount: Option<i32>,
@@ -25,6 +28,7 @@ impl StocksWarehouseErrorInnerDataInner {
     pub fn new() -> StocksWarehouseErrorInnerDataInner {
         StocksWarehouseErrorInnerDataInner {
             sku: None,
+            chrt_id: None,
             amount: None,
         }
     }

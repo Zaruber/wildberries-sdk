@@ -11,9 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-use serde_with::serde_as;
-
-#[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner {
     /// ID сборочного задания
@@ -29,13 +26,12 @@ pub struct ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner {
     #[serde(rename = "barcode")]
     pub barcode: String,
     /// Полное представление стикера, кодировка base64
-    #[serde_as(as = "serde_with::base64::Base64")]
     #[serde(rename = "file")]
-    pub file: Vec<u8>,
+    pub file: String,
 }
 
 impl ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner {
-    pub fn new(order_id: i64, part_a: String, part_b: String, barcode: String, file: Vec<u8>) -> ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner {
+    pub fn new(order_id: i64, part_a: String, part_b: String, barcode: String, file: String) -> ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner {
         ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner {
             order_id,
             part_a,

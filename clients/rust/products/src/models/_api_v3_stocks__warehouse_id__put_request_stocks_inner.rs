@@ -16,9 +16,6 @@ pub struct ApiV3StocksWarehouseIdPutRequestStocksInner {
     /// ID размера товара
     #[serde(rename = "chrtId", skip_serializing_if = "Option::is_none")]
     pub chrt_id: Option<i32>,
-    /// Баркод. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-    #[serde(rename = "sku", skip_serializing_if = "Option::is_none")]
-    pub sku: Option<String>,
     /// Остаток
     #[serde(rename = "amount", skip_serializing_if = "Option::is_none")]
     pub amount: Option<i32>,
@@ -28,7 +25,6 @@ impl ApiV3StocksWarehouseIdPutRequestStocksInner {
     pub fn new() -> ApiV3StocksWarehouseIdPutRequestStocksInner {
         ApiV3StocksWarehouseIdPutRequestStocksInner {
             chrt_id: None,
-            sku: None,
             amount: None,
         }
     }

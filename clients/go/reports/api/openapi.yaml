@@ -1167,24 +1167,24 @@ paths:
           format: date-time
           type: string
         style: form
-      - explode: true
+      - description: Количество удержаний в ответе
+        explode: true
         in: query
         name: limit
         required: true
         schema:
-          description: Количество удержаний в ответе
           example: 330
           maximum: 1000
           type: integer
         style: form
-      - explode: true
+      - description: "Сколько элементов пропустить. Например, для значения `10` от\
+          вет начнётся с 11 элемента"
+        explode: true
         in: query
         name: offset
         required: false
         schema:
           default: 0
-          description: "Сколько элементов пропустить. Например, для значения `10`\
-            \ ответ начнётся с 11 элемента"
           example: 220
           type: integer
         style: form
@@ -1285,24 +1285,24 @@ paths:
           format: date-time
           type: string
         style: form
-      - explode: true
+      - description: Количество замеров в ответе
+        explode: true
         in: query
         name: limit
         required: true
         schema:
-          description: Количество замеров в ответе
           example: 330
           maximum: 1000
           type: integer
         style: form
-      - explode: true
+      - description: "Сколько элементов пропустить. Например, для значения `10` от\
+          вет начнётся с 11 элемента"
+        explode: true
         in: query
         name: offset
         required: false
         schema:
           default: 0
-          description: "Сколько элементов пропустить. Например, для значения `10`\
-            \ ответ начнётся с 11 элемента"
           example: 220
           type: integer
         style: form
@@ -1403,17 +1403,17 @@ paths:
           format: date-time
           type: string
         style: form
-      - explode: true
+      - description: |
+          Сортировка:
+          - `nmId` — по артикулу WB
+          - `dtBonus` — по дате и времени удержания
+          - `bonusSumm` — по сумме удержания
+        explode: true
         in: query
         name: sort
         required: false
         schema:
           default: dtBonus
-          description: |
-            Сортировка:
-            - `nmId` — по артикулу WB
-            - `dtBonus` — по дате и времени удержания
-            - `bonusSumm` — по сумме удержания
           enum:
           - nmId
           - dtBonus
@@ -1421,40 +1421,40 @@ paths:
           example: nmId
           type: string
         style: form
-      - explode: true
+      - description: |
+          Порядок выдачи:
+          - `desc` — по убыванию
+          - `asc` — по возрастанию
+        explode: true
         in: query
         name: order
         required: false
         schema:
           default: desc
-          description: |
-            Порядок выдачи:
-            - `desc` — по убыванию
-            - `asc` — по возрастанию
           enum:
           - desc
           - asc
           example: asc
           type: string
         style: form
-      - explode: true
+      - description: Количество удержаний в ответе
+        explode: true
         in: query
         name: limit
         required: true
         schema:
-          description: Количество удержаний в ответе
           example: 330
           maximum: 1000
           type: integer
         style: form
-      - explode: true
+      - description: "Сколько элементов пропустить. Например, для значения `10` от\
+          вет начнётся с 11 элемента"
+        explode: true
         in: query
         name: offset
         required: false
         schema:
           default: 0
-          description: "Сколько элементов пропустить. Например, для значения `10`\
-            \ ответ начнётся с 11 элемента"
           example: 220
           type: integer
         style: form
@@ -2909,18 +2909,18 @@ paths:
         | 10 сек | 1 запрос | 10 сек | 6 запросов |
         </div>
       parameters:
-      - explode: true
+      - description: |
+          Сортировка
+          - `brand` — по бренду
+          - `nmId` — по артикулу WB
+          - `title` — по наименованию товара
+          - `vendorCode` — по артикулу продавца
+          - `reason` — по причине блокировки
+        explode: true
         in: query
         name: sort
         required: true
         schema:
-          description: |
-            Сортировка
-            - `brand` — по бренду
-            - `nmId` — по артикулу WB
-            - `title` — по наименованию товара
-            - `vendorCode` — по артикулу продавца
-            - `reason` — по причине блокировки
           enum:
           - brand
           - nmId
@@ -2930,15 +2930,15 @@ paths:
           example: nmId
           type: string
         style: form
-      - explode: true
+      - description: |
+          Порядок выдачи
+          - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому
+          - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему
+        explode: true
         in: query
         name: order
         required: true
         schema:
-          description: |
-            Порядок выдачи
-            - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому
-            - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему
           enum:
           - desc
           - asc
@@ -3027,18 +3027,18 @@ paths:
         | 10 сек | 1 запрос | 10 сек | 6 запросов |
         </div>
       parameters:
-      - explode: true
+      - description: |
+          Сортировка
+          - `brand` — по бренду
+          - `nmId` — по артикулу WB
+          - `title` — по наименованию товара
+          - `vendorCode` — по артикулу продавца
+          - `nmRating` — по рейтингу товара
+        explode: true
         in: query
         name: sort
         required: true
         schema:
-          description: |
-            Сортировка
-            - `brand` — по бренду
-            - `nmId` — по артикулу WB
-            - `title` — по наименованию товара
-            - `vendorCode` — по артикулу продавца
-            - `nmRating` — по рейтингу товара
           enum:
           - brand
           - nmId
@@ -3048,15 +3048,15 @@ paths:
           example: title
           type: string
         style: form
-      - explode: true
+      - description: |
+          Порядок выдачи
+          - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому
+          - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему
+        explode: true
         in: query
         name: order
         required: true
         schema:
-          description: |
-            Порядок выдачи
-            - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому
-            - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему
           enum:
           - desc
           - asc
@@ -4484,7 +4484,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     _api_v1_warehouse_remains_tasks__task_id__download_get_200_response_inner_warehouses_inner:

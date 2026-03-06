@@ -742,29 +742,6 @@ components:
         barcode: k
       - quantity: 7
         barcode: "1111111111"
-    ResponseCoefficients:
-      value:
-      - date: 2024-04-11T00:00:00Z
-        coefficient: -1
-        warehouseID: 217081
-        warehouseName: Сц Брянск 2
-        allowUnload: false
-        boxTypeID: 6
-        storageCoef: null
-        deliveryCoef: null
-        deliveryBaseLiter: null
-        deliveryAdditionalLiter: null
-        storageBaseLiter: null
-        storageAdditionalLiter: null
-        isSortingCenter: true
-    Response400CoefficientsNew:
-      description: "Значение параметра `warehouseIDs` не указано, или некорректно"
-      value:
-        status: 400
-        title: bad request
-        detail: Неверный формат warehouseIDs
-        requestId: a6bdc2a4d2fde51c2036fa8af2483886
-        origin: supply-api
     OptionsResponse:
       value:
         result:
@@ -1367,77 +1344,6 @@ components:
           - 6
           type: integer
       type: object
-    models.AcceptanceCoefficient:
-      properties:
-        date:
-          description: Дата начала действия коэффициента
-          type: string
-        coefficient:
-          description: |
-            Коэффициент приёмки:
-              - `-1` — приёмка недоступна, вне зависимости от значения поля `allowUnload`
-              - `0` — бесплатная приёмка
-              - от `1` — множитель стоимости приёмки
-          type: number
-        warehouseID:
-          description: "ID склада. По нему можно получить [информацию о складе](./orders-fbw#tag/Informaciya-dlya-formirovaniya-postavok/paths/~1api~1v1~1warehouses/get)"
-          type: integer
-        warehouseName:
-          description: Название склада
-          type: string
-        allowUnload:
-          description: |
-            Доступность приёмки для поставок данного типа, смотри значение поля `boxTypeID`:
-
-             - `true` — приёмка доступна
-             - `false` — приёмка не доступна
-          type: boolean
-        boxTypeID:
-          description: |
-            ID типа поставки:
-              - `2` — Короба
-              - `5` — Монопаллеты
-              - `6` — Суперсейф
-            <br>Для типа поставки **QR-поставка с коробами** поле не возвращается
-          type: integer
-        storageCoef:
-          description: Коэффициент хранения
-          nullable: true
-          type: string
-        deliveryCoef:
-          description: Коэффициент логистики
-          nullable: true
-          type: string
-        deliveryBaseLiter:
-          description: Стоимость логистики первого литра
-          nullable: true
-          type: string
-        deliveryAdditionalLiter:
-          description: Стоимость логистики каждого следующего литра
-          nullable: true
-          type: string
-        storageBaseLiter:
-          description: |
-            Стоимость хранения:
-              - для паллет — стоимость за одну паллету
-              - для коробов — стоимость хранения за первый литр
-          nullable: true
-          type: string
-        storageAdditionalLiter:
-          description: |
-            Стоимость хранения каждого последующего литра:
-              - для паллет — всегда будет `null`, т.к. стоимость хранения за единицу паллеты определяется в `StorageBaseLiter`
-              - для коробов — стоимость хранения за каждый последующий литр
-          nullable: true
-          type: string
-        isSortingCenter:
-          description: |
-            Тип склада:
-
-             - `true` — сортировочный центр (СЦ)
-             - `false` — обычный
-          type: boolean
-      type: object
     models.WarehousesResultItems:
       example:
         ID: 300461
@@ -1583,7 +1489,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     models_OptionsResultModel_result_inner_error:

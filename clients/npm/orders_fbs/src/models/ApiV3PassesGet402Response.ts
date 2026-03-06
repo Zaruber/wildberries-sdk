@@ -26,7 +26,7 @@ export interface ApiV3PassesGet402Response {
      */
     title?: string;
     /**
-     * Детали ошибки
+     * Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
      * @type {string}
      * @memberof ApiV3PassesGet402Response
      */

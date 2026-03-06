@@ -76,7 +76,7 @@ class ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner implements M
         'part_a' => null,
         'part_b' => null,
         'barcode' => null,
-        'file' => 'byte'
+        'file' => null
     ];
 
     /**

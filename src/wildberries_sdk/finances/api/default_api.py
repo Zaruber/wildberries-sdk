@@ -870,8 +870,8 @@ class DefaultApi:
     @validate_call
     def api_v1_documents_download_get(
         self,
-        service_name: StrictStr,
-        extension: StrictStr,
+        service_name: Annotated[StrictStr, Field(description="Уникальный ID документа")],
+        extension: Annotated[StrictStr, Field(description="Формат документа")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -889,9 +889,9 @@ class DefaultApi:
 
         Метод загружает один документ из [списка документов продавца](/openapi/financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1list/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 5 запросов | </div> 
 
-        :param service_name: (required)
+        :param service_name: Уникальный ID документа (required)
         :type service_name: str
-        :param extension: (required)
+        :param extension: Формат документа (required)
         :type extension: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -945,8 +945,8 @@ class DefaultApi:
     @validate_call
     def api_v1_documents_download_get_with_http_info(
         self,
-        service_name: StrictStr,
-        extension: StrictStr,
+        service_name: Annotated[StrictStr, Field(description="Уникальный ID документа")],
+        extension: Annotated[StrictStr, Field(description="Формат документа")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -964,9 +964,9 @@ class DefaultApi:
 
         Метод загружает один документ из [списка документов продавца](/openapi/financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1list/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 5 запросов | </div> 
 
-        :param service_name: (required)
+        :param service_name: Уникальный ID документа (required)
         :type service_name: str
-        :param extension: (required)
+        :param extension: Формат документа (required)
         :type extension: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1020,8 +1020,8 @@ class DefaultApi:
     @validate_call
     def api_v1_documents_download_get_without_preload_content(
         self,
-        service_name: StrictStr,
-        extension: StrictStr,
+        service_name: Annotated[StrictStr, Field(description="Уникальный ID документа")],
+        extension: Annotated[StrictStr, Field(description="Формат документа")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1039,9 +1039,9 @@ class DefaultApi:
 
         Метод загружает один документ из [списка документов продавца](/openapi/financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1list/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 5 запросов | </div> 
 
-        :param service_name: (required)
+        :param service_name: Уникальный ID документа (required)
         :type service_name: str
-        :param extension: (required)
+        :param extension: Формат документа (required)
         :type extension: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1167,14 +1167,14 @@ class DefaultApi:
     def api_v1_documents_list_get(
         self,
         locale: Annotated[Optional[StrictStr], Field(description="Язык поля `category`:   - `ru` — русский   - `en` — английский   - `zh` — китайский ")] = None,
-        begin_time: Optional[date] = None,
-        end_time: Optional[date] = None,
-        sort: Optional[StrictStr] = None,
-        order: Optional[StrictStr] = None,
-        category: Optional[StrictStr] = None,
-        service_name: Optional[StrictStr] = None,
-        limit: Optional[Annotated[int, Field(le=50, strict=True)]] = None,
-        offset: Optional[StrictInt] = None,
+        begin_time: Annotated[Optional[date], Field(description="Начало периода. Только вместе с `endTime`")] = None,
+        end_time: Annotated[Optional[date], Field(description="Конец периода. Только вместе с `beginTime`")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Сортировка:   - `date` — по дате создания документа   - `category` — по категории (только при `locale=ru`)  Только вместе с `order` ")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Сортировка:   - `desc` — по убыванию   - `asc` — по возрастанию  Только вместе с `sort` ")] = None,
+        category: Annotated[Optional[StrictStr], Field(description="ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`")] = None,
+        service_name: Annotated[Optional[StrictStr], Field(description="Уникальный ID документа")] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=50, strict=True)]], Field(description="Максимальное количество строк ответа")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="После какой строки выдавать данные")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1194,21 +1194,21 @@ class DefaultApi:
 
         :param locale: Язык поля `category`:   - `ru` — русский   - `en` — английский   - `zh` — китайский 
         :type locale: str
-        :param begin_time:
+        :param begin_time: Начало периода. Только вместе с `endTime`
         :type begin_time: date
-        :param end_time:
+        :param end_time: Конец периода. Только вместе с `beginTime`
         :type end_time: date
-        :param sort:
+        :param sort: Сортировка:   - `date` — по дате создания документа   - `category` — по категории (только при `locale=ru`)  Только вместе с `order` 
         :type sort: str
-        :param order:
+        :param order: Сортировка:   - `desc` — по убыванию   - `asc` — по возрастанию  Только вместе с `sort` 
         :type order: str
-        :param category:
+        :param category: ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`
         :type category: str
-        :param service_name:
+        :param service_name: Уникальный ID документа
         :type service_name: str
-        :param limit:
+        :param limit: Максимальное количество строк ответа
         :type limit: int
-        :param offset:
+        :param offset: После какой строки выдавать данные
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1270,14 +1270,14 @@ class DefaultApi:
     def api_v1_documents_list_get_with_http_info(
         self,
         locale: Annotated[Optional[StrictStr], Field(description="Язык поля `category`:   - `ru` — русский   - `en` — английский   - `zh` — китайский ")] = None,
-        begin_time: Optional[date] = None,
-        end_time: Optional[date] = None,
-        sort: Optional[StrictStr] = None,
-        order: Optional[StrictStr] = None,
-        category: Optional[StrictStr] = None,
-        service_name: Optional[StrictStr] = None,
-        limit: Optional[Annotated[int, Field(le=50, strict=True)]] = None,
-        offset: Optional[StrictInt] = None,
+        begin_time: Annotated[Optional[date], Field(description="Начало периода. Только вместе с `endTime`")] = None,
+        end_time: Annotated[Optional[date], Field(description="Конец периода. Только вместе с `beginTime`")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Сортировка:   - `date` — по дате создания документа   - `category` — по категории (только при `locale=ru`)  Только вместе с `order` ")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Сортировка:   - `desc` — по убыванию   - `asc` — по возрастанию  Только вместе с `sort` ")] = None,
+        category: Annotated[Optional[StrictStr], Field(description="ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`")] = None,
+        service_name: Annotated[Optional[StrictStr], Field(description="Уникальный ID документа")] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=50, strict=True)]], Field(description="Максимальное количество строк ответа")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="После какой строки выдавать данные")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1297,21 +1297,21 @@ class DefaultApi:
 
         :param locale: Язык поля `category`:   - `ru` — русский   - `en` — английский   - `zh` — китайский 
         :type locale: str
-        :param begin_time:
+        :param begin_time: Начало периода. Только вместе с `endTime`
         :type begin_time: date
-        :param end_time:
+        :param end_time: Конец периода. Только вместе с `beginTime`
         :type end_time: date
-        :param sort:
+        :param sort: Сортировка:   - `date` — по дате создания документа   - `category` — по категории (только при `locale=ru`)  Только вместе с `order` 
         :type sort: str
-        :param order:
+        :param order: Сортировка:   - `desc` — по убыванию   - `asc` — по возрастанию  Только вместе с `sort` 
         :type order: str
-        :param category:
+        :param category: ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`
         :type category: str
-        :param service_name:
+        :param service_name: Уникальный ID документа
         :type service_name: str
-        :param limit:
+        :param limit: Максимальное количество строк ответа
         :type limit: int
-        :param offset:
+        :param offset: После какой строки выдавать данные
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1373,14 +1373,14 @@ class DefaultApi:
     def api_v1_documents_list_get_without_preload_content(
         self,
         locale: Annotated[Optional[StrictStr], Field(description="Язык поля `category`:   - `ru` — русский   - `en` — английский   - `zh` — китайский ")] = None,
-        begin_time: Optional[date] = None,
-        end_time: Optional[date] = None,
-        sort: Optional[StrictStr] = None,
-        order: Optional[StrictStr] = None,
-        category: Optional[StrictStr] = None,
-        service_name: Optional[StrictStr] = None,
-        limit: Optional[Annotated[int, Field(le=50, strict=True)]] = None,
-        offset: Optional[StrictInt] = None,
+        begin_time: Annotated[Optional[date], Field(description="Начало периода. Только вместе с `endTime`")] = None,
+        end_time: Annotated[Optional[date], Field(description="Конец периода. Только вместе с `beginTime`")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Сортировка:   - `date` — по дате создания документа   - `category` — по категории (только при `locale=ru`)  Только вместе с `order` ")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Сортировка:   - `desc` — по убыванию   - `asc` — по возрастанию  Только вместе с `sort` ")] = None,
+        category: Annotated[Optional[StrictStr], Field(description="ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`")] = None,
+        service_name: Annotated[Optional[StrictStr], Field(description="Уникальный ID документа")] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=50, strict=True)]], Field(description="Максимальное количество строк ответа")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="После какой строки выдавать данные")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1400,21 +1400,21 @@ class DefaultApi:
 
         :param locale: Язык поля `category`:   - `ru` — русский   - `en` — английский   - `zh` — китайский 
         :type locale: str
-        :param begin_time:
+        :param begin_time: Начало периода. Только вместе с `endTime`
         :type begin_time: date
-        :param end_time:
+        :param end_time: Конец периода. Только вместе с `beginTime`
         :type end_time: date
-        :param sort:
+        :param sort: Сортировка:   - `date` — по дате создания документа   - `category` — по категории (только при `locale=ru`)  Только вместе с `order` 
         :type sort: str
-        :param order:
+        :param order: Сортировка:   - `desc` — по убыванию   - `asc` — по возрастанию  Только вместе с `sort` 
         :type order: str
-        :param category:
+        :param category: ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`
         :type category: str
-        :param service_name:
+        :param service_name: Уникальный ID документа
         :type service_name: str
-        :param limit:
+        :param limit: Максимальное количество строк ответа
         :type limit: int
-        :param offset:
+        :param offset: После какой строки выдавать данные
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

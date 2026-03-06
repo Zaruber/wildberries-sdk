@@ -1199,8 +1199,8 @@ class DefaultApi:
     @validate_call
     def api_v1_analytics_banned_products_blocked_get(
         self,
-        sort: StrictStr,
-        order: StrictStr,
+        sort: Annotated[StrictStr, Field(description="Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `reason` — по причине блокировки ")],
+        order: Annotated[StrictStr, Field(description="Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1218,9 +1218,9 @@ class DefaultApi:
 
         Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
-        :param sort: (required)
+        :param sort: Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `reason` — по причине блокировки  (required)
         :type sort: str
-        :param order: (required)
+        :param order: Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему  (required)
         :type order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1274,8 +1274,8 @@ class DefaultApi:
     @validate_call
     def api_v1_analytics_banned_products_blocked_get_with_http_info(
         self,
-        sort: StrictStr,
-        order: StrictStr,
+        sort: Annotated[StrictStr, Field(description="Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `reason` — по причине блокировки ")],
+        order: Annotated[StrictStr, Field(description="Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1293,9 +1293,9 @@ class DefaultApi:
 
         Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
-        :param sort: (required)
+        :param sort: Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `reason` — по причине блокировки  (required)
         :type sort: str
-        :param order: (required)
+        :param order: Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему  (required)
         :type order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1349,8 +1349,8 @@ class DefaultApi:
     @validate_call
     def api_v1_analytics_banned_products_blocked_get_without_preload_content(
         self,
-        sort: StrictStr,
-        order: StrictStr,
+        sort: Annotated[StrictStr, Field(description="Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `reason` — по причине блокировки ")],
+        order: Annotated[StrictStr, Field(description="Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1368,9 +1368,9 @@ class DefaultApi:
 
         Метод возвращает список [заблокированных карточек товаров продавца](https://seller.wildberries.ru/analytics-reports/banned-products) с причинами блокировки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
-        :param sort: (required)
+        :param sort: Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `reason` — по причине блокировки  (required)
         :type sort: str
-        :param order: (required)
+        :param order: Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему  (required)
         :type order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1495,8 +1495,8 @@ class DefaultApi:
     @validate_call
     def api_v1_analytics_banned_products_shadowed_get(
         self,
-        sort: StrictStr,
-        order: StrictStr,
+        sort: Annotated[StrictStr, Field(description="Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `nmRating` — по рейтингу товара ")],
+        order: Annotated[StrictStr, Field(description="Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1514,9 +1514,9 @@ class DefaultApi:
 
         Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
-        :param sort: (required)
+        :param sort: Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `nmRating` — по рейтингу товара  (required)
         :type sort: str
-        :param order: (required)
+        :param order: Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему  (required)
         :type order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1570,8 +1570,8 @@ class DefaultApi:
     @validate_call
     def api_v1_analytics_banned_products_shadowed_get_with_http_info(
         self,
-        sort: StrictStr,
-        order: StrictStr,
+        sort: Annotated[StrictStr, Field(description="Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `nmRating` — по рейтингу товара ")],
+        order: Annotated[StrictStr, Field(description="Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1589,9 +1589,9 @@ class DefaultApi:
 
         Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
-        :param sort: (required)
+        :param sort: Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `nmRating` — по рейтингу товара  (required)
         :type sort: str
-        :param order: (required)
+        :param order: Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему  (required)
         :type order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1645,8 +1645,8 @@ class DefaultApi:
     @validate_call
     def api_v1_analytics_banned_products_shadowed_get_without_preload_content(
         self,
-        sort: StrictStr,
-        order: StrictStr,
+        sort: Annotated[StrictStr, Field(description="Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `nmRating` — по рейтингу товара ")],
+        order: Annotated[StrictStr, Field(description="Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему ")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1664,9 +1664,9 @@ class DefaultApi:
 
         Метод возвращает список [товаров продавца, скрытых из каталога](https://seller.wildberries.ru/analytics-reports/banned-products/shadowed).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 6 запросов | </div> 
 
-        :param sort: (required)
+        :param sort: Сортировка - `brand` — по бренду - `nmId` — по артикулу WB - `title` — по наименованию товара - `vendorCode` — по артикулу продавца - `nmRating` — по рейтингу товара  (required)
         :type sort: str
-        :param order: (required)
+        :param order: Порядок выдачи - `desc` — от наибольшего числового значения к наименьшему, от последнего по алфавиту значения к первому - `asc` — от наименьшего числового значения к наибольшему, от первого по алфавиту значения к последнему  (required)
         :type order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6979,11 +6979,11 @@ class DefaultApi:
     def get_deductions(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество удержаний в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта")] = None,
-        sort: Optional[StrictStr] = None,
-        order: Optional[StrictStr] = None,
-        offset: Optional[StrictInt] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Сортировка: - `nmId` — по артикулу WB - `dtBonus` — по дате и времени удержания - `bonusSumm` — по сумме удержания ")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Порядок выдачи: - `desc` — по убыванию - `asc` — по возрастанию ")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7003,15 +7003,15 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество удержаний в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param sort:
+        :param sort: Сортировка: - `nmId` — по артикулу WB - `dtBonus` — по дате и времени удержания - `bonusSumm` — по сумме удержания 
         :type sort: str
-        :param order:
+        :param order: Порядок выдачи: - `desc` — по убыванию - `asc` — по возрастанию 
         :type order: str
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7070,11 +7070,11 @@ class DefaultApi:
     def get_deductions_with_http_info(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество удержаний в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта")] = None,
-        sort: Optional[StrictStr] = None,
-        order: Optional[StrictStr] = None,
-        offset: Optional[StrictInt] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Сортировка: - `nmId` — по артикулу WB - `dtBonus` — по дате и времени удержания - `bonusSumm` — по сумме удержания ")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Порядок выдачи: - `desc` — по убыванию - `asc` — по возрастанию ")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7094,15 +7094,15 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество удержаний в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param sort:
+        :param sort: Сортировка: - `nmId` — по артикулу WB - `dtBonus` — по дате и времени удержания - `bonusSumm` — по сумме удержания 
         :type sort: str
-        :param order:
+        :param order: Порядок выдачи: - `desc` — по убыванию - `asc` — по возрастанию 
         :type order: str
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7161,11 +7161,11 @@ class DefaultApi:
     def get_deductions_without_preload_content(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество удержаний в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта")] = None,
-        sort: Optional[StrictStr] = None,
-        order: Optional[StrictStr] = None,
-        offset: Optional[StrictInt] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Сортировка: - `nmId` — по артикулу WB - `dtBonus` — по дате и времени удержания - `bonusSumm` — по сумме удержания ")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Порядок выдачи: - `desc` — по убыванию - `asc` — по возрастанию ")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7185,15 +7185,15 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество удержаний в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используются дата и время, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param sort:
+        :param sort: Сортировка: - `nmId` — по артикулу WB - `dtBonus` — по дате и времени удержания - `bonusSumm` — по сумме удержания 
         :type sort: str
-        :param order:
+        :param order: Порядок выдачи: - `desc` — по убыванию - `asc` — по возрастанию 
         :type order: str
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7361,9 +7361,9 @@ class DefaultApi:
     def get_measurement_penalties(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество удержаний в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта")] = None,
-        offset: Optional[StrictInt] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7383,11 +7383,11 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество удержаний в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7444,9 +7444,9 @@ class DefaultApi:
     def get_measurement_penalties_with_http_info(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество удержаний в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта")] = None,
-        offset: Optional[StrictInt] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7466,11 +7466,11 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество удержаний в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7527,9 +7527,9 @@ class DefaultApi:
     def get_measurement_penalties_without_preload_content(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество удержаний в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта")] = None,
-        offset: Optional[StrictInt] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7549,11 +7549,11 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество удержаний в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7709,9 +7709,9 @@ class DefaultApi:
     def get_warehouse_measurements(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество замеров в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта")] = None,
-        offset: Optional[StrictInt] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7731,11 +7731,11 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество замеров в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7792,9 +7792,9 @@ class DefaultApi:
     def get_warehouse_measurements_with_http_info(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество замеров в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта")] = None,
-        offset: Optional[StrictInt] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7814,11 +7814,11 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество замеров в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7875,9 +7875,9 @@ class DefaultApi:
     def get_warehouse_measurements_without_preload_content(
         self,
         date_to: Annotated[datetime, Field(description="Конец отчётного периода")],
-        limit: Annotated[int, Field(le=1000, strict=True)],
+        limit: Annotated[int, Field(le=1000, strict=True, description="Количество замеров в ответе")],
         date_from: Annotated[Optional[datetime], Field(description="Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта")] = None,
-        offset: Optional[StrictInt] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7897,11 +7897,11 @@ class DefaultApi:
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
-        :param limit: (required)
+        :param limit: Количество замеров в ответе (required)
         :type limit: int
         :param date_from: Начало отчётного периода. По умолчанию используется дата, когда были впервые получены данные для отчёта
         :type date_from: datetime
-        :param offset:
+        :param offset: Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

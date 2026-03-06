@@ -28,7 +28,7 @@ class ApiV3StocksWarehouseIdPutRequest(BaseModel):
     """
     ApiV3StocksWarehouseIdPutRequest
     """ # noqa: E501
-    stocks: Annotated[List[ApiV3StocksWarehouseIdPutRequestStocksInner], Field(min_length=1, max_length=1000)] = Field(description="Массив баркодов товаров и их остатков")
+    stocks: Annotated[List[ApiV3StocksWarehouseIdPutRequestStocksInner], Field(min_length=1, max_length=1000)] = Field(description="Массив ID размеров товаров и их остатков")
     __properties: ClassVar[List[str]] = ["stocks"]
 
     model_config = ConfigDict(

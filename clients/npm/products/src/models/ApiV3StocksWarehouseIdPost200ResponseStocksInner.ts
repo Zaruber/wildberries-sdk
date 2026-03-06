@@ -26,13 +26,6 @@ export interface ApiV3StocksWarehouseIdPost200ResponseStocksInner {
      */
     chrtId?: number;
     /**
-     * Баркод. Поле будет отключено [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-     * @type {string}
-     * @memberof ApiV3StocksWarehouseIdPost200ResponseStocksInner
-     * @deprecated
-     */
-    sku?: string;
-    /**
      * Остаток
      * @type {number}
      * @memberof ApiV3StocksWarehouseIdPost200ResponseStocksInner
@@ -58,7 +51,6 @@ export function ApiV3StocksWarehouseIdPost200ResponseStocksInnerFromJSONTyped(js
     return {
         
         'chrtId': json['chrtId'] == null ? undefined : json['chrtId'],
-        'sku': json['sku'] == null ? undefined : json['sku'],
         'amount': json['amount'] == null ? undefined : json['amount'],
     };
 }
@@ -75,7 +67,6 @@ export function ApiV3StocksWarehouseIdPost200ResponseStocksInnerToJSONTyped(valu
     return {
         
         'chrtId': value['chrtId'],
-        'sku': value['sku'],
         'amount': value['amount'],
     };
 }

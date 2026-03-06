@@ -305,7 +305,7 @@ export interface ApiAdvertV1BidsPatchOperationRequest {
 
 export interface ApiAdvertV2AdvertsGetRequest {
     ids?: string;
-    statuses?: ApiAdvertV2AdvertsGetStatusesEnum;
+    statuses?: string;
     paymentType?: ApiAdvertV2AdvertsGetPaymentTypeEnum;
 }
 
@@ -2324,18 +2324,6 @@ export class DefaultApi extends runtime.BaseAPI {
 
 }
 
-/**
- * @export
- */
-export const ApiAdvertV2AdvertsGetStatusesEnum = {
-    _1: '-1',
-    _4: '4',
-    _7: '7',
-    _8: '8',
-    _9: '9',
-    _11: '11'
-} as const;
-export type ApiAdvertV2AdvertsGetStatusesEnum = typeof ApiAdvertV2AdvertsGetStatusesEnum[keyof typeof ApiAdvertV2AdvertsGetStatusesEnum];
 /**
  * @export
  */

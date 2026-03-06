@@ -336,7 +336,7 @@ class ApiV3PassesGet402Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets detail
      *
-     * @param string|null $detail Детали ошибки
+     * @param string|null $detail Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
      *
      * @return self
      */

@@ -133,12 +133,12 @@ paths:
         | 1 мин | 1 запрос | 1 мин | 10 запросов |
         </div>
       parameters:
-      - explode: true
+      - description: "Дата, от которой необходимо выдать новости"
+        explode: true
         in: query
         name: from
         required: false
         schema:
-          description: "Дата, от которой необходимо выдать новости"
           example: 2025-02-06
           format: date
           type: string
@@ -1284,7 +1284,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     Access_inner:

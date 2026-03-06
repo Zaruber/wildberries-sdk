@@ -7760,11 +7760,13 @@ func (r ApiContentV2ObjectAllGetRequest) Name(name string) ApiContentV2ObjectAll
 	return r
 }
 
+// Количество предметов, максимум 1000
 func (r ApiContentV2ObjectAllGetRequest) Limit(limit int32) ApiContentV2ObjectAllGetRequest {
 	r.limit = &limit
 	return r
 }
 
+// Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнется с 11 элемента
 func (r ApiContentV2ObjectAllGetRequest) Offset(offset int32) ApiContentV2ObjectAllGetRequest {
 	r.offset = &offset
 	return r

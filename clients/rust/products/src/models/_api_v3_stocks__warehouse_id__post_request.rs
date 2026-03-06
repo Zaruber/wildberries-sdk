@@ -16,16 +16,12 @@ pub struct ApiV3StocksWarehouseIdPostRequest {
     /// Массив ID размеров товаров
     #[serde(rename = "chrtIds")]
     pub chrt_ids: Vec<i32>,
-    /// Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-    #[serde(rename = "skus", skip_serializing_if = "Option::is_none")]
-    pub skus: Option<Vec<String>>,
 }
 
 impl ApiV3StocksWarehouseIdPostRequest {
     pub fn new(chrt_ids: Vec<i32>) -> ApiV3StocksWarehouseIdPostRequest {
         ApiV3StocksWarehouseIdPostRequest {
             chrt_ids,
-            skus: None,
         }
     }
 }

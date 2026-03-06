@@ -180,24 +180,24 @@ paths:
           example: Носки
           type: string
         style: form
-      - explode: true
+      - description: "Количество предметов, максимум 1000"
+        explode: true
         in: query
         name: limit
         required: false
         schema:
           default: 30
-          description: "Количество предметов, максимум 1000"
           example: 1000
           type: integer
         style: form
-      - explode: true
+      - description: "Сколько элементов пропустить. Например, для значения `10` от\
+          вет начнется с 11 элемента"
+        explode: true
         in: query
         name: offset
         required: false
         schema:
           default: 0
-          description: "Сколько элементов пропустить. Например, для значения `10`\
-            \ ответ начнется с 11 элемента"
           example: 5000
           type: integer
         style: form
@@ -8331,7 +8331,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     _content_v2_tag_post_request:
@@ -10153,11 +10155,6 @@ components:
           description: ID размера товара
           example: 12345678
           type: integer
-        sku:
-          deprecated: true
-          description: "Баркод. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)"
-          example: SKUTest123
-          type: string
         amount:
           description: Остаток
           example: 10
@@ -10167,7 +10164,7 @@ components:
     _api_v3_stocks__warehouseId__put_request:
       properties:
         stocks:
-          description: Массив баркодов товаров и их остатков
+          description: Массив ID размеров товаров и их остатков
           items:
             $ref: "#/components/schemas/_api_v3_stocks__warehouseId__put_request_stocks_inner"
           maxItems: 1000
@@ -10205,15 +10202,6 @@ components:
             example: 12345678
             type: integer
           type: array
-        skus:
-          deprecated: true
-          description: "Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)"
-          items:
-            example: SKUTest123
-            type: string
-          maxItems: 1000
-          minItems: 1
-          type: array
       required:
       - chrtIds
       type: object
@@ -10221,18 +10209,11 @@ components:
       example:
         amount: 10
         chrtId: 12345678
-        sku: SKUTest123
       properties:
         chrtId:
           description: ID размера товара
           example: 12345678
           type: integer
-        sku:
-          deprecated: true
-          description: "Баркод. Поле будет отключено [9 февраля](https://dev.wildberries.ru/release-notes?id=386)"
-          example: SKUTest123
-          nullable: false
-          type: string
         amount:
           description: Остаток
           example: 10
@@ -10244,10 +10225,8 @@ components:
         stocks:
         - amount: 10
           chrtId: 12345678
-          sku: SKUTest123
         - amount: 10
           chrtId: 12345678
-          sku: SKUTest123
       properties:
         stocks:
           items:
@@ -10263,17 +10242,6 @@ components:
             example: 123456789
             nullable: false
             type: integer
-          maxItems: 1000
-          minItems: 1
-          nullable: false
-          type: array
-        skus:
-          deprecated: true
-          description: "Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)"
-          items:
-            example: SKUTest123
-            nullable: false
-            type: string
           maxItems: 1000
           minItems: 1
           nullable: false
@@ -10436,12 +10404,16 @@ components:
       type: object
     StocksWarehouseError_inner_data_inner:
       example:
-        amount: 0
+        amount: 6
         sku: sku
+        chrtId: 0
       properties:
         sku:
           description: Баркод
           type: string
+        chrtId:
+          description: ID размера товара
+          type: integer
         amount:
           description: Остаток
           type: integer
@@ -10450,10 +10422,12 @@ components:
       example:
         code: code
         data:
-        - amount: 0
+        - amount: 6
           sku: sku
-        - amount: 0
+          chrtId: 0
+        - amount: 6
           sku: sku
+          chrtId: 0
         message: message
       properties:
         data:

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,7 @@ class ApiV3StocksWarehouseIdDeleteRequest(BaseModel):
     ApiV3StocksWarehouseIdDeleteRequest
     """ # noqa: E501
     chrt_ids: Annotated[List[StrictInt], Field(min_length=1, max_length=1000)] = Field(description="Массив ID размеров товаров", alias="chrtIds")
-    skus: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=1000)]] = Field(default=None, description="Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)")
-    __properties: ClassVar[List[str]] = ["chrtIds", "skus"]
+    __properties: ClassVar[List[str]] = ["chrtIds"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -83,8 +82,7 @@ class ApiV3StocksWarehouseIdDeleteRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "chrtIds": obj.get("chrtIds"),
-            "skus": obj.get("skus")
+            "chrtIds": obj.get("chrtIds")
         })
         return _obj
 

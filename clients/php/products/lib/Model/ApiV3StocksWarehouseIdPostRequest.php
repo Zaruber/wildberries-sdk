@@ -57,8 +57,7 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'chrt_ids' => 'int[]',
-        'skus' => 'string[]'
+        'chrt_ids' => 'int[]'
     ];
 
     /**
@@ -69,8 +68,7 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'chrt_ids' => null,
-        'skus' => null
+        'chrt_ids' => null
     ];
 
     /**
@@ -79,8 +77,7 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'chrt_ids' => false,
-        'skus' => false
+        'chrt_ids' => false
     ];
 
     /**
@@ -169,8 +166,7 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'chrt_ids' => 'chrtIds',
-        'skus' => 'skus'
+        'chrt_ids' => 'chrtIds'
     ];
 
     /**
@@ -179,8 +175,7 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'chrt_ids' => 'setChrtIds',
-        'skus' => 'setSkus'
+        'chrt_ids' => 'setChrtIds'
     ];
 
     /**
@@ -189,8 +184,7 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'chrt_ids' => 'getChrtIds',
-        'skus' => 'getSkus'
+        'chrt_ids' => 'getChrtIds'
     ];
 
     /**
@@ -251,7 +245,6 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
     public function __construct(?array $data = null)
     {
         $this->setIfExists('chrt_ids', $data ?? [], null);
-        $this->setIfExists('skus', $data ?? [], null);
     }
 
     /**
@@ -284,14 +277,6 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
         if ($this->container['chrt_ids'] === null) {
             $invalidProperties[] = "'chrt_ids' can't be null";
         }
-        if (!is_null($this->container['skus']) && (count($this->container['skus']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'skus', number of items must be less than or equal to 1000.";
-        }
-
-        if (!is_null($this->container['skus']) && (count($this->container['skus']) < 1)) {
-            $invalidProperties[] = "invalid value for 'skus', number of items must be greater than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -330,42 +315,6 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
             throw new \InvalidArgumentException('non-nullable chrt_ids cannot be null');
         }
         $this->container['chrt_ids'] = $chrt_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets skus
-     *
-     * @return string[]|null
-     * @deprecated
-     */
-    public function getSkus()
-    {
-        return $this->container['skus'];
-    }
-
-    /**
-     * Sets skus
-     *
-     * @param string[]|null $skus Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setSkus($skus)
-    {
-        if (is_null($skus)) {
-            throw new \InvalidArgumentException('non-nullable skus cannot be null');
-        }
-
-        if ((count($skus) > 1000)) {
-            throw new \InvalidArgumentException('invalid value for $skus when calling ApiV3StocksWarehouseIdPostRequest., number of items must be less than or equal to 1000.');
-        }
-        if ((count($skus) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $skus when calling ApiV3StocksWarehouseIdPostRequest., number of items must be greater than or equal to 1.');
-        }
-        $this->container['skus'] = $skus;
 
         return $this;
     }

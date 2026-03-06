@@ -15685,8 +15685,8 @@ class DefaultApi
      *
      * @param  string|null $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице (optional)
      * @param  string|null $name Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков (optional)
-     * @param  int|null $limit limit (optional, default to 30)
-     * @param  int|null $offset offset (optional, default to 0)
+     * @param  int|null $limit Количество предметов, максимум 1000 (optional, default to 30)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнется с 11 элемента (optional, default to 0)
      * @param  int|null $parent_id ID родительской категории предмета (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -15713,8 +15713,8 @@ class DefaultApi
      *
      * @param  string|null $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице (optional)
      * @param  string|null $name Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков (optional)
-     * @param  int|null $limit (optional, default to 30)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $limit Количество предметов, максимум 1000 (optional, default to 30)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнется с 11 элемента (optional, default to 0)
      * @param  int|null $parent_id ID родительской категории предмета (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -15836,8 +15836,8 @@ class DefaultApi
      *
      * @param  string|null $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице (optional)
      * @param  string|null $name Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков (optional)
-     * @param  int|null $limit (optional, default to 30)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $limit Количество предметов, максимум 1000 (optional, default to 30)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнется с 11 элемента (optional, default to 0)
      * @param  int|null $parent_id ID родительской категории предмета (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -15867,8 +15867,8 @@ class DefaultApi
      *
      * @param  string|null $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице (optional)
      * @param  string|null $name Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков (optional)
-     * @param  int|null $limit (optional, default to 30)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $limit Количество предметов, максимум 1000 (optional, default to 30)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнется с 11 элемента (optional, default to 0)
      * @param  int|null $parent_id ID родительской категории предмета (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
@@ -15927,8 +15927,8 @@ class DefaultApi
      *
      * @param  string|null $locale Язык полей ответа:   - &#x60;ru&#x60; — русский   - &#x60;en&#x60; — английский   - &#x60;zh&#x60; — китайский  Не используется в песочнице (optional)
      * @param  string|null $name Поиск по названию предмета (Носки), поиск работает по подстроке, искать можно на любом из поддерживаемых языков (optional)
-     * @param  int|null $limit (optional, default to 30)
-     * @param  int|null $offset (optional, default to 0)
+     * @param  int|null $limit Количество предметов, максимум 1000 (optional, default to 30)
+     * @param  int|null $offset Сколько элементов пропустить. Например, для значения &#x60;10&#x60; ответ начнется с 11 элемента (optional, default to 0)
      * @param  int|null $parent_id ID родительской категории предмета (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.

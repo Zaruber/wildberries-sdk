@@ -3308,8 +3308,8 @@ components:
       description: "Обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)\
         \ не указан"
       value:
-        code: 409
-        message: SGTINIsNotFilled
+        code: SGTINIsNotFilled
+        message: ""
   parameters:
     OrderDBS:
       description: ID сборочного задания
@@ -4573,7 +4573,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     _api_v3_dbs_orders_get_200_response:
@@ -4675,8 +4677,7 @@ components:
       type: object
     _api_marketplace_v3_dbs_orders_stickers_post_200_response_stickers_inner:
       example:
-        file: !!binary |-
-          SlZCRVIuLi5aV1lLTVRNNU1Rb2xKVVZQUmc9PQ==
+        file: JVBER...ZWYKMTM5MQolJUVPRg==
         orderId: 5346346
         partA: "231648"
         partB: "9753"
@@ -4705,9 +4706,7 @@ components:
           type: string
         file:
           description: "Полное представление стикера, кодировка base64"
-          example: !!binary |-
-            SlZCRVIuLi5aV1lLTVRNNU1Rb2xKVVZQUmc9PQ==
-          format: byte
+          example: JVBER...ZWYKMTM5MQolJUVPRg==
           nullable: false
           type: string
       required:
@@ -4720,14 +4719,12 @@ components:
     _api_marketplace_v3_dbs_orders_stickers_post_200_response:
       example:
         stickers:
-        - file: !!binary |-
-            SlZCRVIuLi5aV1lLTVRNNU1Rb2xKVVZQUmc9PQ==
+        - file: JVBER...ZWYKMTM5MQolJUVPRg==
           orderId: 5346346
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
-        - file: !!binary |-
-            SlZCRVIuLi5aV1lLTVRNNU1Rb2xKVVZQUmc9PQ==
+        - file: JVBER...ZWYKMTM5MQolJUVPRg==
           orderId: 5346346
           partA: "231648"
           partB: "9753"

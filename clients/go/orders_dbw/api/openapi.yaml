@@ -2467,7 +2467,9 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: Детали ошибки
+          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
+            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
+            но средств"
           type: string
       type: object
     _api_v3_dbw_orders_get_200_response:
@@ -2609,24 +2611,7 @@ components:
       type: object
     _api_v3_dbw_orders_stickers_post_200_response_stickers_inner:
       example:
-        file: !!binary |-
-          UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
-          MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
-          MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
-          ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
-          WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
-          Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
-          eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
-          YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
-          RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
-          QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
-          aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
-          YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
-          ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
-          QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
-          NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
-          T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
-          Zz09
+        file: PD94bWwgdmVyc2lvbj0iMS4wIj8+CjwhLS0gR2VuZXJhdGVkIGJ5IFNWR28gLS0+Cjxzdmcgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiCiAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjQwMCIgaGVpZQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzE4IiB5PSIyMCIgd2lkdGg9IjYiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzI2IiB5PSIyMCIgd2lkdGg9IjIiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzMwIiB5PSIyMCIgd2lkdGg9IjQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMjAiIHk9IjIwMCIgd2lkdGg9IjM1MCIgaGVpZ2h0PSI5MCIgc3R5bGU9ImZpbGw6YmxhY2siIC8+Cjx0ZXh0IHg9IjMwIiB5PSIyNDAiIHN0eWxlPSJmaWxsOndoaXRlO2ZvbnQtc2l6ZTozMHB0O3RleHQtYW5jaG9yOnN0YXJ0IiA+MjMxNjQ4PC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjI3MCIgc3R5bGU9ImZpbGw6d2hpdGU7Zm9udC1zaXplOjUwcHQ7dGV4dC1hbmNob3I6ZW5kIiA+OTc1MzwvdGV4dD4KPC9zdmc+Cg==
         orderId: 5346346
         partA: "231648"
         partB: "9753"
@@ -2656,71 +2641,19 @@ components:
         file:
           description: Полное представление стикера в заданном формате (кодировка
             base64)
-          example: !!binary |-
-            UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
-            MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
-            MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
-            ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
-            WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
-            Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
-            eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
-            YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
-            RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
-            QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
-            aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
-            YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
-            ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
-            QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
-            NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
-            T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
-            Zz09
-          format: byte
+          example: PD94bWwgdmVyc2lvbj0iMS4wIj8+CjwhLS0gR2VuZXJhdGVkIGJ5IFNWR28gLS0+Cjxzdmcgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiCiAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjQwMCIgaGVpZQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzE4IiB5PSIyMCIgd2lkdGg9IjYiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzI2IiB5PSIyMCIgd2lkdGg9IjIiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzMwIiB5PSIyMCIgd2lkdGg9IjQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMjAiIHk9IjIwMCIgd2lkdGg9IjM1MCIgaGVpZ2h0PSI5MCIgc3R5bGU9ImZpbGw6YmxhY2siIC8+Cjx0ZXh0IHg9IjMwIiB5PSIyNDAiIHN0eWxlPSJmaWxsOndoaXRlO2ZvbnQtc2l6ZTozMHB0O3RleHQtYW5jaG9yOnN0YXJ0IiA+MjMxNjQ4PC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjI3MCIgc3R5bGU9ImZpbGw6d2hpdGU7Zm9udC1zaXplOjUwcHQ7dGV4dC1hbmNob3I6ZW5kIiA+OTc1MzwvdGV4dD4KPC9zdmc+Cg==
           nullable: false
           type: string
       type: object
     _api_v3_dbw_orders_stickers_post_200_response:
       example:
         stickers:
-        - file: !!binary |-
-            UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
-            MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
-            MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
-            ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
-            WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
-            Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
-            eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
-            YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
-            RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
-            QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
-            aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
-            YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
-            ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
-            QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
-            NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
-            T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
-            Zz09
+        - file: PD94bWwgdmVyc2lvbj0iMS4wIj8+CjwhLS0gR2VuZXJhdGVkIGJ5IFNWR28gLS0+Cjxzdmcgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiCiAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjQwMCIgaGVpZQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzE4IiB5PSIyMCIgd2lkdGg9IjYiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzI2IiB5PSIyMCIgd2lkdGg9IjIiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzMwIiB5PSIyMCIgd2lkdGg9IjQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMjAiIHk9IjIwMCIgd2lkdGg9IjM1MCIgaGVpZ2h0PSI5MCIgc3R5bGU9ImZpbGw6YmxhY2siIC8+Cjx0ZXh0IHg9IjMwIiB5PSIyNDAiIHN0eWxlPSJmaWxsOndoaXRlO2ZvbnQtc2l6ZTozMHB0O3RleHQtYW5jaG9yOnN0YXJ0IiA+MjMxNjQ4PC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjI3MCIgc3R5bGU9ImZpbGw6d2hpdGU7Zm9udC1zaXplOjUwcHQ7dGV4dC1hbmNob3I6ZW5kIiA+OTc1MzwvdGV4dD4KPC9zdmc+Cg==
           orderId: 5346346
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
-        - file: !!binary |-
-            UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
-            MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
-            MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
-            ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
-            WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
-            Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
-            eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
-            YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
-            RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
-            QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
-            aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
-            YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
-            ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
-            QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
-            NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
-            T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
-            Zz09
+        - file: PD94bWwgdmVyc2lvbj0iMS4wIj8+CjwhLS0gR2VuZXJhdGVkIGJ5IFNWR28gLS0+Cjxzdmcgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiCiAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjQwMCIgaGVpZQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzE4IiB5PSIyMCIgd2lkdGg9IjYiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzI2IiB5PSIyMCIgd2lkdGg9IjIiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMzMwIiB5PSIyMCIgd2lkdGg9IjQiIGhlaWdodD0iMTcwIiBzdHlsZT0iZmlsbDpibGFjayIgLz4KPHJlY3QgeD0iMjAiIHk9IjIwMCIgd2lkdGg9IjM1MCIgaGVpZ2h0PSI5MCIgc3R5bGU9ImZpbGw6YmxhY2siIC8+Cjx0ZXh0IHg9IjMwIiB5PSIyNDAiIHN0eWxlPSJmaWxsOndoaXRlO2ZvbnQtc2l6ZTozMHB0O3RleHQtYW5jaG9yOnN0YXJ0IiA+MjMxNjQ4PC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjI3MCIgc3R5bGU9ImZpbGw6d2hpdGU7Zm9udC1zaXplOjUwcHQ7dGV4dC1hbmNob3I6ZW5kIiA+OTc1MzwvdGV4dD4KPC9zdmc+Cg==
           orderId: 5346346
           partA: "231648"
           partB: "9753"
