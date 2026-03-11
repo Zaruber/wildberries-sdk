@@ -546,20 +546,20 @@ paths:
     - url: https://marketplace-api.wildberries.ru
   /api/v3/dbw/orders/stickers:
     post:
-      description: "Метод возвращает список стикеров для [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get).\n\
-        \nМожно получить стикер в форматах:\n  - SVG\n  - ZPLV (вертикальный)\n  -\
-        \ ZPLH (горизонтальный)\n  - PNG\n\nОграничения:\n  - За один запрос можно\
-        \ получить максимум 100 стикеров.\n  - Можно получить стикеры только для с\
-        борочных заданий, находящихся на сборке — [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post)\
-        \ `confirm`.\n\nДоступны размеры:\n  - 580x400 px при `width=58&height=40`\
-        \ в запросе\n  - 400x300 px при `width=40&height=30` в запросе\n\n<div class=\"\
-        description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
-        >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
-        <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
-        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
-        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
-        | 1 мин | 300 запросов | 200 мс | 20 запросов |\n\nОдин запрос с кодом отв\
-        ета <code>409</code> учитывается как 10 запросов\n</div>\n"
+      description: "Метод возвращает список стикеров для [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get)\
+        \ в [статусах](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post):\n\
+        \  - `confirm` — на сборке\n  - `complete` — в доставке\n\nЗа один запрос\
+        \ можно получить максимум 100 стикеров.<br>\n\nДоступные форматы стикеров\
+        :\n  - SVG\n  - ZPLV (вертикальный)\n  - ZPLH (горизонтальный)\n  - PNG\n\n\
+        Доступны размеры:\n  - 580x400 px при `width=58&height=40` в запросе\n  -\
+        \ 400x300 px при `width=40&height=30` в запросе\n\n<div class=\"description_limit\"\
+        >\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит\
+        \ запросов</a> на один аккаунт продавца для следующих методов DBW:\n<ul>\n\
+        \    <li>получение и обновление списка контактов</li>\n    <li>получение и\
+        \ удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\
+        \n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1\
+        \ мин | 300 запросов | 200 мс | 20 запросов |\n\nОдин запрос с кодом ответ\
+        а <code>409</code> учитывается как 10 запросов\n</div>\n"
       parameters:
       - description: Тип стикера
         explode: true

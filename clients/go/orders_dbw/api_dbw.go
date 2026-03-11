@@ -2901,17 +2901,17 @@ func (r ApiApiV3DbwOrdersStickersPostRequest) Execute() (*ApiV3DbwOrdersStickers
 /*
 ApiV3DbwOrdersStickersPost Получить стикеры сборочных заданий
 
-Метод возвращает список стикеров для [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get).
+Метод возвращает список стикеров для [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get) в [статусах](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post):
+  - `confirm` — на сборке
+  - `complete` — в доставке
 
-Можно получить стикер в форматах:
+За один запрос можно получить максимум 100 стикеров.<br>
+
+Доступные форматы стикеров:
   - SVG
   - ZPLV (вертикальный)
   - ZPLH (горизонтальный)
   - PNG
-
-Ограничения:
-  - За один запрос можно получить максимум 100 стикеров.
-  - Можно получить стикеры только для сборочных заданий, находящихся на сборке — [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
 
 Доступны размеры:
   - 580x400 px при `width=58&height=40` в запросе
