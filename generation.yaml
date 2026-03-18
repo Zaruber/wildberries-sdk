@@ -14,7 +14,6 @@ specs:
   - https://dev.wildberries.ru/api/swagger/yaml/ru/11-analytics.yaml
   - https://dev.wildberries.ru/api/swagger/yaml/ru/12-reports.yaml
   - https://dev.wildberries.ru/api/swagger/yaml/ru/13-finances.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/14-wbd.yaml
 
 templates:
   base_dir: tools/templates
