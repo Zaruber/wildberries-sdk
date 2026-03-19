@@ -1,7 +1,7 @@
 /*
 Работа с товарами
 
-С помощью методов этого раздела вы можете:   - [создать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получить [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загрузить [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настроить [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - установить [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции по работе с товарами</a>   </div> 
+С помощью методов этого раздела вы можете:   - [создавать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получать [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загружать [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настраивать [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - устанавливать [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции</a> по <strong>работе с товарами</strong>   </div> 
 
 API version: products
 */
@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.53/go",
+		UserAgent:        "OpenAPI-Generator/0.1.54/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

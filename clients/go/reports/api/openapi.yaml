@@ -5,7 +5,7 @@ info:
       Узнать больше об отчётах можно в <a href="https://seller.wildberries.ru/instructions/subcategory/5f2162c5-069b-416d-a4e1-48da2a76e6b0">справочном центре</a>
     </div>
 
-    С помощью этих методов вы можете получить [основные отчёты](/openapi/reports#tag/Osnovnye-otchyoty) и отчёты о:
+    С помощью этих методов вы можете получать [основные отчёты](/openapi/reports#tag/Osnovnye-otchyoty) и отчёты о:
       1. [Остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah)
       2. [Товарах с обязательной маркировкой](/openapi/reports#tag/Otchyot-o-tovarah-c-obyazatelnoj-markirovkoj)
       3. [Удержаниях](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah)

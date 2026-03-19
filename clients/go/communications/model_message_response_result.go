@@ -1,7 +1,7 @@
 /*
 Общение с покупателями
 
-<div class=\"description_important\">     Узнать больше об общении с покупателями можно в <a href=\"https://seller.wildberries.ru/instructions/category/f7f6c465-dd12-422d-80a0-a6d9562115d5?goBackOption=prevRoute&categoryId=30817062-14cc-4a82-bc78-3600c2b0685b\">справочном центре</a> </div>  С помощью методов общения с покупателями вы можете работать с:   1. [Вопросами](/openapi/user-communication#tag/Voprosy) и [отзывами](/openapi/user-communication#tag/Otzyvy) покупателей   2. [Закреплёнными отзывами](/openapi/user-communication#tag/Zakreplyonnye-otzyvy)   3. [Чатами с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami)   4. [Заявками покупателей на возврат](/openapi/user-communication#tag/Vozvraty-pokupatelyami)    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/278\">инструкции по работе с разделом Общение с покупателями</a>   </div> 
+<div class=\"description_important\">   Узнать больше об общении с покупателями можно в <a href=\"https://seller.wildberries.ru/instructions/category/f7f6c465-dd12-422d-80a0-a6d9562115d5?goBackOption=prevRoute&categoryId=30817062-14cc-4a82-bc78-3600c2b0685b\">справочном центре</a> </div>  С помощью методов общения с покупателями вы можете работать с:   1. [Вопросами](/openapi/user-communication#tag/Voprosy) и [отзывами](/openapi/user-communication#tag/Otzyvy) покупателей   2. [Закреплёнными отзывами](/openapi/user-communication#tag/Zakreplyonnye-otzyvy)   3. [Чатами с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami)   4. [Заявками покупателей на возврат](/openapi/user-communication#tag/Vozvraty-pokupatelyami)    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/278\">инструкции</a> по работе с разделом <strong>Общение с покупателями</strong>   </div> 
 
 API version: communication
 */
@@ -19,10 +19,12 @@ var _ MappedNullable = &MessageResponseResult{}
 
 // MessageResponseResult struct for MessageResponseResult
 type MessageResponseResult struct {
-	// Время загрузки
+	// Дата и время создания чата
 	AddTime *int32 `json:"addTime,omitempty"`
 	// ID чата
 	ChatID *string `json:"chatID,omitempty"`
+	// Подпись чата
+	Sign *string `json:"sign,omitempty"`
 }
 
 // NewMessageResponseResult instantiates a new MessageResponseResult object
@@ -106,6 +108,38 @@ func (o *MessageResponseResult) SetChatID(v string) {
 	o.ChatID = &v
 }
 
+// GetSign returns the Sign field value if set, zero value otherwise.
+func (o *MessageResponseResult) GetSign() string {
+	if o == nil || IsNil(o.Sign) {
+		var ret string
+		return ret
+	}
+	return *o.Sign
+}
+
+// GetSignOk returns a tuple with the Sign field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MessageResponseResult) GetSignOk() (*string, bool) {
+	if o == nil || IsNil(o.Sign) {
+		return nil, false
+	}
+	return o.Sign, true
+}
+
+// HasSign returns a boolean if a field has been set.
+func (o *MessageResponseResult) HasSign() bool {
+	if o != nil && !IsNil(o.Sign) {
+		return true
+	}
+
+	return false
+}
+
+// SetSign gets a reference to the given string and assigns it to the Sign field.
+func (o *MessageResponseResult) SetSign(v string) {
+	o.Sign = &v
+}
+
 func (o MessageResponseResult) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -121,6 +155,9 @@ func (o MessageResponseResult) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ChatID) {
 		toSerialize["chatID"] = o.ChatID
+	}
+	if !IsNil(o.Sign) {
+		toSerialize["sign"] = o.Sign
 	}
 	return toSerialize, nil
 }

@@ -1,7 +1,7 @@
 /*
 Тарифы
 
-<div class=\"description_important\">     Узнать больше о комиссиях и тарифах можно в <a href=\"https://seller.wildberries.ru/instructions/category/a04560b5-256d-48cb-8f09-60e283b5d493\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Комиссий](/openapi/wb-tariffs#tag/Komissii)   2. [Тарифов на остаток](/openapi/wb-tariffs#tag/Tarify-na-ostatok)   3. [Тарифов на возврат товаров продавцу](/openapi/wb-tariffs#tag/Stoimost-vozvrata-prodavcu) 
+<div class=\"description_important\">   Узнать больше о комиссиях и тарифах можно в <a href=\"https://seller.wildberries.ru/instructions/category/a04560b5-256d-48cb-8f09-60e283b5d493\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Комиссий](/openapi/wb-tariffs#tag/Komissii)   2. [Тарифов на остаток](/openapi/wb-tariffs#tag/Tarify-na-ostatok)   3. [Тарифов на возврат товаров продавцу](/openapi/wb-tariffs#tag/Stoimost-vozvrata-prodavcu) 
 
 API version: tariffs
 */
@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.53/go",
+		UserAgent:        "OpenAPI-Generator/0.1.54/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

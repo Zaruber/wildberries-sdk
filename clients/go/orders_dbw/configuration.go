@@ -1,7 +1,7 @@
 /*
 Заказы DBW
 
-С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/241\">инструкции по работе с заказами DBW</a> </div> 
+С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/241\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
 
 API version: ordersdbw
 */
@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.53/go",
+		UserAgent:        "OpenAPI-Generator/0.1.54/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

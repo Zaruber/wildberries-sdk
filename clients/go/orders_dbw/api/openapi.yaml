@@ -6,7 +6,7 @@ info:
       - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий
 
     <div class="description_ref">
-      Узнать, как использовать методы в бизнес-кейсах, можно в <a href="https://dev.wildberries.ru/news/241">инструкции по работе с заказами DBW</a>
+      Узнать, как использовать методы в бизнес-кейсах, можно в <a href="https://dev.wildberries.ru/news/241">инструкции</a> по работе с <strong>заказами DBW</strong>
     </div>
   title: Заказы DBW
   version: ordersdbw
