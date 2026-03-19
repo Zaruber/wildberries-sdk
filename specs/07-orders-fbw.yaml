@@ -4,7 +4,7 @@ info:
   version: ordersfbw
   description: |
     <div class="description_important">
-        Узнать больше о поставках FBW можно в <a href="https://seller.wildberries.ru/instructions/subcategory/5a8e1202-0865-45b7-acae-5d0afc7add56?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e">справочном центре</a>
+      Узнать больше о поставках FBW можно в <a href="https://seller.wildberries.ru/instructions/subcategory/5a8e1202-0865-45b7-acae-5d0afc7add56?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e">справочном центре</a>
     </div>
 
     В разделе описаны методы получения:
@@ -227,6 +227,7 @@ paths:
                   factDate: null
                   updatedDate: null
                   statusID: 1
+                  boxTypeID: 1
                 - phone: +7 916 *** 33 33
                   supplyID: 26596368
                   preorderID: 34601223
@@ -235,6 +236,7 @@ paths:
                   factDate: null
                   updatedDate: null
                   statusID: 2
+                  boxTypeID: 5
                 - phone: +7 000 *** 36 76
                   supplyID: 22677736
                   preorderID: 27363170
@@ -243,6 +245,8 @@ paths:
                   factDate: '2024-08-22T12:24:14+03:00'
                   updatedDate: '2024-08-22T18:33:45+03:00'
                   statusID: 6
+                  boxTypeID: 2
+                  isBoxOnPallet: false
         '400':
           description: Неправильный запрос
           content:
@@ -772,10 +776,18 @@ components:
           type: integer
           nullable: true
           description: Количество обезличенного товара, шт
+        isBoxOnPallet:
+          type: boolean
+          description: |
+            Тип поставки — **Поштучная палета**:
+              - `true` — да
+              - `false` — нет
+
+              Поле возвращается только при `"boxTypeID": 2`
       example:
         phone: +7 903 *** 98 62
         statusID: 5
-        boxTypeID: 5
+        boxTypeID: 2
         createDate: '2025-07-15T17:17:45+03:00'
         supplyDate: '2025-07-15T00:00:00+03:00'
         factDate: '2025-07-18T11:37:32+03:00'
@@ -797,6 +809,7 @@ components:
         acceptedQuantity: 10
         unloadingQuantity: 10
         depersonalizedQuantity: 0
+        isBoxOnPallet: true
     models.HandySupplyStatus:
       enum:
         - 1
@@ -858,6 +871,21 @@ components:
             - 5
             - 6
           type: integer
+        boxTypeID:
+          description: |
+            ID типа поставки:
+              - `0` — Без коробов (виртуальная поставка)
+              - `1` и `2` — Короба
+              - `5` — Монопаллеты
+              - `6` — Суперсейф
+        isBoxOnPallet:
+          type: boolean
+          description: |
+            Тип поставки — **Поштучная палета**:
+              - `true` — да
+              - `false` — нет
+
+              Поле возвращается только при `"boxTypeID": 2`
       type: object
     models.WarehousesResultItems:
       type: object
@@ -978,6 +1006,12 @@ components:
                         Тип упаковки **Суперсейф**:
                           - `true` — доступен
                           - `false` — недоступен
+                    isBoxOnPallet:
+                      type: boolean
+                      description: |
+                        Тип поставки **Поштучная палета**:
+                          - `true` — доступен
+                          - `false` — недоступен
         requestId:
           type: string
           description: ID запроса при наличии ошибок
@@ -1003,18 +1037,22 @@ components:
                 canBox: true
                 canMonopallet: false
                 canSupersafe: false
+                isBoxOnPallet: false
               - warehouseID: 211622
                 canBox: false
                 canMonopallet: true
                 canSupersafe: false
+                isBoxOnPallet: true
               - warehouseID: 214951
                 canBox: true
                 canMonopallet: false
                 canSupersafe: false
+                isBoxOnPallet: true
               - warehouseID: 206319
                 canBox: true
                 canMonopallet: false
                 canSupersafe: false
+                isBoxOnPallet: true
         requestId: kr53d2bRKYmkK2N6zaNKHs
     Response400Options:
       value:

@@ -4,7 +4,7 @@ info:
   version: promotion
   description: |
     <div class="description_important">
-        Узнать больше о маркетинге и продвижении можно в <a href="https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e">справочном центре</a>
+      Узнать больше о маркетинге и продвижении можно в <a href="https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e">справочном центре</a>
     </div>
 
     Методы маркетинга и продвижения позволяют:
@@ -1782,6 +1782,85 @@ paths:
                 request_id: 6023d2950af564838f9b44a279d2140c
                 status: 400
                 title: invalid payload
+        '401':
+          $ref: '#/components/responses/401'
+        '429':
+          $ref: '#/components/responses/429'
+  /api/advert/v0/bids/recommendations:
+    servers:
+      - url: https://advert-api.wildberries.ru
+    get:
+      x-readonly-method: true
+      x-category: advert
+      tags:
+        - Управление кампаниями
+      summary: Рекомендуемые ставки для карточек товаров и поисковых кластеров
+      description: |
+        Метод возвращает рекомендуемые ставки для карточек товаров и поисковых кластеров кампании.
+        Только для кампаний с типом оплаты `cpm` — за показы.
+         <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 5 запросов | 12 сек | 5 запросов |
+        </div>
+      parameters:
+        - name: nmId
+          in: query
+          required: true
+          description: Артикул WB
+          example: 123456789
+          schema:
+            type: integer
+            format: int64
+        - name: advertId
+          in: query
+          required: true
+          description: ID кампании
+          example: 987654321
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V0BidsRecommendationsResponse'
+              example:
+                advertId: 987654321
+                base:
+                  competitiveBid:
+                    bidKopecks: 39500
+                  leadersBid:
+                    bidKopecks: 66900
+                  top2:
+                    bidKopecks: 0
+                nmId: 123456789
+                normQueries:
+                  - normQuery: футболка
+                    reachMax:
+                      bidKopecks: 50500
+                      bidKopecksMin: 49500
+                    reachMedium:
+                      bidKopecks: 32000
+                    reachMin:
+                      bidKopecks: 32000
+        '400':
+          description: Неправильный запрос
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                IncorrectTypeAdv:
+                  $ref: '#/components/examples/IncorrectTypeAdv'
+                IncorrectSupplierIdAdv:
+                  $ref: '#/components/examples/IncorrectSupplierIdAdv'
+                IncorrectUsingMethods:
+                  $ref: '#/components/examples/IncorrectUsingMethods'
         '401':
           $ref: '#/components/responses/401'
         '429':
@@ -3643,6 +3722,104 @@ paths:
           $ref: '#/components/responses/429'
 components:
   schemas:
+    V0BidsRecommendationsResponse:
+      type: object
+      properties:
+        advertId:
+          type: integer
+          format: int64
+          description: ID кампании
+        base:
+          $ref: '#/components/schemas/V0BidRecommendationBase'
+        nmId:
+          type: integer
+          format: int64
+          description: Артикул WB
+        normQueries:
+          type: array
+          description: Рекомендуемые ставки для поисковых кластеров
+          items:
+            $ref: '#/components/schemas/V0BidRecommendationNormQuery'
+    V0BidRecommendationBase:
+      type: object
+      description: Рекомендуемые ставки для карточек товаров
+      properties:
+        competitiveBid:
+          $ref: '#/components/schemas/V0BidRecommendationBaseBidCompetitiveBid'
+        leadersBid:
+          $ref: '#/components/schemas/V0BidRecommendationBaseBidLeadersBid'
+        top2:
+          $ref: '#/components/schemas/V0BidRecommendationBaseBidTop2'
+    V0BidRecommendationBaseBidTop2:
+      description: |
+        Топ-ставка
+      type: object
+      properties:
+        bidKopecks:
+          type: integer
+          description: Рекомендуемая ставка, копеек. Если `0`, для данного предмета топ-ставка не используется
+    V0BidRecommendationBaseBidCompetitiveBid:
+      description: |
+        Конкурентная ставка — расчётная средняя ставка других продавцов, продающих аналогичные товары по похожей цене.
+        У половины продавцов из расчёта ставка выше конкурентной, а другой половины — ниже
+      type: object
+      properties:
+        bidKopecks:
+          type: integer
+          description: Рекомендуемая ставка, копеек
+    V0BidRecommendationBaseBidLeadersBid:
+      description: |
+        Лидерская ставка — средняя ставка с которой товары занимают лидирующие позиции в вашей категории товаров
+      type: object
+      properties:
+        bidKopecks:
+          type: integer
+          description: Рекомендуемая ставка, копеек
+    V0BidRecommendationNormQuery:
+      type: object
+      properties:
+        normQuery:
+          type: string
+          description: Поисковый кластер
+        reachMax:
+          $ref: '#/components/schemas/V0BidRecommendationReachMax'
+        reachMedium:
+          $ref: '#/components/schemas/V0BidRecommendationReachMedium'
+        reachMin:
+          $ref: '#/components/schemas/V0BidRecommendationReachMin'
+    V0BidRecommendationReachMax:
+      type: object
+      description: |
+        Максимальный охват: 76-100%
+      properties:
+        bidKopecks:
+          type: integer
+          description: Рекомендуемая ставка в копейках
+        bidKopecksMin:
+          type: integer
+          description: Минимальная ставка в копейках
+    V0BidRecommendationReachMedium:
+      description: |
+        Средний охват: 61-75%
+      type: object
+      properties:
+        bidKopecks:
+          type: integer
+          description: Рекомендуемая ставка в копейках
+        bidKopecksMin:
+          type: integer
+          description: Минимальная ставка в копейках
+    V0BidRecommendationReachMin:
+      description: |
+        Минимальный охват: 50-60%
+      type: object
+      properties:
+        bidKopecks:
+          type: integer
+          description: Рекомендуемая ставка в копейках
+        bidKopecksMin:
+          type: integer
+          description: Минимальная ставка в копейках
     V0GetNormQueryListRequest:
       type: object
       required:
@@ -4063,9 +4240,6 @@ components:
             $ref: '#/components/schemas/V0GetNormQueryMinusRequestItem'
     V0GetNormQueryMinusResponseItem:
       type: object
-      required:
-        - advert_id
-        - nm_id
       properties:
         advert_id:
           type: integer
@@ -4080,8 +4254,6 @@ components:
             type: string
     V0GetNormQueryMinusResponse:
       type: object
-      required:
-        - items
       properties:
         items:
           type: array
@@ -5466,6 +5638,11 @@ components:
   examples:
     InvalidRcIdAdv:
       value: Некорректный ID РК
+    IncorrectTypeAdv:
+      value: Некорректное значение параметра type
+    IncorrectUsingMethods:
+      description: Некорректное использование метода
+      value: Для получения информации передайте или список кампаний, или набор фильтров
     AdvertNotFound:
       description: Кампания не найдена
       value:

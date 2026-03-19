@@ -7,11 +7,11 @@ info:
       Узнать больше об отчётах можно в <a href="https://seller.wildberries.ru/instructions/subcategory/5f2162c5-069b-416d-a4e1-48da2a76e6b0">справочном центре</a>
     </div>
 
-    С помощью этих методов вы можете получить [основные отчёты](/openapi/reports#tag/Osnovnye-otchyoty) и отчёты о:
+    С помощью этих методов вы можете получать [основные отчёты](/openapi/reports#tag/Osnovnye-otchyoty) и отчёты о:
       1. [Остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah)
       2. [Товарах с обязательной маркировкой](/openapi/reports#tag/Otchyot-o-tovarah-c-obyazatelnoj-markirovkoj)
       3. [Удержаниях](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah)
-      4. [Платной приёмке](/openapi/reports#tag/Platnaya-priyomka)
+      4. [Операциях при приёмке](/openapi/reports#tag/Operacii-pri-priyomke)
       5. [Платном хранении](/openapi/reports#tag/Platnoe-hranenie)
       6. [Продажах по регионам](/openapi/reports#tag/Prodazhi-po-regionam)
       7. [Доле бренда в продажах](/openapi/reports#tag/Dolya-brenda-v-prodazhah)
@@ -29,7 +29,7 @@ tags:
     description: ''
   - name: Отчёты об удержаниях
     description: ''
-  - name: Платная приёмка
+  - name: Операции при приёмке
     description: ''
   - name: Платное хранение
     description: ''
@@ -42,79 +42,6 @@ tags:
   - name: Отчёт о возвратах и перемещении товаров
     description: ''
 paths:
-  /api/v1/supplier/incomes:
-    servers:
-      - url: https://statistics-api.wildberries.ru
-    get:
-      deprecated: true
-      x-readonly-method: true
-      x-category: statistics
-      security:
-        - HeaderApiKey: []
-      summary: Поставки
-      description: |
-        Данный метод устарел. Он будет удалён [11 марта](https://dev.wildberries.ru/release-notes?id=431)
-      tags:
-        - Основные отчёты
-      parameters:
-        - name: dateFrom
-          in: query
-          schema:
-            type: string
-            format: date-time
-          required: true
-          description: |
-            Дата и время последнего изменения по поставке. <br>
-            Дата в формате RFC3339. Можно передать дату или дату со временем.
-            Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br>
-            Время передаётся в часовом поясе Москва (UTC+3).
-            <br>Примеры:
-              - `2019-06-20`
-              - `2019-06-20T23:59:59`
-              - `2019-06-20T00:00:00.12345`
-              - `2017-03-25T00:00:00`
-      responses:
-        '200':
-          description: Успешно
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/IncomesItem'
-              example:
-                - incomeId: 12345
-                  number: ''
-                  date: '2022-05-08T00:00:54'
-                  lastChangeDate: '2022-05-08T00:44:15.5'
-                  supplierArticle: ABCDEF
-                  techSize: '0'
-                  barcode: '2000328074123'
-                  quantity: 3
-                  totalPrice: 0
-                  dateClose: '2022-05-08T00:00:00'
-                  warehouseName: Подольск
-                  nmId: 1234567
-                  status: Принято
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                oneOf:
-                  - $ref: '#/components/schemas/responseErrorStatistics'
-                  - $ref: '#/components/schemas/responseErrorStatistics2'
-              examples:
-                DateFromFieldRequired:
-                  $ref: '#/components/examples/DateFromFieldRequired'
-                DateFromValueNotValidated:
-                  $ref: '#/components/examples/DateFromValueNotValidated'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '429':
-          $ref: '#/components/responses/429'
   /api/v1/supplier/stocks:
     servers:
       - url: https://statistics-api.wildberries.ru
@@ -1179,10 +1106,10 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Платная приёмка
+        - Операции при приёмке
       summary: Создать отчёт
       description: |
-        Метод создаёт [задание на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>
+        Метод создаёт [задание на генерацию](/openapi/reports#tag/Operacii-pri-priyomke/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1status/get) отчёта об [операциях при приёмке](/openapi/reports#tag/Operacii-pri-priyomke/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).<br><br>
 
         Можно получить отчёт максимум за 31 день.
 
@@ -1240,10 +1167,10 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Платная приёмка
+        - Операции при приёмке
       summary: Проверить статус
       description: |
-        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get) отчёта о [платной приёмке](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).
+        Метод возвращает статус [задания на генерацию](/openapi/reports#tag/Operacii-pri-priyomke/paths/~1api~1v1~1acceptance_report/get) отчёта об [операциях при приёмке](/openapi/reports#tag/Operacii-pri-priyomke/paths/~1api~1v1~1acceptance_report~1tasks~1%7Btask_id%7D~1download/get).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -1306,10 +1233,10 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Платная приёмка
+        - Операции при приёмке
       summary: Получить отчёт
       description: |
-        Метод возвращает отчёт о [платной приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Platnaya-priyomka/paths/~1api~1v1~1acceptance_report/get).
+        Метод возвращает отчёт об [операциях при приёмке](https://seller.wildberries.ru/analytics-reports/acceptance-report) по ID [задания на генерацию](/openapi/reports#tag/Operacii-pri-priyomke/paths/~1api~1v1~1acceptance_report/get).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -2291,56 +2218,6 @@ paths:
           $ref: '#/components/responses/429'
 components:
   schemas:
-    IncomesItem:
-      type: object
-      properties:
-        incomeId:
-          type: integer
-          description: Номер поставки
-        number:
-          type: string
-          maxLength: 40
-          description: Номер УПД
-        date:
-          type: string
-          description: Дата поступления. Если часовой пояс не указан, то берётся Московское время UTC+3.
-        lastChangeDate:
-          type: string
-          description: Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе. Если часовой пояс не указан, то берётся Московское время UTC+3.
-        supplierArticle:
-          type: string
-          maxLength: 75
-          description: Артикул продавца
-        techSize:
-          type: string
-          maxLength: 30
-          description: Размер товара
-        barcode:
-          type: string
-          maxLength: 30
-          description: Баркод
-        quantity:
-          type: integer
-          description: Количество
-        totalPrice:
-          type: number
-          description: Цена из УПД
-        dateClose:
-          type: string
-          description: Дата принятия (закрытия) в WB. Если часовой пояс не указан, то берётся Московское время UTC+3
-        warehouseName:
-          type: string
-          maxLength: 50
-          description: Название склада
-        nmId:
-          type: integer
-          description: Артикул WB
-        status:
-          type: string
-          maxLength: 50
-          enum:
-            - Принято
-          description: Текущий статус поставки
     StocksItem:
       type: object
       properties:

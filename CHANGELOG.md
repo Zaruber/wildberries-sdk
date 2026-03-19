@@ -1,6 +1,16 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.03.19)
+- Products: добавлены примеры ошибок 400 для операций с объединёнными карточками — `MissingRequiredCharacteristics` (не заполнены обязательные характеристики) и `NonUniqueCharacteristicsInOneGroup*` (неуникальные характеристики в группе) для методов создания/добавления характеристик
+- Orders FBS: переименовано поле опций заказа `isB2b` → `isB2B` (breaking change в схемах)
+- Orders DBW: добавлен новый endpoint `POST /api/marketplace/v3/dbw/orders/client` для получения информации о покупателе по ID сборочных заданий; введены схемы ответа `ClientInfoResp`/`ClientInfo` (поля: `replacementPhone`, `phone`, `phoneCode`, `additionalPhones`, `additionalPhoneCodes`, `firstName`, `fullName`, `orderId`); уточнено описание поля ошибки `Error.data`
+- Orders DBS: в описаниях лимитов удалено правило «ответ 409 считается как 10 запросов»; расширена модель ошибки — `detail` дополнено значением `ImeiIsNotFilled`, описание `code` уточнено (404/409)
+- Orders FBW: добавлено поле `isBoxOnPallet` (boolean) для поставок типа «Поштучная палета», возвращается только при `boxTypeID=2`; расширены/уточнены описания `boxTypeID` и опций доступных типов поставки по складам (добавлен флаг `isBoxOnPallet`)
+- Promotion (Маркетинг/Реклама): добавлен endpoint `GET /api/advert/v0/bids/recommendations` (только для кампаний `cpm`) для получения рекомендуемых ставок по карточке (`base`) и поисковым кластерам (`normQueries`); лимит 5 запросов/мин; добавлены схемы `V0BidsRecommendationsResponse` и связанные; добавлены примеры ошибок 400 `IncorrectTypeAdv`, `IncorrectUsingMethods`; в ответах `V0GetNormQueryMinusResponseItem` и `V0GetNormQueryMinusResponse` сняты требования `required` (поля `advert_id`, `nm_id`, `items` больше не обязательны)
+- Communications: в модели чата уточнено поле `addTime` (Unix Timestamp в мс, «дата и время создания чата») и добавлено новое поле `sign` (подпись чата)
+- Reports: удалён (ранее deprecated) endpoint `GET /api/v1/supplier/incomes` «Поставки» и схема `IncomesItem`; переименован раздел/теги «Платная приёмка» → «Операции при приёмке» (эндпоинты `/api/v1/acceptance_report*` без изменения путей, обновлены ссылки/описания)
+
 ### Changed (2026.03.11)
 - Orders FBS: уточнены правила добавления коробов в поставку — только в открытую; лимит по количеству коробов: не больше количества товаров в поставке + 1.
 - Orders DBW: метод получения стикеров сборочных заданий — расширены допустимые статусы заказов для получения стикеров: `confirm` (на сборке) и `complete` (в доставке) вместо только `confirm`; ограничение «максимум 100 стикеров за запрос» сохранено и вынесено в описание; формулировки по форматам стикеров уточнены («доступные форматы»).

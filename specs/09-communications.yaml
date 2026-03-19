@@ -4,7 +4,7 @@ info:
   version: communication
   description: |
     <div class="description_important">
-        Узнать больше об общении с покупателями можно в <a href="https://seller.wildberries.ru/instructions/category/f7f6c465-dd12-422d-80a0-a6d9562115d5?goBackOption=prevRoute&categoryId=30817062-14cc-4a82-bc78-3600c2b0685b">справочном центре</a>
+      Узнать больше об общении с покупателями можно в <a href="https://seller.wildberries.ru/instructions/category/f7f6c465-dd12-422d-80a0-a6d9562115d5?goBackOption=prevRoute&categoryId=30817062-14cc-4a82-bc78-3600c2b0685b">справочном центре</a>
     </div>
 
     С помощью методов общения с покупателями вы можете работать с:
@@ -12,6 +12,10 @@ info:
       2. [Закреплёнными отзывами](/openapi/user-communication#tag/Zakreplyonnye-otzyvy)
       3. [Чатами с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami)
       4. [Заявками покупателей на возврат](/openapi/user-communication#tag/Vozvraty-pokupatelyami)
+
+      <div class="description_ref">
+        Узнать, как использовать методы в бизнес-кейсах, можно в <a href="https://dev.wildberries.ru/news/278">инструкции</a> по работе с разделом <strong>Общение с покупателями</strong>
+      </div>
   x-file-name: communications
 security:
   - HeaderApiKey: []
@@ -2269,11 +2273,11 @@ paths:
         '429':
           $ref: '#/components/responses/429'
   /api/v1/seller/chats:
-    servers:
-      - url: https://buyer-chat-api.wildberries.ru
     get:
       x-readonly-method: true
       x-category: buyerchat
+      servers:
+        - url: https://buyer-chat-api.wildberries.ru
       security:
         - HeaderApiKey: []
       summary: Список чатов
@@ -2435,7 +2439,7 @@ paths:
                     description: Текст ошибки
               examples:
                 IncorrectNextParameter:
-                  description: Тип значения или его величина некорректны
+                  description: Тип данных или значение некорректны
                   value:
                     status: 400
                     title: Bad Request
@@ -3356,10 +3360,14 @@ components:
           properties:
             addTime:
               type: integer
-              description: Время загрузки
+              description: Дата и время создания чата
+              format: Unix Timestamp в миллисекундах
             chatID:
               type: string
               description: ID чата
+            sign:
+              type: string
+              description: Подпись чата
     Sender:
       type: string
       description: |

@@ -8,7 +8,7 @@ info:
       - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий
 
     <div class="description_ref">
-      Узнать, как использовать методы в бизнес-кейсах, можно в <a href="https://dev.wildberries.ru/news/241">инструкции по работе с заказами DBW</a>
+      Узнать, как использовать методы в бизнес-кейсах, можно в <a href="https://dev.wildberries.ru/news/241">инструкции</a> по работе с <strong>заказами DBW</strong>
     </div>
   x-file-name: orders-dbw
 security:
@@ -205,6 +205,64 @@ paths:
           $ref: '#/components/responses/401'
         '402':
           $ref: '#/components/responses/402'
+        '403':
+          $ref: '#/components/responses/AccessDenied'
+        '429':
+          $ref: '#/components/responses/429'
+  /api/marketplace/v3/dbw/orders/client:
+    servers:
+      - url: https://marketplace-api.wildberries.ru
+    post:
+      x-readonly-method: true
+      x-category: marketplace
+      security:
+        - HeaderApiKey: []
+      summary: Информация о покупателе
+      tags:
+        - Сборочные задания DBW
+      description: |
+        Метод возвращает информацию о покупателях по ID сборочных заданий.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
+        <ul>
+            <li>получение и обновление списка контактов</li>
+            <li>получение и удаление метаданных</li>
+            <li>методы сборочных заданий</li>
+        </ul> 
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrdersRequestAPI'
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientInfoResp'
+        '400':
+          description: Неправильный запрос
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                IncorrectRequest:
+                  $ref: '#/components/examples/IncorrectRequest1'
+                IncorrectRequestBody:
+                  $ref: '#/components/examples/IncorrectRequestBody'
+        '401':
+          $ref: '#/components/responses/401'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -1354,6 +1412,76 @@ components:
             code: AccessDenied
             message: ''
   schemas:
+    ClientInfo:
+      properties:
+        replacementPhone:
+          type: string
+          description: |
+            Подменный номер для связи с покупателем. <br>
+            Пустое значение `""` указывает, что номер ещё не назначен
+          example: '79871234567'
+          nullable: false
+        phone:
+          type: string
+          description: |
+            Номер телефона для связи с покупателем:
+              - если в поле `phoneCode` не указан добавочный код, вы можете позвонить покупателю по указанному номеру. Дополнительные номера телефонов для связи без кодов указаны в поле `additionalPhones`
+              - если в поле `phoneCode` указан добавочный код, используйте его, чтобы связаться с покупателем по указанному номеру и добавочному коду
+          example: '+79871234567'
+          nullable: false
+        firstName:
+          type: string
+          description: Имя покупателя
+          example: Иван
+          nullable: false
+        fullName:
+          type: string
+          description: Полное имя покупателя, используется для оформления документов
+          example: Иванов Иван Иванович
+          nullable: false
+        additionalPhones:
+          nullable: false
+          type: array
+          items:
+            type: string
+          description: |
+            Дополнительные номера телефонов для связи с покупателем. <br>
+            Используйте, чтобы позвонить покупателю, если недоступен основной номер из `phone`. <br>
+            Пустое значение означает, что номер не указан
+          example:
+            - '1234554321'
+        additionalPhoneCodes:
+          nullable: false
+          type: array
+          items:
+            type: integer
+          description: |
+            Дополнительные добавочные коды. <br>
+            Используйте, если не получилось дозвониться по добавочному коду из `phoneCode`.<br>
+            Пустое значение указывает, коды ещё не назначены
+          example:
+            - 12345
+        orderId:
+          type: integer
+          description: ID сборочного задания
+          example: 1345678910
+        phoneCode:
+          type: integer
+          description: |
+            Добавочный код. <br>
+            Используйте, чтобы связаться с покупателем по номеру из `phone`.<br>
+            Если код не указан, вы можете связаться с покупателем без кода
+          example: 0
+          nullable: false
+      type: object
+    ClientInfoResp:
+      properties:
+        orders:
+          description: Информация о покупателях
+          items:
+            $ref: '#/components/schemas/ClientInfo'
+          type: array
+      type: object
     OrderCourierInfo:
       type: object
       properties:
@@ -1438,7 +1566,7 @@ components:
           nullable: false
         data:
           type: object
-          description: Дополнительные данные, обогащающие ошибку
+          description: Дополнительные данные ошибки
           nullable: true
     OrdersRequestAPI:
       properties:
