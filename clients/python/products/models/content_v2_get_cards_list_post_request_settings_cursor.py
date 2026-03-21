@@ -72,6 +72,11 @@ class ContentV2GetCardsListPostRequestSettingsCursor(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if updated_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.updated_at is None and "updated_at" in self.model_fields_set:
+            _dict['updatedAt'] = None
+
         return _dict
 
     @classmethod

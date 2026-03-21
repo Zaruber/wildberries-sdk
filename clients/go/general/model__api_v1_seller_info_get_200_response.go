@@ -23,6 +23,8 @@ type ApiV1SellerInfoGet200Response struct {
 	Name *string `json:"name,omitempty"`
 	// Уникальный ID продавца на Wildberries, [находящийся в публичном поле токена](./api-information#tag/Avtorizaciya/Kak-ustroen-token)
 	Sid *string `json:"sid,omitempty"`
+	// ИНН
+	Tin *string `json:"tin,omitempty"`
 	// Торговое наименование продавца
 	TradeMark *string `json:"tradeMark,omitempty"`
 }
@@ -108,6 +110,38 @@ func (o *ApiV1SellerInfoGet200Response) SetSid(v string) {
 	o.Sid = &v
 }
 
+// GetTin returns the Tin field value if set, zero value otherwise.
+func (o *ApiV1SellerInfoGet200Response) GetTin() string {
+	if o == nil || IsNil(o.Tin) {
+		var ret string
+		return ret
+	}
+	return *o.Tin
+}
+
+// GetTinOk returns a tuple with the Tin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiV1SellerInfoGet200Response) GetTinOk() (*string, bool) {
+	if o == nil || IsNil(o.Tin) {
+		return nil, false
+	}
+	return o.Tin, true
+}
+
+// HasTin returns a boolean if a field has been set.
+func (o *ApiV1SellerInfoGet200Response) HasTin() bool {
+	if o != nil && !IsNil(o.Tin) {
+		return true
+	}
+
+	return false
+}
+
+// SetTin gets a reference to the given string and assigns it to the Tin field.
+func (o *ApiV1SellerInfoGet200Response) SetTin(v string) {
+	o.Tin = &v
+}
+
 // GetTradeMark returns the TradeMark field value if set, zero value otherwise.
 func (o *ApiV1SellerInfoGet200Response) GetTradeMark() string {
 	if o == nil || IsNil(o.TradeMark) {
@@ -155,6 +189,9 @@ func (o ApiV1SellerInfoGet200Response) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Sid) {
 		toSerialize["sid"] = o.Sid
+	}
+	if !IsNil(o.Tin) {
+		toSerialize["tin"] = o.Tin
 	}
 	if !IsNil(o.TradeMark) {
 		toSerialize["tradeMark"] = o.TradeMark

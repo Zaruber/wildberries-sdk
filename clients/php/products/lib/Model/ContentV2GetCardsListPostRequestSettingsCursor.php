@@ -83,7 +83,7 @@ class ContentV2GetCardsListPostRequestSettingsCursor implements ModelInterface, 
       */
     protected static array $openAPINullables = [
         'limit' => false,
-        'updated_at' => false,
+        'updated_at' => true,
         'nm_id' => false
     ];
 
@@ -360,7 +360,14 @@ class ContentV2GetCardsListPostRequestSettingsCursor implements ModelInterface, 
     public function setUpdatedAt($updated_at)
     {
         if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('updated_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['updated_at'] = $updated_at;
 

@@ -22,7 +22,7 @@ type ContentV2GetCardsListPostRequestSettingsCursor struct {
 	// Сколько карточек товаров выдать в ответе
 	Limit *int32 `json:"limit,omitempty"`
 	// Дата и время изменения
-	UpdatedAt *string `json:"updatedAt,omitempty"`
+	UpdatedAt NullableString `json:"updatedAt,omitempty"`
 	// Артикул WB, с которого надо запрашивать следующий список карточек товаров
 	NmID *int32 `json:"nmID,omitempty"`
 }
@@ -80,36 +80,46 @@ func (o *ContentV2GetCardsListPostRequestSettingsCursor) SetLimit(v int32) {
 	o.Limit = &v
 }
 
-// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContentV2GetCardsListPostRequestSettingsCursor) GetUpdatedAt() string {
-	if o == nil || IsNil(o.UpdatedAt) {
+	if o == nil || IsNil(o.UpdatedAt.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UpdatedAt
+	return *o.UpdatedAt.Get()
 }
 
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContentV2GetCardsListPostRequestSettingsCursor) GetUpdatedAtOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdatedAt) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UpdatedAt, true
+	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
 func (o *ContentV2GetCardsListPostRequestSettingsCursor) HasUpdatedAt() bool {
-	if o != nil && !IsNil(o.UpdatedAt) {
+	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
+// SetUpdatedAt gets a reference to the given NullableString and assigns it to the UpdatedAt field.
 func (o *ContentV2GetCardsListPostRequestSettingsCursor) SetUpdatedAt(v string) {
-	o.UpdatedAt = &v
+	o.UpdatedAt.Set(&v)
+}
+// SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+func (o *ContentV2GetCardsListPostRequestSettingsCursor) SetUpdatedAtNil() {
+	o.UpdatedAt.Set(nil)
+}
+
+// UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+func (o *ContentV2GetCardsListPostRequestSettingsCursor) UnsetUpdatedAt() {
+	o.UpdatedAt.Unset()
 }
 
 // GetNmID returns the NmID field value if set, zero value otherwise.
@@ -157,8 +167,8 @@ func (o ContentV2GetCardsListPostRequestSettingsCursor) ToMap() (map[string]inte
 	if !IsNil(o.Limit) {
 		toSerialize["limit"] = o.Limit
 	}
-	if !IsNil(o.UpdatedAt) {
-		toSerialize["updatedAt"] = o.UpdatedAt
+	if o.UpdatedAt.IsSet() {
+		toSerialize["updatedAt"] = o.UpdatedAt.Get()
 	}
 	if !IsNil(o.NmID) {
 		toSerialize["nmID"] = o.NmID

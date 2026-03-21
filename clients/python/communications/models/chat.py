@@ -31,11 +31,10 @@ class Chat(BaseModel):
     """ # noqa: E501
     chat_id: Optional[StrictStr] = Field(default=None, description="ID чата", alias="chatID")
     reply_sign: Optional[StrictStr] = Field(default=None, description="Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) ", alias="replySign")
-    client_id: Optional[StrictStr] = Field(default=None, description="ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)", alias="clientID")
     client_name: Optional[StrictStr] = Field(default=None, description="Имя покупателя", alias="clientName")
     good_card: Optional[GoodCard] = Field(default=None, alias="goodCard")
     last_message: Optional[LastMessage] = Field(default=None, description="Последнее сообщение в чате", alias="lastMessage")
-    __properties: ClassVar[List[str]] = ["chatID", "replySign", "clientID", "clientName", "goodCard", "lastMessage"]
+    __properties: ClassVar[List[str]] = ["chatID", "replySign", "clientName", "goodCard", "lastMessage"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -96,7 +95,6 @@ class Chat(BaseModel):
         _obj = cls.model_validate({
             "chatID": obj.get("chatID"),
             "replySign": obj.get("replySign"),
-            "clientID": obj.get("clientID"),
             "clientName": obj.get("clientName"),
             "goodCard": GoodCard.from_dict(obj["goodCard"]) if obj.get("goodCard") is not None else None,
             "lastMessage": LastMessage.from_dict(obj["lastMessage"]) if obj.get("lastMessage") is not None else None

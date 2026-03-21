@@ -29,8 +29,9 @@ class ApiV1SellerInfoGet200Response(BaseModel):
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="Наименование продавца")
     sid: Optional[StrictStr] = Field(default=None, description="Уникальный ID продавца на Wildberries, [находящийся в публичном поле токена](./api-information#tag/Avtorizaciya/Kak-ustroen-token)")
+    tin: Optional[StrictStr] = Field(default=None, description="ИНН")
     trade_mark: Optional[StrictStr] = Field(default=None, description="Торговое наименование продавца", alias="tradeMark")
-    __properties: ClassVar[List[str]] = ["name", "sid", "tradeMark"]
+    __properties: ClassVar[List[str]] = ["name", "sid", "tin", "tradeMark"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -85,6 +86,7 @@ class ApiV1SellerInfoGet200Response(BaseModel):
         _obj = cls.model_validate({
             "name": obj.get("name"),
             "sid": obj.get("sid"),
+            "tin": obj.get("tin"),
             "tradeMark": obj.get("tradeMark")
         })
         return _obj

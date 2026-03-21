@@ -23,9 +23,6 @@ type Chat struct {
 	ChatID *string `json:"chatID,omitempty"`
 	// Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) 
 	ReplySign *string `json:"replySign,omitempty"`
-	// ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
-	// Deprecated
-	ClientID *string `json:"clientID,omitempty"`
 	// Имя покупателя
 	ClientName *string `json:"clientName,omitempty"`
 	GoodCard *GoodCard `json:"goodCard,omitempty"`
@@ -112,41 +109,6 @@ func (o *Chat) HasReplySign() bool {
 // SetReplySign gets a reference to the given string and assigns it to the ReplySign field.
 func (o *Chat) SetReplySign(v string) {
 	o.ReplySign = &v
-}
-
-// GetClientID returns the ClientID field value if set, zero value otherwise.
-// Deprecated
-func (o *Chat) GetClientID() string {
-	if o == nil || IsNil(o.ClientID) {
-		var ret string
-		return ret
-	}
-	return *o.ClientID
-}
-
-// GetClientIDOk returns a tuple with the ClientID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *Chat) GetClientIDOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientID) {
-		return nil, false
-	}
-	return o.ClientID, true
-}
-
-// HasClientID returns a boolean if a field has been set.
-func (o *Chat) HasClientID() bool {
-	if o != nil && !IsNil(o.ClientID) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientID gets a reference to the given string and assigns it to the ClientID field.
-// Deprecated
-func (o *Chat) SetClientID(v string) {
-	o.ClientID = &v
 }
 
 // GetClientName returns the ClientName field value if set, zero value otherwise.
@@ -260,9 +222,6 @@ func (o Chat) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ReplySign) {
 		toSerialize["replySign"] = o.ReplySign
-	}
-	if !IsNil(o.ClientID) {
-		toSerialize["clientID"] = o.ClientID
 	}
 	if !IsNil(o.ClientName) {
 		toSerialize["clientName"] = o.ClientName

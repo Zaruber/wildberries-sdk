@@ -59,6 +59,7 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'name' => 'string',
         'sid' => 'string',
+        'tin' => 'string',
         'trade_mark' => 'string'
     ];
 
@@ -72,6 +73,7 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'name' => null,
         'sid' => 'UUID',
+        'tin' => null,
         'trade_mark' => null
     ];
 
@@ -83,6 +85,7 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
     protected static array $openAPINullables = [
         'name' => false,
         'sid' => false,
+        'tin' => false,
         'trade_mark' => false
     ];
 
@@ -174,6 +177,7 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
     protected static $attributeMap = [
         'name' => 'name',
         'sid' => 'sid',
+        'tin' => 'tin',
         'trade_mark' => 'tradeMark'
     ];
 
@@ -185,6 +189,7 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
     protected static $setters = [
         'name' => 'setName',
         'sid' => 'setSid',
+        'tin' => 'setTin',
         'trade_mark' => 'setTradeMark'
     ];
 
@@ -196,6 +201,7 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
     protected static $getters = [
         'name' => 'getName',
         'sid' => 'getSid',
+        'tin' => 'getTin',
         'trade_mark' => 'getTradeMark'
     ];
 
@@ -258,6 +264,7 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
     {
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('sid', $data ?? [], null);
+        $this->setIfExists('tin', $data ?? [], null);
         $this->setIfExists('trade_mark', $data ?? [], null);
     }
 
@@ -353,6 +360,33 @@ class ApiV1SellerInfoGet200Response implements ModelInterface, ArrayAccess, \Jso
             throw new \InvalidArgumentException('non-nullable sid cannot be null');
         }
         $this->container['sid'] = $sid;
+
+        return $this;
+    }
+
+    /**
+     * Gets tin
+     *
+     * @return string|null
+     */
+    public function getTin()
+    {
+        return $this->container['tin'];
+    }
+
+    /**
+     * Sets tin
+     *
+     * @param string|null $tin ИНН
+     *
+     * @return self
+     */
+    public function setTin($tin)
+    {
+        if (is_null($tin)) {
+            throw new \InvalidArgumentException('non-nullable tin cannot be null');
+        }
+        $this->container['tin'] = $tin;
 
         return $this;
     }

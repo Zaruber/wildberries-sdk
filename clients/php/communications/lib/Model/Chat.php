@@ -59,7 +59,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'chat_id' => 'string',
         'reply_sign' => 'string',
-        'client_id' => 'string',
         'client_name' => 'string',
         'good_card' => '\Wildberries\Sdk\Communications\Model\GoodCard',
         'last_message' => '\Wildberries\Sdk\Communications\Model\LastMessage'
@@ -75,7 +74,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'chat_id' => null,
         'reply_sign' => null,
-        'client_id' => null,
         'client_name' => null,
         'good_card' => null,
         'last_message' => null
@@ -89,7 +87,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'chat_id' => false,
         'reply_sign' => false,
-        'client_id' => false,
         'client_name' => false,
         'good_card' => false,
         'last_message' => false
@@ -183,7 +180,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'chat_id' => 'chatID',
         'reply_sign' => 'replySign',
-        'client_id' => 'clientID',
         'client_name' => 'clientName',
         'good_card' => 'goodCard',
         'last_message' => 'lastMessage'
@@ -197,7 +193,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'chat_id' => 'setChatId',
         'reply_sign' => 'setReplySign',
-        'client_id' => 'setClientId',
         'client_name' => 'setClientName',
         'good_card' => 'setGoodCard',
         'last_message' => 'setLastMessage'
@@ -211,7 +206,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'chat_id' => 'getChatId',
         'reply_sign' => 'getReplySign',
-        'client_id' => 'getClientId',
         'client_name' => 'getClientName',
         'good_card' => 'getGoodCard',
         'last_message' => 'getLastMessage'
@@ -276,7 +270,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('chat_id', $data ?? [], null);
         $this->setIfExists('reply_sign', $data ?? [], null);
-        $this->setIfExists('client_id', $data ?? [], null);
         $this->setIfExists('client_name', $data ?? [], null);
         $this->setIfExists('good_card', $data ?? [], null);
         $this->setIfExists('last_message', $data ?? [], null);
@@ -374,35 +367,6 @@ class Chat implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable reply_sign cannot be null');
         }
         $this->container['reply_sign'] = $reply_sign;
-
-        return $this;
-    }
-
-    /**
-     * Gets client_id
-     *
-     * @return string|null
-     * @deprecated
-     */
-    public function getClientId()
-    {
-        return $this->container['client_id'];
-    }
-
-    /**
-     * Sets client_id
-     *
-     * @param string|null $client_id ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setClientId($client_id)
-    {
-        if (is_null($client_id)) {
-            throw new \InvalidArgumentException('non-nullable client_id cannot be null');
-        }
-        $this->container['client_id'] = $client_id;
 
         return $this;
     }

@@ -32,9 +32,6 @@ pub struct GoodCard {
     /// Размер товара, соответствует `wbSize` в [карточке товара](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post)
     #[serde(rename = "size", skip_serializing_if = "Option::is_none")]
     pub size: Option<String>,
-    /// Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469) 
-    #[serde(rename = "statusID", skip_serializing_if = "Option::is_none")]
-    pub status_id: Option<i32>,
 }
 
 impl GoodCard {
@@ -47,7 +44,6 @@ impl GoodCard {
             price_currency: None,
             rid: None,
             size: None,
-            status_id: None,
         }
     }
 }

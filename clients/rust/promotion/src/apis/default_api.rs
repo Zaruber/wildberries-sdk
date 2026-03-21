@@ -722,7 +722,7 @@ pub async fn adv_v0_normquery_list_post(configuration: &configuration::Configura
     }
 }
 
-/// Метод устанавливает и удаляет минус-фразы в кампаниях c:   - ручной ставкой   - моделью оплаты `cpm` — за показы  <div class=\"description_important\">   Отправка пустого массива удаляет все минус-фразы </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 10 запросов | </div> 
+/// Метод устанавливает и удаляет минус-фразы в кампаниях c единой и ручной ставкой.  <div class=\"description_important\">   Отправка пустого массива удаляет все минус-фразы </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 10 запросов | </div> 
 pub async fn adv_v0_normquery_set_minus_post(configuration: &configuration::Configuration, v0_set_minus_norm_query_request: models::V0SetMinusNormQueryRequest) -> Result<(), Error<AdvV0NormquerySetMinusPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_v0_set_minus_norm_query_request = v0_set_minus_norm_query_request;
@@ -1756,7 +1756,7 @@ pub async fn api_advert_v1_bids_min_post(configuration: &configuration::Configur
     }
 }
 
-/// Метод меняет ставки карточек товаров по артикулам WB в кампаниях с единой или ручной ставкой. <br><br> Для кампаний в статусах `4`, `9` и `11`. <br><br> В запросе укажите место размещения в параметре `placement`:   - `combined` — в поиске и рекомендациях для кампаний с единой ставкой   - `search `или `recommendations` — в поиске или рекомендациях для кампаний с ручной ставкой  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
+/// Метод меняет ставки карточек товаров по артикулам WB в кампаниях:   - с единой ставкой   - с ручной ставкой   - с моделью оплаты `cpc` — за клики  Для кампаний в статусах `4`, `9` и `11`. <br><br> В запросе укажите место размещения в параметре `placement`:   - `combined` — в поиске и рекомендациях для кампаний с единой ставкой   - `search `или `recommendations` — в поиске или рекомендациях для кампаний с ручной ставкой  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn api_advert_v1_bids_patch(configuration: &configuration::Configuration, api_advert_v1_bids_patch_request: models::ApiAdvertV1BidsPatchRequest) -> Result<models::ApiAdvertV1BidsPatch200Response, Error<ApiAdvertV1BidsPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_advert_v1_bids_patch_request = api_advert_v1_bids_patch_request;

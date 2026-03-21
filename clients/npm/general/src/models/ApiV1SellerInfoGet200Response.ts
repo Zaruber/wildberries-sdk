@@ -32,6 +32,12 @@ export interface ApiV1SellerInfoGet200Response {
      */
     sid?: string;
     /**
+     * ИНН
+     * @type {string}
+     * @memberof ApiV1SellerInfoGet200Response
+     */
+    tin?: string;
+    /**
      * Торговое наименование продавца
      * @type {string}
      * @memberof ApiV1SellerInfoGet200Response
@@ -58,6 +64,7 @@ export function ApiV1SellerInfoGet200ResponseFromJSONTyped(json: any, ignoreDisc
         
         'name': json['name'] == null ? undefined : json['name'],
         'sid': json['sid'] == null ? undefined : json['sid'],
+        'tin': json['tin'] == null ? undefined : json['tin'],
         'tradeMark': json['tradeMark'] == null ? undefined : json['tradeMark'],
     };
 }
@@ -75,6 +82,7 @@ export function ApiV1SellerInfoGet200ResponseToJSONTyped(value?: ApiV1SellerInfo
         
         'name': value['name'],
         'sid': value['sid'],
+        'tin': value['tin'],
         'tradeMark': value['tradeMark'],
     };
 }

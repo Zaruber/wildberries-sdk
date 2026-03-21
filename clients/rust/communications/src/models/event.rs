@@ -40,9 +40,6 @@ pub struct Event {
     pub reply_sign: Option<String>,
     #[serde(rename = "sender", skip_serializing_if = "Option::is_none")]
     pub sender: Option<models::Sender>,
-    /// ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
-    #[serde(rename = "clientID", skip_serializing_if = "Option::is_none")]
-    pub client_id: Option<String>,
     /// Имя покупателя
     #[serde(rename = "clientName", skip_serializing_if = "Option::is_none")]
     pub client_name: Option<String>,
@@ -61,7 +58,6 @@ impl Event {
             add_time: None,
             reply_sign: None,
             sender: None,
-            client_id: None,
             client_name: None,
         }
     }

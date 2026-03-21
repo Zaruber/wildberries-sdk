@@ -18,8 +18,8 @@ pub struct ContentV2GetCardsListPostRequestSettingsCursor {
     #[serde(rename = "limit", skip_serializing_if = "Option::is_none")]
     pub limit: Option<i32>,
     /// Дата и время изменения
-    #[serde(rename = "updatedAt", skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<String>,
+    #[serde(rename = "updatedAt", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub updated_at: Option<Option<String>>,
     /// Артикул WB, с которого надо запрашивать следующий список карточек товаров
     #[serde(rename = "nmID", skip_serializing_if = "Option::is_none")]
     pub nm_id: Option<i32>,

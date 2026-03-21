@@ -113,13 +113,6 @@ export interface Event {
      */
     sender?: Sender;
     /**
-     * ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
-     * @type {string}
-     * @memberof Event
-     * @deprecated
-     */
-    clientID?: string;
-    /**
      * Имя покупателя
      * @type {string}
      * @memberof Event
@@ -156,7 +149,6 @@ export function EventFromJSONTyped(json: any, ignoreDiscriminator: boolean): Eve
         'addTime': json['addTime'] == null ? undefined : json['addTime'],
         'replySign': json['replySign'] == null ? undefined : json['replySign'],
         'sender': json['sender'] == null ? undefined : SenderFromJSON(json['sender']),
-        'clientID': json['clientID'] == null ? undefined : json['clientID'],
         'clientName': json['clientName'] == null ? undefined : json['clientName'],
     };
 }
@@ -182,7 +174,6 @@ export function EventToJSONTyped(value?: Event | null, ignoreDiscriminator: bool
         'addTime': value['addTime'],
         'replySign': value['replySign'],
         'sender': SenderToJSON(value['sender']),
-        'clientID': value['clientID'],
         'clientName': value['clientName'],
     };
 }

@@ -1073,12 +1073,12 @@ paths:
                       durationSec: 10
                     wasViewed: true
                     photoLinks:
-                    - fullSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/fs.jpg
-                      miniSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/ms.jpg
-                    - fullSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/fs.jpg
-                      miniSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/ms.jpg
-                    - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.jpg
-                      miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.jpg
+                    - fullSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/fs.webp
+                      miniSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/ms.webp
+                    - fullSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/fs.webp
+                      miniSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/ms.webp
+                    - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.webp
+                      miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.webp
                     userName: Николай
                     orderStatus: buyout
                     matchingSize: ok
@@ -1493,12 +1493,12 @@ paths:
                     durationSec: 10
                   wasViewed: true
                   photoLinks:
-                  - fullSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/fs.jpg
-                    miniSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/ms.jpg
-                  - fullSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/fs.jpg
-                    miniSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/ms.jpg
-                  - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.jpg
-                    miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.jpg
+                  - fullSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/fs.webp
+                    miniSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/ms.webp
+                  - fullSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/fs.webp
+                    miniSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/ms.webp
+                  - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.webp
+                    miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.webp
                   userName: Николай
                   orderStatus: returned
                   matchingSize: ok
@@ -1671,12 +1671,12 @@ paths:
                       durationSec: 10
                     wasViewed: true
                     photoLinks:
-                    - fullSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/fs.jpg
-                      miniSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/ms.jpg
-                    - fullSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/fs.jpg
-                      miniSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/ms.jpg
-                    - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.jpg
-                      miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.jpg
+                    - fullSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/fs.webp
+                      miniSize: https://feedback04.wbbasket.ru/vol1333/part133337/123456789/photos/ms.webp
+                    - fullSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/fs.webp
+                      miniSize: https://feedback04.wbbasket.ru/vol1508/part150887/123456789/photos/ms.webp
+                    - fullSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/fs.webp
+                      miniSize: https://feedback04.wbbasket.ru/vol1486/part148682/123456789/photos/ms.webp
                     userName: Николай
                     orderStatus: returned
                     matchingSize: ok
@@ -2456,7 +2456,6 @@ paths:
                           priceCurrency: RUB
                           rid: 2fb52cd9e25e52538a5f05994e688ae5
                           size: "0"
-                          statusID: 11
                         files:
                         - contentType: application/pdf
                           date: 2023-10-23T08:02:19.594Z
@@ -2475,7 +2474,6 @@ paths:
                     addTime: 2023-10-23T05:02:20Z
                     replySign: 1:1e265a58-a120-b178-008c-60af2460207c:66f136e919a8207e136757754f253189bfb9ae1ad9da9170c9d5c478626663908888c370216525bef51c0ca8d77952e05c9c17f9b63ab00374c5555b42efc07d
                     sender: client
-                    clientID: "186132"
                     clientName: Алёна
                   - chatID: 1:1e265a58-a120-b178-008c-60af2460207c
                     eventID: cef95d3c-0345-4dc9-b6df-4c8c57a176a9
@@ -2487,7 +2485,6 @@ paths:
                     addTimestamp: 1698037387000
                     addTime: 2023-10-23T05:03:07Z
                     sender: client
-                    clientID: "186132"
                     clientName: Алёна
                   - chatID: 1:1e265a58-a120-b178-008c-60af2460207c
                     eventID: fd22e5bf-64fd-43f7-b3a0-ad29uu027f97
@@ -3330,7 +3327,6 @@ components:
     Chat:
       example:
         replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
-        clientID: clientID
         chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
         clientName: Иван
         lastMessage: ""
@@ -3338,7 +3334,6 @@ components:
           date: date
           priceCurrency: priceCurrency
           size: size
-          statusID: 1
           price: 6
           nmID: 0
           rid: rid
@@ -3351,10 +3346,6 @@ components:
           description: |
             Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post)
           example: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
-          type: string
-        clientID:
-          deprecated: true
-          description: "ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)"
           type: string
         clientName:
           description: Имя покупателя
@@ -3371,7 +3362,6 @@ components:
       example:
         result:
         - replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
-          clientID: clientID
           chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
           clientName: Иван
           lastMessage: ""
@@ -3379,12 +3369,10 @@ components:
             date: date
             priceCurrency: priceCurrency
             size: size
-            statusID: 1
             price: 6
             nmID: 0
             rid: rid
         - replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
-          clientID: clientID
           chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
           clientName: Иван
           lastMessage: ""
@@ -3392,7 +3380,6 @@ components:
             date: date
             priceCurrency: priceCurrency
             size: size
-            statusID: 1
             price: 6
             nmID: 0
             rid: rid
@@ -3416,7 +3403,6 @@ components:
       example:
         eventID: eventID
         replySign: replySign
-        clientID: clientID
         chatID: chatID
         addTime: addTime
         addTimestamp: 5
@@ -3451,7 +3437,6 @@ components:
               date: date
               priceCurrency: priceCurrency
               size: size
-              statusID: 1
               price: 6
               nmID: 0
               rid: rid
@@ -3495,10 +3480,6 @@ components:
           type: string
         sender:
           $ref: "#/components/schemas/Sender"
-        clientID:
-          deprecated: true
-          description: "ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)"
-          type: string
         clientName:
           description: Имя покупателя
           type: string
@@ -3530,7 +3511,6 @@ components:
           date: date
           priceCurrency: priceCurrency
           size: size
-          statusID: 1
           price: 6
           nmID: 0
           rid: rid
@@ -3590,7 +3570,6 @@ components:
         date: date
         priceCurrency: priceCurrency
         size: size
-        statusID: 1
         price: 6
         nmID: 0
         rid: rid
@@ -3620,11 +3599,6 @@ components:
         size:
           description: "Размер товара, соответствует `wbSize` в [карточке товара](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post)"
           type: string
-        statusID:
-          deprecated: true
-          description: |
-            Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469)
-          type: integer
       type: object
     LastMessage:
       example:
@@ -3694,7 +3668,6 @@ components:
           events:
           - eventID: eventID
             replySign: replySign
-            clientID: clientID
             chatID: chatID
             addTime: addTime
             addTimestamp: 5
@@ -3729,14 +3702,12 @@ components:
                   date: date
                   priceCurrency: priceCurrency
                   size: size
-                  statusID: 1
                   price: 6
                   nmID: 0
                   rid: rid
               text: text
           - eventID: eventID
             replySign: replySign
-            clientID: clientID
             chatID: chatID
             addTime: addTime
             addTimestamp: 5
@@ -3771,7 +3742,6 @@ components:
                   date: date
                   priceCurrency: priceCurrency
                   size: size
-                  statusID: 1
                   price: 6
                   nmID: 0
                   rid: rid
@@ -3798,7 +3768,6 @@ components:
         events:
         - eventID: eventID
           replySign: replySign
-          clientID: clientID
           chatID: chatID
           addTime: addTime
           addTimestamp: 5
@@ -3833,14 +3802,12 @@ components:
                 date: date
                 priceCurrency: priceCurrency
                 size: size
-                statusID: 1
                 price: 6
                 nmID: 0
                 rid: rid
             text: text
         - eventID: eventID
           replySign: replySign
-          clientID: clientID
           chatID: chatID
           addTime: addTime
           addTimestamp: 5
@@ -3875,7 +3842,6 @@ components:
                 date: date
                 priceCurrency: priceCurrency
                 size: size
-                statusID: 1
                 price: 6
                 nmID: 0
                 rid: rid
@@ -6368,7 +6334,6 @@ components:
             date: date
             priceCurrency: priceCurrency
             size: size
-            statusID: 1
             price: 6
             nmID: 0
             rid: rid

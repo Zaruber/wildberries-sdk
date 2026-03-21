@@ -19,9 +19,6 @@ pub struct Chat {
     /// Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) 
     #[serde(rename = "replySign", skip_serializing_if = "Option::is_none")]
     pub reply_sign: Option<String>,
-    /// ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
-    #[serde(rename = "clientID", skip_serializing_if = "Option::is_none")]
-    pub client_id: Option<String>,
     /// Имя покупателя
     #[serde(rename = "clientName", skip_serializing_if = "Option::is_none")]
     pub client_name: Option<String>,
@@ -37,7 +34,6 @@ impl Chat {
         Chat {
             chat_id: None,
             reply_sign: None,
-            client_id: None,
             client_name: None,
             good_card: None,
             last_message: None,

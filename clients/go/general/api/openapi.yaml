@@ -259,6 +259,7 @@ paths:
               example:
                 name: ИП Кружинин В. Р.
                 sid: e8923014-e233-47q8-898e-3cc86d67ea61
+                tin: "1234567890"
                 tradeMark: Flax Store
               schema:
                 $ref: "#/components/schemas/_api_v1_seller_info_get_200_response"
@@ -1263,6 +1264,7 @@ components:
     _api_v1_seller_info_get_200_response:
       example:
         name: name
+        tin: tin
         tradeMark: tradeMark
         sid: sid
       properties:
@@ -1273,6 +1275,9 @@ components:
           description: "Уникальный ID продавца на Wildberries, [находящийся в публ\
             ичном поле токена](./api-information#tag/Avtorizaciya/Kak-ustroen-token)"
           format: UUID
+          type: string
+        tin:
+          description: ИНН
           type: string
         tradeMark:
           description: Торговое наименование продавца

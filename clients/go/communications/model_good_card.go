@@ -31,9 +31,6 @@ type GoodCard struct {
 	Rid *string `json:"rid,omitempty"`
 	// Размер товара, соответствует `wbSize` в [карточке товара](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post)
 	Size *string `json:"size,omitempty"`
-	// Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469) 
-	// Deprecated
-	StatusID *int32 `json:"statusID,omitempty"`
 }
 
 // NewGoodCard instantiates a new GoodCard object
@@ -245,41 +242,6 @@ func (o *GoodCard) SetSize(v string) {
 	o.Size = &v
 }
 
-// GetStatusID returns the StatusID field value if set, zero value otherwise.
-// Deprecated
-func (o *GoodCard) GetStatusID() int32 {
-	if o == nil || IsNil(o.StatusID) {
-		var ret int32
-		return ret
-	}
-	return *o.StatusID
-}
-
-// GetStatusIDOk returns a tuple with the StatusID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *GoodCard) GetStatusIDOk() (*int32, bool) {
-	if o == nil || IsNil(o.StatusID) {
-		return nil, false
-	}
-	return o.StatusID, true
-}
-
-// HasStatusID returns a boolean if a field has been set.
-func (o *GoodCard) HasStatusID() bool {
-	if o != nil && !IsNil(o.StatusID) {
-		return true
-	}
-
-	return false
-}
-
-// SetStatusID gets a reference to the given int32 and assigns it to the StatusID field.
-// Deprecated
-func (o *GoodCard) SetStatusID(v int32) {
-	o.StatusID = &v
-}
-
 func (o GoodCard) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -307,9 +269,6 @@ func (o GoodCard) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
-	}
-	if !IsNil(o.StatusID) {
-		toSerialize["statusID"] = o.StatusID
 	}
 	return toSerialize, nil
 }

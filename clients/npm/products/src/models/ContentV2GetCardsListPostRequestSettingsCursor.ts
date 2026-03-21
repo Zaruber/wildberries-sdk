@@ -31,7 +31,7 @@ export interface ContentV2GetCardsListPostRequestSettingsCursor {
      * @type {string}
      * @memberof ContentV2GetCardsListPostRequestSettingsCursor
      */
-    updatedAt?: string;
+    updatedAt?: string | null;
     /**
      * Артикул WB, с которого надо запрашивать следующий список карточек товаров
      * @type {number}

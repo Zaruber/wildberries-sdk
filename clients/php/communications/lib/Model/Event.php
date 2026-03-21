@@ -67,7 +67,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         'add_time' => 'string',
         'reply_sign' => 'string',
         'sender' => '\Wildberries\Sdk\Communications\Model\Sender',
-        'client_id' => 'string',
         'client_name' => 'string'
     ];
 
@@ -89,7 +88,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         'add_time' => null,
         'reply_sign' => null,
         'sender' => null,
-        'client_id' => null,
         'client_name' => null
     ];
 
@@ -109,7 +107,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         'add_time' => false,
         'reply_sign' => false,
         'sender' => false,
-        'client_id' => false,
         'client_name' => false
     ];
 
@@ -209,7 +206,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         'add_time' => 'addTime',
         'reply_sign' => 'replySign',
         'sender' => 'sender',
-        'client_id' => 'clientID',
         'client_name' => 'clientName'
     ];
 
@@ -229,7 +225,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         'add_time' => 'setAddTime',
         'reply_sign' => 'setReplySign',
         'sender' => 'setSender',
-        'client_id' => 'setClientId',
         'client_name' => 'setClientName'
     ];
 
@@ -249,7 +244,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         'add_time' => 'getAddTime',
         'reply_sign' => 'getReplySign',
         'sender' => 'getSender',
-        'client_id' => 'getClientId',
         'client_name' => 'getClientName'
     ];
 
@@ -320,7 +314,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('add_time', $data ?? [], null);
         $this->setIfExists('reply_sign', $data ?? [], null);
         $this->setIfExists('sender', $data ?? [], null);
-        $this->setIfExists('client_id', $data ?? [], null);
         $this->setIfExists('client_name', $data ?? [], null);
     }
 
@@ -632,35 +625,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sender cannot be null');
         }
         $this->container['sender'] = $sender;
-
-        return $this;
-    }
-
-    /**
-     * Gets client_id
-     *
-     * @return string|null
-     * @deprecated
-     */
-    public function getClientId()
-    {
-        return $this->container['client_id'];
-    }
-
-    /**
-     * Sets client_id
-     *
-     * @param string|null $client_id ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setClientId($client_id)
-    {
-        if (is_null($client_id)) {
-            throw new \InvalidArgumentException('non-nullable client_id cannot be null');
-        }
-        $this->container['client_id'] = $client_id;
 
         return $this;
     }

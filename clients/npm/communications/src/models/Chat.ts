@@ -48,13 +48,6 @@ export interface Chat {
      */
     replySign?: string;
     /**
-     * ID покупателя. Поле будет отключено [2 февраля](https://dev.wildberries.ru/release-notes?id=466)
-     * @type {string}
-     * @memberof Chat
-     * @deprecated
-     */
-    clientID?: string;
-    /**
      * Имя покупателя
      * @type {string}
      * @memberof Chat
@@ -93,7 +86,6 @@ export function ChatFromJSONTyped(json: any, ignoreDiscriminator: boolean): Chat
         
         'chatID': json['chatID'] == null ? undefined : json['chatID'],
         'replySign': json['replySign'] == null ? undefined : json['replySign'],
-        'clientID': json['clientID'] == null ? undefined : json['clientID'],
         'clientName': json['clientName'] == null ? undefined : json['clientName'],
         'goodCard': json['goodCard'] == null ? undefined : GoodCardFromJSON(json['goodCard']),
         'lastMessage': json['lastMessage'] == null ? undefined : LastMessageFromJSON(json['lastMessage']),
@@ -113,7 +105,6 @@ export function ChatToJSONTyped(value?: Chat | null, ignoreDiscriminator: boolea
         
         'chatID': value['chatID'],
         'replySign': value['replySign'],
-        'clientID': value['clientID'],
         'clientName': value['clientName'],
         'goodCard': GoodCardToJSON(value['goodCard']),
         'lastMessage': LastMessageToJSON(value['lastMessage']),

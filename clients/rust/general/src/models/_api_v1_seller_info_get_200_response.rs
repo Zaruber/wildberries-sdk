@@ -19,6 +19,9 @@ pub struct ApiV1SellerInfoGet200Response {
     /// Уникальный ID продавца на Wildberries, [находящийся в публичном поле токена](./api-information#tag/Avtorizaciya/Kak-ustroen-token)
     #[serde(rename = "sid", skip_serializing_if = "Option::is_none")]
     pub sid: Option<uuid::Uuid>,
+    /// ИНН
+    #[serde(rename = "tin", skip_serializing_if = "Option::is_none")]
+    pub tin: Option<String>,
     /// Торговое наименование продавца
     #[serde(rename = "tradeMark", skip_serializing_if = "Option::is_none")]
     pub trade_mark: Option<String>,
@@ -29,6 +32,7 @@ impl ApiV1SellerInfoGet200Response {
         ApiV1SellerInfoGet200Response {
             name: None,
             sid: None,
+            tin: None,
             trade_mark: None,
         }
     }

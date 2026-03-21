@@ -62,14 +62,6 @@ export interface GoodCard {
      * @memberof GoodCard
      */
     size?: string;
-    /**
-     * Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469)
-     * 
-     * @type {number}
-     * @memberof GoodCard
-     * @deprecated
-     */
-    statusID?: number;
 }
 
 /**
@@ -95,7 +87,6 @@ export function GoodCardFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
         'priceCurrency': json['priceCurrency'] == null ? undefined : json['priceCurrency'],
         'rid': json['rid'] == null ? undefined : json['rid'],
         'size': json['size'] == null ? undefined : json['size'],
-        'statusID': json['statusID'] == null ? undefined : json['statusID'],
     };
 }
 
@@ -116,7 +107,6 @@ export function GoodCardToJSONTyped(value?: GoodCard | null, ignoreDiscriminator
         'priceCurrency': value['priceCurrency'],
         'rid': value['rid'],
         'size': value['size'],
-        'statusID': value['statusID'],
     };
 }
 

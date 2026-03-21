@@ -120,7 +120,7 @@ pub async fn api_tariffs_v1_acceptance_coefficients_get(configuration: &configur
     }
 }
 
-/// Для товаров, которые поставляются на склад в коробах, метод возвращает [тарифы на остаток](https://seller.wildberries.ru/dynamic-product-categories):   - доставка со склада или пункта приёма до покупателя   - доставка от покупателя до пункта приёма   - хранение на складе WB  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+/// Для остатков товаров, которые поставляются на склад в коробах, метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories) на:   - доставку со склада или пункта приёма до покупателя   - доставку от покупателя до пункта приёма   - хранение на складе WB  <div class=\"description_important\">   Тарифы для коробов совпадают с тарифами для <strong>Суперсейфа</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
 pub async fn api_v1_tariffs_box_get(configuration: &configuration::Configuration, date: &str) -> Result<models::TariffsBoxResponse, Error<ApiV1TariffsBoxGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date = date;
@@ -214,7 +214,7 @@ pub async fn api_v1_tariffs_commission_get(configuration: &configuration::Config
     }
 }
 
-/// Для товаров, которые поставляются на склад WB на монопаллетах, метод возвращает [стоимость](https://seller.wildberries.ru/dynamic-product-categories):   - доставки со склада до покупателя   - доставки от покупателя до склада   - хранения на складе WB  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+/// Для товаров, которые поставляются на склад WB на монопаллетах, метод возвращает [стоимость](https://seller.wildberries.ru/dynamic-product-categories):   - доставки со склада до покупателя   - доставки от покупателя до склада   - хранения на складе WB  <div class=\"description_important\">   Тарифы для монопаллет совпадают с тарифами для <strong>Поштучных паллет</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
 pub async fn api_v1_tariffs_pallet_get(configuration: &configuration::Configuration, date: &str) -> Result<models::TariffsPalletResponse, Error<ApiV1TariffsPalletGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date = date;

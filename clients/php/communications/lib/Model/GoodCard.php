@@ -63,8 +63,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'int',
         'price_currency' => 'string',
         'rid' => 'string',
-        'size' => 'string',
-        'status_id' => 'int'
+        'size' => 'string'
     ];
 
     /**
@@ -80,8 +79,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => null,
         'price_currency' => null,
         'rid' => null,
-        'size' => null,
-        'status_id' => null
+        'size' => null
     ];
 
     /**
@@ -95,8 +93,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => false,
         'price_currency' => false,
         'rid' => false,
-        'size' => false,
-        'status_id' => false
+        'size' => false
     ];
 
     /**
@@ -190,8 +187,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'price',
         'price_currency' => 'priceCurrency',
         'rid' => 'rid',
-        'size' => 'size',
-        'status_id' => 'statusID'
+        'size' => 'size'
     ];
 
     /**
@@ -205,8 +201,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'setPrice',
         'price_currency' => 'setPriceCurrency',
         'rid' => 'setRid',
-        'size' => 'setSize',
-        'status_id' => 'setStatusId'
+        'size' => 'setSize'
     ];
 
     /**
@@ -220,8 +215,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'getPrice',
         'price_currency' => 'getPriceCurrency',
         'rid' => 'getRid',
-        'size' => 'getSize',
-        'status_id' => 'getStatusId'
+        'size' => 'getSize'
     ];
 
     /**
@@ -287,7 +281,6 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('price_currency', $data ?? [], null);
         $this->setIfExists('rid', $data ?? [], null);
         $this->setIfExists('size', $data ?? [], null);
-        $this->setIfExists('status_id', $data ?? [], null);
     }
 
     /**
@@ -490,35 +483,6 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable size cannot be null');
         }
         $this->container['size'] = $size;
-
-        return $this;
-    }
-
-    /**
-     * Gets status_id
-     *
-     * @return int|null
-     * @deprecated
-     */
-    public function getStatusId()
-    {
-        return $this->container['status_id'];
-    }
-
-    /**
-     * Sets status_id
-     *
-     * @param int|null $status_id Поле будет отключено [10 февраля](https://dev.wildberries.ru/release-notes?id=469)
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setStatusId($status_id)
-    {
-        if (is_null($status_id)) {
-            throw new \InvalidArgumentException('non-nullable status_id cannot be null');
-        }
-        $this->container['status_id'] = $status_id;
 
         return $this;
     }
