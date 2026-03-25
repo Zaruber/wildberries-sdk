@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.03.25)
+- Orders FBS: в ответе метода получения PDF-стикеров сборочных заданий кроссбордера добавлено поле `status` (enum: `awaitingTrackNumber`, `ready`) — статус генерации стикера; обновлено описание с рекомендацией повторять запрос до `ready`.
+- Orders FBS: изменена схема элемента `stickers`: поле `file` (base64 PDF) перемещено ниже (после `parcelId`), добавлен пример ответа, где при `awaitingTrackNumber` поля `parcelId`/`file` могут быть пустыми.
+
 ### Changed (2026.03.24)
 - Аналитика / История остатков: добавлен новый read-only endpoint `POST /api/analytics/v1/stocks-report/wb-warehouses` (токены: personal, service) для получения текущих остатков по складам WB; обновление данных раз в 30 минут; лимит 3 запроса/мин (интервал 20 сек, всплеск 1 запрос).
 - Аналитика / История остатков: добавлены схемы `InventoryRequest` (фильтры `nmIds` до 1000, опционально `chrtIds`, пагинация `limit` до 250000 и `offset`) и `InventoryWbResponse` (поля по размеру и складу: `nmId`, `chrtId`, `warehouseId`, `warehouseName`, `regionName`, `quantity`, `inWayToClient`, `inWayFromClient`).
