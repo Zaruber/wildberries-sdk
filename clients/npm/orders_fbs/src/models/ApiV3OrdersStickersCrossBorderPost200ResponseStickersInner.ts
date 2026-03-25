@@ -20,24 +20,44 @@ import { mapValues } from '../runtime';
  */
 export interface ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
     /**
-     * Стикер в формате PDF, кодировка base64
-     * @type {string}
-     * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
-     */
-    file?: string;
-    /**
      * ID сборочного задания
      * @type {number}
      * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
      */
     orderId?: number;
     /**
+     * Статус генерации стикера:
+     *   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.
+     *   - `ready` — стикер готов
+     * 
+     * @type {ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerStatusEnum}
+     * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
+     */
+    status?: ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerStatusEnum;
+    /**
      * Трек-номер в стикере для отслеживания сборочного задания
      * @type {string}
      * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
      */
     parcelId?: string;
+    /**
+     * Стикер в формате PDF, кодировка base64
+     * @type {string}
+     * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
+     */
+    file?: string;
 }
+
+
+/**
+ * @export
+ */
+export const ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerStatusEnum = {
+    AwaitingTrackNumber: 'awaitingTrackNumber',
+    Ready: 'ready'
+} as const;
+export type ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerStatusEnum = typeof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerStatusEnum[keyof typeof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerStatusEnum];
+
 
 /**
  * Check if a given object implements the ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner interface.
@@ -56,9 +76,10 @@ export function ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerFromJS
     }
     return {
         
-        'file': json['file'] == null ? undefined : json['file'],
         'orderId': json['orderId'] == null ? undefined : json['orderId'],
+        'status': json['status'] == null ? undefined : json['status'],
         'parcelId': json['parcelId'] == null ? undefined : json['parcelId'],
+        'file': json['file'] == null ? undefined : json['file'],
     };
 }
 
@@ -73,9 +94,10 @@ export function ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerToJSON
 
     return {
         
-        'file': value['file'],
         'orderId': value['orderId'],
+        'status': value['status'],
         'parcelId': value['parcelId'],
+        'file': value['file'],
     };
 }
 

@@ -3228,7 +3228,15 @@ func (r ApiApiV3OrdersStickersCrossBorderPostRequest) Execute() (*ApiV3OrdersSti
 /*
 ApiV3OrdersStickersCrossBorderPost Получить стикеры сборочных заданий кроссбордера
 
-Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) кроссбордера, в формате PDF.<br><br>
+Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) кроссбордера в формате PDF.<br><br>
+
+Для каждого сборочного задания в ответе указывается статус генерации стикера:
+  - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.
+  - `ready` — стикер готов
+
+<div class="description_important">
+  Стикер может генерироваться с задержкой. Повторяйте запрос, пока не получите статус <code>ready</code>.
+</div>
 
 Ограничения:
   - За один запрос можно получить максимум 100 стикеров.

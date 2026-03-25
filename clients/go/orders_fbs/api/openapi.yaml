@@ -2167,7 +2167,15 @@ paths:
   /api/v3/orders/stickers/cross-border:
     post:
       description: |
-        Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) кроссбордера, в формате PDF.<br><br>
+        Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) кроссбордера в формате PDF.<br><br>
+
+        Для каждого сборочного задания в ответе указывается статус генерации стикера:
+          - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.
+          - `ready` — стикер готов
+
+        <div class="description_important">
+          Стикер может генерироваться с задержкой. Повторяйте запрос, пока не получите статус <code>ready</code>.
+        </div>
 
         Ограничения:
           - За один запрос можно получить максимум 100 стикеров.
@@ -2191,6 +2199,16 @@ paths:
         "200":
           content:
             application/json:
+              example:
+                stickers:
+                - orderId: 987654320
+                  status: awaitingTrackNumber
+                  parcelId: ""
+                  file: ""
+                - orderId: 123456789
+                  status: ready
+                  parcelId: WB0000000001
+                  file: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
               schema:
                 $ref: "#/components/schemas/_api_v3_orders_stickers_cross_border_post_200_response"
           description: Успешно
@@ -5577,8 +5595,29 @@ components:
           Q25SeVlXbHNaWElLUER3S0wxSnZiM1FnTkNBd0lGSUtMMU5wZW1VZ053b3ZTVzVtYnlBMklEQWdV
           Z28rUGdwemRHRnlkSGh5WldZS01UTTVNUW9sSlVWUFJnPT0=
         orderId: 3869227998
+        status: ready
         parcelId: WB0000000001
       properties:
+        orderId:
+          description: ID сборочного задания
+          example: 3869227998
+          nullable: false
+          type: integer
+        status:
+          description: |
+            Статус генерации стикера:
+              - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.
+              - `ready` — стикер готов
+          enum:
+          - awaitingTrackNumber
+          - ready
+          example: ready
+          nullable: false
+          type: string
+        parcelId:
+          description: Трек-номер в стикере для отслеживания сборочного задания
+          example: WB0000000001
+          type: string
         file:
           description: "Стикер в формате PDF, кодировка base64"
           example: !!binary |-
@@ -5622,15 +5661,6 @@ components:
             Z28rUGdwemRHRnlkSGh5WldZS01UTTVNUW9sSlVWUFJnPT0=
           format: byte
           nullable: false
-          type: string
-        orderId:
-          description: ID сборочного задания
-          example: 3869227998
-          nullable: false
-          type: integer
-        parcelId:
-          description: Трек-номер в стикере для отслеживания сборочного задания
-          example: WB0000000001
           type: string
       type: object
     _api_v3_orders_stickers_cross_border_post_200_response:
@@ -5676,6 +5706,7 @@ components:
             Q25SeVlXbHNaWElLUER3S0wxSnZiM1FnTkNBd0lGSUtMMU5wZW1VZ053b3ZTVzVtYnlBMklEQWdV
             Z28rUGdwemRHRnlkSGh5WldZS01UTTVNUW9sSlVWUFJnPT0=
           orderId: 3869227998
+          status: ready
           parcelId: WB0000000001
         - file: !!binary |-
             SlZCRVJpMHhMalFLSlNCamNtVmhkR1ZrSUdKNUlGQnBiR3h2ZHlCUVJFWWdaSEpwZG1WeUNqUWdN
@@ -5717,6 +5748,7 @@ components:
             Q25SeVlXbHNaWElLUER3S0wxSnZiM1FnTkNBd0lGSUtMMU5wZW1VZ053b3ZTVzVtYnlBMklEQWdV
             Z28rUGdwemRHRnlkSGh5WldZS01UTTVNUW9sSlVWUFJnPT0=
           orderId: 3869227998
+          status: ready
           parcelId: WB0000000001
       properties:
         stickers:

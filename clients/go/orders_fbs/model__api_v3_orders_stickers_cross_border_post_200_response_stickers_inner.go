@@ -19,12 +19,14 @@ var _ MappedNullable = &ApiV3OrdersStickersCrossBorderPost200ResponseStickersInn
 
 // ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner struct for ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
 type ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner struct {
-	// Стикер в формате PDF, кодировка base64
-	File *string `json:"file,omitempty"`
 	// ID сборочного задания
 	OrderId *int32 `json:"orderId,omitempty"`
+	// Статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов 
+	Status *string `json:"status,omitempty"`
 	// Трек-номер в стикере для отслеживания сборочного задания
 	ParcelId *string `json:"parcelId,omitempty"`
+	// Стикер в формате PDF, кодировка base64
+	File *string `json:"file,omitempty"`
 }
 
 // NewApiV3OrdersStickersCrossBorderPost200ResponseStickersInner instantiates a new ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner object
@@ -42,38 +44,6 @@ func NewApiV3OrdersStickersCrossBorderPost200ResponseStickersInner() *ApiV3Order
 func NewApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerWithDefaults() *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
 	this := ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner{}
 	return &this
-}
-
-// GetFile returns the File field value if set, zero value otherwise.
-func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetFile() string {
-	if o == nil || IsNil(o.File) {
-		var ret string
-		return ret
-	}
-	return *o.File
-}
-
-// GetFileOk returns a tuple with the File field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetFileOk() (*string, bool) {
-	if o == nil || IsNil(o.File) {
-		return nil, false
-	}
-	return o.File, true
-}
-
-// HasFile returns a boolean if a field has been set.
-func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) HasFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
-}
-
-// SetFile gets a reference to the given string and assigns it to the File field.
-func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetFile(v string) {
-	o.File = &v
 }
 
 // GetOrderId returns the OrderId field value if set, zero value otherwise.
@@ -108,6 +78,38 @@ func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetOrderId(
 	o.OrderId = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetStatus() string {
+	if o == nil || IsNil(o.Status) {
+		var ret string
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) HasStatus() bool {
+	if o != nil && !IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetStatus(v string) {
+	o.Status = &v
+}
+
 // GetParcelId returns the ParcelId field value if set, zero value otherwise.
 func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetParcelId() string {
 	if o == nil || IsNil(o.ParcelId) {
@@ -140,6 +142,38 @@ func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetParcelId
 	o.ParcelId = &v
 }
 
+// GetFile returns the File field value if set, zero value otherwise.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetFile() string {
+	if o == nil || IsNil(o.File) {
+		var ret string
+		return ret
+	}
+	return *o.File
+}
+
+// GetFileOk returns a tuple with the File field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetFileOk() (*string, bool) {
+	if o == nil || IsNil(o.File) {
+		return nil, false
+	}
+	return o.File, true
+}
+
+// HasFile returns a boolean if a field has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) HasFile() bool {
+	if o != nil && !IsNil(o.File) {
+		return true
+	}
+
+	return false
+}
+
+// SetFile gets a reference to the given string and assigns it to the File field.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetFile(v string) {
+	o.File = &v
+}
+
 func (o ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -150,14 +184,17 @@ func (o ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) MarshalJSON(
 
 func (o ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.File) {
-		toSerialize["file"] = o.File
-	}
 	if !IsNil(o.OrderId) {
 		toSerialize["orderId"] = o.OrderId
 	}
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
+	}
 	if !IsNil(o.ParcelId) {
 		toSerialize["parcelId"] = o.ParcelId
+	}
+	if !IsNil(o.File) {
+		toSerialize["file"] = o.File
 	}
 	return toSerialize, nil
 }

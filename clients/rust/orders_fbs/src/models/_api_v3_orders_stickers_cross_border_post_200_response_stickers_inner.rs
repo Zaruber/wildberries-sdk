@@ -16,25 +16,43 @@ use serde_with::serde_as;
 #[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
+    /// ID сборочного задания
+    #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
+    pub order_id: Option<i32>,
+    /// Статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов 
+    #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
+    pub status: Option<Status>,
+    /// Трек-номер в стикере для отслеживания сборочного задания
+    #[serde(rename = "parcelId", skip_serializing_if = "Option::is_none")]
+    pub parcel_id: Option<String>,
     /// Стикер в формате PDF, кодировка base64
     #[serde_as(as = "Option<serde_with::base64::Base64>")]
     #[serde(rename = "file", skip_serializing_if = "Option::is_none")]
     pub file: Option<Vec<u8>>,
-    /// ID сборочного задания
-    #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
-    pub order_id: Option<i32>,
-    /// Трек-номер в стикере для отслеживания сборочного задания
-    #[serde(rename = "parcelId", skip_serializing_if = "Option::is_none")]
-    pub parcel_id: Option<String>,
 }
 
 impl ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
     pub fn new() -> ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
         ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
-            file: None,
             order_id: None,
+            status: None,
             parcel_id: None,
+            file: None,
         }
+    }
+}
+/// Статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum Status {
+    #[serde(rename = "awaitingTrackNumber")]
+    AwaitingTrackNumber,
+    #[serde(rename = "ready")]
+    Ready,
+}
+
+impl Default for Status {
+    fn default() -> Status {
+        Self::AwaitingTrackNumber
     }
 }
 
