@@ -455,6 +455,10 @@ paths:
                             disabled: false
                           - code: balance
                             disabled: false
+                          - code: oldAnalyticsReports
+                            disabled: false
+                          - code: marketplace
+                            disabled: false
                       - id: 0
                         role: ''
                         position: ''
@@ -500,6 +504,10 @@ paths:
                           - code: feedbacksQuestions
                             disabled: false
                           - code: balance
+                            disabled: false
+                          - code: oldAnalyticsReports
+                            disabled: false
+                          - code: marketplace
                             disabled: false
                 usersOnly:
                   summary: isInviteOnly=false
@@ -549,6 +557,10 @@ paths:
                             disabled: false
                           - code: balance
                             disabled: false
+                          - code: oldAnalyticsReports
+                            disabled: false
+                          - code: marketplace
+                            disabled: false
                       - id: 1002
                         role: user
                         position: Менеджер
@@ -594,6 +606,10 @@ paths:
                           - code: feedbacksQuestions
                             disabled: false
                           - code: balance
+                            disabled: false
+                          - code: oldAnalyticsReports
+                            disabled: false
+                          - code: marketplace
                             disabled: false
         '400':
           description: Неправильный запрос
@@ -735,6 +751,8 @@ components:
               * `pointsForReviews` — Баллы за отзывы
               * `feedbacks` — Просмотр и ответы на отзывы покупателей
               * `wbPoint` — WB Point
+              * `oldAnalyticsReports` — Отчёты
+              * `marketplace` — Свой склад
             enum:
               - balance
               - brands
@@ -750,6 +768,8 @@ components:
               - pointsForReviews
               - feedbacks
               - wbPoint
+              - oldAnalyticsReports
+              - marketplace
           disabled:
             type: boolean
             description: |

@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.03.27)
+- General: в перечисление прав доступа (components.schemas.*.permissions[].code) добавлены новые коды `oldAnalyticsReports` (Отчёты) и `marketplace` (Свой склад); они также появились в примерах ответов для списков пользователей/ролей с `disabled: false`.
+
 ### Changed (2026.03.25)
 - Orders FBS: в ответе метода получения PDF-стикеров сборочных заданий кроссбордера добавлено поле `status` (enum: `awaitingTrackNumber`, `ready`) — статус генерации стикера; обновлено описание с рекомендацией повторять запрос до `ready`.
 - Orders FBS: изменена схема элемента `stickers`: поле `file` (base64 PDF) перемещено ниже (после `parcelId`), добавлен пример ответа, где при `awaitingTrackNumber` поля `parcelId`/`file` могут быть пустыми.
