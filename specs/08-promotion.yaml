@@ -1879,7 +1879,7 @@ paths:
       summary: Статистика поисковых кластеров
       description: |
         Метод формирует статистику по поисковым кластерам за указанный период.<br>
-        Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.
+        Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -3634,6 +3634,7 @@ paths:
       summary: Статистика по поисковым кластерам с детализацией по дням
       description: |
         Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.
+        Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -3965,7 +3966,11 @@ components:
           description: Поисковый кластер
         views:
           type: integer
-          description: Количество просмотров
+          nullable: true
+          description: |
+            Количество просмотров.
+
+            Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
         clicks:
           type: integer
           description: Количество кликов
@@ -3978,15 +3983,23 @@ components:
         ctr:
           type: number
           format: float
-          description: CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+          nullable: true
+          description: |
+            CTR (click-through rate) — отношение числа кликов к количеству показов в процентах.
+
+            Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
         cpc:
           type: number
           format: float
           description: Средняя стоимость клика, ₽
         cpm:
           type: number
+          nullable: true
           format: float
-          description: Средняя стоимость за тысячу показов, ₽
+          description: |
+            Средняя стоимость за тысячу показов, ₽.
+
+            Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
         avgPos:
           type: number
           format: float
@@ -4072,7 +4085,11 @@ components:
           description: Поисковый кластер
         views:
           type: integer
-          description: Количество просмотров
+          nullable: true
+          description: |
+            Количество просмотров.
+
+            Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
         clicks:
           type: integer
           description: Количество кликов
@@ -4084,8 +4101,11 @@ components:
           type: integer
         ctr:
           description: |
-            Кликабельность — отношение числа кликов к количеству показов, %
+            Кликабельность — отношение числа кликов к количеству показов, %.
+
+            Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
           type: number
+          nullable: true
           format: double
         cpc:
           type: number
@@ -4093,8 +4113,12 @@ components:
           description: Стоимость одного клика, ₽
         cpm:
           type: number
+          nullable: true
           format: double
-          description: Средняя стоимость за тысячу показов, ₽
+          description: |
+            Средняя стоимость за тысячу показов, ₽.
+
+            Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
         avg_pos:
           type: number
           format: double

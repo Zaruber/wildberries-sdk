@@ -70,7 +70,7 @@ paths:
         | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` |
         | Документы | `https://documents-api.wildberries.ru/ping` |
         | Финансы | `https://finance-api.wildberries.ru/ping` |
-        | Тарифы, Новости, Информация о продавце | `https://common-api.wildberries.ru/ping` |
+        | Тарифы, Новости, Получить информацию о продавце | `https://common-api.wildberries.ru/ping` |
         | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |
 
         <div class="description_limit">
@@ -230,10 +230,13 @@ paths:
         - Информация о продавце
       security:
         - HeaderApiKey: []
-      summary: Получение информации о продавце
+      summary: Получить информацию о продавце
       description: |
+        <div class="description_auth">
+          Информацию о продавце можно получить с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории
+        </div>
+
         Метод позволяет получать наименование продавца и ID его профиля.
-        <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -272,6 +275,102 @@ paths:
           $ref: '#/components/responses/401'
         '402':
           $ref: '#/components/responses/402'
+        '429':
+          $ref: '#/components/responses/429'
+  /api/common/v1/rating:
+    servers:
+      - url: https://feedbacks-api.wildberries.ru
+    get:
+      x-readonly-method: true
+      x-category: questionsandfeedback
+      operationId: getCommonV1Rating
+      x-token-types:
+        - service
+      tags:
+        - Информация о продавце
+      security:
+        - HeaderApiKey: []
+      summary: Получить рейтинг продавца
+      description: |
+        <div class="description_auth">
+          Для доступа к методу используйте <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токен</a> для категории <strong>Вопросы и отзывы</strong>
+        </div>
+
+        <div class="description_token">
+        Метод доступен по<strong> Сервисному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
+        Метод возвращает пользовательский рейтинг продавца и количество отзывов.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 1 запрос | 1 мин | 1 запрос |
+        </div>
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupplierRatingModel'
+        '401':
+          $ref: '#/components/responses/401'
+        '429':
+          $ref: '#/components/responses/429'
+  /api/common/v1/subscriptions:
+    servers:
+      - url: https://common-api.wildberries.ru
+    get:
+      x-readonly-method: true
+      x-category: commonapi
+      operationId: getCommonV1Subscriptions
+      x-token-types:
+        - service
+      tags:
+        - Информация о продавце
+      security:
+        - HeaderApiKey: []
+      summary: Получить информацию о подписке Джем
+      description: |
+        <div class="description_auth">
+          Информацию о подписке Джем можно получить с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории
+        </div>
+
+        <div class="description_token">
+        Метод доступен по<strong> Сервисному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
+        Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam):
+          - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ `200`.
+          - Если продавец активировал и никогда не отменял подписку, возвращается:
+            - дата активации подписки `since`
+            - дата окончания текущего оплаченного периода `till`
+          - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается:
+            - дата первой активации подписки `since`
+            - дата окончания текущего оплаченного периода `till`
+          - Если подписка неактивна, возвращается:
+            - дата первой активации подписки `since`
+            - дата окончания последнего оплаченного периода `till`
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 1 запрос | 1 мин | 10 запросов |
+        </div>
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionsJamInfo'
+        '401':
+          $ref: '#/components/responses/401'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/invite:
@@ -1017,6 +1116,70 @@ components:
         detail: 'bad request cause: user is not in current supplier'
         requestId: c479c04d0b576a9ba0b20fdf235004c2
         origin: public-acl
+    SupplierRatingModel:
+      type: object
+      properties:
+        feedbackCount:
+          description: Количество отзывов
+          type: integer
+          example: 12355
+        valuation:
+          description: Рейтинг продавца
+          type: number
+          format: float
+          example: 4.55
+    SubscriptionsJamInfo:
+      type: object
+      description: Информация о подписке Джем
+      required:
+        - state
+        - activationSource
+        - level
+        - since
+        - till
+      properties:
+        state:
+          type: string
+          example: active
+          enum:
+            - active
+            - inactive
+          description: |
+            Статус подписки:
+              - `active` — активна
+              - `inactive` — истекла или отменена
+        activationSource:
+          type: string
+          enum:
+            - constructor
+            - jam
+          example: jam
+          description: |
+            Источник подключения подписки:
+              - `constructor` — покупка через раздел **Конструктор тарифов**
+              - `jam` — покупка через раздел **Подписка «Джем»**
+        level:
+          type: string
+          enum:
+            - standard
+            - advanced
+            - premium
+          example: premium
+          description: |
+            Уровень подписки:
+              - `standard`
+              - `advanced`
+              - `premium`
+        since:
+          type: string
+          format: date-time
+          example: '2026-03-16T08:38:08.056406Z'
+          description: Дата и время первой активации подписки. Не меняется при продлении или повторной активации
+        till:
+          type: string
+          format: date-time
+          example: '2026-04-25T14:44:28.393587Z'
+          description: Дата и время окончания подписки
   responses:
     '401':
       description: Не авторизован

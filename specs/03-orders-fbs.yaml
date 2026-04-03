@@ -489,6 +489,7 @@ paths:
         | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch)
         | `complete` | **В доставке** | [Передать поставку в доставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1deliver/patch) |
         | `cancel`   | **Отменено продавцом**   | [Отменить сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch)|
+        | `cancel_carrier`   | **Отменено перевозчиком** <br>Только для кроссбордера   | Переводится перевозчиком |
 
         <br><br>
         `wbStatus` — статус системы Wildberries.
@@ -504,6 +505,7 @@ paths:
         - `ready_for_pickup` — сборочное задание прибыло на пункт выдачи заказов (ПВЗ)
         - `accepted_by_carrier` — продавец передал заказ в службу доставки в своей стране
         - `sent_to_carrier` — заказ отправлен на склад службы доставки в стране продавца
+        - `canceled_by_carrier` — заказ отменён перевозчиком. Только для кроссбордера
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -2184,7 +2186,10 @@ paths:
         Если поставка не была передана в доставку, то при приёмке первого товара поставка автоматически закроется.
         <br><br>
         Передать поставку в доставку можно только если в ней:
-          - есть хотя бы одно сборочное задания
+          - есть хотя бы одно сборочное задание
+          - нет сборочных заданий:
+            - с отсутствующей обязательной маркировкой
+            - с маркировкой, не прошедшей валидацию
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -2222,12 +2227,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/409SupplyDeliverError'
               examples:
                 SupplyHasZeroOrders:
                   $ref: '#/components/examples/SupplyHasZeroOrders'
-                UinIsNotFilled:
-                  $ref: '#/components/examples/UinIsNotFilled'
+                MetaValidationFail:
+                  $ref: '#/components/examples/MetaValidationFail'
         '429':
           $ref: '#/components/responses/429'
   /api/v3/supplies/{supplyId}/barcode:
@@ -2686,10 +2691,18 @@ components:
       value:
         code: SupplyHasZeroOrders
         message: Не удалось обработать поставку. Убедитесь, что за ней закреплён хотя бы одно сборочное задание.
-    UinIsNotFilled:
+    MetaValidationFail:
+      description: Маркировка не прошла валидацию
       value:
-        code: UinIsNotFilled
-        message: Перевод в статус "в доставке" невозможен. Введите УИНы для всех сборочных заданий, где это необходимо.
+        code: MetaValidationFail
+        message: Fix them to dispatch items
+        data:
+          orders:
+            - id: 123456789
+              metaDetails:
+                - key: uin
+                  value: 'null'
+                  decision: uinBadStatus
     SupplyNotClosed:
       value:
         code: SupplyNotClosed
@@ -2871,8 +2884,83 @@ components:
           nullable: false
         data:
           type: object
-          description: Дополнительные данные, обогащающие ошибку
+          description: Дополнительные данные ошибки
           nullable: true
+    409SupplyDeliverError:
+      type: object
+      nullable: false
+      properties:
+        code:
+          type: string
+          description: Код ошибки
+          nullable: false
+        message:
+          type: string
+          description: Описание ошибки
+          nullable: false
+        data:
+          type: object
+          description: Дополнительные данные ошибки
+          nullable: true
+          properties:
+            orders:
+              type: array
+              description: Сборочные задания, метаданные которых не прошли или ещё не завершили валидацию
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: ID сборочного задания
+                  metaDetails:
+                    type: array
+                    description: Информация об ошибках
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          description: Метаданные
+                        value:
+                          type: string
+                          description: Значение метаданных
+                        decision:
+                          type: string
+                          description: |
+                            Статус проверки:
+                            - IMEI
+                              - `pending` — Маркировка на проверке
+                              - `required` — Обязательная маркировка не заполнена
+                              - `imeiInvalidFormat` — Неверный формат маркировки
+                              - `imeiAlreadySold` — Товар с этим IMEI уже продан
+                            - UIN
+                              - `required` — Обязательная маркировка не заполнена
+                              - `pending` — Маркировка на проверке
+                              - `required` — Маркировка обязательна, не заполнена
+                              - `uinInvalidFormat` — Неверный формат маркировки
+                              - `uinNotFound` — Не найден в ГИС
+                              - `uinBadStatus` — Некорректный статус партии
+                              - `uinBadProcess` — Некорректная стадия обработки
+                              - `uinBadStatusAndBadProcess` — Некорректный статус партии. Некорректная стадия обработки
+                            - SGTIN
+                              - `required` — Обязательная маркировка не заполнена
+                              - `pending` — Маркировка на проверке
+                              - `sgtinInvalidFormat` — Неверный формат маркировки
+                              - `sgtinNotFound` — Маркировка не найдена в [Честном Знаке](https://chestnyznak.ru)
+                              - `sgtinEmitted` —  Маркировка эмитирована
+                              - `sgtinApplied` — Не пройдена процедура Ввод в оборот
+                              - `sgtinWrittenOff` — Списан
+                              - `sgtinRetired` — Выбыл
+                              - `sgtinWithdrawn` — Выбыл
+                              - `sgtinDisaggregation` — Расформирован
+                              - `sgtinDisaggregated` — Расформирован
+                              - `sgtinAppliedNotPaid` — Не оплачен
+                            - GTIN
+                              - `required` — Маркировка обязательна, не заполнена
+                            - Expiration
+                              - `required` — Маркировка обязательна, не заполнена
+                            - Customs declaration
+                              - `required` — Маркировка обязательна, не заполнена
     Next:
       type: integer
       format: int64
@@ -3393,7 +3481,7 @@ components:
           example: U3dhZ2dlciByb2Nrcw==
     Meta:
       type: object
-      description: Метаданные сборочного задания
+      description: Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id=500)
       properties:
         imei:
           type: object
@@ -3447,6 +3535,71 @@ components:
               example: 10704010/010624/0000302
               nullable: true
           description: Номер грузовой таможенной декларации
+    MetaDetails:
+      type: array
+      description: Детали маркировки
+      items:
+        type: object
+        properties:
+          key:
+            type: string
+            example: uin
+            description: Маркировка
+          value:
+            nullable: true
+            type: string
+            example: null
+            description: Значение
+          decision:
+            type: string
+            example: uinMaySell
+            description: |
+              Статус:
+              - IMEI
+                - `filled` — Валидация пройдена
+                - `deadlineExceeded` — Валидация пройдена
+                - `optional` — Маркировка не обязательна
+                - `pending` — Маркировка на проверке
+                - `required` — Обязательная маркировка не заполнена. Валидация не пройдена
+                - `imeiInvalidFormat` — Неверный формат маркировки. Валидация не пройдена
+                - `imeiAlreadySold` — Товар с этим IMEI уже продан. Валидация не пройдена
+              - UIN
+                - `filled` — Валидация пройдена
+                - `deadlineExceeded` — Валидация пройдена
+                - `optional` — Маркировка не обязательна
+                - `pending` — Маркировка на проверке
+                - `uinMaySell` — Валидация пройдена
+                - `required` — Маркировка обязательна, не заполнена. Валидация не пройдена
+                - `uinInvalidFormat` — Неверный формат маркировки. Валидация не пройдена
+                - `uinNotFound` — Не найден в ГИС. Валидация не пройдена
+                - `uinBadStatus` — Некорректный статус партии. Валидация не пройдена
+                - `uinBadProcess` — Некорректная стадия обработки. Валидация не пройдена
+                - `uinBadStatusAndBadProcess` — Некорректный статус партии. Некорректная стадия обработки. Валидация не пройдена
+              - SGTIN
+                - `filled` — Валидация пройдена
+                - `deadlineExceeded` — Валидация пройдена
+                - `optional` — Маркировка не обязательна
+                - `pending` — Маркировка на проверке
+                - `required` — Маркировка обязательна, не заполнена. Валидация не пройдена
+                - `sgtinInvalidFormat` — Неверный формат маркировки. Валидация не пройдена
+                - `sgtinNotFound` — Маркировка не найдена в [Честном Знаке](https://chestnyznak.ru). Валидация не пройдена
+                - `sgtinEmitted` —  Маркировка эмитирована. Валидация не пройдена
+                - `sgtinApplied` — Не пройдена процедура Ввод в оборот. Валидация не пройдена
+                - `sgtinWrittenOff` — Списан. Валидация не пройдена
+                - `sgtinRetired` — Выбыл. Валидация не пройдена
+                - `sgtinDisaggregated` — Расформирован. Валидация не пройдена
+                - `sgtinAppliedNotPaid` — Не оплачен. Валидация не пройдена
+              - GTIN
+                - `filled` — Валидация пройдена
+                - `optional` — Маркировка не обязательна
+                - `required` — Маркировка обязательна, не заполнена. Валидация не пройдена
+              - Expiration
+                - `filled` — Валидация пройдена
+                - `optional` — Маркировка не обязательна
+                - `required` — Маркировка обязательна, не заполнена. Валидация не пройдена
+              - Customs declaration
+                - `filled` — Валидация пройдена
+                - `required` — Маркировка обязательна, не заполнена. Валидация не пройдена
     v3.GetMetaMultiRequest:
       type: object
       description: ID сборочных заданий
@@ -3474,8 +3627,12 @@ components:
         id:
           type: integer
           description: ID сборочного задания
-        meta:
+        metaDetails:
           description: Метаданные сборочного задания
+          $ref: '#/components/schemas/MetaDetails'
+          type: array
+        meta:
+          deprecated: true
           $ref: '#/components/schemas/Meta'
           type: object
       type: object
