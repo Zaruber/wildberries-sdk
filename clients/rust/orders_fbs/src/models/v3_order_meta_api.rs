@@ -16,6 +16,9 @@ pub struct V3OrderMetaApi {
     /// ID сборочного задания
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
+    /// Детали маркировки
+    #[serde(rename = "metaDetails", skip_serializing_if = "Option::is_none")]
+    pub meta_details: Option<Vec<models::MetaDetailsInner>>,
     #[serde(rename = "meta", skip_serializing_if = "Option::is_none")]
     pub meta: Option<Box<models::Meta>>,
 }
@@ -24,6 +27,7 @@ impl V3OrderMetaApi {
     pub fn new() -> V3OrderMetaApi {
         V3OrderMetaApi {
             id: None,
+            meta_details: None,
             meta: None,
         }
     }

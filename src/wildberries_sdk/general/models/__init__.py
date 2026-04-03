@@ -28,6 +28,8 @@ from wildberries_sdk.general.models.get_users_response_users_inner import GetUse
 from wildberries_sdk.general.models.get_users_response_users_inner_invitee_info import GetUsersResponseUsersInnerInviteeInfo
 from wildberries_sdk.general.models.ping_get200_response import PingGet200Response
 from wildberries_sdk.general.models.ping_get401_response import PingGet401Response
+from wildberries_sdk.general.models.subscriptions_jam_info import SubscriptionsJamInfo
+from wildberries_sdk.general.models.supplier_rating_model import SupplierRatingModel
 from wildberries_sdk.general.models.update_user_access_request import UpdateUserAccessRequest
 from wildberries_sdk.general.models.user_access import UserAccess
 

@@ -26,11 +26,14 @@ export interface V0GetNormQueryStatsItemStat {
      */
     normQuery?: string;
     /**
-     * Количество просмотров
+     * Количество просмотров.
+     * 
+     * Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
+     * 
      * @type {number}
      * @memberof V0GetNormQueryStatsItemStat
      */
-    views?: number;
+    views?: number | null;
     /**
      * Количество кликов
      * @type {number}
@@ -50,12 +53,14 @@ export interface V0GetNormQueryStatsItemStat {
      */
     orders?: number;
     /**
-     * Кликабельность — отношение числа кликов к количеству показов, %
+     * Кликабельность — отношение числа кликов к количеству показов, %.
+     * 
+     * Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
      * 
      * @type {number}
      * @memberof V0GetNormQueryStatsItemStat
      */
-    ctr?: number;
+    ctr?: number | null;
     /**
      * Стоимость одного клика, ₽
      * @type {number}
@@ -63,11 +68,14 @@ export interface V0GetNormQueryStatsItemStat {
      */
     cpc?: number;
     /**
-     * Средняя стоимость за тысячу показов, ₽
+     * Средняя стоимость за тысячу показов, ₽.
+     * 
+     * Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
+     * 
      * @type {number}
      * @memberof V0GetNormQueryStatsItemStat
      */
-    cpm?: number;
+    cpm?: number | null;
     /**
      * Средняя позиция товара на страницах поисковой выдачи
      * @type {number}

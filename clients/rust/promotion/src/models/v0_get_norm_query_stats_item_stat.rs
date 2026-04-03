@@ -16,9 +16,9 @@ pub struct V0GetNormQueryStatsItemStat {
     /// Поисковый кластер
     #[serde(rename = "norm_query", skip_serializing_if = "Option::is_none")]
     pub norm_query: Option<String>,
-    /// Количество просмотров
-    #[serde(rename = "views", skip_serializing_if = "Option::is_none")]
-    pub views: Option<i32>,
+    /// Количество просмотров.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` 
+    #[serde(rename = "views", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub views: Option<Option<i32>>,
     /// Количество кликов
     #[serde(rename = "clicks", skip_serializing_if = "Option::is_none")]
     pub clicks: Option<i32>,
@@ -28,15 +28,15 @@ pub struct V0GetNormQueryStatsItemStat {
     /// Количество заказов
     #[serde(rename = "orders", skip_serializing_if = "Option::is_none")]
     pub orders: Option<i32>,
-    /// Кликабельность — отношение числа кликов к количеству показов, % 
-    #[serde(rename = "ctr", skip_serializing_if = "Option::is_none")]
-    pub ctr: Option<f64>,
+    /// Кликабельность — отношение числа кликов к количеству показов, %.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` 
+    #[serde(rename = "ctr", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub ctr: Option<Option<f64>>,
     /// Стоимость одного клика, ₽
     #[serde(rename = "cpc", skip_serializing_if = "Option::is_none")]
     pub cpc: Option<f64>,
-    /// Средняя стоимость за тысячу показов, ₽
-    #[serde(rename = "cpm", skip_serializing_if = "Option::is_none")]
-    pub cpm: Option<f64>,
+    /// Средняя стоимость за тысячу показов, ₽.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` 
+    #[serde(rename = "cpm", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub cpm: Option<Option<f64>>,
     /// Средняя позиция товара на страницах поисковой выдачи
     #[serde(rename = "avg_pos", skip_serializing_if = "Option::is_none")]
     pub avg_pos: Option<f64>,

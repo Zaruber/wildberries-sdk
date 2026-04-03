@@ -98,13 +98,13 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static array $openAPINullables = [
         'norm_query' => false,
-        'views' => false,
+        'views' => true,
         'clicks' => false,
         'atbs' => false,
         'orders' => false,
-        'ctr' => false,
+        'ctr' => true,
         'cpc' => false,
-        'cpm' => false,
+        'cpm' => true,
         'avg_pos' => false,
         'shks' => false,
         'spend' => false
@@ -399,14 +399,21 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets views
      *
-     * @param int|null $views Количество просмотров
+     * @param int|null $views Количество просмотров.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
      *
      * @return self
      */
     public function setViews($views)
     {
         if (is_null($views)) {
-            throw new \InvalidArgumentException('non-nullable views cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'views');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('views', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['views'] = $views;
 
@@ -507,14 +514,21 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets ctr
      *
-     * @param float|null $ctr Кликабельность — отношение числа кликов к количеству показов, %
+     * @param float|null $ctr Кликабельность — отношение числа кликов к количеству показов, %.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
      *
      * @return self
      */
     public function setCtr($ctr)
     {
         if (is_null($ctr)) {
-            throw new \InvalidArgumentException('non-nullable ctr cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ctr');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ctr', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ctr'] = $ctr;
 
@@ -561,14 +575,21 @@ class V0GetNormQueryStatsItemStat implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets cpm
      *
-     * @param float|null $cpm Средняя стоимость за тысячу показов, ₽
+     * @param float|null $cpm Средняя стоимость за тысячу показов, ₽.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
      *
      * @return self
      */
     public function setCpm($cpm)
     {
         if (is_null($cpm)) {
-            throw new \InvalidArgumentException('non-nullable cpm cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'cpm');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cpm', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['cpm'] = $cpm;
 

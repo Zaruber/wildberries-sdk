@@ -57,7 +57,7 @@ import {
 } from './MetaGtin';
 
 /**
- * Метаданные сборочного задания
+ * Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id=500)
  * @export
  * @interface Meta
  */

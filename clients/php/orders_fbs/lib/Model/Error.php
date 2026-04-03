@@ -370,7 +370,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param object|null $data Дополнительные данные, обогащающие ошибку
+     * @param object|null $data Дополнительные данные ошибки
      *
      * @return self
      */

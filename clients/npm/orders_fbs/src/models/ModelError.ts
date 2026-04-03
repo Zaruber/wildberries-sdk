@@ -32,7 +32,7 @@ export interface ModelError {
      */
     message?: string;
     /**
-     * Дополнительные данные, обогащающие ошибку
+     * Дополнительные данные ошибки
      * @type {object}
      * @memberof ModelError
      */

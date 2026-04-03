@@ -23,7 +23,7 @@ type Error struct {
 	Code *string `json:"code,omitempty"`
 	// Описание ошибки
 	Message *string `json:"message,omitempty"`
-	// Дополнительные данные, обогащающие ошибку
+	// Дополнительные данные ошибки
 	Data map[string]interface{} `json:"data,omitempty"`
 }
 

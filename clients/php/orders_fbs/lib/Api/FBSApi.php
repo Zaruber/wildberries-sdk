@@ -10895,7 +10895,7 @@ class FBSApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Sdk\OrdersFbs\Model\Error',
+                        '\Wildberries\Sdk\OrdersFbs\Model\Model409SupplyDeliverError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

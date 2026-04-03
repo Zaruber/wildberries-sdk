@@ -59,7 +59,7 @@ PingGet Проверка подключения
 | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` |
 | Документы | `https://documents-api.wildberries.ru/ping` |
 | Финансы | `https://finance-api.wildberries.ru/ping` |
-| Тарифы, Новости, Информация о продавце | `https://common-api.wildberries.ru/ping` |
+| Тарифы, Новости, Получить информацию о продавце | `https://common-api.wildberries.ru/ping` |
 | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |
 
 <div class="description_limit">

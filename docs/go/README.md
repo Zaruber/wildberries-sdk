@@ -38,10 +38,12 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 
 ### general (`general`)
 - `general.DefaultApiService.ApiV1InvitePost` — `POST /api/v1/invite` — Создать приглашение для нового пользователя
-- `general.DefaultApiService.ApiV1SellerInfoGet` — `GET /api/v1/seller-info` — Получение информации о продавце
+- `general.DefaultApiService.ApiV1SellerInfoGet` — `GET /api/v1/seller-info` — Получить информацию о продавце
 - `general.DefaultApiService.ApiV1UserDelete` — `DELETE /api/v1/user` — Удалить пользователя
 - `general.DefaultApiService.ApiV1UsersAccessPut` — `PUT /api/v1/users/access` — Изменить права доступа пользователей
 - `general.DefaultApiService.ApiV1UsersGet` — `GET /api/v1/users` — Получить список активных или приглашённых пользователей продавца
+- `general.DefaultApiService.GetCommonV1Rating` — `GET /api/common/v1/rating` — Получить рейтинг продавца
+- `general.DefaultApiService.GetCommonV1Subscriptions` — `GET /api/common/v1/subscriptions` — Получить информацию о подписке Джем
 - `general.APIAPIService.ApiCommunicationsV2NewsGet` — `GET /api/communications/v2/news` — Получение новостей портала продавцов
 - `general.WBAPIAPIService.PingGet` — `GET /ping` — Проверка подключения
 

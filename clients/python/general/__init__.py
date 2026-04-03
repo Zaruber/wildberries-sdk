@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.58"
+__version__ = "0.1.59"
 
 # Define package exports
 __all__ = [
@@ -43,6 +43,8 @@ __all__ = [
     "GetUsersResponseUsersInnerInviteeInfo",
     "PingGet200Response",
     "PingGet401Response",
+    "SubscriptionsJamInfo",
+    "SupplierRatingModel",
     "UpdateUserAccessRequest",
     "UserAccess",
 ]
@@ -77,6 +79,8 @@ from wildberries_sdk.general.models.get_users_response_users_inner import GetUse
 from wildberries_sdk.general.models.get_users_response_users_inner_invitee_info import GetUsersResponseUsersInnerInviteeInfo as GetUsersResponseUsersInnerInviteeInfo
 from wildberries_sdk.general.models.ping_get200_response import PingGet200Response as PingGet200Response
 from wildberries_sdk.general.models.ping_get401_response import PingGet401Response as PingGet401Response
+from wildberries_sdk.general.models.subscriptions_jam_info import SubscriptionsJamInfo as SubscriptionsJamInfo
+from wildberries_sdk.general.models.supplier_rating_model import SupplierRatingModel as SupplierRatingModel
 from wildberries_sdk.general.models.update_user_access_request import UpdateUserAccessRequest as UpdateUserAccessRequest
 from wildberries_sdk.general.models.user_access import UserAccess as UserAccess
 

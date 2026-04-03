@@ -17,7 +17,7 @@ import (
 // checks if the Meta type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Meta{}
 
-// Meta Метаданные сборочного задания
+// Meta Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id=500)
 type Meta struct {
 	Imei *MetaImei `json:"imei,omitempty"`
 	Uin *MetaUin `json:"uin,omitempty"`

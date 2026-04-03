@@ -22,6 +22,8 @@ import type {
   ErrorResponse,
   GetUsersResponse,
   PingGet401Response,
+  SubscriptionsJamInfo,
+  SupplierRatingModel,
   UpdateUserAccessRequest,
 } from '../models/index';
 import {
@@ -39,6 +41,10 @@ import {
     GetUsersResponseToJSON,
     PingGet401ResponseFromJSON,
     PingGet401ResponseToJSON,
+    SubscriptionsJamInfoFromJSON,
+    SubscriptionsJamInfoToJSON,
+    SupplierRatingModelFromJSON,
+    SupplierRatingModelToJSON,
     UpdateUserAccessRequestFromJSON,
     UpdateUserAccessRequestToJSON,
 } from '../models/index';
@@ -143,8 +149,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
-     * Получение информации о продавце
+     * <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+     * Получить информацию о продавце
      */
     async apiV1SellerInfoGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1SellerInfoGet200Response>> {
         const requestOptions = await this.apiV1SellerInfoGetRequestOpts();
@@ -154,8 +160,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
-     * Получение информации о продавце
+     * <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+     * Получить информацию о продавце
      */
     async apiV1SellerInfoGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1SellerInfoGet200Response> {
         const response = await this.apiV1SellerInfoGetRaw(initOverrides);
@@ -319,6 +325,92 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async apiV1UsersGet(requestParameters: ApiV1UsersGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetUsersResponse> {
         const response = await this.apiV1UsersGetRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCommonV1Rating without sending the request
+     */
+    async getCommonV1RatingRequestOpts(): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/common/v1/rating`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <div class=\"description_auth\">   Для доступа к методу используйте <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токен</a> для категории <strong>Вопросы и отзывы</strong> </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Получить рейтинг продавца
+     */
+    async getCommonV1RatingRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SupplierRatingModel>> {
+        const requestOptions = await this.getCommonV1RatingRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SupplierRatingModelFromJSON(jsonValue));
+    }
+
+    /**
+     * <div class=\"description_auth\">   Для доступа к методу используйте <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токен</a> для категории <strong>Вопросы и отзывы</strong> </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Получить рейтинг продавца
+     */
+    async getCommonV1Rating(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SupplierRatingModel> {
+        const response = await this.getCommonV1RatingRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCommonV1Subscriptions without sending the request
+     */
+    async getCommonV1SubscriptionsRequestOpts(): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/common/v1/subscriptions`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <div class=\"description_auth\">   Информацию о подписке Джем можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam):   - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ `200`.   - Если продавец активировал и никогда не отменял подписку, возвращается:     - дата активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается:     - дата первой активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка неактивна, возвращается:     - дата первой активации подписки `since`     - дата окончания последнего оплаченного периода `till`  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+     * Получить информацию о подписке Джем
+     */
+    async getCommonV1SubscriptionsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SubscriptionsJamInfo>> {
+        const requestOptions = await this.getCommonV1SubscriptionsRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SubscriptionsJamInfoFromJSON(jsonValue));
+    }
+
+    /**
+     * <div class=\"description_auth\">   Информацию о подписке Джем можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam):   - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ `200`.   - Если продавец активировал и никогда не отменял подписку, возвращается:     - дата активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается:     - дата первой активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка неактивна, возвращается:     - дата первой активации подписки `since`     - дата окончания последнего оплаченного периода `till`  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+     * Получить информацию о подписке Джем
+     */
+    async getCommonV1Subscriptions(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SubscriptionsJamInfo> {
+        const response = await this.getCommonV1SubscriptionsRaw(initOverrides);
         return await response.value();
     }
 

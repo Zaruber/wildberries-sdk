@@ -52,10 +52,12 @@ var_dump($response);
 ### general (`general`)
 - `general.APIApi.apiCommunicationsV2NewsGet` — `GET /api/communications/v2/news` — Получение новостей портала продавцов
 - `general.DefaultApi.apiV1InvitePost` — `POST /api/v1/invite` — Создать приглашение для нового пользователя
-- `general.DefaultApi.apiV1SellerInfoGet` — `GET /api/v1/seller-info` — Получение информации о продавце
+- `general.DefaultApi.apiV1SellerInfoGet` — `GET /api/v1/seller-info` — Получить информацию о продавце
 - `general.DefaultApi.apiV1UserDelete` — `DELETE /api/v1/user` — Удалить пользователя
 - `general.DefaultApi.apiV1UsersAccessPut` — `PUT /api/v1/users/access` — Изменить права доступа пользователей
 - `general.DefaultApi.apiV1UsersGet` — `GET /api/v1/users` — Получить список активных или приглашённых пользователей продавца
+- `general.DefaultApi.getCommonV1Rating` — `GET /api/common/v1/rating` — Получить рейтинг продавца
+- `general.DefaultApi.getCommonV1Subscriptions` — `GET /api/common/v1/subscriptions` — Получить информацию о подписке Джем
 - `general.WBAPIApi.pingGet` — `GET /ping` — Проверка подключения
 
 ### products (`products`)

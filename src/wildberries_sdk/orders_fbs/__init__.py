@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.58"
+__version__ = "0.1.59"
 
 # Define package exports
 __all__ = [
@@ -72,11 +72,16 @@ __all__ = [
     "Error",
     "Meta",
     "MetaCustomsDeclaration",
+    "MetaDetailsInner",
     "MetaExpiration",
     "MetaGtin",
     "MetaImei",
     "MetaSgtin",
     "MetaUin",
+    "Model409SupplyDeliverError",
+    "Model409SupplyDeliverErrorData",
+    "Model409SupplyDeliverErrorDataOrdersInner",
+    "Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner",
     "ModelPass",
     "Order",
     "OrderAddress",
@@ -153,11 +158,16 @@ from wildberries_sdk.orders_fbs.models.crossborder_turkey_client_info_resp impor
 from wildberries_sdk.orders_fbs.models.error import Error as Error
 from wildberries_sdk.orders_fbs.models.meta import Meta as Meta
 from wildberries_sdk.orders_fbs.models.meta_customs_declaration import MetaCustomsDeclaration as MetaCustomsDeclaration
+from wildberries_sdk.orders_fbs.models.meta_details_inner import MetaDetailsInner as MetaDetailsInner
 from wildberries_sdk.orders_fbs.models.meta_expiration import MetaExpiration as MetaExpiration
 from wildberries_sdk.orders_fbs.models.meta_gtin import MetaGtin as MetaGtin
 from wildberries_sdk.orders_fbs.models.meta_imei import MetaImei as MetaImei
 from wildberries_sdk.orders_fbs.models.meta_sgtin import MetaSgtin as MetaSgtin
 from wildberries_sdk.orders_fbs.models.meta_uin import MetaUin as MetaUin
+from wildberries_sdk.orders_fbs.models.model409_supply_deliver_error import Model409SupplyDeliverError as Model409SupplyDeliverError
+from wildberries_sdk.orders_fbs.models.model409_supply_deliver_error_data import Model409SupplyDeliverErrorData as Model409SupplyDeliverErrorData
+from wildberries_sdk.orders_fbs.models.model409_supply_deliver_error_data_orders_inner import Model409SupplyDeliverErrorDataOrdersInner as Model409SupplyDeliverErrorDataOrdersInner
+from wildberries_sdk.orders_fbs.models.model409_supply_deliver_error_data_orders_inner_meta_details_inner import Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner as Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner
 from wildberries_sdk.orders_fbs.models.model_pass import ModelPass as ModelPass
 from wildberries_sdk.orders_fbs.models.order import Order as Order
 from wildberries_sdk.orders_fbs.models.order_address import OrderAddress as OrderAddress

@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Meta : Метаданные сборочного задания
+/// Meta : Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id=500)
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Meta {
     #[serde(rename = "imei", skip_serializing_if = "Option::is_none")]
@@ -29,7 +29,7 @@ pub struct Meta {
 }
 
 impl Meta {
-    /// Метаданные сборочного задания
+    /// Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id=500)
     pub fn new() -> Meta {
         Meta {
             imei: None,

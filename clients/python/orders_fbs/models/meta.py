@@ -31,7 +31,7 @@ from pydantic_core import to_jsonable_python
 
 class Meta(BaseModel):
     """
-    Метаданные сборочного задания
+    Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id=500)
     """ # noqa: E501
     imei: Optional[MetaImei] = None
     uin: Optional[MetaUin] = None

@@ -28,13 +28,13 @@ class V0GetNormQueryStatsItemStat(BaseModel):
     V0GetNormQueryStatsItemStat
     """ # noqa: E501
     norm_query: Optional[StrictStr] = Field(default=None, description="Поисковый кластер")
-    views: Optional[StrictInt] = Field(default=None, description="Количество просмотров")
+    views: Optional[StrictInt] = Field(default=None, description="Количество просмотров.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` ")
     clicks: Optional[StrictInt] = Field(default=None, description="Количество кликов")
     atbs: Optional[StrictInt] = Field(default=None, description="Количество добавлений товаров в корзину")
     orders: Optional[StrictInt] = Field(default=None, description="Количество заказов")
-    ctr: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Кликабельность — отношение числа кликов к количеству показов, % ")
+    ctr: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Кликабельность — отношение числа кликов к количеству показов, %.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` ")
     cpc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Стоимость одного клика, ₽")
-    cpm: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Средняя стоимость за тысячу показов, ₽")
+    cpm: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Средняя стоимость за тысячу показов, ₽.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` ")
     avg_pos: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Средняя позиция товара на страницах поисковой выдачи")
     shks: Optional[StrictInt] = Field(default=None, description="Количество заказанных товаров, шт.")
     spend: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Затраты на продвижение товаров в конкретном поисковом кластере кампании ")
@@ -79,6 +79,21 @@ class V0GetNormQueryStatsItemStat(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if views (nullable) is None
+        # and model_fields_set contains the field
+        if self.views is None and "views" in self.model_fields_set:
+            _dict['views'] = None
+
+        # set to None if ctr (nullable) is None
+        # and model_fields_set contains the field
+        if self.ctr is None and "ctr" in self.model_fields_set:
+            _dict['ctr'] = None
+
+        # set to None if cpm (nullable) is None
+        # and model_fields_set contains the field
+        if self.cpm is None and "cpm" in self.model_fields_set:
+            _dict['cpm'] = None
+
         return _dict
 
     @classmethod

@@ -38,10 +38,12 @@ main().catch(console.error);
 ### general (`general`)
 - `general.APIApi.apiCommunicationsV2NewsGet` — Получение новостей портала продавцов
 - `general.DefaultApi.apiV1InvitePost` — Создать приглашение для нового пользователя
-- `general.DefaultApi.apiV1SellerInfoGet` — Получение информации о продавце
+- `general.DefaultApi.apiV1SellerInfoGet` — Получить информацию о продавце
 - `general.DefaultApi.apiV1UserDelete` — Удалить пользователя
 - `general.DefaultApi.apiV1UsersAccessPut` — Изменить права доступа пользователей
 - `general.DefaultApi.apiV1UsersGet` — Получить список активных или приглашённых пользователей продавца
+- `general.DefaultApi.getCommonV1Rating` — Получить рейтинг продавца
+- `general.DefaultApi.getCommonV1Subscriptions` — Получить информацию о подписке Джем
 - `general.WBAPIApi.pingGet` — Проверка подключения
 
 ### products (`products`)

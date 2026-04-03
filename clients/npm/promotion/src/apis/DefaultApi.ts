@@ -852,7 +852,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+     * Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
      * Статистика поисковых кластеров
      */
     async advV0NormqueryStatsPostRaw(requestParameters: AdvV0NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V0GetNormQueryStatsResponse>> {
@@ -863,7 +863,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+     * Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
      * Статистика поисковых кластеров
      */
     async advV0NormqueryStatsPost(requestParameters: AdvV0NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V0GetNormQueryStatsResponse> {
@@ -1448,7 +1448,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+     * Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
      * Статистика по поисковым кластерам с детализацией по дням
      */
     async advV1NormqueryStatsPostRaw(requestParameters: AdvV1NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1GetNormQueryStatsResponse>> {
@@ -1459,7 +1459,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+     * Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
      * Статистика по поисковым кластерам с детализацией по дням
      */
     async advV1NormqueryStatsPost(requestParameters: AdvV1NormqueryStatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1GetNormQueryStatsResponse> {

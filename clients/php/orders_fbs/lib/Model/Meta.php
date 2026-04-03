@@ -35,7 +35,7 @@ use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
  * Meta Class Doc Comment
  *
  * @category Class
- * @description Метаданные сборочного задания
+ * @description Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id&#x3D;500)
  * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

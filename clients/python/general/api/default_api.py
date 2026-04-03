@@ -25,6 +25,8 @@ from wildberries_sdk.general.models.create_invite_request import CreateInviteReq
 from wildberries_sdk.general.models.create_invite_response import CreateInviteResponse
 from wildberries_sdk.general.models.get_users_response import GetUsersResponse
 from wildberries_sdk.general.models.ping_get200_response import PingGet200Response
+from wildberries_sdk.general.models.subscriptions_jam_info import SubscriptionsJamInfo
+from wildberries_sdk.general.models.supplier_rating_model import SupplierRatingModel
 from wildberries_sdk.general.models.update_user_access_request import UpdateUserAccessRequest
 
 from wildberries_sdk.general.api_client import ApiClient, RequestSerialized
@@ -650,9 +652,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiV1SellerInfoGet200Response:
-        """Получение информации о продавце
+        """Получить информацию о продавце
 
-        Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -716,9 +718,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[ApiV1SellerInfoGet200Response]:
-        """Получение информации о продавце
+        """Получить информацию о продавце
 
-        Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -782,9 +784,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Получение информации о продавце
+        """Получить информацию о продавце
 
-        Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1767,6 +1769,518 @@ class DefaultApi:
 
 
     @validate_call
+    def get_common_v1_rating(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> SupplierRatingModel:
+        """Получить рейтинг продавца
+
+        <div class=\"description_auth\">   Для доступа к методу используйте <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токен</a> для категории <strong>Вопросы и отзывы</strong> </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_common_v1_rating_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SupplierRatingModel",
+            '401': "PingGet401Response",
+            '429': "PingGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_common_v1_rating_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[SupplierRatingModel]:
+        """Получить рейтинг продавца
+
+        <div class=\"description_auth\">   Для доступа к методу используйте <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токен</a> для категории <strong>Вопросы и отзывы</strong> </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_common_v1_rating_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SupplierRatingModel",
+            '401': "PingGet401Response",
+            '429': "PingGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_common_v1_rating_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Получить рейтинг продавца
+
+        <div class=\"description_auth\">   Для доступа к методу используйте <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токен</a> для категории <strong>Вопросы и отзывы</strong> </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_common_v1_rating_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SupplierRatingModel",
+            '401': "PingGet401Response",
+            '429': "PingGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_common_v1_rating_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://feedbacks-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json', 
+                    'application/problem+json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/common/v1/rating',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_common_v1_subscriptions(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> SubscriptionsJamInfo:
+        """Получить информацию о подписке Джем
+
+        <div class=\"description_auth\">   Информацию о подписке Джем можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam):   - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ `200`.   - Если продавец активировал и никогда не отменял подписку, возвращается:     - дата активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается:     - дата первой активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка неактивна, возвращается:     - дата первой активации подписки `since`     - дата окончания последнего оплаченного периода `till`  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_common_v1_subscriptions_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SubscriptionsJamInfo",
+            '401': "PingGet401Response",
+            '429': "PingGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_common_v1_subscriptions_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[SubscriptionsJamInfo]:
+        """Получить информацию о подписке Джем
+
+        <div class=\"description_auth\">   Информацию о подписке Джем можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam):   - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ `200`.   - Если продавец активировал и никогда не отменял подписку, возвращается:     - дата активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается:     - дата первой активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка неактивна, возвращается:     - дата первой активации подписки `since`     - дата окончания последнего оплаченного периода `till`  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_common_v1_subscriptions_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SubscriptionsJamInfo",
+            '401': "PingGet401Response",
+            '429': "PingGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_common_v1_subscriptions_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Получить информацию о подписке Джем
+
+        <div class=\"description_auth\">   Информацию о подписке Джем можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam):   - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ `200`.   - Если продавец активировал и никогда не отменял подписку, возвращается:     - дата активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается:     - дата первой активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка неактивна, возвращается:     - дата первой активации подписки `since`     - дата окончания последнего оплаченного периода `till`  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_common_v1_subscriptions_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SubscriptionsJamInfo",
+            '401': "PingGet401Response",
+            '429': "PingGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_common_v1_subscriptions_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://common-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json', 
+                    'application/problem+json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/common/v1/subscriptions',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def ping_get(
         self,
         _request_timeout: Union[
@@ -1784,7 +2298,7 @@ class DefaultApi:
     ) -> PingGet200Response:
         """Проверка подключения
 
-        Метод проверяет:   1. Успешно ли запрос доходит до WB API   2. Валидность токена авторизации и URL запроса   3. Совпадают ли категория токена и сервис  <div class=\"description_important\">   Метод не предназначен для проверки доступности сервисов WB </div>  У каждого сервиса есть свой вариант метода в зависимости от домена:  | Категория | URL запроса | |---------------|-----------------------| | Контент | `https://content-api.wildberries.ru/ping`<br>`https://content-api-sandbox.wildberries.ru/ping` | | Аналитика | `https://seller-analytics-api.wildberries.ru/ping` | | Цены и скидки | `https://discounts-prices-api.wildberries.ru/ping`<br>`https://discounts-prices-api-sandbox.wildberries.ru/ping` | | Маркетплейс | `https://marketplace-api.wildberries.ru/ping` | | Статистика | `https://statistics-api.wildberries.ru/ping`<br>`https://statistics-api-sandbox.wildberries.ru/ping` | | Продвижение | `https://advert-api.wildberries.ru/ping`<br>`https://advert-api-sandbox.wildberries.ru/ping` | | Вопросы и отзывы | `https://feedbacks-api.wildberries.ru/ping`<br>`https://feedbacks-api-sandbox.wildberries.ru/ping` | | Чат с покупателями | `https://buyer-chat-api.wildberries.ru/ping` | | Поставки | `https://supplies-api.wildberries.ru/ping` | | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` | | Документы | `https://documents-api.wildberries.ru/ping` | | Финансы | `https://finance-api.wildberries.ru/ping` | | Тарифы, Новости, Информация о продавце | `https://common-api.wildberries.ru/ping` | | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |  <div class=\"description_limit\">   Максимум 3 запроса за 30 <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">секунд</a>. Если попытаться автоматизировать использование метода, запросы будут временно заблокированы. Лимит действует отдельно для каждого варианта метода в зависимости от домена </div> 
+        Метод проверяет:   1. Успешно ли запрос доходит до WB API   2. Валидность токена авторизации и URL запроса   3. Совпадают ли категория токена и сервис  <div class=\"description_important\">   Метод не предназначен для проверки доступности сервисов WB </div>  У каждого сервиса есть свой вариант метода в зависимости от домена:  | Категория | URL запроса | |---------------|-----------------------| | Контент | `https://content-api.wildberries.ru/ping`<br>`https://content-api-sandbox.wildberries.ru/ping` | | Аналитика | `https://seller-analytics-api.wildberries.ru/ping` | | Цены и скидки | `https://discounts-prices-api.wildberries.ru/ping`<br>`https://discounts-prices-api-sandbox.wildberries.ru/ping` | | Маркетплейс | `https://marketplace-api.wildberries.ru/ping` | | Статистика | `https://statistics-api.wildberries.ru/ping`<br>`https://statistics-api-sandbox.wildberries.ru/ping` | | Продвижение | `https://advert-api.wildberries.ru/ping`<br>`https://advert-api-sandbox.wildberries.ru/ping` | | Вопросы и отзывы | `https://feedbacks-api.wildberries.ru/ping`<br>`https://feedbacks-api-sandbox.wildberries.ru/ping` | | Чат с покупателями | `https://buyer-chat-api.wildberries.ru/ping` | | Поставки | `https://supplies-api.wildberries.ru/ping` | | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` | | Документы | `https://documents-api.wildberries.ru/ping` | | Финансы | `https://finance-api.wildberries.ru/ping` | | Тарифы, Новости, Получить информацию о продавце | `https://common-api.wildberries.ru/ping` | | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |  <div class=\"description_limit\">   Максимум 3 запроса за 30 <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">секунд</a>. Если попытаться автоматизировать использование метода, запросы будут временно заблокированы. Лимит действует отдельно для каждого варианта метода в зависимости от домена </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1849,7 +2363,7 @@ class DefaultApi:
     ) -> ApiResponse[PingGet200Response]:
         """Проверка подключения
 
-        Метод проверяет:   1. Успешно ли запрос доходит до WB API   2. Валидность токена авторизации и URL запроса   3. Совпадают ли категория токена и сервис  <div class=\"description_important\">   Метод не предназначен для проверки доступности сервисов WB </div>  У каждого сервиса есть свой вариант метода в зависимости от домена:  | Категория | URL запроса | |---------------|-----------------------| | Контент | `https://content-api.wildberries.ru/ping`<br>`https://content-api-sandbox.wildberries.ru/ping` | | Аналитика | `https://seller-analytics-api.wildberries.ru/ping` | | Цены и скидки | `https://discounts-prices-api.wildberries.ru/ping`<br>`https://discounts-prices-api-sandbox.wildberries.ru/ping` | | Маркетплейс | `https://marketplace-api.wildberries.ru/ping` | | Статистика | `https://statistics-api.wildberries.ru/ping`<br>`https://statistics-api-sandbox.wildberries.ru/ping` | | Продвижение | `https://advert-api.wildberries.ru/ping`<br>`https://advert-api-sandbox.wildberries.ru/ping` | | Вопросы и отзывы | `https://feedbacks-api.wildberries.ru/ping`<br>`https://feedbacks-api-sandbox.wildberries.ru/ping` | | Чат с покупателями | `https://buyer-chat-api.wildberries.ru/ping` | | Поставки | `https://supplies-api.wildberries.ru/ping` | | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` | | Документы | `https://documents-api.wildberries.ru/ping` | | Финансы | `https://finance-api.wildberries.ru/ping` | | Тарифы, Новости, Информация о продавце | `https://common-api.wildberries.ru/ping` | | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |  <div class=\"description_limit\">   Максимум 3 запроса за 30 <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">секунд</a>. Если попытаться автоматизировать использование метода, запросы будут временно заблокированы. Лимит действует отдельно для каждого варианта метода в зависимости от домена </div> 
+        Метод проверяет:   1. Успешно ли запрос доходит до WB API   2. Валидность токена авторизации и URL запроса   3. Совпадают ли категория токена и сервис  <div class=\"description_important\">   Метод не предназначен для проверки доступности сервисов WB </div>  У каждого сервиса есть свой вариант метода в зависимости от домена:  | Категория | URL запроса | |---------------|-----------------------| | Контент | `https://content-api.wildberries.ru/ping`<br>`https://content-api-sandbox.wildberries.ru/ping` | | Аналитика | `https://seller-analytics-api.wildberries.ru/ping` | | Цены и скидки | `https://discounts-prices-api.wildberries.ru/ping`<br>`https://discounts-prices-api-sandbox.wildberries.ru/ping` | | Маркетплейс | `https://marketplace-api.wildberries.ru/ping` | | Статистика | `https://statistics-api.wildberries.ru/ping`<br>`https://statistics-api-sandbox.wildberries.ru/ping` | | Продвижение | `https://advert-api.wildberries.ru/ping`<br>`https://advert-api-sandbox.wildberries.ru/ping` | | Вопросы и отзывы | `https://feedbacks-api.wildberries.ru/ping`<br>`https://feedbacks-api-sandbox.wildberries.ru/ping` | | Чат с покупателями | `https://buyer-chat-api.wildberries.ru/ping` | | Поставки | `https://supplies-api.wildberries.ru/ping` | | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` | | Документы | `https://documents-api.wildberries.ru/ping` | | Финансы | `https://finance-api.wildberries.ru/ping` | | Тарифы, Новости, Получить информацию о продавце | `https://common-api.wildberries.ru/ping` | | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |  <div class=\"description_limit\">   Максимум 3 запроса за 30 <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">секунд</a>. Если попытаться автоматизировать использование метода, запросы будут временно заблокированы. Лимит действует отдельно для каждого варианта метода в зависимости от домена </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1914,7 +2428,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Проверка подключения
 
-        Метод проверяет:   1. Успешно ли запрос доходит до WB API   2. Валидность токена авторизации и URL запроса   3. Совпадают ли категория токена и сервис  <div class=\"description_important\">   Метод не предназначен для проверки доступности сервисов WB </div>  У каждого сервиса есть свой вариант метода в зависимости от домена:  | Категория | URL запроса | |---------------|-----------------------| | Контент | `https://content-api.wildberries.ru/ping`<br>`https://content-api-sandbox.wildberries.ru/ping` | | Аналитика | `https://seller-analytics-api.wildberries.ru/ping` | | Цены и скидки | `https://discounts-prices-api.wildberries.ru/ping`<br>`https://discounts-prices-api-sandbox.wildberries.ru/ping` | | Маркетплейс | `https://marketplace-api.wildberries.ru/ping` | | Статистика | `https://statistics-api.wildberries.ru/ping`<br>`https://statistics-api-sandbox.wildberries.ru/ping` | | Продвижение | `https://advert-api.wildberries.ru/ping`<br>`https://advert-api-sandbox.wildberries.ru/ping` | | Вопросы и отзывы | `https://feedbacks-api.wildberries.ru/ping`<br>`https://feedbacks-api-sandbox.wildberries.ru/ping` | | Чат с покупателями | `https://buyer-chat-api.wildberries.ru/ping` | | Поставки | `https://supplies-api.wildberries.ru/ping` | | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` | | Документы | `https://documents-api.wildberries.ru/ping` | | Финансы | `https://finance-api.wildberries.ru/ping` | | Тарифы, Новости, Информация о продавце | `https://common-api.wildberries.ru/ping` | | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |  <div class=\"description_limit\">   Максимум 3 запроса за 30 <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">секунд</a>. Если попытаться автоматизировать использование метода, запросы будут временно заблокированы. Лимит действует отдельно для каждого варианта метода в зависимости от домена </div> 
+        Метод проверяет:   1. Успешно ли запрос доходит до WB API   2. Валидность токена авторизации и URL запроса   3. Совпадают ли категория токена и сервис  <div class=\"description_important\">   Метод не предназначен для проверки доступности сервисов WB </div>  У каждого сервиса есть свой вариант метода в зависимости от домена:  | Категория | URL запроса | |---------------|-----------------------| | Контент | `https://content-api.wildberries.ru/ping`<br>`https://content-api-sandbox.wildberries.ru/ping` | | Аналитика | `https://seller-analytics-api.wildberries.ru/ping` | | Цены и скидки | `https://discounts-prices-api.wildberries.ru/ping`<br>`https://discounts-prices-api-sandbox.wildberries.ru/ping` | | Маркетплейс | `https://marketplace-api.wildberries.ru/ping` | | Статистика | `https://statistics-api.wildberries.ru/ping`<br>`https://statistics-api-sandbox.wildberries.ru/ping` | | Продвижение | `https://advert-api.wildberries.ru/ping`<br>`https://advert-api-sandbox.wildberries.ru/ping` | | Вопросы и отзывы | `https://feedbacks-api.wildberries.ru/ping`<br>`https://feedbacks-api-sandbox.wildberries.ru/ping` | | Чат с покупателями | `https://buyer-chat-api.wildberries.ru/ping` | | Поставки | `https://supplies-api.wildberries.ru/ping` | | Возвраты покупателями | `https://returns-api.wildberries.ru/ping` | | Документы | `https://documents-api.wildberries.ru/ping` | | Финансы | `https://finance-api.wildberries.ru/ping` | | Тарифы, Новости, Получить информацию о продавце | `https://common-api.wildberries.ru/ping` | | Управление пользователями продавца | `https://user-management-api.wildberries.ru/ping` |  <div class=\"description_limit\">   Максимум 3 запроса за 30 <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">секунд</a>. Если попытаться автоматизировать использование метода, запросы будут временно заблокированы. Лимит действует отдельно для каждого варианта метода в зависимости от домена </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

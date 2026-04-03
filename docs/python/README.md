@@ -51,10 +51,12 @@ print(feedbacks)
 ### general (`general`)
 - `general.DefaultApi.api_communications_v2_news_get` — `GET /api/communications/v2/news` — Получение новостей портала продавцов
 - `general.DefaultApi.api_v1_invite_post` — `POST /api/v1/invite` — Создать приглашение для нового пользователя
-- `general.DefaultApi.api_v1_seller_info_get` — `GET /api/v1/seller-info` — Получение информации о продавце
+- `general.DefaultApi.api_v1_seller_info_get` — `GET /api/v1/seller-info` — Получить информацию о продавце
 - `general.DefaultApi.api_v1_user_delete` — `DELETE /api/v1/user` — Удалить пользователя
 - `general.DefaultApi.api_v1_users_access_put` — `PUT /api/v1/users/access` — Изменить права доступа пользователей
 - `general.DefaultApi.api_v1_users_get` — `GET /api/v1/users` — Получить список активных или приглашённых пользователей продавца
+- `general.DefaultApi.get_common_v1_rating` — `GET /api/common/v1/rating` — Получить рейтинг продавца
+- `general.DefaultApi.get_common_v1_subscriptions` — `GET /api/common/v1/subscriptions` — Получить информацию о подписке Джем
 - `general.DefaultApi.ping_get` — `GET /ping` — Проверка подключения
 
 ### products (`products`)

@@ -2687,7 +2687,7 @@ class DefaultApi:
     ) -> V0GetNormQueryStatsResponse:
         """Статистика поисковых кластеров
 
-        Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+        Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 
         :param v0_get_norm_query_stats_request: (required)
         :type v0_get_norm_query_stats_request: V0GetNormQueryStatsRequest
@@ -2758,7 +2758,7 @@ class DefaultApi:
     ) -> ApiResponse[V0GetNormQueryStatsResponse]:
         """Статистика поисковых кластеров
 
-        Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+        Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 
         :param v0_get_norm_query_stats_request: (required)
         :type v0_get_norm_query_stats_request: V0GetNormQueryStatsRequest
@@ -2829,7 +2829,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Статистика поисковых кластеров
 
-        Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+        Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 
         :param v0_get_norm_query_stats_request: (required)
         :type v0_get_norm_query_stats_request: V0GetNormQueryStatsRequest
@@ -5840,7 +5840,7 @@ class DefaultApi:
     ) -> V1GetNormQueryStatsResponse:
         """Статистика по поисковым кластерам с детализацией по дням
 
-        Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+        Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 
         :param v1_get_norm_query_stats_request: (required)
         :type v1_get_norm_query_stats_request: V1GetNormQueryStatsRequest
@@ -5910,7 +5910,7 @@ class DefaultApi:
     ) -> ApiResponse[V1GetNormQueryStatsResponse]:
         """Статистика по поисковым кластерам с детализацией по дням
 
-        Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+        Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 
         :param v1_get_norm_query_stats_request: (required)
         :type v1_get_norm_query_stats_request: V1GetNormQueryStatsRequest
@@ -5980,7 +5980,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Статистика по поисковым кластерам с детализацией по дням
 
-        Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
+        Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням. Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 10 запросов | 6 сек | 20 запросов | </div> 
 
         :param v1_get_norm_query_stats_request: (required)
         :type v1_get_norm_query_stats_request: V1GetNormQueryStatsRequest

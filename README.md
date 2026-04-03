@@ -45,9 +45,11 @@
 
 <!-- METHODS_LIST_START -->
 ### Общее (`01-general.yaml`)
+- `GET /api/common/v1/rating` — Получить рейтинг продавца (getCommonV1Rating)
+- `GET /api/common/v1/subscriptions` — Получить информацию о подписке Джем (getCommonV1Subscriptions)
 - `GET /api/communications/v2/news` — Получение новостей портала продавцов
 - `POST /api/v1/invite` — Создать приглашение для нового пользователя
-- `GET /api/v1/seller-info` — Получение информации о продавце
+- `GET /api/v1/seller-info` — Получить информацию о продавце
 - `DELETE /api/v1/user` — Удалить пользователя
 - `GET /api/v1/users` — Получить список активных или приглашённых пользователей продавца
 - `PUT /api/v1/users/access` — Изменить права доступа пользователей

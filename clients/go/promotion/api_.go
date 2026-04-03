@@ -1553,7 +1553,7 @@ func (r ApiAdvV0NormqueryStatsPostRequest) Execute() (*V0GetNormQueryStatsRespon
 AdvV0NormqueryStatsPost Статистика поисковых кластеров
 
 Метод формирует статистику по поисковым кластерам за указанный период.<br>
-Можно использовать только для кампаний с моделью оплаты `cpm` — за показы.
+Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.
 
 <div class="description_limit">
 <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -3392,6 +3392,7 @@ func (r ApiAdvV1NormqueryStatsPostRequest) Execute() (*V1GetNormQueryStatsRespon
 AdvV1NormqueryStatsPost Статистика по поисковым кластерам с детализацией по дням
 
 Метод формирует статистику по поисковым кластерам за указанный период с детализацией по дням.
+Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.
 
 <div class="description_limit">
 <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:

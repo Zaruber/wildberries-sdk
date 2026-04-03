@@ -15,5 +15,7 @@ export * from './GetUsersResponseUsersInner';
 export * from './GetUsersResponseUsersInnerInviteeInfo';
 export * from './PingGet200Response';
 export * from './PingGet401Response';
+export * from './SubscriptionsJamInfo';
+export * from './SupplierRatingModel';
 export * from './UpdateUserAccessRequest';
 export * from './UserAccess';

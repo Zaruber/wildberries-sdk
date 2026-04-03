@@ -26,11 +26,14 @@ export interface V1GetNormQueryStatsResponseItemStat {
      */
     normQuery?: string;
     /**
-     * Количество просмотров
+     * Количество просмотров.
+     * 
+     * Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
+     * 
      * @type {number}
      * @memberof V1GetNormQueryStatsResponseItemStat
      */
-    views?: number;
+    views?: number | null;
     /**
      * Количество кликов
      * @type {number}
@@ -50,11 +53,14 @@ export interface V1GetNormQueryStatsResponseItemStat {
      */
     orders?: number;
     /**
-     * CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+     * CTR (click-through rate) — отношение числа кликов к количеству показов в процентах.
+     * 
+     * Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
+     * 
      * @type {number}
      * @memberof V1GetNormQueryStatsResponseItemStat
      */
-    ctr?: number;
+    ctr?: number | null;
     /**
      * Средняя стоимость клика, ₽
      * @type {number}
@@ -62,11 +68,14 @@ export interface V1GetNormQueryStatsResponseItemStat {
      */
     cpc?: number;
     /**
-     * Средняя стоимость за тысячу показов, ₽
+     * Средняя стоимость за тысячу показов, ₽.
+     * 
+     * Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
+     * 
      * @type {number}
      * @memberof V1GetNormQueryStatsResponseItemStat
      */
-    cpm?: number;
+    cpm?: number | null;
     /**
      * Средняя позиция товара на страницах поисковой выдачи
      * @type {number}

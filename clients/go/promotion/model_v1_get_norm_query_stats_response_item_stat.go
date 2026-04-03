@@ -21,20 +21,20 @@ var _ MappedNullable = &V1GetNormQueryStatsResponseItemStat{}
 type V1GetNormQueryStatsResponseItemStat struct {
 	// Поисковый кластер
 	NormQuery *string `json:"normQuery,omitempty"`
-	// Количество просмотров
-	Views *int32 `json:"views,omitempty"`
+	// Количество просмотров.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` 
+	Views NullableInt32 `json:"views,omitempty"`
 	// Количество кликов
 	Clicks *int32 `json:"clicks,omitempty"`
 	// Количество добавлений товаров в корзину
 	Atbs *int32 `json:"atbs,omitempty"`
 	// Количество заказов
 	Orders *int32 `json:"orders,omitempty"`
-	// CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
-	Ctr *float32 `json:"ctr,omitempty"`
+	// CTR (click-through rate) — отношение числа кликов к количеству показов в процентах.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` 
+	Ctr NullableFloat32 `json:"ctr,omitempty"`
 	// Средняя стоимость клика, ₽
 	Cpc *float32 `json:"cpc,omitempty"`
-	// Средняя стоимость за тысячу показов, ₽
-	Cpm *float32 `json:"cpm,omitempty"`
+	// Средняя стоимость за тысячу показов, ₽.  Для кампаний с типом оплаты `cpc` — за клики — значение будет `null` 
+	Cpm NullableFloat32 `json:"cpm,omitempty"`
 	// Средняя позиция товара на страницах поисковой выдачи
 	AvgPos *float32 `json:"avgPos,omitempty"`
 	// Количество заказанных товаров, шт.
@@ -92,36 +92,46 @@ func (o *V1GetNormQueryStatsResponseItemStat) SetNormQuery(v string) {
 	o.NormQuery = &v
 }
 
-// GetViews returns the Views field value if set, zero value otherwise.
+// GetViews returns the Views field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *V1GetNormQueryStatsResponseItemStat) GetViews() int32 {
-	if o == nil || IsNil(o.Views) {
+	if o == nil || IsNil(o.Views.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Views
+	return *o.Views.Get()
 }
 
 // GetViewsOk returns a tuple with the Views field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *V1GetNormQueryStatsResponseItemStat) GetViewsOk() (*int32, bool) {
-	if o == nil || IsNil(o.Views) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Views, true
+	return o.Views.Get(), o.Views.IsSet()
 }
 
 // HasViews returns a boolean if a field has been set.
 func (o *V1GetNormQueryStatsResponseItemStat) HasViews() bool {
-	if o != nil && !IsNil(o.Views) {
+	if o != nil && o.Views.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetViews gets a reference to the given int32 and assigns it to the Views field.
+// SetViews gets a reference to the given NullableInt32 and assigns it to the Views field.
 func (o *V1GetNormQueryStatsResponseItemStat) SetViews(v int32) {
-	o.Views = &v
+	o.Views.Set(&v)
+}
+// SetViewsNil sets the value for Views to be an explicit nil
+func (o *V1GetNormQueryStatsResponseItemStat) SetViewsNil() {
+	o.Views.Set(nil)
+}
+
+// UnsetViews ensures that no value is present for Views, not even an explicit nil
+func (o *V1GetNormQueryStatsResponseItemStat) UnsetViews() {
+	o.Views.Unset()
 }
 
 // GetClicks returns the Clicks field value if set, zero value otherwise.
@@ -220,36 +230,46 @@ func (o *V1GetNormQueryStatsResponseItemStat) SetOrders(v int32) {
 	o.Orders = &v
 }
 
-// GetCtr returns the Ctr field value if set, zero value otherwise.
+// GetCtr returns the Ctr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *V1GetNormQueryStatsResponseItemStat) GetCtr() float32 {
-	if o == nil || IsNil(o.Ctr) {
+	if o == nil || IsNil(o.Ctr.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Ctr
+	return *o.Ctr.Get()
 }
 
 // GetCtrOk returns a tuple with the Ctr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *V1GetNormQueryStatsResponseItemStat) GetCtrOk() (*float32, bool) {
-	if o == nil || IsNil(o.Ctr) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Ctr, true
+	return o.Ctr.Get(), o.Ctr.IsSet()
 }
 
 // HasCtr returns a boolean if a field has been set.
 func (o *V1GetNormQueryStatsResponseItemStat) HasCtr() bool {
-	if o != nil && !IsNil(o.Ctr) {
+	if o != nil && o.Ctr.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCtr gets a reference to the given float32 and assigns it to the Ctr field.
+// SetCtr gets a reference to the given NullableFloat32 and assigns it to the Ctr field.
 func (o *V1GetNormQueryStatsResponseItemStat) SetCtr(v float32) {
-	o.Ctr = &v
+	o.Ctr.Set(&v)
+}
+// SetCtrNil sets the value for Ctr to be an explicit nil
+func (o *V1GetNormQueryStatsResponseItemStat) SetCtrNil() {
+	o.Ctr.Set(nil)
+}
+
+// UnsetCtr ensures that no value is present for Ctr, not even an explicit nil
+func (o *V1GetNormQueryStatsResponseItemStat) UnsetCtr() {
+	o.Ctr.Unset()
 }
 
 // GetCpc returns the Cpc field value if set, zero value otherwise.
@@ -284,36 +304,46 @@ func (o *V1GetNormQueryStatsResponseItemStat) SetCpc(v float32) {
 	o.Cpc = &v
 }
 
-// GetCpm returns the Cpm field value if set, zero value otherwise.
+// GetCpm returns the Cpm field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *V1GetNormQueryStatsResponseItemStat) GetCpm() float32 {
-	if o == nil || IsNil(o.Cpm) {
+	if o == nil || IsNil(o.Cpm.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Cpm
+	return *o.Cpm.Get()
 }
 
 // GetCpmOk returns a tuple with the Cpm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *V1GetNormQueryStatsResponseItemStat) GetCpmOk() (*float32, bool) {
-	if o == nil || IsNil(o.Cpm) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Cpm, true
+	return o.Cpm.Get(), o.Cpm.IsSet()
 }
 
 // HasCpm returns a boolean if a field has been set.
 func (o *V1GetNormQueryStatsResponseItemStat) HasCpm() bool {
-	if o != nil && !IsNil(o.Cpm) {
+	if o != nil && o.Cpm.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpm gets a reference to the given float32 and assigns it to the Cpm field.
+// SetCpm gets a reference to the given NullableFloat32 and assigns it to the Cpm field.
 func (o *V1GetNormQueryStatsResponseItemStat) SetCpm(v float32) {
-	o.Cpm = &v
+	o.Cpm.Set(&v)
+}
+// SetCpmNil sets the value for Cpm to be an explicit nil
+func (o *V1GetNormQueryStatsResponseItemStat) SetCpmNil() {
+	o.Cpm.Set(nil)
+}
+
+// UnsetCpm ensures that no value is present for Cpm, not even an explicit nil
+func (o *V1GetNormQueryStatsResponseItemStat) UnsetCpm() {
+	o.Cpm.Unset()
 }
 
 // GetAvgPos returns the AvgPos field value if set, zero value otherwise.
@@ -425,8 +455,8 @@ func (o V1GetNormQueryStatsResponseItemStat) ToMap() (map[string]interface{}, er
 	if !IsNil(o.NormQuery) {
 		toSerialize["normQuery"] = o.NormQuery
 	}
-	if !IsNil(o.Views) {
-		toSerialize["views"] = o.Views
+	if o.Views.IsSet() {
+		toSerialize["views"] = o.Views.Get()
 	}
 	if !IsNil(o.Clicks) {
 		toSerialize["clicks"] = o.Clicks
@@ -437,14 +467,14 @@ func (o V1GetNormQueryStatsResponseItemStat) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Orders) {
 		toSerialize["orders"] = o.Orders
 	}
-	if !IsNil(o.Ctr) {
-		toSerialize["ctr"] = o.Ctr
+	if o.Ctr.IsSet() {
+		toSerialize["ctr"] = o.Ctr.Get()
 	}
 	if !IsNil(o.Cpc) {
 		toSerialize["cpc"] = o.Cpc
 	}
-	if !IsNil(o.Cpm) {
-		toSerialize["cpm"] = o.Cpm
+	if o.Cpm.IsSet() {
+		toSerialize["cpm"] = o.Cpm.Get()
 	}
 	if !IsNil(o.AvgPos) {
 		toSerialize["avgPos"] = o.AvgPos

@@ -21,6 +21,8 @@ var _ MappedNullable = &V3OrderMetaAPI{}
 type V3OrderMetaAPI struct {
 	// ID сборочного задания
 	Id *int32 `json:"id,omitempty"`
+	// Детали маркировки
+	MetaDetails []MetaDetailsInner `json:"metaDetails,omitempty"`
 	Meta *Meta `json:"meta,omitempty"`
 }
 
@@ -73,6 +75,38 @@ func (o *V3OrderMetaAPI) SetId(v int32) {
 	o.Id = &v
 }
 
+// GetMetaDetails returns the MetaDetails field value if set, zero value otherwise.
+func (o *V3OrderMetaAPI) GetMetaDetails() []MetaDetailsInner {
+	if o == nil || IsNil(o.MetaDetails) {
+		var ret []MetaDetailsInner
+		return ret
+	}
+	return o.MetaDetails
+}
+
+// GetMetaDetailsOk returns a tuple with the MetaDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *V3OrderMetaAPI) GetMetaDetailsOk() ([]MetaDetailsInner, bool) {
+	if o == nil || IsNil(o.MetaDetails) {
+		return nil, false
+	}
+	return o.MetaDetails, true
+}
+
+// HasMetaDetails returns a boolean if a field has been set.
+func (o *V3OrderMetaAPI) HasMetaDetails() bool {
+	if o != nil && !IsNil(o.MetaDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetaDetails gets a reference to the given []MetaDetailsInner and assigns it to the MetaDetails field.
+func (o *V3OrderMetaAPI) SetMetaDetails(v []MetaDetailsInner) {
+	o.MetaDetails = v
+}
+
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *V3OrderMetaAPI) GetMeta() Meta {
 	if o == nil || IsNil(o.Meta) {
@@ -117,6 +151,9 @@ func (o V3OrderMetaAPI) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.MetaDetails) {
+		toSerialize["metaDetails"] = o.MetaDetails
 	}
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta

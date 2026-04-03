@@ -65,6 +65,24 @@ pub enum ApiV1UsersGetError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`get_common_v1_rating`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetCommonV1RatingError {
+    Status401(models::PingGet401Response),
+    Status429(models::PingGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_common_v1_subscriptions`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetCommonV1SubscriptionsError {
+    Status401(models::PingGet401Response),
+    Status429(models::PingGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
 
 /// <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 pub async fn api_v1_invite_post(configuration: &configuration::Configuration, create_invite_request: models::CreateInviteRequest) -> Result<models::CreateInviteResponse, Error<ApiV1InvitePostError>> {
@@ -112,7 +130,7 @@ pub async fn api_v1_invite_post(configuration: &configuration::Configuration, cr
     }
 }
 
-/// Метод позволяет получать наименование продавца и ID его профиля. <br> В запросе можно использовать любой токен, у которого не выбрана опция **Тестовый контур**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+/// <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
 pub async fn api_v1_seller_info_get(configuration: &configuration::Configuration, ) -> Result<models::ApiV1SellerInfoGet200Response, Error<ApiV1SellerInfoGetError>> {
 
     let uri_str = format!("{}/api/v1/seller-info", configuration.base_path);
@@ -277,6 +295,92 @@ pub async fn api_v1_users_get(configuration: &configuration::Configuration, limi
     } else {
         let content = resp.text().await?;
         let entity: Option<ApiV1UsersGetError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <div class=\"description_auth\">   Для доступа к методу используйте <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токен</a> для категории <strong>Вопросы и отзывы</strong> </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает пользовательский рейтинг продавца и количество отзывов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+pub async fn get_common_v1_rating(configuration: &configuration::Configuration, ) -> Result<models::SupplierRatingModel, Error<GetCommonV1RatingError>> {
+
+    let uri_str = format!("{}/api/common/v1/rating", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::SupplierRatingModel`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::SupplierRatingModel`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<GetCommonV1RatingError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <div class=\"description_auth\">   Информацию о подписке Джем можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  <div class=\"description_token\"> Метод доступен по<strong> Сервисному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает информацию о подписке [Джем](https://seller.wildberries.ru/monetization/jam):   - Если продавец никогда не подключал подписку Джем, возвращается пустой ответ `200`.   - Если продавец активировал и никогда не отменял подписку, возвращается:     - дата активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка закончилась или была отменена, но продавец подключил её повторно, возвращается:     - дата первой активации подписки `since`     - дата окончания текущего оплаченного периода `till`   - Если подписка неактивна, возвращается:     - дата первой активации подписки `since`     - дата окончания последнего оплаченного периода `till`  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+pub async fn get_common_v1_subscriptions(configuration: &configuration::Configuration, ) -> Result<models::SubscriptionsJamInfo, Error<GetCommonV1SubscriptionsError>> {
+
+    let uri_str = format!("{}/api/common/v1/subscriptions", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::SubscriptionsJamInfo`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::SubscriptionsJamInfo`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<GetCommonV1SubscriptionsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
