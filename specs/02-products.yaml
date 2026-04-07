@@ -1943,6 +1943,7 @@ paths:
                           - 'Поле Наименование не должно содержать запрещенные символы: 😊 🤨 😈'
                         wb64nayozt:
                           - 'Поле Наименование не должно содержать запрещенные символы: 😈 😊 🤨'
+                      updatedAt: '2025-12-19T23:59:59Z'
                     - batchUUID: 30aa42ec-fb49-45ec-86d5-ddf9911e7e3f
                       subjects:
                         test_pasha1:
@@ -1955,9 +1956,10 @@ paths:
                         test_pasha1:
                           - Запрещено использовать E-Mail в поле Наименование
                           - Запрещено использовать E-Mail в поле Описание
+                      updatedAt: '2025-12-20T23:59:59Z'
                   cursor:
                     next: true
-                    updatedAt: '2025-08-25T10:05:21Z'
+                    updatedAt: '2025-12-20T23:59:59Z'
                     batchUUID: 1cd79751-de1f-46c8-a444-a941d35dde56
                 error: false
                 errorText: ''
@@ -3701,6 +3703,15 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+        '409':
+          description: Ошибка при конвертации валюты
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+              examples:
+                CurrencySwitchingError:
+                  $ref: '#/components/examples/Result409'
         '422':
           description: Неожидаемый результат
           content:
@@ -3793,6 +3804,15 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+        '409':
+          description: Ошибка при конвертации валюты
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+              examples:
+                CurrencySwitchingError:
+                  $ref: '#/components/examples/Result409'
         '422':
           description: Неожидаемый результат
           content:
@@ -3865,6 +3885,15 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+        '409':
+          description: Ошибка при конвертации валюты
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+              examples:
+                CurrencySwitchingError:
+                  $ref: '#/components/examples/Result409'
         '422':
           description: Неожидаемый результат
           content:
@@ -5947,6 +5976,7 @@ components:
         - brands
         - vendorCodes
         - errors
+        - updatedAt
       properties:
         batchUUID:
           type: string
@@ -5974,6 +6004,10 @@ components:
             type: array
             items:
               type: string
+        updatedAt:
+          type: string
+          format: date-time
+          description: Дата и время создания или редактирования пакета
     viewer_contract.PublicErrorsCursorOutput:
       type: object
       required:
@@ -7036,6 +7070,12 @@ components:
         data: null
         error: true
         errorText: Access denied
+    Result409:
+      description: Изменение цен и скидок недоступно во время смены валюты
+      value:
+        data: null
+        error: true
+        errorText: You can't change prices and discounts while switching to another currency
     BrandsResponseBadRequest1:
       value:
         title: Bad Request

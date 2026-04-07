@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.04.07)
+- Products: в ответе для пакетов ошибок (PublicErrorsOutput) добавлено поле `updatedAt` (string, date-time) — дата/время создания или редактирования пакета; обновлены примеры (в т.ч. `cursor.updatedAt` и `subjects[].updatedAt`).
+- Products: для операций изменения цен/скидок добавлен новый ответ `409 Conflict` — ошибка конвертации/смены валюты (`ResponseError`, пример `Result409`: “You can't change prices and discounts while switching to another currency”).
+
 ### Changed (2026.04.03)
 - Информация о продавце: добавлен GET `/api/common/v1/rating` (feedbacks-api) — получение рейтинга продавца и количества отзывов; доступ только по сервисному токену категории «Вопросы и отзывы»; лимит 1 запрос/мин (всплеск 1)
 - Информация о продавце: добавлен GET `/api/common/v1/subscriptions` (common-api) — информация о подписке «Джем» (state/activationSource/level/since/till), при отсутствии подписки возможен пустой ответ `200`; доступ по сервисному токену; лимит 1 запрос/мин (всплеск 10)
