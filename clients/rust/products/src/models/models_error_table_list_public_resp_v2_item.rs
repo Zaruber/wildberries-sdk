@@ -28,16 +28,20 @@ pub struct ModelsErrorTableListPublicRespV2Item {
     /// Ошибки. Разбивка по `vendorCodes`
     #[serde(rename = "errors")]
     pub errors: std::collections::HashMap<String, Vec<String>>,
+    /// Дата и время создания или редактирования пакета
+    #[serde(rename = "updatedAt")]
+    pub updated_at: String,
 }
 
 impl ModelsErrorTableListPublicRespV2Item {
-    pub fn new(batch_uuid: uuid::Uuid, subjects: std::collections::HashMap<String, models::ModelsErrorSubject>, brands: std::collections::HashMap<String, models::ModelsErrorBrand>, vendor_codes: Vec<String>, errors: std::collections::HashMap<String, Vec<String>>) -> ModelsErrorTableListPublicRespV2Item {
+    pub fn new(batch_uuid: uuid::Uuid, subjects: std::collections::HashMap<String, models::ModelsErrorSubject>, brands: std::collections::HashMap<String, models::ModelsErrorBrand>, vendor_codes: Vec<String>, errors: std::collections::HashMap<String, Vec<String>>, updated_at: String) -> ModelsErrorTableListPublicRespV2Item {
         ModelsErrorTableListPublicRespV2Item {
             batch_uuid,
             subjects,
             brands,
             vendor_codes,
             errors,
+            updated_at,
         }
     }
 }

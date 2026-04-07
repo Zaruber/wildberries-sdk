@@ -12,6 +12,7 @@ package products
 
 import (
 	"encoding/json"
+	"time"
 	"bytes"
 	"fmt"
 )
@@ -31,6 +32,8 @@ type ModelsErrorTableListPublicRespV2Item struct {
 	VendorCodes []string `json:"vendorCodes"`
 	// Ошибки. Разбивка по `vendorCodes`
 	Errors map[string][]string `json:"errors"`
+	// Дата и время создания или редактирования пакета
+	UpdatedAt time.Time `json:"updatedAt"`
 }
 
 type _ModelsErrorTableListPublicRespV2Item ModelsErrorTableListPublicRespV2Item
@@ -39,13 +42,14 @@ type _ModelsErrorTableListPublicRespV2Item ModelsErrorTableListPublicRespV2Item
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsErrorTableListPublicRespV2Item(batchUUID string, subjects map[string]ModelsErrorSubject, brands map[string]ModelsErrorBrand, vendorCodes []string, errors map[string][]string) *ModelsErrorTableListPublicRespV2Item {
+func NewModelsErrorTableListPublicRespV2Item(batchUUID string, subjects map[string]ModelsErrorSubject, brands map[string]ModelsErrorBrand, vendorCodes []string, errors map[string][]string, updatedAt time.Time) *ModelsErrorTableListPublicRespV2Item {
 	this := ModelsErrorTableListPublicRespV2Item{}
 	this.BatchUUID = batchUUID
 	this.Subjects = subjects
 	this.Brands = brands
 	this.VendorCodes = vendorCodes
 	this.Errors = errors
+	this.UpdatedAt = updatedAt
 	return &this
 }
 
@@ -177,6 +181,30 @@ func (o *ModelsErrorTableListPublicRespV2Item) SetErrors(v map[string][]string) 
 	o.Errors = v
 }
 
+// GetUpdatedAt returns the UpdatedAt field value
+func (o *ModelsErrorTableListPublicRespV2Item) GetUpdatedAt() time.Time {
+	if o == nil {
+		var ret time.Time
+		return ret
+	}
+
+	return o.UpdatedAt
+}
+
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value
+// and a boolean to check if the value has been set.
+func (o *ModelsErrorTableListPublicRespV2Item) GetUpdatedAtOk() (*time.Time, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.UpdatedAt, true
+}
+
+// SetUpdatedAt sets field value
+func (o *ModelsErrorTableListPublicRespV2Item) SetUpdatedAt(v time.Time) {
+	o.UpdatedAt = v
+}
+
 func (o ModelsErrorTableListPublicRespV2Item) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -192,6 +220,7 @@ func (o ModelsErrorTableListPublicRespV2Item) ToMap() (map[string]interface{}, e
 	toSerialize["brands"] = o.Brands
 	toSerialize["vendorCodes"] = o.VendorCodes
 	toSerialize["errors"] = o.Errors
+	toSerialize["updatedAt"] = o.UpdatedAt
 	return toSerialize, nil
 }
 
@@ -205,6 +234,7 @@ func (o *ModelsErrorTableListPublicRespV2Item) UnmarshalJSON(data []byte) (err e
 		"brands",
 		"vendorCodes",
 		"errors",
+		"updatedAt",
 	}
 
 	allProperties := make(map[string]interface{})

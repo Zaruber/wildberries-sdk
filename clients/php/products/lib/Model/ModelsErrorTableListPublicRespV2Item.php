@@ -61,7 +61,8 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'subjects' => 'array<string,\Wildberries\Sdk\Products\Model\ModelsErrorSubject>',
         'brands' => 'array<string,\Wildberries\Sdk\Products\Model\ModelsErrorBrand>',
         'vendor_codes' => 'string[]',
-        'errors' => 'array<string,string[]>'
+        'errors' => 'array<string,string[]>',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -76,7 +77,8 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'subjects' => null,
         'brands' => null,
         'vendor_codes' => null,
-        'errors' => null
+        'errors' => null,
+        'updated_at' => 'date-time'
     ];
 
     /**
@@ -89,7 +91,8 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'subjects' => false,
         'brands' => false,
         'vendor_codes' => false,
-        'errors' => false
+        'errors' => false,
+        'updated_at' => false
     ];
 
     /**
@@ -182,7 +185,8 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'subjects' => 'subjects',
         'brands' => 'brands',
         'vendor_codes' => 'vendorCodes',
-        'errors' => 'errors'
+        'errors' => 'errors',
+        'updated_at' => 'updatedAt'
     ];
 
     /**
@@ -195,7 +199,8 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'subjects' => 'setSubjects',
         'brands' => 'setBrands',
         'vendor_codes' => 'setVendorCodes',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -208,7 +213,8 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         'subjects' => 'getSubjects',
         'brands' => 'getBrands',
         'vendor_codes' => 'getVendorCodes',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -273,6 +279,7 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         $this->setIfExists('brands', $data ?? [], null);
         $this->setIfExists('vendor_codes', $data ?? [], null);
         $this->setIfExists('errors', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
     }
 
     /**
@@ -316,6 +323,9 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
         }
         if ($this->container['errors'] === null) {
             $invalidProperties[] = "'errors' can't be null";
+        }
+        if ($this->container['updated_at'] === null) {
+            $invalidProperties[] = "'updated_at' can't be null";
         }
         return $invalidProperties;
     }
@@ -463,6 +473,33 @@ class ModelsErrorTableListPublicRespV2Item implements ModelInterface, ArrayAcces
             throw new \InvalidArgumentException('non-nullable errors cannot be null');
         }
         $this->container['errors'] = $errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at Дата и время создания или редактирования пакета
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        if (is_null($updated_at)) {
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        }
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

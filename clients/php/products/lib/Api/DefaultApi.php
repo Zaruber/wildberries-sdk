@@ -4034,7 +4034,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2UploadTaskClubDiscountPost($api_v2_upload_task_club_discount_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskClubDiscountPost'][0])
     {
@@ -4058,7 +4058,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2UploadTaskClubDiscountPostWithHttpInfo($api_v2_upload_task_club_discount_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskClubDiscountPost'][0])
     {
@@ -4119,6 +4119,12 @@ class DefaultApi
                         $response,
                     );
                 case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ResponseError',
+                        $request,
+                        $response,
+                    );
+                case 409:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ResponseError',
                         $request,
@@ -4201,6 +4207,14 @@ class DefaultApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ResponseError',
@@ -4461,7 +4475,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2UploadTaskPost($api_v2_upload_task_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskPost'][0])
     {
@@ -4485,7 +4499,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2UploadTaskPostWithHttpInfo($api_v2_upload_task_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskPost'][0])
     {
@@ -4546,6 +4560,12 @@ class DefaultApi
                         $response,
                     );
                 case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ResponseError',
+                        $request,
+                        $response,
+                    );
+                case 409:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ResponseError',
                         $request,
@@ -4628,6 +4648,14 @@ class DefaultApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ResponseError',
@@ -4888,7 +4916,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2UploadTaskSizePost($api_v2_upload_task_size_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskSizePost'][0])
     {
@@ -4912,7 +4940,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2UploadTaskSizePostWithHttpInfo($api_v2_upload_task_size_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskSizePost'][0])
     {
@@ -4973,6 +5001,12 @@ class DefaultApi
                         $response,
                     );
                 case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ResponseError',
+                        $request,
+                        $response,
+                    );
+                case 409:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ResponseError',
                         $request,
@@ -5055,6 +5089,14 @@ class DefaultApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ResponseError',

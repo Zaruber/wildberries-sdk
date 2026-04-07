@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from wildberries_sdk.products.models.models_error_brand import ModelsErrorBrand
@@ -34,7 +35,8 @@ class ModelsErrorTableListPublicRespV2Item(BaseModel):
     brands: Dict[str, ModelsErrorBrand] = Field(description="Бренды. Разбивка по `vendorCodes`")
     vendor_codes: List[StrictStr] = Field(description="Артикулы продавца", alias="vendorCodes")
     errors: Dict[str, List[StrictStr]] = Field(description="Ошибки. Разбивка по `vendorCodes`")
-    __properties: ClassVar[List[str]] = ["batchUUID", "subjects", "brands", "vendorCodes", "errors"]
+    updated_at: datetime = Field(description="Дата и время создания или редактирования пакета", alias="updatedAt")
+    __properties: ClassVar[List[str]] = ["batchUUID", "subjects", "brands", "vendorCodes", "errors", "updatedAt"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -115,7 +117,8 @@ class ModelsErrorTableListPublicRespV2Item(BaseModel):
             if obj.get("brands") is not None
             else None,
             "vendorCodes": obj.get("vendorCodes"),
-            "errors": obj.get("errors")
+            "errors": obj.get("errors"),
+            "updatedAt": obj.get("updatedAt")
         })
         return _obj
 

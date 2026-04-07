@@ -1968,6 +1968,7 @@ paths:
                       wb64nayozt:
                       - "Поле Наименование не должно содержать запрещенные символы\
                         : 😈 😊 🤨"
+                    updatedAt: 2025-12-19T23:59:59Z
                   - batchUUID: 30aa42ec-fb49-45ec-86d5-ddf9911e7e3f
                     subjects:
                       test_pasha1:
@@ -1980,9 +1981,10 @@ paths:
                       test_pasha1:
                       - Запрещено использовать E-Mail в поле Наименование
                       - Запрещено использовать E-Mail в поле Описание
+                    updatedAt: 2025-12-20T23:59:59Z
                   cursor:
                     next: true
-                    updatedAt: 2025-08-25T10:05:21Z
+                    updatedAt: 2025-12-20T23:59:59Z
                     batchUUID: 1cd79751-de1f-46c8-a444-a941d35dde56
                 error: false
                 errorText: ""
@@ -3594,6 +3596,15 @@ paths:
               schema:
                 $ref: "#/components/schemas/ResponseError"
           description: Доступ запрещён
+        "409":
+          content:
+            application/json:
+              examples:
+                CurrencySwitchingError:
+                  $ref: "#/components/examples/Result409"
+              schema:
+                $ref: "#/components/schemas/ResponseError"
+          description: Ошибка при конвертации валюты
         "422":
           content:
             application/json:
@@ -3738,6 +3749,15 @@ paths:
               schema:
                 $ref: "#/components/schemas/ResponseError"
           description: Доступ запрещён
+        "409":
+          content:
+            application/json:
+              examples:
+                CurrencySwitchingError:
+                  $ref: "#/components/examples/Result409"
+              schema:
+                $ref: "#/components/schemas/ResponseError"
+          description: Ошибка при конвертации валюты
         "422":
           content:
             application/json:
@@ -3862,6 +3882,15 @@ paths:
               schema:
                 $ref: "#/components/schemas/ResponseError"
           description: Доступ запрещён
+        "409":
+          content:
+            application/json:
+              examples:
+                CurrencySwitchingError:
+                  $ref: "#/components/examples/Result409"
+              schema:
+                $ref: "#/components/schemas/ResponseError"
+          description: Ошибка при конвертации валюты
         "422":
           content:
             application/json:
@@ -6444,6 +6473,13 @@ components:
         data: null
         error: true
         errorText: Access denied
+    Result409:
+      description: Изменение цен и скидок недоступно во время смены валюты
+      value:
+        data: null
+        error: true
+        errorText: You can't change prices and discounts while switching to another
+          currency
     BrandsResponseBadRequest1:
       value:
         title: Bad Request
@@ -7697,6 +7733,7 @@ components:
             vendorCodes:
             - vendorCodes
             - vendorCodes
+            updatedAt: 2000-01-23T04:56:07.000+00:00
           - brands:
               key:
                 name: name
@@ -7713,6 +7750,7 @@ components:
             vendorCodes:
             - vendorCodes
             - vendorCodes
+            updatedAt: 2000-01-23T04:56:07.000+00:00
         additionalErrors: "{}"
         error: true
       properties:
@@ -7758,6 +7796,7 @@ components:
           vendorCodes:
           - vendorCodes
           - vendorCodes
+          updatedAt: 2000-01-23T04:56:07.000+00:00
         - brands:
             key:
               name: name
@@ -7774,6 +7813,7 @@ components:
           vendorCodes:
           - vendorCodes
           - vendorCodes
+          updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         items:
           description: Пакеты данных
@@ -7804,6 +7844,7 @@ components:
         vendorCodes:
         - vendorCodes
         - vendorCodes
+        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         batchUUID:
           description: ID пакета
@@ -7831,11 +7872,16 @@ components:
             type: array
           description: Ошибки. Разбивка по `vendorCodes`
           type: object
+        updatedAt:
+          description: Дата и время создания или редактирования пакета
+          format: date-time
+          type: string
       required:
       - batchUUID
       - brands
       - errors
       - subjects
+      - updatedAt
       - vendorCodes
       type: object
     viewer_contract.PublicErrorsCursorOutput:

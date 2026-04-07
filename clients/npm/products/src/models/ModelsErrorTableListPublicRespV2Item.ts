@@ -64,6 +64,12 @@ export interface ModelsErrorTableListPublicRespV2Item {
      * @memberof ModelsErrorTableListPublicRespV2Item
      */
     errors: { [key: string]: Array<string>; };
+    /**
+     * Дата и время создания или редактирования пакета
+     * @type {Date}
+     * @memberof ModelsErrorTableListPublicRespV2Item
+     */
+    updatedAt: Date;
 }
 
 /**
@@ -75,6 +81,7 @@ export function instanceOfModelsErrorTableListPublicRespV2Item(value: object): v
     if (!('brands' in value) || value['brands'] === undefined) return false;
     if (!('vendorCodes' in value) || value['vendorCodes'] === undefined) return false;
     if (!('errors' in value) || value['errors'] === undefined) return false;
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
     return true;
 }
 
@@ -93,6 +100,7 @@ export function ModelsErrorTableListPublicRespV2ItemFromJSONTyped(json: any, ign
         'brands': (mapValues(json['brands'], ModelsErrorBrandFromJSON)),
         'vendorCodes': json['vendorCodes'],
         'errors': json['errors'],
+        'updatedAt': (new Date(json['updatedAt'])),
     };
 }
 
@@ -112,6 +120,7 @@ export function ModelsErrorTableListPublicRespV2ItemToJSONTyped(value?: ModelsEr
         'brands': (mapValues(value['brands'], ModelsErrorBrandToJSON)),
         'vendorCodes': value['vendorCodes'],
         'errors': value['errors'],
+        'updatedAt': value['updatedAt'].toISOString(),
     };
 }
 
