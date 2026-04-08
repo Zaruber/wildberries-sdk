@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.04.08)
+- Finances: в схему ответа добавлены поля `article_substitution` (ID подменного артикула), `sale_price_affiliated_discount_prc` (скидка по подменному артикулу, %), `agency_vat` (удержание агентского НДС, %; только для продавцов из Кыргызстана; возвращается при наличии значения), `sale_price_wholesale_discount_prc` (оптовая скидка для бизнеса, %)
+
 ### Changed (2026.04.07)
 - Products: в ответе для пакетов ошибок (PublicErrorsOutput) добавлено поле `updatedAt` (string, date-time) — дата/время создания или редактирования пакета; обновлены примеры (в т.ч. `cursor.updatedAt` и `subjects[].updatedAt`).
 - Products: для операций изменения цен/скидок добавлен новый ответ `409 Conflict` — ошибка конвертации/смены валюты (`ResponseError`, пример `Result409`: “You can't change prices and discounts while switching to another currency”).

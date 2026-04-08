@@ -918,6 +918,24 @@ components:
           type: number
           description: Скидка за промокод, %
           example: 0
+        article_substitution:
+          type: string
+          description: ID подменного артикула
+          example: ''
+        sale_price_affiliated_discount_prc:
+          type: number
+          description: Скидка по подменному артикулу, %
+          example: 0
+        agency_vat:
+          type: number
+          description: |
+            Удержание Агентского НДС, %. Только для продавцов из Кыргызстана.<br>
+            Поле будет в ответе при наличии значения
+          example: 0
+        sale_price_wholesale_discount_prc:
+          type: number
+          description: Оптовая скидка для бизнеса, %
+          example: 0
   responses:
     '401':
       description: Не авторизован
