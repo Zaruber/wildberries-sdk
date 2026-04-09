@@ -562,13 +562,13 @@ paths:
                         partA:
                           type: string
                           nullable: false
-                          description: Первая часть ID стикера (для печати подписи)
+                          description: Первая часть ID стикера для печати подписи
                           example: '231648'
                         partB:
                           type: string
                           nullable: false
-                          description: Вторая часть ID стикера
-                          example: '9753'
+                          description: Вторая часть ID стикера для печати подписи
+                          example: '97523'
                         barcode:
                           type: string
                           nullable: false
