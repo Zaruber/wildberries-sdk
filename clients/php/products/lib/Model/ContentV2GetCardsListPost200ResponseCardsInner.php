@@ -67,6 +67,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
         'title' => 'string',
         'description' => 'string',
         'need_kiz' => 'bool',
+        'kiz_marked' => 'bool',
         'photos' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]',
         'video' => 'string',
         'wholesale' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale',
@@ -96,6 +97,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
         'title' => null,
         'description' => null,
         'need_kiz' => null,
+        'kiz_marked' => null,
         'photos' => null,
         'video' => null,
         'wholesale' => null,
@@ -123,6 +125,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
         'title' => false,
         'description' => false,
         'need_kiz' => false,
+        'kiz_marked' => false,
         'photos' => false,
         'video' => false,
         'wholesale' => false,
@@ -230,6 +233,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
         'title' => 'title',
         'description' => 'description',
         'need_kiz' => 'needKiz',
+        'kiz_marked' => 'kizMarked',
         'photos' => 'photos',
         'video' => 'video',
         'wholesale' => 'wholesale',
@@ -257,6 +261,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
         'title' => 'setTitle',
         'description' => 'setDescription',
         'need_kiz' => 'setNeedKiz',
+        'kiz_marked' => 'setKizMarked',
         'photos' => 'setPhotos',
         'video' => 'setVideo',
         'wholesale' => 'setWholesale',
@@ -284,6 +289,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
         'title' => 'getTitle',
         'description' => 'getDescription',
         'need_kiz' => 'getNeedKiz',
+        'kiz_marked' => 'getKizMarked',
         'photos' => 'getPhotos',
         'video' => 'getVideo',
         'wholesale' => 'getWholesale',
@@ -362,6 +368,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
         $this->setIfExists('title', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('need_kiz', $data ?? [], null);
+        $this->setIfExists('kiz_marked', $data ?? [], false);
         $this->setIfExists('photos', $data ?? [], null);
         $this->setIfExists('video', $data ?? [], null);
         $this->setIfExists('wholesale', $data ?? [], null);
@@ -671,7 +678,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
     /**
      * Sets need_kiz
      *
-     * @param bool|null $need_kiz Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара <br> * `false` — не требуется <br> * `true` — требуется
+     * @param bool|null $need_kiz Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара: <br>   - `false` — не требуется <br>   - `true` — требуется
      *
      * @return self
      */
@@ -681,6 +688,33 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
             throw new \InvalidArgumentException('non-nullable need_kiz cannot be null');
         }
         $this->container['need_kiz'] = $need_kiz;
+
+        return $this;
+    }
+
+    /**
+     * Gets kiz_marked
+     *
+     * @return bool|null
+     */
+    public function getKizMarked()
+    {
+        return $this->container['kiz_marked'];
+    }
+
+    /**
+     * Sets kiz_marked
+     *
+     * @param bool|null $kiz_marked Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки обязательным, указано в поле `needKiz`
+     *
+     * @return self
+     */
+    public function setKizMarked($kiz_marked)
+    {
+        if (is_null($kiz_marked)) {
+            throw new \InvalidArgumentException('non-nullable kiz_marked cannot be null');
+        }
+        $this->container['kiz_marked'] = $kiz_marked;
 
         return $this;
     }

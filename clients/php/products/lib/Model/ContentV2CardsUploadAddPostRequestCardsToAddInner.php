@@ -59,6 +59,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     protected static $openAPITypes = [
         'brand' => 'string',
         'vendor_code' => 'string',
+        'kiz_marked' => 'bool',
         'wholesale' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale',
         'title' => 'string',
         'description' => 'string',
@@ -77,6 +78,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     protected static $openAPIFormats = [
         'brand' => null,
         'vendor_code' => null,
+        'kiz_marked' => null,
         'wholesale' => null,
         'title' => null,
         'description' => null,
@@ -93,6 +95,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     protected static array $openAPINullables = [
         'brand' => false,
         'vendor_code' => false,
+        'kiz_marked' => false,
         'wholesale' => false,
         'title' => false,
         'description' => false,
@@ -189,6 +192,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     protected static $attributeMap = [
         'brand' => 'brand',
         'vendor_code' => 'vendorCode',
+        'kiz_marked' => 'kizMarked',
         'wholesale' => 'wholesale',
         'title' => 'title',
         'description' => 'description',
@@ -205,6 +209,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     protected static $setters = [
         'brand' => 'setBrand',
         'vendor_code' => 'setVendorCode',
+        'kiz_marked' => 'setKizMarked',
         'wholesale' => 'setWholesale',
         'title' => 'setTitle',
         'description' => 'setDescription',
@@ -221,6 +226,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     protected static $getters = [
         'brand' => 'getBrand',
         'vendor_code' => 'getVendorCode',
+        'kiz_marked' => 'getKizMarked',
         'wholesale' => 'getWholesale',
         'title' => 'getTitle',
         'description' => 'getDescription',
@@ -288,6 +294,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     {
         $this->setIfExists('brand', $data ?? [], null);
         $this->setIfExists('vendor_code', $data ?? [], null);
+        $this->setIfExists('kiz_marked', $data ?? [], false);
         $this->setIfExists('wholesale', $data ?? [], null);
         $this->setIfExists('title', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -403,6 +410,33 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
         }
 
         $this->container['vendor_code'] = $vendor_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets kiz_marked
+     *
+     * @return bool|null
+     */
+    public function getKizMarked()
+    {
+        return $this->container['kiz_marked'];
+    }
+
+    /**
+     * Sets kiz_marked
+     *
+     * @param bool|null $kiz_marked Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.   - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+     *
+     * @return self
+     */
+    public function setKizMarked($kiz_marked)
+    {
+        if (is_null($kiz_marked)) {
+            throw new \InvalidArgumentException('non-nullable kiz_marked cannot be null');
+        }
+        $this->container['kiz_marked'] = $kiz_marked;
 
         return $this;
     }

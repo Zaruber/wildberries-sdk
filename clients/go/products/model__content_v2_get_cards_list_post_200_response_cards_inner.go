@@ -37,8 +37,10 @@ type ContentV2GetCardsListPost200ResponseCardsInner struct {
 	Title *string `json:"title,omitempty"`
 	// Описание товара
 	Description *string `json:"description,omitempty"`
-	// Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара <br> * `false` — не требуется <br> * `true` — требуется 
+	// Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара: <br>   - `false` — не требуется <br>   - `true` — требуется 
 	NeedKiz *bool `json:"needKiz,omitempty"`
+	// Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки обязательным, указано в поле `needKiz` 
+	KizMarked *bool `json:"kizMarked,omitempty"`
 	// Массив фото
 	Photos []ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner `json:"photos,omitempty"`
 	// URL видео
@@ -63,6 +65,8 @@ type ContentV2GetCardsListPost200ResponseCardsInner struct {
 // will change when the set of required properties is changed
 func NewContentV2GetCardsListPost200ResponseCardsInner() *ContentV2GetCardsListPost200ResponseCardsInner {
 	this := ContentV2GetCardsListPost200ResponseCardsInner{}
+	var kizMarked bool = false
+	this.KizMarked = &kizMarked
 	return &this
 }
 
@@ -71,6 +75,8 @@ func NewContentV2GetCardsListPost200ResponseCardsInner() *ContentV2GetCardsListP
 // but it doesn't guarantee that properties required by API are set
 func NewContentV2GetCardsListPost200ResponseCardsInnerWithDefaults() *ContentV2GetCardsListPost200ResponseCardsInner {
 	this := ContentV2GetCardsListPost200ResponseCardsInner{}
+	var kizMarked bool = false
+	this.KizMarked = &kizMarked
 	return &this
 }
 
@@ -392,6 +398,38 @@ func (o *ContentV2GetCardsListPost200ResponseCardsInner) HasNeedKiz() bool {
 // SetNeedKiz gets a reference to the given bool and assigns it to the NeedKiz field.
 func (o *ContentV2GetCardsListPost200ResponseCardsInner) SetNeedKiz(v bool) {
 	o.NeedKiz = &v
+}
+
+// GetKizMarked returns the KizMarked field value if set, zero value otherwise.
+func (o *ContentV2GetCardsListPost200ResponseCardsInner) GetKizMarked() bool {
+	if o == nil || IsNil(o.KizMarked) {
+		var ret bool
+		return ret
+	}
+	return *o.KizMarked
+}
+
+// GetKizMarkedOk returns a tuple with the KizMarked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContentV2GetCardsListPost200ResponseCardsInner) GetKizMarkedOk() (*bool, bool) {
+	if o == nil || IsNil(o.KizMarked) {
+		return nil, false
+	}
+	return o.KizMarked, true
+}
+
+// HasKizMarked returns a boolean if a field has been set.
+func (o *ContentV2GetCardsListPost200ResponseCardsInner) HasKizMarked() bool {
+	if o != nil && !IsNil(o.KizMarked) {
+		return true
+	}
+
+	return false
+}
+
+// SetKizMarked gets a reference to the given bool and assigns it to the KizMarked field.
+func (o *ContentV2GetCardsListPost200ResponseCardsInner) SetKizMarked(v bool) {
+	o.KizMarked = &v
 }
 
 // GetPhotos returns the Photos field value if set, zero value otherwise.
@@ -721,6 +759,9 @@ func (o ContentV2GetCardsListPost200ResponseCardsInner) ToMap() (map[string]inte
 	}
 	if !IsNil(o.NeedKiz) {
 		toSerialize["needKiz"] = o.NeedKiz
+	}
+	if !IsNil(o.KizMarked) {
+		toSerialize["kizMarked"] = o.KizMarked
 	}
 	if !IsNil(o.Photos) {
 		toSerialize["photos"] = o.Photos

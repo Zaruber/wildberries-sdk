@@ -68,6 +68,17 @@ export interface ContentV2GetCardsTrashPost200ResponseCardsInner {
      */
     vendorCode?: string;
     /**
+     * Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:
+     *   - `true` — да
+     *   - `false` — нет
+     * 
+     * Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+     * 
+     * @type {boolean}
+     * @memberof ContentV2GetCardsTrashPost200ResponseCardsInner
+     */
+    kizMarked?: boolean;
+    /**
      * ID предмета
      * @type {number}
      * @memberof ContentV2GetCardsTrashPost200ResponseCardsInner
@@ -148,6 +159,7 @@ export function ContentV2GetCardsTrashPost200ResponseCardsInnerFromJSONTyped(jso
         
         'nmID': json['nmID'] == null ? undefined : json['nmID'],
         'vendorCode': json['vendorCode'] == null ? undefined : json['vendorCode'],
+        'kizMarked': json['kizMarked'] == null ? undefined : json['kizMarked'],
         'subjectID': json['subjectID'] == null ? undefined : json['subjectID'],
         'subjectName': json['subjectName'] == null ? undefined : json['subjectName'],
         'photos': json['photos'] == null ? undefined : ((json['photos'] as Array<any>).map(ContentV2GetCardsListPost200ResponseCardsInnerPhotosInnerFromJSON)),
@@ -174,6 +186,7 @@ export function ContentV2GetCardsTrashPost200ResponseCardsInnerToJSONTyped(value
         
         'nmID': value['nmID'],
         'vendorCode': value['vendorCode'],
+        'kizMarked': value['kizMarked'],
         'subjectID': value['subjectID'],
         'subjectName': value['subjectName'],
         'photos': value['photos'] == null ? undefined : ((value['photos'] as Array<any>).map(ContentV2GetCardsListPost200ResponseCardsInnerPhotosInnerToJSON)),

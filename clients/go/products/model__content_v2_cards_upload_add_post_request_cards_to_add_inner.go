@@ -25,6 +25,8 @@ type ContentV2CardsUploadAddPostRequestCardsToAddInner struct {
 	Brand *string `json:"brand,omitempty"`
 	// Артикул продавца
 	VendorCode string `json:"vendorCode"`
+	// Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.   - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` 
+	KizMarked *bool `json:"kizMarked,omitempty"`
 	Wholesale *ContentV2GetCardsListPost200ResponseCardsInnerWholesale `json:"wholesale,omitempty"`
 	// Наименование товара
 	Title *string `json:"title,omitempty"`
@@ -46,6 +48,8 @@ type _ContentV2CardsUploadAddPostRequestCardsToAddInner ContentV2CardsUploadAddP
 func NewContentV2CardsUploadAddPostRequestCardsToAddInner(vendorCode string) *ContentV2CardsUploadAddPostRequestCardsToAddInner {
 	this := ContentV2CardsUploadAddPostRequestCardsToAddInner{}
 	this.VendorCode = vendorCode
+	var kizMarked bool = false
+	this.KizMarked = &kizMarked
 	return &this
 }
 
@@ -54,6 +58,8 @@ func NewContentV2CardsUploadAddPostRequestCardsToAddInner(vendorCode string) *Co
 // but it doesn't guarantee that properties required by API are set
 func NewContentV2CardsUploadAddPostRequestCardsToAddInnerWithDefaults() *ContentV2CardsUploadAddPostRequestCardsToAddInner {
 	this := ContentV2CardsUploadAddPostRequestCardsToAddInner{}
+	var kizMarked bool = false
+	this.KizMarked = &kizMarked
 	return &this
 }
 
@@ -111,6 +117,38 @@ func (o *ContentV2CardsUploadAddPostRequestCardsToAddInner) GetVendorCodeOk() (*
 // SetVendorCode sets field value
 func (o *ContentV2CardsUploadAddPostRequestCardsToAddInner) SetVendorCode(v string) {
 	o.VendorCode = v
+}
+
+// GetKizMarked returns the KizMarked field value if set, zero value otherwise.
+func (o *ContentV2CardsUploadAddPostRequestCardsToAddInner) GetKizMarked() bool {
+	if o == nil || IsNil(o.KizMarked) {
+		var ret bool
+		return ret
+	}
+	return *o.KizMarked
+}
+
+// GetKizMarkedOk returns a tuple with the KizMarked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContentV2CardsUploadAddPostRequestCardsToAddInner) GetKizMarkedOk() (*bool, bool) {
+	if o == nil || IsNil(o.KizMarked) {
+		return nil, false
+	}
+	return o.KizMarked, true
+}
+
+// HasKizMarked returns a boolean if a field has been set.
+func (o *ContentV2CardsUploadAddPostRequestCardsToAddInner) HasKizMarked() bool {
+	if o != nil && !IsNil(o.KizMarked) {
+		return true
+	}
+
+	return false
+}
+
+// SetKizMarked gets a reference to the given bool and assigns it to the KizMarked field.
+func (o *ContentV2CardsUploadAddPostRequestCardsToAddInner) SetKizMarked(v bool) {
+	o.KizMarked = &v
 }
 
 // GetWholesale returns the Wholesale field value if set, zero value otherwise.
@@ -319,6 +357,9 @@ func (o ContentV2CardsUploadAddPostRequestCardsToAddInner) ToMap() (map[string]i
 		toSerialize["brand"] = o.Brand
 	}
 	toSerialize["vendorCode"] = o.VendorCode
+	if !IsNil(o.KizMarked) {
+		toSerialize["kizMarked"] = o.KizMarked
+	}
 	if !IsNil(o.Wholesale) {
 		toSerialize["wholesale"] = o.Wholesale
 	}

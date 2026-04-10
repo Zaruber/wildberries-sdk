@@ -59,6 +59,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     protected static $openAPITypes = [
         'nm_id' => 'int',
         'vendor_code' => 'string',
+        'kiz_marked' => 'bool',
         'subject_id' => 'int',
         'subject_name' => 'string',
         'photos' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner[]',
@@ -81,6 +82,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     protected static $openAPIFormats = [
         'nm_id' => null,
         'vendor_code' => null,
+        'kiz_marked' => null,
         'subject_id' => null,
         'subject_name' => null,
         'photos' => null,
@@ -101,6 +103,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     protected static array $openAPINullables = [
         'nm_id' => false,
         'vendor_code' => false,
+        'kiz_marked' => false,
         'subject_id' => false,
         'subject_name' => false,
         'photos' => false,
@@ -201,6 +204,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     protected static $attributeMap = [
         'nm_id' => 'nmID',
         'vendor_code' => 'vendorCode',
+        'kiz_marked' => 'kizMarked',
         'subject_id' => 'subjectID',
         'subject_name' => 'subjectName',
         'photos' => 'photos',
@@ -221,6 +225,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     protected static $setters = [
         'nm_id' => 'setNmId',
         'vendor_code' => 'setVendorCode',
+        'kiz_marked' => 'setKizMarked',
         'subject_id' => 'setSubjectId',
         'subject_name' => 'setSubjectName',
         'photos' => 'setPhotos',
@@ -241,6 +246,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     protected static $getters = [
         'nm_id' => 'getNmId',
         'vendor_code' => 'getVendorCode',
+        'kiz_marked' => 'getKizMarked',
         'subject_id' => 'getSubjectId',
         'subject_name' => 'getSubjectName',
         'photos' => 'getPhotos',
@@ -312,6 +318,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
     {
         $this->setIfExists('nm_id', $data ?? [], null);
         $this->setIfExists('vendor_code', $data ?? [], null);
+        $this->setIfExists('kiz_marked', $data ?? [], false);
         $this->setIfExists('subject_id', $data ?? [], null);
         $this->setIfExists('subject_name', $data ?? [], null);
         $this->setIfExists('photos', $data ?? [], null);
@@ -416,6 +423,33 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner implements ModelInterface,
             throw new \InvalidArgumentException('non-nullable vendor_code cannot be null');
         }
         $this->container['vendor_code'] = $vendor_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets kiz_marked
+     *
+     * @return bool|null
+     */
+    public function getKizMarked()
+    {
+        return $this->container['kiz_marked'];
+    }
+
+    /**
+     * Sets kiz_marked
+     *
+     * @param bool|null $kiz_marked Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+     *
+     * @return self
+     */
+    public function setKizMarked($kiz_marked)
+    {
+        if (is_null($kiz_marked)) {
+            throw new \InvalidArgumentException('non-nullable kiz_marked cannot be null');
+        }
+        $this->container['kiz_marked'] = $kiz_marked;
 
         return $this;
     }

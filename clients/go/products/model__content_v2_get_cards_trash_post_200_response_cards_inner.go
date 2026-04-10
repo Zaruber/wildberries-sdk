@@ -23,6 +23,8 @@ type ContentV2GetCardsTrashPost200ResponseCardsInner struct {
 	NmID *int32 `json:"nmID,omitempty"`
 	// Артикул продавца
 	VendorCode *string `json:"vendorCode,omitempty"`
+	// Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` 
+	KizMarked *bool `json:"kizMarked,omitempty"`
 	// ID предмета
 	SubjectID *int32 `json:"subjectID,omitempty"`
 	// Название предмета
@@ -49,6 +51,8 @@ type ContentV2GetCardsTrashPost200ResponseCardsInner struct {
 // will change when the set of required properties is changed
 func NewContentV2GetCardsTrashPost200ResponseCardsInner() *ContentV2GetCardsTrashPost200ResponseCardsInner {
 	this := ContentV2GetCardsTrashPost200ResponseCardsInner{}
+	var kizMarked bool = false
+	this.KizMarked = &kizMarked
 	return &this
 }
 
@@ -57,6 +61,8 @@ func NewContentV2GetCardsTrashPost200ResponseCardsInner() *ContentV2GetCardsTras
 // but it doesn't guarantee that properties required by API are set
 func NewContentV2GetCardsTrashPost200ResponseCardsInnerWithDefaults() *ContentV2GetCardsTrashPost200ResponseCardsInner {
 	this := ContentV2GetCardsTrashPost200ResponseCardsInner{}
+	var kizMarked bool = false
+	this.KizMarked = &kizMarked
 	return &this
 }
 
@@ -122,6 +128,38 @@ func (o *ContentV2GetCardsTrashPost200ResponseCardsInner) HasVendorCode() bool {
 // SetVendorCode gets a reference to the given string and assigns it to the VendorCode field.
 func (o *ContentV2GetCardsTrashPost200ResponseCardsInner) SetVendorCode(v string) {
 	o.VendorCode = &v
+}
+
+// GetKizMarked returns the KizMarked field value if set, zero value otherwise.
+func (o *ContentV2GetCardsTrashPost200ResponseCardsInner) GetKizMarked() bool {
+	if o == nil || IsNil(o.KizMarked) {
+		var ret bool
+		return ret
+	}
+	return *o.KizMarked
+}
+
+// GetKizMarkedOk returns a tuple with the KizMarked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContentV2GetCardsTrashPost200ResponseCardsInner) GetKizMarkedOk() (*bool, bool) {
+	if o == nil || IsNil(o.KizMarked) {
+		return nil, false
+	}
+	return o.KizMarked, true
+}
+
+// HasKizMarked returns a boolean if a field has been set.
+func (o *ContentV2GetCardsTrashPost200ResponseCardsInner) HasKizMarked() bool {
+	if o != nil && !IsNil(o.KizMarked) {
+		return true
+	}
+
+	return false
+}
+
+// SetKizMarked gets a reference to the given bool and assigns it to the KizMarked field.
+func (o *ContentV2GetCardsTrashPost200ResponseCardsInner) SetKizMarked(v bool) {
+	o.KizMarked = &v
 }
 
 // GetSubjectID returns the SubjectID field value if set, zero value otherwise.
@@ -460,6 +498,9 @@ func (o ContentV2GetCardsTrashPost200ResponseCardsInner) ToMap() (map[string]int
 	}
 	if !IsNil(o.VendorCode) {
 		toSerialize["vendorCode"] = o.VendorCode
+	}
+	if !IsNil(o.KizMarked) {
+		toSerialize["kizMarked"] = o.KizMarked
 	}
 	if !IsNil(o.SubjectID) {
 		toSerialize["subjectID"] = o.SubjectID

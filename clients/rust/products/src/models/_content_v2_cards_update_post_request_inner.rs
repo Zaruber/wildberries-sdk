@@ -19,6 +19,9 @@ pub struct ContentV2CardsUpdatePostRequestInner {
     /// Артикул продавца
     #[serde(rename = "vendorCode")]
     pub vendor_code: String,
+    /// Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.   - `false` — продавец подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` 
+    #[serde(rename = "kizMarked", skip_serializing_if = "Option::is_none")]
+    pub kiz_marked: Option<bool>,
     /// Бренд
     #[serde(rename = "brand", skip_serializing_if = "Option::is_none")]
     pub brand: Option<String>,
@@ -43,6 +46,7 @@ impl ContentV2CardsUpdatePostRequestInner {
         ContentV2CardsUpdatePostRequestInner {
             nm_id,
             vendor_code,
+            kiz_marked: None,
             brand: None,
             title: None,
             description: None,

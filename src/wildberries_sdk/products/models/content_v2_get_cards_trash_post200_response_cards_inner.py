@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from wildberries_sdk.products.models.content_v2_get_cards_list_post200_response_cards_inner_characteristics_inner import ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner
 from wildberries_sdk.products.models.content_v2_get_cards_list_post200_response_cards_inner_dimensions import ContentV2GetCardsListPost200ResponseCardsInnerDimensions
@@ -34,6 +34,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner(BaseModel):
     """ # noqa: E501
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
     vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode")
+    kiz_marked: Optional[StrictBool] = Field(default=False, description="Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` ", alias="kizMarked")
     subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectID")
     subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName")
     photos: Optional[List[ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner]] = Field(default=None, description="Массив фото")
@@ -44,7 +45,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner(BaseModel):
     characteristics: Optional[List[ContentV2GetCardsListPost200ResponseCardsInnerCharacteristicsInner]] = Field(default=None, description="Характеристики")
     created_at: Optional[StrictStr] = Field(default=None, description="Date and time the card was created", alias="createdAt")
     trashed_at: Optional[StrictStr] = Field(default=None, description="Дата и время помещения в корзину", alias="trashedAt")
-    __properties: ClassVar[List[str]] = ["nmID", "vendorCode", "subjectID", "subjectName", "photos", "video", "wholesale", "sizes", "dimensions", "characteristics", "createdAt", "trashedAt"]
+    __properties: ClassVar[List[str]] = ["nmID", "vendorCode", "kizMarked", "subjectID", "subjectName", "photos", "video", "wholesale", "sizes", "dimensions", "characteristics", "createdAt", "trashedAt"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -131,6 +132,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner(BaseModel):
         _obj = cls.model_validate({
             "nmID": obj.get("nmID"),
             "vendorCode": obj.get("vendorCode"),
+            "kizMarked": obj.get("kizMarked") if obj.get("kizMarked") is not None else False,
             "subjectID": obj.get("subjectID"),
             "subjectName": obj.get("subjectName"),
             "photos": [ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner.from_dict(_item) for _item in obj["photos"]] if obj.get("photos") is not None else None,

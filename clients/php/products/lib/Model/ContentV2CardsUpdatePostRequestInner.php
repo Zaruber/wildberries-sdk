@@ -59,6 +59,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'nm_id' => 'int',
         'vendor_code' => 'string',
+        'kiz_marked' => 'bool',
         'brand' => 'string',
         'title' => 'string',
         'description' => 'string',
@@ -77,6 +78,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'nm_id' => null,
         'vendor_code' => null,
+        'kiz_marked' => null,
         'brand' => null,
         'title' => null,
         'description' => null,
@@ -93,6 +95,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     protected static array $openAPINullables = [
         'nm_id' => false,
         'vendor_code' => false,
+        'kiz_marked' => false,
         'brand' => false,
         'title' => false,
         'description' => false,
@@ -189,6 +192,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     protected static $attributeMap = [
         'nm_id' => 'nmID',
         'vendor_code' => 'vendorCode',
+        'kiz_marked' => 'kizMarked',
         'brand' => 'brand',
         'title' => 'title',
         'description' => 'description',
@@ -205,6 +209,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     protected static $setters = [
         'nm_id' => 'setNmId',
         'vendor_code' => 'setVendorCode',
+        'kiz_marked' => 'setKizMarked',
         'brand' => 'setBrand',
         'title' => 'setTitle',
         'description' => 'setDescription',
@@ -221,6 +226,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     protected static $getters = [
         'nm_id' => 'getNmId',
         'vendor_code' => 'getVendorCode',
+        'kiz_marked' => 'getKizMarked',
         'brand' => 'getBrand',
         'title' => 'getTitle',
         'description' => 'getDescription',
@@ -288,6 +294,7 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
     {
         $this->setIfExists('nm_id', $data ?? [], null);
         $this->setIfExists('vendor_code', $data ?? [], null);
+        $this->setIfExists('kiz_marked', $data ?? [], false);
         $this->setIfExists('brand', $data ?? [], null);
         $this->setIfExists('title', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -401,6 +408,33 @@ class ContentV2CardsUpdatePostRequestInner implements ModelInterface, ArrayAcces
             throw new \InvalidArgumentException('non-nullable vendor_code cannot be null');
         }
         $this->container['vendor_code'] = $vendor_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets kiz_marked
+     *
+     * @return bool|null
+     */
+    public function getKizMarked()
+    {
+        return $this->container['kiz_marked'];
+    }
+
+    /**
+     * Sets kiz_marked
+     *
+     * @param bool|null $kiz_marked Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.   - `false` — продавец подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+     *
+     * @return self
+     */
+    public function setKizMarked($kiz_marked)
+    {
+        if (is_null($kiz_marked)) {
+            throw new \InvalidArgumentException('non-nullable kiz_marked cannot be null');
+        }
+        $this->container['kiz_marked'] = $kiz_marked;
 
         return $this;
     }

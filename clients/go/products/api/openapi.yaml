@@ -1752,6 +1752,7 @@ paths:
                   subjectID: 7771
                   subjectName: AKF системы
                   vendorCode: wb7f6mumjr1
+                  kizMarked: true
                   brand: Тест
                   title: Тест-система
                   description: Тестовое описание
@@ -2082,6 +2083,7 @@ paths:
               example:
               - nmID: 11111111
                 vendorCode: wbiz72wmro
+                kizMarked: true
                 brand: ""
                 title: Свитер женский оверсайз с горлом
                 description: "12345"
@@ -2637,6 +2639,7 @@ paths:
                 cards:
                 - nmID: 1234567
                   vendorCode: wb5xsy5ftj
+                  kizMarked: true
                   subjectID: 1436
                   subjectName: Ведра хозяйственные
                   photos:
@@ -3069,6 +3072,7 @@ paths:
               imtID: 987654321
               cardsToAdd:
               - vendorCode: myVariant1
+                kizMarked: true
                 wholesale:
                   enabled: true
                   quantum: 243
@@ -6000,6 +6004,7 @@ components:
       - subjectID: 105
         variants:
         - vendorCode: АртикулПродавца
+          kizMarked: true
           wholesale:
             enabled: true
             quantum: 211
@@ -6032,6 +6037,7 @@ components:
       - subjectID: 3091
         variants:
         - vendorCode: АртикулПродавца11
+          kizMarked: true
           wholesale:
             enabled: true
             quantum: 211
@@ -6082,6 +6088,7 @@ components:
       - subjectID: 3091
         variants:
         - vendorCode: АртикулПродавца1
+          kizMarked: true
           wholesale:
             enabled: true
             quantum: 211
@@ -8759,6 +8766,7 @@ components:
           - 12345Ejf5
           techSize: techSize
           chrtID: 2
+        kizMarked: false
         brand: brand
         subjectName: subjectName
         dimensions:
@@ -8802,11 +8810,21 @@ components:
           type: string
         needKiz:
           description: |
-            Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара
+            Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара:
             <br>
-            * `false` — не требуется
+              - `false` — не требуется
             <br>
-            * `true` — требуется
+              - `true` — требуется
+          type: boolean
+        kizMarked:
+          default: false
+          description: |
+            Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:
+              - `true` — да
+              - `false` — нет
+
+            Является ли код маркировки обязательным, указано в поле `needKiz`
+          nullable: false
           type: boolean
         photos:
           description: Массив фото
@@ -8919,6 +8937,7 @@ components:
             - 12345Ejf5
             techSize: techSize
             chrtID: 2
+          kizMarked: false
           brand: brand
           subjectName: subjectName
           dimensions:
@@ -8979,6 +8998,7 @@ components:
             - 12345Ejf5
             techSize: techSize
             chrtID: 2
+          kizMarked: false
           brand: brand
           subjectName: subjectName
           dimensions:
@@ -9067,6 +9087,15 @@ components:
         vendorCode:
           description: Артикул продавца
           type: string
+        kizMarked:
+          default: false
+          description: |
+            Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):
+              - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.
+              - `false` — продавец подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.
+
+            Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+          type: boolean
         brand:
           description: Бренд
           type: string
@@ -9248,7 +9277,6 @@ components:
       type: object
     _content_v2_get_cards_trash_post_200_response_cards_inner:
       example:
-        createdAt: createdAt
         trashedAt: trashedAt
         characteristics:
         - name: name
@@ -9257,6 +9285,22 @@ components:
         - name: name
           id: 3
           value: ""
+        nmID: 0
+        video: video
+        photos:
+        - big: big
+          square: square
+          c516x688: c516x688
+          tm: tm
+          c246x328: c246x328
+        - big: big
+          square: square
+          c516x688: c516x688
+          tm: tm
+          c246x328: c246x328
+        subjectID: 6
+        vendorCode: vendorCode
+        createdAt: createdAt
         wholesale:
           quantum: 5.962133916683182
           enabled: true
@@ -9273,21 +9317,7 @@ components:
           - 12345Ejf5
           techSize: techSize
           chrtID: 1
-        nmID: 0
-        video: video
-        photos:
-        - big: big
-          square: square
-          c516x688: c516x688
-          tm: tm
-          c246x328: c246x328
-        - big: big
-          square: square
-          c516x688: c516x688
-          tm: tm
-          c246x328: c246x328
-        subjectID: 6
-        vendorCode: vendorCode
+        kizMarked: false
         subjectName: subjectName
         dimensions:
           weightBrutto: 9.301444243932576
@@ -9302,6 +9332,16 @@ components:
         vendorCode:
           description: Артикул продавца
           type: string
+        kizMarked:
+          default: false
+          description: |
+            Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:
+              - `true` — да
+              - `false` — нет
+
+            Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+          nullable: false
+          type: boolean
         subjectID:
           description: ID предмета
           type: integer
@@ -9364,8 +9404,7 @@ components:
           total: 5
           nmID: 5
         cards:
-        - createdAt: createdAt
-          trashedAt: trashedAt
+        - trashedAt: trashedAt
           characteristics:
           - name: name
             id: 3
@@ -9373,6 +9412,22 @@ components:
           - name: name
             id: 3
             value: ""
+          nmID: 0
+          video: video
+          photos:
+          - big: big
+            square: square
+            c516x688: c516x688
+            tm: tm
+            c246x328: c246x328
+          - big: big
+            square: square
+            c516x688: c516x688
+            tm: tm
+            c246x328: c246x328
+          subjectID: 6
+          vendorCode: vendorCode
+          createdAt: createdAt
           wholesale:
             quantum: 5.962133916683182
             enabled: true
@@ -9389,21 +9444,7 @@ components:
             - 12345Ejf5
             techSize: techSize
             chrtID: 1
-          nmID: 0
-          video: video
-          photos:
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          subjectID: 6
-          vendorCode: vendorCode
+          kizMarked: false
           subjectName: subjectName
           dimensions:
             weightBrutto: 9.301444243932576
@@ -9411,8 +9452,7 @@ components:
             length: 5
             width: 2
             height: 7
-        - createdAt: createdAt
-          trashedAt: trashedAt
+        - trashedAt: trashedAt
           characteristics:
           - name: name
             id: 3
@@ -9420,6 +9460,22 @@ components:
           - name: name
             id: 3
             value: ""
+          nmID: 0
+          video: video
+          photos:
+          - big: big
+            square: square
+            c516x688: c516x688
+            tm: tm
+            c246x328: c246x328
+          - big: big
+            square: square
+            c516x688: c516x688
+            tm: tm
+            c246x328: c246x328
+          subjectID: 6
+          vendorCode: vendorCode
+          createdAt: createdAt
           wholesale:
             quantum: 5.962133916683182
             enabled: true
@@ -9436,21 +9492,7 @@ components:
             - 12345Ejf5
             techSize: techSize
             chrtID: 1
-          nmID: 0
-          video: video
-          photos:
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          subjectID: 6
-          vendorCode: vendorCode
+          kizMarked: false
           subjectName: subjectName
           dimensions:
             weightBrutto: 9.301444243932576
@@ -9600,6 +9642,15 @@ components:
           description: Артикул продавца
           maxLength: 72
           type: string
+        kizMarked:
+          default: false
+          description: |
+            Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):
+              - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.
+              - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.
+
+            Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+          type: boolean
         wholesale:
           $ref: "#/components/schemas/_content_v2_get_cards_list_post_200_response_cards_inner_wholesale"
         dimensions:
@@ -9687,6 +9738,15 @@ components:
           description: Артикул продавца
           maxLength: 72
           type: string
+        kizMarked:
+          default: false
+          description: |
+            Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):
+              - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.
+              - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.
+
+            Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+          type: boolean
         wholesale:
           $ref: "#/components/schemas/_content_v2_get_cards_list_post_200_response_cards_inner_wholesale"
         title:

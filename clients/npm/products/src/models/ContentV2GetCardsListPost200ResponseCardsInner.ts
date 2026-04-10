@@ -117,16 +117,27 @@ export interface ContentV2GetCardsListPost200ResponseCardsInner {
      */
     description?: string;
     /**
-     * Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара
+     * Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара:
      * <br>
-     * * `false` — не требуется
+     *   - `false` — не требуется
      * <br>
-     * * `true` — требуется
+     *   - `true` — требуется
      * 
      * @type {boolean}
      * @memberof ContentV2GetCardsListPost200ResponseCardsInner
      */
     needKiz?: boolean;
+    /**
+     * Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:
+     *   - `true` — да
+     *   - `false` — нет
+     * 
+     * Является ли код маркировки обязательным, указано в поле `needKiz`
+     * 
+     * @type {boolean}
+     * @memberof ContentV2GetCardsListPost200ResponseCardsInner
+     */
+    kizMarked?: boolean;
     /**
      * Массив фото
      * @type {Array<ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner>}
@@ -210,6 +221,7 @@ export function ContentV2GetCardsListPost200ResponseCardsInnerFromJSONTyped(json
         'title': json['title'] == null ? undefined : json['title'],
         'description': json['description'] == null ? undefined : json['description'],
         'needKiz': json['needKiz'] == null ? undefined : json['needKiz'],
+        'kizMarked': json['kizMarked'] == null ? undefined : json['kizMarked'],
         'photos': json['photos'] == null ? undefined : ((json['photos'] as Array<any>).map(ContentV2GetCardsListPost200ResponseCardsInnerPhotosInnerFromJSON)),
         'video': json['video'] == null ? undefined : json['video'],
         'wholesale': json['wholesale'] == null ? undefined : ContentV2GetCardsListPost200ResponseCardsInnerWholesaleFromJSON(json['wholesale']),
@@ -243,6 +255,7 @@ export function ContentV2GetCardsListPost200ResponseCardsInnerToJSONTyped(value?
         'title': value['title'],
         'description': value['description'],
         'needKiz': value['needKiz'],
+        'kizMarked': value['kizMarked'],
         'photos': value['photos'] == null ? undefined : ((value['photos'] as Array<any>).map(ContentV2GetCardsListPost200ResponseCardsInnerPhotosInnerToJSON)),
         'video': value['video'],
         'wholesale': ContentV2GetCardsListPost200ResponseCardsInnerWholesaleToJSON(value['wholesale']),

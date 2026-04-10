@@ -61,6 +61,17 @@ export interface ContentV2CardsUploadAddPostRequestCardsToAddInner {
      */
     vendorCode: string;
     /**
+     * Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):
+     *   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.
+     *   - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.
+     * 
+     * Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+     * 
+     * @type {boolean}
+     * @memberof ContentV2CardsUploadAddPostRequestCardsToAddInner
+     */
+    kizMarked?: boolean;
+    /**
      * 
      * @type {ContentV2GetCardsListPost200ResponseCardsInnerWholesale}
      * @memberof ContentV2CardsUploadAddPostRequestCardsToAddInner
@@ -127,6 +138,7 @@ export function ContentV2CardsUploadAddPostRequestCardsToAddInnerFromJSONTyped(j
         
         'brand': json['brand'] == null ? undefined : json['brand'],
         'vendorCode': json['vendorCode'],
+        'kizMarked': json['kizMarked'] == null ? undefined : json['kizMarked'],
         'wholesale': json['wholesale'] == null ? undefined : ContentV2GetCardsListPost200ResponseCardsInnerWholesaleFromJSON(json['wholesale']),
         'title': json['title'] == null ? undefined : json['title'],
         'description': json['description'] == null ? undefined : json['description'],
@@ -149,6 +161,7 @@ export function ContentV2CardsUploadAddPostRequestCardsToAddInnerToJSONTyped(val
         
         'brand': value['brand'],
         'vendorCode': value['vendorCode'],
+        'kizMarked': value['kizMarked'],
         'wholesale': ContentV2GetCardsListPost200ResponseCardsInnerWholesaleToJSON(value['wholesale']),
         'title': value['title'],
         'description': value['description'],

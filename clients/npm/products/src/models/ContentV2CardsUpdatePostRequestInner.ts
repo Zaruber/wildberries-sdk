@@ -54,6 +54,17 @@ export interface ContentV2CardsUpdatePostRequestInner {
      */
     vendorCode: string;
     /**
+     * Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):
+     *   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.
+     *   - `false` — продавец подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.
+     * 
+     * Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+     * 
+     * @type {boolean}
+     * @memberof ContentV2CardsUpdatePostRequestInner
+     */
+    kizMarked?: boolean;
+    /**
      * Бренд
      * @type {string}
      * @memberof ContentV2CardsUpdatePostRequestInner
@@ -122,6 +133,7 @@ export function ContentV2CardsUpdatePostRequestInnerFromJSONTyped(json: any, ign
         
         'nmID': json['nmID'],
         'vendorCode': json['vendorCode'],
+        'kizMarked': json['kizMarked'] == null ? undefined : json['kizMarked'],
         'brand': json['brand'] == null ? undefined : json['brand'],
         'title': json['title'] == null ? undefined : json['title'],
         'description': json['description'] == null ? undefined : json['description'],
@@ -144,6 +156,7 @@ export function ContentV2CardsUpdatePostRequestInnerToJSONTyped(value?: ContentV
         
         'nmID': value['nmID'],
         'vendorCode': value['vendorCode'],
+        'kizMarked': value['kizMarked'],
         'brand': value['brand'],
         'title': value['title'],
         'description': value['description'],

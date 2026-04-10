@@ -42,7 +42,8 @@ class ContentV2GetCardsListPost200ResponseCardsInner(BaseModel):
     brand: Optional[StrictStr] = Field(default=None, description="Бренд")
     title: Optional[StrictStr] = Field(default=None, description="Наименование товара")
     description: Optional[StrictStr] = Field(default=None, description="Описание товара")
-    need_kiz: Optional[StrictBool] = Field(default=None, description="Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара <br> * `false` — не требуется <br> * `true` — требуется ", alias="needKiz")
+    need_kiz: Optional[StrictBool] = Field(default=None, description="Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара: <br>   - `false` — не требуется <br>   - `true` — требуется ", alias="needKiz")
+    kiz_marked: Optional[StrictBool] = Field(default=False, description="Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки обязательным, указано в поле `needKiz` ", alias="kizMarked")
     photos: Optional[List[ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner]] = Field(default=None, description="Массив фото")
     video: Optional[StrictStr] = Field(default=None, description="URL видео")
     wholesale: Optional[ContentV2GetCardsListPost200ResponseCardsInnerWholesale] = None
@@ -52,7 +53,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner(BaseModel):
     tags: Optional[List[ContentV2GetCardsListPost200ResponseCardsInnerTagsInner]] = Field(default=None, description="Ярлыки")
     created_at: Optional[StrictStr] = Field(default=None, description="Дата и время создания", alias="createdAt")
     updated_at: Optional[StrictStr] = Field(default=None, description="Дата и время изменения", alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["nmID", "imtID", "nmUUID", "subjectID", "subjectName", "vendorCode", "brand", "title", "description", "needKiz", "photos", "video", "wholesale", "dimensions", "characteristics", "sizes", "tags", "createdAt", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["nmID", "imtID", "nmUUID", "subjectID", "subjectName", "vendorCode", "brand", "title", "description", "needKiz", "kizMarked", "photos", "video", "wholesale", "dimensions", "characteristics", "sizes", "tags", "createdAt", "updatedAt"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -149,6 +150,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner(BaseModel):
             "title": obj.get("title"),
             "description": obj.get("description"),
             "needKiz": obj.get("needKiz"),
+            "kizMarked": obj.get("kizMarked") if obj.get("kizMarked") is not None else False,
             "photos": [ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner.from_dict(_item) for _item in obj["photos"]] if obj.get("photos") is not None else None,
             "video": obj.get("video"),
             "wholesale": ContentV2GetCardsListPost200ResponseCardsInnerWholesale.from_dict(obj["wholesale"]) if obj.get("wholesale") is not None else None,

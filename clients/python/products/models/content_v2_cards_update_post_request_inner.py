@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from wildberries_sdk.products.models.content_v2_cards_update_post_request_inner_characteristics_inner import ContentV2CardsUpdatePostRequestInnerCharacteristicsInner
@@ -33,13 +33,14 @@ class ContentV2CardsUpdatePostRequestInner(BaseModel):
     """ # noqa: E501
     nm_id: StrictInt = Field(description="Артикул WB", alias="nmID")
     vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode")
+    kiz_marked: Optional[StrictBool] = Field(default=False, description="Подтверждение, что на товар нанесён обязательный [код маркировки](https://честныйзнак.рф/):   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки.   - `false` — продавец подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт модерацию, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар.  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` ", alias="kizMarked")
     brand: Optional[StrictStr] = Field(default=None, description="Бренд")
     title: Optional[Annotated[str, Field(strict=True, max_length=60)]] = Field(default=None, description="Наименование товара")
     description: Optional[StrictStr] = Field(default=None, description="Описание товара<br> Максимальное количество символов зависит от категории товара<br> Стандарт — 2000, минимум — 1000, максимум — 5000<br> Подробно о правилах описания в **Правилах заполнения карточки товара** в [Справочном центре](https://seller.wildberries.ru/help-center/article/A-113) на портале продавцов ")
     dimensions: Optional[ContentV2CardsUpdatePostRequestInnerDimensions] = None
     characteristics: Optional[List[ContentV2CardsUpdatePostRequestInnerCharacteristicsInner]] = Field(default=None, description="Характеристики товара. <br> Можно получить методом [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get) ")
     sizes: List[ContentV2CardsUpdatePostRequestInnerSizesInner] = Field(description="Массив размеров<br> Для безразмерного товара всё равно нужно передавать данный массив без параметров (wbSize и techSize), но с баркодом ")
-    __properties: ClassVar[List[str]] = ["nmID", "vendorCode", "brand", "title", "description", "dimensions", "characteristics", "sizes"]
+    __properties: ClassVar[List[str]] = ["nmID", "vendorCode", "kizMarked", "brand", "title", "description", "dimensions", "characteristics", "sizes"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -111,6 +112,7 @@ class ContentV2CardsUpdatePostRequestInner(BaseModel):
         _obj = cls.model_validate({
             "nmID": obj.get("nmID"),
             "vendorCode": obj.get("vendorCode"),
+            "kizMarked": obj.get("kizMarked") if obj.get("kizMarked") is not None else False,
             "brand": obj.get("brand"),
             "title": obj.get("title"),
             "description": obj.get("description"),
