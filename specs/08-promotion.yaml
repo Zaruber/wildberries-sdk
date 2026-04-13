@@ -2884,7 +2884,7 @@ paths:
                       daily_limit: 500
                       category_name: Главная
                       cpm: 351
-                      url: https://www.wildberries.ru/promotions/ssylka-na-akciyou
+                      url: https://www.{{ .baseDomain }}/promotions/ssylka-na-akciyou
                       advert_type: 1
                       created_at: '2023-11-01T15:40:46.86165+03:00'
                       updated_at: '2023-11-08T23:44:33.248229+03:00'
@@ -5363,7 +5363,7 @@ components:
                 description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
           example:
             title: payment required
-            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
+            detail: please top up your balance in your company personal account https://dev.{{ .baseDomain }}/company
     '429':
       description: Слишком много запросов
       content:

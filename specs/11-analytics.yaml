@@ -5622,7 +5622,7 @@ components:
                 description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
           example:
             title: payment required
-            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
+            detail: please top up your balance in your company personal account https://dev.{{ .baseDomain }}/company
     '429':
       description: Слишком много запросов
       content:

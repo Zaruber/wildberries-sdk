@@ -1049,7 +1049,7 @@ components:
         inviteID: 741b8aa6-08ac-4782-8a9d-d931bcbbf608
         expiredAt: '2025-10-06T10:56:04.335060746Z'
         isSuccess: true
-        inviteUrl: https://seller.wildberries.ru/supplier-settings/supplier-card?inviteId=e5a813c7-65e0-4599-a550-a6b3d85661ed
+        inviteUrl: https://seller.{{ .baseDomain }}/supplier-settings/supplier-card?inviteId=e5a813c7-65e0-4599-a550-a6b3d85661ed
     updateUserAccessRequest:
       type: object
       required:
@@ -1237,7 +1237,7 @@ components:
                 description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
           example:
             title: payment required
-            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
+            detail: please top up your balance in your company personal account https://dev.{{ .baseDomain }}/company
     '429':
       description: Слишком много запросов
       content:

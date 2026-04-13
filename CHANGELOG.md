@@ -1,6 +1,21 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.04.13)
+- Общие: в примере ответа для инвайта изменён `inviteUrl` на шаблонный домен `https://seller.{{ .baseDomain }}/...` вместо `https://seller.wildberries.ru/...`; в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Товары (Products): в примерах ошибок обновлён `detail` со ссылкой на документацию на `https://openapi.{{ .baseDomain }}/content/api/ru/` вместо `https://openapi.wildberries.ru/...`; в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Заказы FBS: в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Заказы DBW: в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Заказы DBS: в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Самовывоз (In-store pickup): в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Заказы FBW: в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Продвижение (Promotion): в примере объекта акции/рекламы обновлено поле `url` на `https://www.{{ .baseDomain }}/promotions/...` вместо `https://www.wildberries.ru/...`; в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Коммуникации (Communications): в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Тарифы (Tariffs): в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Аналитика (Analytics): в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+- Отчёты (Reports): в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`; в примере данных отчёта обновлены `photoUrls` на `https://static-basket-03.{{ .baseDomain }}/...` вместо `https://static-basket-03.wildberries.ru/...`
+- Финансы (Finances): в примере ошибки 402 обновлён URL пополнения баланса на `https://dev.{{ .baseDomain }}/company`
+
 ### Changed (2026.04.10)
 - Products: добавлено поле `kizMarked` (boolean, default `false`, non-nullable) — подтверждение продавца, что обязательный код маркировки «Честный знак» нанесён на товар; добавлено в модели/примеры карточек и вариантов (в т.ч. в запросах на создание/обновление), при этом обязательность маркировки определяется по `needKiz` (если `needKiz=true` и `kizMarked=false`, карточка не пройдёт модерацию).
 - Products: уточнено описание поля `needKiz` (форматирование/перечень значений без изменения типа: boolean).
