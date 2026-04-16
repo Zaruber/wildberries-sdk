@@ -1,6 +1,23 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.04.16)
+- Orders FBS: уточнено описание статуса `ready_for_pickup` — теперь «заказ прибыл на ПВЗ» (ранее «сборочное задание прибыло на ПВЗ»).
+- Orders DBS: уточнено описание статуса `ready_for_pickup` — теперь «заказ прибыл на ПВЗ» (ранее «сборочное задание прибыло на ПВЗ»).
+- Самовывоз (Click&Collect): в методе получения статусов сборочных заданий уточнено описание `wbStatus=ready_for_pickup` — теперь «заказ готов к выдаче» (ранее «сборочное задание готово к выдаче»).
+
+- Finances / Финансовые отчёты: добавлен POST `https://finance-api.wildberries.ru/api/finance/v1/sales-reports/list` — список отчётов реализации за период (доступно с 01.01.2025), поддержка токенов `personal`/`service`, лимит 1 запрос/мин.
+- Finances / Финансовые отчёты: добавлен POST `https://finance-api.wildberries.ru/api/finance/v1/sales-reports/detailed/{reportId}` — детализация отчёта реализации по `reportId` (BigInt/int64), токены `personal`/`service`, лимит 1 запрос/мин; пагинация через `rrdId`, выбор полей через `fields`.
+- Finances / Финансовые отчёты: добавлен POST `https://finance-api.wildberries.ru/api/finance/v1/sales-reports/detailed` — детализация отчётов реализации за период (доступно с 29.01.2024), лимит 1 запрос/мин; параметры `dateFrom/dateTo`, `period (daily|weekly)`, `rrdId`, `limit`, `fields`.
+- Finances / Финансовые отчёты: добавлены отчёты по эквайрингу:
+  - POST `/api/finance/v1/acquiring/list` — список отчётов об издержках на приём платежей, токены `personal`/`service`, лимит 1 запрос/мин.
+  - POST `/api/finance/v1/acquiring/detailed/{reportId}` — детализация по ID отчёта, токены `personal`/`service`, лимит 1 запрос/мин; `rrdId/limit/fields`.
+  - POST `/api/finance/v1/acquiring/detailed` — детализация за период, токены `personal`/`service`, лимит 1 запрос/мин; `dateFrom/dateTo`, `rrdId/limit/fields`.
+- Finances / Deprecations: GET `https://statistics-api.wildberries.ru/api/v5/supplier/reportDetailByPeriod` помечен как `deprecated` и будет удалён 15 июля; для ошибок `400` теперь используется общий ответ `response400FinancialReports`.
+- Finances / Ошибки: унифицирован формат `400` для фин. отчётов — `Content-Type: application/problem+json`, поле `request_id` переименовано в `requestId`, обновлены примеры и `origin` (`open-api-finreports`).
+- Finances / Схемы: обновлены описания полей эквайринга (`acquiring_fee`, `acquiring_percent`, `payment_processing`) на формулировки «компенсация платёжных услуг/комиссия за интеграцию платёжных сервисов».
+- Finances / Схемы: изменена семантика `reportType` — удалено значение `4`, обновлены описания типов (1 — основной, 2 — по выкупам, 3 — по выкупам для Грузии).
+
 ### Changed (2026.04.15)
 - Products: обновлены ссылки в описаниях/документации (инструкция «Работа с товарами» и якоря про объединение/разъединение карточек по `imtID`), без изменений эндпоинтов, схем, полей и лимитов
 - Orders FBS: обновлена ссылка на инструкцию (перенос с `news/127` в knowledge-base), без изменений API
