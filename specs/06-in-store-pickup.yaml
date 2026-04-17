@@ -1019,6 +1019,16 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - name: orderId
           in: path
@@ -1148,6 +1158,16 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - name: orderId
           in: path
@@ -2296,10 +2316,10 @@ components:
                 description: Заголовок ошибки
               detail:
                 type: string
-                description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
+                description: Детали ошибки. Ошибка возвращается только сервисам из [Каталога решений для бизнеса](https://dev.wildberries.ru/business-solutions)
           example:
             title: payment required
-            detail: please top up your balance in your company personal account https://dev.{{ .baseDomain }}/company
+            detail: wb solution for business has insufficient funds on its balance. please top up the balance in the company's personal account https://dev.wildberries.ru/company
     '429':
       description: Слишком много запросов
       content:
