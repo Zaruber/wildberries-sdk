@@ -5360,10 +5360,10 @@ components:
                 description: Заголовок ошибки
               detail:
                 type: string
-                description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
+                description: Детали ошибки. Ошибка возвращается только сервисам из [Каталога решений для бизнеса](https://dev.wildberries.ru/business-solutions)
           example:
             title: payment required
-            detail: please top up your balance in your company personal account https://dev.{{ .baseDomain }}/company
+            detail: wb solution for business has insufficient funds on its balance. please top up the balance in the company's personal account https://dev.wildberries.ru/company
     '429':
       description: Слишком много запросов
       content:
