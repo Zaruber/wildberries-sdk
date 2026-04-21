@@ -422,6 +422,12 @@ ApiV2NmReportDownloadsPost Создать отчёт
 
 Также можете создать CSV-версии отчётов по [текстам поисковых запросов](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram/paths/~1api~1v2~1search-report~1product~1search-texts/post) и [остаткам](/openapi/analytics#tag/Istoriya-ostatkov).<br><br>
 
+Каждый новый отчёт должен иметь уникальный ID.
+
+<div class="description_important">
+  Не используйте одинаковые ID для разных отчётов — это может привести к ошибкам при генерации
+</div>
+
 Набор параметров запроса в объекте `params` зависит от типа отчёта. Чтобы получить описание параметров, выберите тип отчёта в раскрывающемся списке в описании параметра `reportType`.<br><br>
 
 Параметры `includeSubstitutedSKUs` и `includeSearchTexts` не могут одновременно иметь значение `false`.<br><br>

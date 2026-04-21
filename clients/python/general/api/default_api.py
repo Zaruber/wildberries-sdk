@@ -67,7 +67,7 @@ class DefaultApi:
     ) -> ApiCommunicationsV2NewsGet200Response:
         """Получение новостей портала продавцов
 
-        Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 
         :param var_from: Дата, от которой необходимо выдать новости
         :type var_from: date
@@ -141,7 +141,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiCommunicationsV2NewsGet200Response]:
         """Получение новостей портала продавцов
 
-        Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 
         :param var_from: Дата, от которой необходимо выдать новости
         :type var_from: date
@@ -215,7 +215,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получение новостей портала продавцов
 
-        Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 
         :param var_from: Дата, от которой необходимо выдать новости
         :type var_from: date
@@ -654,7 +654,7 @@ class DefaultApi:
     ) -> ApiV1SellerInfoGet200Response:
         """Получить информацию о продавце
 
-        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -720,7 +720,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiV1SellerInfoGet200Response]:
         """Получить информацию о продавце
 
-        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -786,7 +786,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить информацию о продавце
 
-        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+        <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

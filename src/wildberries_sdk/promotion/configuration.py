@@ -214,7 +214,7 @@ conf = wildberries_sdk.promotion.Configuration(
         server_operation_variables: Optional[Dict[int, ServerVariablesT]]=None,
         ignore_operation_servers: bool=False,
         ssl_ca_cert: Optional[str]=None,
-        retries: Optional[Union[int, Any]] = None,
+        retries: Optional[Union[int, urllib3.util.retry.Retry]] = None,
         ca_cert_data: Optional[Union[str, bytes]] = None,
         cert_file: Optional[str]=None,
         key_file: Optional[str]=None,
@@ -554,7 +554,7 @@ conf = wildberries_sdk.promotion.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: promotion\n"\
-               "SDK Package Version: 0.1.68".\
+               "SDK Package Version: 0.1.69".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self) -> List[HostSetting]:

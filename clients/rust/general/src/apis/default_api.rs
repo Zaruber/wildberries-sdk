@@ -130,7 +130,7 @@ pub async fn api_v1_invite_post(configuration: &configuration::Configuration, cr
     }
 }
 
-/// <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+/// <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
 pub async fn api_v1_seller_info_get(configuration: &configuration::Configuration, ) -> Result<models::ApiV1SellerInfoGet200Response, Error<ApiV1SellerInfoGetError>> {
 
     let uri_str = format!("{}/api/v1/seller-info", configuration.base_path);

@@ -387,7 +387,7 @@ class ProductOrdersRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets search_texts
      *
-     * @param string[] $search_texts Поисковые запросы. Для тарифа [Продвинутый](https://seller.wildberries.ru/monetization/tariffs) максимум — 100
+     * @param string[] $search_texts Поисковые запросы. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) **Продвинутый** и **Премиальный** максимум — 100
      *
      * @return self
      */

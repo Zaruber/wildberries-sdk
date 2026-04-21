@@ -24,7 +24,7 @@ type ProductOrdersRequest struct {
 	Period PeriodOrdersRequest `json:"period"`
 	// Артикул WB
 	NmId int32 `json:"nmId"`
-	// Поисковые запросы. Для тарифа [Продвинутый](https://seller.wildberries.ru/monetization/tariffs) максимум — 100
+	// Поисковые запросы. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) **Продвинутый** и **Премиальный** максимум — 100 
 	SearchTexts []string `json:"searchTexts"`
 }
 

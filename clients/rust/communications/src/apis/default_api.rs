@@ -1404,7 +1404,7 @@ pub async fn api_v1_seller_chats_get(configuration: &configuration::Configuratio
     }
 }
 
-/// Метод возвращает файл или изображение из сообщения по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
+/// Метод возвращает файл или изображение из сообщения по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Сервисный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос | </div> 
 pub async fn api_v1_seller_download_id_get(configuration: &configuration::Configuration, id: &str) -> Result<reqwest::Response, Error<ApiV1SellerDownloadIdGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_id = id;

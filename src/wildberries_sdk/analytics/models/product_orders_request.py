@@ -31,7 +31,7 @@ class ProductOrdersRequest(BaseModel):
     """ # noqa: E501
     period: PeriodOrdersRequest
     nm_id: StrictInt = Field(description="Артикул WB", alias="nmId")
-    search_texts: Annotated[List[StrictStr], Field(min_length=1, max_length=30)] = Field(description="Поисковые запросы. Для тарифа [Продвинутый](https://seller.wildberries.ru/monetization/tariffs) максимум — 100", alias="searchTexts")
+    search_texts: Annotated[List[StrictStr], Field(min_length=1, max_length=30)] = Field(description="Поисковые запросы. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) **Продвинутый** и **Премиальный** максимум — 100 ", alias="searchTexts")
     __properties: ClassVar[List[str]] = ["period", "nmId", "searchTexts"]
 
     model_config = ConfigDict(

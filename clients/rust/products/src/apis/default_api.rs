@@ -602,7 +602,7 @@ pub enum ContentV3MediaSavePostError {
 }
 
 
-/// Метод возвращает список брендов по ID предмета.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+/// Метод возвращает список брендов по ID предмета.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Сервисный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_content_v1_brands_get(configuration: &configuration::Configuration, subject_id: i32, next: Option<i32>) -> Result<models::BrandsResponse, Error<ApiContentV1BrandsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_subject_id = subject_id;

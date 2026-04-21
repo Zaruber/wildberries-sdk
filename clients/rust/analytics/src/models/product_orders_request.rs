@@ -18,7 +18,7 @@ pub struct ProductOrdersRequest {
     /// Артикул WB
     #[serde(rename = "nmId")]
     pub nm_id: i32,
-    /// Поисковые запросы. Для тарифа [Продвинутый](https://seller.wildberries.ru/monetization/tariffs) максимум — 100
+    /// Поисковые запросы. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) **Продвинутый** и **Премиальный** максимум — 100 
     #[serde(rename = "searchTexts")]
     pub search_texts: Vec<String>,
 }

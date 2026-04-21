@@ -26,7 +26,7 @@ pub enum ApiCommunicationsV2NewsGetError {
 }
 
 
-/// Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
+/// Метод позволяет получать новости портала продавцов. <br> Для получения успешного ответа необходимо указать один из параметров `from` или `fromID`. <br> За один запрос можно получить не более 100 новостей.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_communications_v2_news_get(configuration: &configuration::Configuration, from: Option<chrono::NaiveDate>, from_id: Option<i32>) -> Result<models::ApiCommunicationsV2NewsGet200Response, Error<ApiCommunicationsV2NewsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_from = from;
