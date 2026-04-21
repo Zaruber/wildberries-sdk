@@ -253,6 +253,12 @@ paths:
 
         Также можете создать CSV-версии отчётов по [текстам поисковых запросов](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram/paths/~1api~1v2~1search-report~1product~1search-texts/post) и [остаткам](/openapi/analytics#tag/Istoriya-ostatkov).<br><br>
 
+        Каждый новый отчёт должен иметь уникальный ID.
+
+        <div class="description_important">
+          Не используйте одинаковые ID для разных отчётов — это может привести к ошибкам при генерации
+        </div>
+
         Набор параметров запроса в объекте `params` зависит от типа отчёта. Чтобы получить описание параметров, выберите тип отчёта в раскрывающемся списке в описании параметра `reportType`.<br><br>
 
         Параметры `includeSubstitutedSKUs` и `includeSearchTexts` не могут одновременно иметь значение `false`.<br><br>
@@ -1090,7 +1096,7 @@ paths:
         Метод формирует топ поисковых запросов по товару.
 
         Параметры выбора поисковых запросов:
-         - `limit` — количество запросов, максимум 30 (для тарифа [Продвинутый](https://seller.wildberries.ru/monetization/tariffs) — 100)
+         - `limit` — количество запросов, максимум 30. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) **Продвинутый** и **Премиальный** максимум — 100.
          - `topOrderBy` — способ выбора топа запросов
 
         Параметры `includeSubstitutedSKUs` и `includeSearchTexts` не могут одновременно иметь значение `false`.<br><br>
@@ -1152,9 +1158,17 @@ paths:
         - Поисковые запросы по вашим товарам
       summary: Заказы и позиции по поисковым запросам товара
       description: |
-        Метод формирует данные для таблицы по количеству заказов и позиций в поиске по запросам покупателя. Данные указаны в рамках периода для [запрошенного товара](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram/paths/~1api~1v2~1search-report~1product~1search-texts/post).<br><br>
+        Метод формирует данные для таблицы:
+          - о заказах по каждому поисковому запросу для конкретного товара
+          - о позициях товара в результатах поиска по каждому запросу
+
+        Данные указаны в рамках периода для [запрошенного товара](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram/paths/~1api~1v2~1search-report~1product~1search-texts/post) и сгруппированы по дням. Максимальный период — 7 дней.<br><br>
 
         Данные отчёта обновляются 1 раз в час.
+
+        <div class="description_important">
+          Можно получить отчёт максимум за последние 365 дней с момента выполнения запроса
+        </div>
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -2721,7 +2735,8 @@ components:
           example:
             - костюм
             - пиджак
-          description: Поисковые запросы. Для тарифа [Продвинутый](https://seller.wildberries.ru/monetization/tariffs) максимум — 100
+          description: |
+            Поисковые запросы. Для тарифов [Джема](https://seller.wildberries.ru/monetization/tariffs) **Продвинутый** и **Премиальный** максимум — 100
           type: array
           items:
             type: string
