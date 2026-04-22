@@ -1098,7 +1098,7 @@ pub async fn api_v3_click_collect_orders_new_get(configuration: &configuration::
     }
 }
 
-/// Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+/// Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_click_collect_orders_order_id_cancel_patch(configuration: &configuration::Configuration, order_id: i32) -> Result<(), Error<ApiV3ClickCollectOrdersOrderIdCancelPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1434,7 +1434,7 @@ pub async fn api_v3_click_collect_orders_order_id_prepare_patch(configuration: &
     }
 }
 
-/// Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+/// Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_click_collect_orders_order_id_receive_patch(configuration: &configuration::Configuration, order_id: i32) -> Result<(), Error<ApiV3ClickCollectOrdersOrderIdReceivePatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1469,7 +1469,7 @@ pub async fn api_v3_click_collect_orders_order_id_receive_patch(configuration: &
     }
 }
 
-/// Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+/// Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_click_collect_orders_order_id_reject_patch(configuration: &configuration::Configuration, order_id: i32) -> Result<(), Error<ApiV3ClickCollectOrdersOrderIdRejectPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions

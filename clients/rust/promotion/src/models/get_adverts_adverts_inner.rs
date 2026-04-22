@@ -11,6 +11,8 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+use serde_repr::{Serialize_repr,Deserialize_repr};
+
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetAdvertsAdvertsInner {
     /// Тип ставки:   - `unified` — единая ставка   - `manual` — ручная ставка 
@@ -44,20 +46,28 @@ impl GetAdvertsAdvertsInner {
     }
 }
 /// Статус кампании: - `-1` — удалена, процесс удаления будет завершён в течение 10 минут - `4` — готова к запуску - `7` — завершена - `8` — отменена - `9` — активна - `11` — на паузе 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum Status {
-    #[serde(rename = "-1")]
-    Variant1,
-    #[serde(rename = "4")]
-    Variant4,
-    #[serde(rename = "7")]
-    Variant7,
-    #[serde(rename = "8")]
-    Variant8,
-    #[serde(rename = "9")]
-    Variant9,
-    #[serde(rename = "11")]
-    Variant11,
+    Variant1 = -1,
+    Variant4 = 4,
+    Variant7 = 7,
+    Variant8 = 8,
+    Variant9 = 9,
+    Variant11 = 11,
+}
+
+impl std::fmt::Display for Status {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant1 => "-1",
+            Self::Variant4 => "4",
+            Self::Variant7 => "7",
+            Self::Variant8 => "8",
+            Self::Variant9 => "9",
+            Self::Variant11 => "11",
+        })
+    }
 }
 
 impl Default for Status {

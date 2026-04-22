@@ -11,6 +11,8 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+use serde_repr::{Serialize_repr,Deserialize_repr};
+
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DaysV3InnerAppsInner {
     /// Тип платформы:   - `1` — сайт   - `32` — Android   - `64` — IOS 
@@ -74,14 +76,22 @@ impl DaysV3InnerAppsInner {
     }
 }
 /// Тип платформы:   - `1` — сайт   - `32` — Android   - `64` — IOS 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum AppType {
-    #[serde(rename = "1")]
-    Variant1,
-    #[serde(rename = "32")]
-    Variant32,
-    #[serde(rename = "64")]
-    Variant64,
+    Variant1 = 1,
+    Variant32 = 32,
+    Variant64 = 64,
+}
+
+impl std::fmt::Display for AppType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant1 => "1",
+            Self::Variant32 => "32",
+            Self::Variant64 => "64",
+        })
+    }
 }
 
 impl Default for AppType {

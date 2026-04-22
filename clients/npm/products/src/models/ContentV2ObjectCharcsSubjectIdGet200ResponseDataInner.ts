@@ -44,8 +44,8 @@ export interface ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
      */
     name?: string;
     /**
-     * - `true` - характеристику необходимо обязательно указать в карточке товара
-     * - `false` - характеристику необязательно указывать
+     * - `true` — характеристику необходимо обязательно указать в карточке товара
+     * - `false` — характеристику необязательно указывать
      * 
      * @type {boolean}
      * @memberof ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner
@@ -86,6 +86,15 @@ export interface ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
      * @memberof ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner
      */
     charcType?: number;
+    /**
+     * Ключевая характеристика. Является ли характеристика значимой для покупателей:
+     *   - `false` — нет
+     *   - `true` — да
+     * 
+     * @type {boolean}
+     * @memberof ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner
+     */
+    hasFilter?: boolean;
 }
 
 /**
@@ -114,6 +123,7 @@ export function ContentV2ObjectCharcsSubjectIdGet200ResponseDataInnerFromJSONTyp
         'maxCount': json['maxCount'] == null ? undefined : json['maxCount'],
         'popular': json['popular'] == null ? undefined : json['popular'],
         'charcType': json['charcType'] == null ? undefined : json['charcType'],
+        'hasFilter': json['hasFilter'] == null ? undefined : json['hasFilter'],
     };
 }
 
@@ -137,6 +147,7 @@ export function ContentV2ObjectCharcsSubjectIdGet200ResponseDataInnerToJSONTyped
         'maxCount': value['maxCount'],
         'popular': value['popular'],
         'charcType': value['charcType'],
+        'hasFilter': value['hasFilter'],
     };
 }
 

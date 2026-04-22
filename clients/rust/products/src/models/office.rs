@@ -11,6 +11,8 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+use serde_repr::{Serialize_repr,Deserialize_repr};
+
 /// Office : Данные о складе WB
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Office {
@@ -64,14 +66,22 @@ impl Office {
     }
 }
 /// Тип товара, который принимает склад:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum CargoType {
-    #[serde(rename = "1")]
-    Variant1,
-    #[serde(rename = "2")]
-    Variant2,
-    #[serde(rename = "3")]
-    Variant3,
+    Variant1 = 1,
+    Variant2 = 2,
+    Variant3 = 3,
+}
+
+impl std::fmt::Display for CargoType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant1 => "1",
+            Self::Variant2 => "2",
+            Self::Variant3 => "3",
+        })
+    }
 }
 
 impl Default for CargoType {
@@ -80,18 +90,26 @@ impl Default for CargoType {
     }
 }
 /// Тип доставки, который принимает склад:   - `1` — доставка на склад WB (FBS)   - `2` — доставка силами продавца (DBS)   - `3` — доставка курьером WB (DBW)   - `5` — самовывоз (C&C)   - `6` — экспресс-доставка силами продавца (ЕDBS) 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum DeliveryType {
-    #[serde(rename = "1")]
-    Variant1,
-    #[serde(rename = "2")]
-    Variant2,
-    #[serde(rename = "3")]
-    Variant3,
-    #[serde(rename = "5")]
-    Variant5,
-    #[serde(rename = "6")]
-    Variant6,
+    Variant1 = 1,
+    Variant2 = 2,
+    Variant3 = 3,
+    Variant5 = 5,
+    Variant6 = 6,
+}
+
+impl std::fmt::Display for DeliveryType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant1 => "1",
+            Self::Variant2 => "2",
+            Self::Variant3 => "3",
+            Self::Variant5 => "5",
+            Self::Variant6 => "6",
+        })
+    }
 }
 
 impl Default for DeliveryType {

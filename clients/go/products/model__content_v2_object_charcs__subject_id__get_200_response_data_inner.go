@@ -27,7 +27,7 @@ type ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner struct {
 	SubjectID *int32 `json:"subjectID,omitempty"`
 	// Название характеристики
 	Name *string `json:"name,omitempty"`
-	// - `true` - характеристику необходимо обязательно указать в карточке товара - `false` - характеристику необязательно указывать 
+	// - `true` — характеристику необходимо обязательно указать в карточке товара - `false` — характеристику необязательно указывать 
 	Required *bool `json:"required,omitempty"`
 	// Единица измерения
 	UnitName *string `json:"unitName,omitempty"`
@@ -37,6 +37,8 @@ type ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner struct {
 	Popular *bool `json:"popular,omitempty"`
 	// Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число (целое либо с десятичной дробью)   -  `0` — характеристика не используется 
 	CharcType *int32 `json:"charcType,omitempty"`
+	// Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `false` — нет   - `true` — да 
+	HasFilter *bool `json:"hasFilter,omitempty"`
 }
 
 // NewContentV2ObjectCharcsSubjectIdGet200ResponseDataInner instantiates a new ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner object
@@ -344,6 +346,38 @@ func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) SetCharcType(v i
 	o.CharcType = &v
 }
 
+// GetHasFilter returns the HasFilter field value if set, zero value otherwise.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) GetHasFilter() bool {
+	if o == nil || IsNil(o.HasFilter) {
+		var ret bool
+		return ret
+	}
+	return *o.HasFilter
+}
+
+// GetHasFilterOk returns a tuple with the HasFilter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) GetHasFilterOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasFilter) {
+		return nil, false
+	}
+	return o.HasFilter, true
+}
+
+// HasHasFilter returns a boolean if a field has been set.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) HasHasFilter() bool {
+	if o != nil && !IsNil(o.HasFilter) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasFilter gets a reference to the given bool and assigns it to the HasFilter field.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) SetHasFilter(v bool) {
+	o.HasFilter = &v
+}
+
 func (o ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -380,6 +414,9 @@ func (o ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) ToMap() (map[stri
 	}
 	if !IsNil(o.CharcType) {
 		toSerialize["charcType"] = o.CharcType
+	}
+	if !IsNil(o.HasFilter) {
+		toSerialize["hasFilter"] = o.HasFilter
 	}
 	return toSerialize, nil
 }

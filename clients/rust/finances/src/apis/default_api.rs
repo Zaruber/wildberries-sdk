@@ -404,7 +404,7 @@ pub async fn api_v1_documents_list_get(configuration: &configuration::Configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+/// Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
 #[deprecated]
 pub async fn api_v5_supplier_report_detail_by_period_get(configuration: &configuration::Configuration, date_from: chrono::DateTime<chrono::FixedOffset>, date_to: chrono::DateTime<chrono::FixedOffset>, limit: Option<i32>, rrdid: Option<i32>, period: Option<&str>) -> Result<Vec<models::DetailReportItem>, Error<ApiV5SupplierReportDetailByPeriodGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions

@@ -11,6 +11,8 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+use serde_repr::{Serialize_repr,Deserialize_repr};
+
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV1AnalyticsGoodsReturnGet200ResponseReportInner {
     /// Баркод
@@ -98,12 +100,20 @@ impl ApiV1AnalyticsGoodsReturnGet200ResponseReportInner {
     }
 }
 /// Тип статуса возврата:    * `0` — архивный   * `1` — активный 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum IsStatusActive {
-    #[serde(rename = "0")]
-    Variant0,
-    #[serde(rename = "1")]
-    Variant1,
+    Variant0 = 0,
+    Variant1 = 1,
+}
+
+impl std::fmt::Display for IsStatusActive {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant0 => "0",
+            Self::Variant1 => "1",
+        })
+    }
 }
 
 impl Default for IsStatusActive {

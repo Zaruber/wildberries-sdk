@@ -25,7 +25,7 @@ pub struct ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
     /// Название характеристики
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    /// - `true` - характеристику необходимо обязательно указать в карточке товара - `false` - характеристику необязательно указывать 
+    /// - `true` — характеристику необходимо обязательно указать в карточке товара - `false` — характеристику необязательно указывать 
     #[serde(rename = "required", skip_serializing_if = "Option::is_none")]
     pub required: Option<bool>,
     /// Единица измерения
@@ -40,6 +40,9 @@ pub struct ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
     /// Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число (целое либо с десятичной дробью)   -  `0` — характеристика не используется 
     #[serde(rename = "charcType", skip_serializing_if = "Option::is_none")]
     pub charc_type: Option<i32>,
+    /// Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `false` — нет   - `true` — да 
+    #[serde(rename = "hasFilter", skip_serializing_if = "Option::is_none")]
+    pub has_filter: Option<bool>,
 }
 
 impl ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
@@ -54,6 +57,7 @@ impl ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
             max_count: None,
             popular: None,
             charc_type: None,
+            has_filter: None,
         }
     }
 }

@@ -65,7 +65,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'unit_name' => 'string',
         'max_count' => 'int',
         'popular' => 'bool',
-        'charc_type' => 'int'
+        'charc_type' => 'int',
+        'has_filter' => 'bool'
     ];
 
     /**
@@ -84,7 +85,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'unit_name' => null,
         'max_count' => null,
         'popular' => null,
-        'charc_type' => null
+        'charc_type' => null,
+        'has_filter' => null
     ];
 
     /**
@@ -101,7 +103,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'unit_name' => false,
         'max_count' => false,
         'popular' => false,
-        'charc_type' => false
+        'charc_type' => false,
+        'has_filter' => false
     ];
 
     /**
@@ -198,7 +201,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'unit_name' => 'unitName',
         'max_count' => 'maxCount',
         'popular' => 'popular',
-        'charc_type' => 'charcType'
+        'charc_type' => 'charcType',
+        'has_filter' => 'hasFilter'
     ];
 
     /**
@@ -215,7 +219,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'unit_name' => 'setUnitName',
         'max_count' => 'setMaxCount',
         'popular' => 'setPopular',
-        'charc_type' => 'setCharcType'
+        'charc_type' => 'setCharcType',
+        'has_filter' => 'setHasFilter'
     ];
 
     /**
@@ -232,7 +237,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'unit_name' => 'getUnitName',
         'max_count' => 'getMaxCount',
         'popular' => 'getPopular',
-        'charc_type' => 'getCharcType'
+        'charc_type' => 'getCharcType',
+        'has_filter' => 'getHasFilter'
     ];
 
     /**
@@ -301,6 +307,7 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         $this->setIfExists('max_count', $data ?? [], null);
         $this->setIfExists('popular', $data ?? [], null);
         $this->setIfExists('charc_type', $data ?? [], null);
+        $this->setIfExists('has_filter', $data ?? [], null);
     }
 
     /**
@@ -466,7 +473,7 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
     /**
      * Sets required
      *
-     * @param bool|null $required - `true` - характеристику необходимо обязательно указать в карточке товара - `false` - характеристику необязательно указывать
+     * @param bool|null $required - `true` — характеристику необходимо обязательно указать в карточке товара - `false` — характеристику необязательно указывать
      *
      * @return self
      */
@@ -584,6 +591,33 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
             throw new \InvalidArgumentException('non-nullable charc_type cannot be null');
         }
         $this->container['charc_type'] = $charc_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_filter
+     *
+     * @return bool|null
+     */
+    public function getHasFilter()
+    {
+        return $this->container['has_filter'];
+    }
+
+    /**
+     * Sets has_filter
+     *
+     * @param bool|null $has_filter Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `false` — нет   - `true` — да
+     *
+     * @return self
+     */
+    public function setHasFilter($has_filter)
+    {
+        if (is_null($has_filter)) {
+            throw new \InvalidArgumentException('non-nullable has_filter cannot be null');
+        }
+        $this->container['has_filter'] = $has_filter;
 
         return $this;
     }

@@ -11,6 +11,8 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+use serde_repr::{Serialize_repr,Deserialize_repr};
+
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct OrderNew {
     #[serde(rename = "address", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
@@ -156,14 +158,22 @@ impl Default for DeliveryType {
     }
 }
 /// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum CargoType {
-    #[serde(rename = "1")]
-    Variant1,
-    #[serde(rename = "2")]
-    Variant2,
-    #[serde(rename = "3")]
-    Variant3,
+    Variant1 = 1,
+    Variant2 = 2,
+    Variant3 = 3,
+}
+
+impl std::fmt::Display for CargoType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant1 => "1",
+            Self::Variant2 => "2",
+            Self::Variant3 => "3",
+        })
+    }
 }
 
 impl Default for CargoType {
@@ -172,12 +182,20 @@ impl Default for CargoType {
     }
 }
 /// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum CrossBorderType {
-    #[serde(rename = "0")]
-    Variant0,
-    #[serde(rename = "1")]
-    Variant1,
+    Variant0 = 0,
+    Variant1 = 1,
+}
+
+impl std::fmt::Display for CrossBorderType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant0 => "0",
+            Self::Variant1 => "1",
+        })
+    }
 }
 
 impl Default for CrossBorderType {

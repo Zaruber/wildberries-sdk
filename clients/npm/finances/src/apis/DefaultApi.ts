@@ -482,7 +482,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+     * Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
      * Отчёт о продажах по реализации
      * @deprecated
      */
@@ -494,7 +494,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+     * Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
      * Отчёт о продажах по реализации
      * @deprecated
      */

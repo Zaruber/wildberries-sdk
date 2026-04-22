@@ -11,6 +11,8 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+use serde_repr::{Serialize_repr,Deserialize_repr};
+
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ModelsSupplyDetails {
     /// Телефон пользователя, создавшего поставку
@@ -126,20 +128,28 @@ impl ModelsSupplyDetails {
     }
 }
 /// ID статуса поставки:   - `1` — Не запланировано   - `2` — Запланировано   - `3` — Отгрузка разрешена   - `4` — Идёт приёмка   - `5` — Принято   - `6` — Отгружено на воротах 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+#[repr(i64)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum StatusId {
-    #[serde(rename = "1")]
-    Variant1,
-    #[serde(rename = "2")]
-    Variant2,
-    #[serde(rename = "3")]
-    Variant3,
-    #[serde(rename = "4")]
-    Variant4,
-    #[serde(rename = "5")]
-    Variant5,
-    #[serde(rename = "6")]
-    Variant6,
+    Variant1 = 1,
+    Variant2 = 2,
+    Variant3 = 3,
+    Variant4 = 4,
+    Variant5 = 5,
+    Variant6 = 6,
+}
+
+impl std::fmt::Display for StatusId {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
+            Self::Variant1 => "1",
+            Self::Variant2 => "2",
+            Self::Variant3 => "3",
+            Self::Variant4 => "4",
+            Self::Variant5 => "5",
+            Self::Variant6 => "6",
+        })
+    }
 }
 
 impl Default for StatusId {

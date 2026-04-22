@@ -1329,7 +1329,7 @@ pub async fn api_v3_dbs_orders_new_get(configuration: &configuration::Configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_cancel_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbsOrdersOrderIdCancelPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1364,7 +1364,7 @@ pub async fn api_v3_dbs_orders_order_id_cancel_patch(configuration: &configurati
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_confirm_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbsOrdersOrderIdConfirmPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1399,7 +1399,7 @@ pub async fn api_v3_dbs_orders_order_id_confirm_patch(configuration: &configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_deliver_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbsOrdersOrderIdDeliverPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1434,7 +1434,7 @@ pub async fn api_v3_dbs_orders_order_id_deliver_patch(configuration: &configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_delete(configuration: &configuration::Configuration, order_id: i64, key: Option<&str>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaDeleteError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1473,7 +1473,7 @@ pub async fn api_v3_dbs_orders_order_id_meta_delete(configuration: &configuratio
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_get(configuration: &configuration::Configuration, order_id: i64) -> Result<models::ApiV3DbsOrdersOrderIdMetaGet200Response, Error<ApiV3DbsOrdersOrderIdMetaGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1519,7 +1519,7 @@ pub async fn api_v3_dbs_orders_order_id_meta_get(configuration: &configuration::
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_gtin_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_gtin_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaGtinPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaGtinPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1556,7 +1556,7 @@ pub async fn api_v3_dbs_orders_order_id_meta_gtin_put(configuration: &configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_imei_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_imei_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaImeiPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaImeiPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1593,7 +1593,7 @@ pub async fn api_v3_dbs_orders_order_id_meta_imei_put(configuration: &configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_sgtin_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_sgtin_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaSgtinPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaSgtinPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1630,7 +1630,7 @@ pub async fn api_v3_dbs_orders_order_id_meta_sgtin_put(configuration: &configura
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_meta_uin_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbs_orders_order_id_meta_uin_put_request: Option<models::ApiV3DbsOrdersOrderIdMetaUinPutRequest>) -> Result<(), Error<ApiV3DbsOrdersOrderIdMetaUinPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1667,7 +1667,7 @@ pub async fn api_v3_dbs_orders_order_id_meta_uin_put(configuration: &configurati
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_receive_patch(configuration: &configuration::Configuration, order_id: i64, code: models::Code) -> Result<(), Error<ApiV3DbsOrdersOrderIdReceivePatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1704,7 +1704,7 @@ pub async fn api_v3_dbs_orders_order_id_receive_patch(configuration: &configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
+/// Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 #[deprecated]
 pub async fn api_v3_dbs_orders_order_id_reject_patch(configuration: &configuration::Configuration, order_id: i64, code: models::Code) -> Result<(), Error<ApiV3DbsOrdersOrderIdRejectPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions

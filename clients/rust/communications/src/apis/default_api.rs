@@ -294,7 +294,7 @@ pub enum ApiV1SellerMessagePostError {
 }
 
 
-/// Метод возвращает количество закреплённых и откреплённых отзывов за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает количество закреплённых и откреплённых отзывов за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_feedbacks_v1_pins_count_get(configuration: &configuration::Configuration, state: Option<&str>, pin_on: Option<&str>, imt_id: Option<i32>, nm_id: Option<i32>, feedback_id: Option<i32>, date_from: Option<chrono::DateTime<chrono::FixedOffset>>, date_to: Option<chrono::DateTime<chrono::FixedOffset>>) -> Result<models::ApiFeedbacksV1PinsCountGet200Response, Error<ApiFeedbacksV1PinsCountGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_state = state;
@@ -366,7 +366,7 @@ pub async fn api_feedbacks_v1_pins_count_get(configuration: &configuration::Conf
     }
 }
 
-/// Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_feedbacks_v1_pins_delete(configuration: &configuration::Configuration, request_body: Vec<i32>) -> Result<models::ApiFeedbacksV1PinsDelete200Response, Error<ApiFeedbacksV1PinsDeleteError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_request_body = request_body;
@@ -412,7 +412,7 @@ pub async fn api_feedbacks_v1_pins_delete(configuration: &configuration::Configu
     }
 }
 
-/// Метод предоставляет список закреплённых и откреплённых отзывов. <br> Откреплёнными считаются только отзывы, которые были откреплены автоматически по причинам, указанным в ответе в поле `unpinnedCause`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод предоставляет список закреплённых и откреплённых отзывов. <br> Откреплёнными считаются только отзывы, которые были откреплены автоматически по причинам, указанным в ответе в поле `unpinnedCause`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_feedbacks_v1_pins_get(configuration: &configuration::Configuration, state: Option<&str>, pin_on: Option<&str>, imt_id: Option<i32>, nm_id: Option<i32>, feedback_id: Option<i32>, date_from: Option<chrono::DateTime<chrono::FixedOffset>>, date_to: Option<chrono::DateTime<chrono::FixedOffset>>, next: Option<i32>, limit: Option<i32>) -> Result<models::ApiFeedbacksV1PinsGet200Response, Error<ApiFeedbacksV1PinsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_state = state;
@@ -492,7 +492,7 @@ pub async fn api_feedbacks_v1_pins_get(configuration: &configuration::Configurat
     }
 }
 
-/// Метод возвращает лимиты закреплённых отзывов по тарифу и подписке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает лимиты закреплённых отзывов по тарифу и подписке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_feedbacks_v1_pins_limits_get(configuration: &configuration::Configuration, ) -> Result<models::ApiFeedbacksV1PinsLimitsGet200Response, Error<ApiFeedbacksV1PinsLimitsGetError>> {
 
     let uri_str = format!("{}/api/feedbacks/v1/pins/limits", configuration.base_path);
@@ -535,7 +535,7 @@ pub async fn api_feedbacks_v1_pins_limits_get(configuration: &configuration::Con
     }
 }
 
-/// Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_feedbacks_v1_pins_post(configuration: &configuration::Configuration, openapi_pin_review_item: Vec<models::OpenapiPinReviewItem>) -> Result<models::ApiFeedbacksV1PinsPost200Response, Error<ApiFeedbacksV1PinsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_openapi_pin_review_item = openapi_pin_review_item;
@@ -678,7 +678,7 @@ pub async fn api_v1_claims_get(configuration: &configuration::Configuration, is_
     }
 }
 
-/// Метод возвращает данные [отзыва](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает данные [отзыва](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) по его ID.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedback_get(configuration: &configuration::Configuration, id: &str) -> Result<models::ApiV1FeedbackGet200Response, Error<ApiV1FeedbackGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -724,7 +724,7 @@ pub async fn api_v1_feedback_get(configuration: &configuration::Configuration, i
     }
 }
 
-/// Метод позволяет отредактировать уже отправленный [ответ на отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks~1answer/post) покупателя. <br><br> Отредактировать ответ можно только один раз в течение 60 дней c момента отправки.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод позволяет отредактировать уже отправленный [ответ на отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks~1answer/post) покупателя. <br><br> Отредактировать ответ можно только один раз в течение 60 дней c момента отправки.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedbacks_answer_patch(configuration: &configuration::Configuration, api_v1_feedbacks_answer_patch_request: Option<models::ApiV1FeedbacksAnswerPatchRequest>) -> Result<(), Error<ApiV1FeedbacksAnswerPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v1_feedbacks_answer_patch_request = api_v1_feedbacks_answer_patch_request;
@@ -759,7 +759,7 @@ pub async fn api_v1_feedbacks_answer_patch(configuration: &configuration::Config
     }
 }
 
-/// Метод позволяет ответить на [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) покупателя.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод позволяет ответить на [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) покупателя.  <div class=\"description_important\">   ID отзыва не валидируется. Если в запросе вы передали некорректный ID, вы не получите ошибку. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedbacks_answer_post(configuration: &configuration::Configuration, api_v1_feedbacks_answer_post_request: Option<models::ApiV1FeedbacksAnswerPostRequest>) -> Result<(), Error<ApiV1FeedbacksAnswerPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v1_feedbacks_answer_post_request = api_v1_feedbacks_answer_post_request;
@@ -794,7 +794,7 @@ pub async fn api_v1_feedbacks_answer_post(configuration: &configuration::Configu
     }
 }
 
-/// Метод возвращает список архивных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Отзыв становится архивным, если:   - на отзыв получен ответ   - на отзыв не получен ответ в течение 30 дней   - в отзыве нет текста и фото  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает список архивных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Отзыв становится архивным, если:   - на отзыв получен ответ   - на отзыв не получен ответ в течение 30 дней   - в отзыве нет текста и фото  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedbacks_archive_get(configuration: &configuration::Configuration, take: i32, skip: i32, nm_id: Option<i32>, order: Option<&str>) -> Result<models::ApiV1FeedbacksArchiveGet200Response, Error<ApiV1FeedbacksArchiveGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_take = take;
@@ -850,7 +850,7 @@ pub async fn api_v1_feedbacks_archive_get(configuration: &configuration::Configu
     }
 }
 
-/// Метод возвращает количество обработанных или необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает количество обработанных или необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedbacks_count_get(configuration: &configuration::Configuration, date_from: Option<i32>, date_to: Option<i32>, is_answered: Option<bool>) -> Result<models::ApiV1FeedbacksCountGet200Response, Error<ApiV1FeedbacksCountGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
@@ -906,7 +906,7 @@ pub async fn api_v1_feedbacks_count_get(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает:   - количество необработанных [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) за сегодня и за всё время  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedbacks_count_unanswered_get(configuration: &configuration::Configuration, ) -> Result<models::ApiV1FeedbacksCountUnansweredGet200Response, Error<ApiV1FeedbacksCountUnansweredGetError>> {
 
     let uri_str = format!("{}/api/v1/feedbacks/count-unanswered", configuration.base_path);
@@ -949,7 +949,7 @@ pub async fn api_v1_feedbacks_count_unanswered_get(configuration: &configuration
     }
 }
 
-/// Метод возвращает список отзывов по заданным фильтрам. Вы можете:   - получить данные обработанных и необработанных отзывов   - сортировать отзывы по дате   - настроить пагинацию и количество отзывов в ответе  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает список отзывов по заданным фильтрам. Вы можете:   - получить данные обработанных и необработанных отзывов   - сортировать отзывы по дате   - настроить пагинацию и количество отзывов в ответе  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedbacks_get(configuration: &configuration::Configuration, is_answered: bool, take: i32, skip: i32, nm_id: Option<i32>, order: Option<&str>, date_from: Option<i32>, date_to: Option<i32>) -> Result<models::ApiV1FeedbacksGet200Response, Error<ApiV1FeedbacksGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_is_answered = is_answered;
@@ -1015,7 +1015,7 @@ pub async fn api_v1_feedbacks_get(configuration: &configuration::Configuration, 
     }
 }
 
-/// Метод запрашивает возврат товара, по которому оставлен [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Возврат доступен для отзывов с полем `\"isAbleReturnProductOrders\": true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод запрашивает возврат товара, по которому оставлен [отзыв](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get). <br><br> Возврат доступен для отзывов с полем `\"isAbleReturnProductOrders\": true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_feedbacks_order_return_post(configuration: &configuration::Configuration, api_v1_feedbacks_order_return_post_request: models::ApiV1FeedbacksOrderReturnPostRequest) -> Result<models::ApiV1QuestionsPatch200Response, Error<ApiV1FeedbacksOrderReturnPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v1_feedbacks_order_return_post_request = api_v1_feedbacks_order_return_post_request;
@@ -1061,7 +1061,7 @@ pub async fn api_v1_feedbacks_order_return_post(configuration: &configuration::C
     }
 }
 
-/// Метод проверяет наличие непросмотренных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) от покупателей. Если у продавца есть непросмотренные вопросы или отзывы, возвращает `true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод проверяет наличие непросмотренных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и [отзывов](/openapi/user-communication#tag/Otzyvy/paths/~1api~1v1~1feedbacks/get) от покупателей. Если у продавца есть непросмотренные вопросы или отзывы, возвращает `true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_new_feedbacks_questions_get(configuration: &configuration::Configuration, ) -> Result<models::ApiV1NewFeedbacksQuestionsGet200Response, Error<ApiV1NewFeedbacksQuestionsGetError>> {
 
     let uri_str = format!("{}/api/v1/new-feedbacks-questions", configuration.base_path);
@@ -1104,7 +1104,7 @@ pub async fn api_v1_new_feedbacks_questions_get(configuration: &configuration::C
     }
 }
 
-/// Метод возвращает данные [вопроса](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) по его ID. Далее вы можете [работать с этим вопросом](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает данные [вопроса](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) по его ID. Далее вы можете [работать с этим вопросом](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_question_get(configuration: &configuration::Configuration, id: &str) -> Result<models::ApiV1QuestionGet200Response, Error<ApiV1QuestionGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_id = id;
@@ -1150,7 +1150,7 @@ pub async fn api_v1_question_get(configuration: &configuration::Configuration, i
     }
 }
 
-/// Метод возвращает количество отвеченных или неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает количество отвеченных или неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_questions_count_get(configuration: &configuration::Configuration, date_from: Option<i32>, date_to: Option<i32>, is_answered: Option<bool>) -> Result<models::ApiV1QuestionsCountGet200Response, Error<ApiV1QuestionsCountGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
@@ -1206,7 +1206,7 @@ pub async fn api_v1_questions_count_get(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает общее количество неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и количество неотвеченных вопросов за сегодня.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает общее количество неотвеченных [вопросов](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) и количество неотвеченных вопросов за сегодня.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_questions_count_unanswered_get(configuration: &configuration::Configuration, ) -> Result<models::ApiV1QuestionsCountUnansweredGet200Response, Error<ApiV1QuestionsCountUnansweredGetError>> {
 
     let uri_str = format!("{}/api/v1/questions/count-unanswered", configuration.base_path);
@@ -1249,7 +1249,7 @@ pub async fn api_v1_questions_count_unanswered_get(configuration: &configuration
     }
 }
 
-/// Метод возвращает список вопросов по заданным фильтрам. Вы можете:   - получить данные отвеченных и неотвеченных вопросов   - сортировать вопросы по дате   - настроить пагинацию и количество вопросов в ответе  <div class=\"description_important\">   Можно получить максимум 10 000 вопросов в одном ответе </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// Метод возвращает список вопросов по заданным фильтрам. Вы можете:   - получить данные отвеченных и неотвеченных вопросов   - сортировать вопросы по дате   - настроить пагинацию и количество вопросов в ответе  <div class=\"description_important\">   Можно получить максимум 10 000 вопросов в одном ответе </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_questions_get(configuration: &configuration::Configuration, is_answered: bool, take: i32, skip: i32, nm_id: Option<i32>, order: Option<&str>, date_from: Option<i32>, date_to: Option<i32>) -> Result<models::ApiV1QuestionsGet200Response, Error<ApiV1QuestionsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_is_answered = is_answered;
@@ -1315,7 +1315,7 @@ pub async fn api_v1_questions_get(configuration: &configuration::Configuration, 
     }
 }
 
-/// В зависимости от тела запроса, метод позволяет:   - отметить [вопрос](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) как просмотренный   - отклонить вопрос   - ответить на вопрос или отредактировать ответ  <div class=\"description_important\">   Отредактировать ответ на вопрос можно 1 раз в течение 60 дней после отправки ответа </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 3 запроса | 333 мс | 6 запросов |  </div> 
+/// В зависимости от тела запроса, метод позволяет:   - отметить [вопрос](/openapi/user-communication#tag/Voprosy/paths/~1api~1v1~1questions/get) как просмотренный   - отклонить вопрос   - ответить на вопрос или отредактировать ответ  <div class=\"description_important\">   Отредактировать ответ на вопрос можно 1 раз в течение 60 дней после отправки ответа </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Сервисный | 1 сек | 3 запроса | 333 мс | 6 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div> 
 pub async fn api_v1_questions_patch(configuration: &configuration::Configuration, api_v1_questions_patch_request: Option<models::ApiV1QuestionsPatchRequest>) -> Result<models::ApiV1QuestionsPatch200Response, Error<ApiV1QuestionsPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v1_questions_patch_request = api_v1_questions_patch_request;
@@ -1361,7 +1361,7 @@ pub async fn api_v1_questions_patch(configuration: &configuration::Configuration
     }
 }
 
-/// Метод возвращает список всех чатов продавца. По этим данным можно получить [события чатов](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1events/get) или [отправить сообщение покупателю](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
+/// Метод возвращает список всех чатов продавца. По этим данным можно получить [события чатов](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1events/get) или [отправить сообщение покупателю](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Сервисный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_v1_seller_chats_get(configuration: &configuration::Configuration, ) -> Result<models::ChatsResponse, Error<ApiV1SellerChatsGetError>> {
 
     let uri_str = format!("{}/api/v1/seller/chats", configuration.base_path);
@@ -1438,7 +1438,7 @@ pub async fn api_v1_seller_download_id_get(configuration: &configuration::Config
     }
 }
 
-/// Метод возвращает список событий всех [чатов с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  Чтобы получить все события:   1. Сделайте первый запрос без параметра `next`.   2. Повторяйте запрос со значением параметра `next` из ответа на предыдущий запрос, пока `totalEvents` не станет равным `0`. Это будет означать, что вы получили все события.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
+/// Метод возвращает список событий всех [чатов с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  Чтобы получить все события:   1. Сделайте первый запрос без параметра `next`.   2. Повторяйте запрос со значением параметра `next` из ответа на предыдущий запрос, пока `totalEvents` не станет равным `0`. Это будет означать, что вы получили все события.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Сервисный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_v1_seller_events_get(configuration: &configuration::Configuration, next: Option<i32>) -> Result<models::EventsResponse, Error<ApiV1SellerEventsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_next = next;
@@ -1486,7 +1486,7 @@ pub async fn api_v1_seller_events_get(configuration: &configuration::Configurati
     }
 }
 
-/// Метод отправляет сообщения в [чат с покупателем](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 10 запросов | 1 сек | 10 запросов | </div> 
+/// Метод отправляет сообщения в [чат с покупателем](/openapi/user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1chats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Сервисный | 10 сек | 10 запросов | 1 сек | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_v1_seller_message_post(configuration: &configuration::Configuration, reply_sign: &str, message: Option<&str>, file: Option<Vec<std::path::PathBuf>>) -> Result<models::MessageResponse, Error<ApiV1SellerMessagePostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_form_reply_sign = reply_sign;
