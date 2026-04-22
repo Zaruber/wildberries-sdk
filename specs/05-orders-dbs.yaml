@@ -1022,6 +1022,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/Order'
       responses:
@@ -1069,6 +1081,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/OrderDBS'
       responses:
@@ -1116,6 +1140,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/OrderDBS'
       responses:
@@ -1163,6 +1199,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       requestBody:
         required: true
         content:
@@ -1224,6 +1272,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
+        | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       requestBody:
         required: true
         content:
@@ -1789,6 +1849,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов |
+        | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов |
+        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/Order'
       responses:
@@ -1823,6 +1895,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов |
+        | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов |
+        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/Order'
         - name: key
@@ -1875,6 +1959,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/Order'
       requestBody:
@@ -1941,6 +2037,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/Order'
       requestBody:
@@ -2006,6 +2114,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/Order'
       requestBody:
@@ -2071,6 +2191,18 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
         - $ref: '#/components/parameters/Order'
       requestBody:

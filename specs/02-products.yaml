@@ -324,8 +324,8 @@ paths:
                         required:
                           type: boolean
                           description: |
-                            - `true` - характеристику необходимо обязательно указать в карточке товара
-                            - `false` - характеристику необязательно указывать
+                            - `true` — характеристику необходимо обязательно указать в карточке товара
+                            - `false` — характеристику необязательно указывать
                         unitName:
                           type: string
                           description: Единица измерения
@@ -349,6 +349,12 @@ paths:
                               -  `1` — массив строк
                               -  `4` — число (целое либо с десятичной дробью)
                               -  `0` — характеристика не используется
+                        hasFilter:
+                          type: boolean
+                          description: |
+                            Ключевая характеристика. Является ли характеристика значимой для покупателей:
+                              - `false` — нет
+                              - `true` — да
                   error:
                     type: boolean
                     description: Флаг наличия ошибки
@@ -370,6 +376,7 @@ paths:
                       maxCount: 0
                       popular: false
                       charcType: 4
+                      hasFilter: true
                   error: false
                   errorText: ''
                   additionalErrors: null
@@ -3902,10 +3909,11 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 6 сек | 10 запросов | 600 мс | 5 запросов |
-
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос |
         </div>
       requestBody:
         $ref: '#/components/requestBodies/SupplierTaskRequestClubDisc'
@@ -3983,10 +3991,11 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 6 сек | 10 запросов | 600 мс | 5 запросов |
-
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос |
         </div>
       parameters:
         - $ref: '#/components/parameters/uploadID'
@@ -4036,10 +4045,11 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 6 сек | 10 запросов | 600 мс | 5 запросов |
-
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос |
         </div>
       parameters:
         - $ref: '#/components/parameters/limit'
@@ -4091,10 +4101,11 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 6 сек | 10 запросов | 600 мс | 5 запросов |
-
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос |
         </div>
       parameters:
         - $ref: '#/components/parameters/uploadID'
@@ -4144,10 +4155,11 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 6 сек | 10 запросов | 600 мс | 5 запросов |
-
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос |
         </div>
       parameters:
         - $ref: '#/components/parameters/limit'
@@ -4315,10 +4327,11 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 6 сек | 10 запросов | 600 мс | 5 запросов |
-
+        | Тип | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- | --- |
+        | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов |
+        | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос |
         </div>
       parameters:
         - $ref: '#/components/parameters/limit'
@@ -4362,7 +4375,7 @@ paths:
       tags:
         - Цены и скидки
       summary: Получить товары в карантине
-      description: "Метод возвращает информацию о товарах в карантине.\n<br><br>\nЕсли новая цена товара со скидкой будет минимум в\_3 раза меньше старой, товар попадёт в\_[карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) и будет продаваться по\_старой цене. Ошибка об\_этом будет в\_ответах методов [состояний загрузок](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get).\n<br><br>\nВы можете изменить цену или скидку с помощью API либо вывести товар из\_карантина в\_[личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine).\n<br><br>\nДля товаров с [поразмерной установкой цен](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post) карантин не применяется.\n\n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:\n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 6 сек | 10 запросов | 600 мс | 5 запросов |\n\n</div>\n"
+      description: "Метод возвращает информацию о товарах в карантине.\n<br><br>\nЕсли новая цена товара со скидкой будет минимум в\_3 раза меньше старой, товар попадёт в\_[карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) и будет продаваться по\_старой цене. Ошибка об\_этом будет в\_ответах методов [состояний загрузок](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get).\n<br><br>\nВы можете изменить цену или скидку с помощью API либо вывести товар из\_карантина в\_[личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine).\n<br><br>\nДля товаров с [поразмерной установкой цен](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post) карантин не применяется.\n\n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:\n\n| Тип | Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- | --- |\n| Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |\n| Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов |\n| Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос |\n</div>\n"
       parameters:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/offset'
