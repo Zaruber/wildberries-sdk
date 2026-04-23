@@ -3572,9 +3572,9 @@ components:
                 incomeId: 18484008
                 nmID: 49434732
                 photoUrls:
-                  - https://static-basket-03.{{ .baseDomain }}/vol54/photo-fixation-violation-shk-excise/12345678900-1811460999-1.jpg
-                  - https://static-basket-03.{{ .baseDomain }}/vol54/photo-fixation-violation-shk-excise/12345678900-1811461000-2.jpg
-                  - https://static-basket-03.{{ .baseDomain }}/vol54/photo-fixation-violation-shk-excise/12345678900-1811461001-3.jpg
+                  - https://static-basket-03.wildberries.ru/vol54/photo-fixation-violation-shk-excise/12345678900-1811460999-1.jpg
+                  - https://static-basket-03.wildberries.ru/vol54/photo-fixation-violation-shk-excise/12345678900-1811461000-2.jpg
+                  - https://static-basket-03.wildberries.ru/vol54/photo-fixation-violation-shk-excise/12345678900-1811461001-3.jpg
                 shkID: 17346434621
                 sku: '4630153500834'
     SuccessBrandsResponse:

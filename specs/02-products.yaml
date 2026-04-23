@@ -2240,7 +2240,7 @@ paths:
                     description: Расшифровка HTTP статус-кода
               example:
                 title: request body too long
-                detail: https://openapi.{{ .baseDomain }}/content/api/ru/
+                detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
                 origin: s2s-api-auth-content
@@ -3243,7 +3243,7 @@ paths:
                     description: Расшифровка HTTP статус-кода
               example:
                 title: request body too long
-                detail: https://openapi.{{ .baseDomain }}/content/api/ru/
+                detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
                 origin: s2s-api-auth-content
@@ -3513,7 +3513,7 @@ paths:
                     description: Расшифровка HTTP статус-кода
               example:
                 title: request body too long
-                detail: https://openapi.{{ .baseDomain }}/content/api/ru/
+                detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
                 origin: s2s-api-auth-content
@@ -4644,6 +4644,7 @@ paths:
               properties:
                 chrtIds:
                   type: array
+                  maxItems: 1000
                   description: Массив ID размеров товаров
                   items:
                     type: integer
