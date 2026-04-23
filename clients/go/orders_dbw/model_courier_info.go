@@ -22,7 +22,7 @@ var _ MappedNullable = &CourierInfo{}
 type CourierInfo struct {
 	// Контактные данные курьера
 	Contacts NullableCourierContactsResponse `json:"contacts,omitempty"`
-	// Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да     Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2) 
+	// Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да    Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2) 
 	MustBeAssigned *bool `json:"mustBeAssigned,omitempty"`
 	// Дата и время обновления информации о курьере. <br> Если `null`, информация не обновлялась
 	UpdatedAt NullableTime `json:"updatedAt,omitempty"`

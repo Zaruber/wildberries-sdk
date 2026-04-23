@@ -2170,7 +2170,7 @@ paths:
             application/json:
               example:
                 title: request body too long
-                detail: "https://openapi.{{ .baseDomain }}/content/api/ru/"
+                detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
                 origin: s2s-api-auth-content
@@ -3021,7 +3021,7 @@ paths:
             application/json:
               example:
                 title: request body too long
-                detail: "https://openapi.{{ .baseDomain }}/content/api/ru/"
+                detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
                 origin: s2s-api-auth-content
@@ -3187,7 +3187,7 @@ paths:
             application/json:
               example:
                 title: request body too long
-                detail: "https://openapi.{{ .baseDomain }}/content/api/ru/"
+                detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
                 origin: s2s-api-auth-content
@@ -10395,6 +10395,7 @@ components:
           items:
             example: 12345678
             type: integer
+          maxItems: 1000
           type: array
       required:
       - chrtIds

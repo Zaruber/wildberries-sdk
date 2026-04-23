@@ -277,6 +277,10 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
         if ($this->container['chrt_ids'] === null) {
             $invalidProperties[] = "'chrt_ids' can't be null";
         }
+        if ((count($this->container['chrt_ids']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'chrt_ids', number of items must be less than or equal to 1000.";
+        }
+
         return $invalidProperties;
     }
 
@@ -313,6 +317,10 @@ class ApiV3StocksWarehouseIdPostRequest implements ModelInterface, ArrayAccess, 
     {
         if (is_null($chrt_ids)) {
             throw new \InvalidArgumentException('non-nullable chrt_ids cannot be null');
+        }
+
+        if ((count($chrt_ids) > 1000)) {
+            throw new \InvalidArgumentException('invalid value for $chrt_ids when calling ApiV3StocksWarehouseIdPostRequest., number of items must be less than or equal to 1000.');
         }
         $this->container['chrt_ids'] = $chrt_ids;
 

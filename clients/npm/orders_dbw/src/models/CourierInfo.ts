@@ -38,7 +38,6 @@ export interface CourierInfo {
      *   - `false` — нет
      *   - `true` — да
      * 
-     * 
      *   Если `"mustBeAssigned":true`, а `"contacts":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2)
      * 
      * @type {boolean}

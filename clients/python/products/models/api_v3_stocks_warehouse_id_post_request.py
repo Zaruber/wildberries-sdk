@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -27,7 +28,7 @@ class ApiV3StocksWarehouseIdPostRequest(BaseModel):
     """
     ApiV3StocksWarehouseIdPostRequest
     """ # noqa: E501
-    chrt_ids: List[StrictInt] = Field(description="Массив ID размеров товаров", alias="chrtIds")
+    chrt_ids: Annotated[List[StrictInt], Field(max_length=1000)] = Field(description="Массив ID размеров товаров", alias="chrtIds")
     __properties: ClassVar[List[str]] = ["chrtIds"]
 
     model_config = ConfigDict(

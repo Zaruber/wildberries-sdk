@@ -16,7 +16,7 @@ pub struct CourierInfo {
     /// Контактные данные курьера
     #[serde(rename = "contacts", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub contacts: Option<Option<Box<models::CourierContactsResponse>>>,
-    /// Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да     Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2) 
+    /// Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да    Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2) 
     #[serde(rename = "mustBeAssigned", skip_serializing_if = "Option::is_none")]
     pub must_be_assigned: Option<bool>,
     /// Дата и время обновления информации о курьере. <br> Если `null`, информация не обновлялась

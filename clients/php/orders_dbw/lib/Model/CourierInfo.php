@@ -350,7 +350,7 @@ class CourierInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets must_be_assigned
      *
-     * @param bool|null $must_be_assigned Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да     Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2)
+     * @param bool|null $must_be_assigned Должен ли быть назначен курьер к текущему моменту:   - `false` — нет   - `true` — да    Если `\"mustBeAssigned\":true`, а `\"contacts\":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2)
      *
      * @return self
      */
