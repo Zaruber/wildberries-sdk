@@ -36,7 +36,7 @@ resolve_spec_path() {
   local spec="$1"
 
   if [[ "${spec}" =~ ^https?:// ]]; then
-    echo "${SPECS_DIR}/$(basename "${spec}")"
+    echo "${SPECS_DIR}/$(basename "${spec%%\?*}")"
     return
   fi
 

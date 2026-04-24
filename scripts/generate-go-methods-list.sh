@@ -45,7 +45,7 @@ read_specs() {
 module_names=()
 while IFS= read -r spec; do
   [[ -z "${spec}" ]] && continue
-  base="$(basename "${spec}" .yaml)"
+  base="$(basename "${spec%%\?*}" .yaml)"
   base="${base#*-}"
   module="${base//-/_}"
   if [[ -d "${CLIENTS_DIR}/${module}" ]]; then

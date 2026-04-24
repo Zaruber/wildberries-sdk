@@ -973,7 +973,7 @@ fi
 inputs=()
 for spec in "${specs[@]}"; do
   if [[ "${spec}" =~ ^https?:// ]]; then
-    local_path="${ROOT_DIR}/specs/$(basename "${spec}")"
+    local_path="${ROOT_DIR}/specs/$(basename "${spec%%\?*}")"
     if [[ ! -f "${local_path}" ]]; then
       echo "Error: missing downloaded spec: ${local_path}" >&2
       exit 1
