@@ -1,0 +1,39 @@
+# Wildberries SDK
+
+> Multi-language SDK for the Wildberries marketplace API (Python, Node.js, Go, PHP, Rust), auto-generated from official OpenAPI specs and kept in sync via GitHub Actions.
+
+All five language clients share the same API surface because they are generated from the same YAML specs in `specs/`. Pick the client that matches your stack and the spec module that matches the area of the Wildberries API you need.
+
+## Language clients
+
+- [Python — docs/python/README.md](https://github.com/eslazarev/wildberries-sdk/blob/main/docs/python/README.md): install from [PyPI (`wildberries-sdk`)](https://pypi.org/project/wildberries-sdk/)
+- [Node.js / TypeScript — docs/npm/README.md](https://github.com/eslazarev/wildberries-sdk/blob/main/docs/npm/README.md): install from [npm (`wildberries-sdk`)](https://www.npmjs.com/package/wildberries-sdk)
+- [Go — docs/go/README.md](https://github.com/eslazarev/wildberries-sdk/blob/main/docs/go/README.md): `go get github.com/eslazarev/wildberries-sdk/clients/go/<module>`
+- [PHP — docs/php/README.md](https://github.com/eslazarev/wildberries-sdk/blob/main/docs/php/README.md): install from [Packagist (`eslazarev/wildberries-sdk`)](https://packagist.org/packages/eslazarev/wildberries-sdk)
+- [Rust — docs/rust/README.md](https://github.com/eslazarev/wildberries-sdk/blob/main/docs/rust/README.md): crates on [crates.io (`wildberries_sdk_*`)](https://crates.io/search?q=wildberries_sdk)
+
+## OpenAPI specs (source of truth)
+
+- [01-general.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/01-general.yaml) — auth, common primitives, rate limits
+- [02-products.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/02-products.yaml) — product catalog, media, characteristics
+- [03-orders-fbs.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/03-orders-fbs.yaml) — FBS (Fulfillment By Seller) orders
+- [04-orders-dbw.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/04-orders-dbw.yaml) — DBW (Delivery By Wildberries) orders
+- [05-orders-dbs.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/05-orders-dbs.yaml) — DBS (Delivery By Seller) orders
+- [06-in-store-pickup.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/06-in-store-pickup.yaml) — in-store pickup orders
+- [07-orders-fbw.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/07-orders-fbw.yaml) — FBW (Fulfillment By Wildberries) supplies
+- [08-promotion.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/08-promotion.yaml) — marketing, advertising, promotions
+- [09-communications.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/09-communications.yaml) — buyer communications, reviews, questions
+- [10-tariffs.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/10-tariffs.yaml) — logistics and commission tariffs
+- [11-analytics.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/11-analytics.yaml) — analytics reports
+- [12-reports.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/12-reports.yaml) — sales and stock reports
+- [13-finances.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/specs/13-finances.yaml) — finances, payments, returns
+
+## Project info
+
+- [README.md](https://github.com/eslazarev/wildberries-sdk/blob/main/README.md) — overview, install snippets, quickstart
+- [CHANGELOG.md](https://github.com/eslazarev/wildberries-sdk/blob/main/CHANGELOG.md) — per-release spec diff summaries
+- [Source repo](https://github.com/eslazarev/wildberries-sdk) — GitHub
+
+## Optional
+
+- [Generation config — generation.yaml](https://github.com/eslazarev/wildberries-sdk/blob/main/generation.yaml) — list of upstream specs and supported target languages

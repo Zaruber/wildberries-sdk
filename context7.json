@@ -1,0 +1,23 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Wildberries SDK",
+  "description": "Multi-language SDK for the Wildberries marketplace API (Python, Node.js, Go, PHP, Rust), auto-generated from the official OpenAPI specs and kept in sync via GitHub Actions.",
+  "folders": ["docs", "specs"],
+  "excludeFolders": [
+    "clients",
+    "dist",
+    "npm",
+    "src",
+    "scripts",
+    ".github"
+  ],
+  "excludeFiles": ["CHANGELOG.md"],
+  "rules": [
+    "This is a unified SDK — Python, Node.js, Go, PHP, and Rust clients expose the same operations derived from the same OpenAPI specs.",
+    "When answering code questions, pick the language subdirectory under docs/ that matches the user's stack: docs/python, docs/npm, docs/go, docs/php, docs/rust.",
+    "specs/*.yaml are the source of truth (Wildberries API). specs/01-general.yaml covers auth and common primitives; 02-products, 03–07 orders, 08 promotion, 09 communications, 10 tariffs, 11 analytics, 12 reports, 13 finances.",
+    "Clients are regenerated on every spec change — do not recommend hand-editing generated code under clients/; point users at the matching spec section instead.",
+    "Auth uses bearer tokens from the Wildberries seller portal (see specs/01-general.yaml)."
+  ],
+  "previousVersions": []
+}
