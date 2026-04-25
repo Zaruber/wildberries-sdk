@@ -489,7 +489,7 @@ paths:
         | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch)
         | `complete` | **В доставке** | [Передать поставку в доставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1deliver/patch) |
         | `cancel`   | **Отменено продавцом**   | [Отменить сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch)|
-        | `cancel_carrier`   | **Отменено перевозчиком** <br>Только для кроссбордера   | Переводится перевозчиком |
+        | `cancel_carrier`   | **Отменено перевозчиком** <br>Только для трансграничных поставок   | Переводится перевозчиком |
 
         <br><br>
         `wbStatus` — статус системы Wildberries.
@@ -505,7 +505,7 @@ paths:
         - `ready_for_pickup` — заказ прибыл на пункт выдачи заказов (ПВЗ)
         - `accepted_by_carrier` — продавец передал заказ в службу доставки в своей стране
         - `sent_to_carrier` — заказ отправлен на склад службы доставки в стране продавца
-        - `canceled_by_carrier` — заказ отменён перевозчиком. Только для кроссбордера
+        - `canceled_by_carrier` — заказ отменён перевозчиком. Только для трансграничных поставок
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -1488,9 +1488,9 @@ paths:
         - HeaderApiKey: []
       tags:
         - Сборочные задания FBS
-      summary: Получить стикеры сборочных заданий кроссбордера
+      summary: Получить стикеры сборочных заданий трансграничных поставок
       description: |
-        Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) кроссбордера в формате PDF.<br><br>
+        Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) трансграничных поставок в формате PDF.<br><br>
 
         Для каждого сборочного задания в ответе указывается статус генерации стикера:
           - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.
@@ -1628,9 +1628,9 @@ paths:
         - HeaderApiKey: []
       tags:
         - Сборочные задания FBS
-      summary: История статусов для сборочных заданий кроссбордера
+      summary: История статусов для сборочных заданий трансграничных поставок
       description: |
-        Метод возвращает историю [статусов](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) для [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) кроссбордера.
+        Метод возвращает историю [статусов](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) для [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) трансграничных поставок.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -1768,7 +1768,7 @@ paths:
       description: |
         Метод позволяет получать информацию о покупателе по ID сборочного задания.
 
-        Только для кроссбордера из **Турции**.
+        Только для трансграничных поставок из **Турции**.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -1968,7 +1968,7 @@ paths:
         В поставку нельзя добавить сборочные задания, поступившие на разные склады.
         </div>
         <div class="description_important">
-        В пустую поставку можно добавить сборочные задания любого типа: кроссбордер или не кроссбордер.
+        В пустую поставку можно добавить сборочные задания трансграничных или внутренних поставок.
         После этого поставка приобретает тип первого добавленного сборочного задания из поля <code>crossBorderType</code>.
         Далее в неё можно добавить только сборочные задания такого же типа.
         </div>
@@ -3147,8 +3147,8 @@ components:
         crossBorderType:
           description: |
             Тип сборочного задания:
-              - `0` — не кроссбордер
-              - `1` — кроссбордер
+              - `0` — внутренняя поставка
+              - `1` — трансграничная поставка
           enum:
             - 0
             - 1
@@ -3241,8 +3241,8 @@ components:
         crossBorderType:
           description: |
             Тип поставки:
-              - `0` — не кроссбордер
-              - `1` — кроссбордер
+              - `0` — внутренняя поставка
+              - `1` — трансграничная поставка
               - `null` — значение отсутствует
           enum:
             - 0
@@ -3459,8 +3459,8 @@ components:
         crossBorderType:
           description: |
             Тип сборочного задания:
-              - `0` — не кроссбордер
-              - `1` — кроссбордер
+              - `0` — внутренняя поставка
+              - `1` — трансграничная поставка
           enum:
             - 0
             - 1
@@ -3752,7 +3752,7 @@ components:
     CrossborderTurkeyClientInfoResp:
       properties:
         orders:
-          description: Информация по клиенту для кроссбордер-заказа из Турции
+          description: Информация по клиенту для трансграничных поставок из Турции
           items:
             $ref: '#/components/schemas/CrossborderTurkeyClientInfo'
           type: array
