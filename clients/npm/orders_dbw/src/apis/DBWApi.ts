@@ -12,66 +12,97 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
-import type {
-  ApiV3DbwOrdersGet200Response,
-  ApiV3DbwOrdersNewGet200Response,
-  ApiV3DbwOrdersNewGet401Response,
-  ApiV3DbwOrdersNewGet402Response,
-  ApiV3DbwOrdersOrderIdMetaGet200Response,
-  ApiV3DbwOrdersOrderIdMetaGtinPutRequest,
-  ApiV3DbwOrdersOrderIdMetaImeiPutRequest,
-  ApiV3DbwOrdersOrderIdMetaSgtinPutRequest,
-  ApiV3DbwOrdersOrderIdMetaUinPutRequest,
-  ApiV3DbwOrdersStatusPost200Response,
-  ApiV3DbwOrdersStatusPostRequest,
-  ApiV3DbwOrdersStickersPost200Response,
-  ApiV3DbwOrdersStickersPostRequest,
-  ClientInfoResp,
-  DeliveryDatesInfoResp,
-  DeliveryDatesRequest,
-  OrderCourierInfoResp,
-  OrdersRequestAPI,
-} from '../models/index';
 import {
+    type ApiV3DbwOrdersGet200Response,
     ApiV3DbwOrdersGet200ResponseFromJSON,
     ApiV3DbwOrdersGet200ResponseToJSON,
+} from '../models/ApiV3DbwOrdersGet200Response';
+import {
+    type ApiV3DbwOrdersNewGet200Response,
     ApiV3DbwOrdersNewGet200ResponseFromJSON,
     ApiV3DbwOrdersNewGet200ResponseToJSON,
+} from '../models/ApiV3DbwOrdersNewGet200Response';
+import {
+    type ApiV3DbwOrdersNewGet401Response,
     ApiV3DbwOrdersNewGet401ResponseFromJSON,
     ApiV3DbwOrdersNewGet401ResponseToJSON,
+} from '../models/ApiV3DbwOrdersNewGet401Response';
+import {
+    type ApiV3DbwOrdersNewGet402Response,
     ApiV3DbwOrdersNewGet402ResponseFromJSON,
     ApiV3DbwOrdersNewGet402ResponseToJSON,
+} from '../models/ApiV3DbwOrdersNewGet402Response';
+import {
+    type ApiV3DbwOrdersOrderIdMetaGet200Response,
     ApiV3DbwOrdersOrderIdMetaGet200ResponseFromJSON,
     ApiV3DbwOrdersOrderIdMetaGet200ResponseToJSON,
+} from '../models/ApiV3DbwOrdersOrderIdMetaGet200Response';
+import {
+    type ApiV3DbwOrdersOrderIdMetaGtinPutRequest,
     ApiV3DbwOrdersOrderIdMetaGtinPutRequestFromJSON,
     ApiV3DbwOrdersOrderIdMetaGtinPutRequestToJSON,
+} from '../models/ApiV3DbwOrdersOrderIdMetaGtinPutRequest';
+import {
+    type ApiV3DbwOrdersOrderIdMetaImeiPutRequest,
     ApiV3DbwOrdersOrderIdMetaImeiPutRequestFromJSON,
     ApiV3DbwOrdersOrderIdMetaImeiPutRequestToJSON,
+} from '../models/ApiV3DbwOrdersOrderIdMetaImeiPutRequest';
+import {
+    type ApiV3DbwOrdersOrderIdMetaSgtinPutRequest,
     ApiV3DbwOrdersOrderIdMetaSgtinPutRequestFromJSON,
     ApiV3DbwOrdersOrderIdMetaSgtinPutRequestToJSON,
+} from '../models/ApiV3DbwOrdersOrderIdMetaSgtinPutRequest';
+import {
+    type ApiV3DbwOrdersOrderIdMetaUinPutRequest,
     ApiV3DbwOrdersOrderIdMetaUinPutRequestFromJSON,
     ApiV3DbwOrdersOrderIdMetaUinPutRequestToJSON,
+} from '../models/ApiV3DbwOrdersOrderIdMetaUinPutRequest';
+import {
+    type ApiV3DbwOrdersStatusPost200Response,
     ApiV3DbwOrdersStatusPost200ResponseFromJSON,
     ApiV3DbwOrdersStatusPost200ResponseToJSON,
+} from '../models/ApiV3DbwOrdersStatusPost200Response';
+import {
+    type ApiV3DbwOrdersStatusPostRequest,
     ApiV3DbwOrdersStatusPostRequestFromJSON,
     ApiV3DbwOrdersStatusPostRequestToJSON,
+} from '../models/ApiV3DbwOrdersStatusPostRequest';
+import {
+    type ApiV3DbwOrdersStickersPost200Response,
     ApiV3DbwOrdersStickersPost200ResponseFromJSON,
     ApiV3DbwOrdersStickersPost200ResponseToJSON,
+} from '../models/ApiV3DbwOrdersStickersPost200Response';
+import {
+    type ApiV3DbwOrdersStickersPostRequest,
     ApiV3DbwOrdersStickersPostRequestFromJSON,
     ApiV3DbwOrdersStickersPostRequestToJSON,
+} from '../models/ApiV3DbwOrdersStickersPostRequest';
+import {
+    type ClientInfoResp,
     ClientInfoRespFromJSON,
     ClientInfoRespToJSON,
+} from '../models/ClientInfoResp';
+import {
+    type DeliveryDatesInfoResp,
     DeliveryDatesInfoRespFromJSON,
     DeliveryDatesInfoRespToJSON,
+} from '../models/DeliveryDatesInfoResp';
+import {
+    type DeliveryDatesRequest,
     DeliveryDatesRequestFromJSON,
     DeliveryDatesRequestToJSON,
+} from '../models/DeliveryDatesRequest';
+import {
+    type OrderCourierInfoResp,
     OrderCourierInfoRespFromJSON,
     OrderCourierInfoRespToJSON,
+} from '../models/OrderCourierInfoResp';
+import {
+    type OrdersRequestAPI,
     OrdersRequestAPIFromJSON,
     OrdersRequestAPIToJSON,
-} from '../models/index';
+} from '../models/OrdersRequestAPI';
 
 export interface ApiMarketplaceV3DbwOrdersClientPostRequest {
     ordersRequestAPI: OrdersRequestAPI;
@@ -520,7 +551,7 @@ export class DBWApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отменяет [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW) и переводит в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>управление сборочными заданиями</li> </ul>   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод отменяет [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW) и переводит в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>управление сборочными заданиями</li> </ul>    | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Отменить сборочное задание
      */
     async apiV3DbwOrdersOrderIdCancelPatchRaw(requestParameters: ApiV3DbwOrdersOrderIdCancelPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -531,7 +562,7 @@ export class DBWApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод отменяет [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW) и переводит в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>управление сборочными заданиями</li> </ul>   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод отменяет [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW) и переводит в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>управление сборочными заданиями</li> </ul>    | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Отменить сборочное задание
      */
     async apiV3DbwOrdersOrderIdCancelPatch(requestParameters: ApiV3DbwOrdersOrderIdCancelPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {

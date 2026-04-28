@@ -12,117 +12,142 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
-import type {
-  ApiB2bClientInfoResponses,
-  ApiBatchError,
-  ApiError,
-  ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest,
-  ApiMarketplaceV3DbsOrdersStatusReceivePost200Response,
-  ApiMarketplaceV3DbsOrdersStickersPost200Response,
-  ApiMarketplaceV3DbsOrdersStickersPostRequest,
-  ApiOrderGroupInner,
-  ApiOrderGroupsRequest,
-  ApiOrderStatusesV2,
-  ApiOrdersCodeRequest,
-  ApiOrdersGTINSetRequest,
-  ApiOrdersIMEISetRequest,
-  ApiOrdersMetaDeleteRequest,
-  ApiOrdersMetaResponse,
-  ApiOrdersRequestV2,
-  ApiOrdersSGTINsSetRequest,
-  ApiOrdersUINSetRequest,
-  ApiStatusSetResponses,
-  ApiV3DbsOrdersGet200Response,
-  ApiV3DbsOrdersNewGet200Response,
-  ApiV3DbsOrdersNewGet401Response,
-  ApiV3DbsOrdersNewGet402Response,
-  ApiV3DbsOrdersOrderIdMetaGet200Response,
-  ApiV3DbsOrdersOrderIdMetaGtinPutRequest,
-  ApiV3DbsOrdersOrderIdMetaImeiPutRequest,
-  ApiV3DbsOrdersOrderIdMetaSgtinPutRequest,
-  ApiV3DbsOrdersOrderIdMetaUinPutRequest,
-  ApiV3DbsOrdersStatusPost200Response,
-  ApiV3DbsOrdersStatusPostRequest,
-  Code,
-  DbsOnlyClientInfoResp,
-  DeliveryDatesInfoResp,
-  DeliveryDatesRequest,
-  OrdersRequestAPI,
-} from '../models/index';
 import {
+    type ApiB2bClientInfoResponses,
     ApiB2bClientInfoResponsesFromJSON,
     ApiB2bClientInfoResponsesToJSON,
+} from '../models/ApiB2bClientInfoResponses';
+import {
+    type ApiBatchError,
     ApiBatchErrorFromJSON,
     ApiBatchErrorToJSON,
+} from '../models/ApiBatchError';
+import {
+    type ApiError,
     ApiErrorFromJSON,
     ApiErrorToJSON,
+} from '../models/ApiError';
+import {
+    type ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest,
     ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequestFromJSON,
     ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequestToJSON,
+} from '../models/ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest';
+import {
+    type ApiMarketplaceV3DbsOrdersStatusReceivePost200Response,
     ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseFromJSON,
     ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseToJSON,
+} from '../models/ApiMarketplaceV3DbsOrdersStatusReceivePost200Response';
+import {
+    type ApiMarketplaceV3DbsOrdersStickersPost200Response,
     ApiMarketplaceV3DbsOrdersStickersPost200ResponseFromJSON,
     ApiMarketplaceV3DbsOrdersStickersPost200ResponseToJSON,
+} from '../models/ApiMarketplaceV3DbsOrdersStickersPost200Response';
+import {
+    type ApiMarketplaceV3DbsOrdersStickersPostRequest,
     ApiMarketplaceV3DbsOrdersStickersPostRequestFromJSON,
     ApiMarketplaceV3DbsOrdersStickersPostRequestToJSON,
+} from '../models/ApiMarketplaceV3DbsOrdersStickersPostRequest';
+import {
+    type ApiOrderGroupInner,
     ApiOrderGroupInnerFromJSON,
     ApiOrderGroupInnerToJSON,
+} from '../models/ApiOrderGroupInner';
+import {
+    type ApiOrderGroupsRequest,
     ApiOrderGroupsRequestFromJSON,
     ApiOrderGroupsRequestToJSON,
+} from '../models/ApiOrderGroupsRequest';
+import {
+    type ApiOrderStatusesV2,
     ApiOrderStatusesV2FromJSON,
     ApiOrderStatusesV2ToJSON,
+} from '../models/ApiOrderStatusesV2';
+import {
+    type ApiOrdersCodeRequest,
     ApiOrdersCodeRequestFromJSON,
     ApiOrdersCodeRequestToJSON,
+} from '../models/ApiOrdersCodeRequest';
+import {
+    type ApiOrdersGTINSetRequest,
     ApiOrdersGTINSetRequestFromJSON,
     ApiOrdersGTINSetRequestToJSON,
+} from '../models/ApiOrdersGTINSetRequest';
+import {
+    type ApiOrdersIMEISetRequest,
     ApiOrdersIMEISetRequestFromJSON,
     ApiOrdersIMEISetRequestToJSON,
+} from '../models/ApiOrdersIMEISetRequest';
+import {
+    type ApiOrdersMetaDeleteRequest,
     ApiOrdersMetaDeleteRequestFromJSON,
     ApiOrdersMetaDeleteRequestToJSON,
+} from '../models/ApiOrdersMetaDeleteRequest';
+import {
+    type ApiOrdersMetaResponse,
     ApiOrdersMetaResponseFromJSON,
     ApiOrdersMetaResponseToJSON,
+} from '../models/ApiOrdersMetaResponse';
+import {
+    type ApiOrdersRequestV2,
     ApiOrdersRequestV2FromJSON,
     ApiOrdersRequestV2ToJSON,
+} from '../models/ApiOrdersRequestV2';
+import {
+    type ApiOrdersSGTINsSetRequest,
     ApiOrdersSGTINsSetRequestFromJSON,
     ApiOrdersSGTINsSetRequestToJSON,
+} from '../models/ApiOrdersSGTINsSetRequest';
+import {
+    type ApiOrdersUINSetRequest,
     ApiOrdersUINSetRequestFromJSON,
     ApiOrdersUINSetRequestToJSON,
+} from '../models/ApiOrdersUINSetRequest';
+import {
+    type ApiStatusSetResponses,
     ApiStatusSetResponsesFromJSON,
     ApiStatusSetResponsesToJSON,
+} from '../models/ApiStatusSetResponses';
+import {
+    type ApiV3DbsOrdersGet200Response,
     ApiV3DbsOrdersGet200ResponseFromJSON,
     ApiV3DbsOrdersGet200ResponseToJSON,
+} from '../models/ApiV3DbsOrdersGet200Response';
+import {
+    type ApiV3DbsOrdersNewGet200Response,
     ApiV3DbsOrdersNewGet200ResponseFromJSON,
     ApiV3DbsOrdersNewGet200ResponseToJSON,
+} from '../models/ApiV3DbsOrdersNewGet200Response';
+import {
+    type ApiV3DbsOrdersNewGet401Response,
     ApiV3DbsOrdersNewGet401ResponseFromJSON,
     ApiV3DbsOrdersNewGet401ResponseToJSON,
+} from '../models/ApiV3DbsOrdersNewGet401Response';
+import {
+    type ApiV3DbsOrdersNewGet402Response,
     ApiV3DbsOrdersNewGet402ResponseFromJSON,
     ApiV3DbsOrdersNewGet402ResponseToJSON,
-    ApiV3DbsOrdersOrderIdMetaGet200ResponseFromJSON,
-    ApiV3DbsOrdersOrderIdMetaGet200ResponseToJSON,
-    ApiV3DbsOrdersOrderIdMetaGtinPutRequestFromJSON,
-    ApiV3DbsOrdersOrderIdMetaGtinPutRequestToJSON,
-    ApiV3DbsOrdersOrderIdMetaImeiPutRequestFromJSON,
-    ApiV3DbsOrdersOrderIdMetaImeiPutRequestToJSON,
-    ApiV3DbsOrdersOrderIdMetaSgtinPutRequestFromJSON,
-    ApiV3DbsOrdersOrderIdMetaSgtinPutRequestToJSON,
-    ApiV3DbsOrdersOrderIdMetaUinPutRequestFromJSON,
-    ApiV3DbsOrdersOrderIdMetaUinPutRequestToJSON,
-    ApiV3DbsOrdersStatusPost200ResponseFromJSON,
-    ApiV3DbsOrdersStatusPost200ResponseToJSON,
-    ApiV3DbsOrdersStatusPostRequestFromJSON,
-    ApiV3DbsOrdersStatusPostRequestToJSON,
-    CodeFromJSON,
-    CodeToJSON,
+} from '../models/ApiV3DbsOrdersNewGet402Response';
+import {
+    type DbsOnlyClientInfoResp,
     DbsOnlyClientInfoRespFromJSON,
     DbsOnlyClientInfoRespToJSON,
+} from '../models/DbsOnlyClientInfoResp';
+import {
+    type DeliveryDatesInfoResp,
     DeliveryDatesInfoRespFromJSON,
     DeliveryDatesInfoRespToJSON,
+} from '../models/DeliveryDatesInfoResp';
+import {
+    type DeliveryDatesRequest,
     DeliveryDatesRequestFromJSON,
     DeliveryDatesRequestToJSON,
+} from '../models/DeliveryDatesRequest';
+import {
+    type OrdersRequestAPI,
     OrdersRequestAPIFromJSON,
     OrdersRequestAPIToJSON,
-} from '../models/index';
+} from '../models/OrdersRequestAPI';
 
 export interface ApiMarketplaceV3DbsOrdersB2bInfoPostRequest {
     apiOrdersRequestV2: ApiOrdersRequestV2;
@@ -204,61 +229,6 @@ export interface ApiV3DbsOrdersGetRequest {
     next: number;
     dateFrom: number;
     dateTo: number;
-}
-
-export interface ApiV3DbsOrdersOrderIdCancelPatchRequest {
-    orderId: number;
-}
-
-export interface ApiV3DbsOrdersOrderIdConfirmPatchRequest {
-    orderId: number;
-}
-
-export interface ApiV3DbsOrdersOrderIdDeliverPatchRequest {
-    orderId: number;
-}
-
-export interface ApiV3DbsOrdersOrderIdMetaDeleteRequest {
-    orderId: number;
-    key?: string;
-}
-
-export interface ApiV3DbsOrdersOrderIdMetaGetRequest {
-    orderId: number;
-}
-
-export interface ApiV3DbsOrdersOrderIdMetaGtinPutOperationRequest {
-    orderId: number;
-    apiV3DbsOrdersOrderIdMetaGtinPutRequest?: ApiV3DbsOrdersOrderIdMetaGtinPutRequest;
-}
-
-export interface ApiV3DbsOrdersOrderIdMetaImeiPutOperationRequest {
-    orderId: number;
-    apiV3DbsOrdersOrderIdMetaImeiPutRequest?: ApiV3DbsOrdersOrderIdMetaImeiPutRequest;
-}
-
-export interface ApiV3DbsOrdersOrderIdMetaSgtinPutOperationRequest {
-    orderId: number;
-    apiV3DbsOrdersOrderIdMetaSgtinPutRequest?: ApiV3DbsOrdersOrderIdMetaSgtinPutRequest;
-}
-
-export interface ApiV3DbsOrdersOrderIdMetaUinPutOperationRequest {
-    orderId: number;
-    apiV3DbsOrdersOrderIdMetaUinPutRequest?: ApiV3DbsOrdersOrderIdMetaUinPutRequest;
-}
-
-export interface ApiV3DbsOrdersOrderIdReceivePatchRequest {
-    orderId: number;
-    code: Code;
-}
-
-export interface ApiV3DbsOrdersOrderIdRejectPatchRequest {
-    orderId: number;
-    code: Code;
-}
-
-export interface ApiV3DbsOrdersStatusPostOperationRequest {
-    apiV3DbsOrdersStatusPostRequest?: ApiV3DbsOrdersStatusPostRequest;
 }
 
 /**
@@ -575,7 +545,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Сервисный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Сервисный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить коды маркировки за сборочными заданиями
      */
     async apiMarketplaceV3DbsOrdersMetaSgtinPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaSgtinPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
@@ -586,7 +556,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Сервисный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Сервисный | 1 мин | 500 запросов | 120 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить коды маркировки за сборочными заданиями
      */
     async apiMarketplaceV3DbsOrdersMetaSgtinPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaSgtinPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
@@ -1281,675 +1251,6 @@ export class DBSApi extends runtime.BaseAPI {
      */
     async apiV3DbsOrdersNewGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3DbsOrdersNewGet200Response> {
         const response = await this.apiV3DbsOrdersNewGetRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdCancelPatch without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdCancelPatchRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdCancelPatchRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdCancelPatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/cancel`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Отменить сборочное задание
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdCancelPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdCancelPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdCancelPatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Отменить сборочное задание
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdCancelPatch(requestParameters: ApiV3DbsOrdersOrderIdCancelPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdCancelPatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdConfirmPatch without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdConfirmPatchRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdConfirmPatchRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdConfirmPatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/confirm`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Перевести на сборку
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdConfirmPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdConfirmPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdConfirmPatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Перевести на сборку
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdConfirmPatch(requestParameters: ApiV3DbsOrdersOrderIdConfirmPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdConfirmPatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdDeliverPatch without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdDeliverPatchRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdDeliverPatchRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdDeliverPatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/deliver`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Перевести в доставку
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdDeliverPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdDeliverPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdDeliverPatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Перевести в доставку
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdDeliverPatch(requestParameters: ApiV3DbsOrdersOrderIdDeliverPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdDeliverPatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdMetaDelete without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaDeleteRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdMetaDeleteRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdMetaDelete().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['key'] != null) {
-            queryParameters['key'] = requestParameters['key'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/meta`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Удалить метаданные сборочного задания
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaDeleteRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdMetaDeleteRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Удалить метаданные сборочного задания
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaDelete(requestParameters: ApiV3DbsOrdersOrderIdMetaDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdMetaDeleteRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdMetaGet without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaGetRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdMetaGetRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdMetaGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/meta`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Получить метаданные сборочного задания
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaGetRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3DbsOrdersOrderIdMetaGet200Response>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdMetaGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV3DbsOrdersOrderIdMetaGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Получить метаданные сборочного задания
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaGet(requestParameters: ApiV3DbsOrdersOrderIdMetaGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3DbsOrdersOrderIdMetaGet200Response> {
-        const response = await this.apiV3DbsOrdersOrderIdMetaGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdMetaGtinPut without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaGtinPutRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdMetaGtinPutOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdMetaGtinPut().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/meta/gtin`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ApiV3DbsOrdersOrderIdMetaGtinPutRequestToJSON(requestParameters['apiV3DbsOrdersOrderIdMetaGtinPutRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием GTIN
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaGtinPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaGtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdMetaGtinPutRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием GTIN
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaGtinPut(requestParameters: ApiV3DbsOrdersOrderIdMetaGtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdMetaGtinPutRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdMetaImeiPut without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaImeiPutRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdMetaImeiPutOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdMetaImeiPut().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/meta/imei`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ApiV3DbsOrdersOrderIdMetaImeiPutRequestToJSON(requestParameters['apiV3DbsOrdersOrderIdMetaImeiPutRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием IMEI
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaImeiPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaImeiPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdMetaImeiPutRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием IMEI
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaImeiPut(requestParameters: ApiV3DbsOrdersOrderIdMetaImeiPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdMetaImeiPutRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdMetaSgtinPut without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaSgtinPutRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdMetaSgtinPutOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdMetaSgtinPut().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/meta/sgtin`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ApiV3DbsOrdersOrderIdMetaSgtinPutRequestToJSON(requestParameters['apiV3DbsOrdersOrderIdMetaSgtinPutRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием код маркировки товара
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaSgtinPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaSgtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdMetaSgtinPutRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием код маркировки товара
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaSgtinPut(requestParameters: ApiV3DbsOrdersOrderIdMetaSgtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdMetaSgtinPutRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdMetaUinPut without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaUinPutRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdMetaUinPutOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdMetaUinPut().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/meta/uin`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ApiV3DbsOrdersOrderIdMetaUinPutRequestToJSON(requestParameters['apiV3DbsOrdersOrderIdMetaUinPutRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaUinPutRaw(requestParameters: ApiV3DbsOrdersOrderIdMetaUinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdMetaUinPutRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdMetaUinPut(requestParameters: ApiV3DbsOrdersOrderIdMetaUinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdMetaUinPutRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdReceivePatch without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdReceivePatchRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdReceivePatchRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdReceivePatch().'
-            );
-        }
-
-        if (requestParameters['code'] == null) {
-            throw new runtime.RequiredError(
-                'code',
-                'Required parameter "code" was null or undefined when calling apiV3DbsOrdersOrderIdReceivePatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/receive`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CodeToJSON(requestParameters['code']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Сообщить, что заказ принят покупателем
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdReceivePatchRaw(requestParameters: ApiV3DbsOrdersOrderIdReceivePatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdReceivePatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Сообщить, что заказ принят покупателем
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdReceivePatch(requestParameters: ApiV3DbsOrdersOrderIdReceivePatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdReceivePatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersOrderIdRejectPatch without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdRejectPatchRequestOpts(requestParameters: ApiV3DbsOrdersOrderIdRejectPatchRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbsOrdersOrderIdRejectPatch().'
-            );
-        }
-
-        if (requestParameters['code'] == null) {
-            throw new runtime.RequiredError(
-                'code',
-                'Required parameter "code" was null or undefined when calling apiV3DbsOrdersOrderIdRejectPatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/{orderId}/reject`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CodeToJSON(requestParameters['code']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Сообщить, что покупатель отказался от заказа
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdRejectPatchRaw(requestParameters: ApiV3DbsOrdersOrderIdRejectPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbsOrdersOrderIdRejectPatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Сообщить, что покупатель отказался от заказа
-     * @deprecated
-     */
-    async apiV3DbsOrdersOrderIdRejectPatch(requestParameters: ApiV3DbsOrdersOrderIdRejectPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbsOrdersOrderIdRejectPatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbsOrdersStatusPost without sending the request
-     * @deprecated
-     */
-    async apiV3DbsOrdersStatusPostRequestOpts(requestParameters: ApiV3DbsOrdersStatusPostOperationRequest): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbs/orders/status`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ApiV3DbsOrdersStatusPostRequestToJSON(requestParameters['apiV3DbsOrdersStatusPostRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
-     * Получить статусы сборочных заданий
-     * @deprecated
-     */
-    async apiV3DbsOrdersStatusPostRaw(requestParameters: ApiV3DbsOrdersStatusPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3DbsOrdersStatusPost200Response>> {
-        const requestOptions = await this.apiV3DbsOrdersStatusPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV3DbsOrdersStatusPost200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [13 апреля](https://dev.wildberries.ru/release-notes?id=378) 
-     * Получить статусы сборочных заданий
-     * @deprecated
-     */
-    async apiV3DbsOrdersStatusPost(requestParameters: ApiV3DbsOrdersStatusPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3DbsOrdersStatusPost200Response> {
-        const response = await this.apiV3DbsOrdersStatusPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

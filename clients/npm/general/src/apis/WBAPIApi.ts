@@ -12,18 +12,17 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
-import type {
-  PingGet200Response,
-  PingGet401Response,
-} from '../models/index';
 import {
+    type PingGet200Response,
     PingGet200ResponseFromJSON,
     PingGet200ResponseToJSON,
+} from '../models/PingGet200Response';
+import {
+    type PingGet401Response,
     PingGet401ResponseFromJSON,
     PingGet401ResponseToJSON,
-} from '../models/index';
+} from '../models/PingGet401Response';
 
 /**
  * 

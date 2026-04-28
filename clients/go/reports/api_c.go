@@ -61,6 +61,7 @@ ApiV1AnalyticsExciseReportPost Получить отчёт
 <div class="description_limit">
 <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
 
+
 | Тип | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- | --- |
 | Персональный | 5 ч | 10 запросов | 30 мин | 10 запросов |

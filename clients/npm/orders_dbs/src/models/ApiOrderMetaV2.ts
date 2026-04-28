@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { MetaCustomsDeclaration } from './MetaCustomsDeclaration';
+import type { ApiOrderMetaV2CustomsDeclaration } from './ApiOrderMetaV2CustomsDeclaration';
 import {
-    MetaCustomsDeclarationFromJSON,
-    MetaCustomsDeclarationFromJSONTyped,
-    MetaCustomsDeclarationToJSON,
-    MetaCustomsDeclarationToJSONTyped,
-} from './MetaCustomsDeclaration';
+    ApiOrderMetaV2CustomsDeclarationFromJSON,
+    ApiOrderMetaV2CustomsDeclarationFromJSONTyped,
+    ApiOrderMetaV2CustomsDeclarationToJSON,
+    ApiOrderMetaV2CustomsDeclarationToJSONTyped,
+} from './ApiOrderMetaV2CustomsDeclaration';
 
 /**
  * 
@@ -67,10 +67,10 @@ export interface ApiOrderMetaV2 {
     uin?: string;
     /**
      * 
-     * @type {MetaCustomsDeclaration}
+     * @type {ApiOrderMetaV2CustomsDeclaration}
      * @memberof ApiOrderMetaV2
      */
-    customsDeclaration?: MetaCustomsDeclaration;
+    customsDeclaration?: ApiOrderMetaV2CustomsDeclaration;
 }
 
 /**
@@ -96,7 +96,7 @@ export function ApiOrderMetaV2FromJSONTyped(json: any, ignoreDiscriminator: bool
         'orderId': json['orderId'] == null ? undefined : json['orderId'],
         'sgtin': json['sgtin'] == null ? undefined : json['sgtin'],
         'uin': json['uin'] == null ? undefined : json['uin'],
-        'customsDeclaration': json['customsDeclaration'] == null ? undefined : MetaCustomsDeclarationFromJSON(json['customsDeclaration']),
+        'customsDeclaration': json['customsDeclaration'] == null ? undefined : ApiOrderMetaV2CustomsDeclarationFromJSON(json['customsDeclaration']),
     };
 }
 
@@ -117,7 +117,7 @@ export function ApiOrderMetaV2ToJSONTyped(value?: ApiOrderMetaV2 | null, ignoreD
         'orderId': value['orderId'],
         'sgtin': value['sgtin'],
         'uin': value['uin'],
-        'customsDeclaration': MetaCustomsDeclarationToJSON(value['customsDeclaration']),
+        'customsDeclaration': ApiOrderMetaV2CustomsDeclarationToJSON(value['customsDeclaration']),
     };
 }
 

@@ -1016,6 +1016,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов |
@@ -2460,6 +2461,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 3 запроса | 20 сек | 5 запросов |
@@ -3064,6 +3066,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -3813,6 +3816,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
@@ -3947,6 +3951,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
@@ -4039,6 +4044,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -4156,6 +4162,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
@@ -4248,6 +4255,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -4588,6 +4596,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов |
@@ -4715,6 +4724,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -8171,8 +8181,14 @@ components:
         hasFilter:
           description: |
             Ключевая характеристика. Является ли характеристика значимой для покупателей:
-              - `false` — нет
               - `true` — да
+              - `false` — нет
+          type: boolean
+        isVariable:
+          description: |
+            Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:
+              -  `true` — варианты товара могут отличаться по этой характеристике
+              -  `false` — варианты товара не могут отличаться по этой характеристике
           type: boolean
       type: object
     _content_v2_object_charcs__subjectId__get_200_response:
@@ -8188,6 +8204,7 @@ components:
           popular: false
           charcType: 4
           hasFilter: true
+          isVariable: true
         error: false
         errorText: ""
         additionalErrors: null

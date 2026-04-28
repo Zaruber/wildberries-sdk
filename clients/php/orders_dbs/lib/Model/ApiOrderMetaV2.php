@@ -63,7 +63,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_id' => 'int',
         'sgtin' => 'string[]',
         'uin' => 'string',
-        'customs_declaration' => '\Wildberries\Sdk\OrdersDbs\Model\MetaCustomsDeclaration'
+        'customs_declaration' => '\Wildberries\Sdk\OrdersDbs\Model\ApiOrderMetaV2CustomsDeclaration'
     ];
 
     /**
@@ -496,7 +496,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets customs_declaration
      *
-     * @return \Wildberries\Sdk\OrdersDbs\Model\MetaCustomsDeclaration|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiOrderMetaV2CustomsDeclaration|null
      */
     public function getCustomsDeclaration()
     {
@@ -506,7 +506,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customs_declaration
      *
-     * @param \Wildberries\Sdk\OrdersDbs\Model\MetaCustomsDeclaration|null $customs_declaration customs_declaration
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiOrderMetaV2CustomsDeclaration|null $customs_declaration customs_declaration
      *
      * @return self
      */

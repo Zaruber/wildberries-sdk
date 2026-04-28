@@ -12,42 +12,57 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
-import type {
-  ApiV1SellerInfoGet200Response,
-  ApiV1SellerInfoGet402Response,
-  CreateInviteRequest,
-  CreateInviteResponse,
-  ErrorResponse,
-  GetUsersResponse,
-  PingGet401Response,
-  SubscriptionsJamInfo,
-  SupplierRatingModel,
-  UpdateUserAccessRequest,
-} from '../models/index';
 import {
+    type ApiV1SellerInfoGet200Response,
     ApiV1SellerInfoGet200ResponseFromJSON,
     ApiV1SellerInfoGet200ResponseToJSON,
+} from '../models/ApiV1SellerInfoGet200Response';
+import {
+    type ApiV1SellerInfoGet402Response,
     ApiV1SellerInfoGet402ResponseFromJSON,
     ApiV1SellerInfoGet402ResponseToJSON,
+} from '../models/ApiV1SellerInfoGet402Response';
+import {
+    type CreateInviteRequest,
     CreateInviteRequestFromJSON,
     CreateInviteRequestToJSON,
+} from '../models/CreateInviteRequest';
+import {
+    type CreateInviteResponse,
     CreateInviteResponseFromJSON,
     CreateInviteResponseToJSON,
+} from '../models/CreateInviteResponse';
+import {
+    type ErrorResponse,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+} from '../models/ErrorResponse';
+import {
+    type GetUsersResponse,
     GetUsersResponseFromJSON,
     GetUsersResponseToJSON,
+} from '../models/GetUsersResponse';
+import {
+    type PingGet401Response,
     PingGet401ResponseFromJSON,
     PingGet401ResponseToJSON,
+} from '../models/PingGet401Response';
+import {
+    type SubscriptionsJamInfo,
     SubscriptionsJamInfoFromJSON,
     SubscriptionsJamInfoToJSON,
+} from '../models/SubscriptionsJamInfo';
+import {
+    type SupplierRatingModel,
     SupplierRatingModelFromJSON,
     SupplierRatingModelToJSON,
+} from '../models/SupplierRatingModel';
+import {
+    type UpdateUserAccessRequest,
     UpdateUserAccessRequestFromJSON,
     UpdateUserAccessRequestToJSON,
-} from '../models/index';
+} from '../models/UpdateUserAccessRequest';
 
 export interface ApiV1InvitePostRequest {
     createInviteRequest: CreateInviteRequest;
@@ -149,7 +164,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
+     * <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
      * Получить информацию о продавце
      */
     async apiV1SellerInfoGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1SellerInfoGet200Response>> {
@@ -160,7 +175,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
+     * <div class=\"description_auth\">   Информацию о продавце можно получить с <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токеном</a> любой категории </div>  Метод позволяет получать наименование продавца и ID его профиля.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов | | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос | </div> 
      * Получить информацию о продавце
      */
     async apiV1SellerInfoGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1SellerInfoGet200Response> {

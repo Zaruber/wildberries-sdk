@@ -37,8 +37,10 @@ type ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner struct {
 	Popular *bool `json:"popular,omitempty"`
 	// Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число (целое либо с десятичной дробью)   -  `0` — характеристика не используется 
 	CharcType *int32 `json:"charcType,omitempty"`
-	// Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `false` — нет   - `true` — да 
+	// Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `true` — да   - `false` — нет 
 	HasFilter *bool `json:"hasFilter,omitempty"`
+	// Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:   -  `true` — варианты товара могут отличаться по этой характеристике   -  `false` — варианты товара не могут отличаться по этой характеристике 
+	IsVariable *bool `json:"isVariable,omitempty"`
 }
 
 // NewContentV2ObjectCharcsSubjectIdGet200ResponseDataInner instantiates a new ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner object
@@ -378,6 +380,38 @@ func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) SetHasFilter(v b
 	o.HasFilter = &v
 }
 
+// GetIsVariable returns the IsVariable field value if set, zero value otherwise.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) GetIsVariable() bool {
+	if o == nil || IsNil(o.IsVariable) {
+		var ret bool
+		return ret
+	}
+	return *o.IsVariable
+}
+
+// GetIsVariableOk returns a tuple with the IsVariable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) GetIsVariableOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsVariable) {
+		return nil, false
+	}
+	return o.IsVariable, true
+}
+
+// HasIsVariable returns a boolean if a field has been set.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) HasIsVariable() bool {
+	if o != nil && !IsNil(o.IsVariable) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsVariable gets a reference to the given bool and assigns it to the IsVariable field.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) SetIsVariable(v bool) {
+	o.IsVariable = &v
+}
+
 func (o ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -417,6 +451,9 @@ func (o ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) ToMap() (map[stri
 	}
 	if !IsNil(o.HasFilter) {
 		toSerialize["hasFilter"] = o.HasFilter
+	}
+	if !IsNil(o.IsVariable) {
+		toSerialize["isVariable"] = o.IsVariable
 	}
 	return toSerialize, nil
 }

@@ -186,18 +186,6 @@ var_dump($response);
 - `orders_dbs.DBSApi.apiV3DbsOrdersDeliveryDatePost` — `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
 - `orders_dbs.DBSApi.apiV3DbsOrdersGet` — `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DBSApi.apiV3DbsOrdersNewGet` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdCancelPatch` — `PATCH /api/v3/dbs/orders/{orderId}/cancel` — Отменить сборочное задание
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdConfirmPatch` — `PATCH /api/v3/dbs/orders/{orderId}/confirm` — Перевести на сборку
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdDeliverPatch` — `PATCH /api/v3/dbs/orders/{orderId}/deliver` — Перевести в доставку
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaDelete` — `DELETE /api/v3/dbs/orders/{orderId}/meta` — Удалить метаданные сборочного задания
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaGet` — `GET /api/v3/dbs/orders/{orderId}/meta` — Получить метаданные сборочного задания
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaGtinPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaImeiPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaSgtinPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaUinPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdReceivePatch` — `PATCH /api/v3/dbs/orders/{orderId}/receive` — Сообщить, что заказ принят покупателем
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdRejectPatch` — `PATCH /api/v3/dbs/orders/{orderId}/reject` — Сообщить, что покупатель отказался от заказа
-- `orders_dbs.DBSApi.apiV3DbsOrdersStatusPost` — `POST /api/v3/dbs/orders/status` — Получить статусы сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaDeletePost` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий

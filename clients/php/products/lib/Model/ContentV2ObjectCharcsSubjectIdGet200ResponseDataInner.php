@@ -66,7 +66,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'max_count' => 'int',
         'popular' => 'bool',
         'charc_type' => 'int',
-        'has_filter' => 'bool'
+        'has_filter' => 'bool',
+        'is_variable' => 'bool'
     ];
 
     /**
@@ -86,7 +87,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'max_count' => null,
         'popular' => null,
         'charc_type' => null,
-        'has_filter' => null
+        'has_filter' => null,
+        'is_variable' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'max_count' => false,
         'popular' => false,
         'charc_type' => false,
-        'has_filter' => false
+        'has_filter' => false,
+        'is_variable' => false
     ];
 
     /**
@@ -202,7 +205,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'max_count' => 'maxCount',
         'popular' => 'popular',
         'charc_type' => 'charcType',
-        'has_filter' => 'hasFilter'
+        'has_filter' => 'hasFilter',
+        'is_variable' => 'isVariable'
     ];
 
     /**
@@ -220,7 +224,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'max_count' => 'setMaxCount',
         'popular' => 'setPopular',
         'charc_type' => 'setCharcType',
-        'has_filter' => 'setHasFilter'
+        'has_filter' => 'setHasFilter',
+        'is_variable' => 'setIsVariable'
     ];
 
     /**
@@ -238,7 +243,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'max_count' => 'getMaxCount',
         'popular' => 'getPopular',
         'charc_type' => 'getCharcType',
-        'has_filter' => 'getHasFilter'
+        'has_filter' => 'getHasFilter',
+        'is_variable' => 'getIsVariable'
     ];
 
     /**
@@ -308,6 +314,7 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         $this->setIfExists('popular', $data ?? [], null);
         $this->setIfExists('charc_type', $data ?? [], null);
         $this->setIfExists('has_filter', $data ?? [], null);
+        $this->setIfExists('is_variable', $data ?? [], null);
     }
 
     /**
@@ -608,7 +615,7 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
     /**
      * Sets has_filter
      *
-     * @param bool|null $has_filter Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `false` — нет   - `true` — да
+     * @param bool|null $has_filter Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `true` — да   - `false` — нет
      *
      * @return self
      */
@@ -618,6 +625,33 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
             throw new \InvalidArgumentException('non-nullable has_filter cannot be null');
         }
         $this->container['has_filter'] = $has_filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_variable
+     *
+     * @return bool|null
+     */
+    public function getIsVariable()
+    {
+        return $this->container['is_variable'];
+    }
+
+    /**
+     * Sets is_variable
+     *
+     * @param bool|null $is_variable Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:   -  `true` — варианты товара могут отличаться по этой характеристике   -  `false` — варианты товара не могут отличаться по этой характеристике
+     *
+     * @return self
+     */
+    public function setIsVariable($is_variable)
+    {
+        if (is_null($is_variable)) {
+            throw new \InvalidArgumentException('non-nullable is_variable cannot be null');
+        }
+        $this->container['is_variable'] = $is_variable;
 
         return $this;
     }

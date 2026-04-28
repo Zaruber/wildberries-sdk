@@ -17,19 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List
-from typing_extensions import Annotated
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ApiV3DbsOrdersOrderIdMetaGtinPutRequest(BaseModel):
+class ApiOrderMetaV2CustomsDeclaration(BaseModel):
     """
-    ApiV3DbsOrdersOrderIdMetaGtinPutRequest
+    Номер грузовой таможенной декларации
     """ # noqa: E501
-    gtin: Annotated[str, Field(min_length=13, strict=True, max_length=13)] = Field(description="GTIN")
-    __properties: ClassVar[List[str]] = ["gtin"]
+    value: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["value"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -49,7 +48,7 @@ class ApiV3DbsOrdersOrderIdMetaGtinPutRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiV3DbsOrdersOrderIdMetaGtinPutRequest from a JSON string"""
+        """Create an instance of ApiOrderMetaV2CustomsDeclaration from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +69,16 @@ class ApiV3DbsOrdersOrderIdMetaGtinPutRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if value (nullable) is None
+        # and model_fields_set contains the field
+        if self.value is None and "value" in self.model_fields_set:
+            _dict['value'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiV3DbsOrdersOrderIdMetaGtinPutRequest from a dict"""
+        """Create an instance of ApiOrderMetaV2CustomsDeclaration from a dict"""
         if obj is None:
             return None
 
@@ -82,7 +86,7 @@ class ApiV3DbsOrdersOrderIdMetaGtinPutRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "gtin": obj.get("gtin")
+            "value": obj.get("value")
         })
         return _obj
 

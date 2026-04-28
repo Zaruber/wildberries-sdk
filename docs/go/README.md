@@ -173,18 +173,6 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersDeliveryDatePost` — `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersGet` — `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersNewGet` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdCancelPatch` — `PATCH /api/v3/dbs/orders/{orderId}/cancel` — Отменить сборочное задание
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdConfirmPatch` — `PATCH /api/v3/dbs/orders/{orderId}/confirm` — Перевести на сборку
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdDeliverPatch` — `PATCH /api/v3/dbs/orders/{orderId}/deliver` — Перевести в доставку
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdMetaDelete` — `DELETE /api/v3/dbs/orders/{orderId}/meta` — Удалить метаданные сборочного задания
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdMetaGet` — `GET /api/v3/dbs/orders/{orderId}/meta` — Получить метаданные сборочного задания
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdMetaGtinPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdMetaImeiPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdMetaSgtinPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdMetaUinPut` — `PUT /api/v3/dbs/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdReceivePatch` — `PATCH /api/v3/dbs/orders/{orderId}/receive` — Сообщить, что заказ принят покупателем
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersOrderIdRejectPatch` — `PATCH /api/v3/dbs/orders/{orderId}/reject` — Сообщить, что покупатель отказался от заказа
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersStatusPost` — `POST /api/v3/dbs/orders/status` — Получить статусы сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaDeletePost` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий

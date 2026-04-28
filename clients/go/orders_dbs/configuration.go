@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.74/go",
+		UserAgent:        "OpenAPI-Generator/0.1.75/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -213,78 +213,6 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DBSAPIService.ApiV3DbsOrdersNewGet": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdCancelPatch": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdConfirmPatch": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdDeliverPatch": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdMetaDelete": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdMetaGet": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdMetaGtinPut": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdMetaImeiPut": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdMetaSgtinPut": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdMetaUinPut": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdReceivePatch": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersOrderIdRejectPatch": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBSAPIService.ApiV3DbsOrdersStatusPost": {
 				{
 					URL: "https://marketplace-api.wildberries.ru",
 					Description: "No description provided",

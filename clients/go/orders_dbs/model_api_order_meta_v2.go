@@ -31,7 +31,7 @@ type ApiOrderMetaV2 struct {
 	Sgtin []string `json:"sgtin,omitempty"`
 	// УИН
 	Uin *string `json:"uin,omitempty"`
-	CustomsDeclaration *MetaCustomsDeclaration `json:"customsDeclaration,omitempty"`
+	CustomsDeclaration *ApiOrderMetaV2CustomsDeclaration `json:"customsDeclaration,omitempty"`
 }
 
 // NewApiOrderMetaV2 instantiates a new ApiOrderMetaV2 object
@@ -244,9 +244,9 @@ func (o *ApiOrderMetaV2) SetUin(v string) {
 }
 
 // GetCustomsDeclaration returns the CustomsDeclaration field value if set, zero value otherwise.
-func (o *ApiOrderMetaV2) GetCustomsDeclaration() MetaCustomsDeclaration {
+func (o *ApiOrderMetaV2) GetCustomsDeclaration() ApiOrderMetaV2CustomsDeclaration {
 	if o == nil || IsNil(o.CustomsDeclaration) {
-		var ret MetaCustomsDeclaration
+		var ret ApiOrderMetaV2CustomsDeclaration
 		return ret
 	}
 	return *o.CustomsDeclaration
@@ -254,7 +254,7 @@ func (o *ApiOrderMetaV2) GetCustomsDeclaration() MetaCustomsDeclaration {
 
 // GetCustomsDeclarationOk returns a tuple with the CustomsDeclaration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiOrderMetaV2) GetCustomsDeclarationOk() (*MetaCustomsDeclaration, bool) {
+func (o *ApiOrderMetaV2) GetCustomsDeclarationOk() (*ApiOrderMetaV2CustomsDeclaration, bool) {
 	if o == nil || IsNil(o.CustomsDeclaration) {
 		return nil, false
 	}
@@ -270,8 +270,8 @@ func (o *ApiOrderMetaV2) HasCustomsDeclaration() bool {
 	return false
 }
 
-// SetCustomsDeclaration gets a reference to the given MetaCustomsDeclaration and assigns it to the CustomsDeclaration field.
-func (o *ApiOrderMetaV2) SetCustomsDeclaration(v MetaCustomsDeclaration) {
+// SetCustomsDeclaration gets a reference to the given ApiOrderMetaV2CustomsDeclaration and assigns it to the CustomsDeclaration field.
+func (o *ApiOrderMetaV2) SetCustomsDeclaration(v ApiOrderMetaV2CustomsDeclaration) {
 	o.CustomsDeclaration = &v
 }
 

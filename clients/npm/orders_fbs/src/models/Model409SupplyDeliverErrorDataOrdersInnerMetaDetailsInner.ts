@@ -69,7 +69,7 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
      *   - `required` — Маркировка обязательна, не заполнена
      * - `expiration`
      *   - `required` — Маркировка обязательна, не заполнена
-     * - `сustomsDeclaration`
+     * - `customsDeclaration`
      *   - `required` — Маркировка обязательна, не заполнена
      * 
      * @type {string}

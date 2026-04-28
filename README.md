@@ -191,18 +191,6 @@
 - `POST /api/v3/dbs/orders/client` — Информация о покупателе
 - `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
 - `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
-- `POST /api/v3/dbs/orders/status` — Получить статусы сборочных заданий
-- `PATCH /api/v3/dbs/orders/{orderId}/cancel` — Отменить сборочное задание
-- `PATCH /api/v3/dbs/orders/{orderId}/confirm` — Перевести на сборку
-- `PATCH /api/v3/dbs/orders/{orderId}/deliver` — Перевести в доставку
-- `GET /api/v3/dbs/orders/{orderId}/meta` — Получить метаданные сборочного задания
-- `DELETE /api/v3/dbs/orders/{orderId}/meta` — Удалить метаданные сборочного задания
-- `PUT /api/v3/dbs/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
-- `PUT /api/v3/dbs/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `PUT /api/v3/dbs/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
-- `PUT /api/v3/dbs/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-- `PATCH /api/v3/dbs/orders/{orderId}/receive` — Сообщить, что заказ принят покупателем
-- `PATCH /api/v3/dbs/orders/{orderId}/reject` — Сообщить, что покупатель отказался от заказа
 
 ### Заказы Самовывоз (`06-in-store-pickup.yaml`)
 - `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий

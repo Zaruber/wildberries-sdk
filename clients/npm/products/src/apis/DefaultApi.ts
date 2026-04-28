@@ -12,213 +12,342 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
-import type {
-  ApiV2BufferGoodsTaskGet200Response,
-  ApiV2BufferTasksGet200Response,
-  ApiV2HistoryGoodsTaskGet200Response,
-  ApiV2HistoryTasksGet200Response,
-  ApiV2ListGoodsFilterGet200Response,
-  ApiV2ListGoodsFilterPostRequest,
-  ApiV2ListGoodsSizeNmGet200Response,
-  ApiV2QuarantineGoodsGet200Response,
-  ApiV2UploadTaskClubDiscountPostRequest,
-  ApiV2UploadTaskPostRequest,
-  ApiV2UploadTaskSizePostRequest,
-  ApiV3DbwWarehousesWarehouseIdContactsGet200Response,
-  ApiV3StocksWarehouseIdDeleteRequest,
-  ApiV3StocksWarehouseIdPost200Response,
-  ApiV3StocksWarehouseIdPostRequest,
-  ApiV3StocksWarehouseIdPut406Response,
-  ApiV3StocksWarehouseIdPutRequest,
-  ApiV3WarehousesPost201Response,
-  ApiV3WarehousesPostRequest,
-  BrandsResponse,
-  BrandsResponseError,
-  ContentV2BarcodesPost200Response,
-  ContentV2BarcodesPostRequest,
-  ContentV2CardsDeleteTrashPost200Response,
-  ContentV2CardsDeleteTrashPostRequest,
-  ContentV2CardsLimitsGet200Response,
-  ContentV2CardsMoveNmPost400Response,
-  ContentV2CardsMoveNmPostRequest,
-  ContentV2CardsUpdatePost413Response,
-  ContentV2CardsUpdatePostRequestInner,
-  ContentV2CardsUploadAddPostRequest,
-  ContentV2CardsUploadPostRequestInner,
-  ContentV2DirectoryColorsGet200Response,
-  ContentV2DirectoryCountriesGet200Response,
-  ContentV2DirectoryKindsGet200Response,
-  ContentV2DirectorySeasonsGet200Response,
-  ContentV2DirectoryTnvedGet200Response,
-  ContentV2DirectoryVatGet200Response,
-  ContentV2GetCardsListPost200Response,
-  ContentV2GetCardsListPostRequest,
-  ContentV2GetCardsTrashPost200Response,
-  ContentV2GetCardsTrashPostRequest,
-  ContentV2ObjectAllGet200Response,
-  ContentV2ObjectCharcsSubjectIdGet200Response,
-  ContentV2ObjectParentAllGet200Response,
-  ContentV2ObjectParentAllGet401Response,
-  ContentV2TagIdPatchRequest,
-  ContentV2TagNomenclatureLinkPostRequest,
-  ContentV2TagPostRequest,
-  ContentV2TagsGet200Response,
-  ContentV2TagsGet402Response,
-  ContentV3MediaFilePost200Response,
-  ContentV3MediaSavePostRequest,
-  MediaErrors,
-  Office,
-  RequestAlreadyExistsError,
-  RequestPublicViewerPublicErrorsTableListV2,
-  ResponseBodyContentError400,
-  ResponseBodyContentError403,
-  ResponseCardCreate,
-  ResponseContentError,
-  ResponseError,
-  ResponsePublicViewerPublicErrorsTableListV2,
-  StocksWarehouseErrorInner,
-  StoreContactRequestBody,
-  TaskCreated,
-  Warehouse,
-} from '../models/index';
 import {
+    type ApiV2BufferGoodsTaskGet200Response,
     ApiV2BufferGoodsTaskGet200ResponseFromJSON,
     ApiV2BufferGoodsTaskGet200ResponseToJSON,
+} from '../models/ApiV2BufferGoodsTaskGet200Response';
+import {
+    type ApiV2BufferTasksGet200Response,
     ApiV2BufferTasksGet200ResponseFromJSON,
     ApiV2BufferTasksGet200ResponseToJSON,
+} from '../models/ApiV2BufferTasksGet200Response';
+import {
+    type ApiV2HistoryGoodsTaskGet200Response,
     ApiV2HistoryGoodsTaskGet200ResponseFromJSON,
     ApiV2HistoryGoodsTaskGet200ResponseToJSON,
+} from '../models/ApiV2HistoryGoodsTaskGet200Response';
+import {
+    type ApiV2HistoryTasksGet200Response,
     ApiV2HistoryTasksGet200ResponseFromJSON,
     ApiV2HistoryTasksGet200ResponseToJSON,
+} from '../models/ApiV2HistoryTasksGet200Response';
+import {
+    type ApiV2ListGoodsFilterGet200Response,
     ApiV2ListGoodsFilterGet200ResponseFromJSON,
     ApiV2ListGoodsFilterGet200ResponseToJSON,
+} from '../models/ApiV2ListGoodsFilterGet200Response';
+import {
+    type ApiV2ListGoodsFilterPostRequest,
     ApiV2ListGoodsFilterPostRequestFromJSON,
     ApiV2ListGoodsFilterPostRequestToJSON,
+} from '../models/ApiV2ListGoodsFilterPostRequest';
+import {
+    type ApiV2ListGoodsSizeNmGet200Response,
     ApiV2ListGoodsSizeNmGet200ResponseFromJSON,
     ApiV2ListGoodsSizeNmGet200ResponseToJSON,
+} from '../models/ApiV2ListGoodsSizeNmGet200Response';
+import {
+    type ApiV2QuarantineGoodsGet200Response,
     ApiV2QuarantineGoodsGet200ResponseFromJSON,
     ApiV2QuarantineGoodsGet200ResponseToJSON,
+} from '../models/ApiV2QuarantineGoodsGet200Response';
+import {
+    type ApiV2UploadTaskClubDiscountPostRequest,
     ApiV2UploadTaskClubDiscountPostRequestFromJSON,
     ApiV2UploadTaskClubDiscountPostRequestToJSON,
+} from '../models/ApiV2UploadTaskClubDiscountPostRequest';
+import {
+    type ApiV2UploadTaskPostRequest,
     ApiV2UploadTaskPostRequestFromJSON,
     ApiV2UploadTaskPostRequestToJSON,
+} from '../models/ApiV2UploadTaskPostRequest';
+import {
+    type ApiV2UploadTaskSizePostRequest,
     ApiV2UploadTaskSizePostRequestFromJSON,
     ApiV2UploadTaskSizePostRequestToJSON,
+} from '../models/ApiV2UploadTaskSizePostRequest';
+import {
+    type ApiV3DbwWarehousesWarehouseIdContactsGet200Response,
     ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseFromJSON,
     ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseToJSON,
+} from '../models/ApiV3DbwWarehousesWarehouseIdContactsGet200Response';
+import {
+    type ApiV3StocksWarehouseIdDeleteRequest,
     ApiV3StocksWarehouseIdDeleteRequestFromJSON,
     ApiV3StocksWarehouseIdDeleteRequestToJSON,
+} from '../models/ApiV3StocksWarehouseIdDeleteRequest';
+import {
+    type ApiV3StocksWarehouseIdPost200Response,
     ApiV3StocksWarehouseIdPost200ResponseFromJSON,
     ApiV3StocksWarehouseIdPost200ResponseToJSON,
+} from '../models/ApiV3StocksWarehouseIdPost200Response';
+import {
+    type ApiV3StocksWarehouseIdPostRequest,
     ApiV3StocksWarehouseIdPostRequestFromJSON,
     ApiV3StocksWarehouseIdPostRequestToJSON,
+} from '../models/ApiV3StocksWarehouseIdPostRequest';
+import {
+    type ApiV3StocksWarehouseIdPut406Response,
     ApiV3StocksWarehouseIdPut406ResponseFromJSON,
     ApiV3StocksWarehouseIdPut406ResponseToJSON,
+} from '../models/ApiV3StocksWarehouseIdPut406Response';
+import {
+    type ApiV3StocksWarehouseIdPutRequest,
     ApiV3StocksWarehouseIdPutRequestFromJSON,
     ApiV3StocksWarehouseIdPutRequestToJSON,
+} from '../models/ApiV3StocksWarehouseIdPutRequest';
+import {
+    type ApiV3WarehousesPost201Response,
     ApiV3WarehousesPost201ResponseFromJSON,
     ApiV3WarehousesPost201ResponseToJSON,
+} from '../models/ApiV3WarehousesPost201Response';
+import {
+    type ApiV3WarehousesPostRequest,
     ApiV3WarehousesPostRequestFromJSON,
     ApiV3WarehousesPostRequestToJSON,
+} from '../models/ApiV3WarehousesPostRequest';
+import {
+    type BrandsResponse,
     BrandsResponseFromJSON,
     BrandsResponseToJSON,
+} from '../models/BrandsResponse';
+import {
+    type BrandsResponseError,
     BrandsResponseErrorFromJSON,
     BrandsResponseErrorToJSON,
+} from '../models/BrandsResponseError';
+import {
+    type ContentV2BarcodesPost200Response,
     ContentV2BarcodesPost200ResponseFromJSON,
     ContentV2BarcodesPost200ResponseToJSON,
+} from '../models/ContentV2BarcodesPost200Response';
+import {
+    type ContentV2BarcodesPostRequest,
     ContentV2BarcodesPostRequestFromJSON,
     ContentV2BarcodesPostRequestToJSON,
+} from '../models/ContentV2BarcodesPostRequest';
+import {
+    type ContentV2CardsDeleteTrashPost200Response,
     ContentV2CardsDeleteTrashPost200ResponseFromJSON,
     ContentV2CardsDeleteTrashPost200ResponseToJSON,
+} from '../models/ContentV2CardsDeleteTrashPost200Response';
+import {
+    type ContentV2CardsDeleteTrashPostRequest,
     ContentV2CardsDeleteTrashPostRequestFromJSON,
     ContentV2CardsDeleteTrashPostRequestToJSON,
+} from '../models/ContentV2CardsDeleteTrashPostRequest';
+import {
+    type ContentV2CardsLimitsGet200Response,
     ContentV2CardsLimitsGet200ResponseFromJSON,
     ContentV2CardsLimitsGet200ResponseToJSON,
+} from '../models/ContentV2CardsLimitsGet200Response';
+import {
+    type ContentV2CardsMoveNmPost400Response,
     ContentV2CardsMoveNmPost400ResponseFromJSON,
     ContentV2CardsMoveNmPost400ResponseToJSON,
+} from '../models/ContentV2CardsMoveNmPost400Response';
+import {
+    type ContentV2CardsMoveNmPostRequest,
     ContentV2CardsMoveNmPostRequestFromJSON,
     ContentV2CardsMoveNmPostRequestToJSON,
+} from '../models/ContentV2CardsMoveNmPostRequest';
+import {
+    type ContentV2CardsUpdatePost413Response,
     ContentV2CardsUpdatePost413ResponseFromJSON,
     ContentV2CardsUpdatePost413ResponseToJSON,
+} from '../models/ContentV2CardsUpdatePost413Response';
+import {
+    type ContentV2CardsUpdatePostRequestInner,
     ContentV2CardsUpdatePostRequestInnerFromJSON,
     ContentV2CardsUpdatePostRequestInnerToJSON,
+} from '../models/ContentV2CardsUpdatePostRequestInner';
+import {
+    type ContentV2CardsUploadAddPostRequest,
     ContentV2CardsUploadAddPostRequestFromJSON,
     ContentV2CardsUploadAddPostRequestToJSON,
+} from '../models/ContentV2CardsUploadAddPostRequest';
+import {
+    type ContentV2CardsUploadPostRequestInner,
     ContentV2CardsUploadPostRequestInnerFromJSON,
     ContentV2CardsUploadPostRequestInnerToJSON,
+} from '../models/ContentV2CardsUploadPostRequestInner';
+import {
+    type ContentV2DirectoryColorsGet200Response,
     ContentV2DirectoryColorsGet200ResponseFromJSON,
     ContentV2DirectoryColorsGet200ResponseToJSON,
+} from '../models/ContentV2DirectoryColorsGet200Response';
+import {
+    type ContentV2DirectoryCountriesGet200Response,
     ContentV2DirectoryCountriesGet200ResponseFromJSON,
     ContentV2DirectoryCountriesGet200ResponseToJSON,
+} from '../models/ContentV2DirectoryCountriesGet200Response';
+import {
+    type ContentV2DirectoryKindsGet200Response,
     ContentV2DirectoryKindsGet200ResponseFromJSON,
     ContentV2DirectoryKindsGet200ResponseToJSON,
+} from '../models/ContentV2DirectoryKindsGet200Response';
+import {
+    type ContentV2DirectorySeasonsGet200Response,
     ContentV2DirectorySeasonsGet200ResponseFromJSON,
     ContentV2DirectorySeasonsGet200ResponseToJSON,
+} from '../models/ContentV2DirectorySeasonsGet200Response';
+import {
+    type ContentV2DirectoryTnvedGet200Response,
     ContentV2DirectoryTnvedGet200ResponseFromJSON,
     ContentV2DirectoryTnvedGet200ResponseToJSON,
+} from '../models/ContentV2DirectoryTnvedGet200Response';
+import {
+    type ContentV2DirectoryVatGet200Response,
     ContentV2DirectoryVatGet200ResponseFromJSON,
     ContentV2DirectoryVatGet200ResponseToJSON,
+} from '../models/ContentV2DirectoryVatGet200Response';
+import {
+    type ContentV2GetCardsListPost200Response,
     ContentV2GetCardsListPost200ResponseFromJSON,
     ContentV2GetCardsListPost200ResponseToJSON,
+} from '../models/ContentV2GetCardsListPost200Response';
+import {
+    type ContentV2GetCardsListPostRequest,
     ContentV2GetCardsListPostRequestFromJSON,
     ContentV2GetCardsListPostRequestToJSON,
+} from '../models/ContentV2GetCardsListPostRequest';
+import {
+    type ContentV2GetCardsTrashPost200Response,
     ContentV2GetCardsTrashPost200ResponseFromJSON,
     ContentV2GetCardsTrashPost200ResponseToJSON,
+} from '../models/ContentV2GetCardsTrashPost200Response';
+import {
+    type ContentV2GetCardsTrashPostRequest,
     ContentV2GetCardsTrashPostRequestFromJSON,
     ContentV2GetCardsTrashPostRequestToJSON,
+} from '../models/ContentV2GetCardsTrashPostRequest';
+import {
+    type ContentV2ObjectAllGet200Response,
     ContentV2ObjectAllGet200ResponseFromJSON,
     ContentV2ObjectAllGet200ResponseToJSON,
+} from '../models/ContentV2ObjectAllGet200Response';
+import {
+    type ContentV2ObjectCharcsSubjectIdGet200Response,
     ContentV2ObjectCharcsSubjectIdGet200ResponseFromJSON,
     ContentV2ObjectCharcsSubjectIdGet200ResponseToJSON,
+} from '../models/ContentV2ObjectCharcsSubjectIdGet200Response';
+import {
+    type ContentV2ObjectParentAllGet200Response,
     ContentV2ObjectParentAllGet200ResponseFromJSON,
     ContentV2ObjectParentAllGet200ResponseToJSON,
+} from '../models/ContentV2ObjectParentAllGet200Response';
+import {
+    type ContentV2ObjectParentAllGet401Response,
     ContentV2ObjectParentAllGet401ResponseFromJSON,
     ContentV2ObjectParentAllGet401ResponseToJSON,
+} from '../models/ContentV2ObjectParentAllGet401Response';
+import {
+    type ContentV2TagIdPatchRequest,
     ContentV2TagIdPatchRequestFromJSON,
     ContentV2TagIdPatchRequestToJSON,
+} from '../models/ContentV2TagIdPatchRequest';
+import {
+    type ContentV2TagNomenclatureLinkPostRequest,
     ContentV2TagNomenclatureLinkPostRequestFromJSON,
     ContentV2TagNomenclatureLinkPostRequestToJSON,
+} from '../models/ContentV2TagNomenclatureLinkPostRequest';
+import {
+    type ContentV2TagPostRequest,
     ContentV2TagPostRequestFromJSON,
     ContentV2TagPostRequestToJSON,
+} from '../models/ContentV2TagPostRequest';
+import {
+    type ContentV2TagsGet200Response,
     ContentV2TagsGet200ResponseFromJSON,
     ContentV2TagsGet200ResponseToJSON,
+} from '../models/ContentV2TagsGet200Response';
+import {
+    type ContentV2TagsGet402Response,
     ContentV2TagsGet402ResponseFromJSON,
     ContentV2TagsGet402ResponseToJSON,
+} from '../models/ContentV2TagsGet402Response';
+import {
+    type ContentV3MediaFilePost200Response,
     ContentV3MediaFilePost200ResponseFromJSON,
     ContentV3MediaFilePost200ResponseToJSON,
+} from '../models/ContentV3MediaFilePost200Response';
+import {
+    type ContentV3MediaSavePostRequest,
     ContentV3MediaSavePostRequestFromJSON,
     ContentV3MediaSavePostRequestToJSON,
+} from '../models/ContentV3MediaSavePostRequest';
+import {
+    type MediaErrors,
     MediaErrorsFromJSON,
     MediaErrorsToJSON,
+} from '../models/MediaErrors';
+import {
+    type Office,
     OfficeFromJSON,
     OfficeToJSON,
+} from '../models/Office';
+import {
+    type RequestAlreadyExistsError,
     RequestAlreadyExistsErrorFromJSON,
     RequestAlreadyExistsErrorToJSON,
+} from '../models/RequestAlreadyExistsError';
+import {
+    type RequestPublicViewerPublicErrorsTableListV2,
     RequestPublicViewerPublicErrorsTableListV2FromJSON,
     RequestPublicViewerPublicErrorsTableListV2ToJSON,
+} from '../models/RequestPublicViewerPublicErrorsTableListV2';
+import {
+    type ResponseBodyContentError400,
     ResponseBodyContentError400FromJSON,
     ResponseBodyContentError400ToJSON,
+} from '../models/ResponseBodyContentError400';
+import {
+    type ResponseBodyContentError403,
     ResponseBodyContentError403FromJSON,
     ResponseBodyContentError403ToJSON,
+} from '../models/ResponseBodyContentError403';
+import {
+    type ResponseCardCreate,
     ResponseCardCreateFromJSON,
     ResponseCardCreateToJSON,
+} from '../models/ResponseCardCreate';
+import {
+    type ResponseContentError,
     ResponseContentErrorFromJSON,
     ResponseContentErrorToJSON,
+} from '../models/ResponseContentError';
+import {
+    type ResponseError,
     ResponseErrorFromJSON,
     ResponseErrorToJSON,
+} from '../models/ResponseError';
+import {
+    type ResponsePublicViewerPublicErrorsTableListV2,
     ResponsePublicViewerPublicErrorsTableListV2FromJSON,
     ResponsePublicViewerPublicErrorsTableListV2ToJSON,
+} from '../models/ResponsePublicViewerPublicErrorsTableListV2';
+import {
+    type StocksWarehouseErrorInner,
     StocksWarehouseErrorInnerFromJSON,
     StocksWarehouseErrorInnerToJSON,
+} from '../models/StocksWarehouseErrorInner';
+import {
+    type StoreContactRequestBody,
     StoreContactRequestBodyFromJSON,
     StoreContactRequestBodyToJSON,
+} from '../models/StoreContactRequestBody';
+import {
+    type TaskCreated,
     TaskCreatedFromJSON,
     TaskCreatedToJSON,
+} from '../models/TaskCreated';
+import {
+    type Warehouse,
     WarehouseFromJSON,
     WarehouseToJSON,
-} from '../models/index';
+} from '../models/Warehouse';
 
 export interface ApiContentV1BrandsGetRequest {
     subjectId: number;
@@ -472,7 +601,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список брендов по ID предмета.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Сервисный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
+     * Метод возвращает список брендов по ID предмета.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Сервисный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Бренды
      */
     async apiContentV1BrandsGetRaw(requestParameters: ApiContentV1BrandsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BrandsResponse>> {
@@ -483,7 +612,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает список брендов по ID предмета.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Сервисный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
+     * Метод возвращает список брендов по ID предмета.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Сервисный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Бренды
      */
     async apiContentV1BrandsGet(requestParameters: ApiContentV1BrandsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BrandsResponse> {
@@ -541,7 +670,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах и ошибках в товарах из загрузки в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию о товарах и ошибках в товарах из загрузки в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Детализация необработанной загрузки
      */
     async apiV2BufferGoodsTaskGetRaw(requestParameters: ApiV2BufferGoodsTaskGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV2BufferGoodsTaskGet200Response>> {
@@ -552,7 +681,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах и ошибках в товарах из загрузки в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию о товарах и ошибках в товарах из загрузки в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Детализация необработанной загрузки
      */
     async apiV2BufferGoodsTaskGet(requestParameters: ApiV2BufferGoodsTaskGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV2BufferGoodsTaskGet200Response> {
@@ -595,7 +724,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию про загрузку скидок в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию про загрузку скидок в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Состояние необработанной загрузки
      */
     async apiV2BufferTasksGetRaw(requestParameters: ApiV2BufferTasksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV2BufferTasksGet200Response>> {
@@ -606,7 +735,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию про загрузку скидок в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию про загрузку скидок в обработке.  <div class=\"description_important\">   Необработанная загрузка — это загрузка скидок в <a href=\"/openapi/promotion#tag/Kalendar-akcij\">календаре акций</a>. Такие скидки применятся к товарам только в момент старта акции. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Состояние необработанной загрузки
      */
     async apiV2BufferTasksGet(requestParameters: ApiV2BufferTasksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV2BufferTasksGet200Response> {
@@ -664,7 +793,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах и об ошибках в товарах в обработанной загрузке.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию о товарах и об ошибках в товарах в обработанной загрузке.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Детализация обработанной загрузки
      */
     async apiV2HistoryGoodsTaskGetRaw(requestParameters: ApiV2HistoryGoodsTaskGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV2HistoryGoodsTaskGet200Response>> {
@@ -675,7 +804,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах и об ошибках в товарах в обработанной загрузке.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию о товарах и об ошибках в товарах в обработанной загрузке.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Детализация обработанной загрузки
      */
     async apiV2HistoryGoodsTaskGet(requestParameters: ApiV2HistoryGoodsTaskGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV2HistoryGoodsTaskGet200Response> {
@@ -718,7 +847,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию об обработанной загрузке цен и скидок.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию об обработанной загрузке цен и скидок.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Состояние обработанной загрузки
      */
     async apiV2HistoryTasksGetRaw(requestParameters: ApiV2HistoryTasksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV2HistoryTasksGet200Response>> {
@@ -729,7 +858,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию об обработанной загрузке цен и скидок.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию об обработанной загрузке цен и скидок.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Состояние обработанной загрузки
      */
     async apiV2HistoryTasksGet(requestParameters: ApiV2HistoryTasksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV2HistoryTasksGet200Response> {
@@ -902,7 +1031,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию обо всех размерах одного товара: цены, валюту, общие скидки и скидки для [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post). <br><br> Работает только для товаров из категорий, где можно устанавливать цены отдельно для разных размеров. Для таких товаров `\"editableSizePrice\":true`. <br><br> Чтобы получить информацию о самом товаре, используйте [отдельный метод](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию обо всех размерах одного товара: цены, валюту, общие скидки и скидки для [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post). <br><br> Работает только для товаров из категорий, где можно устанавливать цены отдельно для разных размеров. Для таких товаров `\"editableSizePrice\":true`. <br><br> Чтобы получить информацию о самом товаре, используйте [отдельный метод](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Получить размеры товара с ценами
      */
     async apiV2ListGoodsSizeNmGetRaw(requestParameters: ApiV2ListGoodsSizeNmGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV2ListGoodsSizeNmGet200Response>> {
@@ -913,7 +1042,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию обо всех размерах одного товара: цены, валюту, общие скидки и скидки для [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post). <br><br> Работает только для товаров из категорий, где можно устанавливать цены отдельно для разных размеров. Для таких товаров `\"editableSizePrice\":true`. <br><br> Чтобы получить информацию о самом товаре, используйте [отдельный метод](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию обо всех размерах одного товара: цены, валюту, общие скидки и скидки для [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post). <br><br> Работает только для товаров из категорий, где можно устанавливать цены отдельно для разных размеров. Для таких товаров `\"editableSizePrice\":true`. <br><br> Чтобы получить информацию о самом товаре, используйте [отдельный метод](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Получить размеры товара с ценами
      */
     async apiV2ListGoodsSizeNmGet(requestParameters: ApiV2ListGoodsSizeNmGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV2ListGoodsSizeNmGet200Response> {
@@ -960,7 +1089,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах в карантине. <br><br> Если новая цена товара со скидкой будет минимум в 3 раза меньше старой, товар попадёт в [карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) и будет продаваться по старой цене. Ошибка об этом будет в ответах методов [состояний загрузок](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get). <br><br> Вы можете изменить цену или скидку с помощью API либо вывести товар из карантина в [личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine). <br><br> Для товаров с [поразмерной установкой цен](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post) карантин не применяется.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию о товарах в карантине. <br><br> Если новая цена товара со скидкой будет минимум в 3 раза меньше старой, товар попадёт в [карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) и будет продаваться по старой цене. Ошибка об этом будет в ответах методов [состояний загрузок](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get). <br><br> Вы можете изменить цену или скидку с помощью API либо вывести товар из карантина в [личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine). <br><br> Для товаров с [поразмерной установкой цен](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post) карантин не применяется.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Получить товары в карантине
      */
     async apiV2QuarantineGoodsGetRaw(requestParameters: ApiV2QuarantineGoodsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV2QuarantineGoodsGet200Response>> {
@@ -971,7 +1100,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о товарах в карантине. <br><br> Если новая цена товара со скидкой будет минимум в 3 раза меньше старой, товар попадёт в [карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) и будет продаваться по старой цене. Ошибка об этом будет в ответах методов [состояний загрузок](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get). <br><br> Вы можете изменить цену или скидку с помощью API либо вывести товар из карантина в [личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine). <br><br> Для товаров с [поразмерной установкой цен](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post) карантин не применяется.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Метод возвращает информацию о товарах в карантине. <br><br> Если новая цена товара со скидкой будет минимум в 3 раза меньше старой, товар попадёт в [карантин](https://seller.wildberries.ru/instructions/ru/ru/material/price-quarantine) и будет продаваться по старой цене. Ошибка об этом будет в ответах методов [состояний загрузок](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get). <br><br> Вы можете изменить цену или скидку с помощью API либо вывести товар из карантина в [личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine). <br><br> Для товаров с [поразмерной установкой цен](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post) карантин не применяется.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Получить товары в карантине
      */
     async apiV2QuarantineGoodsGet(requestParameters: ApiV2QuarantineGoodsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV2QuarantineGoodsGet200Response> {
@@ -1013,7 +1142,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Устанавливает скидки для товаров в рамках подписки [WB Клуб](https://seller.wildberries.ru/help-center/article/A-337).  <div class=\"description_important\">   Получить информацию о процессе установки цен и скидок можно с помощью методов <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get\">состояния</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1goods~1task/get\">детализации</a> обработанной загрузки. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Устанавливает скидки для товаров в рамках подписки [WB Клуб](https://seller.wildberries.ru/help-center/article/A-337).  <div class=\"description_important\">   Получить информацию о процессе установки цен и скидок можно с помощью методов <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get\">состояния</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1goods~1task/get\">детализации</a> обработанной загрузки. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Установить скидки WB Клуба
      */
     async apiV2UploadTaskClubDiscountPostRaw(requestParameters: ApiV2UploadTaskClubDiscountPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TaskCreated>> {
@@ -1024,7 +1153,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Устанавливает скидки для товаров в рамках подписки [WB Клуб](https://seller.wildberries.ru/help-center/article/A-337).  <div class=\"description_important\">   Получить информацию о процессе установки цен и скидок можно с помощью методов <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get\">состояния</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1goods~1task/get\">детализации</a> обработанной загрузки. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+     * Устанавливает скидки для товаров в рамках подписки [WB Клуб](https://seller.wildberries.ru/help-center/article/A-337).  <div class=\"description_important\">   Получить информацию о процессе установки цен и скидок можно с помощью методов <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get\">состояния</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1goods~1task/get\">детализации</a> обработанной загрузки. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
      * Установить скидки WB Клуба
      */
     async apiV2UploadTaskClubDiscountPost(requestParameters: ApiV2UploadTaskClubDiscountPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TaskCreated> {
@@ -1958,7 +2087,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод восстанавливает [карточки товаров из корзины](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1trash/post).  <div class=\"description_important\">   Карточка товара сохраняет тот же <code>imtID</code> — ID для <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov\">объединённых</a> карточек товаров — что был присвоен ей при <a href=\"/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1delete~1trash/post\">перемещении в корзину</a> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Сервисный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос | </div> 
+     * Метод восстанавливает [карточки товаров из корзины](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1trash/post).  <div class=\"description_important\">   Карточка товара сохраняет тот же <code>imtID</code> — ID для <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov\">объединённых</a> карточек товаров — что был присвоен ей при <a href=\"/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1delete~1trash/post\">перемещении в корзину</a> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Сервисный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос | </div> 
      * Восстановление карточек товаров из корзины
      */
     async contentV2CardsRecoverPostRaw(requestParameters: ContentV2CardsRecoverPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ContentV2CardsDeleteTrashPost200Response>> {
@@ -1969,7 +2098,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод восстанавливает [карточки товаров из корзины](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1trash/post).  <div class=\"description_important\">   Карточка товара сохраняет тот же <code>imtID</code> — ID для <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov\">объединённых</a> карточек товаров — что был присвоен ей при <a href=\"/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1delete~1trash/post\">перемещении в корзину</a> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Сервисный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос | </div> 
+     * Метод восстанавливает [карточки товаров из корзины](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1trash/post).  <div class=\"description_important\">   Карточка товара сохраняет тот же <code>imtID</code> — ID для <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov\">объединённых</a> карточек товаров — что был присвоен ей при <a href=\"/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1delete~1trash/post\">перемещении в корзину</a> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Сервисный | 1 мин | 3 запроса | 20 сек | 5 запросов | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос | </div> 
      * Восстановление карточек товаров из корзины
      */
     async contentV2CardsRecoverPost(requestParameters: ContentV2CardsRecoverPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ContentV2CardsDeleteTrashPost200Response> {
@@ -2050,7 +2179,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод создаёт карточки товаров, присоединяя их к существующим отдельным карточкам и группам [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. В одной группе объединённых карточек товаров может быть не более 30 карточек, соответственно, создать с присоединением можно не более 29 карточек товаров за один запрос.  Габариты товаров можно указать только в `сантиметрах`, вес товара с упаковкой — в `килограммах`. <br><br> Если ответ `Успешно` (`200`), но какие-то карточки не создались, проверьте [список несозданных карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1error~1list/post).<br> Создание карточки товара происходит асинхронно. Синхронизация новой карточки с сервисами может занимать до 30 минут. В течение этого времени невозможно добавить остатки на склады и настроить цены.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Сервисный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Базовый | 2 ч | 1 запрос | 2 ч | 1 запрос | </div> 
+     * Метод создаёт карточки товаров, присоединяя их к существующим отдельным карточкам и группам [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. В одной группе объединённых карточек товаров может быть не более 30 карточек, соответственно, создать с присоединением можно не более 29 карточек товаров за один запрос.  Габариты товаров можно указать только в `сантиметрах`, вес товара с упаковкой — в `килограммах`. <br><br> Если ответ `Успешно` (`200`), но какие-то карточки не создались, проверьте [список несозданных карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1error~1list/post).<br> Создание карточки товара происходит асинхронно. Синхронизация новой карточки с сервисами может занимать до 30 минут. В течение этого времени невозможно добавить остатки на склады и настроить цены.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Сервисный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Базовый | 2 ч | 1 запрос | 2 ч | 1 запрос | </div> 
      * Создание карточек товаров с присоединением
      */
     async contentV2CardsUploadAddPostRaw(requestParameters: ContentV2CardsUploadAddPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ResponseCardCreate>> {
@@ -2061,7 +2190,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод создаёт карточки товаров, присоединяя их к существующим отдельным карточкам и группам [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. В одной группе объединённых карточек товаров может быть не более 30 карточек, соответственно, создать с присоединением можно не более 29 карточек товаров за один запрос.  Габариты товаров можно указать только в `сантиметрах`, вес товара с упаковкой — в `килограммах`. <br><br> Если ответ `Успешно` (`200`), но какие-то карточки не создались, проверьте [список несозданных карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1error~1list/post).<br> Создание карточки товара происходит асинхронно. Синхронизация новой карточки с сервисами может занимать до 30 минут. В течение этого времени невозможно добавить остатки на склады и настроить цены.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Сервисный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Базовый | 2 ч | 1 запрос | 2 ч | 1 запрос | </div> 
+     * Метод создаёт карточки товаров, присоединяя их к существующим отдельным карточкам и группам [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. В одной группе объединённых карточек товаров может быть не более 30 карточек, соответственно, создать с присоединением можно не более 29 карточек товаров за один запрос.  Габариты товаров можно указать только в `сантиметрах`, вес товара с упаковкой — в `килограммах`. <br><br> Если ответ `Успешно` (`200`), но какие-то карточки не создались, проверьте [список несозданных карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1error~1list/post).<br> Создание карточки товара происходит асинхронно. Синхронизация новой карточки с сервисами может занимать до 30 минут. В течение этого времени невозможно добавить остатки на склады и настроить цены.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Сервисный | 1 мин | 10 запросов | 6 сек | 5 запросов | | Базовый | 2 ч | 1 запрос | 2 ч | 1 запрос | </div> 
      * Создание карточек товаров с присоединением
      */
     async contentV2CardsUploadAddPost(requestParameters: ContentV2CardsUploadAddPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ResponseCardCreate> {

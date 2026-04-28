@@ -40,9 +40,12 @@ pub struct ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
     /// Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число (целое либо с десятичной дробью)   -  `0` — характеристика не используется 
     #[serde(rename = "charcType", skip_serializing_if = "Option::is_none")]
     pub charc_type: Option<i32>,
-    /// Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `false` — нет   - `true` — да 
+    /// Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `true` — да   - `false` — нет 
     #[serde(rename = "hasFilter", skip_serializing_if = "Option::is_none")]
     pub has_filter: Option<bool>,
+    /// Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:   -  `true` — варианты товара могут отличаться по этой характеристике   -  `false` — варианты товара не могут отличаться по этой характеристике 
+    #[serde(rename = "isVariable", skip_serializing_if = "Option::is_none")]
+    pub is_variable: Option<bool>,
 }
 
 impl ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
@@ -58,6 +61,7 @@ impl ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
             popular: None,
             charc_type: None,
             has_filter: None,
+            is_variable: None,
         }
     }
 }

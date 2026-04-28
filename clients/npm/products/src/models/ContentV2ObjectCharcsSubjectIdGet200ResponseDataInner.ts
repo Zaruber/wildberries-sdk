@@ -88,13 +88,22 @@ export interface ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
     charcType?: number;
     /**
      * Ключевая характеристика. Является ли характеристика значимой для покупателей:
-     *   - `false` — нет
      *   - `true` — да
+     *   - `false` — нет
      * 
      * @type {boolean}
      * @memberof ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner
      */
     hasFilter?: boolean;
+    /**
+     * Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:
+     *   -  `true` — варианты товара могут отличаться по этой характеристике
+     *   -  `false` — варианты товара не могут отличаться по этой характеристике
+     * 
+     * @type {boolean}
+     * @memberof ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner
+     */
+    isVariable?: boolean;
 }
 
 /**
@@ -124,6 +133,7 @@ export function ContentV2ObjectCharcsSubjectIdGet200ResponseDataInnerFromJSONTyp
         'popular': json['popular'] == null ? undefined : json['popular'],
         'charcType': json['charcType'] == null ? undefined : json['charcType'],
         'hasFilter': json['hasFilter'] == null ? undefined : json['hasFilter'],
+        'isVariable': json['isVariable'] == null ? undefined : json['isVariable'],
     };
 }
 
@@ -148,6 +158,7 @@ export function ContentV2ObjectCharcsSubjectIdGet200ResponseDataInnerToJSONTyped
         'popular': value['popular'],
         'charcType': value['charcType'],
         'hasFilter': value['hasFilter'],
+        'isVariable': value['isVariable'],
     };
 }
 

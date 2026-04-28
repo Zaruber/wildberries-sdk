@@ -12,93 +12,142 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
-import type {
-  ApiBatchError,
-  ApiCheckIdentityRequest,
-  ApiCheckedIdentity,
-  ApiError,
-  ApiGTINRequest,
-  ApiIMEIRequest,
-  ApiMetaSetResponses,
-  ApiNewOrders,
-  ApiOrderClientInfoResp,
-  ApiOrderStatuses,
-  ApiOrderStatusesV2,
-  ApiOrders,
-  ApiOrdersGTINSetRequest,
-  ApiOrdersIMEISetRequest,
-  ApiOrdersMeta,
-  ApiOrdersMetaDeleteRequest,
-  ApiOrdersMetaResponse,
-  ApiOrdersRequest,
-  ApiOrdersRequestV2,
-  ApiOrdersResponses,
-  ApiOrdersSGTINsSetRequest,
-  ApiOrdersUINSetRequest,
-  ApiSGTINsRequest,
-  ApiStatusSetResponses,
-  ApiUINRequest,
-  ApiV3ClickCollectOrdersNewGet401Response,
-  ApiV3ClickCollectOrdersNewGet402Response,
-} from '../models/index';
 import {
+    type ApiBatchError,
     ApiBatchErrorFromJSON,
     ApiBatchErrorToJSON,
+} from '../models/ApiBatchError';
+import {
+    type ApiCheckIdentityRequest,
     ApiCheckIdentityRequestFromJSON,
     ApiCheckIdentityRequestToJSON,
+} from '../models/ApiCheckIdentityRequest';
+import {
+    type ApiCheckedIdentity,
     ApiCheckedIdentityFromJSON,
     ApiCheckedIdentityToJSON,
+} from '../models/ApiCheckedIdentity';
+import {
+    type ApiError,
     ApiErrorFromJSON,
     ApiErrorToJSON,
+} from '../models/ApiError';
+import {
+    type ApiGTINRequest,
     ApiGTINRequestFromJSON,
     ApiGTINRequestToJSON,
+} from '../models/ApiGTINRequest';
+import {
+    type ApiIMEIRequest,
     ApiIMEIRequestFromJSON,
     ApiIMEIRequestToJSON,
+} from '../models/ApiIMEIRequest';
+import {
+    type ApiMetaSetResponses,
     ApiMetaSetResponsesFromJSON,
     ApiMetaSetResponsesToJSON,
+} from '../models/ApiMetaSetResponses';
+import {
+    type ApiNewOrders,
     ApiNewOrdersFromJSON,
     ApiNewOrdersToJSON,
+} from '../models/ApiNewOrders';
+import {
+    type ApiOrderClientInfoResp,
     ApiOrderClientInfoRespFromJSON,
     ApiOrderClientInfoRespToJSON,
+} from '../models/ApiOrderClientInfoResp';
+import {
+    type ApiOrderStatuses,
     ApiOrderStatusesFromJSON,
     ApiOrderStatusesToJSON,
+} from '../models/ApiOrderStatuses';
+import {
+    type ApiOrderStatusesV2,
     ApiOrderStatusesV2FromJSON,
     ApiOrderStatusesV2ToJSON,
+} from '../models/ApiOrderStatusesV2';
+import {
+    type ApiOrders,
     ApiOrdersFromJSON,
     ApiOrdersToJSON,
+} from '../models/ApiOrders';
+import {
+    type ApiOrdersGTINSetRequest,
     ApiOrdersGTINSetRequestFromJSON,
     ApiOrdersGTINSetRequestToJSON,
+} from '../models/ApiOrdersGTINSetRequest';
+import {
+    type ApiOrdersIMEISetRequest,
     ApiOrdersIMEISetRequestFromJSON,
     ApiOrdersIMEISetRequestToJSON,
+} from '../models/ApiOrdersIMEISetRequest';
+import {
+    type ApiOrdersMeta,
     ApiOrdersMetaFromJSON,
     ApiOrdersMetaToJSON,
+} from '../models/ApiOrdersMeta';
+import {
+    type ApiOrdersMetaDeleteRequest,
     ApiOrdersMetaDeleteRequestFromJSON,
     ApiOrdersMetaDeleteRequestToJSON,
+} from '../models/ApiOrdersMetaDeleteRequest';
+import {
+    type ApiOrdersMetaResponse,
     ApiOrdersMetaResponseFromJSON,
     ApiOrdersMetaResponseToJSON,
+} from '../models/ApiOrdersMetaResponse';
+import {
+    type ApiOrdersRequest,
     ApiOrdersRequestFromJSON,
     ApiOrdersRequestToJSON,
+} from '../models/ApiOrdersRequest';
+import {
+    type ApiOrdersRequestV2,
     ApiOrdersRequestV2FromJSON,
     ApiOrdersRequestV2ToJSON,
+} from '../models/ApiOrdersRequestV2';
+import {
+    type ApiOrdersResponses,
     ApiOrdersResponsesFromJSON,
     ApiOrdersResponsesToJSON,
+} from '../models/ApiOrdersResponses';
+import {
+    type ApiOrdersSGTINsSetRequest,
     ApiOrdersSGTINsSetRequestFromJSON,
     ApiOrdersSGTINsSetRequestToJSON,
+} from '../models/ApiOrdersSGTINsSetRequest';
+import {
+    type ApiOrdersUINSetRequest,
     ApiOrdersUINSetRequestFromJSON,
     ApiOrdersUINSetRequestToJSON,
+} from '../models/ApiOrdersUINSetRequest';
+import {
+    type ApiSGTINsRequest,
     ApiSGTINsRequestFromJSON,
     ApiSGTINsRequestToJSON,
+} from '../models/ApiSGTINsRequest';
+import {
+    type ApiStatusSetResponses,
     ApiStatusSetResponsesFromJSON,
     ApiStatusSetResponsesToJSON,
+} from '../models/ApiStatusSetResponses';
+import {
+    type ApiUINRequest,
     ApiUINRequestFromJSON,
     ApiUINRequestToJSON,
+} from '../models/ApiUINRequest';
+import {
+    type ApiV3ClickCollectOrdersNewGet401Response,
     ApiV3ClickCollectOrdersNewGet401ResponseFromJSON,
     ApiV3ClickCollectOrdersNewGet401ResponseToJSON,
+} from '../models/ApiV3ClickCollectOrdersNewGet401Response';
+import {
+    type ApiV3ClickCollectOrdersNewGet402Response,
     ApiV3ClickCollectOrdersNewGet402ResponseFromJSON,
     ApiV3ClickCollectOrdersNewGet402ResponseToJSON,
-} from '../models/index';
+} from '../models/ApiV3ClickCollectOrdersNewGet402Response';
 
 export interface ApiMarketplaceV3ClickCollectOrdersMetaDeletePostRequest {
     apiOrdersMetaDeleteRequest?: ApiOrdersMetaDeleteRequest;
@@ -1077,7 +1126,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Отменить сборочное задание
      * @deprecated
      */
@@ -1089,7 +1138,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Отменить сборочное задание
      * @deprecated
      */
@@ -1247,7 +1296,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Получить метаданные сборочного задания
      * @deprecated
      */
@@ -1259,7 +1308,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Получить метаданные сборочного задания
      * @deprecated
      */
@@ -1500,7 +1549,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
      * @deprecated
      */
@@ -1512,7 +1561,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
      * @deprecated
      */
@@ -1606,7 +1655,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Сообщить, что заказ принят покупателем
      * @deprecated
      */
@@ -1618,7 +1667,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Сообщить, что заказ принят покупателем
      * @deprecated
      */
@@ -1659,7 +1708,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Сообщить, что покупатель отказался от заказа
      * @deprecated
      */
@@ -1671,7 +1720,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов | | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Сообщить, что покупатель отказался от заказа
      * @deprecated
      */

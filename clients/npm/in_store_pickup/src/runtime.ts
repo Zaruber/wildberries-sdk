@@ -12,7 +12,6 @@
  * Do not edit the class manually.
  */
 
-
 export const BASE_PATH = "https://marketplace-api.wildberries.ru".replace(/\/+$/, "");
 
 export interface ConfigurationParameters {

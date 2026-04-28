@@ -172,18 +172,6 @@ main().catch(console.error);
 - `orders_dbs.DBSApi.apiV3DbsOrdersDeliveryDatePost` — Дата и время доставки
 - `orders_dbs.DBSApi.apiV3DbsOrdersGet` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DBSApi.apiV3DbsOrdersNewGet` — Получить список новых сборочных заданий
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdCancelPatch` — Отменить сборочное задание
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdConfirmPatch` — Перевести на сборку
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdDeliverPatch` — Перевести в доставку
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaDelete` — Удалить метаданные сборочного задания
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaGet` — Получить метаданные сборочного задания
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaGtinPut` — Закрепить за сборочным заданием GTIN
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaImeiPut` — Закрепить за сборочным заданием IMEI
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaSgtinPut` — Закрепить за сборочным заданием код маркировки товара
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdMetaUinPut` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdReceivePatch` — Сообщить, что заказ принят покупателем
-- `orders_dbs.DBSApi.apiV3DbsOrdersOrderIdRejectPatch` — Сообщить, что покупатель отказался от заказа
-- `orders_dbs.DBSApi.apiV3DbsOrdersStatusPost` — Получить статусы сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaDeletePost` — Удалить метаданные сборочных заданий

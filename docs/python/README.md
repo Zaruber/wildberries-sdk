@@ -185,18 +185,6 @@ print(feedbacks)
 - `orders_dbs.DefaultApi.api_v3_dbs_orders_delivery_date_post` — `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
 - `orders_dbs.DefaultApi.api_v3_dbs_orders_get` — `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DefaultApi.api_v3_dbs_orders_new_get` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_cancel_patch` — `PATCH /api/v3/dbs/orders/{orderId}/cancel` — (Deprecated) Отменить сборочное задание
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_confirm_patch` — `PATCH /api/v3/dbs/orders/{orderId}/confirm` — (Deprecated) Перевести на сборку
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_deliver_patch` — `PATCH /api/v3/dbs/orders/{orderId}/deliver` — (Deprecated) Перевести в доставку
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_meta_delete` — `DELETE /api/v3/dbs/orders/{orderId}/meta` — (Deprecated) Удалить метаданные сборочного задания
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_meta_get` — `GET /api/v3/dbs/orders/{orderId}/meta` — (Deprecated) Получить метаданные сборочного задания
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_meta_gtin_put` — `PUT /api/v3/dbs/orders/{orderId}/meta/gtin` — (Deprecated) Закрепить за сборочным заданием GTIN
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_meta_imei_put` — `PUT /api/v3/dbs/orders/{orderId}/meta/imei` — (Deprecated) Закрепить за сборочным заданием IMEI
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_meta_sgtin_put` — `PUT /api/v3/dbs/orders/{orderId}/meta/sgtin` — (Deprecated) Закрепить за сборочным заданием код маркировки товара
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_meta_uin_put` — `PUT /api/v3/dbs/orders/{orderId}/meta/uin` — (Deprecated) Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_receive_patch` — `PATCH /api/v3/dbs/orders/{orderId}/receive` — (Deprecated) Сообщить, что заказ принят покупателем
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_order_id_reject_patch` — `PATCH /api/v3/dbs/orders/{orderId}/reject` — (Deprecated) Сообщить, что покупатель отказался от заказа
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_status_post` — `POST /api/v3/dbs/orders/status` — (Deprecated) Получить статусы сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_delete_post` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий
