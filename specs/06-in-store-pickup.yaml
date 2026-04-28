@@ -440,6 +440,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
@@ -499,6 +500,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -745,6 +747,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -1059,6 +1062,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов |
@@ -1199,6 +1203,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |

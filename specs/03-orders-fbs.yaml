@@ -2986,7 +2986,7 @@ components:
                               - `required` — Маркировка обязательна, не заполнена
                             - `expiration`
                               - `required` — Маркировка обязательна, не заполнена
-                            - `сustomsDeclaration`
+                            - `customsDeclaration`
                               - `required` — Маркировка обязательна, не заполнена
     Next:
       type: integer

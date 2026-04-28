@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.04.28)
+- Products: в модели характеристик добавлено новое булево поле `isVariable` (признак меняющейся характеристики для различий вариантов товара); обновлён пример ответа с `isVariable: true`.
+- Orders FBS: исправлена опечатка в перечислении ключей обязательной маркировки — `сustomsDeclaration` → `customsDeclaration`.
+- Orders DBS: удалены устаревшие методы v3 `/api/v3/dbs/orders/status`, `/api/v3/dbs/orders/{orderId}/cancel|confirm|deliver|receive|reject`, а также `/api/v3/dbs/orders/{orderId}/meta` (GET/DELETE) и `/api/v3/dbs/orders/{orderId}/meta/{sgtin|uin|imei|gtin}` (PUT); удалены связанные компоненты (`Order`, `OrderDBS`, `Code`, `Meta`, примеры `InvalidWBCode`, `SGTINIsNotFilled`).
+- Orders DBS: актуализированы batch-методы метаданных в `/api/marketplace/v3/dbs/orders/meta/*` (info/delete/sgtin/uin/imei/gtin/customs-declaration) — унифицированы схемы запросов/ответов (для `meta/info` используется `api.OrdersRequestV2` → `api.OrdersMetaResponse`, для set-методов — `api.*SetRequest` → `api.StatusSetResponses`), и обновлены лимиты: для получения/удаления метаданных — 150 req/min (интервал 400 ms, burst 20), для закрепления `sgtin` явно добавлены типы лимитов (персональный/сервисный/базовый).
+
 ### Changed (2026.04.25)
 - Orders FBS: Терминология кроссбордера заменена на «трансграничные поставки» (в т.ч. для статуса `cancel_carrier`/`canceled_by_carrier`, методов стикеров и истории статусов, а также ограничения «только для Турции»).
 - Orders FBS: Обновлены описания поля `crossBorderType` в схемах — `0` теперь «внутренняя поставка», `1` — «трансграничная поставка» (enum без изменений).

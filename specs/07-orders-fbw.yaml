@@ -36,6 +36,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 6 запросов | 10 сек | 6 запросов |
@@ -107,6 +108,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 6 запросов | 10 сек | 6 запросов |
@@ -145,6 +147,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 6 запросов | 10 сек | 10 запросов |
@@ -181,6 +184,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -293,6 +297,7 @@ paths:
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
 
+
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 30 запросов | 2 сек | 10 запросов |
@@ -366,6 +371,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
@@ -451,6 +457,7 @@ paths:
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
 
         | Тип | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- | --- |
