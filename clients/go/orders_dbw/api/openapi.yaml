@@ -1082,6 +1082,95 @@ paths:
       x-category: marketplace
     servers:
     - url: https://marketplace-api.wildberries.ru
+  /api/marketplace/v3/dbw/orders/meta/details:
+    post:
+      description: "Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get)\
+        \ и статусы их валидации.\n<br><br>\nПеречень метаданных, доступных для сб\
+        орочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get),\
+        \ поле `requiredMeta`.\n<br><br>\nВозможные метаданные:\n  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)\n\
+        \  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)\n\
+        \  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)\n\
+        \  - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
+        \n  <div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
+        >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
+        <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
+        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
+        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
+        | 1 мин | 300 запросов | 200 мс | 20 запросов |\n\n</div>\n"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.OrdersRequestV2"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api.OrdersMetaDetailsResponse"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              example:
+                detail: {}
+                origin: dbs-public-api
+                requestId: f1787bd2d1fdс35d6f537316514у4a05
+                title: IncorrectRequest
+              schema:
+                $ref: "#/components/schemas/api.BatchError"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/problem+json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                detail: {}
+                origin: dbs-public-api
+                requestId: f1787bd2d1fdс35d6f537316514у4a05
+                title: AccessDenied
+              schema:
+                $ref: "#/components/schemas/api.BatchError"
+          description: Доступ запрещён
+        "429":
+          content:
+            application/problem+json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Получить метаданные сборочных заданий
+      tags:
+      - Метаданные DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
   /api/v3/dbw/orders/{orderId}/meta:
     delete:
       description: "Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get)\
@@ -1197,13 +1286,8 @@ paths:
       x-readonly-method: false
       x-category: marketplace
     get:
-      description: "Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get).\n\
-        <br><br>\nПеречень метаданных, доступных для сборочного задания, можно пол\
-        учить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get),\
-        \ поле `requiredMeta`.\n<br><br>\nВозможные метаданные:\n  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)\n\
-        \  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)\n\
-        \  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)\n\
-        \  - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
+      deprecated: true
+      description: "Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)\n\
         \n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
         >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
         <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
@@ -2123,6 +2207,67 @@ components:
           nullable: true
           type: string
       type: object
+    api.OrdersMetaDetailsResponse:
+      example:
+        requestId: f1787bd2d1fdс35d6f537316514у4a05
+        orders:
+        - metaDetails:
+          - decision: sgtinIntroduced
+            value: "123456789012345"
+            key: sgtin
+          - decision: sgtinIntroduced
+            value: "123456789012345"
+            key: sgtin
+          isError: false
+          orderId: 123456
+          errors: []
+        - metaDetails:
+          - decision: sgtinIntroduced
+            value: "123456789012345"
+            key: sgtin
+          - decision: sgtinIntroduced
+            value: "123456789012345"
+            key: sgtin
+          isError: false
+          orderId: 123456
+          errors: []
+      properties:
+        requestId:
+          description: Уникальный ID запроса
+          example: f1787bd2d1fdс35d6f537316514у4a05
+          type: string
+        orders:
+          description: Метаданные сборочных заданий и статусы их валидации
+          items:
+            $ref: "#/components/schemas/api_OrdersMetaDetailsResponse_orders_inner"
+          type: array
+      required:
+      - requestId
+      type: object
+    api.BatchError:
+      example:
+        requestId: f1787bd2d1fdс35d6f537316514у4a05
+        origin: dbs-public-api
+        detail: {}
+        title: IncorrectRequest
+      properties:
+        detail:
+          description: Детали ошибки
+          example: {}
+          type: object
+        origin:
+          description: ID внутреннего сервиса WB
+          example: dbs-public-api
+          type: string
+        requestId:
+          description: Уникальный ID запроса
+          example: f1787bd2d1fdс35d6f537316514у4a05
+          type: string
+        title:
+          description: Заголовок ошибки
+          example: IncorrectRequest
+          type: string
+      type: object
     Error:
       example:
         code: code
@@ -2526,6 +2671,18 @@ components:
             $ref: "#/components/schemas/DeliveryDatesInfoResp_orders_inner"
           type: array
       type: object
+    api.OrdersRequestV2:
+      properties:
+        ordersIds:
+          description: Список ID сборочных заданий
+          example:
+          - 123456
+          - 234567
+          items:
+            type: integer
+          maxItems: 1000
+          type: array
+      type: object
     Meta:
       description: Метаданные сборочного задания
       example:
@@ -2914,6 +3071,110 @@ components:
           type: string
       required:
       - gtin
+      type: object
+    api_OrdersMetaDetailsResponse_orders_inner_errors_inner:
+      properties:
+        code:
+          description: Код ошибки
+          example: 404
+          type: integer
+        detail:
+          description: Дополнительная информация об ошибке
+          example: NotFound
+          type: string
+      type: object
+    api_OrdersMetaDetailsResponse_orders_inner_metaDetails_inner:
+      example:
+        decision: sgtinIntroduced
+        value: "123456789012345"
+        key: sgtin
+      properties:
+        key:
+          description: Метаданные
+          example: sgtin
+          type: string
+        value:
+          description: Значение метаданных
+          example: "123456789012345"
+          nullable: true
+          type: string
+        decision:
+          description: |
+            Статус проверки:
+            - `imei`
+              - `pending` — Маркировка на проверке
+              - `optional` — Маркировка не обязательна
+              - `filled` — Валидация пройдена
+              - `deadlineExceeded` — Валидация пройдена
+              - `imeiMaySell` — Товар допущен к продаже. Валидация пройдена
+              - `imeiSoldB2B` — Товар продан покупателю B2B, допущен к продаже повторно. Валидация пройдена
+              - `required` — Обязательная маркировка не заполнена. Валидация не пройдена
+              - `imeiInvalidFormat` — Неверный формат маркировки. Валидация не пройдена
+              - `imeiAlreadySold` — Товар с этим IMEI уже продан. Валидация не пройдена
+            - `uin`
+              - `optional` — Маркировка не обязательна
+              - `filled` — Валидация пройдена
+            - `sgtin`
+              - `pending` — Маркировка на проверке
+              - `optional` — Маркировка не обязательна
+              - `filled` — Валидация пройдена
+              - `deadlineExceeded` — Валидация пройдена
+              - `sgtinIntroduced` — Товар допущен к продаже. Валидация пройдена
+              - `sgtinSoldB2B` — Товар продан покупателю B2B, допущен к продаже повторно. Валидация пройдена
+              - `required` — Обязательная маркировка не заполнена. Валидация не пройдена
+              - `sgtinInvalidFormat` — Неверный формат маркировки. Валидация не пройдена
+              - `sgtinNotFound` — Маркировка не найдена в [Честном Знаке](https://chestnyznak.ru). Валидация не пройдена
+              - `sgtinEmitted` —  Маркировка эмитирована. Валидация не пройдена
+              - `sgtinApplied` — Не пройдена процедура Ввод в оборот. Валидация не пройдена
+              - `sgtinWrittenOff` — Списан. Валидация не пройдена
+              - `sgtinRetired` — Выбыл. Валидация не пройдена
+              - `sgtinWithdrawn` — Выбыл. Валидация не пройдена
+              - `sgtinDisaggregation` — Расформирован. Валидация не пройдена
+              - `sgtinDisaggregated` — Расформирован. Валидация не пройдена
+              - `sgtinAppliedNotPaid` — Не оплачен. Валидация не пройдена
+            - `gtin`
+              - `optional` — Маркировка не обязательна
+              - `filled` — Валидация пройдена
+            - `customsDeclaration`
+              - `optional` — Маркировка не обязательна
+              - `filled` — Валидация пройдена
+          example: sgtinIntroduced
+          type: string
+      type: object
+    api_OrdersMetaDetailsResponse_orders_inner:
+      example:
+        metaDetails:
+        - decision: sgtinIntroduced
+          value: "123456789012345"
+          key: sgtin
+        - decision: sgtinIntroduced
+          value: "123456789012345"
+          key: sgtin
+        isError: false
+        orderId: 123456
+        errors: []
+      properties:
+        orderId:
+          description: ID сборочного задания
+          example: 123456
+          type: integer
+        isError:
+          description: Есть ли ошибки
+          example: false
+          type: boolean
+        errors:
+          description: Информация об ошибке
+          example: []
+          items:
+            $ref: "#/components/schemas/api_OrdersMetaDetailsResponse_orders_inner_errors_inner"
+          type: array
+        metaDetails:
+          description: Метаданные и статусы их валидации
+          items:
+            $ref: "#/components/schemas/api_OrdersMetaDetailsResponse_orders_inner_metaDetails_inner"
+          type: array
+      required:
+      - isError
       type: object
     OrderNewDBW_address:
       description: Адрес покупателя для доставки

@@ -214,6 +214,16 @@ import {
     V3APIErrorToJSON,
 } from '../models/V3APIError';
 import {
+    type V3APIErrorV2,
+    V3APIErrorV2FromJSON,
+    V3APIErrorV2ToJSON,
+} from '../models/V3APIErrorV2';
+import {
+    type V3ArchiveOrders,
+    V3ArchiveOrdersFromJSON,
+    V3ArchiveOrdersToJSON,
+} from '../models/V3ArchiveOrders';
+import {
     type V3GetMetaMultiRequest,
     V3GetMetaMultiRequestFromJSON,
     V3GetMetaMultiRequestToJSON,
@@ -228,6 +238,13 @@ import {
     V3SupplyOrderIDsAPIFromJSON,
     V3SupplyOrderIDsAPIToJSON,
 } from '../models/V3SupplyOrderIDsAPI';
+
+export interface ApiMarketplaceV3FbsOrdersArchiveGetRequest {
+    year: number;
+    month: number;
+    next: number;
+    limit: number;
+}
 
 export interface ApiMarketplaceV3OrdersMetaPostRequest {
     v3GetMetaMultiRequest?: V3GetMetaMultiRequest;
@@ -374,6 +391,93 @@ export interface ApiV3SuppliesSupplyIdTrbxStickersPostOperationRequest {
  * 
  */
 export class FBSApi extends runtime.BaseAPI {
+
+    /**
+     * Creates request options for apiMarketplaceV3FbsOrdersArchiveGet without sending the request
+     */
+    async apiMarketplaceV3FbsOrdersArchiveGetRequestOpts(requestParameters: ApiMarketplaceV3FbsOrdersArchiveGetRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['year'] == null) {
+            throw new runtime.RequiredError(
+                'year',
+                'Required parameter "year" was null or undefined when calling apiMarketplaceV3FbsOrdersArchiveGet().'
+            );
+        }
+
+        if (requestParameters['month'] == null) {
+            throw new runtime.RequiredError(
+                'month',
+                'Required parameter "month" was null or undefined when calling apiMarketplaceV3FbsOrdersArchiveGet().'
+            );
+        }
+
+        if (requestParameters['next'] == null) {
+            throw new runtime.RequiredError(
+                'next',
+                'Required parameter "next" was null or undefined when calling apiMarketplaceV3FbsOrdersArchiveGet().'
+            );
+        }
+
+        if (requestParameters['limit'] == null) {
+            throw new runtime.RequiredError(
+                'limit',
+                'Required parameter "limit" was null or undefined when calling apiMarketplaceV3FbsOrdersArchiveGet().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['year'] != null) {
+            queryParameters['year'] = requestParameters['year'];
+        }
+
+        if (requestParameters['month'] != null) {
+            queryParameters['month'] = requestParameters['month'];
+        }
+
+        if (requestParameters['next'] != null) {
+            queryParameters['next'] = requestParameters['next'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/fbs/orders/archive`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * Получить список архивных сборочных заданий
+     */
+    async apiMarketplaceV3FbsOrdersArchiveGetRaw(requestParameters: ApiMarketplaceV3FbsOrdersArchiveGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V3ArchiveOrders>> {
+        const requestOptions = await this.apiMarketplaceV3FbsOrdersArchiveGetRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => V3ArchiveOrdersFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * Получить список архивных сборочных заданий
+     */
+    async apiMarketplaceV3FbsOrdersArchiveGet(requestParameters: ApiMarketplaceV3FbsOrdersArchiveGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V3ArchiveOrders> {
+        const response = await this.apiMarketplaceV3FbsOrdersArchiveGetRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
 
     /**
      * Creates request options for apiMarketplaceV3OrdersMetaPost without sending the request

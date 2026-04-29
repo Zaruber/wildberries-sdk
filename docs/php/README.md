@@ -112,6 +112,7 @@ var_dump($response);
 - `products.DefaultApi.contentV3MediaSavePost` — `POST /content/v3/media/save` — Загрузить медиафайлы по ссылкам
 
 ### orders_fbs (`orders_fbs`)
+- `orders_fbs.FBSApi.apiMarketplaceV3FbsOrdersArchiveGet` — `GET /api/marketplace/v3/fbs/orders/archive` — Получить список архивных сборочных заданий
 - `orders_fbs.FBSApi.apiMarketplaceV3OrdersMetaPost` — `POST /api/marketplace/v3/orders/meta` — Получить метаданные сборочных заданий
 - `orders_fbs.FBSApi.apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut` — `PUT /api/marketplace/v3/orders/{orderId}/meta/customs-declaration` — Закрепить за сборочным заданием номер ГТД
 - `orders_fbs.FBSApi.apiMarketplaceV3SuppliesSupplyIdOrderIdsGet` — `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки
@@ -149,6 +150,7 @@ var_dump($response);
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersClientPost` — `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
+- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDetailsPost` — `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
 - `orders_dbw.DBWApi.apiV3DbwOrdersCourierPost` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
 - `orders_dbw.DBWApi.apiV3DbwOrdersDeliveryDatePost` — `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
 - `orders_dbw.DBWApi.apiV3DbwOrdersGet` — `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
@@ -169,6 +171,7 @@ var_dump($response);
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersB2bInfoPost` — `POST /api/marketplace/v3/dbs/orders/b2b/info` — Информация о покупателе B2B
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPost` — `POST /api/marketplace/v3/dbs/orders/meta/customs-declaration` — Закрепить за сборочными заданиями номер ГТД
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDetailsPost` — `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить метаданные сборочных заданий
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaGtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaImeiPost` — `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaInfoPost` — `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий

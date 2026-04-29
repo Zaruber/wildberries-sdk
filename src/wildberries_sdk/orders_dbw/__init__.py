@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.75"
+__version__ = "0.1.76"
 
 # Define package exports
 __all__ = [
@@ -28,6 +28,12 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "ApiBatchError",
+    "ApiOrdersMetaDetailsResponse",
+    "ApiOrdersMetaDetailsResponseOrdersInner",
+    "ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner",
+    "ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner",
+    "ApiOrdersRequestV2",
     "ApiV3DbwOrdersGet200Response",
     "ApiV3DbwOrdersNewGet200Response",
     "ApiV3DbwOrdersNewGet401Response",
@@ -80,6 +86,12 @@ from wildberries_sdk.orders_dbw.exceptions import ApiAttributeError as ApiAttrib
 from wildberries_sdk.orders_dbw.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from wildberries_sdk.orders_dbw.models.api_batch_error import ApiBatchError as ApiBatchError
+from wildberries_sdk.orders_dbw.models.api_orders_meta_details_response import ApiOrdersMetaDetailsResponse as ApiOrdersMetaDetailsResponse
+from wildberries_sdk.orders_dbw.models.api_orders_meta_details_response_orders_inner import ApiOrdersMetaDetailsResponseOrdersInner as ApiOrdersMetaDetailsResponseOrdersInner
+from wildberries_sdk.orders_dbw.models.api_orders_meta_details_response_orders_inner_errors_inner import ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner as ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner
+from wildberries_sdk.orders_dbw.models.api_orders_meta_details_response_orders_inner_meta_details_inner import ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner as ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner
+from wildberries_sdk.orders_dbw.models.api_orders_request_v2 import ApiOrdersRequestV2 as ApiOrdersRequestV2
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_get200_response import ApiV3DbwOrdersGet200Response as ApiV3DbwOrdersGet200Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_new_get200_response import ApiV3DbwOrdersNewGet200Response as ApiV3DbwOrdersNewGet200Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_new_get401_response import ApiV3DbwOrdersNewGet401Response as ApiV3DbwOrdersNewGet401Response

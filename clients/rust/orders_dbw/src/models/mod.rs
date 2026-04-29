@@ -1,3 +1,15 @@
+pub mod api_batch_error;
+pub use self::api_batch_error::ApiBatchError;
+pub mod api_orders_meta_details_response;
+pub use self::api_orders_meta_details_response::ApiOrdersMetaDetailsResponse;
+pub mod api_orders_meta_details_response_orders_inner;
+pub use self::api_orders_meta_details_response_orders_inner::ApiOrdersMetaDetailsResponseOrdersInner;
+pub mod api_orders_meta_details_response_orders_inner_errors_inner;
+pub use self::api_orders_meta_details_response_orders_inner_errors_inner::ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner;
+pub mod api_orders_meta_details_response_orders_inner_meta_details_inner;
+pub use self::api_orders_meta_details_response_orders_inner_meta_details_inner::ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner;
+pub mod api_orders_request_v2;
+pub use self::api_orders_request_v2::ApiOrdersRequestV2;
 pub mod _api_v3_dbw_orders_get_200_response;
 pub use self::_api_v3_dbw_orders_get_200_response::ApiV3DbwOrdersGet200Response;
 pub mod _api_v3_dbw_orders_new_get_200_response;

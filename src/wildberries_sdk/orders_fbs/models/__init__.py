@@ -78,6 +78,15 @@ from wildberries_sdk.orders_fbs.models.supply import Supply
 from wildberries_sdk.orders_fbs.models.supply_trbx import SupplyTrbx
 from wildberries_sdk.orders_fbs.models.trbx_stickers import TrbxStickers
 from wildberries_sdk.orders_fbs.models.v3_api_error import V3APIError
+from wildberries_sdk.orders_fbs.models.v3_api_error_v2 import V3APIErrorV2
+from wildberries_sdk.orders_fbs.models.v3_api_error_v2_errors_inner import V3APIErrorV2ErrorsInner
+from wildberries_sdk.orders_fbs.models.v3_archive_order import V3ArchiveOrder
+from wildberries_sdk.orders_fbs.models.v3_archive_order_cross_border import V3ArchiveOrderCrossBorder
+from wildberries_sdk.orders_fbs.models.v3_archive_order_options import V3ArchiveOrderOptions
+from wildberries_sdk.orders_fbs.models.v3_archive_order_price_info import V3ArchiveOrderPriceInfo
+from wildberries_sdk.orders_fbs.models.v3_archive_order_product import V3ArchiveOrderProduct
+from wildberries_sdk.orders_fbs.models.v3_archive_order_status import V3ArchiveOrderStatus
+from wildberries_sdk.orders_fbs.models.v3_archive_orders import V3ArchiveOrders
 from wildberries_sdk.orders_fbs.models.v3_get_meta_multi_request import V3GetMetaMultiRequest
 from wildberries_sdk.orders_fbs.models.v3_order_meta_api import V3OrderMetaAPI
 from wildberries_sdk.orders_fbs.models.v3_orders_meta_api import V3OrdersMetaAPI

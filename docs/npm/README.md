@@ -98,6 +98,7 @@ main().catch(console.error);
 - `products.DefaultApi.contentV3MediaSavePost` — Загрузить медиафайлы по ссылкам
 
 ### orders_fbs (`orders_fbs`)
+- `orders_fbs.FBSApi.apiMarketplaceV3FbsOrdersArchiveGet` — Получить список архивных сборочных заданий
 - `orders_fbs.FBSApi.apiMarketplaceV3OrdersMetaPost` — Получить метаданные сборочных заданий
 - `orders_fbs.FBSApi.apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut` — Закрепить за сборочным заданием номер ГТД
 - `orders_fbs.FBSApi.apiMarketplaceV3SuppliesSupplyIdOrderIdsGet` — Получить ID сборочных заданий поставки
@@ -135,6 +136,7 @@ main().catch(console.error);
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersClientPost` — Информация о покупателе
+- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDetailsPost` — Получить метаданные сборочных заданий
 - `orders_dbw.DBWApi.apiV3DbwOrdersCourierPost` — Информация о курьере
 - `orders_dbw.DBWApi.apiV3DbwOrdersDeliveryDatePost` — Дата и время доставки
 - `orders_dbw.DBWApi.apiV3DbwOrdersGet` — Получить информацию о завершенных сборочных заданиях
@@ -155,6 +157,7 @@ main().catch(console.error);
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersB2bInfoPost` — Информация о покупателе B2B
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPost` — Закрепить за сборочными заданиями номер ГТД
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDeletePost` — Удалить метаданные сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDetailsPost` — Получить метаданные сборочных заданий
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaGtinPost` — Закрепить GTIN за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaImeiPost` — Закрепить IMEI за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaInfoPost` — Получить метаданные сборочных заданий

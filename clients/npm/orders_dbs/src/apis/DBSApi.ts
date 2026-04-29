@@ -84,6 +84,11 @@ import {
     ApiOrdersMetaDeleteRequestToJSON,
 } from '../models/ApiOrdersMetaDeleteRequest';
 import {
+    type ApiOrdersMetaDetailsResponse,
+    ApiOrdersMetaDetailsResponseFromJSON,
+    ApiOrdersMetaDetailsResponseToJSON,
+} from '../models/ApiOrdersMetaDetailsResponse';
+import {
     type ApiOrdersMetaResponse,
     ApiOrdersMetaResponseFromJSON,
     ApiOrdersMetaResponseToJSON,
@@ -159,6 +164,10 @@ export interface ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostOperationReq
 
 export interface ApiMarketplaceV3DbsOrdersMetaDeletePostRequest {
     apiOrdersMetaDeleteRequest?: ApiOrdersMetaDeleteRequest;
+}
+
+export interface ApiMarketplaceV3DbsOrdersMetaDetailsPostRequest {
+    apiOrdersRequestV2?: ApiOrdersRequestV2;
 }
 
 export interface ApiMarketplaceV3DbsOrdersMetaGtinPostRequest {
@@ -381,6 +390,52 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for apiMarketplaceV3DbsOrdersMetaDetailsPost without sending the request
+     */
+    async apiMarketplaceV3DbsOrdersMetaDetailsPostRequestOpts(requestParameters: ApiMarketplaceV3DbsOrdersMetaDetailsPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/meta/details`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        };
+    }
+
+    /**
+     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и статусы их валидации. <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)   - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Получить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersMetaDetailsPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaDetailsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiOrdersMetaDetailsResponse>> {
+        const requestOptions = await this.apiMarketplaceV3DbsOrdersMetaDetailsPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiOrdersMetaDetailsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и статусы их валидации. <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)   - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Получить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbsOrdersMetaDetailsPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaDetailsPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiOrdersMetaDetailsResponse> {
+        const response = await this.apiMarketplaceV3DbsOrdersMetaDetailsPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Creates request options for apiMarketplaceV3DbsOrdersMetaGtinPost without sending the request
      */
     async apiMarketplaceV3DbsOrdersMetaGtinPostRequestOpts(requestParameters: ApiMarketplaceV3DbsOrdersMetaGtinPostRequest): Promise<runtime.RequestOpts> {
@@ -474,6 +529,7 @@ export class DBSApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for apiMarketplaceV3DbsOrdersMetaInfoPost without sending the request
+     * @deprecated
      */
     async apiMarketplaceV3DbsOrdersMetaInfoPostRequestOpts(requestParameters: ApiMarketplaceV3DbsOrdersMetaInfoPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -499,8 +555,9 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)   - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 150 запросов | 400 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 150 запросов | 400 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Получить метаданные сборочных заданий
+     * @deprecated
      */
     async apiMarketplaceV3DbsOrdersMetaInfoPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaInfoPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiOrdersMetaResponse>> {
         const requestOptions = await this.apiMarketplaceV3DbsOrdersMetaInfoPostRequestOpts(requestParameters);
@@ -510,8 +567,9 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS). <br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)   - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)   - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)  Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br> <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 150 запросов | 400 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 150 запросов | 400 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Получить метаданные сборочных заданий
+     * @deprecated
      */
     async apiMarketplaceV3DbsOrdersMetaInfoPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaInfoPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiOrdersMetaResponse> {
         const response = await this.apiMarketplaceV3DbsOrdersMetaInfoPostRaw(requestParameters, initOverrides);

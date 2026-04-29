@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.75"
+__version__ = "0.1.76"
 
 # Define package exports
 __all__ = [
@@ -56,6 +56,10 @@ __all__ = [
     "ApiOrdersGTINSetRequest",
     "ApiOrdersIMEISetRequest",
     "ApiOrdersMetaDeleteRequest",
+    "ApiOrdersMetaDetailsResponse",
+    "ApiOrdersMetaDetailsResponseOrdersInner",
+    "ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner",
+    "ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner",
     "ApiOrdersMetaResponse",
     "ApiOrdersRequestV2",
     "ApiOrdersSGTINsSetRequest",
@@ -125,6 +129,10 @@ from wildberries_sdk.orders_dbs.models.api_orders_code_request import ApiOrdersC
 from wildberries_sdk.orders_dbs.models.api_orders_gtin_set_request import ApiOrdersGTINSetRequest as ApiOrdersGTINSetRequest
 from wildberries_sdk.orders_dbs.models.api_orders_imei_set_request import ApiOrdersIMEISetRequest as ApiOrdersIMEISetRequest
 from wildberries_sdk.orders_dbs.models.api_orders_meta_delete_request import ApiOrdersMetaDeleteRequest as ApiOrdersMetaDeleteRequest
+from wildberries_sdk.orders_dbs.models.api_orders_meta_details_response import ApiOrdersMetaDetailsResponse as ApiOrdersMetaDetailsResponse
+from wildberries_sdk.orders_dbs.models.api_orders_meta_details_response_orders_inner import ApiOrdersMetaDetailsResponseOrdersInner as ApiOrdersMetaDetailsResponseOrdersInner
+from wildberries_sdk.orders_dbs.models.api_orders_meta_details_response_orders_inner_errors_inner import ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner as ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner
+from wildberries_sdk.orders_dbs.models.api_orders_meta_details_response_orders_inner_meta_details_inner import ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner as ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner
 from wildberries_sdk.orders_dbs.models.api_orders_meta_response import ApiOrdersMetaResponse as ApiOrdersMetaResponse
 from wildberries_sdk.orders_dbs.models.api_orders_request_v2 import ApiOrdersRequestV2 as ApiOrdersRequestV2
 from wildberries_sdk.orders_dbs.models.api_orders_sgtins_set_request import ApiOrdersSGTINsSetRequest as ApiOrdersSGTINsSetRequest

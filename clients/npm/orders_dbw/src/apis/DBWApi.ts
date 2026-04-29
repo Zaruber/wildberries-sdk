@@ -14,6 +14,21 @@
 
 import * as runtime from '../runtime';
 import {
+    type ApiBatchError,
+    ApiBatchErrorFromJSON,
+    ApiBatchErrorToJSON,
+} from '../models/ApiBatchError';
+import {
+    type ApiOrdersMetaDetailsResponse,
+    ApiOrdersMetaDetailsResponseFromJSON,
+    ApiOrdersMetaDetailsResponseToJSON,
+} from '../models/ApiOrdersMetaDetailsResponse';
+import {
+    type ApiOrdersRequestV2,
+    ApiOrdersRequestV2FromJSON,
+    ApiOrdersRequestV2ToJSON,
+} from '../models/ApiOrdersRequestV2';
+import {
     type ApiV3DbwOrdersGet200Response,
     ApiV3DbwOrdersGet200ResponseFromJSON,
     ApiV3DbwOrdersGet200ResponseToJSON,
@@ -106,6 +121,10 @@ import {
 
 export interface ApiMarketplaceV3DbwOrdersClientPostRequest {
     ordersRequestAPI: OrdersRequestAPI;
+}
+
+export interface ApiMarketplaceV3DbwOrdersMetaDetailsPostRequest {
+    apiOrdersRequestV2?: ApiOrdersRequestV2;
 }
 
 export interface ApiV3DbwOrdersCourierPostRequest {
@@ -230,6 +249,52 @@ export class DBWApi extends runtime.BaseAPI {
      */
     async apiMarketplaceV3DbwOrdersClientPost(requestParameters: ApiMarketplaceV3DbwOrdersClientPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ClientInfoResp> {
         const response = await this.apiMarketplaceV3DbwOrdersClientPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for apiMarketplaceV3DbwOrdersMetaDetailsPost without sending the request
+     */
+    async apiMarketplaceV3DbwOrdersMetaDetailsPostRequestOpts(requestParameters: ApiMarketplaceV3DbwOrdersMetaDetailsPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbw/orders/meta/details`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        };
+    }
+
+    /**
+     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) и статусы их валидации. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)    <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * Получить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbwOrdersMetaDetailsPostRaw(requestParameters: ApiMarketplaceV3DbwOrdersMetaDetailsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiOrdersMetaDetailsResponse>> {
+        const requestOptions = await this.apiMarketplaceV3DbwOrdersMetaDetailsPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiOrdersMetaDetailsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) и статусы их валидации. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)    <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * Получить метаданные сборочных заданий
+     */
+    async apiMarketplaceV3DbwOrdersMetaDetailsPost(requestParameters: ApiMarketplaceV3DbwOrdersMetaDetailsPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiOrdersMetaDetailsResponse> {
+        const response = await this.apiMarketplaceV3DbwOrdersMetaDetailsPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -675,6 +740,7 @@ export class DBWApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for apiV3DbwOrdersOrderIdMetaGet without sending the request
+     * @deprecated
      */
     async apiV3DbwOrdersOrderIdMetaGetRequestOpts(requestParameters: ApiV3DbwOrdersOrderIdMetaGetRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['orderId'] == null) {
@@ -705,8 +771,9 @@ export class DBWApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
      * Получить метаданные сборочного задания
+     * @deprecated
      */
     async apiV3DbwOrdersOrderIdMetaGetRaw(requestParameters: ApiV3DbwOrdersOrderIdMetaGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3DbwOrdersOrderIdMetaGet200Response>> {
         const requestOptions = await this.apiV3DbwOrdersOrderIdMetaGetRequestOpts(requestParameters);
@@ -716,8 +783,9 @@ export class DBWApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get). <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get), поле `requiredMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
      * Получить метаданные сборочного задания
+     * @deprecated
      */
     async apiV3DbwOrdersOrderIdMetaGet(requestParameters: ApiV3DbwOrdersOrderIdMetaGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3DbwOrdersOrderIdMetaGet200Response> {
         const response = await this.apiV3DbwOrdersOrderIdMetaGetRaw(requestParameters, initOverrides);

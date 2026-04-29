@@ -1,5 +1,11 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './ApiBatchError';
+export * from './ApiOrdersMetaDetailsResponse';
+export * from './ApiOrdersMetaDetailsResponseOrdersInner';
+export * from './ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner';
+export * from './ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner';
+export * from './ApiOrdersRequestV2';
 export * from './ApiV3DbwOrdersGet200Response';
 export * from './ApiV3DbwOrdersNewGet200Response';
 export * from './ApiV3DbwOrdersNewGet401Response';

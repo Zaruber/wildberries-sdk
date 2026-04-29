@@ -15,6 +15,17 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
+/// struct for typed errors of method [`api_marketplace_v3_fbs_orders_archive_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ApiMarketplaceV3FbsOrdersArchiveGetError {
+    Status400(models::V3ApiErrorV2),
+    Status401(models::ApiV3PassesOfficesGet401Response),
+    Status403(models::V3ApiErrorV2),
+    Status429(models::ApiV3PassesOfficesGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`api_marketplace_v3_orders_meta_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -447,6 +458,58 @@ pub enum ApiV3SuppliesSupplyIdTrbxStickersPostError {
     UnknownValue(serde_json::Value),
 }
 
+
+/// Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+pub async fn api_marketplace_v3_fbs_orders_archive_get(configuration: &configuration::Configuration, year: i32, month: i32, next: i64, limit: i32) -> Result<models::V3ArchiveOrders, Error<ApiMarketplaceV3FbsOrdersArchiveGetError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_query_year = year;
+    let p_query_month = month;
+    let p_query_next = next;
+    let p_query_limit = limit;
+
+    let uri_str = format!("{}/api/marketplace/v3/fbs/orders/archive", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    req_builder = req_builder.query(&[("year", &p_query_year.to_string())]);
+    req_builder = req_builder.query(&[("month", &p_query_month.to_string())]);
+    req_builder = req_builder.query(&[("next", &p_query_next.to_string())]);
+    req_builder = req_builder.query(&[("limit", &p_query_limit.to_string())]);
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::V3ArchiveOrders`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::V3ArchiveOrders`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ApiMarketplaceV3FbsOrdersArchiveGetError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
 
 /// Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 pub async fn api_marketplace_v3_orders_meta_post(configuration: &configuration::Configuration, v3_get_meta_multi_request: Option<models::V3GetMetaMultiRequest>) -> Result<models::V3OrdersMetaApi, Error<ApiMarketplaceV3OrdersMetaPostError>> {

@@ -54,6 +54,7 @@ from wildberries_sdk.orders_fbs.models.model_pass import ModelPass
 from wildberries_sdk.orders_fbs.models.orders_request_api import OrdersRequestAPI
 from wildberries_sdk.orders_fbs.models.pass_office import PassOffice
 from wildberries_sdk.orders_fbs.models.supply import Supply
+from wildberries_sdk.orders_fbs.models.v3_archive_orders import V3ArchiveOrders
 from wildberries_sdk.orders_fbs.models.v3_get_meta_multi_request import V3GetMetaMultiRequest
 from wildberries_sdk.orders_fbs.models.v3_orders_meta_api import V3OrdersMetaAPI
 from wildberries_sdk.orders_fbs.models.v3_supply_order_ids_api import V3SupplyOrderIDsAPI
@@ -74,6 +75,336 @@ class DefaultApi:
         if api_client is None:
             api_client = ApiClient.get_default()
         self.api_client = api_client
+
+
+    @validate_call
+    def api_marketplace_v3_fbs_orders_archive_get(
+        self,
+        year: Annotated[StrictInt, Field(description="Год создания заказа")],
+        month: Annotated[int, Field(le=12, strict=True, ge=1, description="Месяц создания заказа")],
+        next: Annotated[StrictInt, Field(description="Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе.")],
+        limit: Annotated[int, Field(le=1000, strict=True, ge=100, description="Количество сборочных заданий в ответе")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> V3ArchiveOrders:
+        """Получить список архивных сборочных заданий
+
+        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+
+        :param year: Год создания заказа (required)
+        :type year: int
+        :param month: Месяц создания заказа (required)
+        :type month: int
+        :param next: Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
+        :type next: int
+        :param limit: Количество сборочных заданий в ответе (required)
+        :type limit: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_fbs_orders_archive_get_serialize(
+            year=year,
+            month=month,
+            next=next,
+            limit=limit,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V3ArchiveOrders",
+            '400': "V3APIErrorV2",
+            '401': "ApiV3PassesOfficesGet401Response",
+            '403': "V3APIErrorV2",
+            '429': "ApiV3PassesOfficesGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def api_marketplace_v3_fbs_orders_archive_get_with_http_info(
+        self,
+        year: Annotated[StrictInt, Field(description="Год создания заказа")],
+        month: Annotated[int, Field(le=12, strict=True, ge=1, description="Месяц создания заказа")],
+        next: Annotated[StrictInt, Field(description="Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе.")],
+        limit: Annotated[int, Field(le=1000, strict=True, ge=100, description="Количество сборочных заданий в ответе")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[V3ArchiveOrders]:
+        """Получить список архивных сборочных заданий
+
+        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+
+        :param year: Год создания заказа (required)
+        :type year: int
+        :param month: Месяц создания заказа (required)
+        :type month: int
+        :param next: Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
+        :type next: int
+        :param limit: Количество сборочных заданий в ответе (required)
+        :type limit: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_fbs_orders_archive_get_serialize(
+            year=year,
+            month=month,
+            next=next,
+            limit=limit,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V3ArchiveOrders",
+            '400': "V3APIErrorV2",
+            '401': "ApiV3PassesOfficesGet401Response",
+            '403': "V3APIErrorV2",
+            '429': "ApiV3PassesOfficesGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def api_marketplace_v3_fbs_orders_archive_get_without_preload_content(
+        self,
+        year: Annotated[StrictInt, Field(description="Год создания заказа")],
+        month: Annotated[int, Field(le=12, strict=True, ge=1, description="Месяц создания заказа")],
+        next: Annotated[StrictInt, Field(description="Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе.")],
+        limit: Annotated[int, Field(le=1000, strict=True, ge=100, description="Количество сборочных заданий в ответе")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Получить список архивных сборочных заданий
+
+        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+
+        :param year: Год создания заказа (required)
+        :type year: int
+        :param month: Месяц создания заказа (required)
+        :type month: int
+        :param next: Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
+        :type next: int
+        :param limit: Количество сборочных заданий в ответе (required)
+        :type limit: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._api_marketplace_v3_fbs_orders_archive_get_serialize(
+            year=year,
+            month=month,
+            next=next,
+            limit=limit,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V3ArchiveOrders",
+            '400': "V3APIErrorV2",
+            '401': "ApiV3PassesOfficesGet401Response",
+            '403': "V3APIErrorV2",
+            '429': "ApiV3PassesOfficesGet401Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _api_marketplace_v3_fbs_orders_archive_get_serialize(
+        self,
+        year,
+        month,
+        next,
+        limit,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://marketplace-api.wildberries.ru'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if year is not None:
+            
+            _query_params.append(('year', year))
+            
+        if month is not None:
+            
+            _query_params.append(('month', month))
+            
+        if next is not None:
+            
+            _query_params.append(('next', next))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json', 
+                    'application/problem+json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HeaderApiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/marketplace/v3/fbs/orders/archive',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
 
 
     @validate_call

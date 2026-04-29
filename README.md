@@ -117,6 +117,7 @@
 - `POST /content/v3/media/save` — Загрузить медиафайлы по ссылкам
 
 ### Заказы FBS (`03-orders-fbs.yaml`)
+- `GET /api/marketplace/v3/fbs/orders/archive` — Получить список архивных сборочных заданий
 - `POST /api/marketplace/v3/orders/meta` — Получить метаданные сборочных заданий
 - `PUT /api/marketplace/v3/orders/{orderId}/meta/customs-declaration` — Закрепить за сборочным заданием номер ГТД
 - `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки
@@ -154,6 +155,7 @@
 
 ### Заказы DBW (`04-orders-dbw.yaml`)
 - `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
+- `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
 - `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
 - `POST /api/v3/dbw/orders/courier` — Информация о курьере
 - `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
@@ -174,6 +176,7 @@
 - `POST /api/marketplace/v3/dbs/orders/b2b/info` — Информация о покупателе B2B
 - `POST /api/marketplace/v3/dbs/orders/meta/customs-declaration` — Закрепить за сборочными заданиями номер ГТД
 - `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить метаданные сборочных заданий
 - `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий

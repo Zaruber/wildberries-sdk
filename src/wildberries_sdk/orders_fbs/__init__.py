@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.75"
+__version__ = "0.1.76"
 
 # Define package exports
 __all__ = [
@@ -93,6 +93,15 @@ __all__ = [
     "SupplyTrbx",
     "TrbxStickers",
     "V3APIError",
+    "V3APIErrorV2",
+    "V3APIErrorV2ErrorsInner",
+    "V3ArchiveOrder",
+    "V3ArchiveOrderCrossBorder",
+    "V3ArchiveOrderOptions",
+    "V3ArchiveOrderPriceInfo",
+    "V3ArchiveOrderProduct",
+    "V3ArchiveOrderStatus",
+    "V3ArchiveOrders",
     "V3GetMetaMultiRequest",
     "V3OrderMetaAPI",
     "V3OrdersMetaAPI",
@@ -179,6 +188,15 @@ from wildberries_sdk.orders_fbs.models.supply import Supply as Supply
 from wildberries_sdk.orders_fbs.models.supply_trbx import SupplyTrbx as SupplyTrbx
 from wildberries_sdk.orders_fbs.models.trbx_stickers import TrbxStickers as TrbxStickers
 from wildberries_sdk.orders_fbs.models.v3_api_error import V3APIError as V3APIError
+from wildberries_sdk.orders_fbs.models.v3_api_error_v2 import V3APIErrorV2 as V3APIErrorV2
+from wildberries_sdk.orders_fbs.models.v3_api_error_v2_errors_inner import V3APIErrorV2ErrorsInner as V3APIErrorV2ErrorsInner
+from wildberries_sdk.orders_fbs.models.v3_archive_order import V3ArchiveOrder as V3ArchiveOrder
+from wildberries_sdk.orders_fbs.models.v3_archive_order_cross_border import V3ArchiveOrderCrossBorder as V3ArchiveOrderCrossBorder
+from wildberries_sdk.orders_fbs.models.v3_archive_order_options import V3ArchiveOrderOptions as V3ArchiveOrderOptions
+from wildberries_sdk.orders_fbs.models.v3_archive_order_price_info import V3ArchiveOrderPriceInfo as V3ArchiveOrderPriceInfo
+from wildberries_sdk.orders_fbs.models.v3_archive_order_product import V3ArchiveOrderProduct as V3ArchiveOrderProduct
+from wildberries_sdk.orders_fbs.models.v3_archive_order_status import V3ArchiveOrderStatus as V3ArchiveOrderStatus
+from wildberries_sdk.orders_fbs.models.v3_archive_orders import V3ArchiveOrders as V3ArchiveOrders
 from wildberries_sdk.orders_fbs.models.v3_get_meta_multi_request import V3GetMetaMultiRequest as V3GetMetaMultiRequest
 from wildberries_sdk.orders_fbs.models.v3_order_meta_api import V3OrderMetaAPI as V3OrderMetaAPI
 from wildberries_sdk.orders_fbs.models.v3_orders_meta_api import V3OrdersMetaAPI as V3OrdersMetaAPI
