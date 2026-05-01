@@ -186,6 +186,65 @@ jobs:
             --notes "Automated release. See [CHANGELOG.md](CHANGELOG.md) for spec changes in this revision." \
             "${assets[@]}"
 
+      - name: Check Yandex Cloud Artifact Registry config
+        id: yc-check
+        if: steps.commit.outputs.did_commit == 'true'
+        env:
+          YC_SA_JSON_CREDENTIALS: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+        run: |
+          if [ -n "$YC_SA_JSON_CREDENTIALS" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "YC_SA_JSON_CREDENTIALS not set; skipping Yandex Cloud publishing."
+          fi
+
+      - name: Get Yandex Cloud IAM token
+        id: yc-token
+        if: steps.commit.outputs.did_commit == 'true' && steps.yc-check.outputs.enabled == 'true'
+        uses: yc-actions/yc-iam-token@v1
+        with:
+          yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+
+      - name: Publish Python to Yandex Cloud Artifact Registry
+        if: steps.commit.outputs.did_commit == 'true' && steps.yc-check.outputs.enabled == 'true'
+        continue-on-error: true
+        env:
+          YC_IAM_TOKEN: ${{ steps.yc-token.outputs.token }}
+          YC_PYTHON_REGISTRY_URL: ${{ secrets.YC_PYTHON_REGISTRY_URL }}
+        run: |
+          if [ -z "$YC_PYTHON_REGISTRY_URL" ]; then
+            echo "YC_PYTHON_REGISTRY_URL secret not set; skipping Python publish."
+            exit 0
+          fi
+          /usr/bin/python3 -m twine upload --skip-existing \
+            --repository-url "$YC_PYTHON_REGISTRY_URL" \
+            -u "iam" -p "$YC_IAM_TOKEN" \
+            dist/*.whl dist/*.tar.gz
+
+      - name: Publish npm to Yandex Cloud Artifact Registry
+        if: steps.commit.outputs.did_commit == 'true' && steps.yc-check.outputs.enabled == 'true'
+        working-directory: npm
+        continue-on-error: true
+        env:
+          YC_IAM_TOKEN: ${{ steps.yc-token.outputs.token }}
+          YC_NPM_REGISTRY_URL: ${{ secrets.YC_NPM_REGISTRY_URL }}
+        run: |
+          if [ -z "$YC_NPM_REGISTRY_URL" ]; then
+            echo "YC_NPM_REGISTRY_URL secret not set; skipping npm publish."
+            exit 0
+          fi
+          # Strip protocol so we can attach the auth token to the host+path.
+          host_path="${YC_NPM_REGISTRY_URL#https://}"
+          host_path="${host_path%/}"
+          cat > .npmrc <<EOF
+          registry=${YC_NPM_REGISTRY_URL%/}/
+          //${host_path}/:_authToken=${YC_IAM_TOKEN}
+          always-auth=true
+          EOF
+          npm publish
+          rm -f .npmrc
+
       - name: Update Packagist
         if: steps.commit.outputs.did_commit == 'true'
         continue-on-error: true
