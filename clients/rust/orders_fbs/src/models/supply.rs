@@ -45,6 +45,9 @@ pub struct Supply {
     /// ID склада назначения поставки. Если `null`, склад назначения не указан
     #[serde(rename = "destinationOfficeId", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub destination_office_id: Option<Option<i64>>,
+    /// ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br> Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br> Если `0`, рекомендуемый склад не определён 
+    #[serde(rename = "recommendedWhId", skip_serializing_if = "Option::is_none")]
+    pub recommended_wh_id: Option<i64>,
 }
 
 impl Supply {
@@ -60,6 +63,7 @@ impl Supply {
             cargo_type: None,
             cross_border_type: None,
             destination_office_id: None,
+            recommended_wh_id: None,
         }
     }
 }

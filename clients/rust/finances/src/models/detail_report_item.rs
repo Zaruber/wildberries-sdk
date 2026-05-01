@@ -219,7 +219,7 @@ pub struct DetailReportItem {
     /// Номер сборочного задания
     #[serde(rename = "assembly_id", skip_serializing_if = "Option::is_none")]
     pub assembly_id: Option<i32>,
-    /// Код маркировки.<br> Поле будет в ответе при наличии значения 
+    /// Код маркировки [Честного знака](https://честныйзнак.рф/).<br> Поле будет в ответе при наличии значения 
     #[serde(rename = "kiz", skip_serializing_if = "Option::is_none")]
     pub kiz: Option<String>,
     /// Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. 

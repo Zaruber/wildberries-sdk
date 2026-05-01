@@ -30,7 +30,7 @@ type V3APIErrorV2 struct {
 	Origin *string `json:"origin,omitempty"`
 	// Уникальный ID запроса
 	RequestId *string `json:"requestId,omitempty"`
-	// HTTP cтатус-код ответа
+	// HTTP статус-код ответа
 	Status *int32 `json:"status,omitempty"`
 	// Заголовок ошибки
 	Title string `json:"title"`

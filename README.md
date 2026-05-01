@@ -137,7 +137,7 @@
 - `PUT /api/v3/orders/{orderId}/meta/expiration` — Закрепить за сборочным заданием срок годности товара
 - `PUT /api/v3/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `PUT /api/v3/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `PUT /api/v3/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
+- `PUT /api/v3/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки Честного знака
 - `PUT /api/v3/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН
 - `GET /api/v3/passes` — Получить список пропусков
 - `POST /api/v3/passes` — Создать пропуск
@@ -151,10 +151,10 @@
 - `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку
 - `GET /api/v3/supplies/{supplyId}/barcode` — Получить QR-код поставки
 - `PATCH /api/v3/supplies/{supplyId}/deliver` — Передать поставку в доставку
-- `GET /api/v3/supplies/{supplyId}/trbx` — Получить список коробов поставки
-- `POST /api/v3/supplies/{supplyId}/trbx` — Добавить короба к поставке
-- `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить короба из поставки
-- `POST /api/v3/supplies/{supplyId}/trbx/stickers` — Получить стикеры коробов поставки
+- `GET /api/v3/supplies/{supplyId}/trbx` — Получить список грузомест поставки
+- `POST /api/v3/supplies/{supplyId}/trbx` — Добавить грузоместа к поставке
+- `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить грузоместа из поставки
+- `POST /api/v3/supplies/{supplyId}/trbx/stickers` — Получить стикеры грузомест поставки
 
 ### Заказы DBW (`04-orders-dbw.yaml`)
 - `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
@@ -172,7 +172,7 @@
 - `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить метаданные сборочного задания
 - `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
+- `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки Честного знака
 - `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
 ### Заказы DBS (`05-orders-dbs.yaml`)
@@ -183,7 +183,7 @@
 - `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий
-- `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки за сборочными заданиями
+- `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/status/cancel` — Отменить сборочные задания
 - `POST /api/marketplace/v3/dbs/orders/status/confirm` — Перевести сборочные задания на сборку
@@ -203,7 +203,7 @@
 - `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
 - `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить метаданные сборочных заданий
-- `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки товара за сборочными заданиями
+- `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания
 - `POST /api/marketplace/v3/click-collect/orders/status/confirm` — Перевести сборочные задания на сборку

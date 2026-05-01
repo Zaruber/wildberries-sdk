@@ -96,7 +96,7 @@ class SalesReportsDetailedRes(BaseModel):
     deduction: StrictStr = Field(description="Удержания")
     paid_acceptance: StrictStr = Field(description="Операции на приёмке", alias="paidAcceptance")
     order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
-    kiz: Optional[StrictStr] = Field(default=None, description="Код маркировки")
+    kiz: Optional[StrictStr] = Field(default=None, description="Код маркировки [Честного знака](https://честныйзнак.рф/)")
     is_b2b: StrictBool = Field(description="Признак B2B-продажи", alias="isB2b")
     trbx_id: StrictStr = Field(description="ID короба для обработки товара", alias="trbxId")
     installment_cofinancing_amount: StrictStr = Field(description="Скидка по программе софинансирования", alias="installmentCofinancingAmount")

@@ -17,7 +17,7 @@ import (
 // checks if the MetaSgtin type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MetaSgtin{}
 
-// MetaSgtin Код маркировки Честного знака
+// MetaSgtin Код маркировки [Честного знака](https://честныйзнак.рф/)
 type MetaSgtin struct {
 	Value []string `json:"value,omitempty"`
 }

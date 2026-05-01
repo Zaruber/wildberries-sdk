@@ -47,7 +47,7 @@ export interface ApiOrderMetaV2 {
      */
     orderId: number;
     /**
-     * Код маркировки Честного знака
+     * Код маркировки [Честного знака](https://честныйзнак.рф/)
      * @type {Array<string>}
      * @memberof ApiOrderMetaV2
      */

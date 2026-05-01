@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface ApiV3SuppliesSupplyIdTrbxStickersPostRequest {
     /**
-     * Список ID коробов, по которым необходимо вернуть стикеры.
+     * Список ID грузомест, по которым необходимо вернуть стикеры
      * @type {Array<string>}
      * @memberof ApiV3SuppliesSupplyIdTrbxStickersPostRequest
      */

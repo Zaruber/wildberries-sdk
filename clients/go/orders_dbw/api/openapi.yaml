@@ -1090,7 +1090,7 @@ paths:
         \ поле `requiredMeta`.\n<br><br>\nВозможные метаданные:\n  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)\n\
         \  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)\n\
         \  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)\n\
-        \  - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
+        \  - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
         \n  <div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
         >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
         <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
@@ -1177,7 +1177,7 @@ paths:
         \ для переданного ключа.\n<br><br>\nВозможные метаданные:\n  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)\n\
         \  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)\n\
         \  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)\n\
-        \  - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
+        \  - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
         \nМожно передать только один ключ.\n\n<div class=\"description_limit\">\n\
         <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит за\
         просов</a> на один аккаунт продавца для следующих методов DBW:\n<ul>\n   \
@@ -1392,11 +1392,11 @@ paths:
   /api/v3/dbw/orders/{orderId}/meta/sgtin:
     put:
       description: |
-        Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф).
+        Метод позволяет закрепить за сборочным заданием код маркировки [Честного знака](https://честныйзнак.рф/).
         <br><br>
-        Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
+        Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
         <br><br>
-        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
+        Получить загруженные коды маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBW</strong>:
@@ -1509,7 +1509,7 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Закрепить за сборочным заданием код маркировки товара
+      summary: Закрепить за сборочным заданием код маркировки Честного знака
       tags:
       - Метаданные DBW
       x-readonly-method: false
@@ -3029,10 +3029,10 @@ components:
     _api_v3_dbw_orders__orderId__meta_sgtin_put_request:
       properties:
         sgtins:
-          description: Массив кодов маркировки. Допускается от 16 до 135 символов
-            для кода одной маркировки
+          description: Массив кодов маркировки
           items:
-            description: Код маркировки на упаковке. От 16 до 135 символов
+            description: "Код маркировки [Честного знака](https://честныйзнак.рф/)\
+              \ на упаковке. От 16 до 135 символов"
             example: "1234567890123456"
             type: string
           maxItems: 24
@@ -3291,7 +3291,7 @@ components:
           type: string
       type: object
     Meta_sgtin:
-      description: Код маркировки Честного знака
+      description: "Код маркировки [Честного знака](https://честныйзнак.рф/)"
       example:
         value:
         - "123456789012345"

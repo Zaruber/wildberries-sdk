@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiV3SuppliesSupplyIdTrbxStickersPostRequest{}
 
 // ApiV3SuppliesSupplyIdTrbxStickersPostRequest struct for ApiV3SuppliesSupplyIdTrbxStickersPostRequest
 type ApiV3SuppliesSupplyIdTrbxStickersPostRequest struct {
-	// Список ID коробов, по которым необходимо вернуть стикеры.
+	// Список ID грузомест, по которым необходимо вернуть стикеры
 	TrbxIds []string `json:"trbxIds"`
 }
 

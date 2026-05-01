@@ -42,8 +42,8 @@ class ContentV2GetCardsListPost200ResponseCardsInner(BaseModel):
     brand: Optional[StrictStr] = Field(default=None, description="Бренд")
     title: Optional[StrictStr] = Field(default=None, description="Наименование товара")
     description: Optional[StrictStr] = Field(default=None, description="Описание товара")
-    need_kiz: Optional[StrictBool] = Field(default=None, description="Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара: <br>   - `false` — не требуется <br>   - `true` — требуется ", alias="needKiz")
-    kiz_marked: Optional[StrictBool] = Field(default=False, description="Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки обязательным, указано в поле `needKiz` ", alias="kizMarked")
+    need_kiz: Optional[StrictBool] = Field(default=None, description="Требуется ли код маркировки [Честного знака](https://честныйзнак.рф/) для этого товара:   - `false` — не требуется   - `true` — требуется ", alias="needKiz")
+    kiz_marked: Optional[StrictBool] = Field(default=False, description="Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, указано в поле `needKiz` ", alias="kizMarked")
     photos: Optional[List[ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner]] = Field(default=None, description="Массив фото")
     video: Optional[StrictStr] = Field(default=None, description="URL видео")
     wholesale: Optional[ContentV2GetCardsListPost200ResponseCardsInnerWholesale] = None

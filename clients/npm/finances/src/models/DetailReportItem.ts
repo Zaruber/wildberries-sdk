@@ -432,7 +432,7 @@ export interface DetailReportItem {
      */
     assemblyId?: number;
     /**
-     * Код маркировки.<br>
+     * Код маркировки [Честного знака](https://честныйзнак.рф/).<br>
      * Поле будет в ответе при наличии значения
      * 
      * @type {string}

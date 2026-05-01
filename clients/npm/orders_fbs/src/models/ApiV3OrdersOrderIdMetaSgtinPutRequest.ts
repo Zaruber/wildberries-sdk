@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface ApiV3OrdersOrderIdMetaSgtinPutRequest {
     /**
-     * Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки.
+     * Массив кодов маркировки
      * @type {Array<string>}
      * @memberof ApiV3OrdersOrderIdMetaSgtinPutRequest
      */

@@ -38,7 +38,8 @@ class Supply(BaseModel):
     cargo_type: Optional[StrictInt] = Field(default=None, description="Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) ", alias="cargoType")
     cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует ", alias="crossBorderType")
     destination_office_id: Optional[StrictInt] = Field(default=None, description="ID склада назначения поставки. Если `null`, склад назначения не указан", alias="destinationOfficeId")
-    __properties: ClassVar[List[str]] = ["id", "isB2b", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "crossBorderType", "destinationOfficeId"]
+    recommended_wh_id: Optional[StrictInt] = Field(default=None, description="ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br> Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br> Если `0`, рекомендуемый склад не определён ", alias="recommendedWhId")
+    __properties: ClassVar[List[str]] = ["id", "isB2b", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "crossBorderType", "destinationOfficeId", "recommendedWhId"]
 
     @field_validator('cargo_type')
     def cargo_type_validate_enum(cls, value):
@@ -145,7 +146,8 @@ class Supply(BaseModel):
             "name": obj.get("name"),
             "cargoType": obj.get("cargoType"),
             "crossBorderType": obj.get("crossBorderType"),
-            "destinationOfficeId": obj.get("destinationOfficeId")
+            "destinationOfficeId": obj.get("destinationOfficeId"),
+            "recommendedWhId": obj.get("recommendedWhId")
         })
         return _obj
 

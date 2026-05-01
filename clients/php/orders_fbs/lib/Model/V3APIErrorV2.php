@@ -485,7 +485,7 @@ class V3APIErrorV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param int|null $status HTTP cтатус-код ответа
+     * @param int|null $status HTTP статус-код ответа
      *
      * @return self
      */

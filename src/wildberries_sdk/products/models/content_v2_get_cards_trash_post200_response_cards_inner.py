@@ -34,7 +34,7 @@ class ContentV2GetCardsTrashPost200ResponseCardsInner(BaseModel):
     """ # noqa: E501
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
     vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode")
-    kiz_marked: Optional[StrictBool] = Field(default=False, description="Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` ", alias="kizMarked")
+    kiz_marked: Optional[StrictBool] = Field(default=False, description="Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` ", alias="kizMarked")
     subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectID")
     subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName")
     photos: Optional[List[ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner]] = Field(default=None, description="Массив фото")

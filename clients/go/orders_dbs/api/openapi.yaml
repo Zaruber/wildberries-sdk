@@ -1288,10 +1288,10 @@ paths:
           - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
           - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
           - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
           - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
-        Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
+        Если ответ вернулся с пустой структурой `metaDetails`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
 
@@ -1473,7 +1473,7 @@ paths:
           - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
           - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
           - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
           - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
         <div class="description_limit">
@@ -1568,8 +1568,8 @@ paths:
   /api/marketplace/v3/dbs/orders/meta/sgtin:
     post:
       description: |
-        Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки Честного знака можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
         <br><br>
         Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).
 
@@ -1658,7 +1658,7 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Закрепить коды маркировки за сборочными заданиями
+      summary: Закрепить коды маркировки Честного знака за сборочными заданиями
       tags:
       - Метаданные DBS
       x-readonly-method: false
@@ -3025,7 +3025,7 @@ components:
           example: 654321
           type: integer
         sgtin:
-          description: Код маркировки Честного знака
+          description: "Код маркировки [Честного знака](https://честныйзнак.рф/)"
           items:
             example: "123456789012345"
             type: string
@@ -3511,7 +3511,7 @@ components:
           description: |
             - `NotFound` — сборочное задание не найдено
             - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
-            - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
+            - `SGTINIsNotFilled` — обязательный [код маркировки Честного знака](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
           example: NotFound
           type: string
       type: object

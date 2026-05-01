@@ -20,7 +20,10 @@ import { mapValues } from '../runtime';
  */
 export interface ContentV2GetCardsListPostRequestSettingsSort {
     /**
-     * Сортировать по полю `updatedAt` (`false` - по убыванию, `true` - по возрастанию)
+     * Сортировать по полю `updatedAt`:
+     *   - `false` — по убыванию
+     *   -  `true` — по возрастанию
+     * 
      * @type {boolean}
      * @memberof ContentV2GetCardsListPostRequestSettingsSort
      */

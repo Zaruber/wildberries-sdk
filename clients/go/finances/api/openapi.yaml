@@ -2147,7 +2147,7 @@ components:
           example: 2816993144
           type: integer
         kiz:
-          description: Код маркировки
+          description: "Код маркировки [Честного знака](https://честныйзнак.рф/)"
           example: "0102900000376311210G2CIS?ehge)S\x1d91002A\x1d92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
           type: string
         isB2b:
@@ -2982,7 +2982,7 @@ components:
           type: integer
         kiz:
           description: |
-            Код маркировки.<br>
+            Код маркировки [Честного знака](https://честныйзнак.рф/).<br>
             Поле будет в ответе при наличии значения
           example: "0102900000376311210G2CIS?ehge)S\x1d91002A\x1d92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
           type: string

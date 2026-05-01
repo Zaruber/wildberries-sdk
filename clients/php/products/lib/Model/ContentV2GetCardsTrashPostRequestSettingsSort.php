@@ -303,7 +303,7 @@ class ContentV2GetCardsTrashPostRequestSettingsSort implements ModelInterface, A
     /**
      * Sets ascending
      *
-     * @param bool|null $ascending Сортировать по `trashedAt` (`false` - по убыванию, `true` - по возрастанию)
+     * @param bool|null $ascending Сортировать по `trashedAt`:   - `false` — по убыванию   - `true` — по возрастанию
      *
      * @return self
      */

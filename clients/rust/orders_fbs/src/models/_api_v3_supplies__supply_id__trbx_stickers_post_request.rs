@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV3SuppliesSupplyIdTrbxStickersPostRequest {
-    /// Список ID коробов, по которым необходимо вернуть стикеры.
+    /// Список ID грузомест, по которым необходимо вернуть стикеры
     #[serde(rename = "trbxIds")]
     pub trbx_ids: Vec<String>,
 }

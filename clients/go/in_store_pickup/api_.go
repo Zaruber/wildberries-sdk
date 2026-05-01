@@ -755,10 +755,10 @@ func (r ApiApiMarketplaceV3ClickCollectOrdersMetaSgtinPostRequest) Execute() (*A
 }
 
 /*
-ApiMarketplaceV3ClickCollectOrdersMetaSgtinPost Закрепить коды маркировки товара за сборочными заданиями
+ApiMarketplaceV3ClickCollectOrdersMetaSgtinPost Закрепить коды маркировки Честного знака за сборочными заданиями
 
-Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
-Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`.
+Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
+Закрепить код маркировки Честного знака можно, только если в [метаданных сборочного задания](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`.
 <br><br>
 Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post).
 

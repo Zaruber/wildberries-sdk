@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseRes
 type ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner struct {
 	// Код ошибки
 	Code *int32 `json:"code,omitempty"`
-	// - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан 
+	// - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `SGTINIsNotFilled` — обязательный [код маркировки Честного знака](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан 
 	Detail *string `json:"detail,omitempty"`
 }
 

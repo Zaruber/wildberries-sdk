@@ -1509,7 +1509,7 @@ class DefaultApi
     /**
      * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPost
      *
-     * Закрепить коды маркировки товара за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request api_orders_sgtins_set_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
@@ -1527,7 +1527,7 @@ class DefaultApi
     /**
      * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPostWithHttpInfo
      *
-     * Закрепить коды маркировки товара за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
@@ -1668,7 +1668,7 @@ class DefaultApi
     /**
      * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPostAsync
      *
-     * Закрепить коды маркировки товара за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation
@@ -1689,7 +1689,7 @@ class DefaultApi
     /**
      * Operation apiMarketplaceV3ClickCollectOrdersMetaSgtinPostAsyncWithHttpInfo
      *
-     * Закрепить коды маркировки товара за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * @param  \Wildberries\Sdk\InStorePickup\Model\ApiOrdersSGTINsSetRequest $api_orders_sgtins_set_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'] to see the possible values for this operation

@@ -27,7 +27,7 @@ class ContentV2GetCardsListPostRequestSettingsSort(BaseModel):
     """
     Параметр сортировки
     """ # noqa: E501
-    ascending: Optional[StrictBool] = Field(default=False, description="Сортировать по полю `updatedAt` (`false` - по убыванию, `true` - по возрастанию)")
+    ascending: Optional[StrictBool] = Field(default=False, description="Сортировать по полю `updatedAt`:   - `false` — по убыванию   -  `true` — по возрастанию ")
     __properties: ClassVar[List[str]] = ["ascending"]
 
     model_config = ConfigDict(

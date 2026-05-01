@@ -156,7 +156,7 @@ type DetailReportItem struct {
 	Acceptance *float32 `json:"acceptance,omitempty"`
 	// Номер сборочного задания
 	AssemblyId *int32 `json:"assembly_id,omitempty"`
-	// Код маркировки.<br> Поле будет в ответе при наличии значения 
+	// Код маркировки [Честного знака](https://честныйзнак.рф/).<br> Поле будет в ответе при наличии значения 
 	Kiz *string `json:"kiz,omitempty"`
 	// Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. 
 	Srid *string `json:"srid,omitempty"`

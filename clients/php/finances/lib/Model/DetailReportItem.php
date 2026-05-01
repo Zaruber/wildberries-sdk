@@ -2801,7 +2801,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets kiz
      *
-     * @param string|null $kiz Код маркировки.<br> Поле будет в ответе при наличии значения
+     * @param string|null $kiz Код маркировки [Честного знака](https://честныйзнак.рф/).<br> Поле будет в ответе при наличии значения
      *
      * @return self
      */

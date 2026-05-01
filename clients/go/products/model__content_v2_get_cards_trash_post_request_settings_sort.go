@@ -19,7 +19,7 @@ var _ MappedNullable = &ContentV2GetCardsTrashPostRequestSettingsSort{}
 
 // ContentV2GetCardsTrashPostRequestSettingsSort Параметр сортировки
 type ContentV2GetCardsTrashPostRequestSettingsSort struct {
-	// Сортировать по `trashedAt` (`false` - по убыванию, `true` - по возрастанию)
+	// Сортировать по `trashedAt`:   - `false` — по убыванию   - `true` — по возрастанию 
 	Ascending *bool `json:"ascending,omitempty"`
 }
 

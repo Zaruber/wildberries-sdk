@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiV3SuppliesSupplyIdTrbxPostRequest{}
 
 // ApiV3SuppliesSupplyIdTrbxPostRequest struct for ApiV3SuppliesSupplyIdTrbxPostRequest
 type ApiV3SuppliesSupplyIdTrbxPostRequest struct {
-	// Количество коробов, которые необходимо добавить к поставке.
+	// Количество грузомест, которые необходимо добавить к поставке
 	Amount int32 `json:"amount"`
 }
 

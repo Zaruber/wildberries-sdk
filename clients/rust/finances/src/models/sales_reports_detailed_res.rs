@@ -220,7 +220,7 @@ pub struct SalesReportsDetailedRes {
     /// ID сборочного задания
     #[serde(rename = "orderId")]
     pub order_id: i32,
-    /// Код маркировки
+    /// Код маркировки [Честного знака](https://честныйзнак.рф/)
     #[serde(rename = "kiz", skip_serializing_if = "Option::is_none")]
     pub kiz: Option<String>,
     /// Признак B2B-продажи

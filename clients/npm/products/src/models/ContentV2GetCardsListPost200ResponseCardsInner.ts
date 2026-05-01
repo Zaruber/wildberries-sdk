@@ -117,10 +117,8 @@ export interface ContentV2GetCardsListPost200ResponseCardsInner {
      */
     description?: string;
     /**
-     * Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара:
-     * <br>
+     * Требуется ли код маркировки [Честного знака](https://честныйзнак.рф/) для этого товара:
      *   - `false` — не требуется
-     * <br>
      *   - `true` — требуется
      * 
      * @type {boolean}
@@ -128,11 +126,11 @@ export interface ContentV2GetCardsListPost200ResponseCardsInner {
      */
     needKiz?: boolean;
     /**
-     * Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:
+     * Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:
      *   - `true` — да
      *   - `false` — нет
      * 
-     * Является ли код маркировки обязательным, указано в поле `needKiz`
+     * Является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, указано в поле `needKiz`
      * 
      * @type {boolean}
      * @memberof ContentV2GetCardsListPost200ResponseCardsInner

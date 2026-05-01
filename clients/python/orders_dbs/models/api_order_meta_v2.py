@@ -32,7 +32,7 @@ class ApiOrderMetaV2(BaseModel):
     gtin: Optional[StrictStr] = Field(default=None, description="GTIN")
     imei: Optional[StrictStr] = Field(default=None, description="IMEI")
     order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
-    sgtin: Optional[List[StrictStr]] = Field(default=None, description="Код маркировки Честного знака")
+    sgtin: Optional[List[StrictStr]] = Field(default=None, description="Код маркировки [Честного знака](https://честныйзнак.рф/)")
     uin: Optional[StrictStr] = Field(default=None, description="УИН")
     customs_declaration: Optional[ApiOrderMetaV2CustomsDeclaration] = Field(default=None, alias="customsDeclaration")
     __properties: ClassVar[List[str]] = ["error", "gtin", "imei", "orderId", "sgtin", "uin", "customsDeclaration"]

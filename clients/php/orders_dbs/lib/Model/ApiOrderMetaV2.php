@@ -452,7 +452,7 @@ class ApiOrderMetaV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sgtin
      *
-     * @param string[]|null $sgtin Код маркировки Честного знака
+     * @param string[]|null $sgtin Код маркировки [Честного знака](https://честныйзнак.рф/)
      *
      * @return self
      */

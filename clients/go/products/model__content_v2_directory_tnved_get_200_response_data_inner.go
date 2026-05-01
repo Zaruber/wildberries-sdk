@@ -21,7 +21,7 @@ var _ MappedNullable = &ContentV2DirectoryTnvedGet200ResponseDataInner{}
 type ContentV2DirectoryTnvedGet200ResponseDataInner struct {
 	// ТНВЭД-код
 	Tnved *string `json:"tnved,omitempty"`
-	// - `true` - код маркировки требуется - `false` - код маркировки не требуется 
+	// - `true` — код маркировки [Честного знака](https://честныйзнак.рф/) требуется - `false` — код маркировки [Честного знака](https://честныйзнак.рф/) не требуется 
 	IsKiz *bool `json:"isKiz,omitempty"`
 }
 

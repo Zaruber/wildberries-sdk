@@ -25,7 +25,7 @@ type ContentV2GetCardsListPostRequestSettingsFilter struct {
 	TextSearch *string `json:"textSearch,omitempty"`
 	// Поиск по ID ярлыков
 	TagIDs []int32 `json:"tagIDs,omitempty"`
-	// Фильтр по категории. `true` - только разрешённые, `false` - все. Не используется в песочнице
+	// Фильтр по категории:   - `true` — только разрешённые   - `false` — все    Не используется в песочнице 
 	AllowedCategoriesOnly *bool `json:"allowedCategoriesOnly,omitempty"`
 	// Поиск по id предметов
 	ObjectIDs []int32 `json:"objectIDs,omitempty"`

@@ -99,7 +99,7 @@ class DefaultApi:
     ) -> V3ArchiveOrders:
         """Получить список архивных сборочных заданий
 
-        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например, так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 
         :param year: Год создания заказа (required)
         :type year: int
@@ -182,7 +182,7 @@ class DefaultApi:
     ) -> ApiResponse[V3ArchiveOrders]:
         """Получить список архивных сборочных заданий
 
-        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например, так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 
         :param year: Год создания заказа (required)
         :type year: int
@@ -265,7 +265,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить список архивных сборочных заданий
 
-        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+        Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br> Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены. Например, так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 
         :param year: Год создания заказа (required)
         :type year: int
@@ -426,7 +426,7 @@ class DefaultApi:
     ) -> V3OrdersMetaAPI:
         """Получить метаданные сборочных заданий
 
-        Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param v3_get_meta_multi_request:
         :type v3_get_meta_multi_request: V3GetMetaMultiRequest
@@ -498,7 +498,7 @@ class DefaultApi:
     ) -> ApiResponse[V3OrdersMetaAPI]:
         """Получить метаданные сборочных заданий
 
-        Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param v3_get_meta_multi_request:
         :type v3_get_meta_multi_request: V3GetMetaMultiRequest
@@ -570,7 +570,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить метаданные сборочных заданий
 
-        Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод возвращает метаданные [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по списку их ID. <br><br> Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1new/get), поля `requiredMeta` и `optionalMeta`. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param v3_get_meta_multi_request:
         :type v3_get_meta_multi_request: V3GetMetaMultiRequest
@@ -2799,7 +2799,7 @@ class DefaultApi:
     ) -> None:
         """Удалить метаданные сборочного задания
 
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2876,7 +2876,7 @@ class DefaultApi:
     ) -> ApiResponse[None]:
         """Удалить метаданные сборочного задания
 
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -2953,7 +2953,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Удалить метаданные сборочного задания
 
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа. <br><br> Возможные метаданные:   - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)   - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)   - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)   - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)   - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)  Можно передать только один ключ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4033,9 +4033,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Закрепить за сборочным заданием код маркировки товара
+        """Закрепить за сборочным заданием код маркировки Честного знака
 
-        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честного знака](https://честныйзнак.рф). <br><br> Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4111,9 +4111,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Закрепить за сборочным заданием код маркировки товара
+        """Закрепить за сборочным заданием код маркировки Честного знака
 
-        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честного знака](https://честныйзнак.рф). <br><br> Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -4189,9 +4189,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Закрепить за сборочным заданием код маркировки товара
+        """Закрепить за сборочным заданием код маркировки Честного знака
 
-        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честный знак](https://честныйзнак.рф). <br><br> Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честного знака](https://честныйзнак.рф). <br><br> Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -9306,9 +9306,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> None:
-        """Удалить короба из поставки
+        """Удалить грузоместа из поставки
 
-        Метод удаляет короба из поставки. <br><br> Можно удалить только пока поставка на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод удаляет грузоместа из поставки. <br><br> Можно удалить только пока поставка на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -9383,9 +9383,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[None]:
-        """Удалить короба из поставки
+        """Удалить грузоместа из поставки
 
-        Метод удаляет короба из поставки. <br><br> Можно удалить только пока поставка на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод удаляет грузоместа из поставки. <br><br> Можно удалить только пока поставка на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -9460,9 +9460,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Удалить короба из поставки
+        """Удалить грузоместа из поставки
 
-        Метод удаляет короба из поставки. <br><br> Можно удалить только пока поставка на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод удаляет грузоместа из поставки. <br><br> Можно удалить только пока поставка на сборке.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -9616,9 +9616,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiV3SuppliesSupplyIdTrbxGet200Response:
-        """Получить список коробов поставки
+        """Получить список грузомест поставки
 
-        Возвращает список коробов поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Возвращает список грузомест поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -9689,9 +9689,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[ApiV3SuppliesSupplyIdTrbxGet200Response]:
-        """Получить список коробов поставки
+        """Получить список грузомест поставки
 
-        Возвращает список коробов поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Возвращает список грузомест поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -9762,9 +9762,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Получить список коробов поставки
+        """Получить список грузомест поставки
 
-        Возвращает список коробов поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Возвращает список грузомест поставки.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -9900,9 +9900,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiV3SuppliesSupplyIdTrbxPost201Response:
-        """Добавить короба к поставке
+        """Добавить грузоместа к поставке
 
-        Метод добавляет требуемое количество [коробов](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get). <br> <br> Короба необходимо добавлять только в поставки, отгружаемые на ПВЗ. <br> Короба можно добавить только в открытую поставку. Вы можете добавить столько же коробов, сколько всего товаров в поставке, плюс ещё один.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод добавляет требуемое количество [грузомест](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get). <br> <br> Грузоместа необходимо добавлять только в поставки, отгружаемые на ПВЗ. <br> Грузоместа можно добавить только в открытую поставку. Вы можете добавить столько же грузомест, сколько всего товаров в поставке, плюс ещё один.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -9977,9 +9977,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[ApiV3SuppliesSupplyIdTrbxPost201Response]:
-        """Добавить короба к поставке
+        """Добавить грузоместа к поставке
 
-        Метод добавляет требуемое количество [коробов](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get). <br> <br> Короба необходимо добавлять только в поставки, отгружаемые на ПВЗ. <br> Короба можно добавить только в открытую поставку. Вы можете добавить столько же коробов, сколько всего товаров в поставке, плюс ещё один.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод добавляет требуемое количество [грузомест](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get). <br> <br> Грузоместа необходимо добавлять только в поставки, отгружаемые на ПВЗ. <br> Грузоместа можно добавить только в открытую поставку. Вы можете добавить столько же грузомест, сколько всего товаров в поставке, плюс ещё один.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -10054,9 +10054,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Добавить короба к поставке
+        """Добавить грузоместа к поставке
 
-        Метод добавляет требуемое количество [коробов](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get). <br> <br> Короба необходимо добавлять только в поставки, отгружаемые на ПВЗ. <br> Короба можно добавить только в открытую поставку. Вы можете добавить столько же коробов, сколько всего товаров в поставке, плюс ещё один.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод добавляет требуемое количество [грузомест](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get). <br> <br> Грузоместа необходимо добавлять только в поставки, отгружаемые на ПВЗ. <br> Грузоместа можно добавить только в открытую поставку. Вы можете добавить столько же грузомест, сколько всего товаров в поставке, плюс ещё один.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
@@ -10212,7 +10212,7 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiV3SuppliesSupplyIdTrbxStickersPost200Response:
-        """Получить стикеры коробов поставки
+        """Получить стикеры грузомест поставки
 
         Метод возвращает QR-стикеры в форматах:   - SVG   - ZPLV (вертикальный)   - ZPLH (горизонтальный)   - PNG <br><br> Размер стикеров — 580x400 px.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
@@ -10293,7 +10293,7 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[ApiV3SuppliesSupplyIdTrbxStickersPost200Response]:
-        """Получить стикеры коробов поставки
+        """Получить стикеры грузомест поставки
 
         Метод возвращает QR-стикеры в форматах:   - SVG   - ZPLV (вертикальный)   - ZPLH (горизонтальный)   - PNG <br><br> Размер стикеров — 580x400 px.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
@@ -10374,7 +10374,7 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Получить стикеры коробов поставки
+        """Получить стикеры грузомест поставки
 
         Метод возвращает QR-стикеры в форматах:   - SVG   - ZPLV (вертикальный)   - ZPLH (горизонтальный)   - PNG <br><br> Размер стикеров — 580x400 px.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 

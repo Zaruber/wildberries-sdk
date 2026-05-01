@@ -303,7 +303,7 @@ class ContentV2GetCardsListPostRequestSettingsSort implements ModelInterface, Ar
     /**
      * Sets ascending
      *
-     * @param bool|null $ascending Сортировать по полю `updatedAt` (`false` - по убыванию, `true` - по возрастанию)
+     * @param bool|null $ascending Сортировать по полю `updatedAt`:   - `false` — по убыванию   -  `true` — по возрастанию
      *
      * @return self
      */

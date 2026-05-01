@@ -14,7 +14,7 @@ use serde::{Deserialize, Serialize};
 /// ContentV2GetCardsTrashPostRequestSettingsSort : Параметр сортировки
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ContentV2GetCardsTrashPostRequestSettingsSort {
-    /// Сортировать по `trashedAt` (`false` - по убыванию, `true` - по возрастанию)
+    /// Сортировать по `trashedAt`:   - `false` — по убыванию   - `true` — по возрастанию 
     #[serde(rename = "ascending", skip_serializing_if = "Option::is_none")]
     pub ascending: Option<bool>,
 }

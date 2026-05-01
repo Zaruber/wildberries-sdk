@@ -313,7 +313,7 @@ class ApiV3SuppliesSupplyIdTrbxPostRequest implements ModelInterface, ArrayAcces
     /**
      * Sets amount
      *
-     * @param int $amount Количество коробов, которые необходимо добавить к поставке.
+     * @param int $amount Количество грузомест, которые необходимо добавить к поставке
      *
      * @return self
      */

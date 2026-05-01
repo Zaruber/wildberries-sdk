@@ -27,7 +27,7 @@ class SupplyTrbx(BaseModel):
     """
     SupplyTrbx
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="ID короба")
+    id: Optional[StrictStr] = Field(default=None, description="ID грузоместа")
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

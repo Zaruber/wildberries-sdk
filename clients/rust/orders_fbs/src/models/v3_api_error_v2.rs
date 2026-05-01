@@ -27,7 +27,7 @@ pub struct V3ApiErrorV2 {
     /// Уникальный ID запроса
     #[serde(rename = "requestId", skip_serializing_if = "Option::is_none")]
     pub request_id: Option<String>,
-    /// HTTP cтатус-код ответа
+    /// HTTP статус-код ответа
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<i32>,
     /// Заголовок ошибки

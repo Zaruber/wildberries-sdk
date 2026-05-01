@@ -305,7 +305,7 @@ class ApiV3SuppliesSupplyIdTrbxDeleteRequest implements ModelInterface, ArrayAcc
     /**
      * Sets trbx_ids
      *
-     * @param string[] $trbx_ids Список ID коробов, которые необходимо удалить.
+     * @param string[] $trbx_ids Список ID грузомест, которые необходимо удалить
      *
      * @return self
      */

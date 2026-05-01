@@ -16,7 +16,7 @@ pub struct ContentV2DirectoryTnvedGet200ResponseDataInner {
     /// ТНВЭД-код
     #[serde(rename = "tnved", skip_serializing_if = "Option::is_none")]
     pub tnved: Option<String>,
-    /// - `true` - код маркировки требуется - `false` - код маркировки не требуется 
+    /// - `true` — код маркировки [Честного знака](https://честныйзнак.рф/) требуется - `false` — код маркировки [Честного знака](https://честныйзнак.рф/) не требуется 
     #[serde(rename = "isKiz", skip_serializing_if = "Option::is_none")]
     pub is_kiz: Option<bool>,
 }

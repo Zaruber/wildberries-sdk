@@ -678,7 +678,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
     /**
      * Sets need_kiz
      *
-     * @param bool|null $need_kiz Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара: <br>   - `false` — не требуется <br>   - `true` — требуется
+     * @param bool|null $need_kiz Требуется ли код маркировки [Честного знака](https://честныйзнак.рф/) для этого товара:   - `false` — не требуется   - `true` — требуется
      *
      * @return self
      */
@@ -705,7 +705,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
     /**
      * Sets kiz_marked
      *
-     * @param bool|null $kiz_marked Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки обязательным, указано в поле `needKiz`
+     * @param bool|null $kiz_marked Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, указано в поле `needKiz`
      *
      * @return self
      */

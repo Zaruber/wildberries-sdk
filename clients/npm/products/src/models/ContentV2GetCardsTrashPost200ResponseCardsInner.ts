@@ -68,11 +68,11 @@ export interface ContentV2GetCardsTrashPost200ResponseCardsInner {
      */
     vendorCode?: string;
     /**
-     * Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:
+     * Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:
      *   - `true` — да
      *   - `false` — нет
      * 
-     * Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
+     * Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz`
      * 
      * @type {boolean}
      * @memberof ContentV2GetCardsTrashPost200ResponseCardsInner

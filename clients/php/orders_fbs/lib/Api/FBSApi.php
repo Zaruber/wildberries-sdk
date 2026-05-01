@@ -5134,7 +5134,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersOrderIdMetaSgtinPut
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5158,7 +5158,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersOrderIdMetaSgtinPutWithHttpInfo
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5270,7 +5270,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersOrderIdMetaSgtinPutAsync
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5298,7 +5298,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersOrderIdMetaSgtinPutAsyncWithHttpInfo
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -11999,7 +11999,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxDelete
      *
-     * Удалить короба из поставки
+     * Удалить грузоместа из поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12023,7 +12023,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxDeleteWithHttpInfo
      *
-     * Удалить короба из поставки
+     * Удалить грузоместа из поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12127,7 +12127,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxDeleteAsync
      *
-     * Удалить короба из поставки
+     * Удалить грузоместа из поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12155,7 +12155,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxDeleteAsyncWithHttpInfo
      *
-     * Удалить короба из поставки
+     * Удалить грузоместа из поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12340,7 +12340,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxGet
      *
-     * Получить список коробов поставки
+     * Получить список грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12364,7 +12364,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxGetWithHttpInfo
      *
-     * Получить список коробов поставки
+     * Получить список грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12539,7 +12539,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxGetAsync
      *
-     * Получить список коробов поставки
+     * Получить список грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12566,7 +12566,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxGetAsyncWithHttpInfo
      *
-     * Получить список коробов поставки
+     * Получить список грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12754,7 +12754,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxPost
      *
-     * Добавить короба к поставке
+     * Добавить грузоместа к поставке
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12779,7 +12779,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxPostWithHttpInfo
      *
-     * Добавить короба к поставке
+     * Добавить грузоместа к поставке
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12955,7 +12955,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxPostAsync
      *
-     * Добавить короба к поставке
+     * Добавить грузоместа к поставке
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -12983,7 +12983,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxPostAsyncWithHttpInfo
      *
-     * Добавить короба к поставке
+     * Добавить грузоместа к поставке
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -13181,7 +13181,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxStickersPost
      *
-     * Получить стикеры коробов поставки
+     * Получить стикеры грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -13207,7 +13207,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxStickersPostWithHttpInfo
      *
-     * Получить стикеры коробов поставки
+     * Получить стикеры грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -13384,7 +13384,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxStickersPostAsync
      *
-     * Получить стикеры коробов поставки
+     * Получить стикеры грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -13413,7 +13413,7 @@ class FBSApi
     /**
      * Operation apiV3SuppliesSupplyIdTrbxStickersPostAsyncWithHttpInfo
      *
-     * Получить стикеры коробов поставки
+     * Получить стикеры грузомест поставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

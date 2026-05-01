@@ -305,7 +305,7 @@ class ApiV3SuppliesSupplyIdTrbxStickersPostRequest implements ModelInterface, Ar
     /**
      * Sets trbx_ids
      *
-     * @param string[] $trbx_ids Список ID коробов, по которым необходимо вернуть стикеры.
+     * @param string[] $trbx_ids Список ID грузомест, по которым необходимо вернуть стикеры
      *
      * @return self
      */

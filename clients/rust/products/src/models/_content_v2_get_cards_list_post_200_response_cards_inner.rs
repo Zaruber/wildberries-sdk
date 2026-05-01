@@ -40,10 +40,10 @@ pub struct ContentV2GetCardsListPost200ResponseCardsInner {
     /// Описание товара
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
-    /// Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара: <br>   - `false` — не требуется <br>   - `true` — требуется 
+    /// Требуется ли код маркировки [Честного знака](https://честныйзнак.рф/) для этого товара:   - `false` — не требуется   - `true` — требуется 
     #[serde(rename = "needKiz", skip_serializing_if = "Option::is_none")]
     pub need_kiz: Option<bool>,
-    /// Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки обязательным, указано в поле `needKiz` 
+    /// Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, указано в поле `needKiz` 
     #[serde(rename = "kizMarked", skip_serializing_if = "Option::is_none")]
     pub kiz_marked: Option<bool>,
     /// Массив фото

@@ -336,7 +336,7 @@ class ContentV2DirectoryTnvedGet200ResponseDataInner implements ModelInterface, 
     /**
      * Sets is_kiz
      *
-     * @param bool|null $is_kiz - `true` - код маркировки требуется - `false` - код маркировки не требуется
+     * @param bool|null $is_kiz - `true` — код маркировки [Честного знака](https://честныйзнак.рф/) требуется - `false` — код маркировки [Честного знака](https://честныйзнак.рф/) не требуется
      *
      * @return self
      */

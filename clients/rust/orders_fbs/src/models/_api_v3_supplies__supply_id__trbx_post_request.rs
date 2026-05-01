@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV3SuppliesSupplyIdTrbxPostRequest {
-    /// Количество коробов, которые необходимо добавить к поставке.
+    /// Количество грузомест, которые необходимо добавить к поставке
     #[serde(rename = "amount")]
     pub amount: i32,
 }

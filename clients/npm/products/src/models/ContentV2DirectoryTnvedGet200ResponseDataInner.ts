@@ -26,8 +26,8 @@ export interface ContentV2DirectoryTnvedGet200ResponseDataInner {
      */
     tnved?: string;
     /**
-     * - `true` - код маркировки требуется
-     * - `false` - код маркировки не требуется
+     * - `true` — код маркировки [Честного знака](https://честныйзнак.рф/) требуется
+     * - `false` — код маркировки [Честного знака](https://честныйзнак.рф/) не требуется
      * 
      * @type {boolean}
      * @memberof ContentV2DirectoryTnvedGet200ResponseDataInner

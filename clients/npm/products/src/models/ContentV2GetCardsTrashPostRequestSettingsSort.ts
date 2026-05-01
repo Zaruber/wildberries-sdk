@@ -20,7 +20,10 @@ import { mapValues } from '../runtime';
  */
 export interface ContentV2GetCardsTrashPostRequestSettingsSort {
     /**
-     * Сортировать по `trashedAt` (`false` - по убыванию, `true` - по возрастанию)
+     * Сортировать по `trashedAt`:
+     *   - `false` — по убыванию
+     *   - `true` — по возрастанию
+     * 
      * @type {boolean}
      * @memberof ContentV2GetCardsTrashPostRequestSettingsSort
      */

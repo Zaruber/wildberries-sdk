@@ -432,7 +432,7 @@ export interface SalesReportsDetailedRes {
      */
     orderId: number;
     /**
-     * Код маркировки
+     * Код маркировки [Честного знака](https://честныйзнак.рф/)
      * @type {string}
      * @memberof SalesReportsDetailedRes
      */

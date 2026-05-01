@@ -460,7 +460,7 @@ class ModelsGoodInSupply implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets need_kiz
      *
-     * @param bool|null $need_kiz Нужен ли [код маркировки](https://честныйзнак.рф/) для этого товара:   - `false` — не нужен   - `true` — нужен
+     * @param bool|null $need_kiz Нужен ли [код маркировки Честного знака](https://честныйзнак.рф/) для этого товара:   - `false` — не нужен   - `true` — нужен
      *
      * @return self
      */

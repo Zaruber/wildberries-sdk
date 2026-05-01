@@ -16,7 +16,7 @@ pub struct ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErro
     /// Код ошибки
     #[serde(rename = "code", skip_serializing_if = "Option::is_none")]
     pub code: Option<i32>,
-    /// - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан 
+    /// - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `SGTINIsNotFilled` — обязательный [код маркировки Честного знака](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан 
     #[serde(rename = "detail", skip_serializing_if = "Option::is_none")]
     pub detail: Option<String>,
 }

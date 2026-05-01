@@ -28,7 +28,7 @@ class ApiV3SuppliesSupplyIdTrbxPost201Response(BaseModel):
     """
     ApiV3SuppliesSupplyIdTrbxPost201Response
     """ # noqa: E501
-    trbx_ids: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Список ID коробов, которые были созданы.", alias="trbxIds")
+    trbx_ids: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = Field(default=None, description="Список ID грузомест, которые были созданы", alias="trbxIds")
     __properties: ClassVar[List[str]] = ["trbxIds"]
 
     model_config = ConfigDict(

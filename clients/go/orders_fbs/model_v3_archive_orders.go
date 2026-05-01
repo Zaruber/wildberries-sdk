@@ -19,7 +19,7 @@ import (
 // checks if the V3ArchiveOrders type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &V3ArchiveOrders{}
 
-// V3ArchiveOrders Список архивных cборочных заданий
+// V3ArchiveOrders Список архивных сборочных заданий
 type V3ArchiveOrders struct {
 	// Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
 	Next NullableInt64 `json:"next"`

@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV3SuppliesSupplyIdTrbxDeleteRequest {
-    /// Список ID коробов, которые необходимо удалить.
+    /// Список ID грузомест, которые необходимо удалить
     #[serde(rename = "trbxIds")]
     pub trbx_ids: Vec<String>,
 }

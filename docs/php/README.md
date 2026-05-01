@@ -125,7 +125,7 @@ var_dump($response);
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaExpirationPut` — `PUT /api/v3/orders/{orderId}/meta/expiration` — Закрепить за сборочным заданием срок годности товара
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaGtinPut` — `PUT /api/v3/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaImeiPut` — `PUT /api/v3/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaSgtinPut` — `PUT /api/v3/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
+- `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaSgtinPut` — `PUT /api/v3/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки Честного знака
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaUinPut` — `PUT /api/v3/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН
 - `orders_fbs.FBSApi.apiV3OrdersStatusHistoryPost` — `POST /api/v3/orders/status/history` — История статусов для сборочных заданий трансграничных поставок
 - `orders_fbs.FBSApi.apiV3OrdersStatusPost` — `POST /api/v3/orders/status` — Получить статусы сборочных заданий
@@ -143,10 +143,10 @@ var_dump($response);
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdDelete` — `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdDeliverPatch` — `PATCH /api/v3/supplies/{supplyId}/deliver` — Передать поставку в доставку
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdGet` — `GET /api/v3/supplies/{supplyId}` — Получить информацию о поставке
-- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxDelete` — `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить короба из поставки
-- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxGet` — `GET /api/v3/supplies/{supplyId}/trbx` — Получить список коробов поставки
-- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxPost` — `POST /api/v3/supplies/{supplyId}/trbx` — Добавить короба к поставке
-- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxStickersPost` — `POST /api/v3/supplies/{supplyId}/trbx/stickers` — Получить стикеры коробов поставки
+- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxDelete` — `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить грузоместа из поставки
+- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxGet` — `GET /api/v3/supplies/{supplyId}/trbx` — Получить список грузомест поставки
+- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxPost` — `POST /api/v3/supplies/{supplyId}/trbx` — Добавить грузоместа к поставке
+- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxStickersPost` — `POST /api/v3/supplies/{supplyId}/trbx/stickers` — Получить стикеры грузомест поставки
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersClientPost` — `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
@@ -162,7 +162,7 @@ var_dump($response);
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaGet` — `GET /api/v3/dbw/orders/{orderId}/meta` — Получить метаданные сборочного задания
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaGtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaImeiPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaSgtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
+- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaSgtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки Честного знака
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaUinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 - `orders_dbw.DBWApi.apiV3DbwOrdersStatusPost` — `POST /api/v3/dbw/orders/status` — Получить статусы сборочных заданий
 - `orders_dbw.DBWApi.apiV3DbwOrdersStickersPost` — `POST /api/v3/dbw/orders/stickers` — Получить стикеры сборочных заданий
@@ -175,7 +175,7 @@ var_dump($response);
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaGtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaImeiPost` — `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaInfoPost` — `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий
-- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки за сборочными заданиями
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaUinPost` — `POST /api/marketplace/v3/dbs/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusCancelPost` — `POST /api/marketplace/v3/dbs/orders/status/cancel` — Отменить сборочные задания
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusConfirmPost` — `POST /api/marketplace/v3/dbs/orders/status/confirm` — Перевести сборочные задания на сборку
@@ -195,7 +195,7 @@ var_dump($response);
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaGtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaImeiPost` — `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaInfoPost` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить метаданные сборочных заданий
-- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaSgtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки товара за сборочными заданиями
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaSgtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaUinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusCancelPost` — `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusConfirmPost` — `POST /api/marketplace/v3/click-collect/orders/status/confirm` — Перевести сборочные задания на сборку

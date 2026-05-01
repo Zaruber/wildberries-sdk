@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiV3SuppliesSupplyIdTrbxDeleteRequest{}
 
 // ApiV3SuppliesSupplyIdTrbxDeleteRequest struct for ApiV3SuppliesSupplyIdTrbxDeleteRequest
 type ApiV3SuppliesSupplyIdTrbxDeleteRequest struct {
-	// Список ID коробов, которые необходимо удалить.
+	// Список ID грузомест, которые необходимо удалить
 	TrbxIds []string `json:"trbxIds"`
 }
 

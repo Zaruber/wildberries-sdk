@@ -25,7 +25,7 @@ pub struct ApiOrderMetaV2 {
     /// ID сборочного задания
     #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<i32>,
-    /// Код маркировки Честного знака
+    /// Код маркировки [Честного знака](https://честныйзнак.рф/)
     #[serde(rename = "sgtin", skip_serializing_if = "Option::is_none")]
     pub sgtin: Option<Vec<String>>,
     /// УИН

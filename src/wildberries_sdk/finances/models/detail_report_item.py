@@ -96,7 +96,7 @@ class DetailReportItem(BaseModel):
     deduction: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Удержания")
     acceptance: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Операции на приёмке")
     assembly_id: Optional[StrictInt] = Field(default=None, description="Номер сборочного задания")
-    kiz: Optional[StrictStr] = Field(default=None, description="Код маркировки.<br> Поле будет в ответе при наличии значения ")
+    kiz: Optional[StrictStr] = Field(default=None, description="Код маркировки [Честного знака](https://честныйзнак.рф/).<br> Поле будет в ответе при наличии значения ")
     srid: Optional[StrictStr] = Field(default=None, description="Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. ")
     report_type: Optional[StrictInt] = Field(default=None, description="Тип отчёта:   - `1` — основной   - `2` — по выкупам   - `3` — по выкупам для Грузии ")
     is_legal_entity: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи")

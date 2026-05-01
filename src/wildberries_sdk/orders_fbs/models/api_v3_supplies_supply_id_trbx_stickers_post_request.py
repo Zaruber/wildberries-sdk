@@ -27,7 +27,7 @@ class ApiV3SuppliesSupplyIdTrbxStickersPostRequest(BaseModel):
     """
     ApiV3SuppliesSupplyIdTrbxStickersPostRequest
     """ # noqa: E501
-    trbx_ids: List[StrictStr] = Field(description="Список ID коробов, по которым необходимо вернуть стикеры.", alias="trbxIds")
+    trbx_ids: List[StrictStr] = Field(description="Список ID грузомест, по которым необходимо вернуть стикеры", alias="trbxIds")
     __properties: ClassVar[List[str]] = ["trbxIds"]
 
     model_config = ConfigDict(

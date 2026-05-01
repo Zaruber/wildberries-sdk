@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV3OrdersOrderIdMetaSgtinPutRequest {
-    /// Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки.
+    /// Массив кодов маркировки
     #[serde(rename = "sgtins", skip_serializing_if = "Option::is_none")]
     pub sgtins: Option<Vec<String>>,
 }

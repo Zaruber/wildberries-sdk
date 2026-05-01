@@ -28,7 +28,7 @@ class ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInn
     ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner
     """ # noqa: E501
     code: Optional[StrictInt] = Field(default=None, description="Код ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="- `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан ")
+    detail: Optional[StrictStr] = Field(default=None, description="- `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания - `SGTINIsNotFilled` — обязательный [код маркировки Честного знака](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан ")
     __properties: ClassVar[List[str]] = ["code", "detail"]
 
     model_config = ConfigDict(

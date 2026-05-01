@@ -19,7 +19,7 @@ pub struct ContentV2GetCardsTrashPost200ResponseCardsInner {
     /// Артикул продавца
     #[serde(rename = "vendorCode", skip_serializing_if = "Option::is_none")]
     pub vendor_code: Option<String>,
-    /// Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` 
+    /// Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` 
     #[serde(rename = "kizMarked", skip_serializing_if = "Option::is_none")]
     pub kiz_marked: Option<bool>,
     /// ID предмета

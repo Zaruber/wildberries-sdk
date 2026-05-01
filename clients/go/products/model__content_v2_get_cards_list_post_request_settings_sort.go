@@ -19,7 +19,7 @@ var _ MappedNullable = &ContentV2GetCardsListPostRequestSettingsSort{}
 
 // ContentV2GetCardsListPostRequestSettingsSort Параметр сортировки
 type ContentV2GetCardsListPostRequestSettingsSort struct {
-	// Сортировать по полю `updatedAt` (`false` - по убыванию, `true` - по возрастанию)
+	// Сортировать по полю `updatedAt`:   - `false` — по убыванию   -  `true` — по возрастанию 
 	Ascending *bool `json:"ascending,omitempty"`
 }
 

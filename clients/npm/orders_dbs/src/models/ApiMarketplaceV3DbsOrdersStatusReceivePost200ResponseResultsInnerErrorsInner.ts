@@ -28,7 +28,7 @@ export interface ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInn
     /**
      * - `NotFound` — сборочное задание не найдено
      * - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
-     * - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
+     * - `SGTINIsNotFilled` — обязательный [код маркировки Честного знака](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
      * 
      * @type {string}
      * @memberof ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner

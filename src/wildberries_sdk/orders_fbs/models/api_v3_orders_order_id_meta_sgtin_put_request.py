@@ -28,7 +28,7 @@ class ApiV3OrdersOrderIdMetaSgtinPutRequest(BaseModel):
     """
     ApiV3OrdersOrderIdMetaSgtinPutRequest
     """ # noqa: E501
-    sgtins: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=100)]] = Field(default=None, description="Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки.")
+    sgtins: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=100)]] = Field(default=None, description="Массив кодов маркировки")
     __properties: ClassVar[List[str]] = ["sgtins"]
 
     model_config = ConfigDict(

@@ -302,7 +302,7 @@ class SupplyTrbx implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id ID короба
+     * @param string|null $id ID грузоместа
      *
      * @return self
      */

@@ -19,7 +19,7 @@ var _ MappedNullable = &SupplyTrbx{}
 
 // SupplyTrbx struct for SupplyTrbx
 type SupplyTrbx struct {
-	// ID короба
+	// ID грузоместа
 	Id *string `json:"id,omitempty"`
 }
 

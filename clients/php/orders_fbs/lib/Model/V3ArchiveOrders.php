@@ -35,7 +35,7 @@ use \Wildberries\Sdk\OrdersFbs\ObjectSerializer;
  * V3ArchiveOrders Class Doc Comment
  *
  * @category Class
- * @description Список архивных cборочных заданий
+ * @description Список архивных сборочных заданий
  * @package  Wildberries\Sdk\OrdersFbs
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

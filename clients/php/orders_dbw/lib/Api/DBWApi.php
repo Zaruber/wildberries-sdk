@@ -5042,7 +5042,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersOrderIdMetaSgtinPut
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5066,7 +5066,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersOrderIdMetaSgtinPutWithHttpInfo
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5178,7 +5178,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersOrderIdMetaSgtinPutAsync
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5206,7 +5206,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersOrderIdMetaSgtinPutAsyncWithHttpInfo
      *
-     * Закрепить за сборочным заданием код маркировки товара
+     * Закрепить за сборочным заданием код маркировки Честного знака
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

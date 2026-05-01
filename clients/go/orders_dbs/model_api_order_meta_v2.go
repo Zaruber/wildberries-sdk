@@ -27,7 +27,7 @@ type ApiOrderMetaV2 struct {
 	Imei *string `json:"imei,omitempty"`
 	// ID сборочного задания
 	OrderId *int32 `json:"orderId,omitempty"`
-	// Код маркировки Честного знака
+	// Код маркировки [Честного знака](https://честныйзнак.рф/)
 	Sgtin []string `json:"sgtin,omitempty"`
 	// УИН
 	Uin *string `json:"uin,omitempty"`

@@ -27,7 +27,7 @@ class ContentV2GetCardsTrashPostRequestSettingsSort(BaseModel):
     """
     Параметр сортировки
     """ # noqa: E501
-    ascending: Optional[StrictBool] = Field(default=False, description="Сортировать по `trashedAt` (`false` - по убыванию, `true` - по возрастанию)")
+    ascending: Optional[StrictBool] = Field(default=False, description="Сортировать по `trashedAt`:   - `false` — по убыванию   - `true` — по возрастанию ")
     __properties: ClassVar[List[str]] = ["ascending"]
 
     model_config = ConfigDict(

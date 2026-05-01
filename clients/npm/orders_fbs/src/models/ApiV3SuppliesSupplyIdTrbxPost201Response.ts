@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface ApiV3SuppliesSupplyIdTrbxPost201Response {
     /**
-     * Список ID коробов, которые были созданы.
+     * Список ID грузомест, которые были созданы
      * @type {Array<string>}
      * @memberof ApiV3SuppliesSupplyIdTrbxPost201Response
      */

@@ -35,7 +35,7 @@ use \Wildberries\Sdk\InStorePickup\ObjectSerializer;
  * ApiBaseMetaSgtin Class Doc Comment
  *
  * @category Class
- * @description Код маркировки Честного знака
+ * @description Код маркировки [Честного знака](https://честныйзнак.рф/)
  * @package  Wildberries\Sdk\InStorePickup
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

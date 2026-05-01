@@ -23,7 +23,7 @@ type ContentV2GetCardsTrashPost200ResponseCardsInner struct {
 	NmID *int32 `json:"nmID,omitempty"`
 	// Артикул продавца
 	VendorCode *string `json:"vendorCode,omitempty"`
-	// Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` 
+	// Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод [Список карточек товаров](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post), поле ответа `needKiz` 
 	KizMarked *bool `json:"kizMarked,omitempty"`
 	// ID предмета
 	SubjectID *int32 `json:"subjectID,omitempty"`

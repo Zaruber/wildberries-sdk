@@ -37,9 +37,9 @@ type ContentV2GetCardsListPost200ResponseCardsInner struct {
 	Title *string `json:"title,omitempty"`
 	// Описание товара
 	Description *string `json:"description,omitempty"`
-	// Требуется ли [код маркировки](https://честныйзнак.рф/) для этого товара: <br>   - `false` — не требуется <br>   - `true` — требуется 
+	// Требуется ли код маркировки [Честного знака](https://честныйзнак.рф/) для этого товара:   - `false` — не требуется   - `true` — требуется 
 	NeedKiz *bool `json:"needKiz,omitempty"`
-	// Есть ли подтверждение от продавца, что обязательный [код маркировки](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки обязательным, указано в поле `needKiz` 
+	// Есть ли подтверждение от продавца, что обязательный код маркировки [Честного знака](https://честныйзнак.рф/) нанесён на товар:   - `true` — да   - `false` — нет  Является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, указано в поле `needKiz` 
 	KizMarked *bool `json:"kizMarked,omitempty"`
 	// Массив фото
 	Photos []ContentV2GetCardsListPost200ResponseCardsInnerPhotosInner `json:"photos,omitempty"`

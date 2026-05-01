@@ -66,7 +66,8 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'cargo_type' => 'int',
         'cross_border_type' => 'int',
-        'destination_office_id' => 'int'
+        'destination_office_id' => 'int',
+        'recommended_wh_id' => 'int'
     ];
 
     /**
@@ -86,7 +87,8 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'cargo_type' => null,
         'cross_border_type' => 'int32',
-        'destination_office_id' => 'int64'
+        'destination_office_id' => 'int64',
+        'recommended_wh_id' => 'int64'
     ];
 
     /**
@@ -104,7 +106,8 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => false,
         'cargo_type' => false,
         'cross_border_type' => true,
-        'destination_office_id' => true
+        'destination_office_id' => true,
+        'recommended_wh_id' => false
     ];
 
     /**
@@ -202,7 +205,8 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'cargo_type' => 'cargoType',
         'cross_border_type' => 'crossBorderType',
-        'destination_office_id' => 'destinationOfficeId'
+        'destination_office_id' => 'destinationOfficeId',
+        'recommended_wh_id' => 'recommendedWhId'
     ];
 
     /**
@@ -220,7 +224,8 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'cargo_type' => 'setCargoType',
         'cross_border_type' => 'setCrossBorderType',
-        'destination_office_id' => 'setDestinationOfficeId'
+        'destination_office_id' => 'setDestinationOfficeId',
+        'recommended_wh_id' => 'setRecommendedWhId'
     ];
 
     /**
@@ -238,7 +243,8 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'cargo_type' => 'getCargoType',
         'cross_border_type' => 'getCrossBorderType',
-        'destination_office_id' => 'getDestinationOfficeId'
+        'destination_office_id' => 'getDestinationOfficeId',
+        'recommended_wh_id' => 'getRecommendedWhId'
     ];
 
     /**
@@ -342,6 +348,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('cargo_type', $data ?? [], null);
         $this->setIfExists('cross_border_type', $data ?? [], null);
         $this->setIfExists('destination_office_id', $data ?? [], null);
+        $this->setIfExists('recommended_wh_id', $data ?? [], null);
     }
 
     /**
@@ -725,6 +732,33 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['destination_office_id'] = $destination_office_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets recommended_wh_id
+     *
+     * @return int|null
+     */
+    public function getRecommendedWhId()
+    {
+        return $this->container['recommended_wh_id'];
+    }
+
+    /**
+     * Sets recommended_wh_id
+     *
+     * @param int|null $recommended_wh_id ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br> Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br> Если `0`, рекомендуемый склад не определён
+     *
+     * @return self
+     */
+    public function setRecommendedWhId($recommended_wh_id)
+    {
+        if (is_null($recommended_wh_id)) {
+            throw new \InvalidArgumentException('non-nullable recommended_wh_id cannot be null');
+        }
+        $this->container['recommended_wh_id'] = $recommended_wh_id;
 
         return $this;
     }

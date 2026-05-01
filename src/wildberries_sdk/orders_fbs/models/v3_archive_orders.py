@@ -26,7 +26,7 @@ from pydantic_core import to_jsonable_python
 
 class V3ArchiveOrders(BaseModel):
     """
-    Список архивных cборочных заданий
+    Список архивных сборочных заданий
     """ # noqa: E501
     next: Optional[StrictInt] = Field(description="Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных")
     orders: List[V3ArchiveOrder] = Field(description="Архивные сборочные задания")

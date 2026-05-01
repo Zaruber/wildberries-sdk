@@ -40,6 +40,8 @@ type Supply struct {
 	CrossBorderType NullableInt32 `json:"crossBorderType,omitempty"`
 	// ID склада назначения поставки. Если `null`, склад назначения не указан
 	DestinationOfficeId NullableInt64 `json:"destinationOfficeId,omitempty"`
+	// ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br> Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br> Если `0`, рекомендуемый склад не определён 
+	RecommendedWhId *int64 `json:"recommendedWhId,omitempty"`
 }
 
 // NewSupply instantiates a new Supply object
@@ -429,6 +431,38 @@ func (o *Supply) UnsetDestinationOfficeId() {
 	o.DestinationOfficeId.Unset()
 }
 
+// GetRecommendedWhId returns the RecommendedWhId field value if set, zero value otherwise.
+func (o *Supply) GetRecommendedWhId() int64 {
+	if o == nil || IsNil(o.RecommendedWhId) {
+		var ret int64
+		return ret
+	}
+	return *o.RecommendedWhId
+}
+
+// GetRecommendedWhIdOk returns a tuple with the RecommendedWhId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Supply) GetRecommendedWhIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.RecommendedWhId) {
+		return nil, false
+	}
+	return o.RecommendedWhId, true
+}
+
+// HasRecommendedWhId returns a boolean if a field has been set.
+func (o *Supply) HasRecommendedWhId() bool {
+	if o != nil && !IsNil(o.RecommendedWhId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRecommendedWhId gets a reference to the given int64 and assigns it to the RecommendedWhId field.
+func (o *Supply) SetRecommendedWhId(v int64) {
+	o.RecommendedWhId = &v
+}
+
 func (o Supply) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -468,6 +502,9 @@ func (o Supply) ToMap() (map[string]interface{}, error) {
 	}
 	if o.DestinationOfficeId.IsSet() {
 		toSerialize["destinationOfficeId"] = o.DestinationOfficeId.Get()
+	}
+	if !IsNil(o.RecommendedWhId) {
+		toSerialize["recommendedWhId"] = o.RecommendedWhId
 	}
 	return toSerialize, nil
 }

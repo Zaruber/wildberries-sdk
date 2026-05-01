@@ -3056,7 +3056,7 @@ class SalesReportsDetailedRes implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets kiz
      *
-     * @param string|null $kiz Код маркировки
+     * @param string|null $kiz Код маркировки [Честного знака](https://честныйзнак.рф/)
      *
      * @return self
      */

@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SupplyTrbx {
-    /// ID короба
+    /// ID грузоместа
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
 }

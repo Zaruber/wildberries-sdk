@@ -310,7 +310,7 @@ class ApiV3OrdersOrderIdMetaSgtinPutRequest implements ModelInterface, ArrayAcce
     /**
      * Sets sgtins
      *
-     * @param string[]|null $sgtins Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки.
+     * @param string[]|null $sgtins Массив кодов маркировки
      *
      * @return self
      */

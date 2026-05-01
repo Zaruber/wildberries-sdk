@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// V3ArchiveOrders : Список архивных cборочных заданий
+/// V3ArchiveOrders : Список архивных сборочных заданий
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct V3ArchiveOrders {
     /// Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных
@@ -23,7 +23,7 @@ pub struct V3ArchiveOrders {
 }
 
 impl V3ArchiveOrders {
-    /// Список архивных cборочных заданий
+    /// Список архивных сборочных заданий
     pub fn new(next: Option<i64>, orders: Vec<models::V3ArchiveOrder>) -> V3ArchiveOrders {
         V3ArchiveOrders {
             next,

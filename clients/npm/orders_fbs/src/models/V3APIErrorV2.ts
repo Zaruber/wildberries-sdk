@@ -58,7 +58,7 @@ export interface V3APIErrorV2 {
      */
     requestId?: string;
     /**
-     * HTTP cтатус-код ответа
+     * HTTP статус-код ответа
      * @type {number}
      * @memberof V3APIErrorV2
      */

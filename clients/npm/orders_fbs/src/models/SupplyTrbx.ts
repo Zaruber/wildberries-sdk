@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface SupplyTrbx {
     /**
-     * ID короба
+     * ID грузоместа
      * @type {string}
      * @memberof SupplyTrbx
      */

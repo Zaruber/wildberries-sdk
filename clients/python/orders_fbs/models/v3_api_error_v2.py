@@ -33,7 +33,7 @@ class V3APIErrorV2(BaseModel):
     errors: Optional[List[V3APIErrorV2ErrorsInner]] = None
     origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB")
     request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId")
-    status: Optional[StrictInt] = Field(default=None, description="HTTP cтатус-код ответа")
+    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код ответа")
     title: StrictStr = Field(description="Заголовок ошибки")
     __properties: ClassVar[List[str]] = ["code", "detail", "errors", "origin", "requestId", "status", "title"]
 

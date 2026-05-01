@@ -22,7 +22,7 @@ import {
 } from './V3ArchiveOrder';
 
 /**
- * Список архивных cборочных заданий
+ * Список архивных сборочных заданий
  * @export
  * @interface V3ArchiveOrders
  */

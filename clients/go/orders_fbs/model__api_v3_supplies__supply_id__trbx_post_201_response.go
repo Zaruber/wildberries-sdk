@@ -19,7 +19,7 @@ var _ MappedNullable = &ApiV3SuppliesSupplyIdTrbxPost201Response{}
 
 // ApiV3SuppliesSupplyIdTrbxPost201Response struct for ApiV3SuppliesSupplyIdTrbxPost201Response
 type ApiV3SuppliesSupplyIdTrbxPost201Response struct {
-	// Список ID коробов, которые были созданы.
+	// Список ID грузомест, которые были созданы
 	TrbxIds []string `json:"trbxIds,omitempty"`
 }
 

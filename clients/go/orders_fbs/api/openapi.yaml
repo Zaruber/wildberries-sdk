@@ -1214,7 +1214,7 @@ paths:
           - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)
           - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)
           - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
           - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)
           - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
 
@@ -1320,7 +1320,7 @@ paths:
           - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)
           - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)
           - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
           - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
 
         Можно передать только один ключ.
@@ -1439,9 +1439,9 @@ paths:
   /api/v3/orders/{orderId}/meta/sgtin:
     put:
       description: |
-        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честный знак](https://честныйзнак.рф).
+        Метод позволяет закрепить за [сборочным заданием](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) код маркировки [Честного знака](https://честныйзнак.рф).
         <br><br>
-        Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`.
+        Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`.
         <br><br>
         Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post).
 
@@ -1556,7 +1556,7 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Закрепить за сборочным заданием код маркировки товара
+      summary: Закрепить за сборочным заданием код маркировки Честного знака
       tags:
       - Метаданные FBS
       x-readonly-method: false
@@ -3419,7 +3419,7 @@ paths:
   /api/v3/supplies/{supplyId}/trbx:
     delete:
       description: |
-        Метод удаляет короба из поставки.
+        Метод удаляет грузоместа из поставки.
         <br><br>
         Можно удалить только пока поставка на сборке.
 
@@ -3520,14 +3520,14 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Удалить короба из поставки
+      summary: Удалить грузоместа из поставки
       tags:
       - Поставки FBS
       x-readonly-method: false
       x-category: marketplace
     get:
       description: |
-        Возвращает список коробов поставки.
+        Возвращает список грузомест поставки.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -3625,19 +3625,19 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Получить список коробов поставки
+      summary: Получить список грузомест поставки
       tags:
       - Поставки FBS
       x-readonly-method: true
       x-category: marketplace
     post:
       description: |
-        Метод добавляет требуемое количество [коробов](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get).
+        Метод добавляет требуемое количество [грузомест](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1trbx/get) в [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get).
         <br>
         <br>
-        Короба необходимо добавлять только в поставки, отгружаемые на ПВЗ.
+        Грузоместа необходимо добавлять только в поставки, отгружаемые на ПВЗ.
         <br>
-        Короба можно добавить только в открытую поставку. Вы можете добавить столько же коробов, сколько всего товаров в поставке, плюс ещё один.
+        Грузоместа можно добавить только в открытую поставку. Вы можете добавить столько же грузомест, сколько всего товаров в поставке, плюс ещё один.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -3740,7 +3740,7 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Добавить короба к поставке
+      summary: Добавить грузоместа к поставке
       tags:
       - Поставки FBS
       x-readonly-method: false
@@ -3872,7 +3872,7 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Получить стикеры коробов поставки
+      summary: Получить стикеры грузомест поставки
       tags:
       - Поставки FBS
       x-readonly-method: true
@@ -3884,7 +3884,7 @@ paths:
       description: |
         Метод возвращает сборочные задания, созданные более 3 месяцев назад.<br>
         Часть сборочных заданий попадает в архив позже, чем через 3 месяца после создания, так как поставка переходит в архив только после того, как все заказы в ней будут завершены.
-        Например так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.
+        Например, так происходит, если продавец не доставил один из заказов в поставке и заказ был отменён автоматически через несколько дней.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -4248,7 +4248,7 @@ components:
       description: Слишком много запросов
   schemas:
     v3.ArchiveOrders:
-      description: Список архивных cборочных заданий
+      description: Список архивных сборочных заданий
       example:
         next: 0
         orders:
@@ -4578,7 +4578,7 @@ components:
           description: Уникальный ID запроса
           type: string
         status:
-          description: HTTP cтатус-код ответа
+          description: HTTP статус-код ответа
           type: integer
         title:
           description: Заголовок ошибки
@@ -4836,6 +4836,7 @@ components:
         createdAt: 2022-05-04T07:56:29Z
         scanDt: 2022-05-04T07:56:29Z
         isB2b: true
+        recommendedWhId: 123569
         name: Тестовая поставка
         destinationOfficeId: 123
         crossBorderType: 1
@@ -4918,6 +4919,14 @@ components:
           example: 123
           format: int64
           nullable: true
+          type: integer
+        recommendedWhId:
+          description: |
+            ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br>
+            Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br>
+            Если `0`, рекомендуемый склад не определён
+          example: 123569
+          format: int64
           type: integer
       type: object
     OrderNew:
@@ -5181,7 +5190,7 @@ components:
         id: WB-TRBX-1234567
       properties:
         id:
-          description: ID короба
+          description: ID грузоместа
           example: WB-TRBX-1234567
           type: string
       type: object
@@ -5982,10 +5991,10 @@ components:
     _api_v3_orders__orderId__meta_sgtin_put_request:
       properties:
         sgtins:
-          description: Массив кодов маркировки. Допускается от 16 до 135 символов
-            для кода одной маркировки.
+          description: Массив кодов маркировки
           items:
-            description: Код маркировки на упаковке. От 16 до 135 символов.
+            description: "Код маркировки [Честного знака](https://честныйзнак.рф/)\
+              \ на упаковке. От 16 до 135 символов"
             example: "1234567890123456"
             type: string
           maxItems: 100
@@ -6263,6 +6272,7 @@ components:
           createdAt: 2022-05-04T07:56:29Z
           scanDt: 2022-05-04T07:56:29Z
           isB2b: true
+          recommendedWhId: 123569
           name: Тестовая поставка
           destinationOfficeId: 123
           crossBorderType: 1
@@ -6273,6 +6283,7 @@ components:
           createdAt: 2022-05-04T07:56:29Z
           scanDt: 2022-05-04T07:56:29Z
           isB2b: true
+          recommendedWhId: 123569
           name: Тестовая поставка
           destinationOfficeId: 123
           crossBorderType: 1
@@ -6362,8 +6373,8 @@ components:
     _api_v3_supplies__supplyId__trbx_post_request:
       properties:
         amount:
-          description: "Количество коробов, которые необходимо добавить к поставке\
-            ."
+          description: "Количество грузомест, которые необходимо добавить к постав\
+            ке"
           example: 4
           maximum: 1000
           minimum: 1
@@ -6378,7 +6389,7 @@ components:
         - WB-TRBX-1234567
       properties:
         trbxIds:
-          description: "Список ID коробов, которые были созданы."
+          description: "Список ID грузомест, которые были созданы"
           items:
             example: WB-TRBX-1234567
             type: string
@@ -6388,7 +6399,7 @@ components:
     _api_v3_supplies__supplyId__trbx_delete_request:
       properties:
         trbxIds:
-          description: "Список ID коробов, которые необходимо удалить."
+          description: "Список ID грузомест, которые необходимо удалить"
           items:
             example: WB-TRBX-1234567
             type: string
@@ -6399,7 +6410,7 @@ components:
     _api_v3_supplies__supplyId__trbx_stickers_post_request:
       properties:
         trbxIds:
-          description: "Список ID коробов, по которым необходимо вернуть стикеры."
+          description: "Список ID грузомест, по которым необходимо вернуть стикеры"
           items:
             example: WB-TRBX-1234567
             type: string
@@ -6720,7 +6731,7 @@ components:
           type: string
       type: object
     Meta_sgtin:
-      description: Код маркировки Честного знака
+      description: "Код маркировки [Честного знака](https://честныйзнак.рф/)"
       example:
         value:
         - "123456789012345"

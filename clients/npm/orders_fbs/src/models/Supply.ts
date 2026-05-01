@@ -94,6 +94,15 @@ export interface Supply {
      * @memberof Supply
      */
     destinationOfficeId?: number | null;
+    /**
+     * ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br>
+     * Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br>
+     * Если `0`, рекомендуемый склад не определён
+     * 
+     * @type {number}
+     * @memberof Supply
+     */
+    recommendedWhId?: number;
 }
 
 
@@ -145,6 +154,7 @@ export function SupplyFromJSONTyped(json: any, ignoreDiscriminator: boolean): Su
         'cargoType': json['cargoType'] == null ? undefined : json['cargoType'],
         'crossBorderType': json['crossBorderType'] == null ? undefined : json['crossBorderType'],
         'destinationOfficeId': json['destinationOfficeId'] == null ? undefined : json['destinationOfficeId'],
+        'recommendedWhId': json['recommendedWhId'] == null ? undefined : json['recommendedWhId'],
     };
 }
 
@@ -169,6 +179,7 @@ export function SupplyToJSONTyped(value?: Supply | null, ignoreDiscriminator: bo
         'cargoType': value['cargoType'],
         'crossBorderType': value['crossBorderType'],
         'destinationOfficeId': value['destinationOfficeId'],
+        'recommendedWhId': value['recommendedWhId'],
     };
 }
 

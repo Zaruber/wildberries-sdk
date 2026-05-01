@@ -17,7 +17,7 @@ import (
 // checks if the ApiBaseMetaSgtin type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ApiBaseMetaSgtin{}
 
-// ApiBaseMetaSgtin Код маркировки Честного знака
+// ApiBaseMetaSgtin Код маркировки [Честного знака](https://честныйзнак.рф/)
 type ApiBaseMetaSgtin struct {
 	Value []string `json:"value,omitempty"`
 }

@@ -426,7 +426,7 @@ class ContentV2GetCardsListPostRequestSettingsFilter implements ModelInterface, 
     /**
      * Sets allowed_categories_only
      *
-     * @param bool|null $allowed_categories_only Фильтр по категории. `true` - только разрешённые, `false` - все. Не используется в песочнице
+     * @param bool|null $allowed_categories_only Фильтр по категории:   - `true` — только разрешённые   - `false` — все    Не используется в песочнице
      *
      * @return self
      */

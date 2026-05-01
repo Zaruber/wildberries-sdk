@@ -42,7 +42,12 @@ export interface ContentV2GetCardsListPostRequestSettingsFilter {
      */
     tagIDs?: Array<number>;
     /**
-     * Фильтр по категории. `true` - только разрешённые, `false` - все. Не используется в песочнице
+     * Фильтр по категории:
+     *   - `true` — только разрешённые
+     *   - `false` — все
+     * 
+     *   Не используется в песочнице
+     * 
      * @type {boolean}
      * @memberof ContentV2GetCardsListPostRequestSettingsFilter
      */

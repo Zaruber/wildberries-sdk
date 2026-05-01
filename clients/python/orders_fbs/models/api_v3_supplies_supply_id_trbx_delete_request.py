@@ -27,7 +27,7 @@ class ApiV3SuppliesSupplyIdTrbxDeleteRequest(BaseModel):
     """
     ApiV3SuppliesSupplyIdTrbxDeleteRequest
     """ # noqa: E501
-    trbx_ids: List[StrictStr] = Field(description="Список ID коробов, которые необходимо удалить.", alias="trbxIds")
+    trbx_ids: List[StrictStr] = Field(description="Список ID грузомест, которые необходимо удалить", alias="trbxIds")
     __properties: ClassVar[List[str]] = ["trbxIds"]
 
     model_config = ConfigDict(

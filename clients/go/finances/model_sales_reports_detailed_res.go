@@ -158,7 +158,7 @@ type SalesReportsDetailedRes struct {
 	PaidAcceptance string `json:"paidAcceptance"`
 	// ID сборочного задания
 	OrderId int32 `json:"orderId"`
-	// Код маркировки
+	// Код маркировки [Честного знака](https://честныйзнак.рф/)
 	Kiz *string `json:"kiz,omitempty"`
 	// Признак B2B-продажи
 	IsB2b bool `json:"isB2b"`

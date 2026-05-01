@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiV3SuppliesSupplyIdTrbxPost201Response {
-    /// Список ID коробов, которые были созданы.
+    /// Список ID грузомест, которые были созданы
     #[serde(rename = "trbxIds", skip_serializing_if = "Option::is_none")]
     pub trbx_ids: Option<Vec<String>>,
 }

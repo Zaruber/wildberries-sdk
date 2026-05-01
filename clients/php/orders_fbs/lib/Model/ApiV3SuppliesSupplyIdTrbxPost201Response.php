@@ -306,7 +306,7 @@ class ApiV3SuppliesSupplyIdTrbxPost201Response implements ModelInterface, ArrayA
     /**
      * Sets trbx_ids
      *
-     * @param string[]|null $trbx_ids Список ID коробов, которые были созданы.
+     * @param string[]|null $trbx_ids Список ID грузомест, которые были созданы
      *
      * @return self
      */

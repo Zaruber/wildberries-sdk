@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ApiBaseMetaSgtin : Код маркировки Честного знака
+/// ApiBaseMetaSgtin : Код маркировки [Честного знака](https://честныйзнак.рф/)
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiBaseMetaSgtin {
     #[serde(rename = "value", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
@@ -19,7 +19,7 @@ pub struct ApiBaseMetaSgtin {
 }
 
 impl ApiBaseMetaSgtin {
-    /// Код маркировки Честного знака
+    /// Код маркировки [Честного знака](https://честныйзнак.рф/)
     pub fn new() -> ApiBaseMetaSgtin {
         ApiBaseMetaSgtin {
             value: None,

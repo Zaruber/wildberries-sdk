@@ -2836,7 +2836,7 @@ class DBSApi
     /**
      * Operation apiMarketplaceV3DbsOrdersMetaSgtinPost
      *
-     * Закрепить коды маркировки за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2860,7 +2860,7 @@ class DBSApi
     /**
      * Operation apiMarketplaceV3DbsOrdersMetaSgtinPostWithHttpInfo
      *
-     * Закрепить коды маркировки за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3021,7 +3021,7 @@ class DBSApi
     /**
      * Operation apiMarketplaceV3DbsOrdersMetaSgtinPostAsync
      *
-     * Закрепить коды маркировки за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -3048,7 +3048,7 @@ class DBSApi
     /**
      * Operation apiMarketplaceV3DbsOrdersMetaSgtinPostAsyncWithHttpInfo
      *
-     * Закрепить коды маркировки за сборочными заданиями
+     * Закрепить коды маркировки Честного знака за сборочными заданиями
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
