@@ -407,7 +407,8 @@ paths:
       description: |
         Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).
 
-        Можно получить данные за заданный период, максимум 30 календарных дней одним запросом.
+        Чтобы получить данные за период, укажите в запросе даты начала и окончания периода. Максимум 30 календарных дней одним запросом. В ответе метода будут сборочные задания, созданные в указанный период.
+
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -426,12 +427,12 @@ paths:
           schema:
             type: integer
           description: |
-            Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса
+            Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC
         - name: dateTo
           in: query
           schema:
             type: integer
-          description: Дата конца периода в формате Unix timestamp
+          description: Дата конца периода в формате Unix timestamp. Часовой пояс — UTC
       responses:
         '200':
           description: Успешно
@@ -3504,7 +3505,7 @@ components:
           type: string
           format: date-time
           nullable: false
-          description: Дата создания сборочного задания (RFC3339)
+          description: Дата создания сборочного задания (RFC3339). Часовой пояс — UTC
           example: '2022-05-04T07:56:29Z'
         offices:
           type: array
