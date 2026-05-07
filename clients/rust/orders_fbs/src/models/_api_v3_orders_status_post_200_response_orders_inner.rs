@@ -16,6 +16,9 @@ pub struct ApiV3OrdersStatusPost200ResponseOrdersInner {
     /// ID сборочного задания
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i64>,
+    /// Доступна ли [отмена](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch) сборочного задания: - `false` — недоступна - `true` — доступна 
+    #[serde(rename = "isCancellable", skip_serializing_if = "Option::is_none")]
+    pub is_cancellable: Option<bool>,
     /// Статус сборочного задания, установленный продавцом
     #[serde(rename = "supplierStatus", skip_serializing_if = "Option::is_none")]
     pub supplier_status: Option<SupplierStatus>,
@@ -28,6 +31,7 @@ impl ApiV3OrdersStatusPost200ResponseOrdersInner {
     pub fn new() -> ApiV3OrdersStatusPost200ResponseOrdersInner {
         ApiV3OrdersStatusPost200ResponseOrdersInner {
             id: None,
+            is_cancellable: None,
             supplier_status: None,
             wb_status: None,
         }

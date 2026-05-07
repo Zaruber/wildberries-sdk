@@ -21,6 +21,8 @@ var _ MappedNullable = &ApiV3OrdersStatusPost200ResponseOrdersInner{}
 type ApiV3OrdersStatusPost200ResponseOrdersInner struct {
 	// ID сборочного задания
 	Id *int64 `json:"id,omitempty"`
+	// Доступна ли [отмена](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch) сборочного задания: - `false` — недоступна - `true` — доступна 
+	IsCancellable *bool `json:"isCancellable,omitempty"`
 	// Статус сборочного задания, установленный продавцом
 	SupplierStatus *string `json:"supplierStatus,omitempty"`
 	// Статус сборочного задания в системе Wildberries
@@ -74,6 +76,38 @@ func (o *ApiV3OrdersStatusPost200ResponseOrdersInner) HasId() bool {
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ApiV3OrdersStatusPost200ResponseOrdersInner) SetId(v int64) {
 	o.Id = &v
+}
+
+// GetIsCancellable returns the IsCancellable field value if set, zero value otherwise.
+func (o *ApiV3OrdersStatusPost200ResponseOrdersInner) GetIsCancellable() bool {
+	if o == nil || IsNil(o.IsCancellable) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCancellable
+}
+
+// GetIsCancellableOk returns a tuple with the IsCancellable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiV3OrdersStatusPost200ResponseOrdersInner) GetIsCancellableOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCancellable) {
+		return nil, false
+	}
+	return o.IsCancellable, true
+}
+
+// HasIsCancellable returns a boolean if a field has been set.
+func (o *ApiV3OrdersStatusPost200ResponseOrdersInner) HasIsCancellable() bool {
+	if o != nil && !IsNil(o.IsCancellable) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCancellable gets a reference to the given bool and assigns it to the IsCancellable field.
+func (o *ApiV3OrdersStatusPost200ResponseOrdersInner) SetIsCancellable(v bool) {
+	o.IsCancellable = &v
 }
 
 // GetSupplierStatus returns the SupplierStatus field value if set, zero value otherwise.
@@ -152,6 +186,9 @@ func (o ApiV3OrdersStatusPost200ResponseOrdersInner) ToMap() (map[string]interfa
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.IsCancellable) {
+		toSerialize["isCancellable"] = o.IsCancellable
 	}
 	if !IsNil(o.SupplierStatus) {
 		toSerialize["supplierStatus"] = o.SupplierStatus

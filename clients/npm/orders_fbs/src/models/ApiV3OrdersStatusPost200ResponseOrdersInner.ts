@@ -26,6 +26,15 @@ export interface ApiV3OrdersStatusPost200ResponseOrdersInner {
      */
     id?: number;
     /**
+     * Доступна ли [отмена](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch) сборочного задания:
+     * - `false` — недоступна
+     * - `true` — доступна
+     * 
+     * @type {boolean}
+     * @memberof ApiV3OrdersStatusPost200ResponseOrdersInner
+     */
+    isCancellable?: boolean;
+    /**
      * Статус сборочного задания, установленный продавцом
      * @type {ApiV3OrdersStatusPost200ResponseOrdersInnerSupplierStatusEnum}
      * @memberof ApiV3OrdersStatusPost200ResponseOrdersInner
@@ -88,6 +97,7 @@ export function ApiV3OrdersStatusPost200ResponseOrdersInnerFromJSONTyped(json: a
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
+        'isCancellable': json['isCancellable'] == null ? undefined : json['isCancellable'],
         'supplierStatus': json['supplierStatus'] == null ? undefined : json['supplierStatus'],
         'wbStatus': json['wbStatus'] == null ? undefined : json['wbStatus'],
     };
@@ -105,6 +115,7 @@ export function ApiV3OrdersStatusPost200ResponseOrdersInnerToJSONTyped(value?: A
     return {
         
         'id': value['id'],
+        'isCancellable': value['isCancellable'],
         'supplierStatus': value['supplierStatus'],
         'wbStatus': value['wbStatus'],
     };

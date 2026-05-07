@@ -58,6 +58,7 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
      */
     protected static $openAPITypes = [
         'id' => 'int',
+        'is_cancellable' => 'bool',
         'supplier_status' => 'string',
         'wb_status' => 'string'
     ];
@@ -71,6 +72,7 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
      */
     protected static $openAPIFormats = [
         'id' => 'int64',
+        'is_cancellable' => null,
         'supplier_status' => null,
         'wb_status' => null
     ];
@@ -82,6 +84,7 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
      */
     protected static array $openAPINullables = [
         'id' => false,
+        'is_cancellable' => false,
         'supplier_status' => false,
         'wb_status' => false
     ];
@@ -173,6 +176,7 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'is_cancellable' => 'isCancellable',
         'supplier_status' => 'supplierStatus',
         'wb_status' => 'wbStatus'
     ];
@@ -184,6 +188,7 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
      */
     protected static $setters = [
         'id' => 'setId',
+        'is_cancellable' => 'setIsCancellable',
         'supplier_status' => 'setSupplierStatus',
         'wb_status' => 'setWbStatus'
     ];
@@ -195,6 +200,7 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
      */
     protected static $getters = [
         'id' => 'getId',
+        'is_cancellable' => 'getIsCancellable',
         'supplier_status' => 'getSupplierStatus',
         'wb_status' => 'getWbStatus'
     ];
@@ -309,6 +315,7 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
     public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('is_cancellable', $data ?? [], null);
         $this->setIfExists('supplier_status', $data ?? [], null);
         $this->setIfExists('wb_status', $data ?? [], null);
     }
@@ -396,6 +403,33 @@ class ApiV3OrdersStatusPost200ResponseOrdersInner implements ModelInterface, Arr
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_cancellable
+     *
+     * @return bool|null
+     */
+    public function getIsCancellable()
+    {
+        return $this->container['is_cancellable'];
+    }
+
+    /**
+     * Sets is_cancellable
+     *
+     * @param bool|null $is_cancellable Доступна ли [отмена](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch) сборочного задания: - `false` — недоступна - `true` — доступна
+     *
+     * @return self
+     */
+    public function setIsCancellable($is_cancellable)
+    {
+        if (is_null($is_cancellable)) {
+            throw new \InvalidArgumentException('non-nullable is_cancellable cannot be null');
+        }
+        $this->container['is_cancellable'] = $is_cancellable;
 
         return $this;
     }
