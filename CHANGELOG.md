@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.05.07)
+- Orders FBS: в ответ метода POST `/api/v3/orders/status` добавлено поле `isCancellable` (boolean, not nullable) — признак доступности отмены сборочного задания
+- Orders FBS: уточнено описание PATCH `/api/v3/orders/{orderId}/cancel` — отмена возможна только до передачи задания Wildberries; рекомендовано предварительно проверять `isCancellable` через POST `/api/v3/orders/status`
+
 ### Changed (2026.05.06)
 - Orders DBW: добавлен batch-эндпоинт перевода в доставку `POST /api/marketplace/v3/dbw/orders/status/deliver` (из `confirm` в `complete`) с телом `api.OrdersRequestV2(ordersIds[])` и ответом `200 api.StatusSetResponses` (постатусно: `isError`, `errors`, `metaDetails`); обновлена ссылка для статуса `complete` на новый метод
 - Orders DBW: `PATCH /api/v3/dbw/orders/{orderId}/assemble` помечен как `deprecated` и будет удалён 5 июня (старый одиночный перевод в доставку, ответ `204`)

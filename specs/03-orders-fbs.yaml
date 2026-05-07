@@ -554,6 +554,14 @@ paths:
                           nullable: false
                           description: ID сборочного задания
                           example: 5632423
+                        isCancellable:
+                          type: boolean
+                          nullable: false
+                          description: |
+                            Доступна ли [отмена](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch) сборочного задания:
+                            - `false` — недоступна
+                            - `true` — доступна
+                          example: false
                         supplierStatus:
                           type: string
                           nullable: false
@@ -678,6 +686,11 @@ paths:
       summary: Отменить сборочное задание
       description: |
         Метод отменяет [сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) и переводит в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `cancel` — отменено продавцом.
+
+        <div class="description_important">
+        Сборочное задание можно отменить до его передачи Wildberries.
+        Чтобы проверить, можно ли отменить сборочное задание, используйте метод <a href ="https://dev.wildberries.ru/docs/openapi/orders-fbs/#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post">POST /api/v3/orders/status</a>, поле <code>isCancellable</code>.
+        </div>
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
