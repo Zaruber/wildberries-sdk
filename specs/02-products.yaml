@@ -4509,6 +4509,8 @@ paths:
                   $ref: '#/components/examples/IncorrectRequest'
                 IncorrectParameter:
                   $ref: '#/components/examples/IncorrectParameter'
+                SKUUploadDisabled:
+                  $ref: '#/components/examples/SKUUploadDisabled'
         '401':
           $ref: '#/components/responses/401'
         '402':
@@ -4607,6 +4609,8 @@ paths:
                   $ref: '#/components/examples/IncorrectRequest'
                 IncorrectParameter:
                   $ref: '#/components/examples/IncorrectParameter'
+                IncorrectSkuParameter:
+                  $ref: '#/components/examples/SKUUploadDisabled'
         '401':
           $ref: '#/components/responses/401'
         '402':
@@ -4711,6 +4715,8 @@ paths:
                   $ref: '#/components/examples/IncorrectRequest'
                 IncorrectParameter:
                   $ref: '#/components/examples/IncorrectParameter'
+                IncorrectSkuParameter:
+                  $ref: '#/components/examples/SKUUploadDisabled'
         '401':
           $ref: '#/components/responses/401'
         '402':
@@ -6704,6 +6710,10 @@ components:
       value:
         code: IncorrectParameter
         message: IncorrectParameter
+    SKUUploadDisabled:
+      value:
+        code: SKUUploadDisabled
+        message: Uploading stock is not allowed by 'sku'. Please use the 'chrtId' key
     creatingOneCard:
       description: ''
       value:

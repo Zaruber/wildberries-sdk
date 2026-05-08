@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.05.08)
+- Products: добавлен новый пример ошибки `SKUUploadDisabled` (code: `SKUUploadDisabled`) — загрузка остатков по ключу `sku` запрещена, требуется использовать `chrtId`; этот пример подключён в ответы 400 для нескольких методов (в т.ч. как `SKUUploadDisabled` и как `IncorrectSkuParameter`, ссылающийся на тот же пример).
+- Orders FBS: уточнено ограничение метода получения информации о сборочных заданиях — возвращаются только задания, созданные не более 3 месяцев назад; для более старых данных необходимо использовать метод получения списка архивных заказов `/api/marketplace/v3/fbs/orders/archive` (GET).
+
 ### Changed (2026.05.07)
 - Orders FBS: в ответ метода POST `/api/v3/orders/status` добавлено поле `isCancellable` (boolean, not nullable) — признак доступности отмены сборочного задания
 - Orders FBS: уточнено описание PATCH `/api/v3/orders/{orderId}/cancel` — отмена возможна только до передачи задания Wildberries; рекомендовано предварительно проверять `isCancellable` через POST `/api/v3/orders/status`
