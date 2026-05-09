@@ -1001,7 +1001,13 @@ paths:
           in: query
           schema:
             type: string
-          description: Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`, `customsDeclaration`). Передается только одно значение.
+            enum:
+              - imei
+              - uin
+              - gtin
+              - sgtin
+              - customsDeclaration
+          description: Название метаданных для удаления. Передается только одно значение.
       responses:
         '204':
           description: Удалено
@@ -3746,7 +3752,7 @@ components:
         ddate:
           type: string
           description: |
-            Планируемая дата доставки.<br>
+            Планируемая дата доставки заказа покупателю.<br>
             Поле отображается для сборочных заданий со сверхгабаритными товарами `СГТ`, `cargoType: 2`
           nullable: false
           example: 17.05.2024
