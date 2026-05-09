@@ -421,7 +421,7 @@ paths:
         '400':
           description: Неправильный запрос
           content:
-            application/json:
+            text/plain; charset=utf-8:
               schema:
                 $ref: '#/components/schemas/models.ErrorModel'
               examples:
