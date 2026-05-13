@@ -12,6 +12,25 @@
 | Go | [![Go](https://img.shields.io/github/v/tag/eslazarev/wildberries-sdk?label=go)](https://github.com/eslazarev/wildberries-sdk/tags) | — | [docs/go/README.md](../go/README.md) | [pkg.go.dev](https://pkg.go.dev/github.com/eslazarev/wildberries-sdk/clients/go/finances) |
 | Rust | [![Rust](https://img.shields.io/github/v/tag/eslazarev/wildberries-sdk?label=rust)](https://github.com/eslazarev/wildberries-sdk/tags) | — | [docs/rust/README.md](../rust/README.md) | [crates.io](https://crates.io/crates/wildberries_sdk_finances) |
 
+## Xavfsizlik
+
+Ushbu SDK xavfsizlik birinchi oʻrinda boʻlgan reliz jarayoni bilan chiqariladi:
+
+- CodeQL statik kod tahlili
+- OpenSSF Scorecard bahosi
+- TruffleHog tasdiqlangan sirlarni skanerlash
+- Python bogʻliqliklarini tekshirish (pip-audit)
+- npm audit
+- Composer audit
+- Cargo audit
+- Go zaifliklarini tekshirish (govulncheck)
+- Eʼlon qilingan paketlarda qattiq kodlangan API tokenlari yoʻq
+
+[![CodeQL](https://github.com/eslazarev/wildberries-sdk/actions/workflows/codeql.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/codeql.yml)
+[![Scorecard](https://github.com/eslazarev/wildberries-sdk/actions/workflows/scorecard.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/scorecard.yml)
+[![Secrets](https://github.com/eslazarev/wildberries-sdk/actions/workflows/secrets.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/secrets.yml)
+[![Dependency Audit](https://github.com/eslazarev/wildberries-sdk/actions/workflows/dependency-audit.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/dependency-audit.yml)
+
 
 Wildberries API ning bugun mavjud boʻlgan barcha buyruqlari spetsifikatsiya modullari boʻyicha guruhlangan holda qoʻllab-quvvatlanadi.
 

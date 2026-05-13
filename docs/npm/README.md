@@ -2,6 +2,25 @@
 
 Единый npm-пакет с клиентами Wildberries по всем спецификациям.
 
+## Безопасность
+
+SDK выпускается с security-first процессом:
+
+- статический анализ кода CodeQL
+- оценка по OpenSSF Scorecard
+- сканирование секретов TruffleHog (verified-режим)
+- аудит зависимостей Python (pip-audit)
+- npm audit
+- Composer audit
+- Cargo audit
+- проверка уязвимостей Go (govulncheck)
+- в опубликованных пакетах нет захардкоженных API-токенов
+
+[![CodeQL](https://github.com/eslazarev/wildberries-sdk/actions/workflows/codeql.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/codeql.yml)
+[![Scorecard](https://github.com/eslazarev/wildberries-sdk/actions/workflows/scorecard.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/scorecard.yml)
+[![Secrets](https://github.com/eslazarev/wildberries-sdk/actions/workflows/secrets.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/secrets.yml)
+[![Dependency Audit](https://github.com/eslazarev/wildberries-sdk/actions/workflows/dependency-audit.yml/badge.svg)](https://github.com/eslazarev/wildberries-sdk/actions/workflows/dependency-audit.yml)
+
 ## Установка
 
 ```bash
