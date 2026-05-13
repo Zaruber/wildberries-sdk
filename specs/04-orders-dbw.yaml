@@ -1222,6 +1222,8 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
