@@ -2534,6 +2534,7 @@ paths:
                     type: integer
                   adverts:
                     type: object
+                    nullable: true
                     properties:
                       type:
                         description: |

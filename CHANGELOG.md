@@ -1,6 +1,15 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.05.15)
+- Products: уточнено описание поля `isVariable` (добавлена ссылка на KB; изменена формулировка про отличия вариантов по характеристике)
+- Products: в примерах для фильтра `withPhoto` изменено значение по умолчанию с `-1` на `0`
+- Products: параметр `filter.withPhoto` теперь ограничен `enum: [0, 1, -1]`; обновлена семантика значений с 3 июня (переопределены значения `0` и `-1`), `default` остаётся `0`
+- Products: поле `sizeID` помечено как `nullable: true`
+- Products: поля `newPrice` и `newDiscount` помечены как `nullable: true`
+- Products: в схеме истории загрузки добавлено `nullable: true` для `uploadID` и `historyGoods`
+- Promotion: объект `adverts` помечен как `nullable: true`
+
 ### Changed (2026.05.13)
 - Общие: расширен список кодов разделов/доступов (enum `code`) — добавлены `brandsFlow` (Мои бренды), `copyrightComplaints` (Обращения правообладателей), `pretrialClaims` (Досудебные претензии), `sellersChat` (Чат с покупателями); обновлены примеры пользователей/ролей с этими новыми кодами.
 - Заказы DBW: для одного из эндпоинтов добавлен новый возможный ответ `402` (подключена общая схема ответа `#/components/responses/402`).

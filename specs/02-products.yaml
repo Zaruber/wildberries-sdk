@@ -358,9 +358,9 @@ paths:
                         isVariable:
                           type: boolean
                           description: |
-                            Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:
-                              -  `true` — варианты товара могут отличаться по этой характеристике
-                              -  `false` — варианты товара не могут отличаться по этой характеристике
+                            Признак [меняющейся характеристики](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov). Значение размечает характеристики, по которым варианты отличаются друг от друга:
+                              -  `true` — варианты товара отличаются по этой характеристике
+                              -  `false` — варианты товара не отличаются по этой характеристике
                         existNamedField:
                           type: boolean
                           description: "Как передать характеристику в запросах на\_[cоздание](./work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post),\_[создание с присоединением](./work-with-products/#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post)\_и\_[редактирование](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товара:\n  -  `true` — в соответствующем параметре запроса\n  -  `false` — внутри массива `characteristics`\n"
@@ -1468,7 +1468,7 @@ paths:
                       "limit": 100
                     },
                     "filter": {
-                      "withPhoto": -1
+                      "withPhoto": 0
                     }
                   }
                 }</pre>
@@ -1535,7 +1535,11 @@ paths:
                       properties:
                         withPhoto:
                           type: integer
-                          description: "Фильтр по\_фото:\n  * `0`\_— только карточки без фото\n  * `1`\_— только карточки с\_фото\n  * `-1`\_— все карточки товара\n"
+                          enum:
+                            - 0
+                            - 1
+                            - -1
+                          description: "Фильтр по\_фото:\n  * `0`\_— только карточки без фото. С [3 июня](https://dev.wildberries.ru/release-notes?id=527) — любые карточки товаров\n  * `1`\_— только карточки с\_фото\n  * `-1`\_— любые карточки товаров. С [3 июня](https://dev.wildberries.ru/release-notes?id=527) — только карточки без фото\n"
                           default: 0
                         textSearch:
                           type: string
@@ -1595,7 +1599,7 @@ paths:
                     - уллу
                     - EkkE
                   imtID: 328632
-                  withPhoto: -1
+                  withPhoto: 0
                 cursor:
                   updatedAt: '2023-12-06T11:17:00.96577Z'
                   nmID: 370870300
@@ -5734,6 +5738,7 @@ components:
           description: Артикул продавца
         sizeID:
           type: integer
+          nullable: true
           example: 54483342
           description: ID размера. В методах Контента это поле `chrtID`
         techSizeName:
@@ -5872,6 +5877,7 @@ components:
         newPrice:
           type: number
           format: float
+          nullable: true
           example: 134
           description: Новая цена продавца до скидки
         oldPrice:
@@ -5882,6 +5888,7 @@ components:
         newDiscount:
           type: integer
           example: 25
+          nullable: true
           description: Новая скидка продавца, %
         oldDiscount:
           type: integer
@@ -6455,10 +6462,12 @@ components:
                 properties:
                   uploadID:
                     type: integer
+                    nullable: true
                     description: ID загрузки
                     example: 3235236546
                   historyGoods:
                     type: array
+                    nullable: true
                     description: Информация о товарах в загрузке
                     items:
                       $ref: '#/components/schemas/GoodHistory'
