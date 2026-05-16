@@ -768,6 +768,7 @@ components:
           type: string
           nullable: true
         supplierAssignName:
+          nullable: true
           description: Краткое название продавца
           type: string
         storageCoef:
