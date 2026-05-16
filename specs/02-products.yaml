@@ -7162,7 +7162,7 @@ components:
       value:
         data: null
         error: true
-        errorText: 'Check the field values in the WB Club Discount column. Field format: a whole number between {{.WbClubMinDiscount}} and {{.WbClubMaxDiscount}}, without dots or commas'
+        errorText: 'Check the field values in the WB Club Discount column. Field format: a whole number between <no value> and <no value>, without dots or commas'
     DiscountsAreTheSameAsThoseAlreadySet:
       description: Некоторые из скидок в запросе уже установлены
       value:

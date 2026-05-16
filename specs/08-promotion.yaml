@@ -3466,6 +3466,7 @@ paths:
                     - $ref: '#/components/schemas/StatInterval'
                     - $ref: '#/components/schemas/StatDate'
                     - $ref: '#/components/schemas/Stat'
+                    - $ref: '#/components/schemas/StatCampaignNotFound'
               examples:
                 RespStatMediaInterval:
                   $ref: '#/components/examples/RespStatMediaInterval'
@@ -3475,6 +3476,8 @@ paths:
                   $ref: '#/components/examples/RespStatMediaWithoutParam'
                 RespStatMediaAggregate:
                   $ref: '#/components/examples/RespStatMediaAggregate'
+                RespStatCampaignNotFound:
+                  $ref: '#/components/examples/RespStatCampaignNotFound'
         '400':
           description: Неправильный запрос
           content:
@@ -4697,6 +4700,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/StatsBlok2'
+    StatCampaignNotFound:
+      additionalProperties: false
+      type: object
+      properties:
+        advert_id:
+          description: ID кампании
+          type: integer
+          format: int64
+          example: 111
+        error:
+          description: Описание ошибки
+          type: string
+          example: кампания не найдена
     Stat:
       additionalProperties: false
       type: object
@@ -6033,6 +6049,11 @@ components:
               expenses: 175000
               cr1: 1.91
               cr2: 25
+    RespStatCampaignNotFound:
+      description: Ошибка в запросе
+      value:
+        advert_id: 111
+        error: кампания не найдена
     RequestWithDate:
       description: Запрос с датами
       value:
