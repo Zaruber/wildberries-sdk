@@ -584,7 +584,8 @@ paths:
         - Сборочные задания DBS
       summary: Получить стикеры для сборочных заданий с доставкой в ПВЗ
       description: |
-        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>
+        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> 
+            </div>
 
         Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):
           - `confirm` — на сборке
@@ -1158,6 +1159,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 500 запросов | 120 мс | 20 запросов |
         | Сервисный | 1 мин | 500 запросов | 120 мс | 20 запросов |
+        | Базовый с секретом | 1 мин | 500 запросов | 120 мс | 20 запросов |
         | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
 
         Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов

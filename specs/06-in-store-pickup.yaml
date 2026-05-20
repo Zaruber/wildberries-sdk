@@ -126,102 +126,6 @@ paths:
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
           $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/confirm:
-    patch:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Сборочные задания Самовывоз
-      summary: Перевести на сборку
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: Подтверждено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка обновления статуса
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                StatusMismatch:
-                  $ref: '#/components/examples/StatusMismatch'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/prepare:
-    patch:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Сборочные задания Самовывоз
-      summary: Сообщить, что сборочное задание готово к выдаче
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: Подтверждено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка обновления статуса
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                StatusMismatch:
-                  $ref: '#/components/examples/StatusMismatch'
-        '429':
-          $ref: '#/components/responses/429'
   /api/v3/click-collect/orders/client:
     post:
       x-readonly-method: true
@@ -418,128 +322,6 @@ paths:
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
           $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/receive:
-    patch:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Сборочные задания Самовывоз
-      summary: Сообщить, что заказ принят покупателем
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
-
-
-        | Тип | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- | --- |
-        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
-        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
-        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
-
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-        </div>
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: Подтверждено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка обновления статуса
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                StatusMismatch:
-                  $ref: '#/components/examples/StatusMismatch'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/reject:
-    patch:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Сборочные задания Самовывоз
-      summary: Сообщить, что покупатель отказался от заказа
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
-
-
-        | Тип | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- | --- |
-        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
-        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
-        | Базовый | 1 ч | 50 запросов | 72 сек | 1 запрос |
-
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-        </div>
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: Подтверждено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка обновления статуса
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                StatusMismatch:
-                  $ref: '#/components/examples/StatusMismatch'
-        '429':
-          $ref: '#/components/responses/429'
   /api/marketplace/v3/click-collect/orders/status/info:
     post:
       x-readonly-method: true
@@ -567,46 +349,6 @@ paths:
           $ref: '#/components/responses/401'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/status:
-    post:
-      x-readonly-method: true
-      x-category: marketplace
-      tags:
-        - Сборочные задания Самовывоз
-      summary: Получить статусы сборочных заданий
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/api.OrdersRequest'
-        required: true
-      responses:
-        '200':
-          description: Успешно
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/api.OrderStatuses'
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectRequestBody:
-                  $ref: '#/components/examples/IncorrectRequestBody'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
         '429':
           $ref: '#/components/responses/429'
   /api/v3/click-collect/orders:
@@ -722,67 +464,6 @@ paths:
           $ref: '#/components/responses/401'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/cancel:
-    patch:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Сборочные задания Самовывоз
-      summary: Отменить сборочное задание
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
-
-
-        | Тип | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- | --- |
-        | Персональный | 1 мин | 100 запросов | 600 мс | 20 запросов |
-        | Сервисный | 1 мин | 100 запросов | 600 мс | 20 запросов |
-        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
-
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-        </div>
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: Отменено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectRequestBody:
-                  $ref: '#/components/examples/IncorrectRequestBody'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка обновления статуса
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                StatusMismatch:
-                  $ref: '#/components/examples/StatusMismatch'
         '429':
           $ref: '#/components/responses/429'
   /api/marketplace/v3/click-collect/orders/meta/info:
@@ -1038,335 +719,6 @@ paths:
           $ref: '#/components/responses/AccessDenied'
         '429':
           $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/meta:
-    get:
-      x-readonly-method: true
-      x-category: marketplace
-      tags:
-        - Метаданные Самовывоз
-      summary: Получить метаданные сборочного задания
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
-
-
-        | Тип | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- | --- |
-        | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов |
-        | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов |
-        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
-
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-        </div>
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Успешно
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/api.OrdersMeta'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/429'
-    delete:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Метаданные Самовывоз
-      summary: Удалить метаданные сборочного задания
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-        - name: key
-          in: query
-          description: |
-            Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`).
-            Передается только одно значение.
-          required: true
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Удалено
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/meta/sgtin:
-    put:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Метаданные Самовывоз
-      summary: Закрепить за сборочным заданием код маркировки товара
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/api.SGTINsRequest'
-        required: true
-      responses:
-        '204':
-          description: Обновлено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectRequestBody:
-                  $ref: '#/components/examples/IncorrectRequestBody'
-                IncorrectRequest:
-                  $ref: '#/components/examples/IncorrectRequest'
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка добавления маркировки
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                FailedToUpdateMeta:
-                  $ref: '#/components/examples/FailedToUpdateMeta'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/meta/uin:
-    put:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Метаданные Самовывоз
-      summary: Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
-
-
-        | Тип | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- | --- |
-        | Персональный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
-        | Сервисный | 1 мин | 1000 запросов | 60 мс | 20 запросов |
-        | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
-
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-        </div>
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/api.UINRequest'
-        required: true
-      responses:
-        '204':
-          description: Обновлено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectRequestBody:
-                  $ref: '#/components/examples/IncorrectRequestBody'
-                IncorrectRequest:
-                  $ref: '#/components/examples/IncorrectRequest'
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка добавления маркировки
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                FailedToUpdateMeta:
-                  $ref: '#/components/examples/FailedToUpdateMeta'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/meta/imei:
-    put:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Метаданные Самовывоз
-      summary: Закрепить за сборочным заданием IMEI
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/api.IMEIRequest'
-        required: true
-      responses:
-        '204':
-          description: Обновлено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectRequestBody:
-                  $ref: '#/components/examples/IncorrectRequestBody'
-                IncorrectRequest:
-                  $ref: '#/components/examples/IncorrectRequest'
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка добавления маркировки
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                FailedToUpdateMeta:
-                  $ref: '#/components/examples/FailedToUpdateMeta'
-        '429':
-          $ref: '#/components/responses/429'
-  /api/v3/click-collect/orders/{orderId}/meta/gtin:
-    put:
-      x-readonly-method: false
-      x-category: marketplace
-      tags:
-        - Метаданные Самовывоз
-      summary: Закрепить за сборочным заданием GTIN
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
-      parameters:
-        - name: orderId
-          in: path
-          description: ID сборочного задания
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/api.GTINRequest'
-        required: true
-      responses:
-        '204':
-          description: Обновлено
-        '400':
-          description: Неправильный запрос
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                IncorrectRequestBody:
-                  $ref: '#/components/examples/IncorrectRequestBody'
-                IncorrectRequest:
-                  $ref: '#/components/examples/IncorrectRequest'
-                IncorrectParameter:
-                  $ref: '#/components/examples/IncorrectParameter'
-        '401':
-          $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
-        '403':
-          $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка добавления маркировки
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                FailedToUpdateMeta:
-                  $ref: '#/components/examples/FailedToUpdateMeta'
-        '429':
-          $ref: '#/components/responses/429'
 components:
   securitySchemes:
     HeaderApiKey:
@@ -1413,22 +765,10 @@ components:
       description: Заказ не найден
       value:
         code: NotFound
-    StatusMismatch:
-      value:
-        code: StatusMismatch
-        message: Несоответствие статусов, проверьте их правильность
-    FailedToUpdateMeta:
-      value:
-        code: FailedToUpdateMeta
-        message: Не удалось обновить метаданные сборочного задания. Убедитесь, что сборочное задание удовлетворяет всем необходимым требованиям (сборочное задание существует, находится в статусе "На сборке", сборочному заданию доступны метаданные см. описание метода **Получить метаданные сборочного задания**)
     IncorrectParameter:
       value:
         code: IncorrectParameter
         message: Передан некорректный параметр
-    IncorrectRequest:
-      value:
-        code: IncorrectRequest
-        message: Переданы некорректные данные
   schemas:
     api.CheckedIdentity:
       type: object
@@ -1476,22 +816,6 @@ components:
           type: object
         message:
           type: string
-    api.GTINRequest:
-      type: object
-      properties:
-        gtin:
-          type: string
-          description: GTIN
-      example:
-        gtin: '1234567890123456'
-    api.IMEIRequest:
-      type: object
-      properties:
-        imei:
-          type: string
-          description: IMEI
-      example:
-        imei: '123456789012345'
     api.NewOrder:
       type: object
       properties:
@@ -1764,12 +1088,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/api.OrderClientInfo'
-    api.OrderStatus:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: ID сборочного задания
         supplierStatus:
           type: string
           description: Статус сборочного задания, установленный продавцом
@@ -1779,15 +1097,6 @@ components:
       example:
         supplierStatus: confirm
         wbStatus: waiting
-        id: 1234567
-    api.OrderStatuses:
-      type: object
-      properties:
-        orders:
-          type: array
-          description: Список статусов сборочных заданий
-          items:
-            $ref: '#/components/schemas/api.OrderStatus'
     api.Orders:
       type: object
       properties:
@@ -1802,14 +1111,6 @@ components:
           description: Список сборочных заданий
           items:
             $ref: '#/components/schemas/api.Order'
-    api.OrdersMeta:
-      type: object
-      properties:
-        meta:
-          type: object
-          description: Метаданные сборочного задания
-          allOf:
-            - $ref: '#/components/schemas/api.baseMeta'
     api.OrdersRequest:
       type: object
       properties:
@@ -1851,17 +1152,6 @@ components:
             - '1234567890123456'
           items:
             type: string
-    api.SGTINsRequest:
-      type: object
-      properties:
-        sgtins:
-          type: array
-          description: Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки
-          items:
-            type: string
-      example:
-        sgtins:
-          - '1234567890123456'
     api.OrdersUINSetRequest:
       type: object
       required:
@@ -1888,14 +1178,6 @@ components:
           maxLength: 16
           description: УИН
           example: '1234568909091232'
-    api.UINRequest:
-      type: object
-      properties:
-        uin:
-          type: string
-          description: УИН
-      example:
-        uin: '1234567890123456'
     api.OrdersIMEISetRequest:
       type: object
       required:
@@ -1948,44 +1230,6 @@ components:
           description: ID сборочного задания
           type: integer
           example: 123456
-    api.baseMeta:
-      type: object
-      properties:
-        gtin:
-          type: object
-          properties:
-            value:
-              nullable: true
-              type: string
-              example: '123456789012345'
-          description: GTIN
-        imei:
-          type: object
-          properties:
-            value:
-              nullable: true
-              type: string
-              example: '123456789012345'
-          description: IMEI
-        sgtin:
-          type: object
-          properties:
-            value:
-              type: array
-              items:
-                type: string
-              example:
-                - '123456789012345'
-              nullable: true
-          description: Код маркировки [Честного знака](https://честныйзнак.рф/)
-        uin:
-          type: object
-          properties:
-            value:
-              nullable: true
-              type: string
-              example: '123456789012345'
-          description: УИН
     api.BatchError:
       type: object
       required:
@@ -2416,15 +1660,6 @@ components:
           example:
             code: AccessDenied
             message: Доступ запрещён
-    NotFound:
-      description: Не найдено
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            code: NotFound
-            message: Not Found
     IncorrectRequest:
       description: Неправильный запрос
       content:
