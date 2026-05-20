@@ -40,6 +40,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос |
         | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос |
+        | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 1 запрос |
         | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |
         </div>
       tags:
@@ -86,7 +87,8 @@ paths:
       summary: Список отчётов реализации
       operationId: postV1SalesReportsList
       description: |
-        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>
+        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> 
+            </div>
 
         Метод возвращает список отчётов релизации по формату [таблицы отчётов](https://seller.wildberries.ru/suppliers-mutual-settlements).
         <br><br>
@@ -138,7 +140,8 @@ paths:
       summary: Детализации к отчётам реализации по ID отчётов
       operationId: postV1SalesReportsDetailedReportId
       description: |
-        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>
+        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> 
+            </div>
 
         Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements) по ID отчётов.
         <br><br>
@@ -211,6 +214,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос |
         | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос |
+        | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 1 запрос |
         | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос |
         </div>
       requestBody:
@@ -257,6 +261,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов |
         | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов |
+        | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов |
         | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос |
         </div>
       tags:
@@ -353,7 +358,8 @@ paths:
       summary: Список отчётов об издержках на приём платежей
       operationId: postV1AcquiringList
       description: |
-        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>
+        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> 
+            </div>
 
         Метод возвращает список отчётов об издержках на приём платежей по формату [таблицы отчётов](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports).
 
@@ -403,7 +409,8 @@ paths:
       summary: Детализации к отчётам об издержках на приём платежей по ID отчётов
       operationId: postV1AcquiringDetailedReportId
       description: |
-        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>
+        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> 
+            </div>
 
         Метод возвращает детализации к [отчётам об издержках на приём платежей](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports) по ID отчётов.
 
@@ -461,7 +468,8 @@ paths:
       summary: Детализации к отчётам об издержках на приём платежей за период
       operationId: postV1AcquiringDetailed
       description: |
-        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>
+        <div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> 
+            </div>
 
         Метод возвращает детализации к [отчётам об издержках на приём платежей](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports) за указанный период.
 
@@ -517,6 +525,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 10 сек | 1 запрос | 10 сек | 5 запросов |
         | Сервисный | 10 сек | 1 запрос | 10 сек | 5 запросов |
+        | Базовый с секретом | 10 сек | 1 запрос | 10 сек | 5 запросов |
         | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |
         </div>
       parameters:
@@ -554,6 +563,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 10 сек | 1 запрос | 10 сек | 5 запросов |
         | Сервисный | 10 сек | 1 запрос | 10 сек | 5 запросов |
+        | Базовый с секретом | 10 сек | 1 запрос | 10 сек | 5 запросов |
         | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |
         </div>
       parameters:
@@ -666,6 +676,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 10 сек | 1 запрос | 10 сек | 5 запросов |
         | Сервисный | 10 сек | 1 запрос | 10 сек | 5 запросов |
+        | Базовый с секретом | 10 сек | 1 запрос | 10 сек | 5 запросов |
         | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |
         </div>
       parameters:
@@ -720,6 +731,7 @@ paths:
         | --- | --- | --- | --- | --- |
         | Персональный | 5 мин | 1 запрос | 5 мин | 5 запросов |
         | Сервисный | 5 мин | 1 запрос | 5 мин | 5 запросов |
+        | Базовый с секретом | 5 мин | 1 запрос | 5 мин | 5 запросов |
         | Базовый | 24 ч | 1 запрос | 24 ч | 1 запрос |
         </div>
       requestBody:
