@@ -1,7 +1,7 @@
 /*
 Аналитика и данные
 
-<div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
+<div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Оценки товара](/openapi/analytics#tag/Ocenka-tovara)   5. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
 
 API version: analytics
 */
@@ -2416,6 +2416,187 @@ func (a *DefaultApiService) PostSalesFunnelProductsHistoryExecute(r ApiPostSales
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
 			var v ErrorObject
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v PostSalesFunnelProducts401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPostV1ItemRatingRequest struct {
+	ctx context.Context
+	ApiService *DefaultApiService
+	itemRatingRequest *ItemRatingRequest
+}
+
+func (r ApiPostV1ItemRatingRequest) ItemRatingRequest(itemRatingRequest ItemRatingRequest) ApiPostV1ItemRatingRequest {
+	r.itemRatingRequest = &itemRatingRequest
+	return r
+}
+
+func (r ApiPostV1ItemRatingRequest) Execute() (*PostV1ItemRating200Response, *http.Response, error) {
+	return r.ApiService.PostV1ItemRatingExecute(r)
+}
+
+/*
+PostV1ItemRating Получить отчёт
+
+<div class="description_token">Метод доступен по <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> 
+    </div>
+
+Метод формирует набор данных об оценках товаров.
+<br><br>
+Данные отчёта обновляются 1 раз в час.
+
+<div class="description_limit">
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+| Период | Лимит | Интервал | Всплеск |
+| --- | --- | --- | --- |
+| 1 мин | 3 запроса | 20 сек | 3 запроса |
+</div>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostV1ItemRatingRequest
+*/
+func (a *DefaultApiService) PostV1ItemRating(ctx context.Context) ApiPostV1ItemRatingRequest {
+	return ApiPostV1ItemRatingRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return PostV1ItemRating200Response
+func (a *DefaultApiService) PostV1ItemRatingExecute(r ApiPostV1ItemRatingRequest) (*PostV1ItemRating200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostV1ItemRating200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PostV1ItemRating")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/analytics/v1/item-rating"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.itemRatingRequest == nil {
+		return localVarReturnValue, nil, reportError("itemRatingRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.itemRatingRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["HeaderApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ErrorObject400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v PostSalesFunnelProducts401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v ErrorObject403
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -329,6 +329,7 @@ var_dump($response);
 - `analytics.DefaultApi.postSalesFunnelGroupedHistory` — `POST /api/analytics/v3/sales-funnel/grouped/history` — Статистика групп карточек товаров по дням
 - `analytics.DefaultApi.postSalesFunnelProducts` — `POST /api/analytics/v3/sales-funnel/products` — Статистика карточек товаров за период
 - `analytics.DefaultApi.postSalesFunnelProductsHistory` — `POST /api/analytics/v3/sales-funnel/products/history` — Статистика карточек товаров по дням
+- `analytics.DefaultApi.postV1ItemRating` — `POST /api/analytics/v1/item-rating` — Получить отчёт
 - `analytics.DefaultApi.postV1StocksReportWbWarehouses` — `POST /api/analytics/v1/stocks-report/wb-warehouses` — Остатки на складах WB
 
 ### reports (`reports`)

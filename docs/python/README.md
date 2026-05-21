@@ -328,6 +328,7 @@ print(feedbacks)
 - `analytics.DefaultApi.post_sales_funnel_grouped_history` — `POST /api/analytics/v3/sales-funnel/grouped/history` — Статистика групп карточек товаров по дням
 - `analytics.DefaultApi.post_sales_funnel_products` — `POST /api/analytics/v3/sales-funnel/products` — Статистика карточек товаров за период
 - `analytics.DefaultApi.post_sales_funnel_products_history` — `POST /api/analytics/v3/sales-funnel/products/history` — Статистика карточек товаров по дням
+- `analytics.DefaultApi.post_v1_item_rating` — `POST /api/analytics/v1/item-rating` — Получить отчёт
 - `analytics.DefaultApi.post_v1_stocks_report_wb_warehouses` — `POST /api/analytics/v1/stocks-report/wb-warehouses` — Остатки на складах WB
 
 ### reports (`reports`)

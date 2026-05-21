@@ -169,6 +169,7 @@ pub enum AdvV0StopGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum AdvV1AdvertGetError {
+    Status400(String),
     Status401(models::AdvV1PromotionCountGet401Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),

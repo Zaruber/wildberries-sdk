@@ -321,6 +321,7 @@ SDK выпускается с security-first процессом:
 - `GET /api/v1/tariffs/return` — Тарифы на возврат
 
 ### Аналитика и данные (`11-analytics.yaml`)
+- `POST /api/analytics/v1/item-rating` — Получить отчёт (postV1ItemRating)
 - `POST /api/analytics/v1/stocks-report/wb-warehouses` — Остатки на складах WB (postV1StocksReportWbWarehouses)
 - `POST /api/analytics/v3/sales-funnel/grouped/history` — Статистика групп карточек товаров по дням (postSalesFunnelGroupedHistory)
 - `POST /api/analytics/v3/sales-funnel/products` — Статистика карточек товаров за период (postSalesFunnelProducts)

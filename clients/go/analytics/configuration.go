@@ -1,7 +1,7 @@
 /*
 Аналитика и данные
 
-<div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
+<div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Оценки товара](/openapi/analytics#tag/Ocenka-tovara)   5. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
 
 API version: analytics
 */
@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.92/go",
+		UserAgent:        "OpenAPI-Generator/0.1.93/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -165,6 +165,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DefaultApiService.PostSalesFunnelProductsHistory": {
+				{
+					URL: "https://seller-analytics-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DefaultApiService.PostV1ItemRating": {
 				{
 					URL: "https://seller-analytics-api.wildberries.ru",
 					Description: "No description provided",

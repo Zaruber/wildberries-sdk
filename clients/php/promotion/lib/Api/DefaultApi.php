@@ -4931,7 +4931,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function advV1AdvertGet($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertGet'][0])
     {
@@ -4955,7 +4955,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response|string|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV1AdvertGetWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['advV1AdvertGet'][0])
     {
@@ -4988,6 +4988,12 @@ class DefaultApi
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        'string',
                         $request,
                         $response,
                     );
@@ -5031,6 +5037,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Promotion\Model\AdvV1AdvertGet200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5190,7 +5204,7 @@ class DefaultApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/problem+json', ],
+            ['application/json', 'text/plain', 'application/problem+json', ],
             $contentType,
             $multipart
         );

@@ -9,7 +9,8 @@ info:
       1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)
       2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)
       3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)
-      4. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV)
+      4. [Оценки товара](/openapi/analytics#tag/Ocenka-tovara)
+      5. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV)
   title: Аналитика и данные
   version: analytics
   x-file-name: analytics
@@ -24,6 +25,8 @@ tags:
   name: Поисковые запросы по вашим товарам
 - description: ""
   name: История остатков
+- description: ""
+  name: Оценка товара
 - description: ""
   name: Аналитика продавца CSV
 paths:
@@ -1072,31 +1075,31 @@ paths:
                   \ | Количество открытий карточки товара из поисковой выдачи в те\
                   кущий период |\n| OpenCardPercentile | float | float64 | Процент\
                   , на который показатель количества открытий карточки товара выше\
-                  , чем у карточек конкурентов по поисковому запросу |\n| AddToCart\
+                  , чем у карточек других продавцов по поисковому запросу |\n| AddToCart\
                   \ | integer | uint64 | Количество добавлений товара в корзину из\
                   \ поисковой выдачи в текущий период |\n| AddToCartPercentile | float\
                   \ | float64 | Процент, на который показатель добавлений в корзин\
-                  у выше, чем у карточек конкурентов по поисковому запросу |\n| OpenToCart\
-                  \ | integer | uint64 | Конверсия в корзину из поиска в текущий п\
-                  ериод, % |\n| OpenToCartPercentile\t| float\t| float64\t| Процен\
-                  т, на который показатель конверсии в корзину выше, чем у карточе\
-                  к конкурентов по поисковому запросу |\n| Orders | integer | uint64\
-                  \ | Заказали товар из поиска в текущий период |\n| OrdersPercentile\
-                  \ | float | float64 | Процент, на который показатель заказов выш\
-                  е, чем у карточек конкурентов по поисковому запросу |\n| CartToOrder\
-                  \ | integer | uint64 | Конверсия в заказ из поиска в текущий пер\
-                  иод, % |\n| CartToOrderPercentile | float | float64 | Процент, н\
-                  а который показатель конверсии в заказ выше, чем у карточек конк\
-                  урентов по поисковому запросу |\n| Visibility | integer | uint64\
-                  \ | Видимость товара в поиске в текущий период. Процент вероятно\
-                  сти, что пользователь увидит карточку товара. Зависит от средней\
-                  \ позиции |\n| FrequencyPast | integer | uint64 | Количество обр\
-                  ащений с поисковым запросом за предыдущий период (заполняется, е\
-                  сли указан прошлый период) |\n| MedianPositionPast | float | float64\
-                  \ | Медианная позиция товара в поиске за предыдущий период (запо\
-                  лняется, если указан прошлый период) |\n| AveragePositionPast |\
-                  \ integer | uint64 | Средняя позиция товара в поиске в предыдущи\
-                  й период (заполняется, если указан прошлый период) |\n| OpenCardPast\
+                  у выше, чем у карточек других продавцов по поисковому запросу |\n\
+                  | OpenToCart | integer | uint64 | Конверсия в корзину из поиска\
+                  \ в текущий период, % |\n| OpenToCartPercentile\t| float\t| float64\t\
+                  | Процент, на который показатель конверсии в корзину выше, чем у\
+                  \ карточек других продавцов по поисковому запросу |\n| Orders |\
+                  \ integer | uint64 | Заказали товар из поиска в текущий период |\n\
+                  | OrdersPercentile | float | float64 | Процент, на который показ\
+                  атель заказов выше, чем у карточек других продавцов по поисковом\
+                  у запросу |\n| CartToOrder | integer | uint64 | Конверсия в зака\
+                  з из поиска в текущий период, % |\n| CartToOrderPercentile | float\
+                  \ | float64 | Процент, на который показатель конверсии в заказ в\
+                  ыше, чем у карточек других продавцов по поисковому запросу |\n|\
+                  \ Visibility | integer | uint64 | Видимость товара в поиске в те\
+                  кущий период. Процент вероятности, что пользователь увидит карто\
+                  чку товара. Зависит от средней позиции |\n| FrequencyPast | integer\
+                  \ | uint64 | Количество обращений с поисковым запросом за предыд\
+                  ущий период (заполняется, если указан прошлый период) |\n| MedianPositionPast\
+                  \ | float | float64 | Медианная позиция товара в поиске за преды\
+                  дущий период (заполняется, если указан прошлый период) |\n| AveragePositionPast\
+                  \ | integer | uint64 | Средняя позиция товара в поиске в предыду\
+                  щий период (заполняется, если указан прошлый период) |\n| OpenCardPast\
                   \ | integer | uint64 | Количество открытий карточки товара из по\
                   исковой выдачи в предыдущий период (заполняется, если указан про\
                   шлый период) |\n| AddToCartPast | integer | uint64 | Количество\
@@ -2197,6 +2200,84 @@ paths:
       - История остатков
       x-readonly-method: true
       x-category: contentanalytics
+    servers:
+    - url: https://seller-analytics-api.wildberries.ru
+  /api/analytics/v1/item-rating:
+    post:
+      description: "<div class=\"description_token\">Метод доступен по <a href=\"\
+        /openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\"\
+        >токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> \n\
+        \    </div>\n\nМетод формирует набор данных об оценках товаров.\n<br><br>\n\
+        Данные отчёта обновляются 1 раз в час.\n\n<div class=\"description_limit\"\
+        >\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит\
+        \ запросов</a> на один аккаунт продавца:\n\n| Период | Лимит | Интервал |\
+        \ Всплеск |\n| --- | --- | --- | --- |\n| 1 мин | 3 запроса | 20 сек | 3 з\
+        апроса |\n</div>\n"
+      operationId: postV1ItemRating
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ItemRatingRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/postV1ItemRating_200_response"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorObject400"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/problem+json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorObject403"
+          description: Доступ запрещён
+        "429":
+          content:
+            application/problem+json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
+          description: Слишком много запросов
+      summary: Получить отчёт
+      tags:
+      - Оценка товара
+      x-readonly-method: true
+      x-category: contentanalytics
+      x-token-types:
+      - personal
+      - service
     servers:
     - url: https://seller-analytics-api.wildberries.ru
 components:
@@ -6973,6 +7054,487 @@ components:
       required:
       - items
       type: object
+    ItemRatingRequest:
+      description: Параметры запроса
+      example:
+        currentPeriod:
+          start: 2026-02-10
+          end: 2026-02-10
+        pastPeriod:
+          start: 2026-02-08
+          end: 2026-02-08
+        nmIds:
+        - 162579635
+        - 166699779
+        subjectIds:
+        - 232
+        - 1364
+        brandNames:
+        - Abikas
+        - Tike
+        tagIds:
+        - 3
+        - 5
+        - 6
+        isNotIncludeNMsWithoutSales: true
+        orderBy:
+          field: feedbackCount
+          mode: desc
+        limit: 130
+        offset: 50
+      properties:
+        currentPeriod:
+          $ref: "#/components/schemas/PeriodItemRating"
+        pastPeriod:
+          $ref: "#/components/schemas/pastPeriodItemRating"
+        nmIds:
+          description: Список артикулов WB для фильтрации
+          example:
+          - 162579635
+          - 166699779
+          items:
+            format: int32
+            type: integer
+          maxItems: 50
+          type: array
+        subjectIds:
+          description: Список ID предметов для фильтрации
+          example:
+          - 232
+          - 1364
+          items:
+            format: int32
+            type: integer
+          maxItems: 50
+          type: array
+        brandNames:
+          description: Список брендов для фильтрации
+          example:
+          - Abikas
+          - Tike
+          items:
+            type: string
+          maxItems: 50
+          type: array
+        tagIds:
+          description: Список ID ярлыков для фильтрации
+          example:
+          - 3
+          - 5
+          - 6
+          items:
+            format: int64
+            type: integer
+          maxItems: 50
+          type: array
+        isNotIncludeNMsWithoutSales:
+          default: false
+          description: Не учитывать товары без продаж
+          example: true
+          type: boolean
+        orderBy:
+          $ref: "#/components/schemas/OrderByItemRating"
+        limit:
+          default: 100
+          description: Количество товаров в ответе
+          example: 130
+          format: uint32
+          maximum: 1000
+          type: integer
+        offset:
+          description: "Сколько элементов пропустить. Например, для значения `10`\
+            \ ответ начнётся с 11 элемента"
+          example: 50
+          format: uint32
+          type: integer
+      required:
+      - currentPeriod
+      - offset
+      - orderBy
+      type: object
+    PeriodItemRating:
+      description: Текущий период
+      example:
+        start: 2026-02-10
+        end: 2026-02-10
+      properties:
+        start:
+          description: Дата начала периода. Не ранее 364 суток от вчерашнего дня и
+            не позднее `end`
+          example: 2026-02-10
+          format: date
+          type: string
+        end:
+          description: Дата окончания периода. Не ранее 364 суток от вчерашнего дня
+          example: 2026-02-10
+          format: date
+          type: string
+      required:
+      - end
+      - start
+      type: object
+    pastPeriodItemRating:
+      description: Прошлый период для сравнения. Количество дней — меньше или равно
+        `currentPeriod`
+      example:
+        start: 2026-02-08
+        end: 2026-02-08
+      properties:
+        start:
+          description: Дата начала периода. Не ранее 364 суток от вчерашнего дня и
+            не позднее `end`
+          example: 2026-02-08
+          format: date
+          type: string
+        end:
+          description: Дата окончания периода. Не ранее 364 суток от вчерашнего дня
+            и не позднее даты перед началом `currentPeriod`.
+          example: 2026-02-08
+          format: date
+          type: string
+      required:
+      - end
+      - start
+      type: object
+    OrderByItemRating:
+      description: Параметры сортировки
+      example:
+        field: feedbackCount
+        mode: desc
+      properties:
+        field:
+          description: |
+            Поле для сортировки:
+              - `feedbackRating` — Рейтинг товара по отзывам
+              - `feedbackCount` — Все отзывы за период
+              - `fiveStar` — Отзывы 5 звёзд
+              - `fourStar` — Отзывы 4 звезды
+              - `threeStar` — Отзывы 3 звезды
+              - `twoStar` — Отзывы 2 звезды
+              - `oneStar` — Отзывы 1 звезда
+              - `disqualified` — Отзывы, исключённые из рейтинга
+          enum:
+          - feedbackRating
+          - feedbackCount
+          - fiveStar
+          - fourStar
+          - threeStar
+          - twoStar
+          - oneStar
+          - disqualified
+          example: feedbackCount
+          type: string
+        mode:
+          description: |
+            Порядок сортировки:
+              - `asc` — по возрастанию
+              - `desc` — по убыванию
+          enum:
+          - asc
+          - desc
+          example: desc
+          type: string
+      required:
+      - field
+      - mode
+      type: object
+    ItemRatingResponse:
+      description: Данные ответа
+      example:
+        sellerRating:
+          current: 3.56
+          dynamics: 0.03
+        feedbackIncrease:
+          current: 26
+          total: 116
+          dynamics: 23
+          fiveStar:
+            current: 19
+            dynamics: 17
+            total: 51
+          fourStar:
+            current: 2
+            dynamics: 1
+            total: 13
+          threeStar:
+            current: 1
+            dynamics: 1
+            total: 11
+          twoStar:
+            current: 5
+            dynamics: 5
+            total: 34
+          oneStar:
+            current: -1
+            dynamics: -1
+            total: 7
+        cards:
+        - nmId: 123456789
+          title: iPh 17 512 ГБ Серебристый
+          vendorCode: wb3ha2668w
+          subjectId: 50
+          subjectName: Phones
+          brandName: Attlee
+          tagName: Phones
+          tagId: 65
+          pinnedFeedback: true
+          rating: 10
+          feedbackRating:
+            current: 3.87
+            dynamics: 0.31
+            percentile: 1.7
+          feedbackCount:
+            current: 12
+            dynamics: 9
+          fiveStar:
+            current: 9
+            dynamics: 7
+          fourStar:
+            current: 0
+            dynamics: -1
+          threeStar:
+            current: 1
+            dynamics: 1
+          twoStar:
+            current: 2
+            dynamics: 2
+          oneStar:
+            current: 0
+            dynamics: 0
+          disqualified: 7
+        - nmId: 123456789
+          title: iPh 17 512 ГБ Серебристый
+          vendorCode: wb3ha2668w
+          subjectId: 50
+          subjectName: Phones
+          brandName: Attlee
+          tagName: Phones
+          tagId: 65
+          pinnedFeedback: true
+          rating: 10
+          feedbackRating:
+            current: 3.87
+            dynamics: 0.31
+            percentile: 1.7
+          feedbackCount:
+            current: 12
+            dynamics: 9
+          fiveStar:
+            current: 9
+            dynamics: 7
+          fourStar:
+            current: 0
+            dynamics: -1
+          threeStar:
+            current: 1
+            dynamics: 1
+          twoStar:
+            current: 2
+            dynamics: 2
+          oneStar:
+            current: 0
+            dynamics: 0
+          disqualified: 7
+      properties:
+        sellerRating:
+          $ref: "#/components/schemas/TableItemFloat"
+        feedbackIncrease:
+          $ref: "#/components/schemas/FeedbacksIncreaseItem"
+        cards:
+          description: Данные по товарам
+          items:
+            $ref: "#/components/schemas/DistributionTableItem"
+          type: array
+      required:
+      - cards
+      - feedbackIncrease
+      - sellerRating
+      type: object
+    TableItemFloat:
+      description: Рейтинг продавца
+      example:
+        current: 3.56
+        dynamics: 0.03
+      properties:
+        current:
+          description: Текущий рейтинг
+          example: 3.56
+          format: float64
+          type: number
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 0.03
+          format: float64
+          type: number
+      required:
+      - current
+      type: object
+    FeedbacksIncreaseItem:
+      description: Прирост оценок
+      example:
+        current: 26
+        total: 116
+        dynamics: 23
+        fiveStar:
+          current: 19
+          dynamics: 17
+          total: 51
+        fourStar:
+          current: 2
+          dynamics: 1
+          total: 13
+        threeStar:
+          current: 1
+          dynamics: 1
+          total: 11
+        twoStar:
+          current: 5
+          dynamics: 5
+          total: 34
+        oneStar:
+          current: -1
+          dynamics: -1
+          total: 7
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 26
+          type: integer
+        total:
+          description: Всего оценок
+          example: 116
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 23
+          type: integer
+        fiveStar:
+          $ref: "#/components/schemas/FeedbacksIncreaseItem_fiveStar"
+        fourStar:
+          $ref: "#/components/schemas/FeedbacksIncreaseItem_fourStar"
+        threeStar:
+          $ref: "#/components/schemas/FeedbacksIncreaseItem_threeStar"
+        twoStar:
+          $ref: "#/components/schemas/FeedbacksIncreaseItem_twoStar"
+        oneStar:
+          $ref: "#/components/schemas/FeedbacksIncreaseItem_oneStar"
+      required:
+      - current
+      - dynamics
+      - fiveStar
+      - fourStar
+      - oneStar
+      - threeStar
+      - total
+      - twoStar
+      type: object
+    DistributionTableItem:
+      allOf:
+      - $ref: "#/components/schemas/TableItemBaseCommon"
+      - $ref: "#/components/schemas/DistributionTableIndicators"
+      example:
+        nmId: 123456789
+        title: iPh 17 512 ГБ Серебристый
+        vendorCode: wb3ha2668w
+        subjectId: 50
+        subjectName: Phones
+        brandName: Attlee
+        tagName: Phones
+        tagId: 65
+        pinnedFeedback: true
+        rating: 10
+        feedbackRating:
+          current: 3.87
+          dynamics: 0.31
+          percentile: 1.7
+        feedbackCount:
+          current: 12
+          dynamics: 9
+        fiveStar:
+          current: 9
+          dynamics: 7
+        fourStar:
+          current: 0
+          dynamics: -1
+        threeStar:
+          current: 1
+          dynamics: 1
+        twoStar:
+          current: 2
+          dynamics: 2
+        oneStar:
+          current: 0
+          dynamics: 0
+        disqualified: 7
+      type: object
+    TableItemBaseCommon:
+      properties:
+        nmId:
+          description: Артикул WB
+          example: 123456789
+          format: int64
+          type: integer
+        title:
+          description: Название товара
+          example: iPh 17 512 ГБ Серебристый
+          type: string
+        vendorCode:
+          description: Артикул продавца
+          example: wb3ha2668w
+          type: string
+        subjectId:
+          description: ID предмета
+          example: 50
+          format: uint64
+          type: integer
+        subjectName:
+          description: Название предмета
+          example: Phones
+          type: string
+        brandName:
+          description: Бренд
+          example: Attlee
+          type: string
+        tagName:
+          description: Название ярлыка
+          example: Phones
+          type: string
+        tagId:
+          description: ID ярлыка
+          example: 65
+          format: int64
+          type: integer
+        pinnedFeedback:
+          description: Отзыв закреплён
+          example: true
+          type: boolean
+        rating:
+          description: Рейтинг карточки товара
+          example: 10
+          format: float64
+          type: number
+        feedbackRating:
+          $ref: "#/components/schemas/TableItemBaseCommon_feedbackRating"
+      type: object
+    DistributionTableIndicators:
+      properties:
+        feedbackCount:
+          $ref: "#/components/schemas/DistributionTableIndicators_feedbackCount"
+        fiveStar:
+          $ref: "#/components/schemas/DistributionTableIndicators_fiveStar"
+        fourStar:
+          $ref: "#/components/schemas/DistributionTableIndicators_fourStar"
+        threeStar:
+          $ref: "#/components/schemas/DistributionTableIndicators_threeStar"
+        twoStar:
+          $ref: "#/components/schemas/DistributionTableIndicators_twoStar"
+        oneStar:
+          $ref: "#/components/schemas/DistributionTableIndicators_oneStar"
+        disqualified:
+          description: "Отзывы, исключённые из рейтинга"
+          example: 7
+          type: integer
+      type: object
     ErrorObject:
       example:
         title: SKU not found
@@ -8833,6 +9395,109 @@ components:
       required:
       - data
       type: object
+    postV1ItemRating_200_response:
+      example:
+        data:
+          sellerRating:
+            current: 3.56
+            dynamics: 0.03
+          feedbackIncrease:
+            current: 26
+            total: 116
+            dynamics: 23
+            fiveStar:
+              current: 19
+              dynamics: 17
+              total: 51
+            fourStar:
+              current: 2
+              dynamics: 1
+              total: 13
+            threeStar:
+              current: 1
+              dynamics: 1
+              total: 11
+            twoStar:
+              current: 5
+              dynamics: 5
+              total: 34
+            oneStar:
+              current: -1
+              dynamics: -1
+              total: 7
+          cards:
+          - nmId: 123456789
+            title: iPh 17 512 ГБ Серебристый
+            vendorCode: wb3ha2668w
+            subjectId: 50
+            subjectName: Phones
+            brandName: Attlee
+            tagName: Phones
+            tagId: 65
+            pinnedFeedback: true
+            rating: 10
+            feedbackRating:
+              current: 3.87
+              dynamics: 0.31
+              percentile: 1.7
+            feedbackCount:
+              current: 12
+              dynamics: 9
+            fiveStar:
+              current: 9
+              dynamics: 7
+            fourStar:
+              current: 0
+              dynamics: -1
+            threeStar:
+              current: 1
+              dynamics: 1
+            twoStar:
+              current: 2
+              dynamics: 2
+            oneStar:
+              current: 0
+              dynamics: 0
+            disqualified: 7
+          - nmId: 123456789
+            title: iPh 17 512 ГБ Серебристый
+            vendorCode: wb3ha2668w
+            subjectId: 50
+            subjectName: Phones
+            brandName: Attlee
+            tagName: Phones
+            tagId: 65
+            pinnedFeedback: true
+            rating: 10
+            feedbackRating:
+              current: 3.87
+              dynamics: 0.31
+              percentile: 1.7
+            feedbackCount:
+              current: 12
+              dynamics: 9
+            fiveStar:
+              current: 9
+              dynamics: 7
+            fourStar:
+              current: 0
+              dynamics: -1
+            threeStar:
+              current: 1
+              dynamics: 1
+            twoStar:
+              current: 2
+              dynamics: 2
+            oneStar:
+              current: 0
+              dynamics: 0
+            disqualified: 7
+      properties:
+        data:
+          $ref: "#/components/schemas/ItemRatingResponse"
+      required:
+      - data
+      type: object
     CommonInfo_supplierRating:
       description: Рейтинг продавца
       example:
@@ -9243,7 +9908,7 @@ components:
           type: integer
         percentile:
           description: "Процент, на который показатель количества открытий карточк\
-            и товара выше, чем у карточек конкурентов по поисковому запросу"
+            и товара выше, чем у карточек других продавцов по поисковому запросу"
           example: 50
           format: uint64
           type: integer
@@ -9268,7 +9933,7 @@ components:
           type: integer
         percentile:
           description: "Процент, на который показатель добавлений в корзину выше,\
-            \ чем у карточек конкурентов по поисковому запросу"
+            \ чем у карточек других продавцов по поисковому запросу"
           example: 50
           format: uint64
           type: integer
@@ -9294,7 +9959,7 @@ components:
           type: integer
         percentile:
           description: "Процент, на который показатель конверсии в корзину выше, ч\
-            ем у карточек конкурентов по поисковому запросу"
+            ем у карточек других продавцов по поисковому запросу"
           example: 50
           format: uint64
           type: integer
@@ -9319,7 +9984,7 @@ components:
           type: integer
         percentile:
           description: "Процент, на который показатель заказов выше, чем у карточе\
-            к конкурентов по поисковому запросу"
+            к других продавцов по поисковому запросу"
           example: 50
           format: uint64
           type: integer
@@ -9345,7 +10010,7 @@ components:
           type: integer
         percentile:
           description: "Процент, на который показатель конверсии в заказ выше, чем\
-            \ у карточек конкурентов по поисковому запросу"
+            \ у карточек других продавцов по поисковому запросу"
           example: 50
           format: uint64
           type: integer
@@ -10689,6 +11354,251 @@ components:
       - regionName
       - warehouseId
       - warehouseName
+      type: object
+    FeedbacksIncreaseItem_fiveStar:
+      description: Отзывы 5 звёзд
+      example:
+        current: 19
+        dynamics: 17
+        total: 51
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 19
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 17
+          type: integer
+        total:
+          description: Всего оценок
+          example: 51
+          type: integer
+      required:
+      - current
+      - total
+      type: object
+    FeedbacksIncreaseItem_fourStar:
+      description: Отзывы 4 звезды
+      example:
+        current: 2
+        dynamics: 1
+        total: 13
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 2
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 1
+          type: integer
+        total:
+          description: Всего оценок
+          example: 13
+          type: integer
+      required:
+      - current
+      - total
+      type: object
+    FeedbacksIncreaseItem_threeStar:
+      description: Отзывы 3 звезды
+      example:
+        current: 1
+        dynamics: 1
+        total: 11
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 1
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 1
+          type: integer
+        total:
+          description: Всего оценок
+          example: 11
+          type: integer
+      required:
+      - current
+      - total
+      type: object
+    FeedbacksIncreaseItem_twoStar:
+      description: Отзывы 2 звезды
+      example:
+        current: 5
+        dynamics: 5
+        total: 34
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 5
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 5
+          type: integer
+        total:
+          description: Всего оценок
+          example: 34
+          type: integer
+      required:
+      - current
+      - total
+      type: object
+    FeedbacksIncreaseItem_oneStar:
+      description: Отзывы 1 звезда
+      example:
+        current: -1
+        dynamics: -1
+        total: 7
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: -1
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: -1
+          type: integer
+        total:
+          description: Всего оценок
+          example: 7
+          type: integer
+      required:
+      - current
+      - total
+      type: object
+    TableItemBaseCommon_feedbackRating:
+      description: Рейтинг товара по отзывам
+      example:
+        current: 3.87
+        dynamics: 0.31
+        percentile: 1.7
+      properties:
+        current:
+          description: Текущий рейтинг
+          example: 3.87
+          format: float64
+          type: number
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 0.31
+          format: float64
+          type: number
+        percentile:
+          description: "Сколько процентов товаров этого предмета у других продавцо\
+            в имеют рейтинг ниже, чем у этого товара"
+          example: 1.7
+          format: float64
+          nullable: true
+          type: number
+      required:
+      - current
+      - percentile
+      type: object
+    DistributionTableIndicators_feedbackCount:
+      description: Все отзывы за период
+      example:
+        current: 12
+        dynamics: 9
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 12
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 9
+          type: integer
+      required:
+      - current
+      type: object
+    DistributionTableIndicators_fiveStar:
+      description: Отзывы 5 звёзд
+      example:
+        current: 9
+        dynamics: 7
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 9
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 7
+          type: integer
+      required:
+      - current
+      type: object
+    DistributionTableIndicators_fourStar:
+      description: Отзывы 4 звезды
+      example:
+        current: 0
+        dynamics: -1
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 0
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: -1
+          type: integer
+      required:
+      - current
+      type: object
+    DistributionTableIndicators_threeStar:
+      description: Отзывы 3 звезды
+      example:
+        current: 1
+        dynamics: 1
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 1
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 1
+          type: integer
+      required:
+      - current
+      type: object
+    DistributionTableIndicators_twoStar:
+      description: Отзывы 2 звезды
+      example:
+        current: 2
+        dynamics: 2
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 2
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 2
+          type: integer
+      required:
+      - current
+      type: object
+    DistributionTableIndicators_oneStar:
+      description: Отзывы 1 звезда
+      example:
+        current: 0
+        dynamics: 0
+      properties:
+        current:
+          description: Прирост оценок за период
+          example: 0
+          type: integer
+        dynamics:
+          description: "Динамика по сравнению с предыдущим периодом, %"
+          example: 0
+          type: integer
+      required:
+      - current
       type: object
   securitySchemes:
     HeaderApiKey:

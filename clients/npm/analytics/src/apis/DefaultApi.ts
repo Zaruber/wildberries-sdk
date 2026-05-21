@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Аналитика и данные
- * <div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
+ * <div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Оценки товара](/openapi/analytics#tag/Ocenka-tovara)   5. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
  *
  * The version of the OpenAPI document: analytics
  * 
@@ -94,6 +94,11 @@ import {
     InventoryRequestToJSON,
 } from '../models/InventoryRequest';
 import {
+    type ItemRatingRequest,
+    ItemRatingRequestFromJSON,
+    ItemRatingRequestToJSON,
+} from '../models/ItemRatingRequest';
+import {
     type MainRequest,
     MainRequestFromJSON,
     MainRequestToJSON,
@@ -118,6 +123,11 @@ import {
     PostSalesFunnelProducts402ResponseFromJSON,
     PostSalesFunnelProducts402ResponseToJSON,
 } from '../models/PostSalesFunnelProducts402Response';
+import {
+    type PostV1ItemRating200Response,
+    PostV1ItemRating200ResponseFromJSON,
+    PostV1ItemRating200ResponseToJSON,
+} from '../models/PostV1ItemRating200Response';
 import {
     type PostV1StocksReportWbWarehouses200Response,
     PostV1StocksReportWbWarehouses200ResponseFromJSON,
@@ -215,6 +225,10 @@ export interface PostSalesFunnelProductsRequest {
 
 export interface PostSalesFunnelProductsHistoryRequest {
     productHistoryRequest: ProductHistoryRequest;
+}
+
+export interface PostV1ItemRatingRequest {
+    itemRatingRequest: ItemRatingRequest;
 }
 
 export interface PostV1StocksReportWbWarehousesRequest {
@@ -859,6 +873,59 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async postSalesFunnelProductsHistory(requestParameters: PostSalesFunnelProductsHistoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ProductHistoryResponseInner>> {
         const response = await this.postSalesFunnelProductsHistoryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for postV1ItemRating without sending the request
+     */
+    async postV1ItemRatingRequestOpts(requestParameters: PostV1ItemRatingRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['itemRatingRequest'] == null) {
+            throw new runtime.RequiredError(
+                'itemRatingRequest',
+                'Required parameter "itemRatingRequest" was null or undefined when calling postV1ItemRating().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/analytics/v1/item-rating`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ItemRatingRequestToJSON(requestParameters['itemRatingRequest']),
+        };
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong>      </div>  Метод формирует набор данных об оценках товаров. <br><br> Данные отчёта обновляются 1 раз в час.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 3 запроса | </div> 
+     * Получить отчёт
+     */
+    async postV1ItemRatingRaw(requestParameters: PostV1ItemRatingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PostV1ItemRating200Response>> {
+        const requestOptions = await this.postV1ItemRatingRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PostV1ItemRating200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong>      </div>  Метод формирует набор данных об оценках товаров. <br><br> Данные отчёта обновляются 1 раз в час.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 3 запроса | </div> 
+     * Получить отчёт
+     */
+    async postV1ItemRating(requestParameters: PostV1ItemRatingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PostV1ItemRating200Response> {
+        const response = await this.postV1ItemRatingRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

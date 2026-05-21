@@ -3065,6 +3065,19 @@ paths:
           description: Успешно
         "204":
           description: Медиакампания не найдена
+        "400":
+          content:
+            text/plain:
+              examples:
+                InvalidRcIdAdv:
+                  $ref: "#/components/examples/InvalidRcIdAdv"
+                IncorrectName:
+                  $ref: "#/components/examples/IncorrectName"
+                IncorrectSupplierIdAdv:
+                  $ref: "#/components/examples/IncorrectSupplierIdAdv"
+              schema:
+                type: string
+          description: Неправильный запрос
         "401":
           content:
             application/problem+json:

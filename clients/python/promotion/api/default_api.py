@@ -4144,6 +4144,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AdvV1AdvertGet200Response",
             '204': None,
+            '400': "str",
             '401': "AdvV1PromotionCountGet401Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -4214,6 +4215,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AdvV1AdvertGet200Response",
             '204': None,
+            '400': "str",
             '401': "AdvV1PromotionCountGet401Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -4284,6 +4286,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AdvV1AdvertGet200Response",
             '204': None,
+            '400': "str",
             '401': "AdvV1PromotionCountGet401Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -4336,6 +4339,7 @@ class DefaultApi:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'application/json', 
+                    'text/plain', 
                     'application/problem+json'
                 ]
             )

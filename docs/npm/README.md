@@ -315,6 +315,7 @@ main().catch(console.error);
 - `analytics.DefaultApi.postSalesFunnelGroupedHistory` — Статистика групп карточек товаров по дням
 - `analytics.DefaultApi.postSalesFunnelProducts` — Статистика карточек товаров за период
 - `analytics.DefaultApi.postSalesFunnelProductsHistory` — Статистика карточек товаров по дням
+- `analytics.DefaultApi.postV1ItemRating` — Получить отчёт
 - `analytics.DefaultApi.postV1StocksReportWbWarehouses` — Остатки на складах WB
 
 ### reports (`reports`)

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Аналитика и данные
- * <div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
+ * <div class=\"description_important\">   Узнать больше об аналитике и данных можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/subcategory/seller-analytics\">справочном центре</a> </div>  В разделе описаны методы получения:   1. [Воронки продаж](/openapi/analytics#tag/Voronka-prodazh)   2. [Поисковых запросов по вашим товарам](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram)   3. [Истории остатков](/openapi/analytics#tag/Istoriya-ostatkov)   4. [Оценки товара](/openapi/analytics#tag/Ocenka-tovara)   5. [Аналитики продавца в формате CSV](/openapi/analytics#tag/Analitika-prodavca-CSV) 
  *
  * The version of the OpenAPI document: analytics
  * 
@@ -32,7 +32,7 @@ export interface TableSearchTextItemAllOfOrders {
      */
     dynamics?: number;
     /**
-     * Процент, на который показатель заказов выше, чем у карточек конкурентов по поисковому запросу
+     * Процент, на который показатель заказов выше, чем у карточек других продавцов по поисковому запросу
      * @type {number}
      * @memberof TableSearchTextItemAllOfOrders
      */
