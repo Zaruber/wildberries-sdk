@@ -3025,6 +3025,19 @@ paths:
                       Erid: string
         '204':
           description: Медиакампания не найдена
+        '400':
+          description: Неправильный запрос
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                InvalidRcIdAdv:
+                  $ref: '#/components/examples/InvalidRcIdAdv'
+                IncorrectName:
+                  $ref: '#/components/examples/IncorrectName'
+                IncorrectSupplierIdAdv:
+                  $ref: '#/components/examples/IncorrectSupplierIdAdv'
         '401':
           $ref: '#/components/responses/401'
         '429':

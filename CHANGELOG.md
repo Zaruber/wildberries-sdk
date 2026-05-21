@@ -1,6 +1,13 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.05.21)
+- Promotion: для метода получения данных по медиакампании добавлен ответ `400 Bad Request` (`text/plain`) с примерами ошибок `InvalidRcIdAdv`, `IncorrectName`, `IncorrectSupplierIdAdv`.
+- Analytics: добавлен новый раздел/тег **«Оценка товара»**.
+- Analytics: добавлен новый endpoint `POST /api/analytics/v1/item-rating` (read-only) для формирования отчёта по оценкам товаров (обновление данных 1 раз в час); лимит — **3 запроса/мин** (интервал 20 сек, всплеск 3).
+- Analytics: для `POST /api/analytics/v1/item-rating` добавлены схемы `ItemRatingRequest`/`ItemRatingResponse` и связанные типы (периоды `currentPeriod`/`pastPeriod`, фильтры `nmIds`/`subjectIds`/`brandNames`/`tagIds` до 50, пагинация `limit` до 1000 и `offset`, сортировка `orderBy.field` по `feedbackRating|feedbackCount|fiveStar|...|disqualified` и `mode asc|desc`).
+- Analytics: уточнены формулировки в описаниях percentile-метрик в CSV/схемах — заменено «карточек конкурентов» на «карточек других продавцов».
+
 ### Changed (2026.05.20)
 - Общие: добавлен новый тип токена «Базовый с секретом» в таблицы лимитов (1 мин: 1 запрос; всплеск 10) для общих методов
 - Товары: расширен фильтр `withPhoto` (enum: добавлены `-1` и `2`), изменена семантика значений и пример запроса (`withPhoto` по умолчанию/в примере теперь `-1`); добавлены лимиты для токена «Базовый с секретом» во множестве методов (в т.ч. «Цены и скидки»/карантин: 6 сек — 10 запросов, интервал 600 мс, всплеск 5)
