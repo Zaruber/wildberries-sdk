@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.05.22)
+- Общие: у поля `inviteUrl` убран формат `uri` (теперь просто `string`), валидация URL на уровне схемы ослаблена.
+- Заказы DBS: обновлены ссылки в описании лимитов запросов на абсолютные (`https://dev.wildberries.ru/docs/...`) вместо относительных; сами лимиты/эндпоинты не изменены.
+- Отчёты: в примере `photoUrls` домен `wildberries.ru` заменён на шаблон `{{ .baseDomain }}` (URL теперь параметризован по базовому домену).
+
 ### Changed (2026.05.21)
 - Promotion: для метода получения данных по медиакампании добавлен ответ `400 Bad Request` (`text/plain`) с примерами ошибок `InvalidRcIdAdv`, `IncorrectName`, `IncorrectSupplierIdAdv`.
 - Analytics: добавлен новый раздел/тег **«Оценка товара»**.
