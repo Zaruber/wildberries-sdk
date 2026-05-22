@@ -1091,7 +1091,6 @@ components:
             - `false` — повторите запрос
         inviteUrl:
           type: string
-          format: uri
           description: URL приглашения, по которому должен перейти пользователь
       example:
         inviteID: 741b8aa6-08ac-4782-8a9d-d931bcbbf608
