@@ -904,7 +904,7 @@ paths:
           - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)
           - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
           - `expiration` — [срок годности товара](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1expiration/put)
-          - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
+          - `customsDeclaration` — [номер ДТ](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
 
         Если в ответе не вернулись какие-либо из объектов метаданных, значит, у сборочного задания не может быть таких метаданных — и добавить их нельзя.
 
@@ -982,7 +982,7 @@ paths:
           - `uin` — [УИН](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put)
           - `gtin` — [GTIN](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1gtin/put)
           - `sgtin` — [код маркировки Честного знака](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1sgtin/put)
-          - `customsDeclaration` — [номер ГТД](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
+          - `customsDeclaration` — [номер ДТ](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1%7BorderId%7D~1meta~1customs-declaration/put)
 
         Можно передать только один ключ.
 
@@ -1443,13 +1443,12 @@ paths:
         - HeaderApiKey: []
       tags:
         - Метаданные FBS
-      summary: Закрепить за сборочным заданием номер ГТД
+      summary: Закрепить за сборочным заданием номер ДТ
       description: |
-        Метод обновляет номер грузовой таможенной декларации (ГТД) в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get).
+        Метод обновляет номер декларации на товары (ДТ) в [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get).
         <br>
-        У одного сборочного задания может быть только один номер ГТД.
-
-        Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` или `complete`
+        У одного сборочного задания может быть только один номер ДТ. Указывать ДТ обязательно для товаров, произведённых вне ЕАЭС.
+        Добавлять номер ДТ можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` или `complete`
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных FBS</strong>:
@@ -1472,7 +1471,7 @@ paths:
                   type: string
                   minLength: 17
                   maxLength: 29
-                  description: Номер ГТД
+                  description: Номер ДТ
                   example: 10704010/010624/0000302
       responses:
         '204':
@@ -1497,7 +1496,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          description: Ошибка обновления номера ГТД
+          description: Ошибка обновления номера ДТ
           content:
             application/json:
               schema:
