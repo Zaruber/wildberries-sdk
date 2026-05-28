@@ -7136,7 +7136,7 @@ class DBSApi
     /**
      * Operation apiV3DbsOrdersDeliveryDatePost
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7160,7 +7160,7 @@ class DBSApi
     /**
      * Operation apiV3DbsOrdersDeliveryDatePostWithHttpInfo
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7321,7 +7321,7 @@ class DBSApi
     /**
      * Operation apiV3DbsOrdersDeliveryDatePostAsync
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -7348,7 +7348,7 @@ class DBSApi
     /**
      * Operation apiV3DbsOrdersDeliveryDatePostAsyncWithHttpInfo
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

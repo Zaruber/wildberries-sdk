@@ -173,7 +173,7 @@ print(feedbacks)
 - `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_sgtin_post` — `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_status_deliver_post` — `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_courier_post` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
-- `orders_dbw.DefaultApi.api_v3_dbw_orders_delivery_date_post` — `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
+- `orders_dbw.DefaultApi.api_v3_dbw_orders_delivery_date_post` — `POST /api/v3/dbw/orders/delivery-date` — Получить дату и время доставки
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_get` — `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_new_get` — `GET /api/v3/dbw/orders/new` — Получить список новых сборочных заданий
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_assemble_patch` — `PATCH /api/v3/dbw/orders/{orderId}/assemble` — (Deprecated) Перевести в доставку
@@ -207,7 +207,7 @@ print(feedbacks)
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_stickers_post` — `POST /api/marketplace/v3/dbs/orders/stickers` — Получить стикеры для сборочных заданий с доставкой в ПВЗ
 - `orders_dbs.DefaultApi.api_v3_dbs_groups_info_post` — `POST /api/v3/dbs/groups/info` — Получить информацию о платной доставке
 - `orders_dbs.DefaultApi.api_v3_dbs_orders_client_post` — `POST /api/v3/dbs/orders/client` — Информация о покупателе
-- `orders_dbs.DefaultApi.api_v3_dbs_orders_delivery_date_post` — `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
+- `orders_dbs.DefaultApi.api_v3_dbs_orders_delivery_date_post` — `POST /api/v3/dbs/orders/delivery-date` — Получить дату и время доставки
 - `orders_dbs.DefaultApi.api_v3_dbs_orders_get` — `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DefaultApi.api_v3_dbs_orders_new_get` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
 

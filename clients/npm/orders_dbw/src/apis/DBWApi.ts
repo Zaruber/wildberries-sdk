@@ -577,7 +577,7 @@ export class DBWApi extends runtime.BaseAPI {
 
     /**
      * Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий. <br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Дата и время доставки
+     * Получить дату и время доставки
      */
     async apiV3DbwOrdersDeliveryDatePostRaw(requestParameters: ApiV3DbwOrdersDeliveryDatePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeliveryDatesInfoResp>> {
         const requestOptions = await this.apiV3DbwOrdersDeliveryDatePostRequestOpts(requestParameters);
@@ -588,7 +588,7 @@ export class DBWApi extends runtime.BaseAPI {
 
     /**
      * Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий. <br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-     * Дата и время доставки
+     * Получить дату и время доставки
      */
     async apiV3DbwOrdersDeliveryDatePost(requestParameters: ApiV3DbwOrdersDeliveryDatePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeliveryDatesInfoResp> {
         const response = await this.apiV3DbwOrdersDeliveryDatePostRaw(requestParameters, initOverrides);

@@ -160,7 +160,7 @@ main().catch(console.error);
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaSgtinPost` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersStatusDeliverPost` — Перевести сборочные задания в доставку
 - `orders_dbw.DBWApi.apiV3DbwOrdersCourierPost` — Информация о курьере
-- `orders_dbw.DBWApi.apiV3DbwOrdersDeliveryDatePost` — Дата и время доставки
+- `orders_dbw.DBWApi.apiV3DbwOrdersDeliveryDatePost` — Получить дату и время доставки
 - `orders_dbw.DBWApi.apiV3DbwOrdersGet` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbw.DBWApi.apiV3DbwOrdersNewGet` — Получить список новых сборочных заданий
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdAssemblePatch` — Перевести в доставку
@@ -194,7 +194,7 @@ main().catch(console.error);
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStickersPost` — Получить стикеры для сборочных заданий с доставкой в ПВЗ
 - `orders_dbs.DBSApi.apiV3DbsGroupsInfoPost` — Получить информацию о платной доставке
 - `orders_dbs.DBSApi.apiV3DbsOrdersClientPost` — Информация о покупателе
-- `orders_dbs.DBSApi.apiV3DbsOrdersDeliveryDatePost` — Дата и время доставки
+- `orders_dbs.DBSApi.apiV3DbsOrdersDeliveryDatePost` — Получить дату и время доставки
 - `orders_dbs.DBSApi.apiV3DbsOrdersGet` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DBSApi.apiV3DbsOrdersNewGet` — Получить список новых сборочных заданий
 

@@ -174,7 +174,7 @@ var_dump($response);
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersStatusDeliverPost` — `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `orders_dbw.DBWApi.apiV3DbwOrdersCourierPost` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
-- `orders_dbw.DBWApi.apiV3DbwOrdersDeliveryDatePost` — `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
+- `orders_dbw.DBWApi.apiV3DbwOrdersDeliveryDatePost` — `POST /api/v3/dbw/orders/delivery-date` — Получить дату и время доставки
 - `orders_dbw.DBWApi.apiV3DbwOrdersGet` — `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbw.DBWApi.apiV3DbwOrdersNewGet` — `GET /api/v3/dbw/orders/new` — Получить список новых сборочных заданий
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdAssemblePatch` — `PATCH /api/v3/dbw/orders/{orderId}/assemble` — Перевести в доставку
@@ -208,7 +208,7 @@ var_dump($response);
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStickersPost` — `POST /api/marketplace/v3/dbs/orders/stickers` — Получить стикеры для сборочных заданий с доставкой в ПВЗ
 - `orders_dbs.DBSApi.apiV3DbsGroupsInfoPost` — `POST /api/v3/dbs/groups/info` — Получить информацию о платной доставке
 - `orders_dbs.DBSApi.apiV3DbsOrdersClientPost` — `POST /api/v3/dbs/orders/client` — Информация о покупателе
-- `orders_dbs.DBSApi.apiV3DbsOrdersDeliveryDatePost` — `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
+- `orders_dbs.DBSApi.apiV3DbsOrdersDeliveryDatePost` — `POST /api/v3/dbs/orders/delivery-date` — Получить дату и время доставки
 - `orders_dbs.DBSApi.apiV3DbsOrdersGet` — `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DBSApi.apiV3DbsOrdersNewGet` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
 

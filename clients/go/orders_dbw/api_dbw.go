@@ -1164,7 +1164,7 @@ func (r ApiApiV3DbwOrdersDeliveryDatePostRequest) Execute() (*DeliveryDatesInfoR
 }
 
 /*
-ApiV3DbwOrdersDeliveryDatePost Дата и время доставки
+ApiV3DbwOrdersDeliveryDatePost Получить дату и время доставки
 
 Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий.
 <br>

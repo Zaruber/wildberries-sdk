@@ -161,7 +161,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersStatusDeliverPost` — `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersCourierPost` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
-- `orders_dbw.DBWAPIService.ApiV3DbwOrdersDeliveryDatePost` — `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
+- `orders_dbw.DBWAPIService.ApiV3DbwOrdersDeliveryDatePost` — `POST /api/v3/dbw/orders/delivery-date` — Получить дату и время доставки
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersGet` — `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersNewGet` — `GET /api/v3/dbw/orders/new` — Получить список новых сборочных заданий
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdAssemblePatch` — `PATCH /api/v3/dbw/orders/{orderId}/assemble` — Перевести в доставку
@@ -195,7 +195,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersStickersPost` — `POST /api/marketplace/v3/dbs/orders/stickers` — Получить стикеры для сборочных заданий с доставкой в ПВЗ
 - `orders_dbs.DBSAPIService.ApiV3DbsGroupsInfoPost` — `POST /api/v3/dbs/groups/info` — Получить информацию о платной доставке
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersClientPost` — `POST /api/v3/dbs/orders/client` — Информация о покупателе
-- `orders_dbs.DBSAPIService.ApiV3DbsOrdersDeliveryDatePost` — `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
+- `orders_dbs.DBSAPIService.ApiV3DbsOrdersDeliveryDatePost` — `POST /api/v3/dbs/orders/delivery-date` — Получить дату и время доставки
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersGet` — `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersNewGet` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
 

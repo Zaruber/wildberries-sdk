@@ -183,7 +183,7 @@ SDK выпускается с security-first процессом:
 - `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
 - `POST /api/v3/dbw/orders/courier` — Информация о курьере
-- `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
+- `POST /api/v3/dbw/orders/delivery-date` — Получить дату и время доставки
 - `GET /api/v3/dbw/orders/new` — Получить список новых сборочных заданий
 - `POST /api/v3/dbw/orders/status` — Получить статусы сборочных заданий
 - `POST /api/v3/dbw/orders/stickers` — Получить стикеры сборочных заданий
@@ -217,7 +217,7 @@ SDK выпускается с security-first процессом:
 - `POST /api/v3/dbs/groups/info` — Получить информацию о платной доставке
 - `GET /api/v3/dbs/orders` — Получить информацию о завершенных сборочных заданиях
 - `POST /api/v3/dbs/orders/client` — Информация о покупателе
-- `POST /api/v3/dbs/orders/delivery-date` — Дата и время доставки
+- `POST /api/v3/dbs/orders/delivery-date` — Получить дату и время доставки
 - `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
 
 ### Заказы Самовывоз (`06-in-store-pickup.yaml`)

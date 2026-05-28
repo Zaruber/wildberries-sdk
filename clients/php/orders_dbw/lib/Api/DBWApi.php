@@ -2503,7 +2503,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersDeliveryDatePost
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2527,7 +2527,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersDeliveryDatePostWithHttpInfo
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2688,7 +2688,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersDeliveryDatePostAsync
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -2715,7 +2715,7 @@ class DBWApi
     /**
      * Operation apiV3DbwOrdersDeliveryDatePostAsyncWithHttpInfo
      *
-     * Дата и время доставки
+     * Получить дату и время доставки
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

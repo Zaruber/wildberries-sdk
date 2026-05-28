@@ -596,7 +596,7 @@ paths:
           description: Слишком много запросов
       security:
       - HeaderApiKey: []
-      summary: Дата и время доставки
+      summary: Получить дату и время доставки
       tags:
       - Сборочные задания DBS
       x-readonly-method: true
