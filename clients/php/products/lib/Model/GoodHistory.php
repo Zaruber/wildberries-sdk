@@ -99,7 +99,7 @@ class GoodHistory implements ModelInterface, ArrayAccess, \JsonSerializable
         'vendor_code' => false,
         'size_id' => true,
         'tech_size_name' => false,
-        'price' => false,
+        'price' => true,
         'currency_iso_code4217' => false,
         'discount' => false,
         'club_discount' => true,
@@ -487,7 +487,14 @@ class GoodHistory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPrice($price)
     {
         if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price'] = $price;
 

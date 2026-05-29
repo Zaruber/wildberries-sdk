@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from wildberries_sdk.promotion.models.adv_v0_auction_placements_put_request_placements_inner_placements import AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements
 from typing import Optional, Set
@@ -32,13 +32,6 @@ class AdvertSettings(BaseModel):
     name: StrictStr = Field(description="Название кампании")
     placements: AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements
     __properties: ClassVar[List[str]] = ["payment_type", "name", "placements"]
-
-    @field_validator('payment_type')
-    def payment_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['cpm', 'cpc']):
-            raise ValueError("must be one of enum values ('cpm', 'cpc')")
-        return value
 
     model_config = ConfigDict(
         validate_by_name=True,

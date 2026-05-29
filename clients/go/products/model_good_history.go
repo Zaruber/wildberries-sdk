@@ -28,7 +28,7 @@ type GoodHistory struct {
 	// Размер
 	TechSizeName *string `json:"techSizeName,omitempty"`
 	// Цена
-	Price *int32 `json:"price,omitempty"`
+	Price NullableInt32 `json:"price,omitempty"`
 	// Валюта, по стандарту ISO 4217
 	CurrencyIsoCode4217 *string `json:"currencyIsoCode4217,omitempty"`
 	// Скидка, %
@@ -196,36 +196,46 @@ func (o *GoodHistory) SetTechSizeName(v string) {
 	o.TechSizeName = &v
 }
 
-// GetPrice returns the Price field value if set, zero value otherwise.
+// GetPrice returns the Price field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GoodHistory) GetPrice() int32 {
-	if o == nil || IsNil(o.Price) {
+	if o == nil || IsNil(o.Price.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Price
+	return *o.Price.Get()
 }
 
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GoodHistory) GetPriceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Price) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Price, true
+	return o.Price.Get(), o.Price.IsSet()
 }
 
 // HasPrice returns a boolean if a field has been set.
 func (o *GoodHistory) HasPrice() bool {
-	if o != nil && !IsNil(o.Price) {
+	if o != nil && o.Price.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPrice gets a reference to the given int32 and assigns it to the Price field.
+// SetPrice gets a reference to the given NullableInt32 and assigns it to the Price field.
 func (o *GoodHistory) SetPrice(v int32) {
-	o.Price = &v
+	o.Price.Set(&v)
+}
+// SetPriceNil sets the value for Price to be an explicit nil
+func (o *GoodHistory) SetPriceNil() {
+	o.Price.Set(nil)
+}
+
+// UnsetPrice ensures that no value is present for Price, not even an explicit nil
+func (o *GoodHistory) UnsetPrice() {
+	o.Price.Unset()
 }
 
 // GetCurrencyIsoCode4217 returns the CurrencyIsoCode4217 field value if set, zero value otherwise.
@@ -420,8 +430,8 @@ func (o GoodHistory) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TechSizeName) {
 		toSerialize["techSizeName"] = o.TechSizeName
 	}
-	if !IsNil(o.Price) {
-		toSerialize["price"] = o.Price
+	if o.Price.IsSet() {
+		toSerialize["price"] = o.Price.Get()
 	}
 	if !IsNil(o.CurrencyIsoCode4217) {
 		toSerialize["currencyIsoCode4217"] = o.CurrencyIsoCode4217

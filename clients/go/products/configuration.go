@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.97/go",
+		UserAgent:        "OpenAPI-Generator/0.1.98/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -389,6 +389,12 @@ func NewConfiguration() *Configuration {
 			"DefaultApiService.ContentV3MediaSavePost": {
 				{
 					URL: "https://content-api.wildberries.ru",
+					Description: "No description provided",
+				},
+			},
+			"DefaultApiService.PostV1UploadTaskB2bWholesale": {
+				{
+					URL: "https://discounts-prices-api.wildberries.ru",
 					Description: "No description provided",
 				},
 			},

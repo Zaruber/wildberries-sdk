@@ -128,10 +128,11 @@ print(feedbacks)
 - `products.DefaultApi.content_v2_tags_get` — `GET /content/v2/tags` — Список ярлыков
 - `products.DefaultApi.content_v3_media_file_post` — `POST /content/v3/media/file` — Загрузить медиафайл
 - `products.DefaultApi.content_v3_media_save_post` — `POST /content/v3/media/save` — Загрузить медиафайлы по ссылкам
+- `products.DefaultApi.post_v1_upload_task_b2b_wholesale` — `POST /api/discounts-prices/v1/upload/task/b2b/wholesale` — Установить оптовые скидки для B2B-продаж
 
 ### orders_fbs (`orders_fbs`)
 - `orders_fbs.DefaultApi.api_marketplace_v3_fbs_orders_archive_get` — `GET /api/marketplace/v3/fbs/orders/archive` — Получить список архивных сборочных заданий
-- `orders_fbs.DefaultApi.api_marketplace_v3_orders_meta_post` — `POST /api/marketplace/v3/orders/meta` — Получить метаданные сборочных заданий
+- `orders_fbs.DefaultApi.api_marketplace_v3_orders_meta_post` — `POST /api/marketplace/v3/orders/meta` — Получить идентификаторы маркировки сборочных заданий
 - `orders_fbs.DefaultApi.api_marketplace_v3_orders_order_id_meta_customs_declaration_put` — `PUT /api/marketplace/v3/orders/{orderId}/meta/customs-declaration` — Закрепить за сборочным заданием номер ДТ
 - `orders_fbs.DefaultApi.api_marketplace_v3_supplies_supply_id_order_ids_get` — `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки
 - `orders_fbs.DefaultApi.api_marketplace_v3_supplies_supply_id_orders_patch` — `PATCH /api/marketplace/v3/supplies/{supplyId}/orders` — Добавить сборочные задания к поставке
@@ -139,7 +140,7 @@ print(feedbacks)
 - `orders_fbs.DefaultApi.api_v3_orders_get` — `GET /api/v3/orders` — Получить информацию о сборочных заданиях
 - `orders_fbs.DefaultApi.api_v3_orders_new_get` — `GET /api/v3/orders/new` — Получить список новых сборочных заданий
 - `orders_fbs.DefaultApi.api_v3_orders_order_id_cancel_patch` — `PATCH /api/v3/orders/{orderId}/cancel` — Отменить сборочное задание
-- `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_delete` — `DELETE /api/v3/orders/{orderId}/meta` — Удалить метаданные сборочного задания
+- `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_delete` — `DELETE /api/v3/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания
 - `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_expiration_put` — `PUT /api/v3/orders/{orderId}/meta/expiration` — Закрепить за сборочным заданием срок годности товара
 - `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_gtin_put` — `PUT /api/v3/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_imei_put` — `PUT /api/v3/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
@@ -168,8 +169,8 @@ print(feedbacks)
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_client_post` — `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
-- `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_delete_post` — `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить метаданные сборочных заданий
-- `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_details_post` — `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
+- `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_delete_post` — `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_details_post` — `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_sgtin_post` — `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_status_deliver_post` — `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_courier_post` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
@@ -179,8 +180,8 @@ print(feedbacks)
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_assemble_patch` — `PATCH /api/v3/dbw/orders/{orderId}/assemble` — (Deprecated) Перевести в доставку
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_cancel_patch` — `PATCH /api/v3/dbw/orders/{orderId}/cancel` — Отменить сборочное задание
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_confirm_patch` — `PATCH /api/v3/dbw/orders/{orderId}/confirm` — Перевести на сборку
-- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_delete` — `DELETE /api/v3/dbw/orders/{orderId}/meta` — (Deprecated) Удалить метаданные сборочного задания
-- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_get` — `GET /api/v3/dbw/orders/{orderId}/meta` — (Deprecated) Получить метаданные сборочного задания
+- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_delete` — `DELETE /api/v3/dbw/orders/{orderId}/meta` — (Deprecated) Удалить идентификаторы маркировки сборочного задания
+- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_get` — `GET /api/v3/dbw/orders/{orderId}/meta` — (Deprecated) Получить идентификаторы маркировки сборочного задания
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_gtin_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_imei_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_sgtin_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — (Deprecated) Закрепить за сборочным заданием код маркировки товара
@@ -191,11 +192,11 @@ print(feedbacks)
 ### orders_dbs (`orders_dbs`)
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_b2b_info_post` — `POST /api/marketplace/v3/dbs/orders/b2b/info` — Информация о покупателе B2B
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_customs_declaration_post` — `POST /api/marketplace/v3/dbs/orders/meta/customs-declaration` — Закрепить за сборочными заданиями номер ДТ
-- `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_delete_post` — `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
-- `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_details_post` — `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить метаданные сборочных заданий
+- `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_delete_post` — `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_details_post` — `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_gtin_post` — `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_imei_post` — `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
-- `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_info_post` — `POST /api/marketplace/v3/dbs/orders/meta/info` — (Deprecated) Получить метаданные сборочных заданий
+- `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_info_post` — `POST /api/marketplace/v3/dbs/orders/meta/info` — (Deprecated) Получить идентификаторы маркировки сборочных заданий
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_sgtin_post` — `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_meta_uin_post` — `POST /api/marketplace/v3/dbs/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `orders_dbs.DefaultApi.api_marketplace_v3_dbs_orders_status_cancel_post` — `POST /api/marketplace/v3/dbs/orders/status/cancel` — Отменить сборочные задания
@@ -212,10 +213,10 @@ print(feedbacks)
 - `orders_dbs.DefaultApi.api_v3_dbs_orders_new_get` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
-- `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_delete_post` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_delete_post` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_gtin_post` — `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_imei_post` — `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
-- `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_info_post` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить метаданные сборочных заданий
+- `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_info_post` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_sgtin_post` — `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_uin_post` — `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_status_cancel_post` — `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания

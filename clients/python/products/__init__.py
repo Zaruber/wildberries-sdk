@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.97"
+__version__ = "0.1.98"
 
 # Define package exports
 __all__ = [
@@ -55,6 +55,7 @@ __all__ = [
     "ApiV3StocksWarehouseIdPutRequestStocksInner",
     "ApiV3WarehousesPost201Response",
     "ApiV3WarehousesPostRequest",
+    "B2BWholesaleInner",
     "BrandsResponse",
     "BrandsResponseBrandsInner",
     "BrandsResponseError",
@@ -140,6 +141,11 @@ __all__ = [
     "ModelsErrorTableListPublicRespV2",
     "ModelsErrorTableListPublicRespV2Item",
     "Office",
+    "PostV1UploadTaskB2bWholesale200Response",
+    "PostV1UploadTaskB2bWholesale200ResponseResultsInner",
+    "PostV1UploadTaskB2bWholesale200ResponseResultsInnerError",
+    "PostV1UploadTaskB2bWholesale208Response",
+    "PostV1UploadTaskB2bWholesaleRequest",
     "QuarantineGoods",
     "RequestAlreadyExistsError",
     "RequestAlreadyExistsErrorData",
@@ -154,6 +160,7 @@ __all__ = [
     "ResponseCardCreateAdditionalErrorsOneOf1",
     "ResponseContentError",
     "ResponseError",
+    "ResponseErrorV3",
     "ResponseIncorrectDate",
     "ResponsePublicViewerPublicErrorsTableListV2",
     "SizeGood",
@@ -170,6 +177,8 @@ __all__ = [
     "TaskCreatedData",
     "ViewerContractPublicErrorsCursorOutput",
     "Warehouse",
+    "WholesaleDiscountThresholdReq",
+    "WholesaleDiscountThresholdRes",
 ]
 
 # import apis into sdk package
@@ -214,6 +223,7 @@ from wildberries_sdk.products.models.api_v3_stocks_warehouse_id_put_request impo
 from wildberries_sdk.products.models.api_v3_stocks_warehouse_id_put_request_stocks_inner import ApiV3StocksWarehouseIdPutRequestStocksInner as ApiV3StocksWarehouseIdPutRequestStocksInner
 from wildberries_sdk.products.models.api_v3_warehouses_post201_response import ApiV3WarehousesPost201Response as ApiV3WarehousesPost201Response
 from wildberries_sdk.products.models.api_v3_warehouses_post_request import ApiV3WarehousesPostRequest as ApiV3WarehousesPostRequest
+from wildberries_sdk.products.models.b2_b_wholesale_inner import B2BWholesaleInner as B2BWholesaleInner
 from wildberries_sdk.products.models.brands_response import BrandsResponse as BrandsResponse
 from wildberries_sdk.products.models.brands_response_brands_inner import BrandsResponseBrandsInner as BrandsResponseBrandsInner
 from wildberries_sdk.products.models.brands_response_error import BrandsResponseError as BrandsResponseError
@@ -299,6 +309,11 @@ from wildberries_sdk.products.models.models_error_subject import ModelsErrorSubj
 from wildberries_sdk.products.models.models_error_table_list_public_resp_v2 import ModelsErrorTableListPublicRespV2 as ModelsErrorTableListPublicRespV2
 from wildberries_sdk.products.models.models_error_table_list_public_resp_v2_item import ModelsErrorTableListPublicRespV2Item as ModelsErrorTableListPublicRespV2Item
 from wildberries_sdk.products.models.office import Office as Office
+from wildberries_sdk.products.models.post_v1_upload_task_b2b_wholesale200_response import PostV1UploadTaskB2bWholesale200Response as PostV1UploadTaskB2bWholesale200Response
+from wildberries_sdk.products.models.post_v1_upload_task_b2b_wholesale200_response_results_inner import PostV1UploadTaskB2bWholesale200ResponseResultsInner as PostV1UploadTaskB2bWholesale200ResponseResultsInner
+from wildberries_sdk.products.models.post_v1_upload_task_b2b_wholesale200_response_results_inner_error import PostV1UploadTaskB2bWholesale200ResponseResultsInnerError as PostV1UploadTaskB2bWholesale200ResponseResultsInnerError
+from wildberries_sdk.products.models.post_v1_upload_task_b2b_wholesale208_response import PostV1UploadTaskB2bWholesale208Response as PostV1UploadTaskB2bWholesale208Response
+from wildberries_sdk.products.models.post_v1_upload_task_b2b_wholesale_request import PostV1UploadTaskB2bWholesaleRequest as PostV1UploadTaskB2bWholesaleRequest
 from wildberries_sdk.products.models.quarantine_goods import QuarantineGoods as QuarantineGoods
 from wildberries_sdk.products.models.request_already_exists_error import RequestAlreadyExistsError as RequestAlreadyExistsError
 from wildberries_sdk.products.models.request_already_exists_error_data import RequestAlreadyExistsErrorData as RequestAlreadyExistsErrorData
@@ -313,6 +328,7 @@ from wildberries_sdk.products.models.response_card_create_additional_errors_one_
 from wildberries_sdk.products.models.response_card_create_additional_errors_one_of1 import ResponseCardCreateAdditionalErrorsOneOf1 as ResponseCardCreateAdditionalErrorsOneOf1
 from wildberries_sdk.products.models.response_content_error import ResponseContentError as ResponseContentError
 from wildberries_sdk.products.models.response_error import ResponseError as ResponseError
+from wildberries_sdk.products.models.response_error_v3 import ResponseErrorV3 as ResponseErrorV3
 from wildberries_sdk.products.models.response_incorrect_date import ResponseIncorrectDate as ResponseIncorrectDate
 from wildberries_sdk.products.models.response_public_viewer_public_errors_table_list_v2 import ResponsePublicViewerPublicErrorsTableListV2 as ResponsePublicViewerPublicErrorsTableListV2
 from wildberries_sdk.products.models.size_good import SizeGood as SizeGood
@@ -329,4 +345,6 @@ from wildberries_sdk.products.models.task_created import TaskCreated as TaskCrea
 from wildberries_sdk.products.models.task_created_data import TaskCreatedData as TaskCreatedData
 from wildberries_sdk.products.models.viewer_contract_public_errors_cursor_output import ViewerContractPublicErrorsCursorOutput as ViewerContractPublicErrorsCursorOutput
 from wildberries_sdk.products.models.warehouse import Warehouse as Warehouse
+from wildberries_sdk.products.models.wholesale_discount_threshold_req import WholesaleDiscountThresholdReq as WholesaleDiscountThresholdReq
+from wildberries_sdk.products.models.wholesale_discount_threshold_res import WholesaleDiscountThresholdRes as WholesaleDiscountThresholdRes
 

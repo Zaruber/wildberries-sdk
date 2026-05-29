@@ -89,7 +89,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     protected static array $openAPINullables = [
         'bid_type' => false,
         'id' => false,
-        'nm_settings' => false,
+        'nm_settings' => true,
         'settings' => false,
         'status' => false,
         'timestamps' => false
@@ -338,8 +338,8 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['nm_settings'] === null) {
-            $invalidProperties[] = "'nm_settings' can't be null";
+        if ($this->container['nm_settings'] === null && !$this->isNullableSetToNull('nm_settings')) {
+            $invalidProperties[] = "'nm_settings' is required";
         }
         if ($this->container['settings'] === null) {
             $invalidProperties[] = "'settings' can't be null";
@@ -431,7 +431,7 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets nm_settings
      *
-     * @return \Wildberries\Sdk\Promotion\Model\AdvertNMsSettings[]
+     * @return \Wildberries\Sdk\Promotion\Model\AdvertNMsSettings[]|null
      */
     public function getNmSettings()
     {
@@ -441,14 +441,21 @@ class GetAdvertsAdvertsInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets nm_settings
      *
-     * @param \Wildberries\Sdk\Promotion\Model\AdvertNMsSettings[] $nm_settings Настройки товаров
+     * @param \Wildberries\Sdk\Promotion\Model\AdvertNMsSettings[]|null $nm_settings Настройки товаров
      *
      * @return self
      */
     public function setNmSettings($nm_settings)
     {
         if (is_null($nm_settings)) {
-            throw new \InvalidArgumentException('non-nullable nm_settings cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nm_settings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nm_settings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nm_settings'] = $nm_settings;
 

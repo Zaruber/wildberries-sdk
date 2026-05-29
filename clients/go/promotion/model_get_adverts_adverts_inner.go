@@ -107,6 +107,7 @@ func (o *GetAdvertsAdvertsInner) SetId(v int64) {
 }
 
 // GetNmSettings returns the NmSettings field value
+// If the value is explicit nil, the zero value for []AdvertNMsSettings will be returned
 func (o *GetAdvertsAdvertsInner) GetNmSettings() []AdvertNMsSettings {
 	if o == nil {
 		var ret []AdvertNMsSettings
@@ -118,8 +119,9 @@ func (o *GetAdvertsAdvertsInner) GetNmSettings() []AdvertNMsSettings {
 
 // GetNmSettingsOk returns a tuple with the NmSettings field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAdvertsAdvertsInner) GetNmSettingsOk() ([]AdvertNMsSettings, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.NmSettings) {
 		return nil, false
 	}
 	return o.NmSettings, true
@@ -214,7 +216,9 @@ func (o GetAdvertsAdvertsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bid_type"] = o.BidType
 	toSerialize["id"] = o.Id
-	toSerialize["nm_settings"] = o.NmSettings
+	if o.NmSettings != nil {
+		toSerialize["nm_settings"] = o.NmSettings
+	}
 	toSerialize["settings"] = o.Settings
 	toSerialize["status"] = o.Status
 	toSerialize["timestamps"] = o.Timestamps

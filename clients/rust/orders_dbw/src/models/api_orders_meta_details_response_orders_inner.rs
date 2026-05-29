@@ -1,7 +1,7 @@
 /*
  * Заказы DBW
  *
- * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
+ * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [идентификаторы маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
  *
  * The version of the OpenAPI document: ordersdbw
  * 
@@ -22,7 +22,7 @@ pub struct ApiOrdersMetaDetailsResponseOrdersInner {
     /// Информация об ошибке
     #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<models::ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner>>,
-    /// Метаданные и статусы их валидации
+    /// Идентификаторы маркировки и статусы их валидации
     #[serde(rename = "metaDetails", skip_serializing_if = "Option::is_none")]
     pub meta_details: Option<Vec<models::ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner>>,
 }

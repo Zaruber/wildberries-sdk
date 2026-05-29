@@ -61,7 +61,7 @@ export interface GetAdvertsAdvertsInner {
      * @type {Array<AdvertNMsSettings>}
      * @memberof GetAdvertsAdvertsInner
      */
-    nmSettings: Array<AdvertNMsSettings>;
+    nmSettings: Array<AdvertNMsSettings> | null;
     /**
      * 
      * @type {AdvertSettings}
@@ -129,7 +129,7 @@ export function GetAdvertsAdvertsInnerFromJSONTyped(json: any, ignoreDiscriminat
         
         'bidType': json['bid_type'],
         'id': json['id'],
-        'nmSettings': ((json['nm_settings'] as Array<any>).map(AdvertNMsSettingsFromJSON)),
+        'nmSettings': (json['nm_settings'] == null ? null : (json['nm_settings'] as Array<any>).map(AdvertNMsSettingsFromJSON)),
         'settings': AdvertSettingsFromJSON(json['settings']),
         'status': json['status'],
         'timestamps': TimestampsFromJSON(json['timestamps']),
@@ -149,7 +149,7 @@ export function GetAdvertsAdvertsInnerToJSONTyped(value?: GetAdvertsAdvertsInner
         
         'bid_type': value['bidType'],
         'id': value['id'],
-        'nm_settings': ((value['nmSettings'] as Array<any>).map(AdvertNMsSettingsToJSON)),
+        'nm_settings': (value['nmSettings'] == null ? null : (value['nmSettings'] as Array<any>).map(AdvertNMsSettingsToJSON)),
         'settings': AdvertSettingsToJSON(value['settings']),
         'status': value['status'],
         'timestamps': TimestampsToJSON(value['timestamps']),

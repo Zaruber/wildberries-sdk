@@ -1,7 +1,7 @@
 /*
  * Заказы DBS
  *
- * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller). 
+ * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers) заказов DBS (Delivery by Seller). 
  *
  * The version of the OpenAPI document: order
  * 
@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiOrdersMetaDeleteRequest {
-    /// Название метаданных для удаления. Передаётся только одно значение
+    /// Название идентификатора маркировки для удаления. Передаётся только одно значение
     #[serde(rename = "key")]
     pub key: Key,
     /// Список ID сборочных заданий
@@ -29,7 +29,7 @@ impl ApiOrdersMetaDeleteRequest {
         }
     }
 }
-/// Название метаданных для удаления. Передаётся только одно значение
+/// Название идентификатора маркировки для удаления. Передаётся только одно значение
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Key {
     #[serde(rename = "imei")]

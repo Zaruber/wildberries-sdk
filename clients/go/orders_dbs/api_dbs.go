@@ -1,7 +1,7 @@
 /*
 Заказы DBS
 
-<div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller). 
+<div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers) заказов DBS (Delivery by Seller). 
 
 API version: order
 */
@@ -220,14 +220,14 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest) Execute()
 /*
 ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPost Закрепить за сборочными заданиями номер ДТ
 
-Метод обновляет номер ДТ — декларации на товары — в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
+Метод обновляет номер ДТ — декларации на товары — в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
 <br><br>
 У одного сборочного задания может быть только один ДТ.
 
 Добавлять номер ДТ можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver`.
 
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
 | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- |
@@ -408,19 +408,19 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaDeletePostRequest) Execute() (*ApiStatus
 }
 
 /*
-ApiMarketplaceV3DbsOrdersMetaDeletePost Удалить метаданные сборочных заданий
+ApiMarketplaceV3DbsOrdersMetaDeletePost Удалить идентификаторы маркировки сборочных заданий
 
-Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) для нескольких сборочных заданий.
+Метод удаляет значение указанных [идентификаторов маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) для нескольких сборочных заданий.
 <br><br>
-В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:
-  - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
-  - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
-  - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-  - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
-  - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
+В одном запросе можно удалить идентификаторы маркировки только одного типа. Укажите тип идентификаторов маркировки в запросе:
+  - `imei` — [IMEI](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
+  - `uin` — [УИН](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
+  - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
+  - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+  - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки DBS</strong>:
 
 | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- |
@@ -601,20 +601,20 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaDetailsPostRequest) Execute() (*ApiOrder
 }
 
 /*
-ApiMarketplaceV3DbsOrdersMetaDetailsPost Получить метаданные сборочных заданий
+ApiMarketplaceV3DbsOrdersMetaDetailsPost Получить идентификаторы маркировки сборочных заданий
 
-Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и статусы их валидации. <br>
-Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br>
-Возможные метаданные:
-  - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
-  - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
-  - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-  - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
-  - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
+Метод возвращает идентификаторы маркировки [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и статусы их валидации. <br>
+Перечень идентификаторов маркировки, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br>
+Возможные идентификаторы маркировки:
+  - `imei` — [IMEI](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
+  - `uin` — [УИН](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
+  - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
+  - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+  - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
-Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
+Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет идентификаторов маркировки и добавить их нельзя.<br>
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки DBS</strong>:
 
 | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- |
@@ -786,12 +786,12 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaGtinPostRequest) Execute() (*ApiStatusSe
 /*
 ApiMarketplaceV3DbsOrdersMetaGtinPost Закрепить GTIN за сборочными заданиями
 
-Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+Метод обновляет GTIN, уникальный ID товара в Беларуси, в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
 У одного сборочного задания может быть только один GTIN.
 Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>
 
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
 | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- |
@@ -974,12 +974,12 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaImeiPostRequest) Execute() (*ApiStatusSe
 /*
 ApiMarketplaceV3DbsOrdersMetaImeiPost Закрепить IMEI за сборочными заданиями
 
-Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+Метод обновляет IMEI в [идентификаторых маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
 У одного сборочного задания может быть только один IMEI.
 Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>
 
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
 | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- |
@@ -1160,12 +1160,12 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaInfoPostRequest) Execute() (*ApiOrdersMe
 }
 
 /*
-ApiMarketplaceV3DbsOrdersMetaInfoPost Получить метаданные сборочных заданий
+ApiMarketplaceV3DbsOrdersMetaInfoPost Получить идентификаторы маркировки сборочных заданий
 
 Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)
 
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки DBS</strong>:
 
 | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- |
@@ -1340,13 +1340,13 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaSgtinPostRequest) Execute() (*ApiStatusS
 /*
 ApiMarketplaceV3DbsOrdersMetaSgtinPost Закрепить коды маркировки Честного знака за сборочными заданиями
 
-Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
-Закрепить код маркировки Честного знака можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
+Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+Закрепить код маркировки Честного знака можно, только если в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
 <br><br>
-Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
+Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
 
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
 
 | Тип | Период | Лимит | Интервал | Всплеск |
@@ -1522,12 +1522,12 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaUinPostRequest) Execute() (*ApiStatusSet
 /*
 ApiMarketplaceV3DbsOrdersMetaUinPost Закрепить УИН за сборочными заданиями
 
-Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).<br>
+Метод обновляет УИН, уникальный идентификационный номер, в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).<br>
 У одного сборочного задания может быть только один УИН.
 Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.
 
 <div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
 | Период | Лимит | Интервал | Всплеск |
 | --- | --- | --- | --- |

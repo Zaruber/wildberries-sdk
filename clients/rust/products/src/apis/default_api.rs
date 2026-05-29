@@ -601,6 +601,17 @@ pub enum ContentV3MediaSavePostError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`post_v1_upload_task_b2b_wholesale`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PostV1UploadTaskB2bWholesaleError {
+    Status400(models::ResponseErrorV3),
+    Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status403(models::ResponseErrorV3),
+    Status429(models::ContentV2ObjectParentAllGet401Response),
+    UnknownValue(serde_json::Value),
+}
+
 
 /// Метод возвращает список брендов по ID предмета.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Сервисный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый с секретом | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_content_v1_brands_get(configuration: &configuration::Configuration, subject_id: i32, next: Option<i32>) -> Result<models::BrandsResponse, Error<ApiContentV1BrandsGetError>> {
@@ -750,7 +761,7 @@ pub async fn api_v2_buffer_tasks_get(configuration: &configuration::Configuratio
     }
 }
 
-/// Метод возвращает информацию о товарах и об ошибках в товарах в обработанной загрузке.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый с секретом | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+/// Метод возвращает информацию о товарах и об ошибках в товарах в обработанной загрузке.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">скидок WB Клуба</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale\">оптовых скидок для B2B-продаж</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый с секретом | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
 pub async fn api_v2_history_goods_task_get(configuration: &configuration::Configuration, limit: i32, upload_id: i32, offset: Option<i32>) -> Result<models::ApiV2HistoryGoodsTaskGet200Response, Error<ApiV2HistoryGoodsTaskGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_limit = limit;
@@ -802,7 +813,7 @@ pub async fn api_v2_history_goods_task_get(configuration: &configuration::Config
     }
 }
 
-/// Метод возвращает информацию об обработанной загрузке цен и скидок.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a> и скидок <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">WB Клуба</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый с секретом | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
+/// Метод возвращает информацию об обработанной загрузке цен и скидок.  <div class=\"description_important\">   Обработанная загрузка — это загрузка цен и скидок для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post\">товаров</a>, цен для <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post\">размеров товаров</a>, <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post\">скидок WB Клуба</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale\">оптовых скидок для B2B-продаж</a>. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый с секретом | 6 сек | 10 запросов | 600 мс | 5 запросов | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
 pub async fn api_v2_history_tasks_get(configuration: &configuration::Configuration, upload_id: i32) -> Result<models::ApiV2HistoryTasksGet200Response, Error<ApiV2HistoryTasksGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_upload_id = upload_id;
@@ -848,7 +859,7 @@ pub async fn api_v2_history_tasks_get(configuration: &configuration::Configurati
     }
 }
 
-/// Метод возвращает информацию о товарах: цены, валюту, общие скидки и скидки [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post). <br><br> В одном запросе можно указать только один артикул. <br><br> Чтобы получить информацию обо всех товарах продавца, не указывая артикулы, установите `limit=1000`, в параметре `offset` установите смещение по количеству записей. Количество нужно рассчитать по формуле: `offset` плюс `limit` из предыдущего запроса. Повторяйте запрос, пока вы не получите ответ с пустым массивом.<br><br> Используйте отдельные методы, чтобы получить информацию:   - о [нескольких товарах по артикулам](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post)   - о [размерах товара](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1size~1nm/get)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
+/// Метод возвращает информацию о товарах: цены, валюту, общие скидки, [скидки WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post) и [оптовые скидки для B2B-продаж](/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale). <br><br> В одном запросе можно указать только один артикул. <br><br> Чтобы получить информацию обо всех товарах продавца, не указывая артикулы, установите `limit=1000`, в параметре `offset` установите смещение по количеству записей. Количество нужно рассчитать по формуле: `offset` плюс `limit` из предыдущего запроса. Повторяйте запрос, пока вы не получите ответ с пустым массивом.<br><br> Используйте отдельные методы, чтобы получить информацию:   - о [нескольких товарах по артикулам](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post)   - о [размерах товара](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1size~1nm/get)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
 pub async fn api_v2_list_goods_filter_get(configuration: &configuration::Configuration, limit: i32, offset: Option<i32>, filter_nm_id: Option<i32>) -> Result<models::ApiV2ListGoodsFilterGet200Response, Error<ApiV2ListGoodsFilterGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_limit = limit;
@@ -902,7 +913,7 @@ pub async fn api_v2_list_goods_filter_get(configuration: &configuration::Configu
     }
 }
 
-/// Метод возвращает информацию о товарах по их артикулам: цены, валюту, общие скидки и скидки [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post). <br><br> В одном запросе можно указать более одного артикула. <br><br> Используйте отдельные методы, чтобы получить информацию:   - обо [всех товарах продавца, не указывая артикулы](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get)   - о [размерах товара](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1size~1nm/get)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
+/// Метод возвращает информацию о товарах по их артикулам: цены, валюту, общие скидки, [скидки WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post) и [оптовые скидки для B2B-продаж](/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale). <br><br> В одном запросе можно указать более одного артикула. <br><br> Используйте отдельные методы, чтобы получить информацию:   - обо [всех товарах продавца, не указывая артикулы](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get)   - о [размерах товара](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1size~1nm/get)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
 pub async fn api_v2_list_goods_filter_post(configuration: &configuration::Configuration, api_v2_list_goods_filter_post_request: models::ApiV2ListGoodsFilterPostRequest) -> Result<models::ApiV2ListGoodsFilterGet200Response, Error<ApiV2ListGoodsFilterPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v2_list_goods_filter_post_request = api_v2_list_goods_filter_post_request;
@@ -1188,7 +1199,7 @@ pub async fn api_v2_upload_task_size_post(configuration: &configuration::Configu
     }
 }
 
-/// Метод возвращает список контактов, привязанных к [складу продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get). <br> Только для складов с типом доставки `3` — доставка курьером WB (DBW).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+/// Метод возвращает список контактов, привязанных к [складу продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get). <br> Только для складов с типом доставки `3` — доставка курьером WB (DBW).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление идентификаторов маркировки</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 pub async fn api_v3_dbw_warehouses_warehouse_id_contacts_get(configuration: &configuration::Configuration, warehouse_id: i64) -> Result<models::ApiV3DbwWarehousesWarehouseIdContactsGet200Response, Error<ApiV3DbwWarehousesWarehouseIdContactsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_warehouse_id = warehouse_id;
@@ -1233,7 +1244,7 @@ pub async fn api_v3_dbw_warehouses_warehouse_id_contacts_get(configuration: &con
     }
 }
 
-/// Метод обновляет список контактов [склада продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).  <div class=\"description_important\">   Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать <strong>все</strong> параметры списка контактов, в том числе те, которые вы не собираетесь обновлять. </div>  Только для складов с типом доставки `3` — курьером WB (DBW). <br><br> К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив `contacts`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление метаданных</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+/// Метод обновляет список контактов [склада продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).  <div class=\"description_important\">   Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать <strong>все</strong> параметры списка контактов, в том числе те, которые вы не собираетесь обновлять. </div>  Только для складов с типом доставки `3` — курьером WB (DBW). <br><br> К складу можно добавить максимум 5 контактов. Чтобы удалить контакты, отправьте пустой массив `contacts`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление идентификаторов маркировки</li>     <li>методы сборочных заданий</li> </ul>   | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 pub async fn api_v3_dbw_warehouses_warehouse_id_contacts_put(configuration: &configuration::Configuration, warehouse_id: i64, store_contact_request_body: models::StoreContactRequestBody) -> Result<(), Error<ApiV3DbwWarehousesWarehouseIdContactsPutError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_warehouse_id = warehouse_id;
@@ -2887,6 +2898,52 @@ pub async fn content_v3_media_save_post(configuration: &configuration::Configura
     } else {
         let content = resp.text().await?;
         let entity: Option<ContentV3MediaSavePostError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong>      </div>  Метод устанавливает [оптовые скидки для бизнеса](https://seller.wildberries.ru/instructions/ru/ru/material/how-to-enable-wholesale-discounts-for-business)  <div class=\"description_important\">   Получить информацию о процессе установки цен и скидок можно с помощью методов <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get\">состояния</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1goods~1task/get\">детализации</a> обработанной загрузки. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Цены и скидки</strong>:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 6 сек | 10 запросов | 600 мс | 5 запросов | | Сервисный | 6 сек | 10 запросов | 600 мс | 5 запросов | </div> 
+pub async fn post_v1_upload_task_b2b_wholesale(configuration: &configuration::Configuration, post_v1_upload_task_b2b_wholesale_request: models::PostV1UploadTaskB2bWholesaleRequest) -> Result<models::PostV1UploadTaskB2bWholesale200Response, Error<PostV1UploadTaskB2bWholesaleError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_post_v1_upload_task_b2b_wholesale_request = post_v1_upload_task_b2b_wholesale_request;
+
+    let uri_str = format!("{}/api/discounts-prices/v1/upload/task/b2b/wholesale", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_post_v1_upload_task_b2b_wholesale_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PostV1UploadTaskB2bWholesale200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PostV1UploadTaskB2bWholesale200Response`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PostV1UploadTaskB2bWholesaleError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

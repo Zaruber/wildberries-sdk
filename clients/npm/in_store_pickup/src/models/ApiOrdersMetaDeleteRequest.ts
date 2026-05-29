@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Заказы Самовывоз
- * Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [метаданными](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz) заказов модели Самовывоз. 
+ * Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [идентификаторами маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers) заказов модели Самовывоз. 
  *
  * The version of the OpenAPI document: instorepickup
  * 
@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface ApiOrdersMetaDeleteRequest {
     /**
-     * Тип метаданных для удаления. Передаётся только одно значение
+     * Тип идентификаторов маркировки для удаления. Передаётся только одно значение
      * @type {ApiOrdersMetaDeleteRequestKeyEnum}
      * @memberof ApiOrdersMetaDeleteRequest
      */

@@ -6087,7 +6087,7 @@ components:
               name: name
             nm_id: 5
           settings:
-            payment_type: cpm
+            payment_type: payment_type
             name: name
             placements:
               search: true
@@ -6116,7 +6116,7 @@ components:
               name: name
             nm_id: 5
           settings:
-            payment_type: cpm
+            payment_type: payment_type
             name: name
             placements:
               search: true
@@ -6196,7 +6196,7 @@ components:
     AdvertSettings:
       description: Настройки кампании
       example:
-        payment_type: cpm
+        payment_type: payment_type
         name: name
         placements:
           search: true
@@ -6207,9 +6207,6 @@ components:
             Тип оплаты:
             - `cpm` — за показы
             - `cpc` — за клик
-          enum:
-          - cpm
-          - cpc
           type: string
         name:
           description: Название кампании
@@ -8757,7 +8754,7 @@ components:
             name: name
           nm_id: 5
         settings:
-          payment_type: cpm
+          payment_type: payment_type
           name: name
           placements:
             search: true
@@ -8783,6 +8780,7 @@ components:
           description: Настройки товаров
           items:
             $ref: "#/components/schemas/AdvertNMsSettings"
+          nullable: true
           type: array
         settings:
           $ref: "#/components/schemas/AdvertSettings"

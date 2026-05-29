@@ -1,7 +1,7 @@
 /*
  * Заказы DBW
  *
- * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
+ * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [идентификаторы маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
  *
  * The version of the OpenAPI document: ordersdbw
  * 
@@ -13,10 +13,10 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiBatchErrorResponseMetaDetailsInner {
-    /// Метаданные
+    /// Идентификатор маркировки
     #[serde(rename = "key")]
     pub key: String,
-    /// Значение метаданных
+    /// Значение идентификатора маркировки
     #[serde(rename = "value", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub value: Option<Option<String>>,
     /// Статус проверки: - `sgtin`   - `sgtinInvalidFormat` — Неверный формат маркировки   - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)   - `sgtinEmitted` —  Маркировка эмитирована   - `sgtinApplied` — Не пройдена процедура Ввод в оборот   - `sgtinWrittenOff` — Списан   - `sgtinRetired` — Выбыл   - `sgtinWithdrawn` — Выбыл   - `sgtinDisaggregation` — Расформирован   - `sgtinDisaggregated` — Расформирован   - `sgtinAppliedNotPaid` — Не оплачен   - `pending` — Маркировка на проверке 

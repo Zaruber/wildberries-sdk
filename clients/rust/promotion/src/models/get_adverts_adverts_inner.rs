@@ -22,8 +22,8 @@ pub struct GetAdvertsAdvertsInner {
     #[serde(rename = "id")]
     pub id: i64,
     /// Настройки товаров
-    #[serde(rename = "nm_settings")]
-    pub nm_settings: Vec<models::AdvertNmsSettings>,
+    #[serde(rename = "nm_settings", deserialize_with = "Option::deserialize")]
+    pub nm_settings: Option<Vec<models::AdvertNmsSettings>>,
     #[serde(rename = "settings")]
     pub settings: Box<models::AdvertSettings>,
     /// Статус кампании: - `-1` — удалена, процесс удаления будет завершён в течение 10 минут - `4` — готова к запуску - `7` — завершена - `8` — отменена - `9` — активна - `11` — на паузе 
@@ -34,7 +34,7 @@ pub struct GetAdvertsAdvertsInner {
 }
 
 impl GetAdvertsAdvertsInner {
-    pub fn new(bid_type: String, id: i64, nm_settings: Vec<models::AdvertNmsSettings>, settings: models::AdvertSettings, status: Status, timestamps: models::Timestamps) -> GetAdvertsAdvertsInner {
+    pub fn new(bid_type: String, id: i64, nm_settings: Option<Vec<models::AdvertNmsSettings>>, settings: models::AdvertSettings, status: Status, timestamps: models::Timestamps) -> GetAdvertsAdvertsInner {
         GetAdvertsAdvertsInner {
             bid_type,
             id,

@@ -26,8 +26,8 @@ pub struct GoodHistory {
     #[serde(rename = "techSizeName", skip_serializing_if = "Option::is_none")]
     pub tech_size_name: Option<String>,
     /// Цена
-    #[serde(rename = "price", skip_serializing_if = "Option::is_none")]
-    pub price: Option<i32>,
+    #[serde(rename = "price", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub price: Option<Option<i32>>,
     /// Валюта, по стандарту ISO 4217
     #[serde(rename = "currencyIsoCode4217", skip_serializing_if = "Option::is_none")]
     pub currency_iso_code4217: Option<String>,

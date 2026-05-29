@@ -1,7 +1,7 @@
 /*
 Заказы Самовывоз
 
-Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [метаданными](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz) заказов модели Самовывоз. 
+Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [идентификаторами маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers) заказов модели Самовывоз. 
 
 API version: instorepickup
 */
@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.97/go",
+		UserAgent:        "OpenAPI-Generator/0.1.98/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

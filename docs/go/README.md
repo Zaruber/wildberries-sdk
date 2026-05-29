@@ -116,10 +116,11 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `products.DefaultApiService.ContentV2TagsGet` — `GET /content/v2/tags` — Список ярлыков
 - `products.DefaultApiService.ContentV3MediaFilePost` — `POST /content/v3/media/file` — Загрузить медиафайл
 - `products.DefaultApiService.ContentV3MediaSavePost` — `POST /content/v3/media/save` — Загрузить медиафайлы по ссылкам
+- `products.DefaultApiService.PostV1UploadTaskB2bWholesale` — `POST /api/discounts-prices/v1/upload/task/b2b/wholesale` — Установить оптовые скидки для B2B-продаж
 
 ### orders_fbs (`orders_fbs`)
 - `orders_fbs.FBSAPIService.ApiMarketplaceV3FbsOrdersArchiveGet` — `GET /api/marketplace/v3/fbs/orders/archive` — Получить список архивных сборочных заданий
-- `orders_fbs.FBSAPIService.ApiMarketplaceV3OrdersMetaPost` — `POST /api/marketplace/v3/orders/meta` — Получить метаданные сборочных заданий
+- `orders_fbs.FBSAPIService.ApiMarketplaceV3OrdersMetaPost` — `POST /api/marketplace/v3/orders/meta` — Получить идентификаторы маркировки сборочных заданий
 - `orders_fbs.FBSAPIService.ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut` — `PUT /api/marketplace/v3/orders/{orderId}/meta/customs-declaration` — Закрепить за сборочным заданием номер ДТ
 - `orders_fbs.FBSAPIService.ApiMarketplaceV3SuppliesSupplyIdOrderIdsGet` — `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки
 - `orders_fbs.FBSAPIService.ApiMarketplaceV3SuppliesSupplyIdOrdersPatch` — `PATCH /api/marketplace/v3/supplies/{supplyId}/orders` — Добавить сборочные задания к поставке
@@ -127,7 +128,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_fbs.FBSAPIService.ApiV3OrdersGet` — `GET /api/v3/orders` — Получить информацию о сборочных заданиях
 - `orders_fbs.FBSAPIService.ApiV3OrdersNewGet` — `GET /api/v3/orders/new` — Получить список новых сборочных заданий
 - `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdCancelPatch` — `PATCH /api/v3/orders/{orderId}/cancel` — Отменить сборочное задание
-- `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaDelete` — `DELETE /api/v3/orders/{orderId}/meta` — Удалить метаданные сборочного задания
+- `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaDelete` — `DELETE /api/v3/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания
 - `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaExpirationPut` — `PUT /api/v3/orders/{orderId}/meta/expiration` — Закрепить за сборочным заданием срок годности товара
 - `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaGtinPut` — `PUT /api/v3/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaImeiPut` — `PUT /api/v3/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
@@ -156,8 +157,8 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersClientPost` — `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
-- `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить метаданные сборочных заданий
-- `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaDetailsPost` — `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
+- `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaDetailsPost` — `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersStatusDeliverPost` — `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersCourierPost` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
@@ -167,8 +168,8 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdAssemblePatch` — `PATCH /api/v3/dbw/orders/{orderId}/assemble` — Перевести в доставку
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdCancelPatch` — `PATCH /api/v3/dbw/orders/{orderId}/cancel` — Отменить сборочное задание
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdConfirmPatch` — `PATCH /api/v3/dbw/orders/{orderId}/confirm` — Перевести на сборку
-- `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaDelete` — `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить метаданные сборочного задания
-- `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaGet` — `GET /api/v3/dbw/orders/{orderId}/meta` — Получить метаданные сборочного задания
+- `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaDelete` — `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания
+- `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaGet` — `GET /api/v3/dbw/orders/{orderId}/meta` — Получить идентификаторы маркировки сборочного задания
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaGtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaImeiPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaSgtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
@@ -179,11 +180,11 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 ### orders_dbs (`orders_dbs`)
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersB2bInfoPost` — `POST /api/marketplace/v3/dbs/orders/b2b/info` — Информация о покупателе B2B
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPost` — `POST /api/marketplace/v3/dbs/orders/meta/customs-declaration` — Закрепить за сборочными заданиями номер ДТ
-- `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
-- `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaDetailsPost` — `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить метаданные сборочных заданий
+- `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaDetailsPost` — `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaGtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaImeiPost` — `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
-- `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaInfoPost` — `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий
+- `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaInfoPost` — `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersMetaUinPost` — `POST /api/marketplace/v3/dbs/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `orders_dbs.DBSAPIService.ApiMarketplaceV3DbsOrdersStatusCancelPost` — `POST /api/marketplace/v3/dbs/orders/status/cancel` — Отменить сборочные задания
@@ -200,10 +201,10 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_dbs.DBSAPIService.ApiV3DbsOrdersNewGet` — `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
-- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaDeletePost` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaDeletePost` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaGtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaImeiPost` — `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
-- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaInfoPost` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить метаданные сборочных заданий
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaInfoPost` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaSgtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaUinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersStatusCancelPost` — `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания

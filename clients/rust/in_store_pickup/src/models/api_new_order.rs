@@ -1,7 +1,7 @@
 /*
  * Заказы Самовывоз
  *
- * Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [метаданными](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz) заказов модели Самовывоз. 
+ * Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [идентификаторами маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers) заказов модели Самовывоз. 
  *
  * The version of the OpenAPI document: instorepickup
  * 
@@ -21,7 +21,7 @@ pub struct ApiNewOrder {
     /// Цена продавца в валюте продажи с учётом скидки продавца, без учёта скидки WB Клуба, умноженная на 100. Предоставляется в информационных целях 
     #[serde(rename = "salePrice", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub sale_price: Option<Option<i32>>,
-    /// Список метаданных, доступных для сборочного задания 
+    /// Список идентификаторов маркировки, доступных для сборочного задания 
     #[serde(rename = "requiredMeta", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub required_meta: Option<Option<Vec<String>>>,
     /// Артикул продавца

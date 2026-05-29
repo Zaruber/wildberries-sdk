@@ -89,6 +89,7 @@ SDK выпускается с security-first процессом:
 
 ### Работа с товарами (`02-products.yaml`)
 - `GET /api/content/v1/brands` — Бренды
+- `POST /api/discounts-prices/v1/upload/task/b2b/wholesale` — Установить оптовые скидки для B2B-продаж (postV1UploadTaskB2bWholesale)
 - `GET /api/v2/buffer/goods/task` — Детализация необработанной загрузки
 - `GET /api/v2/buffer/tasks` — Состояние необработанной загрузки
 - `GET /api/v2/history/goods/task` — Детализация обработанной загрузки
@@ -140,7 +141,7 @@ SDK выпускается с security-first процессом:
 
 ### Заказы FBS (`03-orders-fbs.yaml`)
 - `GET /api/marketplace/v3/fbs/orders/archive` — Получить список архивных сборочных заданий
-- `POST /api/marketplace/v3/orders/meta` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/orders/meta` — Получить идентификаторы маркировки сборочных заданий
 - `PUT /api/marketplace/v3/orders/{orderId}/meta/customs-declaration` — Закрепить за сборочным заданием номер ДТ
 - `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки
 - `PATCH /api/marketplace/v3/supplies/{supplyId}/orders` — Добавить сборочные задания к поставке
@@ -152,7 +153,7 @@ SDK выпускается с security-first процессом:
 - `POST /api/v3/orders/stickers` — Получить стикеры сборочных заданий
 - `POST /api/v3/orders/stickers/cross-border` — Получить стикеры сборочных заданий трансграничных поставок
 - `PATCH /api/v3/orders/{orderId}/cancel` — Отменить сборочное задание
-- `DELETE /api/v3/orders/{orderId}/meta` — Удалить метаданные сборочного задания
+- `DELETE /api/v3/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания
 - `PUT /api/v3/orders/{orderId}/meta/expiration` — Закрепить за сборочным заданием срок годности товара
 - `PUT /api/v3/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `PUT /api/v3/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
@@ -177,8 +178,8 @@ SDK выпускается с security-first процессом:
 
 ### Заказы DBW (`04-orders-dbw.yaml`)
 - `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
-- `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить метаданные сборочных заданий
-- `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
@@ -190,8 +191,8 @@ SDK выпускается с security-first процессом:
 - `PATCH /api/v3/dbw/orders/{orderId}/assemble` — Перевести в доставку
 - `PATCH /api/v3/dbw/orders/{orderId}/cancel` — Отменить сборочное задание
 - `PATCH /api/v3/dbw/orders/{orderId}/confirm` — Перевести на сборку
-- `GET /api/v3/dbw/orders/{orderId}/meta` — Получить метаданные сборочного задания
-- `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить метаданные сборочного задания
+- `GET /api/v3/dbw/orders/{orderId}/meta` — Получить идентификаторы маркировки сборочного задания
+- `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания
 - `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
 - `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
@@ -200,11 +201,11 @@ SDK выпускается с security-first процессом:
 ### Заказы DBS (`05-orders-dbs.yaml`)
 - `POST /api/marketplace/v3/dbs/orders/b2b/info` — Информация о покупателе B2B
 - `POST /api/marketplace/v3/dbs/orders/meta/customs-declaration` — Закрепить за сборочными заданиями номер ДТ
-- `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
-- `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `POST /api/marketplace/v3/dbs/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
-- `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/dbs/orders/meta/info` — Получить идентификаторы маркировки сборочных заданий
 - `POST /api/marketplace/v3/dbs/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `POST /api/marketplace/v3/dbs/orders/status/cancel` — Отменить сборочные задания
@@ -221,10 +222,10 @@ SDK выпускается с security-first процессом:
 - `GET /api/v3/dbs/orders/new` — Получить список новых сборочных заданий
 
 ### Заказы Самовывоз (`06-in-store-pickup.yaml`)
-- `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить метаданные сборочных заданий
+- `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
 - `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
-- `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить идентификаторы маркировки сборочных заданий
 - `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания

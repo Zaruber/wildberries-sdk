@@ -1,7 +1,7 @@
 /*
  * Заказы Самовывоз
  *
- * Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [метаданными](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz) заказов модели Самовывоз. 
+ * Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [идентификаторами маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers) заказов модели Самовывоз. 
  *
  * The version of the OpenAPI document: instorepickup
  * 
@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiOrdersMetaDeleteRequest {
-    /// Тип метаданных для удаления. Передаётся только одно значение
+    /// Тип идентификаторов маркировки для удаления. Передаётся только одно значение
     #[serde(rename = "key")]
     pub key: Key,
     /// Список ID сборочных заданий
@@ -29,7 +29,7 @@ impl ApiOrdersMetaDeleteRequest {
         }
     }
 }
-/// Тип метаданных для удаления. Передаётся только одно значение
+/// Тип идентификаторов маркировки для удаления. Передаётся только одно значение
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Key {
     #[serde(rename = "imei")]

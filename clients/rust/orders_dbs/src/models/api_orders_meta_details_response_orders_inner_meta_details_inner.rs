@@ -1,7 +1,7 @@
 /*
  * Заказы DBS
  *
- * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller). 
+ * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers) заказов DBS (Delivery by Seller). 
  *
  * The version of the OpenAPI document: order
  * 
@@ -13,10 +13,10 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner {
-    /// Метаданные
+    /// Идентификатор маркировки
     #[serde(rename = "key", skip_serializing_if = "Option::is_none")]
     pub key: Option<String>,
-    /// Значение метаданных
+    /// Значение идентификатора маркировки
     #[serde(rename = "value", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub value: Option<Option<String>>,
     /// Статус проверки: - `imei`   - `pending` — Маркировка на проверке   - `optional` — Маркировка не обязательна   - `filled` — Валидация пройдена   - `deadlineExceeded` — Валидация пройдена   - `imeiMaySell` — Товар допущен к продаже. Валидация пройдена   - `imeiSoldB2B` — Товар продан покупателю B2B, допущен к продаже повторно. Валидация пройдена   - `required` — Обязательная маркировка не заполнена. Валидация не пройдена   - `imeiInvalidFormat` — Неверный формат маркировки. Валидация не пройдена   - `imeiAlreadySold` — Товар с этим IMEI уже продан. Валидация не пройдена - `uin`   - `optional` — Маркировка не обязательна   - `filled` — Валидация пройдена - `sgtin`   - `pending` — Маркировка на проверке   - `optional` — Маркировка не обязательна   - `filled` — Валидация пройдена   - `deadlineExceeded` — Валидация пройдена   - `sgtinIntroduced` — Товар допущен к продаже. Валидация пройдена   - `sgtinSoldB2B` — Товар продан покупателю B2B, допущен к продаже повторно. Валидация пройдена   - `required` — Обязательная маркировка не заполнена. Валидация не пройдена   - `sgtinInvalidFormat` — Неверный формат маркировки. Валидация не пройдена   - `sgtinNotFound` — Маркировка не найдена в [Честном Знаке](https://chestnyznak.ru). Валидация не пройдена   - `sgtinEmitted` —  Маркировка эмитирована. Валидация не пройдена   - `sgtinApplied` — Не пройдена процедура Ввод в оборот. Валидация не пройдена   - `sgtinWrittenOff` — Списан. Валидация не пройдена   - `sgtinRetired` — Выбыл. Валидация не пройдена   - `sgtinWithdrawn` — Выбыл. Валидация не пройдена   - `sgtinDisaggregation` — Расформирован. Валидация не пройдена   - `sgtinDisaggregated` — Расформирован. Валидация не пройдена   - `sgtinAppliedNotPaid` — Не оплачен. Валидация не пройдена - `gtin`   - `optional` — Маркировка не обязательна   - `filled` — Валидация пройдена - `customsDeclaration`   - `optional` — Маркировка не обязательна   - `filled` — Валидация пройдена 

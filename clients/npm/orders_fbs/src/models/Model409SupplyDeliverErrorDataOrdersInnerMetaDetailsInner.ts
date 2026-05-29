@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Заказы FBS
- * С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [метаданные](/openapi/orders-fbs#tag/Metadannye-FBS) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуска](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-0771-7571-aea9-11d5b597f34c/zakazy-fbs\">инструкции</a> по работе с <strong>заказами FBS</strong> </div>  <div class=\"description_important\">   Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+ * С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [идентификаторы маркировки](/openapi/orders-fbs#tag/fbs-label-identifiers) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуска](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-0771-7571-aea9-11d5b597f34c/zakazy-fbs\">инструкции</a> по работе с <strong>заказами FBS</strong> </div>  <div class=\"description_important\">   Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
  *
  * The version of the OpenAPI document: order
  * 
@@ -20,13 +20,13 @@ import { mapValues } from '../runtime';
  */
 export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
     /**
-     * Метаданные
+     * Идентификатор маркировки
      * @type {string}
      * @memberof Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner
      */
     key?: string;
     /**
-     * Значение метаданных
+     * Значение идентификатора маркировки
      * @type {string}
      * @memberof Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner
      */
@@ -48,7 +48,7 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
      *   - `uinBadStatusAndBadProcess` — Некорректный статус партии. Некорректная стадия обработки
      *   - `uinNotFound` — Не найден в [ГИИС](https://minfin.gov.ru/ru/perfomance/jewels/dmdk).
      *     При получении этой ошибки убедитесь, что УИН:
-     *       - указан в загруженной спецификации с договором на поставку. Если спецификация загружена более 30 минут назад, [удалите УИН](./orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/delete) из сборочного задания и [добавьте его](./orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put) заново
+     *       - указан в загруженной спецификации с договором на поставку. Если спецификация загружена более 30 минут назад, [удалите УИН](./orders-fbs#tag/fbs-label-identifiers/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/delete) из сборочного задания и [добавьте его](./orders-fbs#tag/fbs-label-identifiers/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put) заново
      *       - зарегистрирован в ГИИС ДМДК
      *       - указан корректно и считывается с бирки без ошибок
      *       - находится в обороте

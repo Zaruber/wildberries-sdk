@@ -48,7 +48,7 @@ export interface GoodHistory {
      * @type {number}
      * @memberof GoodHistory
      */
-    price?: number;
+    price?: number | null;
     /**
      * Валюта, по стандарту ISO 4217
      * @type {string}

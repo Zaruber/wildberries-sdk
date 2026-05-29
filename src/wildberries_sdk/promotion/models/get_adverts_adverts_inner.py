@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from wildberries_sdk.promotion.models.advert_nms_settings import AdvertNMsSettings
 from wildberries_sdk.promotion.models.advert_settings import AdvertSettings
 from wildberries_sdk.promotion.models.timestamps import Timestamps
@@ -32,7 +32,7 @@ class GetAdvertsAdvertsInner(BaseModel):
     """ # noqa: E501
     bid_type: StrictStr = Field(description="Тип ставки:   - `unified` — единая ставка   - `manual` — ручная ставка ")
     id: StrictInt = Field(description="ID кампании")
-    nm_settings: List[AdvertNMsSettings] = Field(description="Настройки товаров")
+    nm_settings: Optional[List[AdvertNMsSettings]] = Field(description="Настройки товаров")
     settings: AdvertSettings
     status: StrictInt = Field(description="Статус кампании: - `-1` — удалена, процесс удаления будет завершён в течение 10 минут - `4` — готова к запуску - `7` — завершена - `8` — отменена - `9` — активна - `11` — на паузе ")
     timestamps: Timestamps
@@ -97,6 +97,11 @@ class GetAdvertsAdvertsInner(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of timestamps
         if self.timestamps:
             _dict['timestamps'] = self.timestamps.to_dict()
+        # set to None if nm_settings (nullable) is None
+        # and model_fields_set contains the field
+        if self.nm_settings is None and "nm_settings" in self.model_fields_set:
+            _dict['nm_settings'] = None
+
         return _dict
 
     @classmethod

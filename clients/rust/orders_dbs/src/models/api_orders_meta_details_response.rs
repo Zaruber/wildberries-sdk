@@ -1,7 +1,7 @@
 /*
  * Заказы DBS
  *
- * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller). 
+ * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers) заказов DBS (Delivery by Seller). 
  *
  * The version of the OpenAPI document: order
  * 
@@ -16,7 +16,7 @@ pub struct ApiOrdersMetaDetailsResponse {
     /// Уникальный ID запроса
     #[serde(rename = "requestId")]
     pub request_id: String,
-    /// Метаданные сборочных заданий и статусы их валидации
+    /// Идентификаторы маркировки сборочных заданий и статусы их валидации
     #[serde(rename = "orders", skip_serializing_if = "Option::is_none")]
     pub orders: Option<Vec<models::ApiOrdersMetaDetailsResponseOrdersInner>>,
 }

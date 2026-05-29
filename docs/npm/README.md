@@ -115,10 +115,11 @@ main().catch(console.error);
 - `products.DefaultApi.contentV2TagsGet` — Список ярлыков
 - `products.DefaultApi.contentV3MediaFilePost` — Загрузить медиафайл
 - `products.DefaultApi.contentV3MediaSavePost` — Загрузить медиафайлы по ссылкам
+- `products.DefaultApi.postV1UploadTaskB2bWholesale` — Установить оптовые скидки для B2B-продаж
 
 ### orders_fbs (`orders_fbs`)
 - `orders_fbs.FBSApi.apiMarketplaceV3FbsOrdersArchiveGet` — Получить список архивных сборочных заданий
-- `orders_fbs.FBSApi.apiMarketplaceV3OrdersMetaPost` — Получить метаданные сборочных заданий
+- `orders_fbs.FBSApi.apiMarketplaceV3OrdersMetaPost` — Получить идентификаторы маркировки сборочных заданий
 - `orders_fbs.FBSApi.apiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPut` — Закрепить за сборочным заданием номер ДТ
 - `orders_fbs.FBSApi.apiMarketplaceV3SuppliesSupplyIdOrderIdsGet` — Получить ID сборочных заданий поставки
 - `orders_fbs.FBSApi.apiMarketplaceV3SuppliesSupplyIdOrdersPatch` — Добавить сборочные задания к поставке
@@ -126,7 +127,7 @@ main().catch(console.error);
 - `orders_fbs.FBSApi.apiV3OrdersGet` — Получить информацию о сборочных заданиях
 - `orders_fbs.FBSApi.apiV3OrdersNewGet` — Получить список новых сборочных заданий
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdCancelPatch` — Отменить сборочное задание
-- `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaDelete` — Удалить метаданные сборочного задания
+- `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaDelete` — Удалить идентификаторы маркировки сборочного задания
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaExpirationPut` — Закрепить за сборочным заданием срок годности товара
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaGtinPut` — Закрепить за сборочным заданием GTIN
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaImeiPut` — Закрепить за сборочным заданием IMEI
@@ -155,8 +156,8 @@ main().catch(console.error);
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersClientPost` — Информация о покупателе
-- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDeletePost` — Удалить метаданные сборочных заданий
-- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDetailsPost` — Получить метаданные сборочных заданий
+- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDeletePost` — Удалить идентификаторы маркировки сборочных заданий
+- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDetailsPost` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaSgtinPost` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersStatusDeliverPost` — Перевести сборочные задания в доставку
 - `orders_dbw.DBWApi.apiV3DbwOrdersCourierPost` — Информация о курьере
@@ -166,8 +167,8 @@ main().catch(console.error);
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdAssemblePatch` — Перевести в доставку
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdCancelPatch` — Отменить сборочное задание
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdConfirmPatch` — Перевести на сборку
-- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaDelete` — Удалить метаданные сборочного задания
-- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaGet` — Получить метаданные сборочного задания
+- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaDelete` — Удалить идентификаторы маркировки сборочного задания
+- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaGet` — Получить идентификаторы маркировки сборочного задания
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaGtinPut` — Закрепить за сборочным заданием GTIN
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaImeiPut` — Закрепить за сборочным заданием IMEI
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaSgtinPut` — Закрепить за сборочным заданием код маркировки товара
@@ -178,11 +179,11 @@ main().catch(console.error);
 ### orders_dbs (`orders_dbs`)
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersB2bInfoPost` — Информация о покупателе B2B
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPost` — Закрепить за сборочными заданиями номер ДТ
-- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDeletePost` — Удалить метаданные сборочных заданий
-- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDetailsPost` — Получить метаданные сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDeletePost` — Удалить идентификаторы маркировки сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaDetailsPost` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaGtinPost` — Закрепить GTIN за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaImeiPost` — Закрепить IMEI за сборочными заданиями
-- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaInfoPost` — Получить метаданные сборочных заданий
+- `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaInfoPost` — Получить идентификаторы маркировки сборочных заданий
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaSgtinPost` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersMetaUinPost` — Закрепить УИН за сборочными заданиями
 - `orders_dbs.DBSApi.apiMarketplaceV3DbsOrdersStatusCancelPost` — Отменить сборочные задания
@@ -199,10 +200,10 @@ main().catch(console.error);
 - `orders_dbs.DBSApi.apiV3DbsOrdersNewGet` — Получить список новых сборочных заданий
 
 ### in_store_pickup (`in_store_pickup`)
-- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaDeletePost` — Удалить метаданные сборочных заданий
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaDeletePost` — Удалить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaGtinPost` — Закрепить GTIN за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaImeiPost` — Закрепить IMEI за сборочными заданиями
-- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaInfoPost` — Получить метаданные сборочных заданий
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaInfoPost` — Получить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaSgtinPost` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaUinPost` — Закрепить УИН за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersStatusCancelPost` — Отменить сборочные задания

@@ -1,7 +1,7 @@
 /*
 Заказы Самовывоз
 
-Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [метаданными](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz) заказов модели Самовывоз. 
+Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [идентификаторами маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers) заказов модели Самовывоз. 
 
 API version: instorepickup
 */
@@ -24,7 +24,7 @@ type ApiNewOrder struct {
 	Ddate *string `json:"ddate,omitempty"`
 	// Цена продавца в валюте продажи с учётом скидки продавца, без учёта скидки WB Клуба, умноженная на 100. Предоставляется в информационных целях 
 	SalePrice NullableInt32 `json:"salePrice,omitempty"`
-	// Список метаданных, доступных для сборочного задания 
+	// Список идентификаторов маркировки, доступных для сборочного задания 
 	RequiredMeta []string `json:"requiredMeta,omitempty"`
 	// Артикул продавца
 	Article *string `json:"article,omitempty"`

@@ -33,6 +33,8 @@ type GoodsList struct {
 	ClubDiscount *int32 `json:"clubDiscount,omitempty"`
 	// Можно ли устанавливать цены отдельно для разных размеров (зависит от категории товара):   - `true` — можно   - `false` — нельзя 
 	EditableSizePrice *bool `json:"editableSizePrice,omitempty"`
+	// Оптовые скидки разных уровней для B2B
+	WholesaleDiscountThreshold []WholesaleDiscountThresholdRes `json:"wholesaleDiscountThreshold,omitempty"`
 	// Признак неликвидного товара:   - `true` — неликвидный товар с [низким индексом остатка](https://seller.wildberries.ru/instructions/ru/ru/material/stocks-index?categoryId=e324ce0f-9a2a-4b8d-8fd1-72f751b09b3b&goBackOption=prevRoute#%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0-%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B0)   - Поле отсутствует — ликвидный товар 
 	IsBadTurnover *bool `json:"isBadTurnover,omitempty"`
 }
@@ -278,6 +280,38 @@ func (o *GoodsList) SetEditableSizePrice(v bool) {
 	o.EditableSizePrice = &v
 }
 
+// GetWholesaleDiscountThreshold returns the WholesaleDiscountThreshold field value if set, zero value otherwise.
+func (o *GoodsList) GetWholesaleDiscountThreshold() []WholesaleDiscountThresholdRes {
+	if o == nil || IsNil(o.WholesaleDiscountThreshold) {
+		var ret []WholesaleDiscountThresholdRes
+		return ret
+	}
+	return o.WholesaleDiscountThreshold
+}
+
+// GetWholesaleDiscountThresholdOk returns a tuple with the WholesaleDiscountThreshold field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GoodsList) GetWholesaleDiscountThresholdOk() ([]WholesaleDiscountThresholdRes, bool) {
+	if o == nil || IsNil(o.WholesaleDiscountThreshold) {
+		return nil, false
+	}
+	return o.WholesaleDiscountThreshold, true
+}
+
+// HasWholesaleDiscountThreshold returns a boolean if a field has been set.
+func (o *GoodsList) HasWholesaleDiscountThreshold() bool {
+	if o != nil && !IsNil(o.WholesaleDiscountThreshold) {
+		return true
+	}
+
+	return false
+}
+
+// SetWholesaleDiscountThreshold gets a reference to the given []WholesaleDiscountThresholdRes and assigns it to the WholesaleDiscountThreshold field.
+func (o *GoodsList) SetWholesaleDiscountThreshold(v []WholesaleDiscountThresholdRes) {
+	o.WholesaleDiscountThreshold = v
+}
+
 // GetIsBadTurnover returns the IsBadTurnover field value if set, zero value otherwise.
 func (o *GoodsList) GetIsBadTurnover() bool {
 	if o == nil || IsNil(o.IsBadTurnover) {
@@ -340,6 +374,9 @@ func (o GoodsList) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EditableSizePrice) {
 		toSerialize["editableSizePrice"] = o.EditableSizePrice
+	}
+	if !IsNil(o.WholesaleDiscountThreshold) {
+		toSerialize["wholesaleDiscountThreshold"] = o.WholesaleDiscountThreshold
 	}
 	if !IsNil(o.IsBadTurnover) {
 		toSerialize["isBadTurnover"] = o.IsBadTurnover

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Заказы DBW
- * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
+ * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [идентификаторы маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
  *
  * The version of the OpenAPI document: ordersdbw
  * 
@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface ApiOrdersMetaDleteRequestV2 {
     /**
-     * Название метаданных для удаления. Передаётся только одно значение
+     * Название идентификатора маркировки для удаления. Передаётся только одно значение
      * @type {ApiOrdersMetaDleteRequestV2KeyEnum}
      * @memberof ApiOrdersMetaDleteRequestV2
      */

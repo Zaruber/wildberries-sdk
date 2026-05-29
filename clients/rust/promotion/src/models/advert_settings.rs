@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 pub struct AdvertSettings {
     /// Тип оплаты: - `cpm` — за показы - `cpc` — за клик 
     #[serde(rename = "payment_type")]
-    pub payment_type: PaymentType,
+    pub payment_type: String,
     /// Название кампании
     #[serde(rename = "name")]
     pub name: String,
@@ -26,26 +26,12 @@ pub struct AdvertSettings {
 
 impl AdvertSettings {
     /// Настройки кампании
-    pub fn new(payment_type: PaymentType, name: String, placements: models::AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements) -> AdvertSettings {
+    pub fn new(payment_type: String, name: String, placements: models::AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements) -> AdvertSettings {
         AdvertSettings {
             payment_type,
             name,
             placements: Box::new(placements),
         }
-    }
-}
-/// Тип оплаты: - `cpm` — за показы - `cpc` — за клик 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum PaymentType {
-    #[serde(rename = "cpm")]
-    Cpm,
-    #[serde(rename = "cpc")]
-    Cpc,
-}
-
-impl Default for PaymentType {
-    fn default() -> PaymentType {
-        Self::Cpm
     }
 }
 

@@ -65,6 +65,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
         'discount' => 'int',
         'club_discount' => 'int',
         'editable_size_price' => 'bool',
+        'wholesale_discount_threshold' => '\Wildberries\Sdk\Products\Model\WholesaleDiscountThresholdRes[]',
         'is_bad_turnover' => 'bool'
     ];
 
@@ -83,6 +84,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
         'discount' => null,
         'club_discount' => null,
         'editable_size_price' => null,
+        'wholesale_discount_threshold' => null,
         'is_bad_turnover' => null
     ];
 
@@ -99,6 +101,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
         'discount' => false,
         'club_discount' => false,
         'editable_size_price' => false,
+        'wholesale_discount_threshold' => false,
         'is_bad_turnover' => false
     ];
 
@@ -195,6 +198,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
         'discount' => 'discount',
         'club_discount' => 'clubDiscount',
         'editable_size_price' => 'editableSizePrice',
+        'wholesale_discount_threshold' => 'wholesaleDiscountThreshold',
         'is_bad_turnover' => 'isBadTurnover'
     ];
 
@@ -211,6 +215,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
         'discount' => 'setDiscount',
         'club_discount' => 'setClubDiscount',
         'editable_size_price' => 'setEditableSizePrice',
+        'wholesale_discount_threshold' => 'setWholesaleDiscountThreshold',
         'is_bad_turnover' => 'setIsBadTurnover'
     ];
 
@@ -227,6 +232,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
         'discount' => 'getDiscount',
         'club_discount' => 'getClubDiscount',
         'editable_size_price' => 'getEditableSizePrice',
+        'wholesale_discount_threshold' => 'getWholesaleDiscountThreshold',
         'is_bad_turnover' => 'getIsBadTurnover'
     ];
 
@@ -294,6 +300,7 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('discount', $data ?? [], null);
         $this->setIfExists('club_discount', $data ?? [], null);
         $this->setIfExists('editable_size_price', $data ?? [], null);
+        $this->setIfExists('wholesale_discount_threshold', $data ?? [], null);
         $this->setIfExists('is_bad_turnover', $data ?? [], null);
     }
 
@@ -524,6 +531,33 @@ class GoodsList implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable editable_size_price cannot be null');
         }
         $this->container['editable_size_price'] = $editable_size_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets wholesale_discount_threshold
+     *
+     * @return \Wildberries\Sdk\Products\Model\WholesaleDiscountThresholdRes[]|null
+     */
+    public function getWholesaleDiscountThreshold()
+    {
+        return $this->container['wholesale_discount_threshold'];
+    }
+
+    /**
+     * Sets wholesale_discount_threshold
+     *
+     * @param \Wildberries\Sdk\Products\Model\WholesaleDiscountThresholdRes[]|null $wholesale_discount_threshold Оптовые скидки разных уровней для B2B
+     *
+     * @return self
+     */
+    public function setWholesaleDiscountThreshold($wholesale_discount_threshold)
+    {
+        if (is_null($wholesale_discount_threshold)) {
+            throw new \InvalidArgumentException('non-nullable wholesale_discount_threshold cannot be null');
+        }
+        $this->container['wholesale_discount_threshold'] = $wholesale_discount_threshold;
 
         return $this;
     }

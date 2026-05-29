@@ -3943,13 +3943,130 @@ paths:
       x-category: discountsandprices
     servers:
     - url: https://discounts-prices-api.wildberries.ru
+  /api/discounts-prices/v1/upload/task/b2b/wholesale:
+    post:
+      description: "<div class=\"description_token\">Метод доступен по <a href=\"\
+        /openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\"\
+        >токенам</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> \n\
+        \    </div>\n\nМетод устанавливает [оптовые скидки для бизнеса](https://seller.wildberries.ru/instructions/ru/ru/material/how-to-enable-wholesale-discounts-for-business)\n\
+        \n<div class=\"description_important\">\n  Получить информацию о процессе\
+        \ установки цен и скидок можно с помощью методов <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1tasks/get\"\
+        >состояния</a> и <a href=\"/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1history~1goods~1task/get\"\
+        >детализации</a> обработанной загрузки.\n</div>\n\n<div class=\"description_limit\"\
+        >\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит\
+        \ запросов</a> на один аккаунт продавца для всех методов категории <strong>Ц\
+        ены и скидки</strong>:\n\n\n| Тип | Период | Лимит | Интервал | Всплеск |\n\
+        | --- | --- | --- | --- | --- |\n| Персональный | 6 сек | 10 запросов | 600\
+        \ мс | 5 запросов |\n| Сервисный | 6 сек | 10 запросов | 600 мс | 5 запрос\
+        ов |\n</div>\n"
+      operationId: postV1UploadTaskB2bWholesale
+      requestBody:
+        $ref: "#/components/requestBodies/B2BWholesaleTaskRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                MultiItemResponse:
+                  $ref: "#/components/examples/MultiItemResponse"
+                SuccessTrue:
+                  $ref: "#/components/examples/SuccessTrue"
+                InvalidItemNo:
+                  $ref: "#/components/examples/InvalidItemNoV3"
+                NewDiscountOutsideAllowedRange:
+                  $ref: "#/components/examples/NewDiscountOutsideAllowedRange"
+                NewNumberItemsOutsideAllowedRange:
+                  $ref: "#/components/examples/NewNumberItemsOutsideAllowedRange"
+                NumberItemsMustIncreaseWithEachLevel:
+                  $ref: "#/components/examples/NumberItemsMustIncreaseWithEachLevel"
+                DiscountMustIncreaseWithEachLevel:
+                  $ref: "#/components/examples/DiscountMustIncreaseWithEachLevel"
+                MaximumNumberOfLevels:
+                  $ref: "#/components/examples/MaximumNumberOfLevels"
+                DiscountMustInteger:
+                  $ref: "#/components/examples/DiscountMustInteger"
+              schema:
+                $ref: "#/components/schemas/postV1UploadTaskB2bWholesale_200_response"
+          description: Успешно
+        "208":
+          content:
+            application/json:
+              examples:
+                Result208:
+                  $ref: "#/components/examples/Result208V3"
+              schema:
+                $ref: "#/components/schemas/postV1UploadTaskB2bWholesale_208_response"
+          description: Такая загрузка уже есть
+        "400":
+          content:
+            application/json:
+              examples:
+                UploadLimitExceeded:
+                  $ref: "#/components/examples/UploadLimitExceededV3"
+                InvalidDataFormat:
+                  $ref: "#/components/examples/InvalidDataFormatV3"
+              schema:
+                $ref: "#/components/schemas/ResponseErrorV3"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/problem+json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              examples:
+                AccessDenied:
+                  $ref: "#/components/examples/Result403V3"
+              schema:
+                $ref: "#/components/schemas/ResponseErrorV3"
+          description: Доступ запрещён
+        "429":
+          content:
+            application/problem+json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Установить оптовые скидки для B2B-продаж
+      tags:
+      - Цены и скидки
+      x-readonly-method: false
+      x-category: discountsandprices
+      x-token-types:
+      - personal
+      - service
+    servers:
+    - url: https://discounts-prices-api.wildberries.ru
   /api/v2/history/tasks:
     get:
       description: |
         Метод возвращает информацию об обработанной загрузке цен и скидок.
 
         <div class="description_important">
-          Обработанная загрузка — это загрузка цен и скидок для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post">товаров</a>, цен для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post">размеров товаров</a> и скидок <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post">WB Клуба</a>.
+          Обработанная загрузка — это загрузка цен и скидок для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post">товаров</a>, цен для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post">размеров товаров</a>, <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post">скидок WB Клуба</a> и <a href="/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale">оптовых скидок для B2B-продаж</a>.
         </div>
 
         <div class="description_limit">
@@ -4044,7 +4161,7 @@ paths:
         Метод возвращает информацию о товарах и об ошибках в товарах в обработанной загрузке.
 
         <div class="description_important">
-          Обработанная загрузка — это загрузка цен и скидок для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post">товаров</a>, цен для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post">размеров товаров</a> и скидок <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post">WB Клуба</a>.
+          Обработанная загрузка — это загрузка цен и скидок для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task/post">товаров</a>, цен для <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1size/post">размеров товаров</a> <a href="/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post">скидок WB Клуба</a> и <a href="/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale">оптовых скидок для B2B-продаж</a>.
         </div>
 
         <div class="description_limit">
@@ -4372,7 +4489,7 @@ paths:
   /api/v2/list/goods/filter:
     get:
       description: |
-        Метод возвращает информацию о товарах: цены, валюту, общие скидки и скидки [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post).
+        Метод возвращает информацию о товарах: цены, валюту, общие скидки, [скидки WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post) и [оптовые скидки для B2B-продаж](/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale).
         <br><br>
         В одном запросе можно указать только один артикул.
         <br><br>
@@ -4499,7 +4616,7 @@ paths:
       x-category: discountsandprices
     post:
       description: |
-        Метод возвращает информацию о товарах по их артикулам: цены, валюту, общие скидки и скидки [WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post).
+        Метод возвращает информацию о товарах по их артикулам: цены, валюту, общие скидки, [скидки WB Клуба](/openapi/work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1upload~1task~1club-discount/post) и [оптовые скидки для B2B-продаж](/openapi/work-with-products#tag/Ceny-i-skidki/operation/postV1UploadTaskB2bWholesale).
         <br><br>
         В одном запросе можно указать более одного артикула.
         <br><br>
@@ -5734,9 +5851,9 @@ paths:
         \n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
         >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
         <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
-        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
-        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
-        | 1 мин | 300 запросов | 200 мс | 20 запросов |\n\n</div>\n"
+        ние и удаление идентификаторов маркировки</li>\n    <li>методы сборочных з\
+        аданий</li>\n</ul> \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | ---\
+        \ | --- | --- |\n| 1 мин | 300 запросов | 200 мс | 20 запросов |\n\n</div>\n"
       parameters:
       - description: ID склада продавца
         explode: false
@@ -5832,9 +5949,9 @@ paths:
         >\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит\
         \ запросов</a> на один аккаунт продавца для следующих методов DBW:\n<ul>\n\
         \    <li>получение и обновление списка контактов</li>\n    <li>получение и\
-        \ удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\
-        \n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1\
-        \ мин | 300 запросов | 200 мс | 20 запросов |\n\n</div>\n"
+        \ удаление идентификаторов маркировки</li>\n    <li>методы сборочных задан\
+        ий</li>\n</ul> \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- |\
+        \ --- | --- |\n| 1 мин | 300 запросов | 200 мс | 20 запросов |\n\n</div>\n"
       parameters:
       - description: ID склада продавца
         explode: false
@@ -6383,11 +6500,19 @@ components:
         error: true
         errorText: Invalid request parameters
     UploadLimitExceeded:
-      description: В запросе слишком много товаров (следует читать `1000 items`)
+      description: В запросе слишком много товаров
       value:
         data: null
         error: true
-        errorText: "Upload limit exceeded: You can upload a maximum of 10 000 items"
+        errorText: "Upload limit exceeded: You can upload a maximum of 1 000 items"
+    UploadLimitExceededV3:
+      description: В запросе слишком много товаров
+      value:
+        status: 400
+        title: Bad Request
+        detail: "Upload limit exceeded: You can upload a maximum of 1 000 items"
+        requestId: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+        origin: discounts-prices
     DuplicateItemNos:
       description: В запросе несколько одинаковых `nmID`
       value:
@@ -6418,6 +6543,14 @@ components:
         data: null
         error: true
         errorText: Invalid data format
+    InvalidDataFormatV3:
+      description: "Не удалось обработать данные, проверьте, что запрос правильный"
+      value:
+        status: 400
+        title: Bad Request
+        detail: Invalid data format
+        requestId: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+        origin: discounts-prices
     PriceShouldBeAWholeNumber:
       description: "У цены дробное значение, исправьте на целое"
       value:
@@ -6442,6 +6575,18 @@ components:
         data: null
         error: true
         errorText: Invalid item No.
+    InvalidItemNoV3:
+      description: Неправильный `nmId`
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 1
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: Invalid item No.
     InvalidSize:
       description: Неправильный `sizeID`
       value:
@@ -6511,18 +6656,135 @@ components:
         errorText: "All item Nos. are specified incorrectly, or the specified discounts\
           \ are already set"
     UnexpectedResult:
-      description: "Неожидаемый результат, создайте диалог в Поддержку продавцов,\
-        \ категория `API`"
+      description: "Неожидаемый результат, создайте диалог c Поддержкой продавцов\
+        , категория `Интеграции по API`"
       value:
         data: null
         error: true
         errorText: Unexpected result
+    MultiItemResponse:
+      description: Ответ на запрос с несколькими товарами
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 1
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: Invalid item No.
+        - nmId: 694707813
+          success: true
+        - nmId: 694706709
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: "Maximum number of levels: 3"
+    SuccessTrue:
+      description: Успешно
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 694707813
+          success: true
+    NewDiscountOutsideAllowedRange:
+      description: Новое значение скидки — вне допустимого диапазона
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 694707813
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: New discount is outside the allowed range
+    NewNumberItemsOutsideAllowedRange:
+      description: Новое минимальное количество единиц товара — вне допустимого диапазона
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 694707813
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: New number of items is outside the allowed range
+    NumberItemsMustIncreaseWithEachLevel:
+      description: Минимальное количество единиц товара должно увеличиваться с каждым
+        уровнем
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 694707813
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: Number of items must increase with each level
+    DiscountMustIncreaseWithEachLevel:
+      description: Скидка должна увеличиваться с каждым уровнем
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 694707813
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: Discount must increase with each level
+    MaximumNumberOfLevels:
+      description: Максимальное количество уровней
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 694707813
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: "Maximum number of levels: 3"
+    DiscountMustInteger:
+      description: Скидка должна быть целым числом
+      value:
+        id: 128460434
+        alreadyExists: false
+        results:
+        - nmId: 694707813
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: Discount must be an integer
+    Result208V3:
+      description: Такая загрузка уже есть
+      value:
+        status: 208
+        title: Already Reported
+        detail: This task already exists
+        requestId: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+        origin: discounts-prices
     Result403:
       description: Доступ запрещён
       value:
         data: null
         error: true
         errorText: Access denied
+    Result403V3:
+      description: Доступ запрещён
+      value:
+        status: 403
+        title: Forbidden
+        detail: Access denied
+        requestId: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+        origin: discounts-prices
     Result409:
       description: Изменение цен и скидок недоступно во время смены валюты
       value:
@@ -6642,6 +6904,28 @@ components:
           schema:
             $ref: "#/components/schemas/_api_v2_upload_task_club_discount_post_request"
       required: true
+    B2BWholesaleTaskRequest:
+      content:
+        application/json:
+          example:
+            data:
+            - nmId: 1
+              wholesaleDiscountThreshold:
+              - minQuantity: 10
+                wholesaleDiscount: 10
+                level: 1
+            - nmId: 694707813
+              wholesaleDiscountThreshold:
+              - minQuantity: 11
+                wholesaleDiscount: 14
+                level: 1
+              - minQuantity: 18
+                wholesaleDiscount: 19
+                level: 3
+          schema:
+            $ref: "#/components/schemas/postV1UploadTaskB2bWholesale_request"
+      description: Установка оптовых скидок для B2B
+      required: true
     FilterPost:
       content:
         application/json:
@@ -6754,6 +7038,31 @@ components:
           schema:
             $ref: "#/components/schemas/TaskCreated"
       description: Успешно
+    SuccessTaskResponseV3:
+      content:
+        application/json:
+          examples:
+            MultiItemResponse:
+              $ref: "#/components/examples/MultiItemResponse"
+            SuccessTrue:
+              $ref: "#/components/examples/SuccessTrue"
+            InvalidItemNo:
+              $ref: "#/components/examples/InvalidItemNoV3"
+            NewDiscountOutsideAllowedRange:
+              $ref: "#/components/examples/NewDiscountOutsideAllowedRange"
+            NewNumberItemsOutsideAllowedRange:
+              $ref: "#/components/examples/NewNumberItemsOutsideAllowedRange"
+            NumberItemsMustIncreaseWithEachLevel:
+              $ref: "#/components/examples/NumberItemsMustIncreaseWithEachLevel"
+            DiscountMustIncreaseWithEachLevel:
+              $ref: "#/components/examples/DiscountMustIncreaseWithEachLevel"
+            MaximumNumberOfLevels:
+              $ref: "#/components/examples/MaximumNumberOfLevels"
+            DiscountMustInteger:
+              $ref: "#/components/examples/DiscountMustInteger"
+          schema:
+            $ref: "#/components/schemas/postV1UploadTaskB2bWholesale_200_response"
+      description: Успешно
     ResponseQuarantineGoods:
       content:
         application/json:
@@ -6774,6 +7083,15 @@ components:
                 errorText: This task already exists
           schema:
             $ref: "#/components/schemas/RequestAlreadyExistsError"
+      description: Такая загрузка уже есть
+    Responses208V3:
+      content:
+        application/json:
+          examples:
+            Result208:
+              $ref: "#/components/examples/Result208V3"
+          schema:
+            $ref: "#/components/schemas/postV1UploadTaskB2bWholesale_208_response"
       description: Такая загрузка уже есть
     StatusNotAcceptable:
       content:
@@ -7029,6 +7347,41 @@ components:
           description: Текст ошибки
           type: string
       type: object
+    ResponseErrorV3:
+      example:
+        status: 400
+        title: Bad Request
+        detail: Invalid data format
+        requestId: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+        origin: discounts-prices
+      properties:
+        status:
+          description: HTTP статус-код
+          example: 400
+          type: integer
+        title:
+          description: Заголовок ошибки
+          example: Bad Request
+          type: string
+        detail:
+          description: Детали ошибки
+          example: Invalid data format
+          type: string
+        requestId:
+          description: ID запроса
+          example: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+          type: string
+        origin:
+          description: ID внутреннего сервиса WB
+          example: discounts-prices
+          type: string
+      required:
+      - detail
+      - origin
+      - requestId
+      - status
+      - title
+      type: object
     RequestAlreadyExistsError:
       example:
         data:
@@ -7152,6 +7505,57 @@ components:
       - clubDiscount
       - nmID
       type: object
+    B2BWholesale:
+      description: Товары и оптовые скидки для B2B
+      items:
+        $ref: "#/components/schemas/B2BWholesale_inner"
+      maxItems: 1000
+      minItems: 1
+      type: array
+    WholesaleDiscountThresholdReq:
+      properties:
+        minQuantity:
+          description: Минимальное количество единиц товара для скидки
+          example: 10
+          type: integer
+        wholesaleDiscount:
+          description: "Скидка, %.<br>Чтобы удалить скидку, укажите `0`. Такой зап\
+            рос одновременно удалит скидки на этом уровне и на всех более высоких\
+            \ уровнях `level` — вне зависимости от указания их в запросе"
+          example: 10
+          type: integer
+        level:
+          description: Уровень скидки
+          example: 1
+          type: integer
+      required:
+      - level
+      - minQuantity
+      - wholesaleDiscount
+      type: object
+    WholesaleDiscountThresholdRes:
+      example:
+        minQuantity: 10
+        wholesaleDiscount: 10
+        level: 1
+      properties:
+        minQuantity:
+          description: Минимальное количество единиц товара для скидки
+          example: 10
+          type: integer
+        wholesaleDiscount:
+          description: "Скидка, %"
+          example: 10
+          type: integer
+        level:
+          description: Уровень скидки
+          example: 1
+          type: integer
+      required:
+      - level
+      - minQuantity
+      - wholesaleDiscount
+      type: object
     GoodsList:
       description: Размеры товара
       example:
@@ -7172,6 +7576,13 @@ components:
         discount: 30
         clubDiscount: 5
         editableSizePrice: true
+        wholesaleDiscountThreshold:
+        - minQuantity: 10
+          wholesaleDiscount: 10
+          level: 1
+        - minQuantity: 10
+          wholesaleDiscount: 10
+          level: 1
         isBadTurnover: true
       properties:
         nmID:
@@ -7206,6 +7617,11 @@ components:
               - `false` — нельзя
           example: true
           type: boolean
+        wholesaleDiscountThreshold:
+          description: Оптовые скидки разных уровней для B2B
+          items:
+            $ref: "#/components/schemas/WholesaleDiscountThresholdRes"
+          type: array
         isBadTurnover:
           description: |
             Признак неликвидного товара:
@@ -7377,6 +7793,7 @@ components:
         price:
           description: Цена
           example: 1500
+          nullable: true
           type: integer
         currencyIsoCode4217:
           description: "Валюта, по стандарту ISO 4217"
@@ -9948,6 +10365,139 @@ components:
       required:
       - data
       type: object
+    postV1UploadTaskB2bWholesale_request:
+      properties:
+        data:
+          description: Товары и оптовые скидки для B2B
+          items:
+            $ref: "#/components/schemas/B2BWholesale_inner"
+          maxItems: 1000
+          minItems: 1
+          type: array
+      required:
+      - data
+      type: object
+    postV1UploadTaskB2bWholesale_200_response_results_inner_error:
+      description: Ошибка. При `"success":false`
+      example:
+        status: 400
+        title: Bad Request
+        detail: Number of items must increase with each level
+      properties:
+        status:
+          description: HTTP статус-код
+          example: 400
+          type: integer
+        title:
+          description: Заголовок ошибки
+          example: Bad Request
+          type: string
+        detail:
+          description: Детали ошибки
+          example: Number of items must increase with each level
+          type: string
+      required:
+      - detail
+      - status
+      - title
+      type: object
+    postV1UploadTaskB2bWholesale_200_response_results_inner:
+      example:
+        nmId: 1
+        success: false
+        error:
+          status: 400
+          title: Bad Request
+          detail: Number of items must increase with each level
+      properties:
+        nmId:
+          description: Артикул WB
+          example: 1
+          type: integer
+        success:
+          description: |
+            Успешна ли установка скидки на товар:
+              - `false` — неуспешна
+              - `true` — успешна
+          example: false
+          type: boolean
+        error:
+          $ref: "#/components/schemas/postV1UploadTaskB2bWholesale_200_response_results_inner_error"
+      required:
+      - nmId
+      - success
+      type: object
+    postV1UploadTaskB2bWholesale_200_response:
+      example:
+        id: 0
+        alreadyExists: false
+        results:
+        - nmId: 1
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: Number of items must increase with each level
+        - nmId: 1
+          success: false
+          error:
+            status: 400
+            title: Bad Request
+            detail: Number of items must increase with each level
+      properties:
+        id:
+          description: ID загрузки
+          type: integer
+        alreadyExists:
+          description: |
+            Дублирование загрузки: `true` — такая загрузка уже есть
+          example: false
+          type: boolean
+        results:
+          description: Результаты обработки запроса
+          items:
+            $ref: "#/components/schemas/postV1UploadTaskB2bWholesale_200_response_results_inner"
+          type: array
+      required:
+      - alreadyExists
+      - id
+      - results
+      type: object
+    postV1UploadTaskB2bWholesale_208_response:
+      example:
+        status: 208
+        title: Already Reported
+        detail: This task already exists
+        requestId: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+        origin: discounts-prices
+      properties:
+        status:
+          description: HTTP статус-код
+          example: 208
+          type: integer
+        title:
+          description: Заголовок ошибки
+          example: Already Reported
+          type: string
+        detail:
+          description: Детали ошибки
+          example: This task already exists
+          type: string
+        requestId:
+          description: ID запроса
+          example: 4b387d2e-13b0-4be7-a34c-be01fb35fd2d
+          type: string
+        origin:
+          description: ID внутреннего сервиса WB
+          example: discounts-prices
+          type: string
+      required:
+      - detail
+      - origin
+      - requestId
+      - status
+      - title
+      type: object
     _api_v2_history_tasks_get_200_response:
       example:
         data:
@@ -10163,6 +10713,13 @@ components:
           discount: 30
           clubDiscount: 5
           editableSizePrice: true
+          wholesaleDiscountThreshold:
+          - minQuantity: 10
+            wholesaleDiscount: 10
+            level: 1
+          - minQuantity: 10
+            wholesaleDiscount: 10
+            level: 1
           isBadTurnover: true
         - nmID: 98486
           vendorCode: "07326060"
@@ -10181,6 +10738,13 @@ components:
           discount: 30
           clubDiscount: 5
           editableSizePrice: true
+          wholesaleDiscountThreshold:
+          - minQuantity: 10
+            wholesaleDiscount: 10
+            level: 1
+          - minQuantity: 10
+            wholesaleDiscount: 10
+            level: 1
           isBadTurnover: true
       properties:
         listGoods:
@@ -10212,6 +10776,13 @@ components:
             discount: 30
             clubDiscount: 5
             editableSizePrice: true
+            wholesaleDiscountThreshold:
+            - minQuantity: 10
+              wholesaleDiscount: 10
+              level: 1
+            - minQuantity: 10
+              wholesaleDiscount: 10
+              level: 1
             isBadTurnover: true
           - nmID: 98486
             vendorCode: "07326060"
@@ -10230,6 +10801,13 @@ components:
             discount: 30
             clubDiscount: 5
             editableSizePrice: true
+            wholesaleDiscountThreshold:
+            - minQuantity: 10
+              wholesaleDiscount: 10
+              level: 1
+            - minQuantity: 10
+              wholesaleDiscount: 10
+              level: 1
             isBadTurnover: true
         error: false
         errorText: ""
@@ -10713,6 +11291,21 @@ components:
             Флаг дублирования загрузки: `true` — такая загрузка уже есть
           example: false
           type: boolean
+      type: object
+    B2BWholesale_inner:
+      properties:
+        nmId:
+          description: Артикул WB
+          example: 694707813
+          type: integer
+        wholesaleDiscountThreshold:
+          description: Оптовые скидки разных уровней для B2B
+          items:
+            $ref: "#/components/schemas/WholesaleDiscountThresholdReq"
+          type: array
+      required:
+      - nmId
+      - wholesaleDiscountThreshold
       type: object
     GoodsList_sizes_inner:
       example:

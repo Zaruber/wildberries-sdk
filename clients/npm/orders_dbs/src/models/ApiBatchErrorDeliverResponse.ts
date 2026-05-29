@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Заказы DBS
- * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller). 
+ * <div class=\"description_important\">   Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers) заказов DBS (Delivery by Seller). 
  *
  * The version of the OpenAPI document: order
  * 
@@ -40,14 +40,14 @@ export interface ApiBatchErrorDeliverResponse {
      * - `NotFound` — сборочное задание не найдено
      * - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
      * - `ImeiIsNotFilled` — не заполнен IMEI
-     * - `MetaValidationFail` — ошибки валидации метаданных
+     * - `MetaValidationFail` — ошибки валидации идентификатора маркировки
      * 
      * @type {string}
      * @memberof ApiBatchErrorDeliverResponse
      */
     detail?: string;
     /**
-     * Детали ошибки валидации метаданных
+     * Детали ошибки валидации идентификаторов маркировки
      * @type {Array<ApiBatchErrorDeliverResponseMetaDetailsInner>}
      * @memberof ApiBatchErrorDeliverResponse
      */

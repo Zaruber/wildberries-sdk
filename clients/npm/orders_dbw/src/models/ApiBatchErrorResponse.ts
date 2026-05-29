@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Заказы DBW
- * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
+ * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [идентификаторы маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
  *
  * The version of the OpenAPI document: ordersdbw
  * 
@@ -40,14 +40,14 @@ export interface ApiBatchErrorResponse {
      * - `NotFound` — сборочное задание не найдено
      * - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
      * - `ImeiIsNotFilled` — не заполнен IMEI
-     * - `MetaValidationFail` — ошибки валидации метаданных
+     * - `MetaValidationFail` — ошибки валидации идентификаторов маркировки
      * 
      * @type {string}
      * @memberof ApiBatchErrorResponse
      */
     detail: string;
     /**
-     * Детали ошибки валидации метаданных
+     * Детали ошибки валидации идентификаторов маркировки
      * @type {Array<ApiBatchErrorResponseMetaDetailsInner>}
      * @memberof ApiBatchErrorResponse
      */

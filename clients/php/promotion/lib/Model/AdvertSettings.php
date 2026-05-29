@@ -241,21 +241,6 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const PAYMENT_TYPE_CPM = 'cpm';
-    public const PAYMENT_TYPE_CPC = 'cpc';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPaymentTypeAllowableValues()
-    {
-        return [
-            self::PAYMENT_TYPE_CPM,
-            self::PAYMENT_TYPE_CPC,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -307,15 +292,6 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['payment_type'] === null) {
             $invalidProperties[] = "'payment_type' can't be null";
         }
-        $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!is_null($this->container['payment_type']) && !in_array($this->container['payment_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'payment_type', must be one of '%s'",
-                $this->container['payment_type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -358,16 +334,6 @@ class AdvertSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($payment_type)) {
             throw new \InvalidArgumentException('non-nullable payment_type cannot be null');
-        }
-        $allowedValues = $this->getPaymentTypeAllowableValues();
-        if (!in_array($payment_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'payment_type', must be one of '%s'",
-                    $payment_type,
-                    implode("', '", $allowedValues)
-                )
-            );
         }
         $this->container['payment_type'] = $payment_type;
 

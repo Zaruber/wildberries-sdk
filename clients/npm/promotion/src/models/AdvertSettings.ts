@@ -32,10 +32,10 @@ export interface AdvertSettings {
      * - `cpm` — за показы
      * - `cpc` — за клик
      * 
-     * @type {AdvertSettingsPaymentTypeEnum}
+     * @type {string}
      * @memberof AdvertSettings
      */
-    paymentType: AdvertSettingsPaymentTypeEnum;
+    paymentType: string;
     /**
      * Название кампании
      * @type {string}
@@ -49,17 +49,6 @@ export interface AdvertSettings {
      */
     placements: AdvV0AuctionPlacementsPutRequestPlacementsInnerPlacements;
 }
-
-
-/**
- * @export
- */
-export const AdvertSettingsPaymentTypeEnum = {
-    Cpm: 'cpm',
-    Cpc: 'cpc'
-} as const;
-export type AdvertSettingsPaymentTypeEnum = typeof AdvertSettingsPaymentTypeEnum[keyof typeof AdvertSettingsPaymentTypeEnum];
-
 
 /**
  * Check if a given object implements the AdvertSettings interface.
