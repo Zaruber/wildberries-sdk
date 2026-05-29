@@ -5,7 +5,7 @@ info:
   description: |
     С помощью методов Заказы DBW (Доставка курьером WB) вы можете:
       - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания
-      - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий
+      - получать, добавлять, редактировать и удалять [идентификаторы маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers) сборочных заданий
 
     <div class="description_ref">
       Узнать, как использовать методы в бизнес-кейсах, можно в <a href="https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw">инструкции</a> по работе с <strong>заказами DBW</strong>
@@ -16,7 +16,8 @@ security:
 tags:
   - name: Сборочные задания DBW
     description: ''
-  - name: Метаданные DBW
+  - name: Идентификаторы маркировки DBW
+    x-displayName: Идентификаторы маркировки DBW
     description: ''
 paths:
   /api/v3/dbw/orders/new:
@@ -37,7 +38,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -89,7 +90,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -167,7 +168,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -227,7 +228,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -314,7 +315,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -409,7 +410,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -484,7 +485,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -620,7 +621,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -692,7 +693,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -753,7 +754,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>управление сборочными заданиями</li>
         </ul> 
 
@@ -856,24 +857,24 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBW
-      summary: Получить метаданные сборочных заданий
+        - Идентификаторы маркировки DBW
+      summary: Получить идентификаторы маркировки сборочных заданий
       description: |
-        Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) и статусы их валидации.
+        Метод возвращает идентификаторы маркировки [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) и статусы их валидации.
         <br><br>
-        Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get), поле `requiredMeta`.
+        Перечень идентификаторов маркировки, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get), поле `requiredMeta`.
         <br><br>
-        Возможные метаданные:
-          - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-          - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
-          - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
+        Возможные идентификаторы маркировки:
+          - `imei` — [IMEI](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `uin` — [УИН](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
+          - `gtin` — [GTIN](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
 
           <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -927,16 +928,16 @@ paths:
       x-readonly-method: false
       x-category: marketplace
       tags:
-        - Метаданные DBW
-      summary: Удалить метаданные сборочных заданий
+        - Идентификаторы маркировки DBW
+      summary: Удалить идентификаторы маркировки сборочных заданий
       description: |
-        Метод удаляет значение указанных [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) для переданного ключа.
+        Метод удаляет значение указанных [идентификаторов маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) для переданного ключа.
         <br><br>
-        В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:
-          - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-          - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
-          - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-          - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
+        В одном запросе можно удалить идентификаторы маркировки только одного типа. Укажите тип идентификаторов маркировки в запросе:
+          - `imei` — [IMEI](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `uin` — [УИН](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
+          - `gtin` — [GTIN](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
 
         Можно передать только один ключ.
 
@@ -944,7 +945,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -1004,8 +1005,8 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBW
-      summary: Получить метаданные сборочного задания
+        - Идентификаторы маркировки DBW
+      summary: Получить идентификаторы маркировки сборочного задания
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)
@@ -1014,7 +1015,7 @@ paths:
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -1061,9 +1062,9 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBW
+        - Идентификаторы маркировки DBW
       deprecated: true
-      summary: Удалить метаданные сборочного задания
+      summary: Удалить идентификаторы маркировки сборочного задания
       description: |
         Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
       parameters:
@@ -1072,7 +1073,7 @@ paths:
           in: query
           schema:
             type: string
-          description: Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`). Передаётся только одно значение
+          description: Название идентификатора маркировки для удаления (`imei`, `uin`, `gtin`, `sgtin`). Передаётся только одно значение
       responses:
         '204':
           description: Удалено
@@ -1094,7 +1095,7 @@ paths:
         '403':
           $ref: '#/components/responses/AccessDenied'
         '409':
-          description: Ошибка удаления метаданных
+          description: Ошибка удаления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1111,19 +1112,19 @@ paths:
       x-readonly-method: false
       x-category: marketplace
       tags:
-        - Метаданные DBW
+        - Идентификаторы маркировки DBW
       summary: Закрепить коды маркировки Честного знака за сборочными заданиями
       description: |
-        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` — на сборке.
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки можно, только если в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` — на сборке.
         <br><br>
-        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
+        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
         <ul>
             <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
+            <li>получение и удаление идентификаторов маркировки</li>
             <li>методы сборочных заданий</li>
         </ul> 
 
@@ -1183,7 +1184,7 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBW
+        - Идентификаторы маркировки DBW
       deprecated: true
       summary: Закрепить за сборочным заданием код маркировки товара
       description: |
@@ -1230,7 +1231,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          description: Ошибка добавления маркировки
+          description: Ошибка добавления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1249,17 +1250,17 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBW
+        - Идентификаторы маркировки DBW
       summary: Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
       description: |
-        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный идентификационный номер.
+        Метод обновляет УИН в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный идентификационный номер.
         <br><br>
         У одного сборочного задания может быть только один УИН.
 
         Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBW</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBW</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1308,7 +1309,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          description: Ошибка добавления маркировки
+          description: Ошибка добавления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1327,17 +1328,17 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBW
+        - Идентификаторы маркировки DBW
       summary: Закрепить за сборочным заданием IMEI
       description: |
-        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
+        Метод обновляет IMEI в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
         <br><br>
         У одного сборочного задания может быть только один IMEI.
 
         Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBW</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBW</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1386,7 +1387,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          description: Ошибка добавления маркировки
+          description: Ошибка добавления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1405,17 +1406,17 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBW
+        - Идентификаторы маркировки DBW
       summary: Закрепить за сборочным заданием GTIN
       description: |
-        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный ID товара в Беларуси.
+        Метод обновляет GTIN в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный ID товара в Беларуси.
         <br><br>
         У одного сборочного задания может быть только один GTIN.
 
         Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBW</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBW</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1464,7 +1465,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          description: Ошибка добавления маркировки
+          description: Ошибка добавления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1739,11 +1740,11 @@ components:
             - `NotFound` — сборочное задание не найдено
             - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
             - `ImeiIsNotFilled` — не заполнен IMEI
-            - `MetaValidationFail` — ошибки валидации метаданных
+            - `MetaValidationFail` — ошибки валидации идентификаторов маркировки
           example: NotFound
         metaDetails:
           type: array
-          description: Детали ошибки валидации метаданных
+          description: Детали ошибки валидации идентификаторов маркировки
           items:
             type: object
             required:
@@ -1752,12 +1753,12 @@ components:
             properties:
               key:
                 type: string
-                description: Метаданные
+                description: Идентификатор маркировки
                 example: sgtin
               value:
                 type: string
                 nullable: true
-                description: Значение метаданных
+                description: Значение идентификатора маркировки
                 example: '1234567890'
               decision:
                 type: string
@@ -1841,7 +1842,7 @@ components:
             - uin
             - gtin
             - sgtin
-          description: Название метаданных для удаления. Передаётся только одно значение
+          description: Название идентификатора маркировки для удаления. Передаётся только одно значение
           example: sgtin
         ordersIds:
           type: array
@@ -2001,7 +2002,7 @@ components:
           example: f1787bd2d1fdс35d6f537316514у4a05
         orders:
           type: array
-          description: Метаданные сборочных заданий и статусы их валидации
+          description: Идентификаторы маркировки сборочных заданий и статусы их валидации
           items:
             type: object
             required:
@@ -2032,18 +2033,18 @@ components:
                       description: Дополнительная информация об ошибке
               metaDetails:
                 type: array
-                description: Метаданные и статусы их валидации
+                description: Идентификаторы маркировки и статусы их валидации
                 items:
                   type: object
                   properties:
                     key:
                       type: string
                       example: sgtin
-                      description: Метаданные
+                      description: Идентификатор маркировки
                     value:
                       type: string
                       nullable: true
-                      description: Значение метаданных
+                      description: Значение идентификатора маркировки
                       example: '123456789012345'
                     decision:
                       type: string
@@ -2184,7 +2185,7 @@ components:
           nullable: true
           example: 504658
         requiredMeta:
-          description: Список метаданных, доступных для сборочного задания. [Указывать IMEI](./orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
+          description: Список идентификаторов маркировки, доступных для сборочного задания. [Указывать IMEI](./orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
           type: array
           nullable: true
           items:
@@ -2509,7 +2510,7 @@ components:
                 example: 1234567890
     Meta:
       type: object
-      description: Метаданные сборочного задания
+      description: Идентификаторы маркировки сборочного задания
       nullable: true
       properties:
         imei:

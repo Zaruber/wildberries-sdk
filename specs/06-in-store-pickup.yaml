@@ -3,7 +3,7 @@ info:
   title: Заказы Самовывоз
   x-file-name: in-store-pickup
   description: |
-    Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [метаданными](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz) заказов модели Самовывоз.
+    Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [идентификаторами маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers) заказов модели Самовывоз.
   version: instorepickup
 servers:
   - url: https://marketplace-api.wildberries.ru
@@ -12,7 +12,8 @@ security:
 tags:
   - name: Сборочные задания Самовывоз
     description: ''
-  - name: Метаданные Самовывоз
+  - name: Идентификаторы маркировки Самовывоз
+    x-displayName: Идентификаторы маркировки Самовывоз
     description: ''
 paths:
   /api/v3/click-collect/orders/new:
@@ -471,16 +472,16 @@ paths:
       x-readonly-method: true
       x-category: marketplace
       tags:
-        - Метаданные Самовывоз
-      summary: Получить метаданные сборочных заданий
+        - Идентификаторы маркировки Самовывоз
+      summary: Получить идентификаторы маркировки сборочных заданий
       description: |
-        Метод возвращает метаданные [сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz).
+        Метод возвращает идентификаторы маркировки [сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz).
         <br><br>
-        Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1new/get), поле `requiredMeta`.
+        Перечень идентификаторов маркировки, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1new/get), поле `requiredMeta`.
         <br><br>
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных Самовывоз</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки Самовывоз</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -513,15 +514,15 @@ paths:
       x-readonly-method: false
       x-category: marketplace
       tags:
-        - Метаданные Самовывоз
-      summary: Удалить метаданные сборочных заданий
+        - Идентификаторы маркировки Самовывоз
+      summary: Удалить идентификаторы маркировки сборочных заданий
       description: |
-        Метод удаляет значения указанных [метаданных](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) для нескольких сборочных заданий.
+        Метод удаляет значения указанных [идентификаторов маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) для нескольких сборочных заданий.
         <br><br>
-        Одним запросом можно удалить метаданные только одного типа: `imei`, `uin`, `gtin` или `sgtin`.
+        Одним запросом можно удалить идентификаторы маркировки только одного типа: `imei`, `uin`, `gtin` или `sgtin`.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных Самовывоз</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки Самовывоз</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -554,16 +555,16 @@ paths:
       x-readonly-method: false
       x-category: marketplace
       tags:
-        - Метаданные Самовывоз
+        - Идентификаторы маркировки Самовывоз
       summary: Закрепить коды маркировки Честного знака за сборочными заданиями
       description: |
-        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки Честного знака можно, только если в [метаданных сборочного задания](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`.
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки Честного знака можно, только если в [идентификаторах маркировки сборочного задания](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`.
         <br><br>
-        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post).
+        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post).
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки Самовывоз</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -597,15 +598,15 @@ paths:
       x-readonly-method: false
       x-category: marketplace
       tags:
-        - Метаданные Самовывоз
+        - Идентификаторы маркировки Самовывоз
       summary: Закрепить УИН за сборочными заданиями
       description: |
-        Метод обновляет УИН, уникальные идентификационные номера, в [метаданных сборочных заданий](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post). У одного сборочного задания может быть
+        Метод обновляет УИН, уникальные идентификационные номера, в [идентификаторах маркировки сборочных заданий](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post). У одного сборочного задания может быть
         только один УИН. Добавлять УИН можно только для сборочных заданий в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post)
         `confirm` и доставка которых осуществляется силами WB.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки Самовывоз</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -639,15 +640,15 @@ paths:
       x-readonly-method: false
       x-category: marketplace
       tags:
-        - Метаданные Самовывоз
+        - Идентификаторы маркировки Самовывоз
       summary: Закрепить IMEI за сборочными заданиями
       description: |
-        Метод обновляет IMEI в [метаданных сборочных заданий](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post). У одного сборочного задания может
+        Метод обновляет IMEI в [идентификаторах маркировки сборочных заданий](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post). У одного сборочного задания может
         быть только один IMEI. Добавлять IMEI можно только для сборочных заданий в
         [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`, если их доставка осуществляется силами WB.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки Самовывоз</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -681,16 +682,16 @@ paths:
       x-readonly-method: false
       x-category: marketplace
       tags:
-        - Метаданные Самовывоз
+        - Идентификаторы маркировки Самовывоз
       summary: Закрепить GTIN за сборочными заданиями
       description: |
-        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных
+        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [идентификаторах маркировки](/openapi/in-store-pickup#tag/in-store-pickup-label-identifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных
         заданий. У одного сборочного задания может быть только один GTIN.
         Добавлять GTIN можно только для сборочных заданий в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm` и
         доставка которых осуществляется силами WB.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки Самовывоз</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -832,7 +833,7 @@ components:
           type: array
           nullable: true
           description: |
-            Список метаданных, доступных для сборочного задания
+            Список идентификаторов маркировки, доступных для сборочного задания
           items:
             type: string
         article:
@@ -1486,7 +1487,7 @@ components:
       properties:
         meta:
           type: array
-          description: Метаданные сборочных заданий
+          description: Идентификаторы маркировки сборочных заданий
           items:
             $ref: '#/components/schemas/api.OrderMetaV2'
     api.OrderMetaV2:
@@ -1542,7 +1543,7 @@ components:
             - gtin
             - sgtin
           example: imei
-          description: Тип метаданных для удаления. Передаётся только одно значение
+          description: Тип идентификаторов маркировки для удаления. Передаётся только одно значение
         ordersIds:
           type: array
           description: Список ID сборочных заданий

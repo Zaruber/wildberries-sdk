@@ -7,14 +7,15 @@ info:
       Узнать больше о заказах DBS можно в <a href="https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56">справочном центре</a>
     </div>
 
-    Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller).
+    Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers) заказов DBS (Delivery by Seller).
   x-file-name: orders-dbs
 security:
   - HeaderApiKey: []
 tags:
   - name: Сборочные задания DBS
     description: ''
-  - name: Метаданные DBS
+  - name: Идентификаторы маркировки DBS
+    x-displayName: Идентификаторы маркировки DBS
     description: ''
 paths:
   /api/v3/dbs/orders/new:
@@ -832,7 +833,7 @@ paths:
                                 description: |
                                   - `NotFound` — сборочное задание не найдено
                                   - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
-                                  - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
+                                  - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
                                 example: NotFound
                           type: array
                           description: Детали ошибки
@@ -938,21 +939,21 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
-      summary: Получить метаданные сборочных заданий
+        - Идентификаторы маркировки DBS
+      summary: Получить идентификаторы маркировки сборочных заданий
       description: |
-        Метод возвращает метаданные [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и статусы их валидации. <br>
-        Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br>
-        Возможные метаданные:
-          - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
-          - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
-          - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
-          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
+        Метод возвращает идентификаторы маркировки [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и статусы их валидации. <br>
+        Перечень идентификаторов маркировки, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br>
+        Возможные идентификаторы маркировки:
+          - `imei` — [IMEI](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
+          - `uin` — [УИН](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
+          - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
+          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
-        Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
+        Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет идентификаторов маркировки и добавить их нельзя.<br>
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки DBS</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1007,14 +1008,14 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
-      summary: Получить метаданные сборочных заданий
+        - Идентификаторы маркировки DBS
+      summary: Получить идентификаторы маркировки сборочных заданий
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки DBS</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1069,20 +1070,20 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
-      summary: Удалить метаданные сборочных заданий
+        - Идентификаторы маркировки DBS
+      summary: Удалить идентификаторы маркировки сборочных заданий
       description: |
-        Метод удаляет значение указанных [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) для нескольких сборочных заданий.
+        Метод удаляет значение указанных [идентификаторов маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) для нескольких сборочных заданий.
         <br><br>
-        В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:
-          - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
-          - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
-          - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
-          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
+        В одном запросе можно удалить идентификаторы маркировки только одного типа. Укажите тип идентификаторов маркировки в запросе:
+          - `imei` — [IMEI](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
+          - `uin` — [УИН](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
+          - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
+          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки DBS</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1127,7 +1128,7 @@ paths:
                 requestId: f1787bd2d1fdс35d6f537316514у4a05
                 title: AccessDenied
         '409':
-          description: Ошибка удаления метаданных
+          description: Ошибка удаления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1143,16 +1144,16 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
+        - Идентификаторы маркировки DBS
       summary: Закрепить коды маркировки Честного знака за сборочными заданиями
       description: |
-        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки Честного знака можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки Честного знака можно, только если в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
         <br><br>
-        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
+        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
 
         | Тип | Период | Лимит | Интервал | Всплеск |
@@ -1211,15 +1212,15 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
+        - Идентификаторы маркировки DBS
       summary: Закрепить УИН за сборочными заданиями
       description: |
-        Метод обновляет УИН, уникальный идентификационный номер, в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).<br>
+        Метод обновляет УИН, уникальный идентификационный номер, в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).<br>
         У одного сборочного задания может быть только один УИН.
         Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1264,7 +1265,7 @@ paths:
                 requestId: f1787bd2d1fdс35d6f537316514у4a05
                 title: AccessDenied
         '409':
-          description: Ошибка обновления метаданных
+          description: Ошибка обновления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1280,15 +1281,15 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
+        - Идентификаторы маркировки DBS
       summary: Закрепить IMEI за сборочными заданиями
       description: |
-        Метод обновляет IMEI в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Метод обновляет IMEI в [идентификаторых маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
         У одного сборочного задания может быть только один IMEI.
         Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1333,7 +1334,7 @@ paths:
                 requestId: f1787bd2d1fdс35d6f537316514у4a05
                 title: IncorrectRequest
         '409':
-          description: Ошибка обновления метаданных
+          description: Ошибка обновления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1349,15 +1350,15 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
+        - Идентификаторы маркировки DBS
       summary: Закрепить GTIN за сборочными заданиями
       description: |
-        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
         У одного сборочного задания может быть только один GTIN.
         Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1402,7 +1403,7 @@ paths:
                 requestId: f1787bd2d1fdс35d6f537316514у4a05
                 title: AccessDenied
         '409':
-          description: Ошибка обновления метаданных
+          description: Ошибка обновления идентификаторов маркировки
           content:
             application/json:
               schema:
@@ -1418,17 +1419,17 @@ paths:
       security:
         - HeaderApiKey: []
       tags:
-        - Метаданные DBS
+        - Идентификаторы маркировки DBS
       summary: Закрепить за сборочными заданиями номер ДТ
       description: |
-        Метод обновляет номер ДТ — декларации на товары — в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
+        Метод обновляет номер ДТ — декларации на товары — в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
         <br><br>
         У одного сборочного задания может быть только один ДТ.
 
         Добавлять номер ДТ можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver`.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
@@ -1539,7 +1540,7 @@ components:
     FailedToUpdateMeta:
       value:
         code: FailedToUpdateMeta
-        message: Не удалось обновить метаданные сборочного задания. Убедитесь, что сборочное задание удовлетворяет всем необходимым требованиям (сборочное задание существует, находится в статусе "На сборке", сборочному заданию доступны метаданные см. описание метода **Получить метаданные сборочного задания**)
+        message: Не удалось обновить идентификаторы маркировки сборочного задания. Убедитесь, что сборочное задание удовлетворяет всем необходимым требованиям (сборочное задание существует, находится в статусе "На сборке", сборочному заданию доступны идентификаторы маркировки см. описание метода **Получить идентификаторы маркировки сборочного задания**)
     StatusMismatch:
       value:
         code: StatusMismatch
@@ -1760,7 +1761,7 @@ components:
           nullable: true
           example: 504658
         requiredMeta:
-          description: Список метаданных, доступных для сборочного задания. [Указывать IMEI](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
+          description: Список идентификаторов маркировки, доступных для сборочного задания. [Указывать IMEI](./orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
           type: array
           nullable: true
           items:
@@ -2227,7 +2228,7 @@ components:
             - sgtin
             - customsDeclaration
           example: imei
-          description: Название метаданных для удаления. Передаётся только одно значение
+          description: Название идентификатора маркировки для удаления. Передаётся только одно значение
         orderIds:
           type: array
           description: Список ID сборочных заданий
@@ -2439,7 +2440,7 @@ components:
           example: f1787bd2d1fdс35d6f537316514у4a05
         orders:
           type: array
-          description: Метаданные сборочных заданий и статусы их валидации
+          description: Идентификаторы маркировки сборочных заданий и статусы их валидации
           items:
             type: object
             required:
@@ -2470,18 +2471,18 @@ components:
                       description: Дополнительная информация об ошибке
               metaDetails:
                 type: array
-                description: Метаданные и статусы их валидации
+                description: Идентификаторы маркировки и статусы их валидации
                 items:
                   type: object
                   properties:
                     key:
                       type: string
                       example: sgtin
-                      description: Метаданные
+                      description: Идентификатор маркировки
                     value:
                       type: string
                       nullable: true
-                      description: Значение метаданных
+                      description: Значение идентификатора маркировки
                       example: '123456789012345'
                     decision:
                       type: string
@@ -2530,7 +2531,7 @@ components:
       properties:
         meta:
           type: array
-          description: Метаданные сборочных заданий
+          description: Идентификаторы маркировки сборочных заданий
           items:
             $ref: '#/components/schemas/api.OrderMetaV2'
     api.OrderMetaV2:
@@ -2667,21 +2668,21 @@ components:
             - `NotFound` — сборочное задание не найдено
             - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
             - `ImeiIsNotFilled` — не заполнен IMEI
-            - `MetaValidationFail` — ошибки валидации метаданных
+            - `MetaValidationFail` — ошибки валидации идентификатора маркировки
           example: MetaValidationFail
         metaDetails:
           type: array
-          description: Детали ошибки валидации метаданных
+          description: Детали ошибки валидации идентификаторов маркировки
           items:
             type: object
             properties:
               key:
                 type: string
-                description: Метаданные
+                description: Идентификатор маркировки
                 example: sgtin
               value:
                 type: string
-                description: Значение метаданных
+                description: Значение идентификатора маркировки
                 example: '1234567890'
               decision:
                 type: string

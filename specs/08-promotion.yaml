@@ -4549,6 +4549,7 @@ components:
                 description: ID кампании
               nm_settings:
                 description: Настройки товаров
+                nullable: true
                 type: array
                 items:
                   $ref: '#/components/schemas/AdvertNMsSettings'
@@ -4626,9 +4627,6 @@ components:
       properties:
         payment_type:
           type: string
-          enum:
-            - cpm
-            - cpc
           description: |
             Тип оплаты:
             - `cpm` — за показы
