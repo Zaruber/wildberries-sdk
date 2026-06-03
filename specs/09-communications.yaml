@@ -109,7 +109,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -183,7 +183,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -269,7 +269,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 IsAnsweredErr400:
                   $ref: '#/components/examples/IsAnsweredErr400'
@@ -286,7 +286,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -499,7 +499,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr400:
                   $ref: '#/components/examples/FeedbackErr400'
@@ -512,7 +512,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -643,7 +643,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr400:
                   $ref: '#/components/examples/FeedbackErr400'
@@ -656,7 +656,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -665,10 +665,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr404:
                   $ref: '#/components/examples/FeedbackErr404'
+        '422':
+          description: Ошибка обработки параметров запроса
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
+              examples:
+                ResponsePatchQuestion:
+                  $ref: '#/components/examples/ResponsePatchQuestion'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/question:
@@ -823,7 +832,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -832,7 +841,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 responseGetQuestionByIdErrEx:
                   $ref: '#/components/examples/ResponseGetQuestionByIdErrEx'
@@ -907,7 +916,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -993,7 +1002,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 IsAnsweredErr400:
                   $ref: '#/components/examples/IsAnsweredErr400'
@@ -1010,7 +1019,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -1188,7 +1197,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr400:
                   $ref: '#/components/examples/FeedbackErr400'
@@ -1201,7 +1210,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
@@ -1402,7 +1411,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr400:
                   $ref: '#/components/examples/ResponseDoNotGetFeedback400'
@@ -1419,7 +1428,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 responseInaccessibleBackGoodError422:
                   $ref: '#/components/examples/responseInaccessibleBackGoodError422'
@@ -1731,7 +1740,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 ResponseGetFeedbackByIdErrEx:
                   $ref: '#/components/examples/ResponseGetFeedbackByIdErrEx'
@@ -1881,7 +1890,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr400:
                   $ref: '#/components/examples/FeedbackErr400'
@@ -1894,10 +1903,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/responsefeedbackErr'
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
               examples:
                 FeedbackErr403:
                   $ref: '#/components/examples/FeedbackErr403'
+        '422':
+          description: Ошибка обработки параметров запроса
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responseFeedbackQuestionErr'
+              examples:
+                ResponseGetFeedbackArchive:
+                  $ref: '#/components/examples/ResponseGetFeedbackArchive'
         '429':
           $ref: '#/components/responses/429'
   /api/feedbacks/v1/pins:
@@ -2978,6 +2996,22 @@ components:
         errorText: Невозможно получить отзыв по id
         additionalErrors: null
         requestId: 87a2fe4d-d28b-4bae-b824-c0f498c72702
+    ResponseGetFeedbackArchive:
+      description: Не удалось получить архивные отзывы по фильтру
+      value:
+        data: null
+        error: true
+        errorText: Не удалось получить архивные отзывы по фильтру
+        additionalErrors: null
+        requestId: 87a2fe4d-d28b-4bae-b824-c0f498c72702
+    ResponsePatchQuestion:
+      description: Не удалось отредактировать вопрос
+      value:
+        data: null
+        error: true
+        errorText: Не удалось отредактировать вопрос
+        additionalErrors: null
+        requestId: 87a2fe4d-d28b-4bae-b824-c0f498c72702
     ResponseDoNotGetFeedback400:
       description: Неправильный запрос
       value:
@@ -3018,7 +3052,7 @@ components:
         detail:
           type: string
           description: Детали ошибки
-    responsefeedbackErr:
+    responseFeedbackQuestionErr:
       type: object
       properties:
         data:
@@ -3368,7 +3402,9 @@ components:
       properties:
         date:
           type: string
-          description: Дата заказа
+          description: |
+            [Будет отключено 16 июня](https://dev.wildberries.ru/release-notes?id=534)
+          deprecated: true
         nmID:
           type: integer
           description: Артикул WB

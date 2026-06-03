@@ -1,6 +1,13 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.06.03)
+- Communications: во всех методах раздела заменена схема ошибок `responsefeedbackErr` → `responseFeedbackQuestionErr` (переименование/унификация модели ответа об ошибке)
+- Communications: для PATCH-операции по вопросам добавлен ответ `422 Unprocessable Entity` («Ошибка обработки параметров запроса») с примером `ResponsePatchQuestion`
+- Communications: для получения архивных отзывов добавлен ответ `422 Unprocessable Entity` («Ошибка обработки параметров запроса») с примером `ResponseGetFeedbackArchive`
+- Communications: добавлены новые examples в components: `ResponseGetFeedbackArchive`, `ResponsePatchQuestion`
+- Communications: поле `date` в одной из схем помечено как `deprecated: true` и добавлено описание о плановом отключении 16 июня (release-notes id=534)
+
 ### Changed (2026.05.30)
 - Общая информация: изменена разметка описания (обёртка в `<div class="api-block">`, переразметка списков) — функциональных изменений API нет
 - Товары (Products): изменена разметка описания (добавлен `<div class="api-block">`, блок ссылки на инструкцию вынесен отдельно) — функциональных изменений API нет
