@@ -27,7 +27,7 @@ class GoodCard(BaseModel):
     """
     Информация о заказе
     """ # noqa: E501
-    var_date: Optional[StrictStr] = Field(default=None, description="Дата заказа", alias="date")
+    var_date: Optional[StrictStr] = Field(default=None, description="[Будет отключено 16 июня](https://dev.wildberries.ru/release-notes?id=534) ", alias="date")
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
     price: Optional[StrictInt] = Field(default=None, description="Фактическая цена с учетом всех скидок. Взимается с покупателя")
     price_currency: Optional[StrictStr] = Field(default=None, description="Валюта", alias="priceCurrency")

@@ -19,7 +19,8 @@ var _ MappedNullable = &GoodCard{}
 
 // GoodCard Информация о заказе
 type GoodCard struct {
-	// Дата заказа
+	// [Будет отключено 16 июня](https://dev.wildberries.ru/release-notes?id=534) 
+	// Deprecated
 	Date *string `json:"date,omitempty"`
 	// Артикул WB
 	NmID *int32 `json:"nmID,omitempty"`
@@ -51,6 +52,7 @@ func NewGoodCardWithDefaults() *GoodCard {
 }
 
 // GetDate returns the Date field value if set, zero value otherwise.
+// Deprecated
 func (o *GoodCard) GetDate() string {
 	if o == nil || IsNil(o.Date) {
 		var ret string
@@ -61,6 +63,7 @@ func (o *GoodCard) GetDate() string {
 
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *GoodCard) GetDateOk() (*string, bool) {
 	if o == nil || IsNil(o.Date) {
 		return nil, false
@@ -78,6 +81,7 @@ func (o *GoodCard) HasDate() bool {
 }
 
 // SetDate gets a reference to the given string and assigns it to the Date field.
+// Deprecated
 func (o *GoodCard) SetDate(v string) {
 	o.Date = &v
 }

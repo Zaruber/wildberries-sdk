@@ -14,7 +14,7 @@ use serde::{Deserialize, Serialize};
 /// GoodCard : Информация о заказе
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GoodCard {
-    /// Дата заказа
+    /// [Будет отключено 16 июня](https://dev.wildberries.ru/release-notes?id=534) 
     #[serde(rename = "date", skip_serializing_if = "Option::is_none")]
     pub date: Option<String>,
     /// Артикул WB

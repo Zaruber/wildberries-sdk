@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.99"
+__version__ = "0.1.100"
 
 # Define package exports
 __all__ = [
@@ -109,7 +109,7 @@ __all__ = [
     "ResponseFeedbackInnerAnswer",
     "ResponseFeedbackInnerProductDetails",
     "ResponseFeedbackInnerVideo",
-    "ResponsefeedbackErr",
+    "ResponseFeedbackQuestionErr",
     "Sender",
     "StandardizedFQError",
 ]
@@ -210,7 +210,7 @@ from wildberries_sdk.communications.models.response_feedback_inner import Respon
 from wildberries_sdk.communications.models.response_feedback_inner_answer import ResponseFeedbackInnerAnswer as ResponseFeedbackInnerAnswer
 from wildberries_sdk.communications.models.response_feedback_inner_product_details import ResponseFeedbackInnerProductDetails as ResponseFeedbackInnerProductDetails
 from wildberries_sdk.communications.models.response_feedback_inner_video import ResponseFeedbackInnerVideo as ResponseFeedbackInnerVideo
-from wildberries_sdk.communications.models.responsefeedback_err import ResponsefeedbackErr as ResponsefeedbackErr
+from wildberries_sdk.communications.models.response_feedback_question_err import ResponseFeedbackQuestionErr as ResponseFeedbackQuestionErr
 from wildberries_sdk.communications.models.sender import Sender as Sender
 from wildberries_sdk.communications.models.standardized_fq_error import StandardizedFQError as StandardizedFQError
 

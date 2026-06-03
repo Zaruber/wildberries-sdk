@@ -2413,7 +2413,7 @@ class DefaultApi:
             '200': "ApiV1FeedbackGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '422': "ResponsefeedbackErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2484,7 +2484,7 @@ class DefaultApi:
             '200': "ApiV1FeedbackGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '422': "ResponsefeedbackErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2555,7 +2555,7 @@ class DefaultApi:
             '200': "ApiV1FeedbackGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '422': "ResponsefeedbackErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3278,10 +3278,11 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksArchiveGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3362,10 +3363,11 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksArchiveGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3446,10 +3448,11 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksArchiveGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3607,10 +3610,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksCountGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3687,10 +3690,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksCountGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3767,10 +3770,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksCountGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3913,7 +3916,7 @@ class DefaultApi:
             '200': "ApiV1FeedbacksCountUnansweredGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3980,7 +3983,7 @@ class DefaultApi:
             '200': "ApiV1FeedbacksCountUnansweredGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4047,7 +4050,7 @@ class DefaultApi:
             '200': "ApiV1FeedbacksCountUnansweredGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4201,10 +4204,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4297,10 +4300,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4393,10 +4396,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1FeedbacksGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4561,10 +4564,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsPatch200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '422': "ResponsefeedbackErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4633,10 +4636,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsPatch200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '422': "ResponsefeedbackErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4705,10 +4708,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsPatch200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '422': "ResponsefeedbackErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4852,7 +4855,7 @@ class DefaultApi:
             '200': "ApiV1NewFeedbacksQuestionsGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4919,7 +4922,7 @@ class DefaultApi:
             '200': "ApiV1NewFeedbacksQuestionsGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4986,7 +4989,7 @@ class DefaultApi:
             '200': "ApiV1NewFeedbacksQuestionsGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5118,8 +5121,8 @@ class DefaultApi:
             '200': "ApiV1QuestionGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
-            '422': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5190,8 +5193,8 @@ class DefaultApi:
             '200': "ApiV1QuestionGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
-            '422': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5262,8 +5265,8 @@ class DefaultApi:
             '200': "ApiV1QuestionGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
-            '422': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5406,10 +5409,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsCountGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5486,10 +5489,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsCountGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5566,10 +5569,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsCountGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5712,7 +5715,7 @@ class DefaultApi:
             '200': "ApiV1QuestionsCountUnansweredGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5779,7 +5782,7 @@ class DefaultApi:
             '200': "ApiV1QuestionsCountUnansweredGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5846,7 +5849,7 @@ class DefaultApi:
             '200': "ApiV1QuestionsCountUnansweredGet200Response",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6000,10 +6003,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6096,10 +6099,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6192,10 +6195,10 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsGet200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6360,11 +6363,12 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsPatch200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
-            '404': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '404': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6433,11 +6437,12 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsPatch200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
-            '404': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '404': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6506,11 +6511,12 @@ class DefaultApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1QuestionsPatch200Response",
-            '400': "ResponsefeedbackErr",
+            '400': "ResponseFeedbackQuestionErr",
             '401': "ApiV1NewFeedbacksQuestionsGet401Response",
             '402': "ApiV1NewFeedbacksQuestionsGet402Response",
-            '403': "ResponsefeedbackErr",
-            '404': "ResponsefeedbackErr",
+            '403': "ResponseFeedbackQuestionErr",
+            '404': "ResponseFeedbackQuestionErr",
+            '422': "ResponseFeedbackQuestionErr",
             '429': "ApiV1NewFeedbacksQuestionsGet401Response",
         }
         response_data = self.api_client.call_api(

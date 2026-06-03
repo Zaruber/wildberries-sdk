@@ -24,7 +24,7 @@ export interface AdvV2SeacatSaveAdPostRequest {
      * @type {string}
      * @memberof AdvV2SeacatSaveAdPostRequest
      */
-    name?: string;
+    name: string;
     /**
      * Карточки товаров для кампании. Доступные карточки товаров можно получить с помощью метода [Карточки товаров для кампаний](./promotion#tag/Sozdanie-kampanij/paths/~1adv~1v2~1supplier~1nms/post). Максимум 50 товаров (`nm`)
      * 
@@ -96,6 +96,7 @@ export type AdvV2SeacatSaveAdPostRequestPlacementTypesEnum = typeof AdvV2SeacatS
  * Check if a given object implements the AdvV2SeacatSaveAdPostRequest interface.
  */
 export function instanceOfAdvV2SeacatSaveAdPostRequest(value: object): value is AdvV2SeacatSaveAdPostRequest {
+    if (!('name' in value) || value['name'] === undefined) return false;
     return true;
 }
 
@@ -109,7 +110,7 @@ export function AdvV2SeacatSaveAdPostRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'name': json['name'] == null ? undefined : json['name'],
+        'name': json['name'],
         'nms': json['nms'] == null ? undefined : json['nms'],
         'bidType': json['bid_type'] == null ? undefined : json['bid_type'],
         'paymentType': json['payment_type'] == null ? undefined : json['payment_type'],

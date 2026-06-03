@@ -93,7 +93,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "429":
           content:
@@ -175,7 +175,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "429":
           content:
@@ -267,7 +267,7 @@ paths:
                 DateToErr400:
                   $ref: "#/components/examples/DateToErr400"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Неправильный запрос
         "401":
           content:
@@ -302,7 +302,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "429":
           content:
@@ -454,7 +454,7 @@ paths:
                 FeedbackErr400:
                   $ref: "#/components/examples/FeedbackErr400"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Неправильный запрос
         "401":
           content:
@@ -489,7 +489,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "429":
           content:
@@ -579,7 +579,7 @@ paths:
                 FeedbackErr400:
                   $ref: "#/components/examples/FeedbackErr400"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Неправильный запрос
         "401":
           content:
@@ -614,7 +614,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "404":
           content:
@@ -623,8 +623,17 @@ paths:
                 FeedbackErr404:
                   $ref: "#/components/examples/FeedbackErr404"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Не найдено
+        "422":
+          content:
+            application/json:
+              examples:
+                ResponsePatchQuestion:
+                  $ref: "#/components/examples/ResponsePatchQuestion"
+              schema:
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
+          description: Ошибка обработки параметров запроса
         "429":
           content:
             application/problem+json:
@@ -737,7 +746,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "422":
           content:
@@ -746,7 +755,7 @@ paths:
                 responseGetQuestionByIdErrEx:
                   $ref: "#/components/examples/ResponseGetQuestionByIdErrEx"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Ошибка обработки параметров запроса
         "429":
           content:
@@ -829,7 +838,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "429":
           content:
@@ -921,7 +930,7 @@ paths:
                 DateToErr400:
                   $ref: "#/components/examples/DateToErr400"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Неправильный запрос
         "401":
           content:
@@ -956,7 +965,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "429":
           content:
@@ -1141,7 +1150,7 @@ paths:
                 FeedbackErr400:
                   $ref: "#/components/examples/FeedbackErr400"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Неправильный запрос
         "401":
           content:
@@ -1176,7 +1185,7 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
         "429":
           content:
@@ -1416,7 +1425,7 @@ paths:
                 RequestIDErr400:
                   $ref: "#/components/examples/RequestIDErr400"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Неправильный запрос
         "401":
           content:
@@ -1453,7 +1462,7 @@ paths:
                 responseUnsuccessfullyBackGoodError422:
                   $ref: "#/components/examples/responseUnsuccessfullyBackGoodError422"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Ошибка обработки параметров запроса
         "429":
           content:
@@ -1599,7 +1608,7 @@ paths:
                 ResponseGetFeedbackByIdErrEx:
                   $ref: "#/components/examples/ResponseGetFeedbackByIdErrEx"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Ошибка обработки параметров запроса
         "429":
           content:
@@ -1754,7 +1763,7 @@ paths:
                 FeedbackErr400:
                   $ref: "#/components/examples/FeedbackErr400"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Неправильный запрос
         "401":
           content:
@@ -1789,8 +1798,17 @@ paths:
                 FeedbackErr403:
                   $ref: "#/components/examples/FeedbackErr403"
               schema:
-                $ref: "#/components/schemas/responsefeedbackErr"
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
           description: Доступ запрещён
+        "422":
+          content:
+            application/json:
+              examples:
+                ResponseGetFeedbackArchive:
+                  $ref: "#/components/examples/ResponseGetFeedbackArchive"
+              schema:
+                $ref: "#/components/schemas/responseFeedbackQuestionErr"
+          description: Ошибка обработки параметров запроса
         "429":
           content:
             application/problem+json:
@@ -3201,6 +3219,22 @@ components:
         errorText: Невозможно получить отзыв по id
         additionalErrors: null
         requestId: 87a2fe4d-d28b-4bae-b824-c0f498c72702
+    ResponseGetFeedbackArchive:
+      description: Не удалось получить архивные отзывы по фильтру
+      value:
+        data: null
+        error: true
+        errorText: Не удалось получить архивные отзывы по фильтру
+        additionalErrors: null
+        requestId: 87a2fe4d-d28b-4bae-b824-c0f498c72702
+    ResponsePatchQuestion:
+      description: Не удалось отредактировать вопрос
+      value:
+        data: null
+        error: true
+        errorText: Не удалось отредактировать вопрос
+        additionalErrors: null
+        requestId: 87a2fe4d-d28b-4bae-b824-c0f498c72702
     ResponseDoNotGetFeedback400:
       description: Неправильный запрос
       value:
@@ -3376,7 +3410,7 @@ components:
           description: Детали ошибки
           type: string
       type: object
-    responsefeedbackErr:
+    responseFeedbackQuestionErr:
       example:
         data: "{}"
         error: true
@@ -3661,7 +3695,9 @@ components:
         size: size
       properties:
         date:
-          description: Дата заказа
+          deprecated: true
+          description: |
+            [Будет отключено 16 июня](https://dev.wildberries.ru/release-notes?id=534)
           type: string
         nmID:
           description: Артикул WB

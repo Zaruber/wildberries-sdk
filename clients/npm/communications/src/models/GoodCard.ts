@@ -20,9 +20,11 @@ import { mapValues } from '../runtime';
  */
 export interface GoodCard {
     /**
-     * Дата заказа
+     * [Будет отключено 16 июня](https://dev.wildberries.ru/release-notes?id=534)
+     * 
      * @type {string}
      * @memberof GoodCard
+     * @deprecated
      */
     date?: string;
     /**

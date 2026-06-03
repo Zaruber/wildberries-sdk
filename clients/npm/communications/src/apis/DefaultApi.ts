@@ -184,10 +184,10 @@ import {
     RespondResultErrToJSON,
 } from '../models/RespondResultErr';
 import {
-    type ResponsefeedbackErr,
-    ResponsefeedbackErrFromJSON,
-    ResponsefeedbackErrToJSON,
-} from '../models/ResponsefeedbackErr';
+    type ResponseFeedbackQuestionErr,
+    ResponseFeedbackQuestionErrFromJSON,
+    ResponseFeedbackQuestionErrToJSON,
+} from '../models/ResponseFeedbackQuestionErr';
 import {
     type StandardizedFQError,
     StandardizedFQErrorFromJSON,

@@ -12,6 +12,8 @@ package promotion
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the AdvV2SeacatSaveAdPostRequest type satisfies the MappedNullable interface at compile time
@@ -20,7 +22,7 @@ var _ MappedNullable = &AdvV2SeacatSaveAdPostRequest{}
 // AdvV2SeacatSaveAdPostRequest struct for AdvV2SeacatSaveAdPostRequest
 type AdvV2SeacatSaveAdPostRequest struct {
 	// Название кампании
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Карточки товаров для кампании. Доступные карточки товаров можно получить с помощью метода [Карточки товаров для кампаний](./promotion#tag/Sozdanie-kampanij/paths/~1adv~1v2~1supplier~1nms/post). Максимум 50 товаров (`nm`) 
 	Nms []int32 `json:"nms,omitempty"`
 	// Тип ставки:   - `manual` — ручная   - `unified` — единая 
@@ -31,12 +33,15 @@ type AdvV2SeacatSaveAdPostRequest struct {
 	PlacementTypes []string `json:"placement_types,omitempty"`
 }
 
+type _AdvV2SeacatSaveAdPostRequest AdvV2SeacatSaveAdPostRequest
+
 // NewAdvV2SeacatSaveAdPostRequest instantiates a new AdvV2SeacatSaveAdPostRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdvV2SeacatSaveAdPostRequest() *AdvV2SeacatSaveAdPostRequest {
+func NewAdvV2SeacatSaveAdPostRequest(name string) *AdvV2SeacatSaveAdPostRequest {
 	this := AdvV2SeacatSaveAdPostRequest{}
+	this.Name = name
 	var bidType string = "manual"
 	this.BidType = &bidType
 	var paymentType string = "cpm"
@@ -56,36 +61,28 @@ func NewAdvV2SeacatSaveAdPostRequestWithDefaults() *AdvV2SeacatSaveAdPostRequest
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *AdvV2SeacatSaveAdPostRequest) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *AdvV2SeacatSaveAdPostRequest) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *AdvV2SeacatSaveAdPostRequest) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *AdvV2SeacatSaveAdPostRequest) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetNms returns the Nms field value if set, zero value otherwise.
@@ -226,9 +223,7 @@ func (o AdvV2SeacatSaveAdPostRequest) MarshalJSON() ([]byte, error) {
 
 func (o AdvV2SeacatSaveAdPostRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if !IsNil(o.Nms) {
 		toSerialize["nms"] = o.Nms
 	}
@@ -242,6 +237,43 @@ func (o AdvV2SeacatSaveAdPostRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["placement_types"] = o.PlacementTypes
 	}
 	return toSerialize, nil
+}
+
+func (o *AdvV2SeacatSaveAdPostRequest) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAdvV2SeacatSaveAdPostRequest := _AdvV2SeacatSaveAdPostRequest{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAdvV2SeacatSaveAdPostRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AdvV2SeacatSaveAdPostRequest(varAdvV2SeacatSaveAdPostRequest)
+
+	return err
 }
 
 type NullableAdvV2SeacatSaveAdPostRequest struct {

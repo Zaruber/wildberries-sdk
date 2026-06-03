@@ -93,7 +93,7 @@ pub enum ApiV1ClaimsGetError {
 pub enum ApiV1FeedbackGetError {
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status422(models::ResponsefeedbackErr),
+    Status422(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -123,10 +123,11 @@ pub enum ApiV1FeedbacksAnswerPostError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1FeedbacksArchiveGetError {
-    Status400(models::ResponsefeedbackErr),
+    Status400(models::ResponseFeedbackQuestionErr),
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
+    Status422(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -135,10 +136,10 @@ pub enum ApiV1FeedbacksArchiveGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1FeedbacksCountGetError {
-    Status400(models::ResponsefeedbackErr),
+    Status400(models::ResponseFeedbackQuestionErr),
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -149,7 +150,7 @@ pub enum ApiV1FeedbacksCountGetError {
 pub enum ApiV1FeedbacksCountUnansweredGetError {
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -158,10 +159,10 @@ pub enum ApiV1FeedbacksCountUnansweredGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1FeedbacksGetError {
-    Status400(models::ResponsefeedbackErr),
+    Status400(models::ResponseFeedbackQuestionErr),
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -170,10 +171,10 @@ pub enum ApiV1FeedbacksGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1FeedbacksOrderReturnPostError {
-    Status400(models::ResponsefeedbackErr),
+    Status400(models::ResponseFeedbackQuestionErr),
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status422(models::ResponsefeedbackErr),
+    Status422(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -184,7 +185,7 @@ pub enum ApiV1FeedbacksOrderReturnPostError {
 pub enum ApiV1NewFeedbacksQuestionsGetError {
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -195,8 +196,8 @@ pub enum ApiV1NewFeedbacksQuestionsGetError {
 pub enum ApiV1QuestionGetError {
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
-    Status422(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
+    Status422(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -205,10 +206,10 @@ pub enum ApiV1QuestionGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1QuestionsCountGetError {
-    Status400(models::ResponsefeedbackErr),
+    Status400(models::ResponseFeedbackQuestionErr),
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -219,7 +220,7 @@ pub enum ApiV1QuestionsCountGetError {
 pub enum ApiV1QuestionsCountUnansweredGetError {
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -228,10 +229,10 @@ pub enum ApiV1QuestionsCountUnansweredGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1QuestionsGetError {
-    Status400(models::ResponsefeedbackErr),
+    Status400(models::ResponseFeedbackQuestionErr),
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -240,11 +241,12 @@ pub enum ApiV1QuestionsGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1QuestionsPatchError {
-    Status400(models::ResponsefeedbackErr),
+    Status400(models::ResponseFeedbackQuestionErr),
     Status401(models::ApiV1NewFeedbacksQuestionsGet401Response),
     Status402(models::ApiV1NewFeedbacksQuestionsGet402Response),
-    Status403(models::ResponsefeedbackErr),
-    Status404(models::ResponsefeedbackErr),
+    Status403(models::ResponseFeedbackQuestionErr),
+    Status404(models::ResponseFeedbackQuestionErr),
+    Status422(models::ResponseFeedbackQuestionErr),
     Status429(models::ApiV1NewFeedbacksQuestionsGet401Response),
     UnknownValue(serde_json::Value),
 }

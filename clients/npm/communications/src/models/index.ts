@@ -81,6 +81,6 @@ export * from './ResponseFeedbackInner';
 export * from './ResponseFeedbackInnerAnswer';
 export * from './ResponseFeedbackInnerProductDetails';
 export * from './ResponseFeedbackInnerVideo';
-export * from './ResponsefeedbackErr';
+export * from './ResponseFeedbackQuestionErr';
 export * from './Sender';
 export * from './StandardizedFQError';

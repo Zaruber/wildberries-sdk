@@ -1,6 +1,6 @@
 <?php
 /**
- * GoodCard
+ * ResponseFeedbackQuestionErr
  *
  * PHP version 8.1
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \Wildberries\Sdk\Communications\ObjectSerializer;
 
 /**
- * GoodCard Class Doc Comment
+ * ResponseFeedbackQuestionErr Class Doc Comment
  *
  * @category Class
- * @description Информация о заказе
  * @package  Wildberries\Sdk\Communications
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseFeedbackQuestionErr implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string
      */
-    protected static $openAPIModelName = 'GoodCard';
+    protected static $openAPIModelName = 'responseFeedbackQuestionErr';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +57,11 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'date' => 'string',
-        'nm_id' => 'int',
-        'price' => 'int',
-        'price_currency' => 'string',
-        'rid' => 'string',
-        'size' => 'string'
+        'data' => 'object',
+        'error' => 'bool',
+        'error_text' => 'string',
+        'additional_errors' => 'string[]',
+        'request_id' => 'string'
     ];
 
     /**
@@ -74,12 +72,11 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'date' => null,
-        'nm_id' => null,
-        'price' => null,
-        'price_currency' => null,
-        'rid' => null,
-        'size' => null
+        'data' => null,
+        'error' => null,
+        'error_text' => null,
+        'additional_errors' => null,
+        'request_id' => null
     ];
 
     /**
@@ -88,12 +85,11 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'date' => false,
-        'nm_id' => false,
-        'price' => false,
-        'price_currency' => false,
-        'rid' => false,
-        'size' => false
+        'data' => true,
+        'error' => false,
+        'error_text' => false,
+        'additional_errors' => true,
+        'request_id' => false
     ];
 
     /**
@@ -182,12 +178,11 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'date' => 'date',
-        'nm_id' => 'nmID',
-        'price' => 'price',
-        'price_currency' => 'priceCurrency',
-        'rid' => 'rid',
-        'size' => 'size'
+        'data' => 'data',
+        'error' => 'error',
+        'error_text' => 'errorText',
+        'additional_errors' => 'additionalErrors',
+        'request_id' => 'requestId'
     ];
 
     /**
@@ -196,12 +191,11 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'date' => 'setDate',
-        'nm_id' => 'setNmId',
-        'price' => 'setPrice',
-        'price_currency' => 'setPriceCurrency',
-        'rid' => 'setRid',
-        'size' => 'setSize'
+        'data' => 'setData',
+        'error' => 'setError',
+        'error_text' => 'setErrorText',
+        'additional_errors' => 'setAdditionalErrors',
+        'request_id' => 'setRequestId'
     ];
 
     /**
@@ -210,12 +204,11 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'date' => 'getDate',
-        'nm_id' => 'getNmId',
-        'price' => 'getPrice',
-        'price_currency' => 'getPriceCurrency',
-        'rid' => 'getRid',
-        'size' => 'getSize'
+        'data' => 'getData',
+        'error' => 'getError',
+        'error_text' => 'getErrorText',
+        'additional_errors' => 'getAdditionalErrors',
+        'request_id' => 'getRequestId'
     ];
 
     /**
@@ -275,12 +268,11 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('date', $data ?? [], null);
-        $this->setIfExists('nm_id', $data ?? [], null);
-        $this->setIfExists('price', $data ?? [], null);
-        $this->setIfExists('price_currency', $data ?? [], null);
-        $this->setIfExists('rid', $data ?? [], null);
-        $this->setIfExists('size', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('error_text', $data ?? [], null);
+        $this->setIfExists('additional_errors', $data ?? [], null);
+        $this->setIfExists('request_id', $data ?? [], null);
     }
 
     /**
@@ -326,165 +318,150 @@ class GoodCard implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets date
+     * Gets data
      *
-     * @return string|null
-     * @deprecated
+     * @return object|null
      */
-    public function getDate()
+    public function getData()
     {
-        return $this->container['date'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets date
+     * Sets data
      *
-     * @param string|null $date [Будет отключено 16 июня](https://dev.wildberries.ru/release-notes?id=534)
+     * @param object|null $data data
      *
      * @return self
-     * @deprecated
      */
-    public function setDate($date)
+    public function setData($data)
     {
-        if (is_null($date)) {
-            throw new \InvalidArgumentException('non-nullable date cannot be null');
+        if (is_null($data)) {
+            array_push($this->openAPINullablesSetToNull, 'data');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('data', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['date'] = $date;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets nm_id
+     * Gets error
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getNmId()
+    public function getError()
     {
-        return $this->container['nm_id'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets nm_id
+     * Sets error
      *
-     * @param int|null $nm_id Артикул WB
+     * @param bool|null $error Есть ли ошибка
      *
      * @return self
      */
-    public function setNmId($nm_id)
+    public function setError($error)
     {
-        if (is_null($nm_id)) {
-            throw new \InvalidArgumentException('non-nullable nm_id cannot be null');
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
         }
-        $this->container['nm_id'] = $nm_id;
+        $this->container['error'] = $error;
 
         return $this;
     }
 
     /**
-     * Gets price
-     *
-     * @return int|null
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     *
-     * @param int|null $price Фактическая цена с учетом всех скидок. Взимается с покупателя
-     *
-     * @return self
-     */
-    public function setPrice($price)
-    {
-        if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
-        }
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_currency
+     * Gets error_text
      *
      * @return string|null
      */
-    public function getPriceCurrency()
+    public function getErrorText()
     {
-        return $this->container['price_currency'];
+        return $this->container['error_text'];
     }
 
     /**
-     * Sets price_currency
+     * Sets error_text
      *
-     * @param string|null $price_currency Валюта
+     * @param string|null $error_text Описание ошибки
      *
      * @return self
      */
-    public function setPriceCurrency($price_currency)
+    public function setErrorText($error_text)
     {
-        if (is_null($price_currency)) {
-            throw new \InvalidArgumentException('non-nullable price_currency cannot be null');
+        if (is_null($error_text)) {
+            throw new \InvalidArgumentException('non-nullable error_text cannot be null');
         }
-        $this->container['price_currency'] = $price_currency;
+        $this->container['error_text'] = $error_text;
 
         return $this;
     }
 
     /**
-     * Gets rid
+     * Gets additional_errors
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getRid()
+    public function getAdditionalErrors()
     {
-        return $this->container['rid'];
+        return $this->container['additional_errors'];
     }
 
     /**
-     * Sets rid
+     * Sets additional_errors
      *
-     * @param string|null $rid Уникальный ID заказа. <br> Примечание: `rid` — это `srid` в ответах методов:  - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)   - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)   - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)   - [Отчёт о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)   - [Детализации к отчётам реализации по ID отчётов](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1SalesReportsDetailedReportId)   - [Детализации к отчётам реализации за период](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1SalesReportsDetailed)   - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1AcquiringDetailedReportId)   - [Детализации к отчётам об издержках на приём платежей за период](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1AcquiringDetailed)
+     * @param string[]|null $additional_errors Дополнительные ошибки
      *
      * @return self
      */
-    public function setRid($rid)
+    public function setAdditionalErrors($additional_errors)
     {
-        if (is_null($rid)) {
-            throw new \InvalidArgumentException('non-nullable rid cannot be null');
+        if (is_null($additional_errors)) {
+            array_push($this->openAPINullablesSetToNull, 'additional_errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['rid'] = $rid;
+        $this->container['additional_errors'] = $additional_errors;
 
         return $this;
     }
 
     /**
-     * Gets size
+     * Gets request_id
      *
      * @return string|null
      */
-    public function getSize()
+    public function getRequestId()
     {
-        return $this->container['size'];
+        return $this->container['request_id'];
     }
 
     /**
-     * Sets size
+     * Sets request_id
      *
-     * @param string|null $size Размер товара, соответствует `wbSize` в [карточке товара](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1list/post)
+     * @param string|null $request_id 
      *
      * @return self
      */
-    public function setSize($size)
+    public function setRequestId($request_id)
     {
-        if (is_null($size)) {
-            throw new \InvalidArgumentException('non-nullable size cannot be null');
+        if (is_null($request_id)) {
+            throw new \InvalidArgumentException('non-nullable request_id cannot be null');
         }
-        $this->container['size'] = $size;
+        $this->container['request_id'] = $request_id;
 
         return $this;
     }

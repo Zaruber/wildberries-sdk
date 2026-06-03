@@ -27,7 +27,7 @@ class AdvV2SeacatSaveAdPostRequest(BaseModel):
     """
     AdvV2SeacatSaveAdPostRequest
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Название кампании")
+    name: StrictStr = Field(description="Название кампании")
     nms: Optional[List[StrictInt]] = Field(default=None, description="Карточки товаров для кампании. Доступные карточки товаров можно получить с помощью метода [Карточки товаров для кампаний](./promotion#tag/Sozdanie-kampanij/paths/~1adv~1v2~1supplier~1nms/post). Максимум 50 товаров (`nm`) ")
     bid_type: Optional[StrictStr] = Field(default='manual', description="Тип ставки:   - `manual` — ручная   - `unified` — единая ")
     payment_type: Optional[StrictStr] = Field(default='cpm', description="Тип оплаты: - `cpm` — за показы - `cpc` — за клик. При создании с этим типом оплаты в кампании автоматически устанавливается минимальная ставка ")

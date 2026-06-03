@@ -7314,6 +7314,8 @@ components:
             - recommendations
             type: string
           type: array
+      required:
+      - name
       type: object
     _adv_v1_supplier_subjects_get_200_response_inner:
       example:

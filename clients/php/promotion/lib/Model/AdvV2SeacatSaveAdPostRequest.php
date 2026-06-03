@@ -347,6 +347,9 @@ class AdvV2SeacatSaveAdPostRequest implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         $allowedValues = $this->getBidTypeAllowableValues();
         if (!is_null($this->container['bid_type']) && !in_array($this->container['bid_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -383,7 +386,7 @@ class AdvV2SeacatSaveAdPostRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets name
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -393,7 +396,7 @@ class AdvV2SeacatSaveAdPostRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets name
      *
-     * @param string|null $name Название кампании
+     * @param string $name Название кампании
      *
      * @return self
      */

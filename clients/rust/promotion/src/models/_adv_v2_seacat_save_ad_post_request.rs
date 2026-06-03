@@ -14,8 +14,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AdvV2SeacatSaveAdPostRequest {
     /// Название кампании
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "name")]
+    pub name: String,
     /// Карточки товаров для кампании. Доступные карточки товаров можно получить с помощью метода [Карточки товаров для кампаний](./promotion#tag/Sozdanie-kampanij/paths/~1adv~1v2~1supplier~1nms/post). Максимум 50 товаров (`nm`) 
     #[serde(rename = "nms", skip_serializing_if = "Option::is_none")]
     pub nms: Option<Vec<i32>>,
@@ -31,9 +31,9 @@ pub struct AdvV2SeacatSaveAdPostRequest {
 }
 
 impl AdvV2SeacatSaveAdPostRequest {
-    pub fn new() -> AdvV2SeacatSaveAdPostRequest {
+    pub fn new(name: String) -> AdvV2SeacatSaveAdPostRequest {
         AdvV2SeacatSaveAdPostRequest {
-            name: None,
+            name,
             nms: None,
             bid_type: None,
             payment_type: None,
