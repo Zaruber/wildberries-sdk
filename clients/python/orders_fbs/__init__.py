@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.100"
+__version__ = "0.1.101"
 
 # Define package exports
 __all__ = [
@@ -70,14 +70,7 @@ __all__ = [
     "CrossborderTurkeyClientInfo",
     "CrossborderTurkeyClientInfoResp",
     "Error",
-    "Meta",
-    "MetaCustomsDeclaration",
     "MetaDetailsInner",
-    "MetaExpiration",
-    "MetaGtin",
-    "MetaImei",
-    "MetaSgtin",
-    "MetaUin",
     "Model409SupplyDeliverError",
     "Model409SupplyDeliverErrorData",
     "Model409SupplyDeliverErrorDataOrdersInner",
@@ -165,14 +158,7 @@ from wildberries_sdk.orders_fbs.models.api_v3_supplies_supply_id_trbx_stickers_p
 from wildberries_sdk.orders_fbs.models.crossborder_turkey_client_info import CrossborderTurkeyClientInfo as CrossborderTurkeyClientInfo
 from wildberries_sdk.orders_fbs.models.crossborder_turkey_client_info_resp import CrossborderTurkeyClientInfoResp as CrossborderTurkeyClientInfoResp
 from wildberries_sdk.orders_fbs.models.error import Error as Error
-from wildberries_sdk.orders_fbs.models.meta import Meta as Meta
-from wildberries_sdk.orders_fbs.models.meta_customs_declaration import MetaCustomsDeclaration as MetaCustomsDeclaration
 from wildberries_sdk.orders_fbs.models.meta_details_inner import MetaDetailsInner as MetaDetailsInner
-from wildberries_sdk.orders_fbs.models.meta_expiration import MetaExpiration as MetaExpiration
-from wildberries_sdk.orders_fbs.models.meta_gtin import MetaGtin as MetaGtin
-from wildberries_sdk.orders_fbs.models.meta_imei import MetaImei as MetaImei
-from wildberries_sdk.orders_fbs.models.meta_sgtin import MetaSgtin as MetaSgtin
-from wildberries_sdk.orders_fbs.models.meta_uin import MetaUin as MetaUin
 from wildberries_sdk.orders_fbs.models.model409_supply_deliver_error import Model409SupplyDeliverError as Model409SupplyDeliverError
 from wildberries_sdk.orders_fbs.models.model409_supply_deliver_error_data import Model409SupplyDeliverErrorData as Model409SupplyDeliverErrorData
 from wildberries_sdk.orders_fbs.models.model409_supply_deliver_error_data_orders_inner import Model409SupplyDeliverErrorDataOrdersInner as Model409SupplyDeliverErrorDataOrdersInner

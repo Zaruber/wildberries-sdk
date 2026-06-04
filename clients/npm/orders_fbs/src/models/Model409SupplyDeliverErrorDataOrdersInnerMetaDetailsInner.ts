@@ -34,14 +34,13 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
     /**
      * Статус проверки:
      * - `imei`
-     *   - `pending` — Маркировка на проверке
-     *   - `required` — Обязательная маркировка не заполнена
+     *   - `pending` — Проверка маркировки продолжается. Дождитесь изменения статуса проверки
+     *   - `required` — Маркировка обязательна и не закреплена за сборочным заданием
      *   - `imeiInvalidFormat` — Неверный формат маркировки
      *   - `imeiAlreadySold` — Товар с этим IMEI уже продан
      * - `uin`
-     *   - `required` — Обязательная маркировка не заполнена
-     *   - `pending` — Маркировка на проверке
-     *   - `required` — Маркировка обязательна, не заполнена
+     *   - `required` — Маркировка обязательна и не закреплена за сборочным заданием
+     *   - `pending` — Проверка маркировки продолжается. Дождитесь изменения статуса проверки
      *   - `uinInvalidFormat` — Неверный формат маркировки
      *   - `uinBadStatus` — Некорректный статус партии
      *   - `uinBadProcess` — Некорректная стадия обработки
@@ -53,9 +52,13 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
      *       - указан корректно и считывается с бирки без ошибок
      *       - находится в обороте
      * - `sgtin`
-     *   - `required` — Обязательная маркировка не заполнена
-     *   - `pending` — Маркировка на проверке
+     *   - `required` — Маркировка обязательна и не закреплена за сборочным заданием
+     *   - `pending` — Проверка маркировки продолжается. Дождитесь изменения статуса проверки
      *   - `sgtinInvalidFormat` — Неверный формат маркировки
+     *   - `sgtinNoGS` — Маркировка не содержит GS-разделитель `\u001d`
+     *   - `sgtinHasInvalidSymbols` — Маркировка содержит некорректные символы или пробелы
+     *   - `sgtinHasNonLatinSymbols` — Маркировка содержит символы, не относящиеся к специальным или латинице
+     *   - `sgtinInvalidPattern` — Структура маркировки некорректна
      *   - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)
      *   - `sgtinEmitted` —  Маркировка эмитирована
      *   - `sgtinApplied` — Не пройдена процедура Ввод в оборот
@@ -66,11 +69,11 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
      *   - `sgtinDisaggregated` — Расформирован
      *   - `sgtinAppliedNotPaid` — Не оплачен
      * - `gtin`
-     *   - `required` — Маркировка обязательна, не заполнена
+     *   - `required` — Маркировка обязательна и не закреплена за сборочным заданием
      * - `expiration`
-     *   - `required` — Маркировка обязательна, не заполнена
+     *   - `required` — Маркировка обязательна и не закреплена за сборочным заданием
      * - `customsDeclaration`
-     *   - `required` — Маркировка обязательна, не заполнена
+     *   - `required` — Маркировка обязательна и не закреплена за сборочным заданием
      * 
      * @type {string}
      * @memberof Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner

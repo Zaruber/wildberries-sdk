@@ -13,13 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { Meta } from './Meta';
-import {
-    MetaFromJSON,
-    MetaFromJSONTyped,
-    MetaToJSON,
-    MetaToJSONTyped,
-} from './Meta';
 import type { MetaDetailsInner } from './MetaDetailsInner';
 import {
     MetaDetailsInnerFromJSON,
@@ -46,12 +39,6 @@ export interface V3OrderMetaAPI {
      * @memberof V3OrderMetaAPI
      */
     metaDetails?: Array<MetaDetailsInner>;
-    /**
-     * 
-     * @type {Meta}
-     * @memberof V3OrderMetaAPI
-     */
-    meta?: Meta;
 }
 
 /**
@@ -73,7 +60,6 @@ export function V3OrderMetaAPIFromJSONTyped(json: any, ignoreDiscriminator: bool
         
         'id': json['id'] == null ? undefined : json['id'],
         'metaDetails': json['metaDetails'] == null ? undefined : ((json['metaDetails'] as Array<any>).map(MetaDetailsInnerFromJSON)),
-        'meta': json['meta'] == null ? undefined : MetaFromJSON(json['meta']),
     };
 }
 
@@ -90,7 +76,6 @@ export function V3OrderMetaAPIToJSONTyped(value?: V3OrderMetaAPI | null, ignoreD
         
         'id': value['id'],
         'metaDetails': value['metaDetails'] == null ? undefined : ((value['metaDetails'] as Array<any>).map(MetaDetailsInnerToJSON)),
-        'meta': MetaToJSON(value['meta']),
     };
 }
 

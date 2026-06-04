@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from wildberries_sdk.orders_fbs.models.meta import Meta
 from wildberries_sdk.orders_fbs.models.meta_details_inner import MetaDetailsInner
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,8 +30,7 @@ class V3OrderMetaAPI(BaseModel):
     """ # noqa: E501
     id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания")
     meta_details: Optional[List[MetaDetailsInner]] = Field(default=None, description="Детали маркировки", alias="metaDetails")
-    meta: Optional[Meta] = None
-    __properties: ClassVar[List[str]] = ["id", "metaDetails", "meta"]
+    __properties: ClassVar[List[str]] = ["id", "metaDetails"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -80,9 +78,6 @@ class V3OrderMetaAPI(BaseModel):
                 if _item_meta_details:
                     _items.append(_item_meta_details.to_dict())
             _dict['metaDetails'] = _items
-        # override the default output from pydantic by calling `to_dict()` of meta
-        if self.meta:
-            _dict['meta'] = self.meta.to_dict()
         return _dict
 
     @classmethod
@@ -96,8 +91,7 @@ class V3OrderMetaAPI(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "metaDetails": [MetaDetailsInner.from_dict(_item) for _item in obj["metaDetails"]] if obj.get("metaDetails") is not None else None,
-            "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None
+            "metaDetails": [MetaDetailsInner.from_dict(_item) for _item in obj["metaDetails"]] if obj.get("metaDetails") is not None else None
         })
         return _obj
 

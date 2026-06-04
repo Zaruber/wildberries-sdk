@@ -23,7 +23,6 @@ type V3OrderMetaAPI struct {
 	Id *int32 `json:"id,omitempty"`
 	// Детали маркировки
 	MetaDetails []MetaDetailsInner `json:"metaDetails,omitempty"`
-	Meta *Meta `json:"meta,omitempty"`
 }
 
 // NewV3OrderMetaAPI instantiates a new V3OrderMetaAPI object
@@ -107,38 +106,6 @@ func (o *V3OrderMetaAPI) SetMetaDetails(v []MetaDetailsInner) {
 	o.MetaDetails = v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *V3OrderMetaAPI) GetMeta() Meta {
-	if o == nil || IsNil(o.Meta) {
-		var ret Meta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *V3OrderMetaAPI) GetMetaOk() (*Meta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *V3OrderMetaAPI) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given Meta and assigns it to the Meta field.
-func (o *V3OrderMetaAPI) SetMeta(v Meta) {
-	o.Meta = &v
-}
-
 func (o V3OrderMetaAPI) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -154,9 +121,6 @@ func (o V3OrderMetaAPI) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MetaDetails) {
 		toSerialize["metaDetails"] = o.MetaDetails
-	}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return toSerialize, nil
 }

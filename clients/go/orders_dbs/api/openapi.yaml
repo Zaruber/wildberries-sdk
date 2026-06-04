@@ -36,6 +36,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       responses:
         "200":
@@ -117,6 +118,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       parameters:
       - description: Параметр пагинации. Устанавливает предельное количество возвращаемых
@@ -246,7 +248,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -329,7 +331,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -440,6 +442,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -524,6 +527,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -647,6 +651,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -735,11 +740,13 @@ paths:
         Отменить сборочные задания в статусе `deliver` невозможно.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+        <a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Лимит запросов</a> на один аккаунт продавца:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
         | 1 сек | 1 запрос | 1 сек | 10 запросов |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -821,11 +828,13 @@ paths:
         Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `new` в статус `confirm` — на сборке.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+        <a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Лимит запросов</a> на один аккаунт продавца:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
         | 1 сек | 1 запрос | 1 сек | 10 запросов |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -913,7 +922,8 @@ paths:
         >\n<a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Л\
         имит запросов</a> на один аккаунт продавца для методов <strong>сборочных з\
         аданий DBS</strong>:\n\n| Период | Лимит | Интервал | Всплеск |\n| --- | ---\
-        \ | --- | --- |\n| 1 мин | 300 запросов | 200 мс | 20 запросов |\n\n</div>\n"
+        \ | --- | --- |\n| 1 мин | 300 запросов | 200 мс | 20 запросов |\n\nОдин з\
+        апрос с кодами ответов <code>4XX</code> учитывается как 10 запросов\n</div>\n"
       parameters:
       - description: Формат стикера
         explode: true
@@ -1026,11 +1036,13 @@ paths:
         Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` в статус `deliver` — в доставке.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+        <a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Лимит запросов</a> на один аккаунт продавца:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
         | 1 сек | 1 запрос | 1 сек | 10 запросов |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1112,11 +1124,13 @@ paths:
         Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+        <a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Лимит запросов</a> на один аккаунт продавца:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
         | 1 сек | 1 запрос | 1 сек | 10 запросов |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1198,11 +1212,13 @@ paths:
         Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `reject` — отказ покупателя при получении.
 
         <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+        <a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Лимит запросов</a> на один аккаунт продавца:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
         | 1 сек | 1 запрос | 1 сек | 10 запросов |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1298,7 +1314,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1387,7 +1403,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 150 запросов | 400 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1482,7 +1498,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 150 запросов | 400 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1583,7 +1599,7 @@ paths:
         | Базовый с секретом | 1 мин | 500 запросов | 120 мс | 20 запросов |
         | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1673,7 +1689,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 500 запросов | 120 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1769,7 +1785,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 500 запросов | 120 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1865,7 +1881,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 500 запросов | 120 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -1963,7 +1979,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 500 запросов | 120 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:

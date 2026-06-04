@@ -58,8 +58,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'id' => 'int',
-        'meta_details' => '\Wildberries\Sdk\OrdersFbs\Model\MetaDetailsInner[]',
-        'meta' => '\Wildberries\Sdk\OrdersFbs\Model\Meta'
+        'meta_details' => '\Wildberries\Sdk\OrdersFbs\Model\MetaDetailsInner[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $openAPIFormats = [
         'id' => null,
-        'meta_details' => null,
-        'meta' => null
+        'meta_details' => null
     ];
 
     /**
@@ -82,8 +80,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'id' => false,
-        'meta_details' => false,
-        'meta' => false
+        'meta_details' => false
     ];
 
     /**
@@ -173,8 +170,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'meta_details' => 'metaDetails',
-        'meta' => 'meta'
+        'meta_details' => 'metaDetails'
     ];
 
     /**
@@ -184,8 +180,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'meta_details' => 'setMetaDetails',
-        'meta' => 'setMeta'
+        'meta_details' => 'setMetaDetails'
     ];
 
     /**
@@ -195,8 +190,7 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'meta_details' => 'getMetaDetails',
-        'meta' => 'getMeta'
+        'meta_details' => 'getMetaDetails'
     ];
 
     /**
@@ -258,7 +252,6 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('meta_details', $data ?? [], null);
-        $this->setIfExists('meta', $data ?? [], null);
     }
 
     /**
@@ -353,33 +346,6 @@ class V3OrderMetaAPI implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable meta_details cannot be null');
         }
         $this->container['meta_details'] = $meta_details;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \Wildberries\Sdk\OrdersFbs\Model\Meta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \Wildberries\Sdk\OrdersFbs\Model\Meta|null $meta meta
-     *
-     * @return self
-     */
-    public function setMeta($meta)
-    {
-        if (is_null($meta)) {
-            throw new \InvalidArgumentException('non-nullable meta cannot be null');
-        }
-        $this->container['meta'] = $meta;
 
         return $this;
     }
