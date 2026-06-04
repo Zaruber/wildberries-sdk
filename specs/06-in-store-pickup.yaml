@@ -37,7 +37,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       responses:
         '200':
@@ -72,7 +72,9 @@ paths:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
-        | 1 сек | 1 запрос | 1 сек | 10 запросов |
+        | <no value> | <no value> | <no value> | <no value> |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -109,7 +111,9 @@ paths:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
-        | 1 сек | 1 запрос | 1 сек | 10 запросов |
+        | <no value> | <no value> | <no value> | <no value> |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -152,7 +156,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -203,7 +207,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 30 запросов | 2 сек | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -268,7 +272,9 @@ paths:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
-        | 1 сек | 1 запрос | 1 сек | 10 запросов |
+        | <no value> | <no value> | <no value> | <no value> |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -305,7 +311,9 @@ paths:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
-        | 1 сек | 1 запрос | 1 сек | 10 запросов |
+        | <no value> | <no value> | <no value> | <no value> |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -334,7 +342,7 @@ paths:
       tags:
         - Сборочные задания Самовывоз
       summary: Получить статусы сборочных заданий
-      description: "Метод возвращает статусы [сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) по их ID.\n<br><br>\n`supplierStatus` — статус сборочного задания. Триггер его изменения - действие самого продавца.\n\nВозможные значения `supplierStatus`:\n| Статус   | Описание            | Как перевести сборочное задание в данный статус |\n| -------  | ---------           | --------------------------------------|\n| `new`      | **Новое сборочное задание** |\n| `confirm`  | **На сборке**  | \t[Перевести сборочное задание на сборку](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1confirm/post)\n| `prepare`  | **Готов к выдаче** | \t[Сообщить, что сборочное задание готово к выдаче](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1prepare/post)\n| `receive`  | **Получено покупателем**   | [Сообщить, что заказ принят покупателем](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1receive/post)\n| `reject`  | **Отказ покупателя при получении**    |  \t[Сообщить, что покупатель отказался от заказа](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1reject/post)\n| `cancel`   | **Отменено продавцом**    |  \t[Отменить сборочное задание](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1cancel/post)\n| `cancel_shelf_life` | **Отмена по истечении срока хранения**    |  \tПереводится автоматически по возникновению события\n\n<br><br>\n`wbStatus` — статус системы Wildberries.\n\nВозможные значения `wbStatus`:\n- `waiting` - сборочное задание в работе\n- `sold` - заказ получен покупателем\n- `canceled` - отмена сборочного задания\n- `canceled_by_client` - покупатель отменил заказ при получении\n- `declined_by_client` - покупатель отменил заказ в первый чаc\n<br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку\n- `defect` - отмена заказа по причине брака\n- `ready_for_pickup` - заказ готов к выдаче\n\n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:\n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1 сек | 1 запрос | 1 сек | 10 запросов |\n</div>\n"
+      description: "Метод возвращает статусы [сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) по их ID.\n<br><br>\n`supplierStatus` — статус сборочного задания. Триггер его изменения - действие самого продавца.\n\nВозможные значения `supplierStatus`:\n| Статус   | Описание            | Как перевести сборочное задание в данный статус |\n| -------  | ---------           | --------------------------------------|\n| `new`      | **Новое сборочное задание** |\n| `confirm`  | **На сборке**  | \t[Перевести сборочное задание на сборку](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1confirm/post)\n| `prepare`  | **Готов к выдаче** | \t[Сообщить, что сборочное задание готово к выдаче](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1prepare/post)\n| `receive`  | **Получено покупателем**   | [Сообщить, что заказ принят покупателем](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1receive/post)\n| `reject`  | **Отказ покупателя при получении**    |  \t[Сообщить, что покупатель отказался от заказа](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1reject/post)\n| `cancel`   | **Отменено продавцом**    |  \t[Отменить сборочное задание](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1cancel/post)\n| `cancel_shelf_life` | **Отмена по истечении срока хранения**    |  \tПереводится автоматически по возникновению события\n\n<br><br>\n`wbStatus` — статус системы Wildberries.\n\nВозможные значения `wbStatus`:\n- `waiting` - сборочное задание в работе\n- `sold` - заказ получен покупателем\n- `canceled` - отмена сборочного задания\n- `canceled_by_client` - покупатель отменил заказ при получении\n- `declined_by_client` - покупатель отменил заказ в первый чаc\n<br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку\n- `defect` - отмена заказа по причине брака\n- `ready_for_pickup` - заказ готов к выдаче\n\n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:\n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| <no value> | <no value> | <no value> | <no value> |\n\nОдин запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов\n</div>\n"
       requestBody:
         content:
           application/json:
@@ -375,7 +383,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 300 запросов | 200 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       parameters:
         - name: limit
@@ -449,7 +457,9 @@ paths:
 
         | Период | Лимит | Интервал | Всплеск |
         | --- | --- | --- | --- |
-        | 1 сек | 1 запрос | 1 сек | 10 запросов |
+        | <no value> | <no value> | <no value> | <no value> |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -491,7 +501,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 150 запросов | 400 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -532,7 +542,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 150 запросов | 400 мс | 20 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -574,7 +584,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 20 запросов | 3 сек | 500 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -616,7 +626,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 20 запросов | 3 сек | 500 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -658,7 +668,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 20 запросов | 3 сек | 500 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
@@ -701,7 +711,7 @@ paths:
         | --- | --- | --- | --- |
         | 1 мин | 20 запросов | 3 сек | 500 запросов |
 
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
         </div>
       requestBody:
         content:
