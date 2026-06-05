@@ -74,6 +74,8 @@ paths:
                   $ref: '#/components/schemas/PassOffice'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -949,6 +951,8 @@ paths:
                 data: {}
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1499,6 +1503,8 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -2053,6 +2059,8 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -2742,6 +2750,8 @@ paths:
                   $ref: '#/components/examples/APIError400V2'
         '401':
           $ref: '#/components/responses/401-2'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:

@@ -330,6 +330,8 @@ paths:
                 $ref: '#/components/schemas/SupplierRatingModel'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/common/v1/subscriptions:
@@ -383,6 +385,8 @@ paths:
                 $ref: '#/components/schemas/SubscriptionsJamInfo'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/invite:

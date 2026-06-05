@@ -187,6 +187,8 @@ paths:
           $ref: '#/components/responses/response400FinancialReports'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/finance/v1/sales-reports/detailed:
@@ -242,6 +244,8 @@ paths:
           $ref: '#/components/responses/response400FinancialReports'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v5/supplier/reportDetailByPeriod:
@@ -454,6 +458,8 @@ paths:
           $ref: '#/components/responses/response400FinancialReports'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/finance/v1/acquiring/detailed:
@@ -505,6 +511,8 @@ paths:
           $ref: '#/components/responses/response400FinancialReports'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/documents/categories:
@@ -543,6 +551,8 @@ paths:
                 $ref: '#/components/schemas/GetCategories'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/documents/list:
