@@ -20,13 +20,13 @@ import {
     ApiB2bClientInfoToJSON,
     ApiB2bClientInfoToJSONTyped,
 } from './ApiB2bClientInfo';
-import type { ApiB2bClientInfoResponseErrorsInner } from './ApiB2bClientInfoResponseErrorsInner';
+import type { ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner } from './ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner';
 import {
-    ApiB2bClientInfoResponseErrorsInnerFromJSON,
-    ApiB2bClientInfoResponseErrorsInnerFromJSONTyped,
-    ApiB2bClientInfoResponseErrorsInnerToJSON,
-    ApiB2bClientInfoResponseErrorsInnerToJSONTyped,
-} from './ApiB2bClientInfoResponseErrorsInner';
+    ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInnerFromJSON,
+    ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInnerFromJSONTyped,
+    ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInnerToJSON,
+    ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInnerToJSONTyped,
+} from './ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner';
 
 /**
  * 
@@ -42,10 +42,10 @@ export interface ApiB2bClientInfoResponse {
     data?: ApiB2bClientInfo;
     /**
      * Детали ошибки
-     * @type {Array<ApiB2bClientInfoResponseErrorsInner>}
+     * @type {Array<ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner>}
      * @memberof ApiB2bClientInfoResponse
      */
-    errors?: Array<ApiB2bClientInfoResponseErrorsInner>;
+    errors?: Array<ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner>;
     /**
      * Есть ли ошибки
      * @type {boolean}
@@ -80,7 +80,7 @@ export function ApiB2bClientInfoResponseFromJSONTyped(json: any, ignoreDiscrimin
     return {
         
         'data': json['data'] == null ? undefined : ApiB2bClientInfoFromJSON(json['data']),
-        'errors': json['errors'] == null ? undefined : ((json['errors'] as Array<any>).map(ApiB2bClientInfoResponseErrorsInnerFromJSON)),
+        'errors': json['errors'] == null ? undefined : ((json['errors'] as Array<any>).map(ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInnerFromJSON)),
         'isError': json['isError'],
         'orderId': json['orderId'],
     };
@@ -98,7 +98,7 @@ export function ApiB2bClientInfoResponseToJSONTyped(value?: ApiB2bClientInfoResp
     return {
         
         'data': ApiB2bClientInfoToJSON(value['data']),
-        'errors': value['errors'] == null ? undefined : ((value['errors'] as Array<any>).map(ApiB2bClientInfoResponseErrorsInnerToJSON)),
+        'errors': value['errors'] == null ? undefined : ((value['errors'] as Array<any>).map(ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInnerToJSON)),
         'isError': value['isError'],
         'orderId': value['orderId'],
     };

@@ -58,7 +58,7 @@ class StoreContactRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $openAPITypes = [
-        'contacts' => '\Wildberries\Sdk\Products\Model\StoreContactRequestBodyContactsInner[]'
+        'contacts' => '\Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]'
     ];
 
     /**
@@ -297,7 +297,7 @@ class StoreContactRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets contacts
      *
-     * @return \Wildberries\Sdk\Products\Model\StoreContactRequestBodyContactsInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]|null
      */
     public function getContacts()
     {
@@ -307,7 +307,7 @@ class StoreContactRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets contacts
      *
-     * @param \Wildberries\Sdk\Products\Model\StoreContactRequestBodyContactsInner[]|null $contacts contacts
+     * @param \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner[]|null $contacts contacts
      *
      * @return self
      */

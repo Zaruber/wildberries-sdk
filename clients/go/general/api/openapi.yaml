@@ -251,7 +251,7 @@ paths:
     get:
       description: |
         <div class="description_auth">
-          Информацию о продавце можно получить с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории
+          Информацию о продавце можно получить с токеном любой <a href="/openapi/api-information#tag/Avtorizaciya/Kategorii-tokenov">категории</a>
         </div>
 
         Метод позволяет получать наименование продавца и ID его профиля.
@@ -373,6 +373,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_ping_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_seller_info_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -403,7 +413,7 @@ paths:
     get:
       description: |
         <div class="description_auth">
-          Информацию о подписке Джем можно получить с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории
+          Информацию о подписке Джем можно получить с токеном любой <a href="/openapi/api-information#tag/Avtorizaciya/Kategorii-tokenov">категории</a>
         </div>
 
         <div class="description_token">
@@ -453,6 +463,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_ping_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_seller_info_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:

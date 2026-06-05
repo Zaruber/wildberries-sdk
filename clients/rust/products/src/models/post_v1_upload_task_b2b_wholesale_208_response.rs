@@ -16,10 +16,10 @@ pub struct PostV1UploadTaskB2bWholesale208Response {
     /// HTTP статус-код
     #[serde(rename = "status")]
     pub status: i32,
-    /// Заголовок ошибки
+    /// Заголовок ответа
     #[serde(rename = "title")]
     pub title: String,
-    /// Детали ошибки
+    /// Детали ответа
     #[serde(rename = "detail")]
     pub detail: String,
     /// ID запроса

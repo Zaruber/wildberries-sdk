@@ -19,7 +19,7 @@ var _ MappedNullable = &GetDocs{}
 
 // GetDocs struct for GetDocs
 type GetDocs struct {
-	Data *GetDocsData `json:"data,omitempty"`
+	Data *GetDocData `json:"data,omitempty"`
 }
 
 // NewGetDocs instantiates a new GetDocs object
@@ -40,9 +40,9 @@ func NewGetDocsWithDefaults() *GetDocs {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GetDocs) GetData() GetDocsData {
+func (o *GetDocs) GetData() GetDocData {
 	if o == nil || IsNil(o.Data) {
-		var ret GetDocsData
+		var ret GetDocData
 		return ret
 	}
 	return *o.Data
@@ -50,7 +50,7 @@ func (o *GetDocs) GetData() GetDocsData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetDocs) GetDataOk() (*GetDocsData, bool) {
+func (o *GetDocs) GetDataOk() (*GetDocData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *GetDocs) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given GetDocsData and assigns it to the Data field.
-func (o *GetDocs) SetData(v GetDocsData) {
+// SetData gets a reference to the given GetDocData and assigns it to the Data field.
+func (o *GetDocs) SetData(v GetDocData) {
 	o.Data = &v
 }
 

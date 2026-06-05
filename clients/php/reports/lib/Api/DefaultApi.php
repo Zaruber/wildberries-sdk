@@ -8753,7 +8753,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Reports\Model\GetDeductions200Response|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response
+     * @return \Wildberries\Sdk\Reports\Model\GetDeductions200Response|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response
      */
     public function getDeductions($date_to, $limit, $date_from = null, $sort = 'dtBonus', $order = 'desc', $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getDeductions'][0])
     {
@@ -8782,7 +8782,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Reports\Model\GetDeductions200Response|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Reports\Model\GetDeductions200Response|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDeductionsWithHttpInfo($date_to, $limit, $date_from = null, $sort = 'dtBonus', $order = 'desc', $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getDeductions'][0])
     {
@@ -8827,6 +8827,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response',
                         $request,
                         $response,
                     );
@@ -8886,6 +8892,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9222,7 +9236,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Reports\Model\MeasurementPenalties|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response
+     * @return \Wildberries\Sdk\Reports\Model\MeasurementPenalties|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response
      */
     public function getMeasurementPenalties($date_to, $limit, $date_from = null, $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getMeasurementPenalties'][0])
     {
@@ -9249,7 +9263,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Reports\Model\MeasurementPenalties|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Reports\Model\MeasurementPenalties|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMeasurementPenaltiesWithHttpInfo($date_to, $limit, $date_from = null, $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getMeasurementPenalties'][0])
     {
@@ -9294,6 +9308,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response',
                         $request,
                         $response,
                     );
@@ -9353,6 +9373,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9663,7 +9691,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Reports\Model\WHM|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response
+     * @return \Wildberries\Sdk\Reports\Model\WHM|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response
      */
     public function getWarehouseMeasurements($date_to, $limit, $date_from = null, $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getWarehouseMeasurements'][0])
     {
@@ -9690,7 +9718,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Reports\Model\WHM|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Reports\Model\WHM|\Wildberries\Sdk\Reports\Model\Response400Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\Response403Retentions|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWarehouseMeasurementsWithHttpInfo($date_to, $limit, $date_from = null, $offset = 0, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['getWarehouseMeasurements'][0])
     {
@@ -9735,6 +9763,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response',
                         $request,
                         $response,
                     );
@@ -9794,6 +9828,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

@@ -22,7 +22,7 @@ var _ MappedNullable = &ProductsResponseProductsInnerStatistic{}
 // ProductsResponseProductsInnerStatistic struct for ProductsResponseProductsInnerStatistic
 type ProductsResponseProductsInnerStatistic struct {
 	Selected StatisticsSelected `json:"selected"`
-	Past *StatisticsPast `json:"past,omitempty"`
+	Past *StatisticsSelected `json:"past,omitempty"`
 	Comparison *StatisticsComparison `json:"comparison,omitempty"`
 }
 
@@ -71,9 +71,9 @@ func (o *ProductsResponseProductsInnerStatistic) SetSelected(v StatisticsSelecte
 }
 
 // GetPast returns the Past field value if set, zero value otherwise.
-func (o *ProductsResponseProductsInnerStatistic) GetPast() StatisticsPast {
+func (o *ProductsResponseProductsInnerStatistic) GetPast() StatisticsSelected {
 	if o == nil || IsNil(o.Past) {
-		var ret StatisticsPast
+		var ret StatisticsSelected
 		return ret
 	}
 	return *o.Past
@@ -81,7 +81,7 @@ func (o *ProductsResponseProductsInnerStatistic) GetPast() StatisticsPast {
 
 // GetPastOk returns a tuple with the Past field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductsResponseProductsInnerStatistic) GetPastOk() (*StatisticsPast, bool) {
+func (o *ProductsResponseProductsInnerStatistic) GetPastOk() (*StatisticsSelected, bool) {
 	if o == nil || IsNil(o.Past) {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *ProductsResponseProductsInnerStatistic) HasPast() bool {
 	return false
 }
 
-// SetPast gets a reference to the given StatisticsPast and assigns it to the Past field.
-func (o *ProductsResponseProductsInnerStatistic) SetPast(v StatisticsPast) {
+// SetPast gets a reference to the given StatisticsSelected and assigns it to the Past field.
+func (o *ProductsResponseProductsInnerStatistic) SetPast(v StatisticsSelected) {
 	o.Past = &v
 }
 

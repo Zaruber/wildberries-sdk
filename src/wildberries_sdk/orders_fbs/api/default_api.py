@@ -19,7 +19,6 @@ from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
 from wildberries_sdk.orders_fbs.models.api_marketplace_v3_orders_order_id_meta_customs_declaration_put_request import ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest
-from wildberries_sdk.orders_fbs.models.api_marketplace_v3_supplies_supply_id_orders_patch_request import ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
 from wildberries_sdk.orders_fbs.models.api_v3_orders_get200_response import ApiV3OrdersGet200Response
 from wildberries_sdk.orders_fbs.models.api_v3_orders_new_get200_response import ApiV3OrdersNewGet200Response
 from wildberries_sdk.orders_fbs.models.api_v3_orders_order_id_meta_expiration_put_request import ApiV3OrdersOrderIdMetaExpirationPutRequest
@@ -32,7 +31,6 @@ from wildberries_sdk.orders_fbs.models.api_v3_orders_status_history_post_request
 from wildberries_sdk.orders_fbs.models.api_v3_orders_status_post200_response import ApiV3OrdersStatusPost200Response
 from wildberries_sdk.orders_fbs.models.api_v3_orders_status_post_request import ApiV3OrdersStatusPostRequest
 from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_cross_border_post200_response import ApiV3OrdersStickersCrossBorderPost200Response
-from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_cross_border_post_request import ApiV3OrdersStickersCrossBorderPostRequest
 from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_post200_response import ApiV3OrdersStickersPost200Response
 from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_post_request import ApiV3OrdersStickersPostRequest
 from wildberries_sdk.orders_fbs.models.api_v3_passes_pass_id_put_request import ApiV3PassesPassIdPutRequest
@@ -48,7 +46,6 @@ from wildberries_sdk.orders_fbs.models.api_v3_supplies_supply_id_trbx_get200_res
 from wildberries_sdk.orders_fbs.models.api_v3_supplies_supply_id_trbx_post201_response import ApiV3SuppliesSupplyIdTrbxPost201Response
 from wildberries_sdk.orders_fbs.models.api_v3_supplies_supply_id_trbx_post_request import ApiV3SuppliesSupplyIdTrbxPostRequest
 from wildberries_sdk.orders_fbs.models.api_v3_supplies_supply_id_trbx_stickers_post200_response import ApiV3SuppliesSupplyIdTrbxStickersPost200Response
-from wildberries_sdk.orders_fbs.models.api_v3_supplies_supply_id_trbx_stickers_post_request import ApiV3SuppliesSupplyIdTrbxStickersPostRequest
 from wildberries_sdk.orders_fbs.models.crossborder_turkey_client_info_resp import CrossborderTurkeyClientInfoResp
 from wildberries_sdk.orders_fbs.models.model_pass import ModelPass
 from wildberries_sdk.orders_fbs.models.orders_request_api import OrdersRequestAPI
@@ -146,6 +143,7 @@ class DefaultApi:
             '200': "V3ArchiveOrders",
             '400': "V3APIErrorV2",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "V3APIErrorV2",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -229,6 +227,7 @@ class DefaultApi:
             '200': "V3ArchiveOrders",
             '400': "V3APIErrorV2",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "V3APIErrorV2",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -312,6 +311,7 @@ class DefaultApi:
             '200': "V3ArchiveOrders",
             '400': "V3APIErrorV2",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "V3APIErrorV2",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -464,6 +464,7 @@ class DefaultApi:
             '200': "V3OrdersMetaAPI",
             '400': "V3APIError",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "V3APIError",
             '404': "V3APIError",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -536,6 +537,7 @@ class DefaultApi:
             '200': "V3OrdersMetaAPI",
             '400': "V3APIError",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "V3APIError",
             '404': "V3APIError",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -608,6 +610,7 @@ class DefaultApi:
             '200': "V3OrdersMetaAPI",
             '400': "V3APIError",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "V3APIError",
             '404': "V3APIError",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -658,7 +661,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -760,6 +764,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -837,6 +842,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -914,6 +920,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -968,7 +975,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -1066,7 +1074,7 @@ class DefaultApi:
             '200': "V3SupplyOrderIDsAPI",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1139,7 +1147,7 @@ class DefaultApi:
             '200': "V3SupplyOrderIDsAPI",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1212,7 +1220,7 @@ class DefaultApi:
             '200': "V3SupplyOrderIDsAPI",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1296,7 +1304,7 @@ class DefaultApi:
     def api_marketplace_v3_supplies_supply_id_orders_patch(
         self,
         supply_id: Annotated[StrictStr, Field(description="ID поставки")],
-        api_marketplace_v3_supplies_supply_id_orders_patch_request: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest,
+        api_v3_orders_status_history_post_request: ApiV3OrdersStatusHistoryPostRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1316,8 +1324,8 @@ class DefaultApi:
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
-        :param api_marketplace_v3_supplies_supply_id_orders_patch_request: (required)
-        :type api_marketplace_v3_supplies_supply_id_orders_patch_request: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
+        :param api_v3_orders_status_history_post_request: (required)
+        :type api_v3_orders_status_history_post_request: ApiV3OrdersStatusHistoryPostRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1342,7 +1350,7 @@ class DefaultApi:
 
         _param = self._api_marketplace_v3_supplies_supply_id_orders_patch_serialize(
             supply_id=supply_id,
-            api_marketplace_v3_supplies_supply_id_orders_patch_request=api_marketplace_v3_supplies_supply_id_orders_patch_request,
+            api_v3_orders_status_history_post_request=api_v3_orders_status_history_post_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1353,6 +1361,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -1373,7 +1382,7 @@ class DefaultApi:
     def api_marketplace_v3_supplies_supply_id_orders_patch_with_http_info(
         self,
         supply_id: Annotated[StrictStr, Field(description="ID поставки")],
-        api_marketplace_v3_supplies_supply_id_orders_patch_request: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest,
+        api_v3_orders_status_history_post_request: ApiV3OrdersStatusHistoryPostRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1393,8 +1402,8 @@ class DefaultApi:
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
-        :param api_marketplace_v3_supplies_supply_id_orders_patch_request: (required)
-        :type api_marketplace_v3_supplies_supply_id_orders_patch_request: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
+        :param api_v3_orders_status_history_post_request: (required)
+        :type api_v3_orders_status_history_post_request: ApiV3OrdersStatusHistoryPostRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1419,7 +1428,7 @@ class DefaultApi:
 
         _param = self._api_marketplace_v3_supplies_supply_id_orders_patch_serialize(
             supply_id=supply_id,
-            api_marketplace_v3_supplies_supply_id_orders_patch_request=api_marketplace_v3_supplies_supply_id_orders_patch_request,
+            api_v3_orders_status_history_post_request=api_v3_orders_status_history_post_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1430,6 +1439,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -1450,7 +1460,7 @@ class DefaultApi:
     def api_marketplace_v3_supplies_supply_id_orders_patch_without_preload_content(
         self,
         supply_id: Annotated[StrictStr, Field(description="ID поставки")],
-        api_marketplace_v3_supplies_supply_id_orders_patch_request: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest,
+        api_v3_orders_status_history_post_request: ApiV3OrdersStatusHistoryPostRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1470,8 +1480,8 @@ class DefaultApi:
 
         :param supply_id: ID поставки (required)
         :type supply_id: str
-        :param api_marketplace_v3_supplies_supply_id_orders_patch_request: (required)
-        :type api_marketplace_v3_supplies_supply_id_orders_patch_request: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
+        :param api_v3_orders_status_history_post_request: (required)
+        :type api_v3_orders_status_history_post_request: ApiV3OrdersStatusHistoryPostRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1496,7 +1506,7 @@ class DefaultApi:
 
         _param = self._api_marketplace_v3_supplies_supply_id_orders_patch_serialize(
             supply_id=supply_id,
-            api_marketplace_v3_supplies_supply_id_orders_patch_request=api_marketplace_v3_supplies_supply_id_orders_patch_request,
+            api_v3_orders_status_history_post_request=api_v3_orders_status_history_post_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1507,6 +1517,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -1522,7 +1533,7 @@ class DefaultApi:
     def _api_marketplace_v3_supplies_supply_id_orders_patch_serialize(
         self,
         supply_id,
-        api_marketplace_v3_supplies_supply_id_orders_patch_request,
+        api_v3_orders_status_history_post_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1553,15 +1564,16 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if api_marketplace_v3_supplies_supply_id_orders_patch_request is not None:
-            _body_params = api_marketplace_v3_supplies_supply_id_orders_patch_request
+        if api_v3_orders_status_history_post_request is not None:
+            _body_params = api_v3_orders_status_history_post_request
 
 
         # set the HTTP header `Accept`
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -1659,7 +1671,7 @@ class DefaultApi:
             '200': "CrossborderTurkeyClientInfoResp",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1732,7 +1744,7 @@ class DefaultApi:
             '200': "CrossborderTurkeyClientInfoResp",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1805,7 +1817,7 @@ class DefaultApi:
             '200': "CrossborderTurkeyClientInfoResp",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1967,7 +1979,7 @@ class DefaultApi:
             '200': "ApiV3OrdersGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2051,7 +2063,7 @@ class DefaultApi:
             '200': "ApiV3OrdersGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2135,7 +2147,7 @@ class DefaultApi:
             '200': "ApiV3OrdersGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2283,7 +2295,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3OrdersNewGet200Response",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2350,7 +2362,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3OrdersNewGet200Response",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2417,7 +2429,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3OrdersNewGet200Response",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2550,7 +2562,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2624,7 +2636,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2698,7 +2710,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2840,7 +2852,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -2917,7 +2929,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -2994,7 +3006,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3140,7 +3152,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -3218,7 +3230,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -3296,7 +3308,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -3454,7 +3466,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3531,7 +3543,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3608,7 +3620,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3765,7 +3777,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3842,7 +3854,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3919,7 +3931,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4076,7 +4088,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -4154,7 +4166,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -4232,7 +4244,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -4390,7 +4402,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4467,7 +4479,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4544,7 +4556,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4697,7 +4709,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusHistoryPost200Response",
             '400': None,
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4770,7 +4782,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusHistoryPost200Response",
             '400': None,
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4843,7 +4855,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusHistoryPost200Response",
             '400': None,
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4993,7 +5005,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5065,7 +5077,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5137,7 +5149,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5232,7 +5244,7 @@ class DefaultApi:
     @validate_call
     def api_v3_orders_stickers_cross_border_post(
         self,
-        api_v3_orders_stickers_cross_border_post_request: Optional[ApiV3OrdersStickersCrossBorderPostRequest] = None,
+        api_v3_orders_stickers_post_request: Optional[ApiV3OrdersStickersPostRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5250,8 +5262,8 @@ class DefaultApi:
 
         Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) трансграничных поставок в формате PDF.<br><br>  Для каждого сборочного задания в ответе указывается статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов  <div class=\"description_important\">   Стикер может генерироваться с задержкой. Повторяйте запрос, пока не получите статус <code>ready</code>. </div>  Ограничения:   - За один запрос можно получить максимум 100 стикеров.   - Можно получить стикеры только для сборочных заданий, находящихся на сборке или в доставке — [статусы](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`, `complete`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
 
-        :param api_v3_orders_stickers_cross_border_post_request:
-        :type api_v3_orders_stickers_cross_border_post_request: ApiV3OrdersStickersCrossBorderPostRequest
+        :param api_v3_orders_stickers_post_request:
+        :type api_v3_orders_stickers_post_request: ApiV3OrdersStickersPostRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5275,7 +5287,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v3_orders_stickers_cross_border_post_serialize(
-            api_v3_orders_stickers_cross_border_post_request=api_v3_orders_stickers_cross_border_post_request,
+            api_v3_orders_stickers_post_request=api_v3_orders_stickers_post_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5286,7 +5298,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersCrossBorderPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5304,7 +5316,7 @@ class DefaultApi:
     @validate_call
     def api_v3_orders_stickers_cross_border_post_with_http_info(
         self,
-        api_v3_orders_stickers_cross_border_post_request: Optional[ApiV3OrdersStickersCrossBorderPostRequest] = None,
+        api_v3_orders_stickers_post_request: Optional[ApiV3OrdersStickersPostRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5322,8 +5334,8 @@ class DefaultApi:
 
         Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) трансграничных поставок в формате PDF.<br><br>  Для каждого сборочного задания в ответе указывается статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов  <div class=\"description_important\">   Стикер может генерироваться с задержкой. Повторяйте запрос, пока не получите статус <code>ready</code>. </div>  Ограничения:   - За один запрос можно получить максимум 100 стикеров.   - Можно получить стикеры только для сборочных заданий, находящихся на сборке или в доставке — [статусы](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`, `complete`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
 
-        :param api_v3_orders_stickers_cross_border_post_request:
-        :type api_v3_orders_stickers_cross_border_post_request: ApiV3OrdersStickersCrossBorderPostRequest
+        :param api_v3_orders_stickers_post_request:
+        :type api_v3_orders_stickers_post_request: ApiV3OrdersStickersPostRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5347,7 +5359,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v3_orders_stickers_cross_border_post_serialize(
-            api_v3_orders_stickers_cross_border_post_request=api_v3_orders_stickers_cross_border_post_request,
+            api_v3_orders_stickers_post_request=api_v3_orders_stickers_post_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5358,7 +5370,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersCrossBorderPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5376,7 +5388,7 @@ class DefaultApi:
     @validate_call
     def api_v3_orders_stickers_cross_border_post_without_preload_content(
         self,
-        api_v3_orders_stickers_cross_border_post_request: Optional[ApiV3OrdersStickersCrossBorderPostRequest] = None,
+        api_v3_orders_stickers_post_request: Optional[ApiV3OrdersStickersPostRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5394,8 +5406,8 @@ class DefaultApi:
 
         Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) трансграничных поставок в формате PDF.<br><br>  Для каждого сборочного задания в ответе указывается статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов  <div class=\"description_important\">   Стикер может генерироваться с задержкой. Повторяйте запрос, пока не получите статус <code>ready</code>. </div>  Ограничения:   - За один запрос можно получить максимум 100 стикеров.   - Можно получить стикеры только для сборочных заданий, находящихся на сборке или в доставке — [статусы](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`, `complete`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
 
-        :param api_v3_orders_stickers_cross_border_post_request:
-        :type api_v3_orders_stickers_cross_border_post_request: ApiV3OrdersStickersCrossBorderPostRequest
+        :param api_v3_orders_stickers_post_request:
+        :type api_v3_orders_stickers_post_request: ApiV3OrdersStickersPostRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5419,7 +5431,7 @@ class DefaultApi:
         """ # noqa: E501
 
         _param = self._api_v3_orders_stickers_cross_border_post_serialize(
-            api_v3_orders_stickers_cross_border_post_request=api_v3_orders_stickers_cross_border_post_request,
+            api_v3_orders_stickers_post_request=api_v3_orders_stickers_post_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5430,7 +5442,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersCrossBorderPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5443,7 +5455,7 @@ class DefaultApi:
 
     def _api_v3_orders_stickers_cross_border_post_serialize(
         self,
-        api_v3_orders_stickers_cross_border_post_request,
+        api_v3_orders_stickers_post_request,
         _request_auth,
         _content_type,
         _headers,
@@ -5472,8 +5484,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if api_v3_orders_stickers_cross_border_post_request is not None:
-            _body_params = api_v3_orders_stickers_cross_border_post_request
+        if api_v3_orders_stickers_post_request is not None:
+            _body_params = api_v3_orders_stickers_post_request
 
 
         # set the HTTP header `Accept`
@@ -5591,7 +5603,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5675,7 +5687,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5759,7 +5771,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5918,7 +5930,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelPass]",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5985,7 +5997,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelPass]",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -6052,7 +6064,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelPass]",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -6180,6 +6192,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[PassOffice]",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -6246,6 +6259,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[PassOffice]",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -6312,6 +6326,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[PassOffice]",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -6358,7 +6373,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -6442,7 +6458,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6514,7 +6530,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6586,7 +6602,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6727,7 +6743,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6804,7 +6820,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6881,7 +6897,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -7034,7 +7050,7 @@ class DefaultApi:
             '201': "ApiV3PassesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -7107,7 +7123,7 @@ class DefaultApi:
             '201': "ApiV3PassesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -7180,7 +7196,7 @@ class DefaultApi:
             '201': "ApiV3PassesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -7334,7 +7350,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7410,7 +7426,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7486,7 +7502,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7625,7 +7641,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesOrdersReshipmentGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7693,7 +7709,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesOrdersReshipmentGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7761,7 +7777,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesOrdersReshipmentGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7894,7 +7910,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7966,7 +7982,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -8038,7 +8054,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -8191,7 +8207,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdBarcodeGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8269,7 +8285,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdBarcodeGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8347,7 +8363,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdBarcodeGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8490,7 +8506,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8564,7 +8580,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8638,7 +8654,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8776,7 +8792,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Model409SupplyDeliverError",
@@ -8850,7 +8866,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Model409SupplyDeliverError",
@@ -8924,7 +8940,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Model409SupplyDeliverError",
@@ -9062,7 +9078,7 @@ class DefaultApi:
             '200': "Supply",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9135,7 +9151,7 @@ class DefaultApi:
             '200': "Supply",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9208,7 +9224,7 @@ class DefaultApi:
             '200': "Supply",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9349,7 +9365,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9426,7 +9442,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9503,7 +9519,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9656,7 +9672,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9729,7 +9745,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9802,7 +9818,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9943,7 +9959,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesSupplyIdTrbxPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -10020,7 +10036,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesSupplyIdTrbxPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -10097,7 +10113,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesSupplyIdTrbxPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -10198,7 +10214,7 @@ class DefaultApi:
         self,
         supply_id: Annotated[StrictStr, Field(description="ID поставки")],
         type: Annotated[StrictStr, Field(description="Тип стикера")],
-        api_v3_supplies_supply_id_trbx_stickers_post_request: Optional[ApiV3SuppliesSupplyIdTrbxStickersPostRequest] = None,
+        api_v3_supplies_supply_id_trbx_delete_request: Optional[ApiV3SuppliesSupplyIdTrbxDeleteRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10220,8 +10236,8 @@ class DefaultApi:
         :type supply_id: str
         :param type: Тип стикера (required)
         :type type: str
-        :param api_v3_supplies_supply_id_trbx_stickers_post_request:
-        :type api_v3_supplies_supply_id_trbx_stickers_post_request: ApiV3SuppliesSupplyIdTrbxStickersPostRequest
+        :param api_v3_supplies_supply_id_trbx_delete_request:
+        :type api_v3_supplies_supply_id_trbx_delete_request: ApiV3SuppliesSupplyIdTrbxDeleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10247,7 +10263,7 @@ class DefaultApi:
         _param = self._api_v3_supplies_supply_id_trbx_stickers_post_serialize(
             supply_id=supply_id,
             type=type,
-            api_v3_supplies_supply_id_trbx_stickers_post_request=api_v3_supplies_supply_id_trbx_stickers_post_request,
+            api_v3_supplies_supply_id_trbx_delete_request=api_v3_supplies_supply_id_trbx_delete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10258,7 +10274,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -10279,7 +10295,7 @@ class DefaultApi:
         self,
         supply_id: Annotated[StrictStr, Field(description="ID поставки")],
         type: Annotated[StrictStr, Field(description="Тип стикера")],
-        api_v3_supplies_supply_id_trbx_stickers_post_request: Optional[ApiV3SuppliesSupplyIdTrbxStickersPostRequest] = None,
+        api_v3_supplies_supply_id_trbx_delete_request: Optional[ApiV3SuppliesSupplyIdTrbxDeleteRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10301,8 +10317,8 @@ class DefaultApi:
         :type supply_id: str
         :param type: Тип стикера (required)
         :type type: str
-        :param api_v3_supplies_supply_id_trbx_stickers_post_request:
-        :type api_v3_supplies_supply_id_trbx_stickers_post_request: ApiV3SuppliesSupplyIdTrbxStickersPostRequest
+        :param api_v3_supplies_supply_id_trbx_delete_request:
+        :type api_v3_supplies_supply_id_trbx_delete_request: ApiV3SuppliesSupplyIdTrbxDeleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10328,7 +10344,7 @@ class DefaultApi:
         _param = self._api_v3_supplies_supply_id_trbx_stickers_post_serialize(
             supply_id=supply_id,
             type=type,
-            api_v3_supplies_supply_id_trbx_stickers_post_request=api_v3_supplies_supply_id_trbx_stickers_post_request,
+            api_v3_supplies_supply_id_trbx_delete_request=api_v3_supplies_supply_id_trbx_delete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10339,7 +10355,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -10360,7 +10376,7 @@ class DefaultApi:
         self,
         supply_id: Annotated[StrictStr, Field(description="ID поставки")],
         type: Annotated[StrictStr, Field(description="Тип стикера")],
-        api_v3_supplies_supply_id_trbx_stickers_post_request: Optional[ApiV3SuppliesSupplyIdTrbxStickersPostRequest] = None,
+        api_v3_supplies_supply_id_trbx_delete_request: Optional[ApiV3SuppliesSupplyIdTrbxDeleteRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10382,8 +10398,8 @@ class DefaultApi:
         :type supply_id: str
         :param type: Тип стикера (required)
         :type type: str
-        :param api_v3_supplies_supply_id_trbx_stickers_post_request:
-        :type api_v3_supplies_supply_id_trbx_stickers_post_request: ApiV3SuppliesSupplyIdTrbxStickersPostRequest
+        :param api_v3_supplies_supply_id_trbx_delete_request:
+        :type api_v3_supplies_supply_id_trbx_delete_request: ApiV3SuppliesSupplyIdTrbxDeleteRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10409,7 +10425,7 @@ class DefaultApi:
         _param = self._api_v3_supplies_supply_id_trbx_stickers_post_serialize(
             supply_id=supply_id,
             type=type,
-            api_v3_supplies_supply_id_trbx_stickers_post_request=api_v3_supplies_supply_id_trbx_stickers_post_request,
+            api_v3_supplies_supply_id_trbx_delete_request=api_v3_supplies_supply_id_trbx_delete_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10420,7 +10436,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
-            '402': "ApiV3PassesGet402Response",
+            '402': "ApiV3PassesOfficesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -10436,7 +10452,7 @@ class DefaultApi:
         self,
         supply_id,
         type,
-        api_v3_supplies_supply_id_trbx_stickers_post_request,
+        api_v3_supplies_supply_id_trbx_delete_request,
         _request_auth,
         _content_type,
         _headers,
@@ -10471,8 +10487,8 @@ class DefaultApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if api_v3_supplies_supply_id_trbx_stickers_post_request is not None:
-            _body_params = api_v3_supplies_supply_id_trbx_stickers_post_request
+        if api_v3_supplies_supply_id_trbx_delete_request is not None:
+            _body_params = api_v3_supplies_supply_id_trbx_delete_request
 
 
         # set the HTTP header `Accept`

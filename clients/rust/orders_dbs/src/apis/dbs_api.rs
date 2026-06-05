@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiMarketplaceV3DbsOrdersB2bInfoPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -32,6 +33,7 @@ pub enum ApiMarketplaceV3DbsOrdersB2bInfoPostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -45,6 +47,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaDeletePostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status409(models::ApiError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -57,6 +60,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaDeletePostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaDetailsPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -68,6 +72,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaDetailsPostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaGtinPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status409(models::ApiError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -80,6 +85,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaGtinPostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaImeiPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status409(models::ApiError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -92,6 +98,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaImeiPostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaInfoPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -103,6 +110,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaInfoPostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaSgtinPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -114,6 +122,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaSgtinPostError {
 pub enum ApiMarketplaceV3DbsOrdersMetaUinPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status409(models::ApiError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -126,6 +135,7 @@ pub enum ApiMarketplaceV3DbsOrdersMetaUinPostError {
 pub enum ApiMarketplaceV3DbsOrdersStatusCancelPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -137,6 +147,7 @@ pub enum ApiMarketplaceV3DbsOrdersStatusCancelPostError {
 pub enum ApiMarketplaceV3DbsOrdersStatusConfirmPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -148,6 +159,7 @@ pub enum ApiMarketplaceV3DbsOrdersStatusConfirmPostError {
 pub enum ApiMarketplaceV3DbsOrdersStatusDeliverPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -159,6 +171,7 @@ pub enum ApiMarketplaceV3DbsOrdersStatusDeliverPostError {
 pub enum ApiMarketplaceV3DbsOrdersStatusInfoPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status404(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -171,6 +184,7 @@ pub enum ApiMarketplaceV3DbsOrdersStatusInfoPostError {
 pub enum ApiMarketplaceV3DbsOrdersStatusReceivePostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -182,6 +196,7 @@ pub enum ApiMarketplaceV3DbsOrdersStatusReceivePostError {
 pub enum ApiMarketplaceV3DbsOrdersStatusRejectPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -193,6 +208,7 @@ pub enum ApiMarketplaceV3DbsOrdersStatusRejectPostError {
 pub enum ApiMarketplaceV3DbsOrdersStickersPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -204,6 +220,7 @@ pub enum ApiMarketplaceV3DbsOrdersStickersPostError {
 pub enum ApiV3DbsGroupsInfoPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),

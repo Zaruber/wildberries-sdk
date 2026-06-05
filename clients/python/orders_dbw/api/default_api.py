@@ -116,6 +116,7 @@ class DefaultApi:
             '200': "ClientInfoResp",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -187,6 +188,7 @@ class DefaultApi:
             '200': "ClientInfoResp",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -258,6 +260,7 @@ class DefaultApi:
             '200': "ClientInfoResp",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -406,6 +409,7 @@ class DefaultApi:
             '200': "ApiMetaDeleteResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -477,6 +481,7 @@ class DefaultApi:
             '200': "ApiMetaDeleteResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -548,6 +553,7 @@ class DefaultApi:
             '200': "ApiMetaDeleteResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -696,6 +702,7 @@ class DefaultApi:
             '200': "ApiOrdersMetaDetailsResponse",
             '400': "ApiBatchError",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "ApiBatchError",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -767,6 +774,7 @@ class DefaultApi:
             '200': "ApiOrdersMetaDetailsResponse",
             '400': "ApiBatchError",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "ApiBatchError",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -838,6 +846,7 @@ class DefaultApi:
             '200': "ApiOrdersMetaDetailsResponse",
             '400': "ApiBatchError",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "ApiBatchError",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -986,6 +995,7 @@ class DefaultApi:
             '200': "ApiStatusSetResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -1057,6 +1067,7 @@ class DefaultApi:
             '200': "ApiStatusSetResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -1128,6 +1139,7 @@ class DefaultApi:
             '200': "ApiStatusSetResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -1276,6 +1288,7 @@ class DefaultApi:
             '200': "ApiStatusSetResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -1347,6 +1360,7 @@ class DefaultApi:
             '200': "ApiStatusSetResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }
@@ -1418,6 +1432,7 @@ class DefaultApi:
             '200': "ApiStatusSetResponses",
             '400': "Error",
             '401': "ApiV3DbwOrdersNewGet401Response",
+            '402': "ApiV3DbwOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbwOrdersNewGet401Response",
         }

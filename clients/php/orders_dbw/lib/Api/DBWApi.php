@@ -198,7 +198,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\OrdersDbw\Model\ClientInfoResp|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
+     * @return \Wildberries\Sdk\OrdersDbw\Model\ClientInfoResp|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
      */
     public function apiMarketplaceV3DbwOrdersClientPost($orders_request_api, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersClientPost'][0])
     {
@@ -222,7 +222,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ClientInfoResp|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ClientInfoResp|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3DbwOrdersClientPostWithHttpInfo($orders_request_api, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersClientPost'][0])
     {
@@ -267,6 +267,12 @@ class DBWApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -326,6 +332,14 @@ class DBWApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -583,7 +597,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiMetaDeleteResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
+     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiMetaDeleteResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
      */
     public function apiMarketplaceV3DbwOrdersMetaDeletePost($api_orders_meta_dlete_request_v2, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersMetaDeletePost'][0])
     {
@@ -607,7 +621,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiMetaDeleteResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiMetaDeleteResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3DbwOrdersMetaDeletePostWithHttpInfo($api_orders_meta_dlete_request_v2, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersMetaDeletePost'][0])
     {
@@ -652,6 +666,12 @@ class DBWApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -711,6 +731,14 @@ class DBWApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -968,7 +996,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiOrdersMetaDetailsResponse|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
+     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiOrdersMetaDetailsResponse|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
      */
     public function apiMarketplaceV3DbwOrdersMetaDetailsPost($api_orders_request_v2 = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersMetaDetailsPost'][0])
     {
@@ -992,7 +1020,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiOrdersMetaDetailsResponse|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiOrdersMetaDetailsResponse|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3DbwOrdersMetaDetailsPostWithHttpInfo($api_orders_request_v2 = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersMetaDetailsPost'][0])
     {
@@ -1037,6 +1065,12 @@ class DBWApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -1096,6 +1130,14 @@ class DBWApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1347,7 +1389,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
+     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
      */
     public function apiMarketplaceV3DbwOrdersMetaSgtinPost($api_orders_sgtins_set_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersMetaSgtinPost'][0])
     {
@@ -1371,7 +1413,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3DbwOrdersMetaSgtinPostWithHttpInfo($api_orders_sgtins_set_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersMetaSgtinPost'][0])
     {
@@ -1416,6 +1458,12 @@ class DBWApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -1475,6 +1523,14 @@ class DBWApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1732,7 +1788,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
+     * @return \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response
      */
     public function apiMarketplaceV3DbwOrdersStatusDeliverPost($api_orders_request_v2, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersStatusDeliverPost'][0])
     {
@@ -1756,7 +1812,7 @@ class DBWApi
      *
      * @throws \Wildberries\Sdk\OrdersDbw\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersDbw\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response|\Wildberries\Sdk\OrdersDbw\Model\Error|\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3DbwOrdersStatusDeliverPostWithHttpInfo($api_orders_request_v2, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbwOrdersStatusDeliverPost'][0])
     {
@@ -1801,6 +1857,12 @@ class DBWApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -1860,6 +1922,14 @@ class DBWApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\OrdersDbw\Model\ApiV3DbwOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiMarketplaceV3DbwOrdersClientPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -32,6 +33,7 @@ pub enum ApiMarketplaceV3DbwOrdersClientPostError {
 pub enum ApiMarketplaceV3DbwOrdersMetaDeletePostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -43,6 +45,7 @@ pub enum ApiMarketplaceV3DbwOrdersMetaDeletePostError {
 pub enum ApiMarketplaceV3DbwOrdersMetaDetailsPostError {
     Status400(models::ApiBatchError),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::ApiBatchError),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -54,6 +57,7 @@ pub enum ApiMarketplaceV3DbwOrdersMetaDetailsPostError {
 pub enum ApiMarketplaceV3DbwOrdersMetaSgtinPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -65,6 +69,7 @@ pub enum ApiMarketplaceV3DbwOrdersMetaSgtinPostError {
 pub enum ApiMarketplaceV3DbwOrdersStatusDeliverPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),

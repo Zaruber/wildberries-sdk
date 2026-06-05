@@ -23,7 +23,7 @@ var _ MappedNullable = &ApiB2bClientInfoResponse{}
 type ApiB2bClientInfoResponse struct {
 	Data *ApiB2bClientInfo `json:"data,omitempty"`
 	// Детали ошибки
-	Errors []ApiB2bClientInfoResponseErrorsInner `json:"errors,omitempty"`
+	Errors []ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner `json:"errors,omitempty"`
 	// Есть ли ошибки
 	IsError bool `json:"isError"`
 	// ID сборочного задания
@@ -84,9 +84,9 @@ func (o *ApiB2bClientInfoResponse) SetData(v ApiB2bClientInfo) {
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *ApiB2bClientInfoResponse) GetErrors() []ApiB2bClientInfoResponseErrorsInner {
+func (o *ApiB2bClientInfoResponse) GetErrors() []ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner {
 	if o == nil || IsNil(o.Errors) {
-		var ret []ApiB2bClientInfoResponseErrorsInner
+		var ret []ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner
 		return ret
 	}
 	return o.Errors
@@ -94,7 +94,7 @@ func (o *ApiB2bClientInfoResponse) GetErrors() []ApiB2bClientInfoResponseErrorsI
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiB2bClientInfoResponse) GetErrorsOk() ([]ApiB2bClientInfoResponseErrorsInner, bool) {
+func (o *ApiB2bClientInfoResponse) GetErrorsOk() ([]ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner, bool) {
 	if o == nil || IsNil(o.Errors) {
 		return nil, false
 	}
@@ -110,8 +110,8 @@ func (o *ApiB2bClientInfoResponse) HasErrors() bool {
 	return false
 }
 
-// SetErrors gets a reference to the given []ApiB2bClientInfoResponseErrorsInner and assigns it to the Errors field.
-func (o *ApiB2bClientInfoResponse) SetErrors(v []ApiB2bClientInfoResponseErrorsInner) {
+// SetErrors gets a reference to the given []ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner and assigns it to the Errors field.
+func (o *ApiB2bClientInfoResponse) SetErrors(v []ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner) {
 	o.Errors = v
 }
 

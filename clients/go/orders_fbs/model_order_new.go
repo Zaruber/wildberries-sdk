@@ -79,7 +79,7 @@ type OrderNew struct {
 	CrossBorderType *int32 `json:"crossBorderType,omitempty"`
 	// Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену 
 	IsZeroOrder *bool `json:"isZeroOrder,omitempty"`
-	Options *OrderOptions `json:"options,omitempty"`
+	Options *V3ArchiveOrderOptions `json:"options,omitempty"`
 }
 
 // NewOrderNew instantiates a new OrderNew object
@@ -1103,9 +1103,9 @@ func (o *OrderNew) SetIsZeroOrder(v bool) {
 }
 
 // GetOptions returns the Options field value if set, zero value otherwise.
-func (o *OrderNew) GetOptions() OrderOptions {
+func (o *OrderNew) GetOptions() V3ArchiveOrderOptions {
 	if o == nil || IsNil(o.Options) {
-		var ret OrderOptions
+		var ret V3ArchiveOrderOptions
 		return ret
 	}
 	return *o.Options
@@ -1113,7 +1113,7 @@ func (o *OrderNew) GetOptions() OrderOptions {
 
 // GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderNew) GetOptionsOk() (*OrderOptions, bool) {
+func (o *OrderNew) GetOptionsOk() (*V3ArchiveOrderOptions, bool) {
 	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
@@ -1129,8 +1129,8 @@ func (o *OrderNew) HasOptions() bool {
 	return false
 }
 
-// SetOptions gets a reference to the given OrderOptions and assigns it to the Options field.
-func (o *OrderNew) SetOptions(v OrderOptions) {
+// SetOptions gets a reference to the given V3ArchiveOrderOptions and assigns it to the Options field.
+func (o *OrderNew) SetOptions(v V3ArchiveOrderOptions) {
 	o.Options = &v
 }
 

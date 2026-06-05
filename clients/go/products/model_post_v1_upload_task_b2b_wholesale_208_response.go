@@ -23,9 +23,9 @@ var _ MappedNullable = &PostV1UploadTaskB2bWholesale208Response{}
 type PostV1UploadTaskB2bWholesale208Response struct {
 	// HTTP статус-код
 	Status int32 `json:"status"`
-	// Заголовок ошибки
+	// Заголовок ответа
 	Title string `json:"title"`
-	// Детали ошибки
+	// Детали ответа
 	Detail string `json:"detail"`
 	// ID запроса
 	RequestId string `json:"requestId"`

@@ -67,16 +67,16 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'rating' => 'float',
         'feedback_rating' => 'float',
         'price' => '\Wildberries\Sdk\Analytics\Model\TableProductItemAllOfPrice',
-        'frequency' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfFrequency',
+        'frequency' => '\Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition',
         'week_frequency' => 'int',
-        'median_position' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfMedianPosition',
-        'avg_position' => '\Wildberries\Sdk\Analytics\Model\TableGroupItemMetricsAvgPosition',
+        'median_position' => '\Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition',
+        'avg_position' => '\Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition',
         'open_card' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard',
-        'add_to_cart' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfAddToCart',
-        'open_to_cart' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenToCart',
-        'orders' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOrders',
-        'cart_to_order' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfCartToOrder',
-        'visibility' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfVisibility'
+        'add_to_cart' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard',
+        'open_to_cart' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard',
+        'orders' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard',
+        'cart_to_order' => '\Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard',
+        'visibility' => '\Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition'
     ];
 
     /**
@@ -755,7 +755,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets frequency
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfFrequency
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition
      */
     public function getFrequency()
     {
@@ -765,7 +765,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets frequency
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfFrequency $frequency frequency
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition $frequency frequency
      *
      * @return self
      */
@@ -809,7 +809,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets median_position
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfMedianPosition
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition
      */
     public function getMedianPosition()
     {
@@ -819,7 +819,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets median_position
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfMedianPosition $median_position median_position
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition $median_position median_position
      *
      * @return self
      */
@@ -836,7 +836,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets avg_position
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableGroupItemMetricsAvgPosition
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition
      */
     public function getAvgPosition()
     {
@@ -846,7 +846,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets avg_position
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableGroupItemMetricsAvgPosition $avg_position avg_position
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition $avg_position avg_position
      *
      * @return self
      */
@@ -890,7 +890,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets add_to_cart
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfAddToCart
+     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard
      */
     public function getAddToCart()
     {
@@ -900,7 +900,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets add_to_cart
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfAddToCart $add_to_cart add_to_cart
+     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard $add_to_cart add_to_cart
      *
      * @return self
      */
@@ -917,7 +917,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets open_to_cart
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenToCart
+     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard
      */
     public function getOpenToCart()
     {
@@ -927,7 +927,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets open_to_cart
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenToCart $open_to_cart open_to_cart
+     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard $open_to_cart open_to_cart
      *
      * @return self
      */
@@ -944,7 +944,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets orders
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOrders
+     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard
      */
     public function getOrders()
     {
@@ -954,7 +954,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets orders
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOrders $orders orders
+     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard $orders orders
      *
      * @return self
      */
@@ -971,7 +971,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets cart_to_order
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfCartToOrder
+     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard
      */
     public function getCartToOrder()
     {
@@ -981,7 +981,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets cart_to_order
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfCartToOrder $cart_to_order cart_to_order
+     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfOpenCard $cart_to_order cart_to_order
      *
      * @return self
      */
@@ -998,7 +998,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets visibility
      *
-     * @return \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfVisibility
+     * @return \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition
      */
     public function getVisibility()
     {
@@ -1008,7 +1008,7 @@ class TableSearchTextItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets visibility
      *
-     * @param \Wildberries\Sdk\Analytics\Model\TableSearchTextItemAllOfVisibility $visibility visibility
+     * @param \Wildberries\Sdk\Analytics\Model\TableProductItemAllOfAvgPosition $visibility visibility
      *
      * @return self
      */

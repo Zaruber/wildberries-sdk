@@ -13,20 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { ResponseFeedbackInnerAnswer } from './ResponseFeedbackInnerAnswer';
+import type { ApiV1FeedbackGet200ResponseDataProductDetails } from './ApiV1FeedbackGet200ResponseDataProductDetails';
 import {
-    ResponseFeedbackInnerAnswerFromJSON,
-    ResponseFeedbackInnerAnswerFromJSONTyped,
-    ResponseFeedbackInnerAnswerToJSON,
-    ResponseFeedbackInnerAnswerToJSONTyped,
-} from './ResponseFeedbackInnerAnswer';
-import type { ResponseFeedbackInnerVideo } from './ResponseFeedbackInnerVideo';
-import {
-    ResponseFeedbackInnerVideoFromJSON,
-    ResponseFeedbackInnerVideoFromJSONTyped,
-    ResponseFeedbackInnerVideoToJSON,
-    ResponseFeedbackInnerVideoToJSONTyped,
-} from './ResponseFeedbackInnerVideo';
+    ApiV1FeedbackGet200ResponseDataProductDetailsFromJSON,
+    ApiV1FeedbackGet200ResponseDataProductDetailsFromJSONTyped,
+    ApiV1FeedbackGet200ResponseDataProductDetailsToJSON,
+    ApiV1FeedbackGet200ResponseDataProductDetailsToJSONTyped,
+} from './ApiV1FeedbackGet200ResponseDataProductDetails';
 import type { ApiV1FeedbackGet200ResponseDataPhotoLinksInner } from './ApiV1FeedbackGet200ResponseDataPhotoLinksInner';
 import {
     ApiV1FeedbackGet200ResponseDataPhotoLinksInnerFromJSON,
@@ -34,13 +27,20 @@ import {
     ApiV1FeedbackGet200ResponseDataPhotoLinksInnerToJSON,
     ApiV1FeedbackGet200ResponseDataPhotoLinksInnerToJSONTyped,
 } from './ApiV1FeedbackGet200ResponseDataPhotoLinksInner';
-import type { ResponseFeedbackInnerProductDetails } from './ResponseFeedbackInnerProductDetails';
+import type { ApiV1FeedbackGet200ResponseDataVideo } from './ApiV1FeedbackGet200ResponseDataVideo';
 import {
-    ResponseFeedbackInnerProductDetailsFromJSON,
-    ResponseFeedbackInnerProductDetailsFromJSONTyped,
-    ResponseFeedbackInnerProductDetailsToJSON,
-    ResponseFeedbackInnerProductDetailsToJSONTyped,
-} from './ResponseFeedbackInnerProductDetails';
+    ApiV1FeedbackGet200ResponseDataVideoFromJSON,
+    ApiV1FeedbackGet200ResponseDataVideoFromJSONTyped,
+    ApiV1FeedbackGet200ResponseDataVideoToJSON,
+    ApiV1FeedbackGet200ResponseDataVideoToJSONTyped,
+} from './ApiV1FeedbackGet200ResponseDataVideo';
+import type { ApiV1FeedbackGet200ResponseDataAnswer } from './ApiV1FeedbackGet200ResponseDataAnswer';
+import {
+    ApiV1FeedbackGet200ResponseDataAnswerFromJSON,
+    ApiV1FeedbackGet200ResponseDataAnswerFromJSONTyped,
+    ApiV1FeedbackGet200ResponseDataAnswerToJSON,
+    ApiV1FeedbackGet200ResponseDataAnswerToJSONTyped,
+} from './ApiV1FeedbackGet200ResponseDataAnswer';
 
 /**
  * 
@@ -86,10 +86,10 @@ export interface ResponseFeedbackInner {
     createdDate?: Date;
     /**
      * 
-     * @type {ResponseFeedbackInnerAnswer}
+     * @type {ApiV1FeedbackGet200ResponseDataAnswer}
      * @memberof ResponseFeedbackInner
      */
-    answer?: ResponseFeedbackInnerAnswer | null;
+    answer?: ApiV1FeedbackGet200ResponseDataAnswer | null;
     /**
      * Статус отзыва:
      *   - `none` - не обработан (новый)
@@ -101,10 +101,10 @@ export interface ResponseFeedbackInner {
     state?: string;
     /**
      * 
-     * @type {ResponseFeedbackInnerProductDetails}
+     * @type {ApiV1FeedbackGet200ResponseDataProductDetails}
      * @memberof ResponseFeedbackInner
      */
-    productDetails?: ResponseFeedbackInnerProductDetails;
+    productDetails?: ApiV1FeedbackGet200ResponseDataProductDetails;
     /**
      * Массив структур фотографий
      * @type {Array<ApiV1FeedbackGet200ResponseDataPhotoLinksInner>}
@@ -113,10 +113,10 @@ export interface ResponseFeedbackInner {
     photoLinks?: Array<ApiV1FeedbackGet200ResponseDataPhotoLinksInner> | null;
     /**
      * 
-     * @type {ResponseFeedbackInnerVideo}
+     * @type {ApiV1FeedbackGet200ResponseDataVideo}
      * @memberof ResponseFeedbackInner
      */
-    video?: ResponseFeedbackInnerVideo | null;
+    video?: ApiV1FeedbackGet200ResponseDataVideo | null;
     /**
      * Просмотрен ли отзыв
      * @type {boolean}
@@ -270,11 +270,11 @@ export function ResponseFeedbackInnerFromJSONTyped(json: any, ignoreDiscriminato
         'cons': json['cons'] == null ? undefined : json['cons'],
         'productValuation': json['productValuation'] == null ? undefined : json['productValuation'],
         'createdDate': json['createdDate'] == null ? undefined : (new Date(json['createdDate'])),
-        'answer': json['answer'] == null ? undefined : ResponseFeedbackInnerAnswerFromJSON(json['answer']),
+        'answer': json['answer'] == null ? undefined : ApiV1FeedbackGet200ResponseDataAnswerFromJSON(json['answer']),
         'state': json['state'] == null ? undefined : json['state'],
-        'productDetails': json['productDetails'] == null ? undefined : ResponseFeedbackInnerProductDetailsFromJSON(json['productDetails']),
+        'productDetails': json['productDetails'] == null ? undefined : ApiV1FeedbackGet200ResponseDataProductDetailsFromJSON(json['productDetails']),
         'photoLinks': json['photoLinks'] == null ? undefined : ((json['photoLinks'] as Array<any>).map(ApiV1FeedbackGet200ResponseDataPhotoLinksInnerFromJSON)),
-        'video': json['video'] == null ? undefined : ResponseFeedbackInnerVideoFromJSON(json['video']),
+        'video': json['video'] == null ? undefined : ApiV1FeedbackGet200ResponseDataVideoFromJSON(json['video']),
         'wasViewed': json['wasViewed'] == null ? undefined : json['wasViewed'],
         'userName': json['userName'] == null ? undefined : json['userName'],
         'orderStatus': json['orderStatus'] == null ? undefined : json['orderStatus'],
@@ -313,11 +313,11 @@ export function ResponseFeedbackInnerToJSONTyped(value?: ResponseFeedbackInner |
         'cons': value['cons'],
         'productValuation': value['productValuation'],
         'createdDate': value['createdDate'] == null ? value['createdDate'] : value['createdDate'].toISOString(),
-        'answer': ResponseFeedbackInnerAnswerToJSON(value['answer']),
+        'answer': ApiV1FeedbackGet200ResponseDataAnswerToJSON(value['answer']),
         'state': value['state'],
-        'productDetails': ResponseFeedbackInnerProductDetailsToJSON(value['productDetails']),
+        'productDetails': ApiV1FeedbackGet200ResponseDataProductDetailsToJSON(value['productDetails']),
         'photoLinks': value['photoLinks'] == null ? undefined : ((value['photoLinks'] as Array<any>).map(ApiV1FeedbackGet200ResponseDataPhotoLinksInnerToJSON)),
-        'video': ResponseFeedbackInnerVideoToJSON(value['video']),
+        'video': ApiV1FeedbackGet200ResponseDataVideoToJSON(value['video']),
         'wasViewed': value['wasViewed'],
         'userName': value['userName'],
         'orderStatus': value['orderStatus'],

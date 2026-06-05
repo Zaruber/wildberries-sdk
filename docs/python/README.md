@@ -277,6 +277,8 @@ print(feedbacks)
 - `promotion.DefaultApi.api_v1_calendar_promotions_get` — `GET /api/v1/calendar/promotions` — Список акций
 - `promotion.DefaultApi.api_v1_calendar_promotions_nomenclatures_get` — `GET /api/v1/calendar/promotions/nomenclatures` — Список товаров для участия в акции
 - `promotion.DefaultApi.api_v1_calendar_promotions_upload_post` — `POST /api/v1/calendar/promotions/upload` — Добавить товар в акцию
+- `promotion.DefaultApi.post_v1_recommendations_list` — `POST /api/content/v1/recommendations/list` — Список рекомендаций в карточках товаров
+- `promotion.DefaultApi.post_v1_recommendations_set` — `POST /api/content/v1/recommendations/set` — Установить рекомендации для товаров
 
 ### communications (`communications`)
 - `communications.DefaultApi.api_feedbacks_v1_pins_count_get` — `GET /api/feedbacks/v1/pins/count` — Количество закреплённых и откреплённых отзывов

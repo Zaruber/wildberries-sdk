@@ -28,8 +28,8 @@ class PostV1UploadTaskB2bWholesale208Response(BaseModel):
     PostV1UploadTaskB2bWholesale208Response
     """ # noqa: E501
     status: StrictInt = Field(description="HTTP статус-код", json_schema_extra={"examples": [208]})
-    title: StrictStr = Field(description="Заголовок ошибки", json_schema_extra={"examples": ["Already Reported"]})
-    detail: StrictStr = Field(description="Детали ошибки", json_schema_extra={"examples": ["This task already exists"]})
+    title: StrictStr = Field(description="Заголовок ответа", json_schema_extra={"examples": ["Already Reported"]})
+    detail: StrictStr = Field(description="Детали ответа", json_schema_extra={"examples": ["This task already exists"]})
     request_id: StrictStr = Field(description="ID запроса", alias="requestId", json_schema_extra={"examples": ["4b387d2e-13b0-4be7-a34c-be01fb35fd2d"]})
     origin: StrictStr = Field(description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["discounts-prices"]})
     __properties: ClassVar[List[str]] = ["status", "title", "detail", "requestId", "origin"]

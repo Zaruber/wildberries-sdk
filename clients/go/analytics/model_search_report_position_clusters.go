@@ -21,9 +21,9 @@ var _ MappedNullable = &SearchReportPositionClusters{}
 
 // SearchReportPositionClusters Количество товаров со средней позицией в поиске:   - `firstHundred` — от 1 до 100   - `secondHundred` — от 101 до 200   - `below` — от 201 и ниже 
 type SearchReportPositionClusters struct {
-	FirstHundred SearchReportPositionClustersFirstHundred `json:"firstHundred"`
-	SecondHundred SearchReportPositionClustersSecondHundred `json:"secondHundred"`
-	Below SearchReportPositionClustersBelow `json:"below"`
+	FirstHundred CommonInfoAdvertisedProducts `json:"firstHundred"`
+	SecondHundred CommonInfoAdvertisedProducts `json:"secondHundred"`
+	Below CommonInfoAdvertisedProducts `json:"below"`
 }
 
 type _SearchReportPositionClusters SearchReportPositionClusters
@@ -32,7 +32,7 @@ type _SearchReportPositionClusters SearchReportPositionClusters
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSearchReportPositionClusters(firstHundred SearchReportPositionClustersFirstHundred, secondHundred SearchReportPositionClustersSecondHundred, below SearchReportPositionClustersBelow) *SearchReportPositionClusters {
+func NewSearchReportPositionClusters(firstHundred CommonInfoAdvertisedProducts, secondHundred CommonInfoAdvertisedProducts, below CommonInfoAdvertisedProducts) *SearchReportPositionClusters {
 	this := SearchReportPositionClusters{}
 	this.FirstHundred = firstHundred
 	this.SecondHundred = secondHundred
@@ -49,9 +49,9 @@ func NewSearchReportPositionClustersWithDefaults() *SearchReportPositionClusters
 }
 
 // GetFirstHundred returns the FirstHundred field value
-func (o *SearchReportPositionClusters) GetFirstHundred() SearchReportPositionClustersFirstHundred {
+func (o *SearchReportPositionClusters) GetFirstHundred() CommonInfoAdvertisedProducts {
 	if o == nil {
-		var ret SearchReportPositionClustersFirstHundred
+		var ret CommonInfoAdvertisedProducts
 		return ret
 	}
 
@@ -60,7 +60,7 @@ func (o *SearchReportPositionClusters) GetFirstHundred() SearchReportPositionClu
 
 // GetFirstHundredOk returns a tuple with the FirstHundred field value
 // and a boolean to check if the value has been set.
-func (o *SearchReportPositionClusters) GetFirstHundredOk() (*SearchReportPositionClustersFirstHundred, bool) {
+func (o *SearchReportPositionClusters) GetFirstHundredOk() (*CommonInfoAdvertisedProducts, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -68,14 +68,14 @@ func (o *SearchReportPositionClusters) GetFirstHundredOk() (*SearchReportPositio
 }
 
 // SetFirstHundred sets field value
-func (o *SearchReportPositionClusters) SetFirstHundred(v SearchReportPositionClustersFirstHundred) {
+func (o *SearchReportPositionClusters) SetFirstHundred(v CommonInfoAdvertisedProducts) {
 	o.FirstHundred = v
 }
 
 // GetSecondHundred returns the SecondHundred field value
-func (o *SearchReportPositionClusters) GetSecondHundred() SearchReportPositionClustersSecondHundred {
+func (o *SearchReportPositionClusters) GetSecondHundred() CommonInfoAdvertisedProducts {
 	if o == nil {
-		var ret SearchReportPositionClustersSecondHundred
+		var ret CommonInfoAdvertisedProducts
 		return ret
 	}
 
@@ -84,7 +84,7 @@ func (o *SearchReportPositionClusters) GetSecondHundred() SearchReportPositionCl
 
 // GetSecondHundredOk returns a tuple with the SecondHundred field value
 // and a boolean to check if the value has been set.
-func (o *SearchReportPositionClusters) GetSecondHundredOk() (*SearchReportPositionClustersSecondHundred, bool) {
+func (o *SearchReportPositionClusters) GetSecondHundredOk() (*CommonInfoAdvertisedProducts, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -92,14 +92,14 @@ func (o *SearchReportPositionClusters) GetSecondHundredOk() (*SearchReportPositi
 }
 
 // SetSecondHundred sets field value
-func (o *SearchReportPositionClusters) SetSecondHundred(v SearchReportPositionClustersSecondHundred) {
+func (o *SearchReportPositionClusters) SetSecondHundred(v CommonInfoAdvertisedProducts) {
 	o.SecondHundred = v
 }
 
 // GetBelow returns the Below field value
-func (o *SearchReportPositionClusters) GetBelow() SearchReportPositionClustersBelow {
+func (o *SearchReportPositionClusters) GetBelow() CommonInfoAdvertisedProducts {
 	if o == nil {
-		var ret SearchReportPositionClustersBelow
+		var ret CommonInfoAdvertisedProducts
 		return ret
 	}
 
@@ -108,7 +108,7 @@ func (o *SearchReportPositionClusters) GetBelow() SearchReportPositionClustersBe
 
 // GetBelowOk returns a tuple with the Below field value
 // and a boolean to check if the value has been set.
-func (o *SearchReportPositionClusters) GetBelowOk() (*SearchReportPositionClustersBelow, bool) {
+func (o *SearchReportPositionClusters) GetBelowOk() (*CommonInfoAdvertisedProducts, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -116,7 +116,7 @@ func (o *SearchReportPositionClusters) GetBelowOk() (*SearchReportPositionCluste
 }
 
 // SetBelow sets field value
-func (o *SearchReportPositionClusters) SetBelow(v SearchReportPositionClustersBelow) {
+func (o *SearchReportPositionClusters) SetBelow(v CommonInfoAdvertisedProducts) {
 	o.Below = v
 }
 

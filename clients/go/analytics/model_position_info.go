@@ -21,8 +21,8 @@ var _ MappedNullable = &PositionInfo{}
 
 // PositionInfo Информация о позиции товара
 type PositionInfo struct {
-	Average PositionInfoAverage `json:"average"`
-	Median PositionInfoMedian `json:"median"`
+	Average CommonInfoAdvertisedProducts `json:"average"`
+	Median CommonInfoAdvertisedProducts `json:"median"`
 	// Данные для чарта по средней и медианной позиции товара в результатах поиска
 	ChartItems []SearchReportPositionChartItem `json:"chartItems"`
 	Clusters SearchReportPositionClusters `json:"clusters"`
@@ -34,7 +34,7 @@ type _PositionInfo PositionInfo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPositionInfo(average PositionInfoAverage, median PositionInfoMedian, chartItems []SearchReportPositionChartItem, clusters SearchReportPositionClusters) *PositionInfo {
+func NewPositionInfo(average CommonInfoAdvertisedProducts, median CommonInfoAdvertisedProducts, chartItems []SearchReportPositionChartItem, clusters SearchReportPositionClusters) *PositionInfo {
 	this := PositionInfo{}
 	this.Average = average
 	this.Median = median
@@ -52,9 +52,9 @@ func NewPositionInfoWithDefaults() *PositionInfo {
 }
 
 // GetAverage returns the Average field value
-func (o *PositionInfo) GetAverage() PositionInfoAverage {
+func (o *PositionInfo) GetAverage() CommonInfoAdvertisedProducts {
 	if o == nil {
-		var ret PositionInfoAverage
+		var ret CommonInfoAdvertisedProducts
 		return ret
 	}
 
@@ -63,7 +63,7 @@ func (o *PositionInfo) GetAverage() PositionInfoAverage {
 
 // GetAverageOk returns a tuple with the Average field value
 // and a boolean to check if the value has been set.
-func (o *PositionInfo) GetAverageOk() (*PositionInfoAverage, bool) {
+func (o *PositionInfo) GetAverageOk() (*CommonInfoAdvertisedProducts, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -71,14 +71,14 @@ func (o *PositionInfo) GetAverageOk() (*PositionInfoAverage, bool) {
 }
 
 // SetAverage sets field value
-func (o *PositionInfo) SetAverage(v PositionInfoAverage) {
+func (o *PositionInfo) SetAverage(v CommonInfoAdvertisedProducts) {
 	o.Average = v
 }
 
 // GetMedian returns the Median field value
-func (o *PositionInfo) GetMedian() PositionInfoMedian {
+func (o *PositionInfo) GetMedian() CommonInfoAdvertisedProducts {
 	if o == nil {
-		var ret PositionInfoMedian
+		var ret CommonInfoAdvertisedProducts
 		return ret
 	}
 
@@ -87,7 +87,7 @@ func (o *PositionInfo) GetMedian() PositionInfoMedian {
 
 // GetMedianOk returns a tuple with the Median field value
 // and a boolean to check if the value has been set.
-func (o *PositionInfo) GetMedianOk() (*PositionInfoMedian, bool) {
+func (o *PositionInfo) GetMedianOk() (*CommonInfoAdvertisedProducts, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *PositionInfo) GetMedianOk() (*PositionInfoMedian, bool) {
 }
 
 // SetMedian sets field value
-func (o *PositionInfo) SetMedian(v PositionInfoMedian) {
+func (o *PositionInfo) SetMedian(v CommonInfoAdvertisedProducts) {
 	o.Median = v
 }
 

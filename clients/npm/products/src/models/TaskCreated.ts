@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { TaskCreatedData } from './TaskCreatedData';
+import type { RequestAlreadyExistsErrorData } from './RequestAlreadyExistsErrorData';
 import {
-    TaskCreatedDataFromJSON,
-    TaskCreatedDataFromJSONTyped,
-    TaskCreatedDataToJSON,
-    TaskCreatedDataToJSONTyped,
-} from './TaskCreatedData';
+    RequestAlreadyExistsErrorDataFromJSON,
+    RequestAlreadyExistsErrorDataFromJSONTyped,
+    RequestAlreadyExistsErrorDataToJSON,
+    RequestAlreadyExistsErrorDataToJSONTyped,
+} from './RequestAlreadyExistsErrorData';
 
 /**
  * 
@@ -29,10 +29,10 @@ import {
 export interface TaskCreated {
     /**
      * 
-     * @type {TaskCreatedData}
+     * @type {RequestAlreadyExistsErrorData}
      * @memberof TaskCreated
      */
-    data?: TaskCreatedData;
+    data?: RequestAlreadyExistsErrorData;
     /**
      * Флаг ошибки
      * @type {boolean}
@@ -64,7 +64,7 @@ export function TaskCreatedFromJSONTyped(json: any, ignoreDiscriminator: boolean
     }
     return {
         
-        'data': json['data'] == null ? undefined : TaskCreatedDataFromJSON(json['data']),
+        'data': json['data'] == null ? undefined : RequestAlreadyExistsErrorDataFromJSON(json['data']),
         'error': json['error'] == null ? undefined : json['error'],
         'errorText': json['errorText'] == null ? undefined : json['errorText'],
     };
@@ -81,7 +81,7 @@ export function TaskCreatedToJSONTyped(value?: TaskCreated | null, ignoreDiscrim
 
     return {
         
-        'data': TaskCreatedDataToJSON(value['data']),
+        'data': RequestAlreadyExistsErrorDataToJSON(value['data']),
         'error': value['error'],
         'errorText': value['errorText'],
     };

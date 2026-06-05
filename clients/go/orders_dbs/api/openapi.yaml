@@ -288,6 +288,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -479,6 +489,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -692,6 +712,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -787,6 +817,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -875,6 +915,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -994,6 +1044,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1083,6 +1143,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1171,6 +1241,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1259,6 +1339,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1355,6 +1445,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1444,6 +1544,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1539,6 +1649,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1640,6 +1760,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1730,6 +1860,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1826,6 +1966,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1922,6 +2072,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2018,6 +2178,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbs_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -3285,7 +3455,7 @@ components:
         errors:
           description: Детали ошибки
           items:
-            $ref: "#/components/schemas/api_B2bClientInfoResponse_errors_inner"
+            $ref: "#/components/schemas/_api_marketplace_v3_dbs_orders_status_receive_post_200_response_results_inner_errors_inner"
           type: array
         isError:
           description: Есть ли ошибки
@@ -3809,17 +3979,6 @@ components:
           example: 1234567890
           type: integer
       type: object
-    api_OrdersMetaDetailsResponse_orders_inner_errors_inner:
-      properties:
-        code:
-          description: Код ошибки
-          example: 404
-          type: integer
-        detail:
-          description: Дополнительная информация об ошибке
-          example: NotFound
-          type: string
-      type: object
     api_OrdersMetaDetailsResponse_orders_inner_metaDetails_inner:
       example:
         key: sgtin
@@ -3903,7 +4062,7 @@ components:
           description: Информация об ошибке
           example: []
           items:
-            $ref: "#/components/schemas/api_OrdersMetaDetailsResponse_orders_inner_errors_inner"
+            $ref: "#/components/schemas/_api_marketplace_v3_dbs_orders_status_receive_post_200_response_results_inner_errors_inner"
           type: array
         metaDetails:
           description: Идентификаторы маркировки и статусы их валидации
@@ -3949,15 +4108,6 @@ components:
               - `sgtinAppliedNotPaid` — Не оплачен
               - `pending` — Маркировка на проверке
           example: sgtinEmitted
-          type: string
-      type: object
-    api_B2bClientInfoResponse_errors_inner:
-      properties:
-        code:
-          description: Код ошибки
-          type: integer
-        detail:
-          description: Описание ошибки
           type: string
       type: object
   securitySchemes:

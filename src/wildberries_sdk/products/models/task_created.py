@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from wildberries_sdk.products.models.task_created_data import TaskCreatedData
+from wildberries_sdk.products.models.request_already_exists_error_data import RequestAlreadyExistsErrorData
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,7 +28,7 @@ class TaskCreated(BaseModel):
     """
     TaskCreated
     """ # noqa: E501
-    data: Optional[TaskCreatedData] = None
+    data: Optional[RequestAlreadyExistsErrorData] = None
     error: Optional[StrictBool] = Field(default=None, description="Флаг ошибки", json_schema_extra={"examples": [False]})
     error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText", json_schema_extra={"examples": [""]})
     __properties: ClassVar[List[str]] = ["data", "error", "errorText"]
@@ -87,7 +87,7 @@ class TaskCreated(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "data": TaskCreatedData.from_dict(obj["data"]) if obj.get("data") is not None else None,
+            "data": RequestAlreadyExistsErrorData.from_dict(obj["data"]) if obj.get("data") is not None else None,
             "error": obj.get("error"),
             "errorText": obj.get("errorText")
         })

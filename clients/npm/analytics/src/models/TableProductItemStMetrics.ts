@@ -20,13 +20,6 @@ import {
     TableCommonMetricsSaleRateToJSON,
     TableCommonMetricsSaleRateToJSONTyped,
 } from './TableCommonMetricsSaleRate';
-import type { TableCommonMetricsAvgStockTurnover } from './TableCommonMetricsAvgStockTurnover';
-import {
-    TableCommonMetricsAvgStockTurnoverFromJSON,
-    TableCommonMetricsAvgStockTurnoverFromJSONTyped,
-    TableCommonMetricsAvgStockTurnoverToJSON,
-    TableCommonMetricsAvgStockTurnoverToJSONTyped,
-} from './TableCommonMetricsAvgStockTurnover';
 import type { TableProductItemStMetricsAllOfCurrentPrice } from './TableProductItemStMetricsAllOfCurrentPrice';
 import {
     TableProductItemStMetricsAllOfCurrentPriceFromJSON,
@@ -34,13 +27,6 @@ import {
     TableProductItemStMetricsAllOfCurrentPriceToJSON,
     TableProductItemStMetricsAllOfCurrentPriceToJSONTyped,
 } from './TableProductItemStMetricsAllOfCurrentPrice';
-import type { TableCommonMetricsOfficeMissingTime } from './TableCommonMetricsOfficeMissingTime';
-import {
-    TableCommonMetricsOfficeMissingTimeFromJSON,
-    TableCommonMetricsOfficeMissingTimeFromJSONTyped,
-    TableCommonMetricsOfficeMissingTimeToJSON,
-    TableCommonMetricsOfficeMissingTimeToJSONTyped,
-} from './TableCommonMetricsOfficeMissingTime';
 import type { FloatGraphByPeriodItem } from './FloatGraphByPeriodItem';
 import {
     FloatGraphByPeriodItemFromJSON,
@@ -117,10 +103,10 @@ export interface TableProductItemStMetrics {
     saleRate: TableCommonMetricsSaleRate;
     /**
      * 
-     * @type {TableCommonMetricsAvgStockTurnover}
+     * @type {TableCommonMetricsSaleRate}
      * @memberof TableProductItemStMetrics
      */
-    avgStockTurnover: TableCommonMetricsAvgStockTurnover;
+    avgStockTurnover: TableCommonMetricsSaleRate;
     /**
      * В пути к клиенту, шт.
      * @type {number}
@@ -135,10 +121,10 @@ export interface TableProductItemStMetrics {
     fromClientCount: number;
     /**
      * 
-     * @type {TableCommonMetricsOfficeMissingTime}
+     * @type {TableCommonMetricsSaleRate}
      * @memberof TableProductItemStMetrics
      */
-    officeMissingTime: TableCommonMetricsOfficeMissingTime;
+    officeMissingTime: TableCommonMetricsSaleRate;
     /**
      * Упущенные заказы, шт. Особые случаи:
      *   1. Значение меньше `0` и не равно `-2` — значение не рассчитано
@@ -258,10 +244,10 @@ export function TableProductItemStMetricsFromJSONTyped(json: any, ignoreDiscrimi
         'stockCount': json['stockCount'],
         'stockSum': json['stockSum'],
         'saleRate': TableCommonMetricsSaleRateFromJSON(json['saleRate']),
-        'avgStockTurnover': TableCommonMetricsAvgStockTurnoverFromJSON(json['avgStockTurnover']),
+        'avgStockTurnover': TableCommonMetricsSaleRateFromJSON(json['avgStockTurnover']),
         'toClientCount': json['toClientCount'],
         'fromClientCount': json['fromClientCount'],
-        'officeMissingTime': TableCommonMetricsOfficeMissingTimeFromJSON(json['officeMissingTime']),
+        'officeMissingTime': TableCommonMetricsSaleRateFromJSON(json['officeMissingTime']),
         'lostOrdersCount': json['lostOrdersCount'],
         'lostOrdersSum': json['lostOrdersSum'],
         'lostBuyoutsCount': json['lostBuyoutsCount'],
@@ -292,10 +278,10 @@ export function TableProductItemStMetricsToJSONTyped(value?: TableProductItemStM
         'stockCount': value['stockCount'],
         'stockSum': value['stockSum'],
         'saleRate': TableCommonMetricsSaleRateToJSON(value['saleRate']),
-        'avgStockTurnover': TableCommonMetricsAvgStockTurnoverToJSON(value['avgStockTurnover']),
+        'avgStockTurnover': TableCommonMetricsSaleRateToJSON(value['avgStockTurnover']),
         'toClientCount': value['toClientCount'],
         'fromClientCount': value['fromClientCount'],
-        'officeMissingTime': TableCommonMetricsOfficeMissingTimeToJSON(value['officeMissingTime']),
+        'officeMissingTime': TableCommonMetricsSaleRateToJSON(value['officeMissingTime']),
         'lostOrdersCount': value['lostOrdersCount'],
         'lostOrdersSum': value['lostOrdersSum'],
         'lostBuyoutsCount': value['lostBuyoutsCount'],

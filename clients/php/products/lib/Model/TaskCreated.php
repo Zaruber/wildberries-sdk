@@ -57,7 +57,7 @@ class TaskCreated implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'data' => '\Wildberries\Sdk\Products\Model\TaskCreatedData',
+        'data' => '\Wildberries\Sdk\Products\Model\RequestAlreadyExistsErrorData',
         'error' => 'bool',
         'error_text' => 'string'
     ];
@@ -306,7 +306,7 @@ class TaskCreated implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \Wildberries\Sdk\Products\Model\TaskCreatedData|null
+     * @return \Wildberries\Sdk\Products\Model\RequestAlreadyExistsErrorData|null
      */
     public function getData()
     {
@@ -316,7 +316,7 @@ class TaskCreated implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \Wildberries\Sdk\Products\Model\TaskCreatedData|null $data data
+     * @param \Wildberries\Sdk\Products\Model\RequestAlreadyExistsErrorData|null $data data
      *
      * @return self
      */

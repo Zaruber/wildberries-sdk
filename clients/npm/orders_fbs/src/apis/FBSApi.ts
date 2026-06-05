@@ -19,11 +19,6 @@ import {
     ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequestToJSON,
 } from '../models/ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest';
 import {
-    type ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest,
-    ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequestFromJSON,
-    ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequestToJSON,
-} from '../models/ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest';
-import {
     type ApiV3OrdersGet200Response,
     ApiV3OrdersGet200ResponseFromJSON,
     ApiV3OrdersGet200ResponseToJSON,
@@ -84,11 +79,6 @@ import {
     ApiV3OrdersStickersCrossBorderPost200ResponseToJSON,
 } from '../models/ApiV3OrdersStickersCrossBorderPost200Response';
 import {
-    type ApiV3OrdersStickersCrossBorderPostRequest,
-    ApiV3OrdersStickersCrossBorderPostRequestFromJSON,
-    ApiV3OrdersStickersCrossBorderPostRequestToJSON,
-} from '../models/ApiV3OrdersStickersCrossBorderPostRequest';
-import {
     type ApiV3OrdersStickersPost200Response,
     ApiV3OrdersStickersPost200ResponseFromJSON,
     ApiV3OrdersStickersPost200ResponseToJSON,
@@ -99,15 +89,15 @@ import {
     ApiV3OrdersStickersPostRequestToJSON,
 } from '../models/ApiV3OrdersStickersPostRequest';
 import {
-    type ApiV3PassesGet402Response,
-    ApiV3PassesGet402ResponseFromJSON,
-    ApiV3PassesGet402ResponseToJSON,
-} from '../models/ApiV3PassesGet402Response';
-import {
     type ApiV3PassesOfficesGet401Response,
     ApiV3PassesOfficesGet401ResponseFromJSON,
     ApiV3PassesOfficesGet401ResponseToJSON,
 } from '../models/ApiV3PassesOfficesGet401Response';
+import {
+    type ApiV3PassesOfficesGet402Response,
+    ApiV3PassesOfficesGet402ResponseFromJSON,
+    ApiV3PassesOfficesGet402ResponseToJSON,
+} from '../models/ApiV3PassesOfficesGet402Response';
 import {
     type ApiV3PassesPassIdPutRequest,
     ApiV3PassesPassIdPutRequestFromJSON,
@@ -173,11 +163,6 @@ import {
     ApiV3SuppliesSupplyIdTrbxStickersPost200ResponseFromJSON,
     ApiV3SuppliesSupplyIdTrbxStickersPost200ResponseToJSON,
 } from '../models/ApiV3SuppliesSupplyIdTrbxStickersPost200Response';
-import {
-    type ApiV3SuppliesSupplyIdTrbxStickersPostRequest,
-    ApiV3SuppliesSupplyIdTrbxStickersPostRequestFromJSON,
-    ApiV3SuppliesSupplyIdTrbxStickersPostRequestToJSON,
-} from '../models/ApiV3SuppliesSupplyIdTrbxStickersPostRequest';
 import {
     type CrossborderTurkeyClientInfoResp,
     CrossborderTurkeyClientInfoRespFromJSON,
@@ -259,9 +244,9 @@ export interface ApiMarketplaceV3SuppliesSupplyIdOrderIdsGetRequest {
     supplyId: string;
 }
 
-export interface ApiMarketplaceV3SuppliesSupplyIdOrdersPatchOperationRequest {
+export interface ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest {
     supplyId: string;
-    apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest;
+    apiV3OrdersStatusHistoryPostRequest: ApiV3OrdersStatusHistoryPostRequest;
 }
 
 export interface ApiV3OrdersClientPostRequest {
@@ -317,8 +302,8 @@ export interface ApiV3OrdersStatusPostOperationRequest {
     apiV3OrdersStatusPostRequest?: ApiV3OrdersStatusPostRequest;
 }
 
-export interface ApiV3OrdersStickersCrossBorderPostOperationRequest {
-    apiV3OrdersStickersCrossBorderPostRequest?: ApiV3OrdersStickersCrossBorderPostRequest;
+export interface ApiV3OrdersStickersCrossBorderPostRequest {
+    apiV3OrdersStickersPostRequest?: ApiV3OrdersStickersPostRequest;
 }
 
 export interface ApiV3OrdersStickersPostOperationRequest {
@@ -381,10 +366,10 @@ export interface ApiV3SuppliesSupplyIdTrbxPostOperationRequest {
     apiV3SuppliesSupplyIdTrbxPostRequest?: ApiV3SuppliesSupplyIdTrbxPostRequest;
 }
 
-export interface ApiV3SuppliesSupplyIdTrbxStickersPostOperationRequest {
+export interface ApiV3SuppliesSupplyIdTrbxStickersPostRequest {
     supplyId: string;
-    type: ApiV3SuppliesSupplyIdTrbxStickersPostOperationTypeEnum;
-    apiV3SuppliesSupplyIdTrbxStickersPostRequest?: ApiV3SuppliesSupplyIdTrbxStickersPostRequest;
+    type: ApiV3SuppliesSupplyIdTrbxStickersPostTypeEnum;
+    apiV3SuppliesSupplyIdTrbxDeleteRequest?: ApiV3SuppliesSupplyIdTrbxDeleteRequest;
 }
 
 /**
@@ -632,7 +617,7 @@ export class FBSApi extends runtime.BaseAPI {
     /**
      * Creates request options for apiMarketplaceV3SuppliesSupplyIdOrdersPatch without sending the request
      */
-    async apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequestOpts(requestParameters: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchOperationRequest): Promise<runtime.RequestOpts> {
+    async apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequestOpts(requestParameters: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['supplyId'] == null) {
             throw new runtime.RequiredError(
                 'supplyId',
@@ -640,10 +625,10 @@ export class FBSApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest'] == null) {
+        if (requestParameters['apiV3OrdersStatusHistoryPostRequest'] == null) {
             throw new runtime.RequiredError(
-                'apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest',
-                'Required parameter "apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest" was null or undefined when calling apiMarketplaceV3SuppliesSupplyIdOrdersPatch().'
+                'apiV3OrdersStatusHistoryPostRequest',
+                'Required parameter "apiV3OrdersStatusHistoryPostRequest" was null or undefined when calling apiMarketplaceV3SuppliesSupplyIdOrdersPatch().'
             );
         }
 
@@ -666,7 +651,7 @@ export class FBSApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequestToJSON(requestParameters['apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest']),
+            body: ApiV3OrdersStatusHistoryPostRequestToJSON(requestParameters['apiV3OrdersStatusHistoryPostRequest']),
         };
     }
 
@@ -674,7 +659,7 @@ export class FBSApi extends runtime.BaseAPI {
      * Метод добавляет до 100 [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) к поставке и переводит их в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` — на сборке.  Может перемещать сборочные задания:   - между активными поставками   - из закрытой поставки в активную, если сборочные задания требуют [повторной отгрузки](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1supplies~1orders~1reshipment/get)  <div class=\"description_important\">   В пустую поставку можно добавить сборочные задания любого габаритного типа. Поставка приобретает габаритный тип первого добавленного сборочного задания <a href =\"./orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get\">из поля</a> <code>cargoType</code>.   <br>   После этого в поставку можно добавить сборочные задания только того же габаритного типа, что и у поставки.  </div>  <div class=\"description_important\"> В поставку нельзя добавить сборочные задания, поступившие на разные склады. </div> <div class=\"description_important\"> В пустую поставку можно добавить сборочные задания трансграничных или внутренних поставок. После этого поставка приобретает тип первого добавленного сборочного задания из поля <code>crossBorderType</code>. Далее в неё можно добавить только сборочные задания такого же типа. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Добавить сборочные задания к поставке
      */
-    async apiMarketplaceV3SuppliesSupplyIdOrdersPatchRaw(requestParameters: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiMarketplaceV3SuppliesSupplyIdOrdersPatchRaw(requestParameters: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const requestOptions = await this.apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
@@ -685,7 +670,7 @@ export class FBSApi extends runtime.BaseAPI {
      * Метод добавляет до 100 [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) к поставке и переводит их в [статус](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm` — на сборке.  Может перемещать сборочные задания:   - между активными поставками   - из закрытой поставки в активную, если сборочные задания требуют [повторной отгрузки](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1supplies~1orders~1reshipment/get)  <div class=\"description_important\">   В пустую поставку можно добавить сборочные задания любого габаритного типа. Поставка приобретает габаритный тип первого добавленного сборочного задания <a href =\"./orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get\">из поля</a> <code>cargoType</code>.   <br>   После этого в поставку можно добавить сборочные задания только того же габаритного типа, что и у поставки.  </div>  <div class=\"description_important\"> В поставку нельзя добавить сборочные задания, поступившие на разные склады. </div> <div class=\"description_important\"> В пустую поставку можно добавить сборочные задания трансграничных или внутренних поставок. После этого поставка приобретает тип первого добавленного сборочного задания из поля <code>crossBorderType</code>. Далее в неё можно добавить только сборочные задания такого же типа. </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Добавить сборочные задания к поставке
      */
-    async apiMarketplaceV3SuppliesSupplyIdOrdersPatch(requestParameters: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async apiMarketplaceV3SuppliesSupplyIdOrdersPatch(requestParameters: ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiMarketplaceV3SuppliesSupplyIdOrdersPatchRaw(requestParameters, initOverrides);
     }
 
@@ -1322,7 +1307,7 @@ export class FBSApi extends runtime.BaseAPI {
     /**
      * Creates request options for apiV3OrdersStickersCrossBorderPost without sending the request
      */
-    async apiV3OrdersStickersCrossBorderPostRequestOpts(requestParameters: ApiV3OrdersStickersCrossBorderPostOperationRequest): Promise<runtime.RequestOpts> {
+    async apiV3OrdersStickersCrossBorderPostRequestOpts(requestParameters: ApiV3OrdersStickersCrossBorderPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -1341,7 +1326,7 @@ export class FBSApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ApiV3OrdersStickersCrossBorderPostRequestToJSON(requestParameters['apiV3OrdersStickersCrossBorderPostRequest']),
+            body: ApiV3OrdersStickersPostRequestToJSON(requestParameters['apiV3OrdersStickersPostRequest']),
         };
     }
 
@@ -1349,7 +1334,7 @@ export class FBSApi extends runtime.BaseAPI {
      * Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) трансграничных поставок в формате PDF.<br><br>  Для каждого сборочного задания в ответе указывается статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов  <div class=\"description_important\">   Стикер может генерироваться с задержкой. Повторяйте запрос, пока не получите статус <code>ready</code>. </div>  Ограничения:   - За один запрос можно получить максимум 100 стикеров.   - Можно получить стикеры только для сборочных заданий, находящихся на сборке или в доставке — [статусы](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`, `complete`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Получить стикеры сборочных заданий трансграничных поставок
      */
-    async apiV3OrdersStickersCrossBorderPostRaw(requestParameters: ApiV3OrdersStickersCrossBorderPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3OrdersStickersCrossBorderPost200Response>> {
+    async apiV3OrdersStickersCrossBorderPostRaw(requestParameters: ApiV3OrdersStickersCrossBorderPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3OrdersStickersCrossBorderPost200Response>> {
         const requestOptions = await this.apiV3OrdersStickersCrossBorderPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
@@ -1360,7 +1345,7 @@ export class FBSApi extends runtime.BaseAPI {
      * Метод возвращает список стикеров [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) трансграничных поставок в формате PDF.<br><br>  Для каждого сборочного задания в ответе указывается статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов  <div class=\"description_important\">   Стикер может генерироваться с задержкой. Повторяйте запрос, пока не получите статус <code>ready</code>. </div>  Ограничения:   - За один запрос можно получить максимум 100 стикеров.   - Можно получить стикеры только для сборочных заданий, находящихся на сборке или в доставке — [статусы](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post) `confirm`, `complete`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Получить стикеры сборочных заданий трансграничных поставок
      */
-    async apiV3OrdersStickersCrossBorderPost(requestParameters: ApiV3OrdersStickersCrossBorderPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3OrdersStickersCrossBorderPost200Response> {
+    async apiV3OrdersStickersCrossBorderPost(requestParameters: ApiV3OrdersStickersCrossBorderPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3OrdersStickersCrossBorderPost200Response> {
         const response = await this.apiV3OrdersStickersCrossBorderPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -2228,7 +2213,7 @@ export class FBSApi extends runtime.BaseAPI {
     /**
      * Creates request options for apiV3SuppliesSupplyIdTrbxStickersPost without sending the request
      */
-    async apiV3SuppliesSupplyIdTrbxStickersPostRequestOpts(requestParameters: ApiV3SuppliesSupplyIdTrbxStickersPostOperationRequest): Promise<runtime.RequestOpts> {
+    async apiV3SuppliesSupplyIdTrbxStickersPostRequestOpts(requestParameters: ApiV3SuppliesSupplyIdTrbxStickersPostRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['supplyId'] == null) {
             throw new runtime.RequiredError(
                 'supplyId',
@@ -2266,7 +2251,7 @@ export class FBSApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ApiV3SuppliesSupplyIdTrbxStickersPostRequestToJSON(requestParameters['apiV3SuppliesSupplyIdTrbxStickersPostRequest']),
+            body: ApiV3SuppliesSupplyIdTrbxDeleteRequestToJSON(requestParameters['apiV3SuppliesSupplyIdTrbxDeleteRequest']),
         };
     }
 
@@ -2274,7 +2259,7 @@ export class FBSApi extends runtime.BaseAPI {
      * Метод возвращает QR-стикеры в форматах:   - SVG   - ZPLV (вертикальный)   - ZPLH (горизонтальный)   - PNG <br><br> Размер стикеров — 580x400 px.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Получить стикеры грузомест поставки
      */
-    async apiV3SuppliesSupplyIdTrbxStickersPostRaw(requestParameters: ApiV3SuppliesSupplyIdTrbxStickersPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3SuppliesSupplyIdTrbxStickersPost200Response>> {
+    async apiV3SuppliesSupplyIdTrbxStickersPostRaw(requestParameters: ApiV3SuppliesSupplyIdTrbxStickersPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3SuppliesSupplyIdTrbxStickersPost200Response>> {
         const requestOptions = await this.apiV3SuppliesSupplyIdTrbxStickersPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
@@ -2285,7 +2270,7 @@ export class FBSApi extends runtime.BaseAPI {
      * Метод возвращает QR-стикеры в форматах:   - SVG   - ZPLV (вертикальный)   - ZPLH (горизонтальный)   - PNG <br><br> Размер стикеров — 580x400 px.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Получить стикеры грузомест поставки
      */
-    async apiV3SuppliesSupplyIdTrbxStickersPost(requestParameters: ApiV3SuppliesSupplyIdTrbxStickersPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3SuppliesSupplyIdTrbxStickersPost200Response> {
+    async apiV3SuppliesSupplyIdTrbxStickersPost(requestParameters: ApiV3SuppliesSupplyIdTrbxStickersPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3SuppliesSupplyIdTrbxStickersPost200Response> {
         const response = await this.apiV3SuppliesSupplyIdTrbxStickersPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -2342,10 +2327,10 @@ export type ApiV3SuppliesSupplyIdBarcodeGetTypeEnum = typeof ApiV3SuppliesSupply
 /**
  * @export
  */
-export const ApiV3SuppliesSupplyIdTrbxStickersPostOperationTypeEnum = {
+export const ApiV3SuppliesSupplyIdTrbxStickersPostTypeEnum = {
     Svg: 'svg',
     Zplv: 'zplv',
     Zplh: 'zplh',
     Png: 'png'
 } as const;
-export type ApiV3SuppliesSupplyIdTrbxStickersPostOperationTypeEnum = typeof ApiV3SuppliesSupplyIdTrbxStickersPostOperationTypeEnum[keyof typeof ApiV3SuppliesSupplyIdTrbxStickersPostOperationTypeEnum];
+export type ApiV3SuppliesSupplyIdTrbxStickersPostTypeEnum = typeof ApiV3SuppliesSupplyIdTrbxStickersPostTypeEnum[keyof typeof ApiV3SuppliesSupplyIdTrbxStickersPostTypeEnum];

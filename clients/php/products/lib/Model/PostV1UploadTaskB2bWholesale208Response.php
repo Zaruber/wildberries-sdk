@@ -372,7 +372,7 @@ class PostV1UploadTaskB2bWholesale208Response implements ModelInterface, ArrayAc
     /**
      * Sets title
      *
-     * @param string $title Заголовок ошибки
+     * @param string $title Заголовок ответа
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class PostV1UploadTaskB2bWholesale208Response implements ModelInterface, ArrayAc
     /**
      * Sets detail
      *
-     * @param string $detail Детали ошибки
+     * @param string $detail Детали ответа
      *
      * @return self
      */

@@ -212,6 +212,17 @@ func (a *FBSAPIService) ApiMarketplaceV3FbsOrdersArchiveGetExecute(r ApiApiMarke
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV3PassesOfficesGet402Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 		if localVarHTTPResponse.StatusCode == 403 {
 			var v V3APIErrorV2
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -332,7 +343,7 @@ func (a *FBSAPIService) ApiMarketplaceV3OrdersMetaPostExecute(r ApiApiMarketplac
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -390,6 +401,17 @@ func (a *FBSAPIService) ApiMarketplaceV3OrdersMetaPostExecute(r ApiApiMarketplac
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
 			var v ApiV3PassesOfficesGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -523,7 +545,7 @@ func (a *FBSAPIService) ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutEx
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -581,6 +603,17 @@ func (a *FBSAPIService) ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutEx
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
 			var v ApiV3PassesOfficesGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -775,7 +808,7 @@ func (a *FBSAPIService) ApiMarketplaceV3SuppliesSupplyIdOrderIdsGetExecute(r Api
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -836,11 +869,11 @@ type ApiApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest struct {
 	ctx context.Context
 	ApiService *FBSAPIService
 	supplyId string
-	apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest *ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
+	apiV3OrdersStatusHistoryPostRequest *ApiV3OrdersStatusHistoryPostRequest
 }
 
-func (r ApiApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest) ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest(apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest) ApiApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest {
-	r.apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest = &apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
+func (r ApiApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest) ApiV3OrdersStatusHistoryPostRequest(apiV3OrdersStatusHistoryPostRequest ApiV3OrdersStatusHistoryPostRequest) ApiApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest {
+	r.apiV3OrdersStatusHistoryPostRequest = &apiV3OrdersStatusHistoryPostRequest
 	return r
 }
 
@@ -914,8 +947,8 @@ func (a *FBSAPIService) ApiMarketplaceV3SuppliesSupplyIdOrdersPatchExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest == nil {
-		return nil, reportError("apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest is required and must be specified")
+	if r.apiV3OrdersStatusHistoryPostRequest == nil {
+		return nil, reportError("apiV3OrdersStatusHistoryPostRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -928,7 +961,7 @@ func (a *FBSAPIService) ApiMarketplaceV3SuppliesSupplyIdOrdersPatchExecute(r Api
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -936,7 +969,7 @@ func (a *FBSAPIService) ApiMarketplaceV3SuppliesSupplyIdOrdersPatchExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
+	localVarPostBody = r.apiV3OrdersStatusHistoryPostRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -986,6 +1019,17 @@ func (a *FBSAPIService) ApiMarketplaceV3SuppliesSupplyIdOrdersPatchExecute(r Api
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
 			var v ApiV3PassesOfficesGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1189,7 +1233,7 @@ func (a *FBSAPIService) ApiV3OrdersClientPostExecute(r ApiApiV3OrdersClientPostR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1431,7 +1475,7 @@ func (a *FBSAPIService) ApiV3OrdersGetExecute(r ApiApiV3OrdersGetRequest) (*ApiV
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1605,7 +1649,7 @@ func (a *FBSAPIService) ApiV3OrdersNewGetExecute(r ApiApiV3OrdersNewGetRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1790,7 +1834,7 @@ func (a *FBSAPIService) ApiV3OrdersOrderIdCancelPatchExecute(r ApiApiV3OrdersOrd
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2002,7 +2046,7 @@ func (a *FBSAPIService) ApiV3OrdersOrderIdMetaDeleteExecute(r ApiApiV3OrdersOrde
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2199,7 +2243,7 @@ func (a *FBSAPIService) ApiV3OrdersOrderIdMetaExpirationPutExecute(r ApiApiV3Ord
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2404,7 +2448,7 @@ func (a *FBSAPIService) ApiV3OrdersOrderIdMetaGtinPutExecute(r ApiApiV3OrdersOrd
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2598,7 +2642,7 @@ func (a *FBSAPIService) ApiV3OrdersOrderIdMetaImeiPutExecute(r ApiApiV3OrdersOrd
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2792,7 +2836,7 @@ func (a *FBSAPIService) ApiV3OrdersOrderIdMetaSgtinPutExecute(r ApiApiV3OrdersOr
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2997,7 +3041,7 @@ func (a *FBSAPIService) ApiV3OrdersOrderIdMetaUinPutExecute(r ApiApiV3OrdersOrde
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3174,7 +3218,7 @@ func (a *FBSAPIService) ApiV3OrdersStatusHistoryPostExecute(r ApiApiV3OrdersStat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3399,7 +3443,7 @@ func (a *FBSAPIService) ApiV3OrdersStatusPostExecute(r ApiApiV3OrdersStatusPostR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3448,11 +3492,11 @@ func (a *FBSAPIService) ApiV3OrdersStatusPostExecute(r ApiApiV3OrdersStatusPostR
 type ApiApiV3OrdersStickersCrossBorderPostRequest struct {
 	ctx context.Context
 	ApiService *FBSAPIService
-	apiV3OrdersStickersCrossBorderPostRequest *ApiV3OrdersStickersCrossBorderPostRequest
+	apiV3OrdersStickersPostRequest *ApiV3OrdersStickersPostRequest
 }
 
-func (r ApiApiV3OrdersStickersCrossBorderPostRequest) ApiV3OrdersStickersCrossBorderPostRequest(apiV3OrdersStickersCrossBorderPostRequest ApiV3OrdersStickersCrossBorderPostRequest) ApiApiV3OrdersStickersCrossBorderPostRequest {
-	r.apiV3OrdersStickersCrossBorderPostRequest = &apiV3OrdersStickersCrossBorderPostRequest
+func (r ApiApiV3OrdersStickersCrossBorderPostRequest) ApiV3OrdersStickersPostRequest(apiV3OrdersStickersPostRequest ApiV3OrdersStickersPostRequest) ApiApiV3OrdersStickersCrossBorderPostRequest {
+	r.apiV3OrdersStickersPostRequest = &apiV3OrdersStickersPostRequest
 	return r
 }
 
@@ -3537,7 +3581,7 @@ func (a *FBSAPIService) ApiV3OrdersStickersCrossBorderPostExecute(r ApiApiV3Orde
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiV3OrdersStickersCrossBorderPostRequest
+	localVarPostBody = r.apiV3OrdersStickersPostRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3597,7 +3641,7 @@ func (a *FBSAPIService) ApiV3OrdersStickersCrossBorderPostExecute(r ApiApiV3Orde
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3830,7 +3874,7 @@ func (a *FBSAPIService) ApiV3OrdersStickersPostExecute(r ApiApiV3OrdersStickersP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3997,7 +4041,7 @@ func (a *FBSAPIService) ApiV3PassesGetExecute(r ApiApiV3PassesGetRequest) ([]Pas
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4113,7 +4157,7 @@ func (a *FBSAPIService) ApiV3PassesOfficesGetExecute(r ApiApiV3PassesOfficesGetR
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -4158,6 +4202,17 @@ func (a *FBSAPIService) ApiV3PassesOfficesGetExecute(r ApiApiV3PassesOfficesGetR
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
 			var v ApiV3PassesOfficesGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4326,7 +4381,7 @@ func (a *FBSAPIService) ApiV3PassesPassIdDeleteExecute(r ApiApiV3PassesPassIdDel
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4520,7 +4575,7 @@ func (a *FBSAPIService) ApiV3PassesPassIdPutExecute(r ApiApiV3PassesPassIdPutReq
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4710,7 +4765,7 @@ func (a *FBSAPIService) ApiV3PassesPostExecute(r ApiApiV3PassesPostRequest) (*Ap
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4927,7 +4982,7 @@ func (a *FBSAPIService) ApiV3SuppliesGetExecute(r ApiApiV3SuppliesGetRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5107,7 +5162,7 @@ func (a *FBSAPIService) ApiV3SuppliesOrdersReshipmentGetExecute(r ApiApiV3Suppli
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5302,7 +5357,7 @@ func (a *FBSAPIService) ApiV3SuppliesPostExecute(r ApiApiV3SuppliesPostRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5503,7 +5558,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdBarcodeGetExecute(r ApiApiV3Supplie
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5705,7 +5760,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdDeleteExecute(r ApiApiV3SuppliesSup
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5907,7 +5962,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdDeliverPatchExecute(r ApiApiV3Suppl
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6102,7 +6157,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdGetExecute(r ApiApiV3SuppliesSupply
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6303,7 +6358,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdTrbxDeleteExecute(r ApiApiV3Supplie
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6487,7 +6542,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdTrbxGetExecute(r ApiApiV3SuppliesSu
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6693,7 +6748,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdTrbxPostExecute(r ApiApiV3SuppliesS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6755,7 +6810,7 @@ type ApiApiV3SuppliesSupplyIdTrbxStickersPostRequest struct {
 	ApiService *FBSAPIService
 	supplyId string
 	type_ *string
-	apiV3SuppliesSupplyIdTrbxStickersPostRequest *ApiV3SuppliesSupplyIdTrbxStickersPostRequest
+	apiV3SuppliesSupplyIdTrbxDeleteRequest *ApiV3SuppliesSupplyIdTrbxDeleteRequest
 }
 
 // Тип стикера
@@ -6764,8 +6819,8 @@ func (r ApiApiV3SuppliesSupplyIdTrbxStickersPostRequest) Type_(type_ string) Api
 	return r
 }
 
-func (r ApiApiV3SuppliesSupplyIdTrbxStickersPostRequest) ApiV3SuppliesSupplyIdTrbxStickersPostRequest(apiV3SuppliesSupplyIdTrbxStickersPostRequest ApiV3SuppliesSupplyIdTrbxStickersPostRequest) ApiApiV3SuppliesSupplyIdTrbxStickersPostRequest {
-	r.apiV3SuppliesSupplyIdTrbxStickersPostRequest = &apiV3SuppliesSupplyIdTrbxStickersPostRequest
+func (r ApiApiV3SuppliesSupplyIdTrbxStickersPostRequest) ApiV3SuppliesSupplyIdTrbxDeleteRequest(apiV3SuppliesSupplyIdTrbxDeleteRequest ApiV3SuppliesSupplyIdTrbxDeleteRequest) ApiApiV3SuppliesSupplyIdTrbxStickersPostRequest {
+	r.apiV3SuppliesSupplyIdTrbxDeleteRequest = &apiV3SuppliesSupplyIdTrbxDeleteRequest
 	return r
 }
 
@@ -6851,7 +6906,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdTrbxStickersPostExecute(r ApiApiV3S
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiV3SuppliesSupplyIdTrbxStickersPostRequest
+	localVarPostBody = r.apiV3SuppliesSupplyIdTrbxDeleteRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6911,7 +6966,7 @@ func (a *FBSAPIService) ApiV3SuppliesSupplyIdTrbxStickersPostExecute(r ApiApiV3S
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3PassesGet402Response
+			var v ApiV3PassesOfficesGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -21,7 +21,6 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from wildberries_sdk.analytics.models.order_by import OrderBy
-from wildberries_sdk.analytics.models.products_request_past_period import ProductsRequestPastPeriod
 from wildberries_sdk.analytics.models.products_request_selected_period import ProductsRequestSelectedPeriod
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +31,7 @@ class ProductsRequest(BaseModel):
     ProductsRequest
     """ # noqa: E501
     selected_period: ProductsRequestSelectedPeriod = Field(alias="selectedPeriod")
-    past_period: Optional[ProductsRequestPastPeriod] = Field(default=None, alias="pastPeriod")
+    past_period: Optional[ProductsRequestSelectedPeriod] = Field(default=None, alias="pastPeriod")
     nm_ids: Optional[Annotated[List[StrictInt], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB, по которым нужно составить отчёт. Оставьте пустым, чтобы получить отчёт обо всех товарах ", alias="nmIds", json_schema_extra={"examples": [[1234567]]})
     brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["nike", "adidas"]]})
     subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds", json_schema_extra={"examples": [[64, 334]]})
@@ -104,7 +103,7 @@ class ProductsRequest(BaseModel):
 
         _obj = cls.model_validate({
             "selectedPeriod": ProductsRequestSelectedPeriod.from_dict(obj["selectedPeriod"]) if obj.get("selectedPeriod") is not None else None,
-            "pastPeriod": ProductsRequestPastPeriod.from_dict(obj["pastPeriod"]) if obj.get("pastPeriod") is not None else None,
+            "pastPeriod": ProductsRequestSelectedPeriod.from_dict(obj["pastPeriod"]) if obj.get("pastPeriod") is not None else None,
             "nmIds": obj.get("nmIds"),
             "brandNames": obj.get("brandNames"),
             "subjectIds": obj.get("subjectIds"),

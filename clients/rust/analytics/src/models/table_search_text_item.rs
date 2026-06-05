@@ -43,30 +43,30 @@ pub struct TableSearchTextItem {
     #[serde(rename = "price")]
     pub price: Box<models::TableProductItemAllOfPrice>,
     #[serde(rename = "frequency")]
-    pub frequency: Box<models::TableSearchTextItemAllOfFrequency>,
+    pub frequency: Box<models::TableProductItemAllOfAvgPosition>,
     /// Количество обращений с поисковым запросом за неделю
     #[serde(rename = "weekFrequency")]
     pub week_frequency: i32,
     #[serde(rename = "medianPosition")]
-    pub median_position: Box<models::TableSearchTextItemAllOfMedianPosition>,
+    pub median_position: Box<models::TableProductItemAllOfAvgPosition>,
     #[serde(rename = "avgPosition")]
-    pub avg_position: Box<models::TableGroupItemMetricsAvgPosition>,
+    pub avg_position: Box<models::TableProductItemAllOfAvgPosition>,
     #[serde(rename = "openCard")]
     pub open_card: Box<models::TableSearchTextItemAllOfOpenCard>,
     #[serde(rename = "addToCart")]
-    pub add_to_cart: Box<models::TableSearchTextItemAllOfAddToCart>,
+    pub add_to_cart: Box<models::TableSearchTextItemAllOfOpenCard>,
     #[serde(rename = "openToCart")]
-    pub open_to_cart: Box<models::TableSearchTextItemAllOfOpenToCart>,
+    pub open_to_cart: Box<models::TableSearchTextItemAllOfOpenCard>,
     #[serde(rename = "orders")]
-    pub orders: Box<models::TableSearchTextItemAllOfOrders>,
+    pub orders: Box<models::TableSearchTextItemAllOfOpenCard>,
     #[serde(rename = "cartToOrder")]
-    pub cart_to_order: Box<models::TableSearchTextItemAllOfCartToOrder>,
+    pub cart_to_order: Box<models::TableSearchTextItemAllOfOpenCard>,
     #[serde(rename = "visibility")]
-    pub visibility: Box<models::TableSearchTextItemAllOfVisibility>,
+    pub visibility: Box<models::TableProductItemAllOfAvgPosition>,
 }
 
 impl TableSearchTextItem {
-    pub fn new(text: String, nm_id: i32, subject_name: String, brand_name: String, vendor_code: String, name: String, is_card_rated: bool, rating: f64, feedback_rating: f64, price: models::TableProductItemAllOfPrice, frequency: models::TableSearchTextItemAllOfFrequency, week_frequency: i32, median_position: models::TableSearchTextItemAllOfMedianPosition, avg_position: models::TableGroupItemMetricsAvgPosition, open_card: models::TableSearchTextItemAllOfOpenCard, add_to_cart: models::TableSearchTextItemAllOfAddToCart, open_to_cart: models::TableSearchTextItemAllOfOpenToCart, orders: models::TableSearchTextItemAllOfOrders, cart_to_order: models::TableSearchTextItemAllOfCartToOrder, visibility: models::TableSearchTextItemAllOfVisibility) -> TableSearchTextItem {
+    pub fn new(text: String, nm_id: i32, subject_name: String, brand_name: String, vendor_code: String, name: String, is_card_rated: bool, rating: f64, feedback_rating: f64, price: models::TableProductItemAllOfPrice, frequency: models::TableProductItemAllOfAvgPosition, week_frequency: i32, median_position: models::TableProductItemAllOfAvgPosition, avg_position: models::TableProductItemAllOfAvgPosition, open_card: models::TableSearchTextItemAllOfOpenCard, add_to_cart: models::TableSearchTextItemAllOfOpenCard, open_to_cart: models::TableSearchTextItemAllOfOpenCard, orders: models::TableSearchTextItemAllOfOpenCard, cart_to_order: models::TableSearchTextItemAllOfOpenCard, visibility: models::TableProductItemAllOfAvgPosition) -> TableSearchTextItem {
         TableSearchTextItem {
             text,
             nm_id,

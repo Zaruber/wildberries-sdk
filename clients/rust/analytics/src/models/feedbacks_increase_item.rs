@@ -26,18 +26,18 @@ pub struct FeedbacksIncreaseItem {
     #[serde(rename = "fiveStar")]
     pub five_star: Box<models::FeedbacksIncreaseItemFiveStar>,
     #[serde(rename = "fourStar")]
-    pub four_star: Box<models::FeedbacksIncreaseItemFourStar>,
+    pub four_star: Box<models::FeedbacksIncreaseItemFiveStar>,
     #[serde(rename = "threeStar")]
-    pub three_star: Box<models::FeedbacksIncreaseItemThreeStar>,
+    pub three_star: Box<models::FeedbacksIncreaseItemFiveStar>,
     #[serde(rename = "twoStar")]
-    pub two_star: Box<models::FeedbacksIncreaseItemTwoStar>,
+    pub two_star: Box<models::FeedbacksIncreaseItemFiveStar>,
     #[serde(rename = "oneStar")]
-    pub one_star: Box<models::FeedbacksIncreaseItemOneStar>,
+    pub one_star: Box<models::FeedbacksIncreaseItemFiveStar>,
 }
 
 impl FeedbacksIncreaseItem {
     /// Прирост оценок
-    pub fn new(current: i32, total: i32, dynamics: i32, five_star: models::FeedbacksIncreaseItemFiveStar, four_star: models::FeedbacksIncreaseItemFourStar, three_star: models::FeedbacksIncreaseItemThreeStar, two_star: models::FeedbacksIncreaseItemTwoStar, one_star: models::FeedbacksIncreaseItemOneStar) -> FeedbacksIncreaseItem {
+    pub fn new(current: i32, total: i32, dynamics: i32, five_star: models::FeedbacksIncreaseItemFiveStar, four_star: models::FeedbacksIncreaseItemFiveStar, three_star: models::FeedbacksIncreaseItemFiveStar, two_star: models::FeedbacksIncreaseItemFiveStar, one_star: models::FeedbacksIncreaseItemFiveStar) -> FeedbacksIncreaseItem {
         FeedbacksIncreaseItem {
             current,
             total,

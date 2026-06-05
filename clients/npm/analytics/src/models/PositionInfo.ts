@@ -13,13 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { PositionInfoMedian } from './PositionInfoMedian';
-import {
-    PositionInfoMedianFromJSON,
-    PositionInfoMedianFromJSONTyped,
-    PositionInfoMedianToJSON,
-    PositionInfoMedianToJSONTyped,
-} from './PositionInfoMedian';
 import type { SearchReportPositionClusters } from './SearchReportPositionClusters';
 import {
     SearchReportPositionClustersFromJSON,
@@ -27,13 +20,13 @@ import {
     SearchReportPositionClustersToJSON,
     SearchReportPositionClustersToJSONTyped,
 } from './SearchReportPositionClusters';
-import type { PositionInfoAverage } from './PositionInfoAverage';
+import type { CommonInfoAdvertisedProducts } from './CommonInfoAdvertisedProducts';
 import {
-    PositionInfoAverageFromJSON,
-    PositionInfoAverageFromJSONTyped,
-    PositionInfoAverageToJSON,
-    PositionInfoAverageToJSONTyped,
-} from './PositionInfoAverage';
+    CommonInfoAdvertisedProductsFromJSON,
+    CommonInfoAdvertisedProductsFromJSONTyped,
+    CommonInfoAdvertisedProductsToJSON,
+    CommonInfoAdvertisedProductsToJSONTyped,
+} from './CommonInfoAdvertisedProducts';
 import type { SearchReportPositionChartItem } from './SearchReportPositionChartItem';
 import {
     SearchReportPositionChartItemFromJSON,
@@ -50,16 +43,16 @@ import {
 export interface PositionInfo {
     /**
      * 
-     * @type {PositionInfoAverage}
+     * @type {CommonInfoAdvertisedProducts}
      * @memberof PositionInfo
      */
-    average: PositionInfoAverage;
+    average: CommonInfoAdvertisedProducts;
     /**
      * 
-     * @type {PositionInfoMedian}
+     * @type {CommonInfoAdvertisedProducts}
      * @memberof PositionInfo
      */
-    median: PositionInfoMedian;
+    median: CommonInfoAdvertisedProducts;
     /**
      * Данные для чарта по средней и медианной позиции товара в результатах поиска
      * @type {Array<SearchReportPositionChartItem>}
@@ -95,8 +88,8 @@ export function PositionInfoFromJSONTyped(json: any, ignoreDiscriminator: boolea
     }
     return {
         
-        'average': PositionInfoAverageFromJSON(json['average']),
-        'median': PositionInfoMedianFromJSON(json['median']),
+        'average': CommonInfoAdvertisedProductsFromJSON(json['average']),
+        'median': CommonInfoAdvertisedProductsFromJSON(json['median']),
         'chartItems': ((json['chartItems'] as Array<any>).map(SearchReportPositionChartItemFromJSON)),
         'clusters': SearchReportPositionClustersFromJSON(json['clusters']),
     };
@@ -113,8 +106,8 @@ export function PositionInfoToJSONTyped(value?: PositionInfo | null, ignoreDiscr
 
     return {
         
-        'average': PositionInfoAverageToJSON(value['average']),
-        'median': PositionInfoMedianToJSON(value['median']),
+        'average': CommonInfoAdvertisedProductsToJSON(value['average']),
+        'median': CommonInfoAdvertisedProductsToJSON(value['median']),
         'chartItems': ((value['chartItems'] as Array<any>).map(SearchReportPositionChartItemToJSON)),
         'clusters': SearchReportPositionClustersToJSON(value['clusters']),
     };

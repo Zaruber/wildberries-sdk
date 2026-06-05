@@ -63,11 +63,11 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
         'cons' => 'string',
         'product_valuation' => 'int',
         'created_date' => '\DateTime',
-        'answer' => '\Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerAnswer',
+        'answer' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer',
         'state' => 'string',
-        'product_details' => '\Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerProductDetails',
+        'product_details' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails',
         'photo_links' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataPhotoLinksInner[]',
-        'video' => '\Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerVideo',
+        'video' => '\Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo',
         'was_viewed' => 'bool',
         'user_name' => 'string',
         'order_status' => 'string',
@@ -650,7 +650,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets answer
      *
-     * @return \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerAnswer|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer|null
      */
     public function getAnswer()
     {
@@ -660,7 +660,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets answer
      *
-     * @param \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerAnswer|null $answer answer
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataAnswer|null $answer answer
      *
      * @return self
      */
@@ -711,7 +711,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets product_details
      *
-     * @return \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerProductDetails|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails|null
      */
     public function getProductDetails()
     {
@@ -721,7 +721,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets product_details
      *
-     * @param \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerProductDetails|null $product_details product_details
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataProductDetails|null $product_details product_details
      *
      * @return self
      */
@@ -772,7 +772,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets video
      *
-     * @return \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerVideo|null
+     * @return \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo|null
      */
     public function getVideo()
     {
@@ -782,7 +782,7 @@ class ResponseFeedbackInner implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets video
      *
-     * @param \Wildberries\Sdk\Communications\Model\ResponseFeedbackInnerVideo|null $video video
+     * @param \Wildberries\Sdk\Communications\Model\ApiV1FeedbackGet200ResponseDataVideo|null $video video
      *
      * @return self
      */

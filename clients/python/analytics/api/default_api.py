@@ -4788,6 +4788,7 @@ class DefaultApi:
             '200': "PostV1ItemRating200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4859,6 +4860,7 @@ class DefaultApi:
             '200': "PostV1ItemRating200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4930,6 +4932,7 @@ class DefaultApi:
             '200': "PostV1ItemRating200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -5078,6 +5081,7 @@ class DefaultApi:
             '200': "PostV1StocksReportWbWarehouses200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -5149,6 +5153,7 @@ class DefaultApi:
             '200': "PostV1StocksReportWbWarehouses200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -5220,6 +5225,7 @@ class DefaultApi:
             '200': "PostV1StocksReportWbWarehouses200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }

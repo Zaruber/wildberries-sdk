@@ -282,6 +282,8 @@ SDK выпускается с security-first процессом:
 - `PATCH /api/advert/v1/bids` — Изменение ставок в кампаниях
 - `POST /api/advert/v1/bids/min` — Минимальные ставки для карточек товаров
 - `GET /api/advert/v2/adverts` — Информация о кампаниях
+- `POST /api/content/v1/recommendations/list` — Список рекомендаций в карточках товаров (postV1RecommendationsList)
+- `POST /api/content/v1/recommendations/set` — Установить рекомендации для товаров (postV1RecommendationsSet)
 - `GET /api/v1/calendar/promotions` — Список акций
 - `GET /api/v1/calendar/promotions/details` — Детальная информация об акциях
 - `GET /api/v1/calendar/promotions/nomenclatures` — Список товаров для участия в акции

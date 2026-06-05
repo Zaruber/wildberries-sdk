@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { VisibilityInfoOpenCard } from './VisibilityInfoOpenCard';
+import type { CommonInfoAdvertisedProducts } from './CommonInfoAdvertisedProducts';
 import {
-    VisibilityInfoOpenCardFromJSON,
-    VisibilityInfoOpenCardFromJSONTyped,
-    VisibilityInfoOpenCardToJSON,
-    VisibilityInfoOpenCardToJSONTyped,
-} from './VisibilityInfoOpenCard';
+    CommonInfoAdvertisedProductsFromJSON,
+    CommonInfoAdvertisedProductsFromJSONTyped,
+    CommonInfoAdvertisedProductsToJSON,
+    CommonInfoAdvertisedProductsToJSONTyped,
+} from './CommonInfoAdvertisedProducts';
 import type { VisibilityInfoByDayInner } from './VisibilityInfoByDayInner';
 import {
     VisibilityInfoByDayInnerFromJSON,
@@ -27,13 +27,6 @@ import {
     VisibilityInfoByDayInnerToJSON,
     VisibilityInfoByDayInnerToJSONTyped,
 } from './VisibilityInfoByDayInner';
-import type { VisibilityInfoVisibility } from './VisibilityInfoVisibility';
-import {
-    VisibilityInfoVisibilityFromJSON,
-    VisibilityInfoVisibilityFromJSONTyped,
-    VisibilityInfoVisibilityToJSON,
-    VisibilityInfoVisibilityToJSONTyped,
-} from './VisibilityInfoVisibility';
 
 /**
  * Видимость карточек и переходы в карточки. По дням, неделям, месяцам
@@ -43,16 +36,16 @@ import {
 export interface VisibilityInfo {
     /**
      * 
-     * @type {VisibilityInfoVisibility}
+     * @type {CommonInfoAdvertisedProducts}
      * @memberof VisibilityInfo
      */
-    visibility: VisibilityInfoVisibility;
+    visibility: CommonInfoAdvertisedProducts;
     /**
      * 
-     * @type {VisibilityInfoOpenCard}
+     * @type {CommonInfoAdvertisedProducts}
      * @memberof VisibilityInfo
      */
-    openCard: VisibilityInfoOpenCard;
+    openCard: CommonInfoAdvertisedProducts;
     /**
      * Данные для отрисовки графика в личном кабинете по видимости и переходам в карточки по дням
      * @type {Array<VisibilityInfoByDayInner>}
@@ -92,8 +85,8 @@ export function VisibilityInfoFromJSONTyped(json: any, ignoreDiscriminator: bool
     }
     return {
         
-        'visibility': VisibilityInfoVisibilityFromJSON(json['visibility']),
-        'openCard': VisibilityInfoOpenCardFromJSON(json['openCard']),
+        'visibility': CommonInfoAdvertisedProductsFromJSON(json['visibility']),
+        'openCard': CommonInfoAdvertisedProductsFromJSON(json['openCard']),
         'byDay': json['byDay'] == null ? undefined : ((json['byDay'] as Array<any>).map(VisibilityInfoByDayInnerFromJSON)),
         'byWeek': json['byWeek'] == null ? undefined : ((json['byWeek'] as Array<any>).map(VisibilityInfoByDayInnerFromJSON)),
         'byMonth': json['byMonth'] == null ? undefined : ((json['byMonth'] as Array<any>).map(VisibilityInfoByDayInnerFromJSON)),
@@ -111,8 +104,8 @@ export function VisibilityInfoToJSONTyped(value?: VisibilityInfo | null, ignoreD
 
     return {
         
-        'visibility': VisibilityInfoVisibilityToJSON(value['visibility']),
-        'openCard': VisibilityInfoOpenCardToJSON(value['openCard']),
+        'visibility': CommonInfoAdvertisedProductsToJSON(value['visibility']),
+        'openCard': CommonInfoAdvertisedProductsToJSON(value['openCard']),
         'byDay': value['byDay'] == null ? undefined : ((value['byDay'] as Array<any>).map(VisibilityInfoByDayInnerToJSON)),
         'byWeek': value['byWeek'] == null ? undefined : ((value['byWeek'] as Array<any>).map(VisibilityInfoByDayInnerToJSON)),
         'byMonth': value['byMonth'] == null ? undefined : ((value['byMonth'] as Array<any>).map(VisibilityInfoByDayInnerToJSON)),

@@ -27,20 +27,20 @@ import {
     ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerToJSON,
     ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerToJSONTyped,
 } from './ContentV2CardsUpdatePostRequestInnerCharacteristicsInner';
-import type { ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner } from './ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner';
+import type { ContentV2CardsUpdatePostRequestInnerDimensions } from './ContentV2CardsUpdatePostRequestInnerDimensions';
 import {
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerFromJSON,
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerFromJSONTyped,
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerToJSON,
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerToJSONTyped,
-} from './ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner';
-import type { ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions } from './ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions';
+    ContentV2CardsUpdatePostRequestInnerDimensionsFromJSON,
+    ContentV2CardsUpdatePostRequestInnerDimensionsFromJSONTyped,
+    ContentV2CardsUpdatePostRequestInnerDimensionsToJSON,
+    ContentV2CardsUpdatePostRequestInnerDimensionsToJSONTyped,
+} from './ContentV2CardsUpdatePostRequestInnerDimensions';
+import type { ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner } from './ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner';
 import {
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsFromJSON,
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsFromJSONTyped,
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsToJSON,
-    ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsToJSONTyped,
-} from './ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions';
+    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerFromJSON,
+    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerFromJSONTyped,
+    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerToJSON,
+    ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerToJSONTyped,
+} from './ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner';
 
 /**
  * 
@@ -95,18 +95,18 @@ export interface ContentV2CardsUploadAddPostRequestCardsToAddInner {
     description?: string;
     /**
      * 
-     * @type {ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions}
+     * @type {ContentV2CardsUpdatePostRequestInnerDimensions}
      * @memberof ContentV2CardsUploadAddPostRequestCardsToAddInner
      */
-    dimensions?: ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions;
+    dimensions?: ContentV2CardsUpdatePostRequestInnerDimensions;
     /**
      * Массив размеров.<br>
      * Если не указать для размерного товара (обувь, одежда и др.), сгенерируется автоматически с `techSize` = "A", `wbSize` = "1" и баркодом
      * 
-     * @type {Array<ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner>}
+     * @type {Array<ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner>}
      * @memberof ContentV2CardsUploadAddPostRequestCardsToAddInner
      */
-    sizes?: Array<ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner>;
+    sizes?: Array<ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner>;
     /**
      * Характеристики товара.
      * <br>
@@ -142,8 +142,8 @@ export function ContentV2CardsUploadAddPostRequestCardsToAddInnerFromJSONTyped(j
         'wholesale': json['wholesale'] == null ? undefined : ContentV2GetCardsListPost200ResponseCardsInnerWholesaleFromJSON(json['wholesale']),
         'title': json['title'] == null ? undefined : json['title'],
         'description': json['description'] == null ? undefined : json['description'],
-        'dimensions': json['dimensions'] == null ? undefined : ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsFromJSON(json['dimensions']),
-        'sizes': json['sizes'] == null ? undefined : ((json['sizes'] as Array<any>).map(ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerFromJSON)),
+        'dimensions': json['dimensions'] == null ? undefined : ContentV2CardsUpdatePostRequestInnerDimensionsFromJSON(json['dimensions']),
+        'sizes': json['sizes'] == null ? undefined : ((json['sizes'] as Array<any>).map(ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerFromJSON)),
         'characteristics': json['characteristics'] == null ? undefined : ((json['characteristics'] as Array<any>).map(ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerFromJSON)),
     };
 }
@@ -165,8 +165,8 @@ export function ContentV2CardsUploadAddPostRequestCardsToAddInnerToJSONTyped(val
         'wholesale': ContentV2GetCardsListPost200ResponseCardsInnerWholesaleToJSON(value['wholesale']),
         'title': value['title'],
         'description': value['description'],
-        'dimensions': ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensionsToJSON(value['dimensions']),
-        'sizes': value['sizes'] == null ? undefined : ((value['sizes'] as Array<any>).map(ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInnerToJSON)),
+        'dimensions': ContentV2CardsUpdatePostRequestInnerDimensionsToJSON(value['dimensions']),
+        'sizes': value['sizes'] == null ? undefined : ((value['sizes'] as Array<any>).map(ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInnerToJSON)),
         'characteristics': value['characteristics'] == null ? undefined : ((value['characteristics'] as Array<any>).map(ContentV2CardsUpdatePostRequestInnerCharacteristicsInnerToJSON)),
     };
 }

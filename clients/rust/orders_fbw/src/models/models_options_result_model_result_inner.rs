@@ -17,7 +17,7 @@ pub struct ModelsOptionsResultModelResultInner {
     #[serde(rename = "barcode", skip_serializing_if = "Option::is_none")]
     pub barcode: Option<String>,
     #[serde(rename = "error", skip_serializing_if = "Option::is_none")]
-    pub error: Option<Box<models::ModelsOptionsResultModelResultInnerError>>,
+    pub error: Option<Box<models::ApiV1AcceptanceOptionsPost402Response>>,
     /// Наличие ошибки:   - `true` — ошибка есть   - Поля нет — ошибка отсутствует 
     #[serde(rename = "isError", skip_serializing_if = "Option::is_none")]
     pub is_error: Option<bool>,

@@ -180,7 +180,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaDeletePost($api_orders_meta_delete_request = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'][0])
     {
@@ -198,7 +198,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrdersResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaDeletePostWithHttpInfo($api_orders_meta_delete_request = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaDeletePost'][0])
     {
@@ -243,6 +243,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -302,6 +308,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -502,7 +516,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaGtinPost($api_orders_gtin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'][0])
     {
@@ -520,7 +534,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaGtinPostWithHttpInfo($api_orders_gtin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaGtinPost'][0])
     {
@@ -565,6 +579,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -624,6 +644,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -830,7 +858,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaImeiPost($api_orders_imei_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'][0])
     {
@@ -848,7 +876,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaImeiPostWithHttpInfo($api_orders_imei_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaImeiPost'][0])
     {
@@ -893,6 +921,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -952,6 +986,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1158,7 +1200,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaInfoPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'][0])
     {
@@ -1176,7 +1218,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrdersMetaResponse|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaInfoPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaInfoPost'][0])
     {
@@ -1221,6 +1263,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -1280,6 +1328,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1480,7 +1536,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaSgtinPost($api_orders_sgtins_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'][0])
     {
@@ -1498,7 +1554,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaSgtinPostWithHttpInfo($api_orders_sgtins_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaSgtinPost'][0])
     {
@@ -1543,6 +1599,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -1602,6 +1664,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1808,7 +1878,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaUinPost($api_orders_uin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'][0])
     {
@@ -1826,7 +1896,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiMetaSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\Error|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersMetaUinPostWithHttpInfo($api_orders_uin_set_request, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersMetaUinPost'][0])
     {
@@ -1871,6 +1941,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -1930,6 +2006,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2136,7 +2220,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusCancelPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'][0])
     {
@@ -2154,7 +2238,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusCancelPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusCancelPost'][0])
     {
@@ -2199,6 +2283,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -2258,6 +2348,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2458,7 +2556,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusConfirmPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'][0])
     {
@@ -2476,7 +2574,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusConfirmPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusConfirmPost'][0])
     {
@@ -2521,6 +2619,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -2580,6 +2684,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2780,7 +2892,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusInfoPost($api_orders_request_v2, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'][0])
     {
@@ -2798,7 +2910,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiOrderStatusesV2|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusInfoPostWithHttpInfo($api_orders_request_v2, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusInfoPost'][0])
     {
@@ -2843,6 +2955,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -2902,6 +3020,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3108,7 +3234,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusPreparePost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'][0])
     {
@@ -3126,7 +3252,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusPreparePostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusPreparePost'][0])
     {
@@ -3171,6 +3297,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -3230,6 +3362,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3430,7 +3570,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusReceivePost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'][0])
     {
@@ -3448,7 +3588,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusReceivePostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusReceivePost'][0])
     {
@@ -3493,6 +3633,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -3552,6 +3698,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3752,7 +3906,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
+     * @return \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusRejectPost($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'][0])
     {
@@ -3770,7 +3924,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\InStorePickup\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\InStorePickup\Model\ApiStatusSetResponses|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response|\Wildberries\Sdk\InStorePickup\Model\ApiBatchError|\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3ClickCollectOrdersStatusRejectPostWithHttpInfo($api_orders_request_v2 = null, string $contentType = self::contentTypes['apiMarketplaceV3ClickCollectOrdersStatusRejectPost'][0])
     {
@@ -3815,6 +3969,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $request,
                         $response,
                     );
@@ -3874,6 +4034,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\InStorePickup\Model\ApiV3ClickCollectOrdersNewGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

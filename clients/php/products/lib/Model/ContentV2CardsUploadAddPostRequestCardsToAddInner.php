@@ -63,8 +63,8 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
         'wholesale' => '\Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200ResponseCardsInnerWholesale',
         'title' => 'string',
         'description' => 'string',
-        'dimensions' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions',
-        'sizes' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]',
+        'dimensions' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions',
+        'sizes' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner[]',
         'characteristics' => '\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerCharacteristicsInner[]'
     ];
 
@@ -529,7 +529,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Gets dimensions
      *
-     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions|null
      */
     public function getDimensions()
     {
@@ -539,7 +539,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Sets dimensions
      *
-     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions|null $dimensions dimensions
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePostRequestInnerDimensions|null $dimensions dimensions
      *
      * @return self
      */
@@ -556,7 +556,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Gets sizes
      *
-     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]|null
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner[]|null
      */
     public function getSizes()
     {
@@ -566,7 +566,7 @@ class ContentV2CardsUploadAddPostRequestCardsToAddInner implements ModelInterfac
     /**
      * Sets sizes
      *
-     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInnerSizesInner[]|null $sizes Массив размеров.<br> Если не указать для размерного товара (обувь, одежда и др.), сгенерируется автоматически с `techSize` = \"A\", `wbSize` = \"1\" и баркодом
+     * @param \Wildberries\Sdk\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInnerSizesInner[]|null $sizes Массив размеров.<br> Если не указать для размерного товара (обувь, одежда и др.), сгенерируется автоматически с `techSize` = \"A\", `wbSize` = \"1\" и баркодом
      *
      * @return self
      */

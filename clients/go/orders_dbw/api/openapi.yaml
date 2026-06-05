@@ -375,6 +375,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -840,6 +850,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1243,6 +1263,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1338,6 +1368,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1647,6 +1687,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -3126,9 +3176,9 @@ components:
         imei:
           $ref: "#/components/schemas/Meta_imei"
         uin:
-          $ref: "#/components/schemas/Meta_uin"
+          $ref: "#/components/schemas/Meta_imei"
         gtin:
-          $ref: "#/components/schemas/Meta_gtin"
+          $ref: "#/components/schemas/Meta_imei"
         sgtin:
           $ref: "#/components/schemas/Meta_sgtin"
       type: object
@@ -3766,26 +3816,6 @@ components:
       type: object
     Meta_imei:
       description: IMEI
-      example:
-        value: "123456789012345"
-      properties:
-        value:
-          example: "123456789012345"
-          nullable: true
-          type: string
-      type: object
-    Meta_uin:
-      description: УИН
-      example:
-        value: "123456789012345"
-      properties:
-        value:
-          example: "123456789012345"
-          nullable: true
-          type: string
-      type: object
-    Meta_gtin:
-      description: GTIN
       example:
         value: "123456789012345"
       properties:

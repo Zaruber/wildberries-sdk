@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { StoreContactRequestBodyContactsInner } from './StoreContactRequestBodyContactsInner';
+import type { ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner } from './ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner';
 import {
-    StoreContactRequestBodyContactsInnerFromJSON,
-    StoreContactRequestBodyContactsInnerFromJSONTyped,
-    StoreContactRequestBodyContactsInnerToJSON,
-    StoreContactRequestBodyContactsInnerToJSONTyped,
-} from './StoreContactRequestBodyContactsInner';
+    ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInnerFromJSON,
+    ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInnerFromJSONTyped,
+    ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInnerToJSON,
+    ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInnerToJSONTyped,
+} from './ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner';
 
 /**
  * Контакты склада продавца
@@ -29,10 +29,10 @@ import {
 export interface StoreContactRequestBody {
     /**
      * 
-     * @type {Array<StoreContactRequestBodyContactsInner>}
+     * @type {Array<ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner>}
      * @memberof StoreContactRequestBody
      */
-    contacts?: Array<StoreContactRequestBodyContactsInner>;
+    contacts?: Array<ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner>;
 }
 
 /**
@@ -52,7 +52,7 @@ export function StoreContactRequestBodyFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'contacts': json['contacts'] == null ? undefined : ((json['contacts'] as Array<any>).map(StoreContactRequestBodyContactsInnerFromJSON)),
+        'contacts': json['contacts'] == null ? undefined : ((json['contacts'] as Array<any>).map(ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInnerFromJSON)),
     };
 }
 
@@ -67,7 +67,7 @@ export function StoreContactRequestBodyToJSONTyped(value?: StoreContactRequestBo
 
     return {
         
-        'contacts': value['contacts'] == null ? undefined : ((value['contacts'] as Array<any>).map(StoreContactRequestBodyContactsInnerToJSON)),
+        'contacts': value['contacts'] == null ? undefined : ((value['contacts'] as Array<any>).map(ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInnerToJSON)),
     };
 }
 

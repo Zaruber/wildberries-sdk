@@ -4968,7 +4968,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Analytics\Model\PostV1ItemRating200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response
+     * @return \Wildberries\Sdk\Analytics\Model\PostV1ItemRating200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response
      */
     public function postV1ItemRating($item_rating_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1ItemRating'][0])
     {
@@ -4992,7 +4992,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Analytics\Model\PostV1ItemRating200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Analytics\Model\PostV1ItemRating200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1ItemRatingWithHttpInfo($item_rating_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1ItemRating'][0])
     {
@@ -5037,6 +5037,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $request,
                         $response,
                     );
@@ -5096,6 +5102,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5353,7 +5367,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Analytics\Model\PostV1StocksReportWbWarehouses200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response
+     * @return \Wildberries\Sdk\Analytics\Model\PostV1StocksReportWbWarehouses200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response
      */
     public function postV1StocksReportWbWarehouses($inventory_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1StocksReportWbWarehouses'][0])
     {
@@ -5377,7 +5391,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Analytics\Model\PostV1StocksReportWbWarehouses200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Analytics\Model\PostV1StocksReportWbWarehouses200Response|\Wildberries\Sdk\Analytics\Model\ErrorObject400|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ErrorObject403|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function postV1StocksReportWbWarehousesWithHttpInfo($inventory_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1StocksReportWbWarehouses'][0])
     {
@@ -5422,6 +5436,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $request,
                         $response,
                     );
@@ -5481,6 +5501,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

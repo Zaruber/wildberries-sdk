@@ -14,17 +14,17 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DistributionTableIndicators {
     #[serde(rename = "feedbackCount", skip_serializing_if = "Option::is_none")]
-    pub feedback_count: Option<Box<models::DistributionTableIndicatorsFeedbackCount>>,
+    pub feedback_count: Option<Box<models::CommonInfoAdvertisedProducts>>,
     #[serde(rename = "fiveStar", skip_serializing_if = "Option::is_none")]
-    pub five_star: Option<Box<models::DistributionTableIndicatorsFiveStar>>,
+    pub five_star: Option<Box<models::CommonInfoAdvertisedProducts>>,
     #[serde(rename = "fourStar", skip_serializing_if = "Option::is_none")]
-    pub four_star: Option<Box<models::DistributionTableIndicatorsFourStar>>,
+    pub four_star: Option<Box<models::CommonInfoAdvertisedProducts>>,
     #[serde(rename = "threeStar", skip_serializing_if = "Option::is_none")]
-    pub three_star: Option<Box<models::DistributionTableIndicatorsThreeStar>>,
+    pub three_star: Option<Box<models::CommonInfoAdvertisedProducts>>,
     #[serde(rename = "twoStar", skip_serializing_if = "Option::is_none")]
-    pub two_star: Option<Box<models::DistributionTableIndicatorsTwoStar>>,
+    pub two_star: Option<Box<models::CommonInfoAdvertisedProducts>>,
     #[serde(rename = "oneStar", skip_serializing_if = "Option::is_none")]
-    pub one_star: Option<Box<models::DistributionTableIndicatorsOneStar>>,
+    pub one_star: Option<Box<models::CommonInfoAdvertisedProducts>>,
     /// Отзывы, исключённые из рейтинга
     #[serde(rename = "disqualified", skip_serializing_if = "Option::is_none")]
     pub disqualified: Option<i32>,

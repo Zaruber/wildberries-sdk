@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { GetDocsData } from './GetDocsData';
+import type { GetDocData } from './GetDocData';
 import {
-    GetDocsDataFromJSON,
-    GetDocsDataFromJSONTyped,
-    GetDocsDataToJSON,
-    GetDocsDataToJSONTyped,
-} from './GetDocsData';
+    GetDocDataFromJSON,
+    GetDocDataFromJSONTyped,
+    GetDocDataToJSON,
+    GetDocDataToJSONTyped,
+} from './GetDocData';
 
 /**
  * 
@@ -29,10 +29,10 @@ import {
 export interface GetDocs {
     /**
      * 
-     * @type {GetDocsData}
+     * @type {GetDocData}
      * @memberof GetDocs
      */
-    data?: GetDocsData;
+    data?: GetDocData;
 }
 
 /**
@@ -52,7 +52,7 @@ export function GetDocsFromJSONTyped(json: any, ignoreDiscriminator: boolean): G
     }
     return {
         
-        'data': json['data'] == null ? undefined : GetDocsDataFromJSON(json['data']),
+        'data': json['data'] == null ? undefined : GetDocDataFromJSON(json['data']),
     };
 }
 
@@ -67,7 +67,7 @@ export function GetDocsToJSONTyped(value?: GetDocs | null, ignoreDiscriminator: 
 
     return {
         
-        'data': GetDocsDataToJSON(value['data']),
+        'data': GetDocDataToJSON(value['data']),
     };
 }
 

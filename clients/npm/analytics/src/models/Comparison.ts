@@ -13,13 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { ComparisonTimeToReadyDynamic } from './ComparisonTimeToReadyDynamic';
-import {
-    ComparisonTimeToReadyDynamicFromJSON,
-    ComparisonTimeToReadyDynamicFromJSONTyped,
-    ComparisonTimeToReadyDynamicToJSON,
-    ComparisonTimeToReadyDynamicToJSONTyped,
-} from './ComparisonTimeToReadyDynamic';
 import type { ComparisonWbClubDynamic } from './ComparisonWbClubDynamic';
 import {
     ComparisonWbClubDynamicFromJSON,
@@ -34,6 +27,13 @@ import {
     StatisticConversionsToJSON,
     StatisticConversionsToJSONTyped,
 } from './StatisticConversions';
+import type { StatisticTimeToReady } from './StatisticTimeToReady';
+import {
+    StatisticTimeToReadyFromJSON,
+    StatisticTimeToReadyFromJSONTyped,
+    StatisticTimeToReadyToJSON,
+    StatisticTimeToReadyToJSONTyped,
+} from './StatisticTimeToReady';
 
 /**
  * 
@@ -115,10 +115,10 @@ export interface Comparison {
     addToWishlistDynamic: number;
     /**
      * 
-     * @type {ComparisonTimeToReadyDynamic}
+     * @type {StatisticTimeToReady}
      * @memberof Comparison
      */
-    timeToReadyDynamic: ComparisonTimeToReadyDynamic;
+    timeToReadyDynamic: StatisticTimeToReady;
     /**
      * Динамика локальных заказов в рамках одного региона
      * @type {number}
@@ -184,7 +184,7 @@ export function ComparisonFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'avgPriceDynamic': json['avgPriceDynamic'],
         'shareOrderPercentDynamic': json['shareOrderPercentDynamic'],
         'addToWishlistDynamic': json['addToWishlistDynamic'],
-        'timeToReadyDynamic': ComparisonTimeToReadyDynamicFromJSON(json['timeToReadyDynamic']),
+        'timeToReadyDynamic': StatisticTimeToReadyFromJSON(json['timeToReadyDynamic']),
         'localizationPercentDynamic': json['localizationPercentDynamic'],
         'wbClubDynamic': ComparisonWbClubDynamicFromJSON(json['wbClubDynamic']),
         'conversions': StatisticConversionsFromJSON(json['conversions']),
@@ -214,7 +214,7 @@ export function ComparisonToJSONTyped(value?: Comparison | null, ignoreDiscrimin
         'avgPriceDynamic': value['avgPriceDynamic'],
         'shareOrderPercentDynamic': value['shareOrderPercentDynamic'],
         'addToWishlistDynamic': value['addToWishlistDynamic'],
-        'timeToReadyDynamic': ComparisonTimeToReadyDynamicToJSON(value['timeToReadyDynamic']),
+        'timeToReadyDynamic': StatisticTimeToReadyToJSON(value['timeToReadyDynamic']),
         'localizationPercentDynamic': value['localizationPercentDynamic'],
         'wbClubDynamic': ComparisonWbClubDynamicToJSON(value['wbClubDynamic']),
         'conversions': StatisticConversionsToJSON(value['conversions']),

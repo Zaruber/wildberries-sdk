@@ -20,20 +20,6 @@ import {
     TableCommonMetricsSaleRateToJSON,
     TableCommonMetricsSaleRateToJSONTyped,
 } from './TableCommonMetricsSaleRate';
-import type { TableCommonMetricsAvgStockTurnover } from './TableCommonMetricsAvgStockTurnover';
-import {
-    TableCommonMetricsAvgStockTurnoverFromJSON,
-    TableCommonMetricsAvgStockTurnoverFromJSONTyped,
-    TableCommonMetricsAvgStockTurnoverToJSON,
-    TableCommonMetricsAvgStockTurnoverToJSONTyped,
-} from './TableCommonMetricsAvgStockTurnover';
-import type { TableCommonMetricsOfficeMissingTime } from './TableCommonMetricsOfficeMissingTime';
-import {
-    TableCommonMetricsOfficeMissingTimeFromJSON,
-    TableCommonMetricsOfficeMissingTimeFromJSONTyped,
-    TableCommonMetricsOfficeMissingTimeToJSON,
-    TableCommonMetricsOfficeMissingTimeToJSONTyped,
-} from './TableCommonMetricsOfficeMissingTime';
 import type { FloatGraphByPeriodItem } from './FloatGraphByPeriodItem';
 import {
     FloatGraphByPeriodItemFromJSON,
@@ -110,10 +96,10 @@ export interface TableCommonMetrics {
     saleRate: TableCommonMetricsSaleRate;
     /**
      * 
-     * @type {TableCommonMetricsAvgStockTurnover}
+     * @type {TableCommonMetricsSaleRate}
      * @memberof TableCommonMetrics
      */
-    avgStockTurnover: TableCommonMetricsAvgStockTurnover;
+    avgStockTurnover: TableCommonMetricsSaleRate;
     /**
      * В пути к клиенту, шт.
      * @type {number}
@@ -128,10 +114,10 @@ export interface TableCommonMetrics {
     fromClientCount: number;
     /**
      * 
-     * @type {TableCommonMetricsOfficeMissingTime}
+     * @type {TableCommonMetricsSaleRate}
      * @memberof TableCommonMetrics
      */
-    officeMissingTime: TableCommonMetricsOfficeMissingTime;
+    officeMissingTime: TableCommonMetricsSaleRate;
     /**
      * Упущенные заказы, шт. Особые случаи:
      *   1. Значение меньше `0` и не равно `-2` — значение не рассчитано
@@ -215,10 +201,10 @@ export function TableCommonMetricsFromJSONTyped(json: any, ignoreDiscriminator: 
         'stockCount': json['stockCount'],
         'stockSum': json['stockSum'],
         'saleRate': TableCommonMetricsSaleRateFromJSON(json['saleRate']),
-        'avgStockTurnover': TableCommonMetricsAvgStockTurnoverFromJSON(json['avgStockTurnover']),
+        'avgStockTurnover': TableCommonMetricsSaleRateFromJSON(json['avgStockTurnover']),
         'toClientCount': json['toClientCount'],
         'fromClientCount': json['fromClientCount'],
-        'officeMissingTime': TableCommonMetricsOfficeMissingTimeFromJSON(json['officeMissingTime']),
+        'officeMissingTime': TableCommonMetricsSaleRateFromJSON(json['officeMissingTime']),
         'lostOrdersCount': json['lostOrdersCount'],
         'lostOrdersSum': json['lostOrdersSum'],
         'lostBuyoutsCount': json['lostBuyoutsCount'],
@@ -247,10 +233,10 @@ export function TableCommonMetricsToJSONTyped(value?: TableCommonMetrics | null,
         'stockCount': value['stockCount'],
         'stockSum': value['stockSum'],
         'saleRate': TableCommonMetricsSaleRateToJSON(value['saleRate']),
-        'avgStockTurnover': TableCommonMetricsAvgStockTurnoverToJSON(value['avgStockTurnover']),
+        'avgStockTurnover': TableCommonMetricsSaleRateToJSON(value['avgStockTurnover']),
         'toClientCount': value['toClientCount'],
         'fromClientCount': value['fromClientCount'],
-        'officeMissingTime': TableCommonMetricsOfficeMissingTimeToJSON(value['officeMissingTime']),
+        'officeMissingTime': TableCommonMetricsSaleRateToJSON(value['officeMissingTime']),
         'lostOrdersCount': value['lostOrdersCount'],
         'lostOrdersSum': value['lostOrdersSum'],
         'lostBuyoutsCount': value['lostBuyoutsCount'],

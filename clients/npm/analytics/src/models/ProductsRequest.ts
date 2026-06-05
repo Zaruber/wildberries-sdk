@@ -27,13 +27,6 @@ import {
     ProductsRequestSelectedPeriodToJSON,
     ProductsRequestSelectedPeriodToJSONTyped,
 } from './ProductsRequestSelectedPeriod';
-import type { ProductsRequestPastPeriod } from './ProductsRequestPastPeriod';
-import {
-    ProductsRequestPastPeriodFromJSON,
-    ProductsRequestPastPeriodFromJSONTyped,
-    ProductsRequestPastPeriodToJSON,
-    ProductsRequestPastPeriodToJSONTyped,
-} from './ProductsRequestPastPeriod';
 
 /**
  * 
@@ -49,10 +42,10 @@ export interface ProductsRequest {
     selectedPeriod: ProductsRequestSelectedPeriod;
     /**
      * 
-     * @type {ProductsRequestPastPeriod}
+     * @type {ProductsRequestSelectedPeriod}
      * @memberof ProductsRequest
      */
-    pastPeriod?: ProductsRequestPastPeriod;
+    pastPeriod?: ProductsRequestSelectedPeriod;
     /**
      * Артикулы WB, по которым нужно составить отчёт. Оставьте пустым, чтобы получить отчёт обо всех товарах
      * 
@@ -123,7 +116,7 @@ export function ProductsRequestFromJSONTyped(json: any, ignoreDiscriminator: boo
     return {
         
         'selectedPeriod': ProductsRequestSelectedPeriodFromJSON(json['selectedPeriod']),
-        'pastPeriod': json['pastPeriod'] == null ? undefined : ProductsRequestPastPeriodFromJSON(json['pastPeriod']),
+        'pastPeriod': json['pastPeriod'] == null ? undefined : ProductsRequestSelectedPeriodFromJSON(json['pastPeriod']),
         'nmIds': json['nmIds'] == null ? undefined : json['nmIds'],
         'brandNames': json['brandNames'] == null ? undefined : json['brandNames'],
         'subjectIds': json['subjectIds'] == null ? undefined : json['subjectIds'],
@@ -147,7 +140,7 @@ export function ProductsRequestToJSONTyped(value?: ProductsRequest | null, ignor
     return {
         
         'selectedPeriod': ProductsRequestSelectedPeriodToJSON(value['selectedPeriod']),
-        'pastPeriod': ProductsRequestPastPeriodToJSON(value['pastPeriod']),
+        'pastPeriod': ProductsRequestSelectedPeriodToJSON(value['pastPeriod']),
         'nmIds': value['nmIds'],
         'brandNames': value['brandNames'],
         'subjectIds': value['subjectIds'],

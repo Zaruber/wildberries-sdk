@@ -19,16 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Union
-from wildberries_sdk.analytics.models.table_group_item_metrics_avg_position import TableGroupItemMetricsAvgPosition
+from wildberries_sdk.analytics.models.table_product_item_all_of_avg_position import TableProductItemAllOfAvgPosition
 from wildberries_sdk.analytics.models.table_product_item_all_of_price import TableProductItemAllOfPrice
-from wildberries_sdk.analytics.models.table_search_text_item_all_of_add_to_cart import TableSearchTextItemAllOfAddToCart
-from wildberries_sdk.analytics.models.table_search_text_item_all_of_cart_to_order import TableSearchTextItemAllOfCartToOrder
-from wildberries_sdk.analytics.models.table_search_text_item_all_of_frequency import TableSearchTextItemAllOfFrequency
-from wildberries_sdk.analytics.models.table_search_text_item_all_of_median_position import TableSearchTextItemAllOfMedianPosition
 from wildberries_sdk.analytics.models.table_search_text_item_all_of_open_card import TableSearchTextItemAllOfOpenCard
-from wildberries_sdk.analytics.models.table_search_text_item_all_of_open_to_cart import TableSearchTextItemAllOfOpenToCart
-from wildberries_sdk.analytics.models.table_search_text_item_all_of_orders import TableSearchTextItemAllOfOrders
-from wildberries_sdk.analytics.models.table_search_text_item_all_of_visibility import TableSearchTextItemAllOfVisibility
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -47,16 +40,16 @@ class TableSearchTextItem(BaseModel):
     rating: Union[StrictFloat, StrictInt] = Field(description="Рейтинг карточки товара", json_schema_extra={"examples": [6]})
     feedback_rating: Union[StrictFloat, StrictInt] = Field(description="Рейтинг по отзывам", alias="feedbackRating", json_schema_extra={"examples": [1]})
     price: TableProductItemAllOfPrice
-    frequency: TableSearchTextItemAllOfFrequency
+    frequency: TableProductItemAllOfAvgPosition
     week_frequency: StrictInt = Field(description="Количество обращений с поисковым запросом за неделю", alias="weekFrequency", json_schema_extra={"examples": [140]})
-    median_position: TableSearchTextItemAllOfMedianPosition = Field(alias="medianPosition")
-    avg_position: TableGroupItemMetricsAvgPosition = Field(alias="avgPosition")
+    median_position: TableProductItemAllOfAvgPosition = Field(alias="medianPosition")
+    avg_position: TableProductItemAllOfAvgPosition = Field(alias="avgPosition")
     open_card: TableSearchTextItemAllOfOpenCard = Field(alias="openCard")
-    add_to_cart: TableSearchTextItemAllOfAddToCart = Field(alias="addToCart")
-    open_to_cart: TableSearchTextItemAllOfOpenToCart = Field(alias="openToCart")
-    orders: TableSearchTextItemAllOfOrders
-    cart_to_order: TableSearchTextItemAllOfCartToOrder = Field(alias="cartToOrder")
-    visibility: TableSearchTextItemAllOfVisibility
+    add_to_cart: TableSearchTextItemAllOfOpenCard = Field(alias="addToCart")
+    open_to_cart: TableSearchTextItemAllOfOpenCard = Field(alias="openToCart")
+    orders: TableSearchTextItemAllOfOpenCard
+    cart_to_order: TableSearchTextItemAllOfOpenCard = Field(alias="cartToOrder")
+    visibility: TableProductItemAllOfAvgPosition
     __properties: ClassVar[List[str]] = ["text", "nmId", "subjectName", "brandName", "vendorCode", "name", "isCardRated", "rating", "feedbackRating", "price", "frequency", "weekFrequency", "medianPosition", "avgPosition", "openCard", "addToCart", "openToCart", "orders", "cartToOrder", "visibility"]
 
     model_config = ConfigDict(
@@ -150,16 +143,16 @@ class TableSearchTextItem(BaseModel):
             "rating": obj.get("rating"),
             "feedbackRating": obj.get("feedbackRating"),
             "price": TableProductItemAllOfPrice.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "frequency": TableSearchTextItemAllOfFrequency.from_dict(obj["frequency"]) if obj.get("frequency") is not None else None,
+            "frequency": TableProductItemAllOfAvgPosition.from_dict(obj["frequency"]) if obj.get("frequency") is not None else None,
             "weekFrequency": obj.get("weekFrequency"),
-            "medianPosition": TableSearchTextItemAllOfMedianPosition.from_dict(obj["medianPosition"]) if obj.get("medianPosition") is not None else None,
-            "avgPosition": TableGroupItemMetricsAvgPosition.from_dict(obj["avgPosition"]) if obj.get("avgPosition") is not None else None,
+            "medianPosition": TableProductItemAllOfAvgPosition.from_dict(obj["medianPosition"]) if obj.get("medianPosition") is not None else None,
+            "avgPosition": TableProductItemAllOfAvgPosition.from_dict(obj["avgPosition"]) if obj.get("avgPosition") is not None else None,
             "openCard": TableSearchTextItemAllOfOpenCard.from_dict(obj["openCard"]) if obj.get("openCard") is not None else None,
-            "addToCart": TableSearchTextItemAllOfAddToCart.from_dict(obj["addToCart"]) if obj.get("addToCart") is not None else None,
-            "openToCart": TableSearchTextItemAllOfOpenToCart.from_dict(obj["openToCart"]) if obj.get("openToCart") is not None else None,
-            "orders": TableSearchTextItemAllOfOrders.from_dict(obj["orders"]) if obj.get("orders") is not None else None,
-            "cartToOrder": TableSearchTextItemAllOfCartToOrder.from_dict(obj["cartToOrder"]) if obj.get("cartToOrder") is not None else None,
-            "visibility": TableSearchTextItemAllOfVisibility.from_dict(obj["visibility"]) if obj.get("visibility") is not None else None
+            "addToCart": TableSearchTextItemAllOfOpenCard.from_dict(obj["addToCart"]) if obj.get("addToCart") is not None else None,
+            "openToCart": TableSearchTextItemAllOfOpenCard.from_dict(obj["openToCart"]) if obj.get("openToCart") is not None else None,
+            "orders": TableSearchTextItemAllOfOpenCard.from_dict(obj["orders"]) if obj.get("orders") is not None else None,
+            "cartToOrder": TableSearchTextItemAllOfOpenCard.from_dict(obj["cartToOrder"]) if obj.get("cartToOrder") is not None else None,
+            "visibility": TableProductItemAllOfAvgPosition.from_dict(obj["visibility"]) if obj.get("visibility") is not None else None
         })
         return _obj
 

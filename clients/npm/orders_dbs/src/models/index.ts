@@ -2,7 +2,6 @@
 /* eslint-disable */
 export * from './ApiB2bClientInfo';
 export * from './ApiB2bClientInfoResponse';
-export * from './ApiB2bClientInfoResponseErrorsInner';
 export * from './ApiB2bClientInfoResponses';
 export * from './ApiBatchError';
 export * from './ApiBatchErrorDeliverResponse';
@@ -32,7 +31,6 @@ export * from './ApiOrdersIMEISetRequest';
 export * from './ApiOrdersMetaDeleteRequest';
 export * from './ApiOrdersMetaDetailsResponse';
 export * from './ApiOrdersMetaDetailsResponseOrdersInner';
-export * from './ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner';
 export * from './ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner';
 export * from './ApiOrdersMetaResponse';
 export * from './ApiOrdersRequestV2';

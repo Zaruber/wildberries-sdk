@@ -16,7 +16,7 @@ pub struct ProductsResponseProductsInnerStatistic {
     #[serde(rename = "selected")]
     pub selected: Box<models::StatisticsSelected>,
     #[serde(rename = "past", skip_serializing_if = "Option::is_none")]
-    pub past: Option<Box<models::StatisticsPast>>,
+    pub past: Option<Box<models::StatisticsSelected>>,
     #[serde(rename = "comparison", skip_serializing_if = "Option::is_none")]
     pub comparison: Option<Box<models::StatisticsComparison>>,
 }

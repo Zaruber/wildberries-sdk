@@ -254,6 +254,7 @@ pub enum ApiV1WarehouseRemainsTasksTaskIdStatusGetError {
 pub enum GetDeductionsError {
     Status400(models::Response400Retentions),
     Status401(models::ApiV1SupplierStocksGet401Response),
+    Status402(models::ApiV1SupplierStocksGet402Response),
     Status403(models::Response403Retentions),
     Status429(models::ApiV1SupplierStocksGet401Response),
     UnknownValue(serde_json::Value),
@@ -265,6 +266,7 @@ pub enum GetDeductionsError {
 pub enum GetMeasurementPenaltiesError {
     Status400(models::Response400Retentions),
     Status401(models::ApiV1SupplierStocksGet401Response),
+    Status402(models::ApiV1SupplierStocksGet402Response),
     Status403(models::Response403Retentions),
     Status429(models::ApiV1SupplierStocksGet401Response),
     UnknownValue(serde_json::Value),
@@ -276,6 +278,7 @@ pub enum GetMeasurementPenaltiesError {
 pub enum GetWarehouseMeasurementsError {
     Status400(models::Response400Retentions),
     Status401(models::ApiV1SupplierStocksGet401Response),
+    Status402(models::ApiV1SupplierStocksGet402Response),
     Status403(models::Response403Retentions),
     Status429(models::ApiV1SupplierStocksGet401Response),
     UnknownValue(serde_json::Value),

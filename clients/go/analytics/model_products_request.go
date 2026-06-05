@@ -22,7 +22,7 @@ var _ MappedNullable = &ProductsRequest{}
 // ProductsRequest struct for ProductsRequest
 type ProductsRequest struct {
 	SelectedPeriod ProductsRequestSelectedPeriod `json:"selectedPeriod"`
-	PastPeriod *ProductsRequestPastPeriod `json:"pastPeriod,omitempty"`
+	PastPeriod *ProductsRequestSelectedPeriod `json:"pastPeriod,omitempty"`
 	// Артикулы WB, по которым нужно составить отчёт. Оставьте пустым, чтобы получить отчёт обо всех товарах 
 	NmIds []int32 `json:"nmIds,omitempty"`
 	// Список брендов для фильтрации
@@ -93,9 +93,9 @@ func (o *ProductsRequest) SetSelectedPeriod(v ProductsRequestSelectedPeriod) {
 }
 
 // GetPastPeriod returns the PastPeriod field value if set, zero value otherwise.
-func (o *ProductsRequest) GetPastPeriod() ProductsRequestPastPeriod {
+func (o *ProductsRequest) GetPastPeriod() ProductsRequestSelectedPeriod {
 	if o == nil || IsNil(o.PastPeriod) {
-		var ret ProductsRequestPastPeriod
+		var ret ProductsRequestSelectedPeriod
 		return ret
 	}
 	return *o.PastPeriod
@@ -103,7 +103,7 @@ func (o *ProductsRequest) GetPastPeriod() ProductsRequestPastPeriod {
 
 // GetPastPeriodOk returns a tuple with the PastPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductsRequest) GetPastPeriodOk() (*ProductsRequestPastPeriod, bool) {
+func (o *ProductsRequest) GetPastPeriodOk() (*ProductsRequestSelectedPeriod, bool) {
 	if o == nil || IsNil(o.PastPeriod) {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ProductsRequest) HasPastPeriod() bool {
 	return false
 }
 
-// SetPastPeriod gets a reference to the given ProductsRequestPastPeriod and assigns it to the PastPeriod field.
-func (o *ProductsRequest) SetPastPeriod(v ProductsRequestPastPeriod) {
+// SetPastPeriod gets a reference to the given ProductsRequestSelectedPeriod and assigns it to the PastPeriod field.
+func (o *ProductsRequest) SetPastPeriod(v ProductsRequestSelectedPeriod) {
 	o.PastPeriod = &v
 }
 

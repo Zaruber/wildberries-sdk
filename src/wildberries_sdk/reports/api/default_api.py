@@ -6763,6 +6763,7 @@ class DefaultApi:
             '200': "GetDeductions200Response",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -6854,6 +6855,7 @@ class DefaultApi:
             '200': "GetDeductions200Response",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -6945,6 +6947,7 @@ class DefaultApi:
             '200': "GetDeductions200Response",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -7137,6 +7140,7 @@ class DefaultApi:
             '200': "MeasurementPenalties",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -7220,6 +7224,7 @@ class DefaultApi:
             '200': "MeasurementPenalties",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -7303,6 +7308,7 @@ class DefaultApi:
             '200': "MeasurementPenalties",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -7485,6 +7491,7 @@ class DefaultApi:
             '200': "WHM",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -7568,6 +7575,7 @@ class DefaultApi:
             '200': "WHM",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }
@@ -7651,6 +7659,7 @@ class DefaultApi:
             '200': "WHM",
             '400': "Response400Retentions",
             '401': "ApiV1SupplierStocksGet401Response",
+            '402': "ApiV1SupplierStocksGet402Response",
             '403': "Response403Retentions",
             '429': "ApiV1SupplierStocksGet401Response",
         }

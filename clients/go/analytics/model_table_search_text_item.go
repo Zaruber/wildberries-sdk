@@ -40,17 +40,17 @@ type TableSearchTextItem struct {
 	// Рейтинг по отзывам
 	FeedbackRating float32 `json:"feedbackRating"`
 	Price TableProductItemAllOfPrice `json:"price"`
-	Frequency TableSearchTextItemAllOfFrequency `json:"frequency"`
+	Frequency TableProductItemAllOfAvgPosition `json:"frequency"`
 	// Количество обращений с поисковым запросом за неделю
 	WeekFrequency int32 `json:"weekFrequency"`
-	MedianPosition TableSearchTextItemAllOfMedianPosition `json:"medianPosition"`
-	AvgPosition TableGroupItemMetricsAvgPosition `json:"avgPosition"`
+	MedianPosition TableProductItemAllOfAvgPosition `json:"medianPosition"`
+	AvgPosition TableProductItemAllOfAvgPosition `json:"avgPosition"`
 	OpenCard TableSearchTextItemAllOfOpenCard `json:"openCard"`
-	AddToCart TableSearchTextItemAllOfAddToCart `json:"addToCart"`
-	OpenToCart TableSearchTextItemAllOfOpenToCart `json:"openToCart"`
-	Orders TableSearchTextItemAllOfOrders `json:"orders"`
-	CartToOrder TableSearchTextItemAllOfCartToOrder `json:"cartToOrder"`
-	Visibility TableSearchTextItemAllOfVisibility `json:"visibility"`
+	AddToCart TableSearchTextItemAllOfOpenCard `json:"addToCart"`
+	OpenToCart TableSearchTextItemAllOfOpenCard `json:"openToCart"`
+	Orders TableSearchTextItemAllOfOpenCard `json:"orders"`
+	CartToOrder TableSearchTextItemAllOfOpenCard `json:"cartToOrder"`
+	Visibility TableProductItemAllOfAvgPosition `json:"visibility"`
 }
 
 type _TableSearchTextItem TableSearchTextItem
@@ -59,7 +59,7 @@ type _TableSearchTextItem TableSearchTextItem
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTableSearchTextItem(text string, nmId int32, subjectName string, brandName string, vendorCode string, name string, isCardRated bool, rating float32, feedbackRating float32, price TableProductItemAllOfPrice, frequency TableSearchTextItemAllOfFrequency, weekFrequency int32, medianPosition TableSearchTextItemAllOfMedianPosition, avgPosition TableGroupItemMetricsAvgPosition, openCard TableSearchTextItemAllOfOpenCard, addToCart TableSearchTextItemAllOfAddToCart, openToCart TableSearchTextItemAllOfOpenToCart, orders TableSearchTextItemAllOfOrders, cartToOrder TableSearchTextItemAllOfCartToOrder, visibility TableSearchTextItemAllOfVisibility) *TableSearchTextItem {
+func NewTableSearchTextItem(text string, nmId int32, subjectName string, brandName string, vendorCode string, name string, isCardRated bool, rating float32, feedbackRating float32, price TableProductItemAllOfPrice, frequency TableProductItemAllOfAvgPosition, weekFrequency int32, medianPosition TableProductItemAllOfAvgPosition, avgPosition TableProductItemAllOfAvgPosition, openCard TableSearchTextItemAllOfOpenCard, addToCart TableSearchTextItemAllOfOpenCard, openToCart TableSearchTextItemAllOfOpenCard, orders TableSearchTextItemAllOfOpenCard, cartToOrder TableSearchTextItemAllOfOpenCard, visibility TableProductItemAllOfAvgPosition) *TableSearchTextItem {
 	this := TableSearchTextItem{}
 	this.Text = text
 	this.NmId = nmId
@@ -333,9 +333,9 @@ func (o *TableSearchTextItem) SetPrice(v TableProductItemAllOfPrice) {
 }
 
 // GetFrequency returns the Frequency field value
-func (o *TableSearchTextItem) GetFrequency() TableSearchTextItemAllOfFrequency {
+func (o *TableSearchTextItem) GetFrequency() TableProductItemAllOfAvgPosition {
 	if o == nil {
-		var ret TableSearchTextItemAllOfFrequency
+		var ret TableProductItemAllOfAvgPosition
 		return ret
 	}
 
@@ -344,7 +344,7 @@ func (o *TableSearchTextItem) GetFrequency() TableSearchTextItemAllOfFrequency {
 
 // GetFrequencyOk returns a tuple with the Frequency field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetFrequencyOk() (*TableSearchTextItemAllOfFrequency, bool) {
+func (o *TableSearchTextItem) GetFrequencyOk() (*TableProductItemAllOfAvgPosition, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -352,7 +352,7 @@ func (o *TableSearchTextItem) GetFrequencyOk() (*TableSearchTextItemAllOfFrequen
 }
 
 // SetFrequency sets field value
-func (o *TableSearchTextItem) SetFrequency(v TableSearchTextItemAllOfFrequency) {
+func (o *TableSearchTextItem) SetFrequency(v TableProductItemAllOfAvgPosition) {
 	o.Frequency = v
 }
 
@@ -381,9 +381,9 @@ func (o *TableSearchTextItem) SetWeekFrequency(v int32) {
 }
 
 // GetMedianPosition returns the MedianPosition field value
-func (o *TableSearchTextItem) GetMedianPosition() TableSearchTextItemAllOfMedianPosition {
+func (o *TableSearchTextItem) GetMedianPosition() TableProductItemAllOfAvgPosition {
 	if o == nil {
-		var ret TableSearchTextItemAllOfMedianPosition
+		var ret TableProductItemAllOfAvgPosition
 		return ret
 	}
 
@@ -392,7 +392,7 @@ func (o *TableSearchTextItem) GetMedianPosition() TableSearchTextItemAllOfMedian
 
 // GetMedianPositionOk returns a tuple with the MedianPosition field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetMedianPositionOk() (*TableSearchTextItemAllOfMedianPosition, bool) {
+func (o *TableSearchTextItem) GetMedianPositionOk() (*TableProductItemAllOfAvgPosition, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -400,14 +400,14 @@ func (o *TableSearchTextItem) GetMedianPositionOk() (*TableSearchTextItemAllOfMe
 }
 
 // SetMedianPosition sets field value
-func (o *TableSearchTextItem) SetMedianPosition(v TableSearchTextItemAllOfMedianPosition) {
+func (o *TableSearchTextItem) SetMedianPosition(v TableProductItemAllOfAvgPosition) {
 	o.MedianPosition = v
 }
 
 // GetAvgPosition returns the AvgPosition field value
-func (o *TableSearchTextItem) GetAvgPosition() TableGroupItemMetricsAvgPosition {
+func (o *TableSearchTextItem) GetAvgPosition() TableProductItemAllOfAvgPosition {
 	if o == nil {
-		var ret TableGroupItemMetricsAvgPosition
+		var ret TableProductItemAllOfAvgPosition
 		return ret
 	}
 
@@ -416,7 +416,7 @@ func (o *TableSearchTextItem) GetAvgPosition() TableGroupItemMetricsAvgPosition 
 
 // GetAvgPositionOk returns a tuple with the AvgPosition field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetAvgPositionOk() (*TableGroupItemMetricsAvgPosition, bool) {
+func (o *TableSearchTextItem) GetAvgPositionOk() (*TableProductItemAllOfAvgPosition, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -424,7 +424,7 @@ func (o *TableSearchTextItem) GetAvgPositionOk() (*TableGroupItemMetricsAvgPosit
 }
 
 // SetAvgPosition sets field value
-func (o *TableSearchTextItem) SetAvgPosition(v TableGroupItemMetricsAvgPosition) {
+func (o *TableSearchTextItem) SetAvgPosition(v TableProductItemAllOfAvgPosition) {
 	o.AvgPosition = v
 }
 
@@ -453,9 +453,9 @@ func (o *TableSearchTextItem) SetOpenCard(v TableSearchTextItemAllOfOpenCard) {
 }
 
 // GetAddToCart returns the AddToCart field value
-func (o *TableSearchTextItem) GetAddToCart() TableSearchTextItemAllOfAddToCart {
+func (o *TableSearchTextItem) GetAddToCart() TableSearchTextItemAllOfOpenCard {
 	if o == nil {
-		var ret TableSearchTextItemAllOfAddToCart
+		var ret TableSearchTextItemAllOfOpenCard
 		return ret
 	}
 
@@ -464,7 +464,7 @@ func (o *TableSearchTextItem) GetAddToCart() TableSearchTextItemAllOfAddToCart {
 
 // GetAddToCartOk returns a tuple with the AddToCart field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetAddToCartOk() (*TableSearchTextItemAllOfAddToCart, bool) {
+func (o *TableSearchTextItem) GetAddToCartOk() (*TableSearchTextItemAllOfOpenCard, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -472,14 +472,14 @@ func (o *TableSearchTextItem) GetAddToCartOk() (*TableSearchTextItemAllOfAddToCa
 }
 
 // SetAddToCart sets field value
-func (o *TableSearchTextItem) SetAddToCart(v TableSearchTextItemAllOfAddToCart) {
+func (o *TableSearchTextItem) SetAddToCart(v TableSearchTextItemAllOfOpenCard) {
 	o.AddToCart = v
 }
 
 // GetOpenToCart returns the OpenToCart field value
-func (o *TableSearchTextItem) GetOpenToCart() TableSearchTextItemAllOfOpenToCart {
+func (o *TableSearchTextItem) GetOpenToCart() TableSearchTextItemAllOfOpenCard {
 	if o == nil {
-		var ret TableSearchTextItemAllOfOpenToCart
+		var ret TableSearchTextItemAllOfOpenCard
 		return ret
 	}
 
@@ -488,7 +488,7 @@ func (o *TableSearchTextItem) GetOpenToCart() TableSearchTextItemAllOfOpenToCart
 
 // GetOpenToCartOk returns a tuple with the OpenToCart field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetOpenToCartOk() (*TableSearchTextItemAllOfOpenToCart, bool) {
+func (o *TableSearchTextItem) GetOpenToCartOk() (*TableSearchTextItemAllOfOpenCard, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -496,14 +496,14 @@ func (o *TableSearchTextItem) GetOpenToCartOk() (*TableSearchTextItemAllOfOpenTo
 }
 
 // SetOpenToCart sets field value
-func (o *TableSearchTextItem) SetOpenToCart(v TableSearchTextItemAllOfOpenToCart) {
+func (o *TableSearchTextItem) SetOpenToCart(v TableSearchTextItemAllOfOpenCard) {
 	o.OpenToCart = v
 }
 
 // GetOrders returns the Orders field value
-func (o *TableSearchTextItem) GetOrders() TableSearchTextItemAllOfOrders {
+func (o *TableSearchTextItem) GetOrders() TableSearchTextItemAllOfOpenCard {
 	if o == nil {
-		var ret TableSearchTextItemAllOfOrders
+		var ret TableSearchTextItemAllOfOpenCard
 		return ret
 	}
 
@@ -512,7 +512,7 @@ func (o *TableSearchTextItem) GetOrders() TableSearchTextItemAllOfOrders {
 
 // GetOrdersOk returns a tuple with the Orders field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetOrdersOk() (*TableSearchTextItemAllOfOrders, bool) {
+func (o *TableSearchTextItem) GetOrdersOk() (*TableSearchTextItemAllOfOpenCard, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -520,14 +520,14 @@ func (o *TableSearchTextItem) GetOrdersOk() (*TableSearchTextItemAllOfOrders, bo
 }
 
 // SetOrders sets field value
-func (o *TableSearchTextItem) SetOrders(v TableSearchTextItemAllOfOrders) {
+func (o *TableSearchTextItem) SetOrders(v TableSearchTextItemAllOfOpenCard) {
 	o.Orders = v
 }
 
 // GetCartToOrder returns the CartToOrder field value
-func (o *TableSearchTextItem) GetCartToOrder() TableSearchTextItemAllOfCartToOrder {
+func (o *TableSearchTextItem) GetCartToOrder() TableSearchTextItemAllOfOpenCard {
 	if o == nil {
-		var ret TableSearchTextItemAllOfCartToOrder
+		var ret TableSearchTextItemAllOfOpenCard
 		return ret
 	}
 
@@ -536,7 +536,7 @@ func (o *TableSearchTextItem) GetCartToOrder() TableSearchTextItemAllOfCartToOrd
 
 // GetCartToOrderOk returns a tuple with the CartToOrder field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetCartToOrderOk() (*TableSearchTextItemAllOfCartToOrder, bool) {
+func (o *TableSearchTextItem) GetCartToOrderOk() (*TableSearchTextItemAllOfOpenCard, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -544,14 +544,14 @@ func (o *TableSearchTextItem) GetCartToOrderOk() (*TableSearchTextItemAllOfCartT
 }
 
 // SetCartToOrder sets field value
-func (o *TableSearchTextItem) SetCartToOrder(v TableSearchTextItemAllOfCartToOrder) {
+func (o *TableSearchTextItem) SetCartToOrder(v TableSearchTextItemAllOfOpenCard) {
 	o.CartToOrder = v
 }
 
 // GetVisibility returns the Visibility field value
-func (o *TableSearchTextItem) GetVisibility() TableSearchTextItemAllOfVisibility {
+func (o *TableSearchTextItem) GetVisibility() TableProductItemAllOfAvgPosition {
 	if o == nil {
-		var ret TableSearchTextItemAllOfVisibility
+		var ret TableProductItemAllOfAvgPosition
 		return ret
 	}
 
@@ -560,7 +560,7 @@ func (o *TableSearchTextItem) GetVisibility() TableSearchTextItemAllOfVisibility
 
 // GetVisibilityOk returns a tuple with the Visibility field value
 // and a boolean to check if the value has been set.
-func (o *TableSearchTextItem) GetVisibilityOk() (*TableSearchTextItemAllOfVisibility, bool) {
+func (o *TableSearchTextItem) GetVisibilityOk() (*TableProductItemAllOfAvgPosition, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -568,7 +568,7 @@ func (o *TableSearchTextItem) GetVisibilityOk() (*TableSearchTextItemAllOfVisibi
 }
 
 // SetVisibility sets field value
-func (o *TableSearchTextItem) SetVisibility(v TableSearchTextItemAllOfVisibility) {
+func (o *TableSearchTextItem) SetVisibility(v TableProductItemAllOfAvgPosition) {
 	o.Visibility = v
 }
 

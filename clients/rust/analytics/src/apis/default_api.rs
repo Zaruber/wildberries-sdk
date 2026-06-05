@@ -165,6 +165,7 @@ pub enum PostSalesFunnelProductsHistoryError {
 pub enum PostV1ItemRatingError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -176,6 +177,7 @@ pub enum PostV1ItemRatingError {
 pub enum PostV1StocksReportWbWarehousesError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),

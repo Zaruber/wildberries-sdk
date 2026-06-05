@@ -20,34 +20,6 @@ import {
     FeedbacksIncreaseItemFiveStarToJSON,
     FeedbacksIncreaseItemFiveStarToJSONTyped,
 } from './FeedbacksIncreaseItemFiveStar';
-import type { FeedbacksIncreaseItemFourStar } from './FeedbacksIncreaseItemFourStar';
-import {
-    FeedbacksIncreaseItemFourStarFromJSON,
-    FeedbacksIncreaseItemFourStarFromJSONTyped,
-    FeedbacksIncreaseItemFourStarToJSON,
-    FeedbacksIncreaseItemFourStarToJSONTyped,
-} from './FeedbacksIncreaseItemFourStar';
-import type { FeedbacksIncreaseItemTwoStar } from './FeedbacksIncreaseItemTwoStar';
-import {
-    FeedbacksIncreaseItemTwoStarFromJSON,
-    FeedbacksIncreaseItemTwoStarFromJSONTyped,
-    FeedbacksIncreaseItemTwoStarToJSON,
-    FeedbacksIncreaseItemTwoStarToJSONTyped,
-} from './FeedbacksIncreaseItemTwoStar';
-import type { FeedbacksIncreaseItemOneStar } from './FeedbacksIncreaseItemOneStar';
-import {
-    FeedbacksIncreaseItemOneStarFromJSON,
-    FeedbacksIncreaseItemOneStarFromJSONTyped,
-    FeedbacksIncreaseItemOneStarToJSON,
-    FeedbacksIncreaseItemOneStarToJSONTyped,
-} from './FeedbacksIncreaseItemOneStar';
-import type { FeedbacksIncreaseItemThreeStar } from './FeedbacksIncreaseItemThreeStar';
-import {
-    FeedbacksIncreaseItemThreeStarFromJSON,
-    FeedbacksIncreaseItemThreeStarFromJSONTyped,
-    FeedbacksIncreaseItemThreeStarToJSON,
-    FeedbacksIncreaseItemThreeStarToJSONTyped,
-} from './FeedbacksIncreaseItemThreeStar';
 
 /**
  * Прирост оценок
@@ -81,28 +53,28 @@ export interface FeedbacksIncreaseItem {
     fiveStar: FeedbacksIncreaseItemFiveStar;
     /**
      * 
-     * @type {FeedbacksIncreaseItemFourStar}
+     * @type {FeedbacksIncreaseItemFiveStar}
      * @memberof FeedbacksIncreaseItem
      */
-    fourStar: FeedbacksIncreaseItemFourStar;
+    fourStar: FeedbacksIncreaseItemFiveStar;
     /**
      * 
-     * @type {FeedbacksIncreaseItemThreeStar}
+     * @type {FeedbacksIncreaseItemFiveStar}
      * @memberof FeedbacksIncreaseItem
      */
-    threeStar: FeedbacksIncreaseItemThreeStar;
+    threeStar: FeedbacksIncreaseItemFiveStar;
     /**
      * 
-     * @type {FeedbacksIncreaseItemTwoStar}
+     * @type {FeedbacksIncreaseItemFiveStar}
      * @memberof FeedbacksIncreaseItem
      */
-    twoStar: FeedbacksIncreaseItemTwoStar;
+    twoStar: FeedbacksIncreaseItemFiveStar;
     /**
      * 
-     * @type {FeedbacksIncreaseItemOneStar}
+     * @type {FeedbacksIncreaseItemFiveStar}
      * @memberof FeedbacksIncreaseItem
      */
-    oneStar: FeedbacksIncreaseItemOneStar;
+    oneStar: FeedbacksIncreaseItemFiveStar;
 }
 
 /**
@@ -134,10 +106,10 @@ export function FeedbacksIncreaseItemFromJSONTyped(json: any, ignoreDiscriminato
         'total': json['total'],
         'dynamics': json['dynamics'],
         'fiveStar': FeedbacksIncreaseItemFiveStarFromJSON(json['fiveStar']),
-        'fourStar': FeedbacksIncreaseItemFourStarFromJSON(json['fourStar']),
-        'threeStar': FeedbacksIncreaseItemThreeStarFromJSON(json['threeStar']),
-        'twoStar': FeedbacksIncreaseItemTwoStarFromJSON(json['twoStar']),
-        'oneStar': FeedbacksIncreaseItemOneStarFromJSON(json['oneStar']),
+        'fourStar': FeedbacksIncreaseItemFiveStarFromJSON(json['fourStar']),
+        'threeStar': FeedbacksIncreaseItemFiveStarFromJSON(json['threeStar']),
+        'twoStar': FeedbacksIncreaseItemFiveStarFromJSON(json['twoStar']),
+        'oneStar': FeedbacksIncreaseItemFiveStarFromJSON(json['oneStar']),
     };
 }
 
@@ -156,10 +128,10 @@ export function FeedbacksIncreaseItemToJSONTyped(value?: FeedbacksIncreaseItem |
         'total': value['total'],
         'dynamics': value['dynamics'],
         'fiveStar': FeedbacksIncreaseItemFiveStarToJSON(value['fiveStar']),
-        'fourStar': FeedbacksIncreaseItemFourStarToJSON(value['fourStar']),
-        'threeStar': FeedbacksIncreaseItemThreeStarToJSON(value['threeStar']),
-        'twoStar': FeedbacksIncreaseItemTwoStarToJSON(value['twoStar']),
-        'oneStar': FeedbacksIncreaseItemOneStarToJSON(value['oneStar']),
+        'fourStar': FeedbacksIncreaseItemFiveStarToJSON(value['fourStar']),
+        'threeStar': FeedbacksIncreaseItemFiveStarToJSON(value['threeStar']),
+        'twoStar': FeedbacksIncreaseItemFiveStarToJSON(value['twoStar']),
+        'oneStar': FeedbacksIncreaseItemFiveStarToJSON(value['oneStar']),
     };
 }
 

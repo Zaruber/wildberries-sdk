@@ -28,10 +28,10 @@ type FeedbacksIncreaseItem struct {
 	// Динамика по сравнению с предыдущим периодом, %
 	Dynamics int32 `json:"dynamics"`
 	FiveStar FeedbacksIncreaseItemFiveStar `json:"fiveStar"`
-	FourStar FeedbacksIncreaseItemFourStar `json:"fourStar"`
-	ThreeStar FeedbacksIncreaseItemThreeStar `json:"threeStar"`
-	TwoStar FeedbacksIncreaseItemTwoStar `json:"twoStar"`
-	OneStar FeedbacksIncreaseItemOneStar `json:"oneStar"`
+	FourStar FeedbacksIncreaseItemFiveStar `json:"fourStar"`
+	ThreeStar FeedbacksIncreaseItemFiveStar `json:"threeStar"`
+	TwoStar FeedbacksIncreaseItemFiveStar `json:"twoStar"`
+	OneStar FeedbacksIncreaseItemFiveStar `json:"oneStar"`
 }
 
 type _FeedbacksIncreaseItem FeedbacksIncreaseItem
@@ -40,7 +40,7 @@ type _FeedbacksIncreaseItem FeedbacksIncreaseItem
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFeedbacksIncreaseItem(current int32, total int32, dynamics int32, fiveStar FeedbacksIncreaseItemFiveStar, fourStar FeedbacksIncreaseItemFourStar, threeStar FeedbacksIncreaseItemThreeStar, twoStar FeedbacksIncreaseItemTwoStar, oneStar FeedbacksIncreaseItemOneStar) *FeedbacksIncreaseItem {
+func NewFeedbacksIncreaseItem(current int32, total int32, dynamics int32, fiveStar FeedbacksIncreaseItemFiveStar, fourStar FeedbacksIncreaseItemFiveStar, threeStar FeedbacksIncreaseItemFiveStar, twoStar FeedbacksIncreaseItemFiveStar, oneStar FeedbacksIncreaseItemFiveStar) *FeedbacksIncreaseItem {
 	this := FeedbacksIncreaseItem{}
 	this.Current = current
 	this.Total = total
@@ -158,9 +158,9 @@ func (o *FeedbacksIncreaseItem) SetFiveStar(v FeedbacksIncreaseItemFiveStar) {
 }
 
 // GetFourStar returns the FourStar field value
-func (o *FeedbacksIncreaseItem) GetFourStar() FeedbacksIncreaseItemFourStar {
+func (o *FeedbacksIncreaseItem) GetFourStar() FeedbacksIncreaseItemFiveStar {
 	if o == nil {
-		var ret FeedbacksIncreaseItemFourStar
+		var ret FeedbacksIncreaseItemFiveStar
 		return ret
 	}
 
@@ -169,7 +169,7 @@ func (o *FeedbacksIncreaseItem) GetFourStar() FeedbacksIncreaseItemFourStar {
 
 // GetFourStarOk returns a tuple with the FourStar field value
 // and a boolean to check if the value has been set.
-func (o *FeedbacksIncreaseItem) GetFourStarOk() (*FeedbacksIncreaseItemFourStar, bool) {
+func (o *FeedbacksIncreaseItem) GetFourStarOk() (*FeedbacksIncreaseItemFiveStar, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -177,14 +177,14 @@ func (o *FeedbacksIncreaseItem) GetFourStarOk() (*FeedbacksIncreaseItemFourStar,
 }
 
 // SetFourStar sets field value
-func (o *FeedbacksIncreaseItem) SetFourStar(v FeedbacksIncreaseItemFourStar) {
+func (o *FeedbacksIncreaseItem) SetFourStar(v FeedbacksIncreaseItemFiveStar) {
 	o.FourStar = v
 }
 
 // GetThreeStar returns the ThreeStar field value
-func (o *FeedbacksIncreaseItem) GetThreeStar() FeedbacksIncreaseItemThreeStar {
+func (o *FeedbacksIncreaseItem) GetThreeStar() FeedbacksIncreaseItemFiveStar {
 	if o == nil {
-		var ret FeedbacksIncreaseItemThreeStar
+		var ret FeedbacksIncreaseItemFiveStar
 		return ret
 	}
 
@@ -193,7 +193,7 @@ func (o *FeedbacksIncreaseItem) GetThreeStar() FeedbacksIncreaseItemThreeStar {
 
 // GetThreeStarOk returns a tuple with the ThreeStar field value
 // and a boolean to check if the value has been set.
-func (o *FeedbacksIncreaseItem) GetThreeStarOk() (*FeedbacksIncreaseItemThreeStar, bool) {
+func (o *FeedbacksIncreaseItem) GetThreeStarOk() (*FeedbacksIncreaseItemFiveStar, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -201,14 +201,14 @@ func (o *FeedbacksIncreaseItem) GetThreeStarOk() (*FeedbacksIncreaseItemThreeSta
 }
 
 // SetThreeStar sets field value
-func (o *FeedbacksIncreaseItem) SetThreeStar(v FeedbacksIncreaseItemThreeStar) {
+func (o *FeedbacksIncreaseItem) SetThreeStar(v FeedbacksIncreaseItemFiveStar) {
 	o.ThreeStar = v
 }
 
 // GetTwoStar returns the TwoStar field value
-func (o *FeedbacksIncreaseItem) GetTwoStar() FeedbacksIncreaseItemTwoStar {
+func (o *FeedbacksIncreaseItem) GetTwoStar() FeedbacksIncreaseItemFiveStar {
 	if o == nil {
-		var ret FeedbacksIncreaseItemTwoStar
+		var ret FeedbacksIncreaseItemFiveStar
 		return ret
 	}
 
@@ -217,7 +217,7 @@ func (o *FeedbacksIncreaseItem) GetTwoStar() FeedbacksIncreaseItemTwoStar {
 
 // GetTwoStarOk returns a tuple with the TwoStar field value
 // and a boolean to check if the value has been set.
-func (o *FeedbacksIncreaseItem) GetTwoStarOk() (*FeedbacksIncreaseItemTwoStar, bool) {
+func (o *FeedbacksIncreaseItem) GetTwoStarOk() (*FeedbacksIncreaseItemFiveStar, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -225,14 +225,14 @@ func (o *FeedbacksIncreaseItem) GetTwoStarOk() (*FeedbacksIncreaseItemTwoStar, b
 }
 
 // SetTwoStar sets field value
-func (o *FeedbacksIncreaseItem) SetTwoStar(v FeedbacksIncreaseItemTwoStar) {
+func (o *FeedbacksIncreaseItem) SetTwoStar(v FeedbacksIncreaseItemFiveStar) {
 	o.TwoStar = v
 }
 
 // GetOneStar returns the OneStar field value
-func (o *FeedbacksIncreaseItem) GetOneStar() FeedbacksIncreaseItemOneStar {
+func (o *FeedbacksIncreaseItem) GetOneStar() FeedbacksIncreaseItemFiveStar {
 	if o == nil {
-		var ret FeedbacksIncreaseItemOneStar
+		var ret FeedbacksIncreaseItemFiveStar
 		return ret
 	}
 
@@ -241,7 +241,7 @@ func (o *FeedbacksIncreaseItem) GetOneStar() FeedbacksIncreaseItemOneStar {
 
 // GetOneStarOk returns a tuple with the OneStar field value
 // and a boolean to check if the value has been set.
-func (o *FeedbacksIncreaseItem) GetOneStarOk() (*FeedbacksIncreaseItemOneStar, bool) {
+func (o *FeedbacksIncreaseItem) GetOneStarOk() (*FeedbacksIncreaseItemFiveStar, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -249,7 +249,7 @@ func (o *FeedbacksIncreaseItem) GetOneStarOk() (*FeedbacksIncreaseItemOneStar, b
 }
 
 // SetOneStar sets field value
-func (o *FeedbacksIncreaseItem) SetOneStar(v FeedbacksIncreaseItemOneStar) {
+func (o *FeedbacksIncreaseItem) SetOneStar(v FeedbacksIncreaseItemFiveStar) {
 	o.OneStar = v
 }
 

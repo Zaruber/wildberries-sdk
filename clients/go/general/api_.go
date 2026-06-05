@@ -212,7 +212,7 @@ func (r ApiApiV1SellerInfoGetRequest) Execute() (*ApiV1SellerInfoGet200Response,
 ApiV1SellerInfoGet Получить информацию о продавце
 
 <div class="description_auth">
-  Информацию о продавце можно получить с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории
+  Информацию о продавце можно получить с токеном любой <a href="/openapi/api-information#tag/Avtorizaciya/Kategorii-tokenov">категории</a>
 </div>
 
 Метод позволяет получать наименование продавца и ID его профиля.
@@ -1015,6 +1015,17 @@ func (a *DefaultApiService) GetCommonV1RatingExecute(r ApiGetCommonV1RatingReque
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV1SellerInfoGet402Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 		if localVarHTTPResponse.StatusCode == 429 {
 			var v PingGet401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -1053,7 +1064,7 @@ func (r ApiGetCommonV1SubscriptionsRequest) Execute() (*SubscriptionsJamInfo, *h
 GetCommonV1Subscriptions Получить информацию о подписке Джем
 
 <div class="description_auth">
-  Информацию о подписке Джем можно получить с <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токеном</a> любой категории
+  Информацию о подписке Джем можно получить с токеном любой <a href="/openapi/api-information#tag/Avtorizaciya/Kategorii-tokenov">категории</a>
 </div>
 
 <div class="description_token">
@@ -1167,6 +1178,17 @@ func (a *DefaultApiService) GetCommonV1SubscriptionsExecute(r ApiGetCommonV1Subs
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
 			var v PingGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV1SellerInfoGet402Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

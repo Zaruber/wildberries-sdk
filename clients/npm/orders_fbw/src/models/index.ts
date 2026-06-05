@@ -11,7 +11,6 @@ export * from './ModelsGoodInSupply';
 export * from './ModelsHandySupplyStatus';
 export * from './ModelsOptionsResultModel';
 export * from './ModelsOptionsResultModelResultInner';
-export * from './ModelsOptionsResultModelResultInnerError';
 export * from './ModelsOptionsResultModelResultInnerWarehousesInner';
 export * from './ModelsSuppliesFiltersRequest';
 export * from './ModelsSupply';

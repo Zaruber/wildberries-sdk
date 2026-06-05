@@ -153,7 +153,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response
+     * @return \Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet402Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response
      */
     public function apiTariffsV1AcceptanceCoefficientsGet($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiTariffsV1AcceptanceCoefficientsGet'][0])
     {
@@ -177,7 +177,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Tariffs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Tariffs\Model\ModelsAcceptanceCoefficient[]|\Wildberries\Sdk\Tariffs\Model\ModelsErrorModel|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet402Response|\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiTariffsV1AcceptanceCoefficientsGetWithHttpInfo($warehouse_ids = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiTariffsV1AcceptanceCoefficientsGet'][0])
     {
@@ -222,6 +222,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet402Response',
                         $request,
                         $response,
                     );
@@ -275,6 +281,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Tariffs\Model\ApiV1TariffsCommissionGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

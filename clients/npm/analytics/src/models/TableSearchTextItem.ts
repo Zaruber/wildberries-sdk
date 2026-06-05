@@ -20,20 +20,6 @@ import {
     TableProductItemAllOfPriceToJSON,
     TableProductItemAllOfPriceToJSONTyped,
 } from './TableProductItemAllOfPrice';
-import type { TableSearchTextItemAllOfOpenToCart } from './TableSearchTextItemAllOfOpenToCart';
-import {
-    TableSearchTextItemAllOfOpenToCartFromJSON,
-    TableSearchTextItemAllOfOpenToCartFromJSONTyped,
-    TableSearchTextItemAllOfOpenToCartToJSON,
-    TableSearchTextItemAllOfOpenToCartToJSONTyped,
-} from './TableSearchTextItemAllOfOpenToCart';
-import type { TableSearchTextItemAllOfOrders } from './TableSearchTextItemAllOfOrders';
-import {
-    TableSearchTextItemAllOfOrdersFromJSON,
-    TableSearchTextItemAllOfOrdersFromJSONTyped,
-    TableSearchTextItemAllOfOrdersToJSON,
-    TableSearchTextItemAllOfOrdersToJSONTyped,
-} from './TableSearchTextItemAllOfOrders';
 import type { TableSearchTextItemAllOfOpenCard } from './TableSearchTextItemAllOfOpenCard';
 import {
     TableSearchTextItemAllOfOpenCardFromJSON,
@@ -41,48 +27,13 @@ import {
     TableSearchTextItemAllOfOpenCardToJSON,
     TableSearchTextItemAllOfOpenCardToJSONTyped,
 } from './TableSearchTextItemAllOfOpenCard';
-import type { TableGroupItemMetricsAvgPosition } from './TableGroupItemMetricsAvgPosition';
+import type { TableProductItemAllOfAvgPosition } from './TableProductItemAllOfAvgPosition';
 import {
-    TableGroupItemMetricsAvgPositionFromJSON,
-    TableGroupItemMetricsAvgPositionFromJSONTyped,
-    TableGroupItemMetricsAvgPositionToJSON,
-    TableGroupItemMetricsAvgPositionToJSONTyped,
-} from './TableGroupItemMetricsAvgPosition';
-import type { TableSearchTextItemAllOfFrequency } from './TableSearchTextItemAllOfFrequency';
-import {
-    TableSearchTextItemAllOfFrequencyFromJSON,
-    TableSearchTextItemAllOfFrequencyFromJSONTyped,
-    TableSearchTextItemAllOfFrequencyToJSON,
-    TableSearchTextItemAllOfFrequencyToJSONTyped,
-} from './TableSearchTextItemAllOfFrequency';
-import type { TableSearchTextItemAllOfVisibility } from './TableSearchTextItemAllOfVisibility';
-import {
-    TableSearchTextItemAllOfVisibilityFromJSON,
-    TableSearchTextItemAllOfVisibilityFromJSONTyped,
-    TableSearchTextItemAllOfVisibilityToJSON,
-    TableSearchTextItemAllOfVisibilityToJSONTyped,
-} from './TableSearchTextItemAllOfVisibility';
-import type { TableSearchTextItemAllOfMedianPosition } from './TableSearchTextItemAllOfMedianPosition';
-import {
-    TableSearchTextItemAllOfMedianPositionFromJSON,
-    TableSearchTextItemAllOfMedianPositionFromJSONTyped,
-    TableSearchTextItemAllOfMedianPositionToJSON,
-    TableSearchTextItemAllOfMedianPositionToJSONTyped,
-} from './TableSearchTextItemAllOfMedianPosition';
-import type { TableSearchTextItemAllOfAddToCart } from './TableSearchTextItemAllOfAddToCart';
-import {
-    TableSearchTextItemAllOfAddToCartFromJSON,
-    TableSearchTextItemAllOfAddToCartFromJSONTyped,
-    TableSearchTextItemAllOfAddToCartToJSON,
-    TableSearchTextItemAllOfAddToCartToJSONTyped,
-} from './TableSearchTextItemAllOfAddToCart';
-import type { TableSearchTextItemAllOfCartToOrder } from './TableSearchTextItemAllOfCartToOrder';
-import {
-    TableSearchTextItemAllOfCartToOrderFromJSON,
-    TableSearchTextItemAllOfCartToOrderFromJSONTyped,
-    TableSearchTextItemAllOfCartToOrderToJSON,
-    TableSearchTextItemAllOfCartToOrderToJSONTyped,
-} from './TableSearchTextItemAllOfCartToOrder';
+    TableProductItemAllOfAvgPositionFromJSON,
+    TableProductItemAllOfAvgPositionFromJSONTyped,
+    TableProductItemAllOfAvgPositionToJSON,
+    TableProductItemAllOfAvgPositionToJSONTyped,
+} from './TableProductItemAllOfAvgPosition';
 
 /**
  * 
@@ -152,10 +103,10 @@ export interface TableSearchTextItem {
     price: TableProductItemAllOfPrice;
     /**
      * 
-     * @type {TableSearchTextItemAllOfFrequency}
+     * @type {TableProductItemAllOfAvgPosition}
      * @memberof TableSearchTextItem
      */
-    frequency: TableSearchTextItemAllOfFrequency;
+    frequency: TableProductItemAllOfAvgPosition;
     /**
      * Количество обращений с поисковым запросом за неделю
      * @type {number}
@@ -164,16 +115,16 @@ export interface TableSearchTextItem {
     weekFrequency: number;
     /**
      * 
-     * @type {TableSearchTextItemAllOfMedianPosition}
+     * @type {TableProductItemAllOfAvgPosition}
      * @memberof TableSearchTextItem
      */
-    medianPosition: TableSearchTextItemAllOfMedianPosition;
+    medianPosition: TableProductItemAllOfAvgPosition;
     /**
      * 
-     * @type {TableGroupItemMetricsAvgPosition}
+     * @type {TableProductItemAllOfAvgPosition}
      * @memberof TableSearchTextItem
      */
-    avgPosition: TableGroupItemMetricsAvgPosition;
+    avgPosition: TableProductItemAllOfAvgPosition;
     /**
      * 
      * @type {TableSearchTextItemAllOfOpenCard}
@@ -182,34 +133,34 @@ export interface TableSearchTextItem {
     openCard: TableSearchTextItemAllOfOpenCard;
     /**
      * 
-     * @type {TableSearchTextItemAllOfAddToCart}
+     * @type {TableSearchTextItemAllOfOpenCard}
      * @memberof TableSearchTextItem
      */
-    addToCart: TableSearchTextItemAllOfAddToCart;
+    addToCart: TableSearchTextItemAllOfOpenCard;
     /**
      * 
-     * @type {TableSearchTextItemAllOfOpenToCart}
+     * @type {TableSearchTextItemAllOfOpenCard}
      * @memberof TableSearchTextItem
      */
-    openToCart: TableSearchTextItemAllOfOpenToCart;
+    openToCart: TableSearchTextItemAllOfOpenCard;
     /**
      * 
-     * @type {TableSearchTextItemAllOfOrders}
+     * @type {TableSearchTextItemAllOfOpenCard}
      * @memberof TableSearchTextItem
      */
-    orders: TableSearchTextItemAllOfOrders;
+    orders: TableSearchTextItemAllOfOpenCard;
     /**
      * 
-     * @type {TableSearchTextItemAllOfCartToOrder}
+     * @type {TableSearchTextItemAllOfOpenCard}
      * @memberof TableSearchTextItem
      */
-    cartToOrder: TableSearchTextItemAllOfCartToOrder;
+    cartToOrder: TableSearchTextItemAllOfOpenCard;
     /**
      * 
-     * @type {TableSearchTextItemAllOfVisibility}
+     * @type {TableProductItemAllOfAvgPosition}
      * @memberof TableSearchTextItem
      */
-    visibility: TableSearchTextItemAllOfVisibility;
+    visibility: TableProductItemAllOfAvgPosition;
 }
 
 /**
@@ -259,16 +210,16 @@ export function TableSearchTextItemFromJSONTyped(json: any, ignoreDiscriminator:
         'rating': json['rating'],
         'feedbackRating': json['feedbackRating'],
         'price': TableProductItemAllOfPriceFromJSON(json['price']),
-        'frequency': TableSearchTextItemAllOfFrequencyFromJSON(json['frequency']),
+        'frequency': TableProductItemAllOfAvgPositionFromJSON(json['frequency']),
         'weekFrequency': json['weekFrequency'],
-        'medianPosition': TableSearchTextItemAllOfMedianPositionFromJSON(json['medianPosition']),
-        'avgPosition': TableGroupItemMetricsAvgPositionFromJSON(json['avgPosition']),
+        'medianPosition': TableProductItemAllOfAvgPositionFromJSON(json['medianPosition']),
+        'avgPosition': TableProductItemAllOfAvgPositionFromJSON(json['avgPosition']),
         'openCard': TableSearchTextItemAllOfOpenCardFromJSON(json['openCard']),
-        'addToCart': TableSearchTextItemAllOfAddToCartFromJSON(json['addToCart']),
-        'openToCart': TableSearchTextItemAllOfOpenToCartFromJSON(json['openToCart']),
-        'orders': TableSearchTextItemAllOfOrdersFromJSON(json['orders']),
-        'cartToOrder': TableSearchTextItemAllOfCartToOrderFromJSON(json['cartToOrder']),
-        'visibility': TableSearchTextItemAllOfVisibilityFromJSON(json['visibility']),
+        'addToCart': TableSearchTextItemAllOfOpenCardFromJSON(json['addToCart']),
+        'openToCart': TableSearchTextItemAllOfOpenCardFromJSON(json['openToCart']),
+        'orders': TableSearchTextItemAllOfOpenCardFromJSON(json['orders']),
+        'cartToOrder': TableSearchTextItemAllOfOpenCardFromJSON(json['cartToOrder']),
+        'visibility': TableProductItemAllOfAvgPositionFromJSON(json['visibility']),
     };
 }
 
@@ -293,16 +244,16 @@ export function TableSearchTextItemToJSONTyped(value?: TableSearchTextItem | nul
         'rating': value['rating'],
         'feedbackRating': value['feedbackRating'],
         'price': TableProductItemAllOfPriceToJSON(value['price']),
-        'frequency': TableSearchTextItemAllOfFrequencyToJSON(value['frequency']),
+        'frequency': TableProductItemAllOfAvgPositionToJSON(value['frequency']),
         'weekFrequency': value['weekFrequency'],
-        'medianPosition': TableSearchTextItemAllOfMedianPositionToJSON(value['medianPosition']),
-        'avgPosition': TableGroupItemMetricsAvgPositionToJSON(value['avgPosition']),
+        'medianPosition': TableProductItemAllOfAvgPositionToJSON(value['medianPosition']),
+        'avgPosition': TableProductItemAllOfAvgPositionToJSON(value['avgPosition']),
         'openCard': TableSearchTextItemAllOfOpenCardToJSON(value['openCard']),
-        'addToCart': TableSearchTextItemAllOfAddToCartToJSON(value['addToCart']),
-        'openToCart': TableSearchTextItemAllOfOpenToCartToJSON(value['openToCart']),
-        'orders': TableSearchTextItemAllOfOrdersToJSON(value['orders']),
-        'cartToOrder': TableSearchTextItemAllOfCartToOrderToJSON(value['cartToOrder']),
-        'visibility': TableSearchTextItemAllOfVisibilityToJSON(value['visibility']),
+        'addToCart': TableSearchTextItemAllOfOpenCardToJSON(value['addToCart']),
+        'openToCart': TableSearchTextItemAllOfOpenCardToJSON(value['openToCart']),
+        'orders': TableSearchTextItemAllOfOpenCardToJSON(value['orders']),
+        'cartToOrder': TableSearchTextItemAllOfOpenCardToJSON(value['cartToOrder']),
+        'visibility': TableProductItemAllOfAvgPositionToJSON(value['visibility']),
     };
 }
 

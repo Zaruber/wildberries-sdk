@@ -58,7 +58,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $openAPITypes = [
         'data' => '\Wildberries\Sdk\OrdersDbs\Model\ApiB2bClientInfo',
-        'errors' => '\Wildberries\Sdk\OrdersDbs\Model\ApiB2bClientInfoResponseErrorsInner[]',
+        'errors' => '\Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner[]',
         'is_error' => 'bool',
         'order_id' => 'int'
     ];
@@ -346,7 +346,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets errors
      *
-     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiB2bClientInfoResponseErrorsInner[]|null
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner[]|null
      */
     public function getErrors()
     {
@@ -356,7 +356,7 @@ class ApiB2bClientInfoResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets errors
      *
-     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiB2bClientInfoResponseErrorsInner[]|null $errors Детали ошибки
+     * @param \Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInnerErrorsInner[]|null $errors Детали ошибки
      *
      * @return self
      */

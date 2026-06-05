@@ -58,7 +58,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $openAPITypes = [
         'selected_period' => '\Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod',
-        'past_period' => '\Wildberries\Sdk\Analytics\Model\ProductsRequestPastPeriod',
+        'past_period' => '\Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod',
         'nm_ids' => 'int[]',
         'brand_names' => 'string[]',
         'subject_ids' => 'int[]',
@@ -397,7 +397,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets past_period
      *
-     * @return \Wildberries\Sdk\Analytics\Model\ProductsRequestPastPeriod|null
+     * @return \Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod|null
      */
     public function getPastPeriod()
     {
@@ -407,7 +407,7 @@ class ProductsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets past_period
      *
-     * @param \Wildberries\Sdk\Analytics\Model\ProductsRequestPastPeriod|null $past_period past_period
+     * @param \Wildberries\Sdk\Analytics\Model\ProductsRequestSelectedPeriod|null $past_period past_period
      *
      * @return self
      */

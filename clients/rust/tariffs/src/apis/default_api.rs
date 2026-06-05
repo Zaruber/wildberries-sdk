@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiTariffsV1AcceptanceCoefficientsGetError {
     Status400(models::ModelsErrorModel),
     Status401(models::ApiV1TariffsCommissionGet401Response),
+    Status402(models::ApiV1TariffsCommissionGet402Response),
     Status403(),
     Status404(),
     Status429(models::ApiV1TariffsCommissionGet401Response),

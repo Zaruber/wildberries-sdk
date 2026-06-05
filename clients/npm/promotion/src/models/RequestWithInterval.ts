@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Маркетинг и продвижение
- * <div class=\"description_important\">   Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  <div class=\"api-block\">  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   4. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   5. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд.  </div> 
+ * <div class=\"description_important\">   Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  <div class=\"api-block\">  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media)   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями   3. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний   4. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний   5. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij)   6. Устанавливать [рекомендации](/openapi/promotion#tag/recommendations) для товаров  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд.  </div> 
  *
  * The version of the OpenAPI document: promotion
  * 
@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { RequestWithIntervalInterval } from './RequestWithIntervalInterval';
+import type { StatIntervalInterval } from './StatIntervalInterval';
 import {
-    RequestWithIntervalIntervalFromJSON,
-    RequestWithIntervalIntervalFromJSONTyped,
-    RequestWithIntervalIntervalToJSON,
-    RequestWithIntervalIntervalToJSONTyped,
-} from './RequestWithIntervalInterval';
+    StatIntervalIntervalFromJSON,
+    StatIntervalIntervalFromJSONTyped,
+    StatIntervalIntervalToJSON,
+    StatIntervalIntervalToJSONTyped,
+} from './StatIntervalInterval';
 
 /**
  * 
@@ -35,10 +35,10 @@ export interface RequestWithInterval {
     id: number;
     /**
      * 
-     * @type {RequestWithIntervalInterval}
+     * @type {StatIntervalInterval}
      * @memberof RequestWithInterval
      */
-    interval: RequestWithIntervalInterval;
+    interval: StatIntervalInterval;
 }
 
 /**
@@ -61,7 +61,7 @@ export function RequestWithIntervalFromJSONTyped(json: any, ignoreDiscriminator:
     return {
         
         'id': json['id'],
-        'interval': RequestWithIntervalIntervalFromJSON(json['interval']),
+        'interval': StatIntervalIntervalFromJSON(json['interval']),
     };
 }
 
@@ -77,7 +77,7 @@ export function RequestWithIntervalToJSONTyped(value?: RequestWithInterval | nul
     return {
         
         'id': value['id'],
-        'interval': RequestWithIntervalIntervalToJSON(value['interval']),
+        'interval': StatIntervalIntervalToJSON(value['interval']),
     };
 }
 

@@ -26,13 +26,13 @@ export interface PostV1UploadTaskB2bWholesale208Response {
      */
     status: number;
     /**
-     * Заголовок ошибки
+     * Заголовок ответа
      * @type {string}
      * @memberof PostV1UploadTaskB2bWholesale208Response
      */
     title: string;
     /**
-     * Детали ошибки
+     * Детали ответа
      * @type {string}
      * @memberof PostV1UploadTaskB2bWholesale208Response
      */

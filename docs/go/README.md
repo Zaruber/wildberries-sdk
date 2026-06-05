@@ -265,6 +265,8 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `promotion.DefaultApiService.ApiV1CalendarPromotionsGet` — `GET /api/v1/calendar/promotions` — Список акций
 - `promotion.DefaultApiService.ApiV1CalendarPromotionsNomenclaturesGet` — `GET /api/v1/calendar/promotions/nomenclatures` — Список товаров для участия в акции
 - `promotion.DefaultApiService.ApiV1CalendarPromotionsUploadPost` — `POST /api/v1/calendar/promotions/upload` — Добавить товар в акцию
+- `promotion.DefaultApiService.PostV1RecommendationsList` — `POST /api/content/v1/recommendations/list` — Список рекомендаций в карточках товаров
+- `promotion.DefaultApiService.PostV1RecommendationsSet` — `POST /api/content/v1/recommendations/set` — Установить рекомендации для товаров
 
 ### communications (`communications`)
 - `communications.DefaultApiService.ApiFeedbacksV1PinsCountGet` — `GET /api/feedbacks/v1/pins/count` — Количество закреплённых и откреплённых отзывов

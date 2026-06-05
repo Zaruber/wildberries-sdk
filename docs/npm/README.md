@@ -264,6 +264,8 @@ main().catch(console.error);
 - `promotion.DefaultApi.apiV1CalendarPromotionsGet` — Список акций
 - `promotion.DefaultApi.apiV1CalendarPromotionsNomenclaturesGet` — Список товаров для участия в акции
 - `promotion.DefaultApi.apiV1CalendarPromotionsUploadPost` — Добавить товар в акцию
+- `promotion.DefaultApi.postV1RecommendationsList` — Список рекомендаций в карточках товаров
+- `promotion.DefaultApi.postV1RecommendationsSet` — Установить рекомендации для товаров
 
 ### communications (`communications`)
 - `communications.DefaultApi.apiFeedbacksV1PinsCountGet` — Количество закреплённых и откреплённых отзывов
