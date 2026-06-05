@@ -2049,6 +2049,8 @@ paths:
                 origin: pin-open-api
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
     post:
@@ -2115,6 +2117,8 @@ paths:
                 title: Bad Request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2199,6 +2203,8 @@ paths:
                 title: Bad Request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/feedbacks/v1/pins/count:
@@ -2311,6 +2317,8 @@ paths:
                 origin: pin-open-api
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/feedbacks/v1/pins/limits:
@@ -2349,6 +2357,8 @@ paths:
                   - $ref: '#/components/schemas/openapi.SellerLimitsResponse'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/seller/chats:
@@ -2848,6 +2858,8 @@ paths:
           $ref: '#/components/responses/Error400GetClaims'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/claim:
@@ -2884,6 +2896,8 @@ paths:
           $ref: '#/components/responses/Error400PatchClaim'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
 components:

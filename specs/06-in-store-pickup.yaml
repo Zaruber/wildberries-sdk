@@ -92,6 +92,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
@@ -131,6 +133,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
@@ -292,6 +296,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
@@ -331,6 +337,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
@@ -360,6 +368,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
@@ -477,6 +487,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
@@ -519,6 +531,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
@@ -560,6 +574,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -603,6 +619,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -645,6 +663,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -687,6 +707,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -730,6 +752,8 @@ paths:
           $ref: '#/components/responses/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':

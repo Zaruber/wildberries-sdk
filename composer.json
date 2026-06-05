@@ -3,6 +3,7 @@
   "description": "Wildberries OpenAPI clients (generated).",
   "license": "MIT",
   "type": "library",
+  "homepage": "https://eslazarev.github.io/wildberries-sdk/",
   "require": {
     "php": "^8.1",
     "ext-curl": "*",
@@ -29,7 +30,9 @@
     }
   },
   "support": {
-    "source": "https://github.com/eslazarev/wildberries-sdk"
+    "source": "https://github.com/eslazarev/wildberries-sdk",
+    "docs": "https://eslazarev.github.io/wildberries-sdk/",
+    "issues": "https://github.com/eslazarev/wildberries-sdk/issues"
   },
   "readme": "docs/php/README.md"
 }

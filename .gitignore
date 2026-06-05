@@ -47,3 +47,8 @@ npm/
 # Misc
 *.tmp
 *.swp
+
+# MkDocs documentation site
+website/site/
+website/docs/reference/
+website/docs/SUMMARY.md
