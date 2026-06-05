@@ -1,0 +1,102 @@
+"""Load Wildberries OpenAPI specs into a flat list of operations."""
+from __future__ import annotations
+
+import glob
+import os
+from dataclasses import dataclass, field
+from typing import List, Optional
+
+import yaml
+
+VERBS = {"get", "post", "put", "delete", "patch", "head", "options"}
+
+
+@dataclass
+class Param:
+    name: str
+    location: str
+    required: bool
+    type: str
+    description: str
+
+
+@dataclass
+class Operation:
+    module: str
+    verb: str           # upper-case, e.g. "GET"
+    path: str
+    summary: str
+    description: str
+    params: List[Param] = field(default_factory=list)
+    request_model: Optional[str] = None
+    response_model: Optional[str] = None
+
+
+def module_from_filename(filename: str) -> str:
+    """``specs/13-finances.yaml`` -> ``finances`` (matches clients/<lang>/<module>)."""
+    base = os.path.basename(filename)
+    if base.endswith(".yaml"):
+        base = base[:-5]
+    base = base.split("-", 1)[1] if "-" in base else base
+    return base.replace("-", "_")
+
+
+def _ref_name(schema) -> Optional[str]:
+    if not isinstance(schema, dict):
+        return None
+    if "$ref" in schema:
+        return schema["$ref"].split("/")[-1]
+    if schema.get("type") == "array":
+        inner = _ref_name(schema.get("items") or {})
+        return f"{inner}[]" if inner else "array"
+    return schema.get("type")
+
+
+def _json_schema(container) -> Optional[dict]:
+    if not isinstance(container, dict):
+        return None
+    return (container.get("content", {}) or {}).get("application/json", {}).get("schema")
+
+
+def load_operations(specs_dir: str = "specs") -> List[Operation]:
+    ops: List[Operation] = []
+    for filename in sorted(glob.glob(os.path.join(specs_dir, "*.yaml"))):
+        with open(filename, "r", encoding="utf-8") as fh:
+            doc = yaml.safe_load(fh) or {}
+        module = module_from_filename(filename)
+        for path, item in (doc.get("paths") or {}).items():
+            if not isinstance(item, dict):
+                continue
+            for verb, op in item.items():
+                if verb not in VERBS or not isinstance(op, dict):
+                    continue
+                params = [
+                    Param(
+                        name=p.get("name", ""),
+                        location=p.get("in", ""),
+                        required=bool(p.get("required")),
+                        type=(p.get("schema") or {}).get("type", ""),
+                        description=(p.get("description") or "").strip(),
+                    )
+                    for p in (op.get("parameters") or [])
+                    if isinstance(p, dict)
+                ]
+                request_model = _ref_name(_json_schema(op.get("requestBody") or {}))
+                response_model = None
+                for code in ("200", "201"):
+                    resp = (op.get("responses") or {}).get(code) or {}
+                    schema = _json_schema(resp)
+                    if schema:
+                        response_model = _ref_name(schema)
+                        break
+                ops.append(Operation(
+                    module=module,
+                    verb=verb.upper(),
+                    path=path,
+                    summary=(op.get("summary") or "").strip(),
+                    description=(op.get("description") or "").strip(),
+                    params=params,
+                    request_model=request_model,
+                    response_model=response_model,
+                ))
+    return ops
