@@ -4,7 +4,17 @@
   "license": "MIT",
   "type": "library",
   "homepage": "https://eslazarev.github.io/wildberries-sdk/",
-  "keywords": ["wildberries", "wb", "wildberries-api", "api", "sdk", "openapi", "marketplace", "ecommerce", "вайлдберриз"],
+  "keywords": [
+    "wildberries",
+    "wb",
+    "wildberries-api",
+    "api",
+    "sdk",
+    "openapi",
+    "marketplace",
+    "ecommerce",
+    "вайлдберриз"
+  ],
   "require": {
     "php": "^8.1",
     "ext-curl": "*",

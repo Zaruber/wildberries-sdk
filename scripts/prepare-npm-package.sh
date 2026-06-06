@@ -215,5 +215,5 @@ package = {
     },
 }
 
-(root / "package.json").write_text(json.dumps(package, indent=2) + "\n", encoding="utf-8")
+(root / "package.json").write_text(json.dumps(package, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 PY
