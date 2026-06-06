@@ -185,10 +185,19 @@ package = {
     "name": "wildberries-sdk",
     "version": version,
     "description": "Wildberries OpenAPI clients (generated).",
+    "keywords": [
+        "wildberries", "wb", "wildberries-api", "api", "sdk",
+        "openapi", "marketplace", "ecommerce", "typescript",
+        "api-client", "вайлдберриз",
+    ],
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/eslazarev/wildberries-sdk.git",
+    },
+    "homepage": "https://eslazarev.github.io/wildberries-sdk/",
+    "bugs": {
+        "url": "https://github.com/eslazarev/wildberries-sdk/issues",
     },
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -206,5 +215,5 @@ package = {
     },
 }
 
-(root / "package.json").write_text(json.dumps(package, indent=2) + "\n", encoding="utf-8")
+(root / "package.json").write_text(json.dumps(package, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 PY

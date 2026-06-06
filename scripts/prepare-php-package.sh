@@ -107,6 +107,11 @@ composer = {
     "description": "Wildberries OpenAPI clients (generated).",
     "license": "MIT",
     "type": "library",
+    "homepage": "https://eslazarev.github.io/wildberries-sdk/",
+    "keywords": [
+        "wildberries", "wb", "wildberries-api", "api", "sdk",
+        "openapi", "marketplace", "ecommerce", "вайлдберриз",
+    ],
     "require": find_requirements(),
     "autoload": {"psr-4": autoload},
     "support": {"source": "https://github.com/eslazarev/wildberries-sdk"},
@@ -118,5 +123,5 @@ if readme_path.exists():
     except ValueError:
         composer["readme"] = str(readme_path.as_posix())
 
-composer_path.write_text(json.dumps(composer, indent=2) + "\n", encoding="utf-8")
+composer_path.write_text(json.dumps(composer, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 PY

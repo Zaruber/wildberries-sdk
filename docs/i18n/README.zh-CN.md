@@ -2,6 +2,8 @@
 
 🌐 [Русский](../../README.md) · [English](README.en.md) · **简体中文** · [Türkçe](README.tr.md) · [Қазақша](README.kk.md) · [Oʻzbekcha](README.uz.md)
 
+📖 **文档：** <https://eslazarev.github.io/wildberries-sdk/> — 涵盖所有 Wildberries API 操作的参考手册，附 Python、Node.js、Go、PHP 和 Rust 示例。
+
 ![using_sdk.gif](../../.github/images/using_wildberries_sdk_python.gif)
 
 | 语言 | 版本 | 下载量 | README | 注册表 |

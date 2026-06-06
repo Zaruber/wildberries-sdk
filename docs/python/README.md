@@ -2,6 +2,8 @@
 
 <img src="https://raw.githubusercontent.com/eslazarev/wildberries-sdk/main/.github/images/using_wildberries_sdk_python.gif">
 
+📖 **Документация:** <https://eslazarev.github.io/wildberries-sdk/> — справочник по всем операциям API с примерами вызова.
+
 ## Безопасность
 
 SDK выпускается с security-first процессом:
