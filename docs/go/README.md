@@ -2,6 +2,8 @@
 
 Сгенерированные Go-клиенты находятся в `clients/go/<module>`.
 
+📖 **Документация:** <https://eslazarev.github.io/wildberries-sdk/> — справочник по всем операциям API с примерами вызова.
+
 ## Безопасность
 
 SDK выпускается с security-first процессом:

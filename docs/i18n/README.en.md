@@ -2,6 +2,8 @@
 
 🌐 [Русский](../../README.md) · **English** · [简体中文](README.zh-CN.md) · [Türkçe](README.tr.md) · [Қазақша](README.kk.md) · [Oʻzbekcha](README.uz.md)
 
+📖 **Documentation:** <https://eslazarev.github.io/wildberries-sdk/> — reference for all Wildberries API operations with examples in Python, Node.js, Go, PHP and Rust.
+
 ![using_sdk.gif](../../.github/images/using_wildberries_sdk_python.gif)
 
 | Language | Version | Downloads | README | Registry |

@@ -2,6 +2,8 @@
 
 Сгенерированные PHP-клиенты находятся в `clients/php/<module>`.
 
+📖 **Документация:** <https://eslazarev.github.io/wildberries-sdk/> — справочник по всем операциям API с примерами вызова.
+
 ## Безопасность
 
 SDK выпускается с security-first процессом:
