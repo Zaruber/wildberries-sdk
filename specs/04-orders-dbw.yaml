@@ -7,7 +7,7 @@ info:
 
     С помощью методов Заказы DBW (Доставка курьером WB) вы можете:
       - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания
-      - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/dbw-label-identifiers) сборочных заданий
+      - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/dbwLabelIdentifiers) сборочных заданий
 
     </div>
 
@@ -297,7 +297,7 @@ paths:
         | -------  | ---------           | --------------------------------------|
         | `new`      | **Новое сборочное задание** | |
         | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1confirm/patch)
-        | `complete` | **В доставке**  | [Перевести сборочное задание в доставку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1status~1assemble/post) |
+        | `complete` | **В доставке**  | [Перевести сборочное задание в доставку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1status~1deliver/post) |
         | `receive`  | **Получено покупателем**|  Переводится курьером
         | `reject`   | **Отказ покупателя при получении**| Переводится курьером
         | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1cancel/patch)
@@ -472,7 +472,7 @@ paths:
         - Сборочные задания DBW
       summary: Получить стикеры сборочных заданий
       description: |
-        Метод возвращает список стикеров для [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get) в [статусах](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post):
+        Метод возвращает список стикеров для [сборочных заданий](/openapi/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get) в [статусах](/openapi/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post):
           - `confirm` — на сборке
           - `complete` — в доставке
 
@@ -618,7 +618,7 @@ paths:
         - Сборочные задания DBW
       summary: Перевести сборочные задания в доставку
       description: |
-        Метод переводит [сборочные задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) из [статуса](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` в статус `complete` — в доставке.
+        Метод переводит [сборочные задания](/openapi/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) из [статуса](/openapi/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` в статус `complete` — в доставке.
 
         <div class="description_important">
         Проверяйте ответ метода. Сборочные задания, переведённые в доставку, вернутся с признаком `"isError":false`. Для остальных сборочных заданий смотрите причину ошибки в массиве `errors`
@@ -875,10 +875,10 @@ paths:
         Перечень идентификаторов маркировки, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get), поле `requiredMeta`.
         <br><br>
         Возможные идентификаторы маркировки:
-          - `imei` — [IMEI](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-          - `uin` — [УИН](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
-          - `gtin` — [GTIN](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
+          - `imei` — [IMEI](/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `uin` — [УИН](/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
+          - `gtin` — [GTIN](/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
 
           <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
@@ -944,13 +944,13 @@ paths:
         - Идентификаторы маркировки DBW
       summary: Удалить идентификаторы маркировки сборочных заданий
       description: |
-        Метод удаляет значение указанных [идентификаторов маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) для переданного ключа.
+        Метод удаляет значение указанных [идентификаторов маркировки сборочного задания](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) для переданного ключа.
         <br><br>
         В одном запросе можно удалить идентификаторы маркировки только одного типа. Укажите тип идентификаторов маркировки в запросе:
-          - `imei` — [IMEI](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-          - `uin` — [УИН](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
-          - `gtin` — [GTIN](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-          - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
+          - `imei` — [IMEI](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `uin` — [УИН](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
+          - `gtin` — [GTIN](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `sgtin` — [код маркировки](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
 
         Можно передать только один ключ.
 
@@ -1132,10 +1132,10 @@ paths:
         - Идентификаторы маркировки DBW
       summary: Закрепить коды маркировки Честного знака за сборочными заданиями
       description: |
-        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки можно, только если в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` — на сборке.
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки можно, только если в [идентификаторах маркировки сборочного задания](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` — на сборке.
         <br><br>
-        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
+        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
@@ -1273,7 +1273,7 @@ paths:
         - Идентификаторы маркировки DBW
       summary: Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
       description: |
-        Метод обновляет УИН в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный идентификационный номер.
+        Метод обновляет УИН в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный идентификационный номер.
         <br><br>
         У одного сборочного задания может быть только один УИН.
 
@@ -1351,7 +1351,7 @@ paths:
         - Идентификаторы маркировки DBW
       summary: Закрепить за сборочным заданием IMEI
       description: |
-        Метод обновляет IMEI в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
+        Метод обновляет IMEI в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
         <br><br>
         У одного сборочного задания может быть только один IMEI.
 
@@ -1429,7 +1429,7 @@ paths:
         - Идентификаторы маркировки DBW
       summary: Закрепить за сборочным заданием GTIN
       description: |
-        Метод обновляет GTIN в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbw-label-identifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный ID товара в Беларуси.
+        Метод обновляет GTIN в [идентификаторах маркировки сборочного задания](/openapi/orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный ID товара в Беларуси.
         <br><br>
         У одного сборочного задания может быть только один GTIN.
 
@@ -2205,7 +2205,7 @@ components:
           nullable: true
           example: 504658
         requiredMeta:
-          description: Список идентификаторов маркировки, доступных для сборочного задания. [Указывать IMEI](./orders-dbw#tag/dbw-label-identifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
+          description: Список идентификаторов маркировки, доступных для сборочного задания. [Указывать IMEI](./orders-dbw#tag/dbwLabelIdentifiers/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
           type: array
           nullable: true
           items:
