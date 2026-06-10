@@ -7,7 +7,7 @@ info:
 
     <div class="api-block">
 
-    Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers) заказов DBS (Delivery by Seller).
+    Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [идентификаторами маркировки](/openapi/orders-dbs#tag/dbsLabelIdentifiers) заказов DBS (Delivery by Seller).
 
     </div>
   title: Заказы DBS
@@ -1390,11 +1390,11 @@ paths:
         Метод возвращает идентификаторы маркировки [сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и статусы их валидации. <br>
         Перечень идентификаторов маркировки, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1new/get), поле `requiredMeta`.<br>
         Возможные идентификаторы маркировки:
-          - `imei` — [IMEI](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
-          - `uin` — [УИН](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
-          - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
-          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
+          - `imei` — [IMEI](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
+          - `uin` — [УИН](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
+          - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
+          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
         Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет идентификаторов маркировки и добавить их нельзя.<br>
         <div class="description_limit">
@@ -1592,14 +1592,14 @@ paths:
   /api/marketplace/v3/dbs/orders/meta/delete:
     post:
       description: |
-        Метод удаляет значение указанных [идентификаторов маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) для нескольких сборочных заданий.
+        Метод удаляет значение указанных [идентификаторов маркировки](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) для нескольких сборочных заданий.
         <br><br>
         В одном запросе можно удалить идентификаторы маркировки только одного типа. Укажите тип идентификаторов маркировки в запросе:
-          - `imei` — [IMEI](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
-          - `uin` — [УИН](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
-          - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
-          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
+          - `imei` — [IMEI](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
+          - `uin` — [УИН](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
+          - `gtin` — [GTIN](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
+          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `customsDeclaration` — [номер ДТ](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки DBS</strong>:
@@ -1703,10 +1703,10 @@ paths:
   /api/marketplace/v3/dbs/orders/meta/sgtin:
     post:
       description: |
-        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки Честного знака можно, только если в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки Честного знака можно, только если в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
         <br><br>
-        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
+        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки DBS</strong>:
@@ -1808,7 +1808,7 @@ paths:
   /api/marketplace/v3/dbs/orders/meta/uin:
     post:
       description: |
-        Метод обновляет УИН, уникальный идентификационный номер, в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).<br>
+        Метод обновляет УИН, уникальный идентификационный номер, в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).<br>
         У одного сборочного задания может быть только один УИН.
         Добавлять УИН можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.
 
@@ -1914,7 +1914,7 @@ paths:
   /api/marketplace/v3/dbs/orders/meta/imei:
     post:
       description: |
-        Метод обновляет IMEI в [идентификаторых маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Метод обновляет IMEI в [идентификаторых маркировки](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
         У одного сборочного задания может быть только один IMEI.
         Добавлять IMEI можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>
 
@@ -2020,7 +2020,7 @@ paths:
   /api/marketplace/v3/dbs/orders/meta/gtin:
     post:
       description: |
-        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [идентификаторах маркировки](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
         У одного сборочного задания может быть только один GTIN.
         Добавлять GTIN можно только для сборочных заданий, которые доставляются WB и находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.<br>
 
@@ -2126,7 +2126,7 @@ paths:
   /api/marketplace/v3/dbs/orders/meta/customs-declaration:
     post:
       description: |
-        Метод обновляет номер ДТ — декларации на товары — в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
+        Метод обновляет номер ДТ — декларации на товары — в [идентификаторах маркировки сборочных заданий](/openapi/orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1details/post).
         <br><br>
         У одного сборочного задания может быть только один ДТ.
 
@@ -2475,7 +2475,7 @@ components:
           type: integer
         requiredMeta:
           description: "Список идентификаторов маркировки, доступных для сборочног\
-            о задания. [Указывать IMEI](./orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)\
+            о задания. [Указывать IMEI](./orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)\
             \ обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get)\
             \ `Смартфоны`, `\"subjectId\":515`"
           example:
@@ -3769,7 +3769,7 @@ components:
           description: |
             - `NotFound` — сборочное задание не найдено
             - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
-            - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/dbs-label-identifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
+            - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/dbsLabelIdentifiers/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
           example: NotFound
           type: string
       type: object

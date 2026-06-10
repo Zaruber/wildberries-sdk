@@ -5892,7 +5892,7 @@ paths:
   /api/v3/dbw/warehouses/{warehouseId}/contacts:
     get:
       description: "Метод возвращает список контактов, привязанных к [складу прода\
-        вца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).\n\
+        вца](/openapi/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).\n\
         <br>\nТолько для складов с типом доставки `3` — доставка курьером WB (DBW).\n\
         \n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
         >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
@@ -5986,7 +5986,7 @@ paths:
       x-readonly-method: true
       x-category: marketplace
     put:
-      description: "Метод обновляет список контактов [склада продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).\n\
+      description: "Метод обновляет список контактов [склада продавца](/openapi/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).\n\
         \n<div class=\"description_important\">\n  Список контактов перезаписывает\
         ся при обновлении. Поэтому в запросе нужно передать <strong>все</strong> п\
         араметры списка контактов, в том числе те, которые вы не собираетесь обнов\

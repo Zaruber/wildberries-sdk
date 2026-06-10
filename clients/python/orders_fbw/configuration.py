@@ -365,9 +365,9 @@ conf = wildberries_sdk.orders_fbw.Configuration(
                 setattr(result, k, copy.deepcopy(v, memo))
         # shallow copy of loggers
         result.logger = copy.copy(self.logger)
-        # use setters to configure loggers
+        # use setter to re-create the file handler (excluded from __dict__ copy)
         result.logger_file = self.logger_file
-        result.debug = self.debug
+
         return result
 
     def __setattr__(self, name: str, value: Any) -> None:
@@ -554,7 +554,7 @@ conf = wildberries_sdk.orders_fbw.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: ordersfbw\n"\
-               "SDK Package Version: 0.1.103".\
+               "SDK Package Version: 0.1.104".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self) -> List[HostSetting]:

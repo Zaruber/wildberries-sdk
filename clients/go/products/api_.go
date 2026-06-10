@@ -2514,7 +2514,7 @@ func (r ApiApiV3DbwWarehousesWarehouseIdContactsGetRequest) Execute() (*ApiV3Dbw
 /*
 ApiV3DbwWarehousesWarehouseIdContactsGet Список контактов
 
-Метод возвращает список контактов, привязанных к [складу продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).
+Метод возвращает список контактов, привязанных к [складу продавца](/openapi/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).
 <br>
 Только для складов с типом доставки `3` — доставка курьером WB (DBW).
 
@@ -2709,7 +2709,7 @@ func (r ApiApiV3DbwWarehousesWarehouseIdContactsPutRequest) Execute() (*http.Res
 /*
 ApiV3DbwWarehousesWarehouseIdContactsPut Обновить список контактов
 
-Метод обновляет список контактов [склада продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).
+Метод обновляет список контактов [склада продавца](/openapi/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/get).
 
 <div class="description_important">
   Список контактов перезаписывается при обновлении. Поэтому в запросе нужно передать <strong>все</strong> параметры списка контактов, в том числе те, которые вы не собираетесь обновлять.
