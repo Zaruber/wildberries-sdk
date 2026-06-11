@@ -324,7 +324,7 @@ paths:
         - HeaderApiKey: []
       summary: Получить дату и время доставки
       description: |
-        Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий.
+        Метод возвращает информацию о выбранных покупателем дате и времени доставки заказов.
         <br>
 
         <div class="description_limit">
@@ -2261,8 +2261,18 @@ components:
               dDate:
                 type: string
                 nullable: false
-                description: Актуальная дата доставки
-                example: '2025-02-20'
+                description: Актуальная дата доставки, указанная покупателем
+                example: '2026-01-26'
+              dDateFrom:
+                type: string
+                nullable: true
+                description: Дата начала интервала для доставки, если указана покупателем
+                example: 12.01.2026
+              dDateTo:
+                type: string
+                nullable: true
+                description: Дата окончания интервала для доставки, если указана покупателем
+                example: 14.01.2026
               id:
                 type: integer
                 description: ID сборочного задания
