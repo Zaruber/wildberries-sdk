@@ -50,11 +50,23 @@ export interface DeliveryDatesInfoRespOrdersInner {
      */
     dDateOld?: string | null;
     /**
-     * Актуальная дата доставки
+     * Актуальная дата доставки, указанная покупателем
      * @type {string}
      * @memberof DeliveryDatesInfoRespOrdersInner
      */
     dDate?: string;
+    /**
+     * Дата начала интервала для доставки, если указана покупателем
+     * @type {string}
+     * @memberof DeliveryDatesInfoRespOrdersInner
+     */
+    dDateFrom?: string | null;
+    /**
+     * Дата окончания интервала для доставки, если указана покупателем
+     * @type {string}
+     * @memberof DeliveryDatesInfoRespOrdersInner
+     */
+    dDateTo?: string | null;
     /**
      * ID сборочного задания
      * @type {number}
@@ -86,6 +98,8 @@ export function DeliveryDatesInfoRespOrdersInnerFromJSONTyped(json: any, ignoreD
         'dTimeToOld': json['dTimeToOld'] == null ? undefined : json['dTimeToOld'],
         'dDateOld': json['dDateOld'] == null ? undefined : json['dDateOld'],
         'dDate': json['dDate'] == null ? undefined : json['dDate'],
+        'dDateFrom': json['dDateFrom'] == null ? undefined : json['dDateFrom'],
+        'dDateTo': json['dDateTo'] == null ? undefined : json['dDateTo'],
         'id': json['id'] == null ? undefined : json['id'],
     };
 }
@@ -107,6 +121,8 @@ export function DeliveryDatesInfoRespOrdersInnerToJSONTyped(value?: DeliveryDate
         'dTimeToOld': value['dTimeToOld'],
         'dDateOld': value['dDateOld'],
         'dDate': value['dDate'],
+        'dDateFrom': value['dDateFrom'],
+        'dDateTo': value['dDateTo'],
         'id': value['id'],
     };
 }

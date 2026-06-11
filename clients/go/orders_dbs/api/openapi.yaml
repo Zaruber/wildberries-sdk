@@ -537,7 +537,7 @@ paths:
   /api/v3/dbs/orders/delivery-date:
     post:
       description: |
-        Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий.
+        Метод возвращает информацию о выбранных покупателем дате и времени доставки заказов.
         <br>
 
         <div class="description_limit">
@@ -2928,14 +2928,18 @@ components:
           dTimeFromOld: 12:30
           dTimeToOld: 22:30
           dDateOld: 2025-01-28
-          dDate: 2025-02-20
+          dDate: 2026-01-26
+          dDateFrom: 12.01.2026
+          dDateTo: 14.01.2026
           id: 1234567890
         - dTimeFrom: 11:11
           dTimeTo: 22:22
           dTimeFromOld: 12:30
           dTimeToOld: 22:30
           dDateOld: 2025-01-28
-          dDate: 2025-02-20
+          dDate: 2026-01-26
+          dDateFrom: 12.01.2026
+          dDateTo: 14.01.2026
           id: 1234567890
       properties:
         orders:
@@ -3941,7 +3945,9 @@ components:
         dTimeFromOld: 12:30
         dTimeToOld: 22:30
         dDateOld: 2025-01-28
-        dDate: 2025-02-20
+        dDate: 2026-01-26
+        dDateFrom: 12.01.2026
+        dDateTo: 14.01.2026
         id: 1234567890
       properties:
         dTimeFrom:
@@ -3970,9 +3976,21 @@ components:
           nullable: true
           type: string
         dDate:
-          description: Актуальная дата доставки
-          example: 2025-02-20
+          description: "Актуальная дата доставки, указанная покупателем"
+          example: 2026-01-26
           nullable: false
+          type: string
+        dDateFrom:
+          description: "Дата начала интервала для доставки, если указана покупател\
+            ем"
+          example: 12.01.2026
+          nullable: true
+          type: string
+        dDateTo:
+          description: "Дата окончания интервала для доставки, если указана покупа\
+            телем"
+          example: 14.01.2026
+          nullable: true
           type: string
         id:
           description: ID сборочного задания

@@ -1168,7 +1168,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий. <br>  <div class=\"description_limit\"> <a href=\'https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov\'>Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
+     * Метод возвращает информацию о выбранных покупателем дате и времени доставки заказов. <br>  <div class=\"description_limit\"> <a href=\'https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov\'>Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Получить дату и время доставки
      */
     async apiV3DbsOrdersDeliveryDatePostRaw(requestParameters: ApiV3DbsOrdersDeliveryDatePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeliveryDatesInfoResp>> {
@@ -1179,7 +1179,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий. <br>  <div class=\"description_limit\"> <a href=\'https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov\'>Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
+     * Метод возвращает информацию о выбранных покупателем дате и времени доставки заказов. <br>  <div class=\"description_limit\"> <a href=\'https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov\'>Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
      * Получить дату и время доставки
      */
     async apiV3DbsOrdersDeliveryDatePost(requestParameters: ApiV3DbsOrdersDeliveryDatePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeliveryDatesInfoResp> {

@@ -63,6 +63,8 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         'd_time_to_old' => 'string',
         'd_date_old' => 'string',
         'd_date' => 'string',
+        'd_date_from' => 'string',
+        'd_date_to' => 'string',
         'id' => 'int'
     ];
 
@@ -80,6 +82,8 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         'd_time_to_old' => null,
         'd_date_old' => null,
         'd_date' => null,
+        'd_date_from' => null,
+        'd_date_to' => null,
         'id' => null
     ];
 
@@ -95,6 +99,8 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         'd_time_to_old' => true,
         'd_date_old' => true,
         'd_date' => false,
+        'd_date_from' => true,
+        'd_date_to' => true,
         'id' => false
     ];
 
@@ -190,6 +196,8 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         'd_time_to_old' => 'dTimeToOld',
         'd_date_old' => 'dDateOld',
         'd_date' => 'dDate',
+        'd_date_from' => 'dDateFrom',
+        'd_date_to' => 'dDateTo',
         'id' => 'id'
     ];
 
@@ -205,6 +213,8 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         'd_time_to_old' => 'setDTimeToOld',
         'd_date_old' => 'setDDateOld',
         'd_date' => 'setDDate',
+        'd_date_from' => 'setDDateFrom',
+        'd_date_to' => 'setDDateTo',
         'id' => 'setId'
     ];
 
@@ -220,6 +230,8 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         'd_time_to_old' => 'getDTimeToOld',
         'd_date_old' => 'getDDateOld',
         'd_date' => 'getDDate',
+        'd_date_from' => 'getDDateFrom',
+        'd_date_to' => 'getDDateTo',
         'id' => 'getId'
     ];
 
@@ -286,6 +298,8 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
         $this->setIfExists('d_time_to_old', $data ?? [], null);
         $this->setIfExists('d_date_old', $data ?? [], null);
         $this->setIfExists('d_date', $data ?? [], null);
+        $this->setIfExists('d_date_from', $data ?? [], null);
+        $this->setIfExists('d_date_to', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
     }
 
@@ -514,7 +528,7 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
     /**
      * Sets d_date
      *
-     * @param string|null $d_date Актуальная дата доставки
+     * @param string|null $d_date Актуальная дата доставки, указанная покупателем
      *
      * @return self
      */
@@ -524,6 +538,74 @@ class DeliveryDatesInfoRespOrdersInner implements ModelInterface, ArrayAccess, \
             throw new \InvalidArgumentException('non-nullable d_date cannot be null');
         }
         $this->container['d_date'] = $d_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets d_date_from
+     *
+     * @return string|null
+     */
+    public function getDDateFrom()
+    {
+        return $this->container['d_date_from'];
+    }
+
+    /**
+     * Sets d_date_from
+     *
+     * @param string|null $d_date_from Дата начала интервала для доставки, если указана покупателем
+     *
+     * @return self
+     */
+    public function setDDateFrom($d_date_from)
+    {
+        if (is_null($d_date_from)) {
+            array_push($this->openAPINullablesSetToNull, 'd_date_from');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('d_date_from', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['d_date_from'] = $d_date_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets d_date_to
+     *
+     * @return string|null
+     */
+    public function getDDateTo()
+    {
+        return $this->container['d_date_to'];
+    }
+
+    /**
+     * Sets d_date_to
+     *
+     * @param string|null $d_date_to Дата окончания интервала для доставки, если указана покупателем
+     *
+     * @return self
+     */
+    public function setDDateTo($d_date_to)
+    {
+        if (is_null($d_date_to)) {
+            array_push($this->openAPINullablesSetToNull, 'd_date_to');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('d_date_to', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['d_date_to'] = $d_date_to;
 
         return $this;
     }

@@ -29,8 +29,12 @@ type DeliveryDatesInfoRespOrdersInner struct {
 	DTimeToOld NullableString `json:"dTimeToOld,omitempty"`
 	// Прежняя дата доставки. Доступна первые сутки после изменения
 	DDateOld NullableString `json:"dDateOld,omitempty"`
-	// Актуальная дата доставки
+	// Актуальная дата доставки, указанная покупателем
 	DDate *string `json:"dDate,omitempty"`
+	// Дата начала интервала для доставки, если указана покупателем
+	DDateFrom NullableString `json:"dDateFrom,omitempty"`
+	// Дата окончания интервала для доставки, если указана покупателем
+	DDateTo NullableString `json:"dDateTo,omitempty"`
 	// ID сборочного задания
 	Id *int32 `json:"id,omitempty"`
 }
@@ -294,6 +298,90 @@ func (o *DeliveryDatesInfoRespOrdersInner) SetDDate(v string) {
 	o.DDate = &v
 }
 
+// GetDDateFrom returns the DDateFrom field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DeliveryDatesInfoRespOrdersInner) GetDDateFrom() string {
+	if o == nil || IsNil(o.DDateFrom.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.DDateFrom.Get()
+}
+
+// GetDDateFromOk returns a tuple with the DDateFrom field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *DeliveryDatesInfoRespOrdersInner) GetDDateFromOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DDateFrom.Get(), o.DDateFrom.IsSet()
+}
+
+// HasDDateFrom returns a boolean if a field has been set.
+func (o *DeliveryDatesInfoRespOrdersInner) HasDDateFrom() bool {
+	if o != nil && o.DDateFrom.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDDateFrom gets a reference to the given NullableString and assigns it to the DDateFrom field.
+func (o *DeliveryDatesInfoRespOrdersInner) SetDDateFrom(v string) {
+	o.DDateFrom.Set(&v)
+}
+// SetDDateFromNil sets the value for DDateFrom to be an explicit nil
+func (o *DeliveryDatesInfoRespOrdersInner) SetDDateFromNil() {
+	o.DDateFrom.Set(nil)
+}
+
+// UnsetDDateFrom ensures that no value is present for DDateFrom, not even an explicit nil
+func (o *DeliveryDatesInfoRespOrdersInner) UnsetDDateFrom() {
+	o.DDateFrom.Unset()
+}
+
+// GetDDateTo returns the DDateTo field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DeliveryDatesInfoRespOrdersInner) GetDDateTo() string {
+	if o == nil || IsNil(o.DDateTo.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.DDateTo.Get()
+}
+
+// GetDDateToOk returns a tuple with the DDateTo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *DeliveryDatesInfoRespOrdersInner) GetDDateToOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DDateTo.Get(), o.DDateTo.IsSet()
+}
+
+// HasDDateTo returns a boolean if a field has been set.
+func (o *DeliveryDatesInfoRespOrdersInner) HasDDateTo() bool {
+	if o != nil && o.DDateTo.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDDateTo gets a reference to the given NullableString and assigns it to the DDateTo field.
+func (o *DeliveryDatesInfoRespOrdersInner) SetDDateTo(v string) {
+	o.DDateTo.Set(&v)
+}
+// SetDDateToNil sets the value for DDateTo to be an explicit nil
+func (o *DeliveryDatesInfoRespOrdersInner) SetDDateToNil() {
+	o.DDateTo.Set(nil)
+}
+
+// UnsetDDateTo ensures that no value is present for DDateTo, not even an explicit nil
+func (o *DeliveryDatesInfoRespOrdersInner) UnsetDDateTo() {
+	o.DDateTo.Unset()
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *DeliveryDatesInfoRespOrdersInner) GetId() int32 {
 	if o == nil || IsNil(o.Id) {
@@ -353,6 +441,12 @@ func (o DeliveryDatesInfoRespOrdersInner) ToMap() (map[string]interface{}, error
 	}
 	if !IsNil(o.DDate) {
 		toSerialize["dDate"] = o.DDate
+	}
+	if o.DDateFrom.IsSet() {
+		toSerialize["dDateFrom"] = o.DDateFrom.Get()
+	}
+	if o.DDateTo.IsSet() {
+		toSerialize["dDateTo"] = o.DDateTo.Get()
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

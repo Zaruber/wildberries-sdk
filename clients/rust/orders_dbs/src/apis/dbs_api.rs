@@ -1099,7 +1099,7 @@ pub async fn api_v3_dbs_orders_client_post(configuration: &configuration::Config
     }
 }
 
-/// Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий. <br>  <div class=\"description_limit\"> <a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
+/// Метод возвращает информацию о выбранных покупателем дате и времени доставки заказов. <br>  <div class=\"description_limit\"> <a href='https://dev.wildberries.ru/docs/openapi/api-information#tag/Vvedenie/Limity-zaprosov'>Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
 pub async fn api_v3_dbs_orders_delivery_date_post(configuration: &configuration::Configuration, delivery_dates_request: models::DeliveryDatesRequest) -> Result<models::DeliveryDatesInfoResp, Error<ApiV3DbsOrdersDeliveryDatePostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_delivery_dates_request = delivery_dates_request;

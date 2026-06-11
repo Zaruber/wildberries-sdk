@@ -28,9 +28,15 @@ pub struct DeliveryDatesInfoRespOrdersInner {
     /// Прежняя дата доставки. Доступна первые сутки после изменения
     #[serde(rename = "dDateOld", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub d_date_old: Option<Option<String>>,
-    /// Актуальная дата доставки
+    /// Актуальная дата доставки, указанная покупателем
     #[serde(rename = "dDate", skip_serializing_if = "Option::is_none")]
     pub d_date: Option<String>,
+    /// Дата начала интервала для доставки, если указана покупателем
+    #[serde(rename = "dDateFrom", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub d_date_from: Option<Option<String>>,
+    /// Дата окончания интервала для доставки, если указана покупателем
+    #[serde(rename = "dDateTo", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub d_date_to: Option<Option<String>>,
     /// ID сборочного задания
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,
@@ -45,6 +51,8 @@ impl DeliveryDatesInfoRespOrdersInner {
             d_time_to_old: None,
             d_date_old: None,
             d_date: None,
+            d_date_from: None,
+            d_date_to: None,
             id: None,
         }
     }
