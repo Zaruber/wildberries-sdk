@@ -47,7 +47,7 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
      *   - `uinBadStatusAndBadProcess` — Некорректный статус партии. Некорректная стадия обработки
      *   - `uinNotFound` — Не найден в [ГИИС](https://minfin.gov.ru/ru/perfomance/jewels/dmdk).
      *     При получении этой ошибки убедитесь, что УИН:
-     *       - указан в загруженной спецификации с договором на поставку. Если спецификация загружена более 30 минут назад, [удалите УИН](./orders-fbs#tag/fbsLabelIdentifiers/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/delete) из сборочного задания и [добавьте его](./orders-fbs#tag/fbsLabelIdentifiers/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put) заново
+     *       - указан в загруженной спецификации с договором на доставку. Если спецификация загружена более 30 минут назад, [удалите УИН](./orders-fbs#tag/fbsLabelIdentifiers/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/delete) из сборочного задания и [добавьте его](./orders-fbs#tag/fbsLabelIdentifiers/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put) заново
      *       - зарегистрирован в ГИИС ДМДК
      *       - указан корректно и считывается с бирки без ошибок
      *       - находится в обороте

@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.105"
+__version__ = "0.1.106"
 
 # Define package exports
 __all__ = [
@@ -31,6 +31,7 @@ __all__ = [
     "ApiBatchError",
     "ApiBatchErrorResponse",
     "ApiBatchErrorResponseMetaDetailsInner",
+    "ApiMarketplaceV3DbwOrdersClientPost400Response",
     "ApiMetaDeleteResponses",
     "ApiMetaDeleteResponsesResultsInner",
     "ApiMetaDeleteResponsesResultsInnerErrorsInner",
@@ -51,7 +52,6 @@ __all__ = [
     "ApiV3DbwOrdersOrderIdMetaGet200Response",
     "ApiV3DbwOrdersOrderIdMetaGtinPutRequest",
     "ApiV3DbwOrdersOrderIdMetaImeiPutRequest",
-    "ApiV3DbwOrdersOrderIdMetaSgtinPutRequest",
     "ApiV3DbwOrdersOrderIdMetaUinPutRequest",
     "ApiV3DbwOrdersStatusPost200Response",
     "ApiV3DbwOrdersStatusPost200ResponseOrdersInner",
@@ -97,6 +97,7 @@ from wildberries_sdk.orders_dbw.exceptions import ApiException as ApiException
 from wildberries_sdk.orders_dbw.models.api_batch_error import ApiBatchError as ApiBatchError
 from wildberries_sdk.orders_dbw.models.api_batch_error_response import ApiBatchErrorResponse as ApiBatchErrorResponse
 from wildberries_sdk.orders_dbw.models.api_batch_error_response_meta_details_inner import ApiBatchErrorResponseMetaDetailsInner as ApiBatchErrorResponseMetaDetailsInner
+from wildberries_sdk.orders_dbw.models.api_marketplace_v3_dbw_orders_client_post400_response import ApiMarketplaceV3DbwOrdersClientPost400Response as ApiMarketplaceV3DbwOrdersClientPost400Response
 from wildberries_sdk.orders_dbw.models.api_meta_delete_responses import ApiMetaDeleteResponses as ApiMetaDeleteResponses
 from wildberries_sdk.orders_dbw.models.api_meta_delete_responses_results_inner import ApiMetaDeleteResponsesResultsInner as ApiMetaDeleteResponsesResultsInner
 from wildberries_sdk.orders_dbw.models.api_meta_delete_responses_results_inner_errors_inner import ApiMetaDeleteResponsesResultsInnerErrorsInner as ApiMetaDeleteResponsesResultsInnerErrorsInner
@@ -117,7 +118,6 @@ from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_new_get402_response imp
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_get200_response import ApiV3DbwOrdersOrderIdMetaGet200Response as ApiV3DbwOrdersOrderIdMetaGet200Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_gtin_put_request import ApiV3DbwOrdersOrderIdMetaGtinPutRequest as ApiV3DbwOrdersOrderIdMetaGtinPutRequest
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_imei_put_request import ApiV3DbwOrdersOrderIdMetaImeiPutRequest as ApiV3DbwOrdersOrderIdMetaImeiPutRequest
-from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_sgtin_put_request import ApiV3DbwOrdersOrderIdMetaSgtinPutRequest as ApiV3DbwOrdersOrderIdMetaSgtinPutRequest
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_uin_put_request import ApiV3DbwOrdersOrderIdMetaUinPutRequest as ApiV3DbwOrdersOrderIdMetaUinPutRequest
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_status_post200_response import ApiV3DbwOrdersStatusPost200Response as ApiV3DbwOrdersStatusPost200Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_status_post200_response_orders_inner import ApiV3DbwOrdersStatusPost200ResponseOrdersInner as ApiV3DbwOrdersStatusPost200ResponseOrdersInner

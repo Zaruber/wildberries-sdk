@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -27,7 +28,7 @@ class OrdersRequestAPI(BaseModel):
     """
     OrdersRequestAPI
     """ # noqa: E501
-    orders: Optional[List[StrictInt]] = Field(default=None, description="Список ID сборочных заданий")
+    orders: Optional[Annotated[List[StrictInt], Field(max_length=1000)]] = Field(default=None, description="Список ID сборочных заданий")
     __properties: ClassVar[List[str]] = ["orders"]
 
     model_config = ConfigDict(

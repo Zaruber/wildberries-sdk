@@ -19,17 +19,22 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ApiV3DbwOrdersOrderIdMetaSgtinPutRequest(BaseModel):
+class ApiMarketplaceV3DbwOrdersClientPost400Response(BaseModel):
     """
-    ApiV3DbwOrdersOrderIdMetaSgtinPutRequest
+    ApiMarketplaceV3DbwOrdersClientPost400Response
     """ # noqa: E501
-    sgtins: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=24)]] = Field(default=None, description="Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки")
-    __properties: ClassVar[List[str]] = ["sgtins"]
+    code: Optional[StrictStr] = Field(default=None, description="Код ошибки")
+    message: Optional[StrictStr] = Field(default=None, description="Описание ошибки")
+    data: Optional[Dict[str, Any]] = Field(default=None, description="Дополнительные данные ошибки")
+    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
+    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["dbs-public-api"]})
+    request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId", json_schema_extra={"examples": ["f1787bd2d1fdс35d6f537316514у4a05"]})
+    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки", json_schema_extra={"examples": ["IncorrectRequest"]})
+    __properties: ClassVar[List[str]] = ["code", "message", "data", "detail", "origin", "requestId", "title"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -49,7 +54,7 @@ class ApiV3DbwOrdersOrderIdMetaSgtinPutRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiV3DbwOrdersOrderIdMetaSgtinPutRequest from a JSON string"""
+        """Create an instance of ApiMarketplaceV3DbwOrdersClientPost400Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +75,21 @@ class ApiV3DbwOrdersOrderIdMetaSgtinPutRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if data (nullable) is None
+        # and model_fields_set contains the field
+        if self.data is None and "data" in self.model_fields_set:
+            _dict['data'] = None
+
+        # set to None if detail (nullable) is None
+        # and model_fields_set contains the field
+        if self.detail is None and "detail" in self.model_fields_set:
+            _dict['detail'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiV3DbwOrdersOrderIdMetaSgtinPutRequest from a dict"""
+        """Create an instance of ApiMarketplaceV3DbwOrdersClientPost400Response from a dict"""
         if obj is None:
             return None
 
@@ -82,7 +97,13 @@ class ApiV3DbwOrdersOrderIdMetaSgtinPutRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "sgtins": obj.get("sgtins")
+            "code": obj.get("code"),
+            "message": obj.get("message"),
+            "data": obj.get("data"),
+            "detail": obj.get("detail"),
+            "origin": obj.get("origin"),
+            "requestId": obj.get("requestId"),
+            "title": obj.get("title")
         })
         return _obj
 

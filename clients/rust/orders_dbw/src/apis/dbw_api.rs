@@ -19,7 +19,7 @@ use super::{Error, configuration, ContentType};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiMarketplaceV3DbwOrdersClientPostError {
-    Status400(models::Error),
+    Status400(models::ApiMarketplaceV3DbwOrdersClientPost400Response),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
     Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
@@ -122,20 +122,6 @@ pub enum ApiV3DbwOrdersNewGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`api_v3_dbw_orders_order_id_assemble_patch`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ApiV3DbwOrdersOrderIdAssemblePatchError {
-    Status400(models::Error),
-    Status401(models::ApiV3DbwOrdersNewGet401Response),
-    Status402(models::ApiV3DbwOrdersNewGet402Response),
-    Status403(models::Error),
-    Status404(models::Error),
-    Status409(models::Error),
-    Status429(models::ApiV3DbwOrdersNewGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`api_v3_dbw_orders_order_id_cancel_patch`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -159,19 +145,6 @@ pub enum ApiV3DbwOrdersOrderIdConfirmPatchError {
     Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
-    Status409(models::Error),
-    Status429(models::ApiV3DbwOrdersNewGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`api_v3_dbw_orders_order_id_meta_delete`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ApiV3DbwOrdersOrderIdMetaDeleteError {
-    Status400(models::Error),
-    Status401(models::ApiV3DbwOrdersNewGet401Response),
-    Status402(models::ApiV3DbwOrdersNewGet402Response),
-    Status403(models::Error),
     Status409(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -208,20 +181,6 @@ pub enum ApiV3DbwOrdersOrderIdMetaGtinPutError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV3DbwOrdersOrderIdMetaImeiPutError {
-    Status400(models::Error),
-    Status401(models::ApiV3DbwOrdersNewGet401Response),
-    Status402(models::ApiV3DbwOrdersNewGet402Response),
-    Status403(models::Error),
-    Status404(models::Error),
-    Status409(models::Error),
-    Status429(models::ApiV3DbwOrdersNewGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`api_v3_dbw_orders_order_id_meta_sgtin_put`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ApiV3DbwOrdersOrderIdMetaSgtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
     Status402(models::ApiV3DbwOrdersNewGet402Response),
@@ -688,41 +647,6 @@ pub async fn api_v3_dbw_orders_new_get(configuration: &configuration::Configurat
     }
 }
 
-/// Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-#[deprecated]
-pub async fn api_v3_dbw_orders_order_id_assemble_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbwOrdersOrderIdAssemblePatchError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_order_id = order_id;
-
-    let uri_str = format!("{}/api/v3/dbw/orders/{orderId}/assemble", configuration.base_path, orderId=p_path_order_id);
-    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ApiV3DbwOrdersOrderIdAssemblePatchError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
 /// Метод отменяет [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW) и переводит в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `cancel` — отменено продавцом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов DBW: <ul>     <li>получение и обновление списка контактов</li>     <li>получение и удаление идентификаторов маркировки</li>     <li>управление сборочными заданиями</li> </ul>    | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Сервисный | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый с секретом | 1 мин | 300 запросов | 200 мс | 20 запросов | | Базовый | 1 ч | 10 запросов | 6 мин | 1 запрос |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов </div> 
 pub async fn api_v3_dbw_orders_order_id_cancel_patch(configuration: &configuration::Configuration, order_id: i64) -> Result<(), Error<ApiV3DbwOrdersOrderIdCancelPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -787,45 +711,6 @@ pub async fn api_v3_dbw_orders_order_id_confirm_patch(configuration: &configurat
     } else {
         let content = resp.text().await?;
         let entity: Option<ApiV3DbwOrdersOrderIdConfirmPatchError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-#[deprecated]
-pub async fn api_v3_dbw_orders_order_id_meta_delete(configuration: &configuration::Configuration, order_id: i64, key: Option<&str>) -> Result<(), Error<ApiV3DbwOrdersOrderIdMetaDeleteError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_order_id = order_id;
-    let p_query_key = key;
-
-    let uri_str = format!("{}/api/v3/dbw/orders/{orderId}/meta", configuration.base_path, orderId=p_path_order_id);
-    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
-
-    if let Some(ref param_value) = p_query_key {
-        req_builder = req_builder.query(&[("key", &param_value.to_string())]);
-    }
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ApiV3DbwOrdersOrderIdMetaDeleteError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
@@ -944,43 +829,6 @@ pub async fn api_v3_dbw_orders_order_id_meta_imei_put(configuration: &configurat
     } else {
         let content = resp.text().await?;
         let entity: Option<ApiV3DbwOrdersOrderIdMetaImeiPutError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-#[deprecated]
-pub async fn api_v3_dbw_orders_order_id_meta_sgtin_put(configuration: &configuration::Configuration, order_id: i64, api_v3_dbw_orders_order_id_meta_sgtin_put_request: Option<models::ApiV3DbwOrdersOrderIdMetaSgtinPutRequest>) -> Result<(), Error<ApiV3DbwOrdersOrderIdMetaSgtinPutError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_order_id = order_id;
-    let p_body_api_v3_dbw_orders_order_id_meta_sgtin_put_request = api_v3_dbw_orders_order_id_meta_sgtin_put_request;
-
-    let uri_str = format!("{}/api/v3/dbw/orders/{orderId}/meta/sgtin", configuration.base_path, orderId=p_path_order_id);
-    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_api_v3_dbw_orders_order_id_meta_sgtin_put_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ApiV3DbwOrdersOrderIdMetaSgtinPutError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

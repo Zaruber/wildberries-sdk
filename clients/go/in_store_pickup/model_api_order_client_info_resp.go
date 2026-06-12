@@ -20,10 +20,6 @@ var _ MappedNullable = &ApiOrderClientInfoResp{}
 // ApiOrderClientInfoResp struct for ApiOrderClientInfoResp
 type ApiOrderClientInfoResp struct {
 	Orders []ApiOrderClientInfo `json:"orders,omitempty"`
-	// Статус сборочного задания, установленный продавцом
-	SupplierStatus *string `json:"supplierStatus,omitempty"`
-	// Статус сборочного задания в системе WB
-	WbStatus *string `json:"wbStatus,omitempty"`
 }
 
 // NewApiOrderClientInfoResp instantiates a new ApiOrderClientInfoResp object
@@ -75,70 +71,6 @@ func (o *ApiOrderClientInfoResp) SetOrders(v []ApiOrderClientInfo) {
 	o.Orders = v
 }
 
-// GetSupplierStatus returns the SupplierStatus field value if set, zero value otherwise.
-func (o *ApiOrderClientInfoResp) GetSupplierStatus() string {
-	if o == nil || IsNil(o.SupplierStatus) {
-		var ret string
-		return ret
-	}
-	return *o.SupplierStatus
-}
-
-// GetSupplierStatusOk returns a tuple with the SupplierStatus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApiOrderClientInfoResp) GetSupplierStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.SupplierStatus) {
-		return nil, false
-	}
-	return o.SupplierStatus, true
-}
-
-// HasSupplierStatus returns a boolean if a field has been set.
-func (o *ApiOrderClientInfoResp) HasSupplierStatus() bool {
-	if o != nil && !IsNil(o.SupplierStatus) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupplierStatus gets a reference to the given string and assigns it to the SupplierStatus field.
-func (o *ApiOrderClientInfoResp) SetSupplierStatus(v string) {
-	o.SupplierStatus = &v
-}
-
-// GetWbStatus returns the WbStatus field value if set, zero value otherwise.
-func (o *ApiOrderClientInfoResp) GetWbStatus() string {
-	if o == nil || IsNil(o.WbStatus) {
-		var ret string
-		return ret
-	}
-	return *o.WbStatus
-}
-
-// GetWbStatusOk returns a tuple with the WbStatus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApiOrderClientInfoResp) GetWbStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.WbStatus) {
-		return nil, false
-	}
-	return o.WbStatus, true
-}
-
-// HasWbStatus returns a boolean if a field has been set.
-func (o *ApiOrderClientInfoResp) HasWbStatus() bool {
-	if o != nil && !IsNil(o.WbStatus) {
-		return true
-	}
-
-	return false
-}
-
-// SetWbStatus gets a reference to the given string and assigns it to the WbStatus field.
-func (o *ApiOrderClientInfoResp) SetWbStatus(v string) {
-	o.WbStatus = &v
-}
-
 func (o ApiOrderClientInfoResp) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -151,12 +83,6 @@ func (o ApiOrderClientInfoResp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Orders) {
 		toSerialize["orders"] = o.Orders
-	}
-	if !IsNil(o.SupplierStatus) {
-		toSerialize["supplierStatus"] = o.SupplierStatus
-	}
-	if !IsNil(o.WbStatus) {
-		toSerialize["wbStatus"] = o.WbStatus
 	}
 	return toSerialize, nil
 }

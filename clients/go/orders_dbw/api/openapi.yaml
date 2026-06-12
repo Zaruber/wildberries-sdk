@@ -356,8 +356,10 @@ paths:
                   $ref: "#/components/examples/IncorrectRequest1"
                 IncorrectRequestBody:
                   $ref: "#/components/examples/IncorrectRequestBody"
+                UploadDataLimit:
+                  $ref: "#/components/examples/UploadDataLimit"
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: "#/components/schemas/_api_marketplace_v3_dbw_orders_client_post_400_response"
           description: Неправильный запрос
         "401":
           content:
@@ -1100,111 +1102,6 @@ paths:
       x-category: marketplace
     servers:
     - url: https://marketplace-api.wildberries.ru
-  /api/v3/dbw/orders/{orderId}/assemble:
-    patch:
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
-      parameters:
-      - description: ID сборочного задания
-        explode: false
-        in: path
-        name: orderId
-        required: true
-        schema:
-          example: 5632423
-          format: int64
-          type: integer
-        style: simple
-      responses:
-        "204":
-          description: Подтверждено
-        "400":
-          content:
-            application/json:
-              examples:
-                IncorrectParameter:
-                  $ref: "#/components/examples/IncorrectParameter"
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Неправильный запрос
-        "401":
-          content:
-            application/problem+json:
-              example:
-                title: unauthorized
-                detail: "token problem; token is malformed: could not base64 decode\
-                  \ signature: illegal base64 data at input byte 84"
-                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
-                requestId: 7b80742415072fe8b6b7f7761f1d1211
-                origin: s2s-api-auth-catalog
-                status: 401
-                statusText: Unauthorized
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
-          description: Не авторизован
-        "402":
-          content:
-            application/problem+json:
-              example:
-                title: payment required
-                detail: wb solution for business has insufficient funds on its balance.
-                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
-          description: Требуется платёж
-        "403":
-          content:
-            application/json:
-              example:
-                code: AccessDenied
-                message: ""
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Доступ запрещён
-        "404":
-          content:
-            application/json:
-              example:
-                code: NotFound
-                message: ""
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Не найдено
-        "409":
-          content:
-            application/json:
-              examples:
-                StatusMismatch:
-                  $ref: "#/components/examples/StatusMismatch"
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Ошибка обновления статуса
-        "429":
-          content:
-            application/problem+json:
-              example:
-                title: too many requests
-                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
-                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
-                requestId: 9d3c02cc698f8b041c661a7c28bed293
-                origin: s2s-api-auth-catalog
-                status: 429
-                statusText: Too Many Requests
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
-          description: Слишком много запросов
-      security:
-      - HeaderApiKey: []
-      summary: Перевести в доставку
-      tags:
-      - Сборочные задания DBW
-      x-readonly-method: false
-      x-category: marketplace
-    servers:
-    - url: https://marketplace-api.wildberries.ru
   /api/marketplace/v3/dbw/orders/meta/details:
     post:
       description: "Метод возвращает идентификаторы маркировки [сборочных заданий\
@@ -1240,7 +1137,7 @@ paths:
           content:
             application/json:
               example:
-                detail: {}
+                detail: null
                 origin: dbs-public-api
                 requestId: f1787bd2d1fdс35d6f537316514у4a05
                 title: IncorrectRequest
@@ -1277,7 +1174,7 @@ paths:
           content:
             application/json:
               example:
-                detail: {}
+                detail: null
                 origin: dbs-public-api
                 requestId: f1787bd2d1fdс35d6f537316514у4a05
                 title: AccessDenied
@@ -1410,110 +1307,6 @@ paths:
     servers:
     - url: https://marketplace-api.wildberries.ru
   /api/v3/dbw/orders/{orderId}/meta:
-    delete:
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
-      parameters:
-      - description: ID сборочного задания
-        explode: false
-        in: path
-        name: orderId
-        required: true
-        schema:
-          example: 5632423
-          format: int64
-          type: integer
-        style: simple
-      - description: "Название идентификатора маркировки для удаления (`imei`, `uin`,\
-          \ `gtin`, `sgtin`). Передаётся только одно значение"
-        explode: true
-        in: query
-        name: key
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "204":
-          description: Удалено
-        "400":
-          content:
-            application/json:
-              examples:
-                IncorrectParameter:
-                  $ref: "#/components/examples/IncorrectParameter"
-                IncorrectRequest:
-                  $ref: "#/components/examples/IncorrectRequest"
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Неправильный запрос
-        "401":
-          content:
-            application/problem+json:
-              example:
-                title: unauthorized
-                detail: "token problem; token is malformed: could not base64 decode\
-                  \ signature: illegal base64 data at input byte 84"
-                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
-                requestId: 7b80742415072fe8b6b7f7761f1d1211
-                origin: s2s-api-auth-catalog
-                status: 401
-                statusText: Unauthorized
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
-          description: Не авторизован
-        "402":
-          content:
-            application/problem+json:
-              example:
-                title: payment required
-                detail: wb solution for business has insufficient funds on its balance.
-                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
-          description: Требуется платёж
-        "403":
-          content:
-            application/json:
-              example:
-                code: AccessDenied
-                message: ""
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Доступ запрещён
-        "409":
-          content:
-            application/json:
-              examples:
-                FailedToUpdateMeta:
-                  $ref: "#/components/examples/FailedToUpdateMeta"
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Ошибка удаления идентификаторов маркировки
-        "429":
-          content:
-            application/problem+json:
-              example:
-                title: too many requests
-                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
-                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
-                requestId: 9d3c02cc698f8b041c661a7c28bed293
-                origin: s2s-api-auth-catalog
-                status: 429
-                statusText: Too Many Requests
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
-          description: Слишком много запросов
-      security:
-      - HeaderApiKey: []
-      summary: Удалить идентификаторы маркировки сборочного задания
-      tags:
-      - Идентификаторы маркировки DBW
-      x-readonly-method: false
-      x-category: marketplace
     get:
       deprecated: true
       description: "Данный метод устарел. Он будет удалён [27 июля](https://dev.wildberries.ru/release-notes?id=508)\n\
@@ -1722,120 +1515,6 @@ paths:
                 $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
           description: Слишком много запросов
       summary: Закрепить коды маркировки Честного знака за сборочными заданиями
-      tags:
-      - Идентификаторы маркировки DBW
-      x-readonly-method: false
-      x-category: marketplace
-    servers:
-    - url: https://marketplace-api.wildberries.ru
-  /api/v3/dbw/orders/{orderId}/meta/sgtin:
-    put:
-      deprecated: true
-      description: |
-        Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
-      parameters:
-      - description: ID сборочного задания
-        explode: false
-        in: path
-        name: orderId
-        required: true
-        schema:
-          example: 5632423
-          format: int64
-          type: integer
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/_api_v3_dbw_orders__orderId__meta_sgtin_put_request"
-      responses:
-        "204":
-          description: Отправлено
-        "400":
-          content:
-            application/json:
-              examples:
-                IncorrectRequestBody:
-                  $ref: "#/components/examples/IncorrectRequestBody"
-                IncorrectRequest:
-                  $ref: "#/components/examples/IncorrectRequest"
-                IncorrectParameter:
-                  $ref: "#/components/examples/IncorrectParameter"
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Неправильный запрос
-        "401":
-          content:
-            application/problem+json:
-              example:
-                title: unauthorized
-                detail: "token problem; token is malformed: could not base64 decode\
-                  \ signature: illegal base64 data at input byte 84"
-                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
-                requestId: 7b80742415072fe8b6b7f7761f1d1211
-                origin: s2s-api-auth-catalog
-                status: 401
-                statusText: Unauthorized
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
-          description: Не авторизован
-        "402":
-          content:
-            application/problem+json:
-              example:
-                title: payment required
-                detail: wb solution for business has insufficient funds on its balance.
-                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_402_response"
-          description: Требуется платёж
-        "403":
-          content:
-            application/json:
-              example:
-                code: AccessDenied
-                message: ""
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Доступ запрещён
-        "404":
-          content:
-            application/json:
-              example:
-                code: NotFound
-                message: ""
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Не найдено
-        "409":
-          content:
-            application/json:
-              examples:
-                FailedToUpdateMeta:
-                  $ref: "#/components/examples/FailedToUpdateMeta"
-              schema:
-                $ref: "#/components/schemas/Error"
-          description: Ошибка добавления идентификаторов маркировки
-        "429":
-          content:
-            application/problem+json:
-              example:
-                title: too many requests
-                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
-                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
-                requestId: 9d3c02cc698f8b041c661a7c28bed293
-                origin: s2s-api-auth-catalog
-                status: 429
-                statusText: Too Many Requests
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
-          description: Слишком много запросов
-      security:
-      - HeaderApiKey: []
-      summary: Закрепить за сборочным заданием код маркировки товара
       tags:
       - Идентификаторы маркировки DBW
       x-readonly-method: false
@@ -2230,6 +1909,13 @@ components:
       value:
         code: IncorrectRequestBody
         message: ""
+    UploadDataLimit:
+      description: Превышено количество ID заказов в запросе
+      value:
+        origin: dbs-public-api
+        title: UploadDataLimit
+        detail: Upload limit exceeded
+        requestId: fd48ee9a-6ff6-446f-b238-5793a9189f1a
     IncorrectRequest:
       value:
         code: IncorrectRequest
@@ -2728,15 +2414,16 @@ components:
       type: object
     api.BatchError:
       example:
-        detail: {}
+        detail: detail
         origin: dbs-public-api
         requestId: f1787bd2d1fdс35d6f537316514у4a05
         title: IncorrectRequest
       properties:
         detail:
           description: Детали ошибки
-          example: {}
-          type: object
+          nullable: true
+          type: string
+          example: null
         origin:
           description: ID внутреннего сервиса WB
           example: dbs-public-api
@@ -2780,6 +2467,7 @@ components:
           description: Список ID сборочных заданий
           items:
             type: integer
+          maxItems: 1000
           type: array
       type: object
     DeliveryDatesRequest:
@@ -3365,6 +3053,18 @@ components:
           nullable: false
           type: array
       type: object
+    _api_marketplace_v3_dbw_orders_client_post_400_response:
+      allOf:
+      - $ref: "#/components/schemas/Error"
+      - $ref: "#/components/schemas/api.BatchError"
+      example:
+        code: code
+        message: message
+        data: "{}"
+        detail: detail
+        origin: dbs-public-api
+        requestId: f1787bd2d1fdс35d6f537316514у4a05
+        title: IncorrectRequest
     _api_v3_dbw_orders_status_post_request:
       properties:
         orders:
@@ -3501,19 +3201,6 @@ components:
       properties:
         meta:
           $ref: "#/components/schemas/Meta"
-      type: object
-    _api_v3_dbw_orders__orderId__meta_sgtin_put_request:
-      properties:
-        sgtins:
-          description: Массив кодов маркировки Честного знака. Допускается от 16 до
-            135 символов для кода одной маркировки
-          items:
-            description: Код маркировки на упаковке. От 16 до 135 символов
-            example: "1234567890123456"
-            type: string
-          maxItems: 24
-          minItems: 1
-          type: array
       type: object
     _api_v3_dbw_orders__orderId__meta_uin_put_request:
       properties:

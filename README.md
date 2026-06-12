@@ -190,14 +190,11 @@ SDK выпускается с security-first процессом:
 - `GET /api/v3/dbw/orders/new` — Получить список новых сборочных заданий
 - `POST /api/v3/dbw/orders/status` — Получить статусы сборочных заданий
 - `POST /api/v3/dbw/orders/stickers` — Получить стикеры сборочных заданий
-- `PATCH /api/v3/dbw/orders/{orderId}/assemble` — Перевести в доставку
 - `PATCH /api/v3/dbw/orders/{orderId}/cancel` — Отменить сборочное задание
 - `PATCH /api/v3/dbw/orders/{orderId}/confirm` — Перевести на сборку
 - `GET /api/v3/dbw/orders/{orderId}/meta` — Получить идентификаторы маркировки сборочного задания
-- `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания
 - `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
 - `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
 ### Заказы DBS (`05-orders-dbs.yaml`)

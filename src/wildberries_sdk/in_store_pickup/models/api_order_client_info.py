@@ -27,10 +27,10 @@ class ApiOrderClientInfo(BaseModel):
     """
     ApiOrderClientInfo
     """ # noqa: E501
-    phone: Optional[StrictStr] = Field(default=None, description="Телефон для связи с покупателем. Чтобы связаться с покупателем наберите этот номер и введите добавочный код. Данный номер не является прямым номером покупателя. ")
-    first_name: Optional[StrictStr] = Field(default=None, description="Имя покупателя", alias="firstName")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderID")
-    phone_code: Optional[StrictInt] = Field(default=None, description="Добавочный код", alias="phoneCode")
+    phone: Optional[StrictStr] = Field(default=None, description="Телефон для связи с покупателем. Чтобы связаться с покупателем наберите этот номер и введите добавочный код. Данный номер не является прямым номером покупателя ", json_schema_extra={"examples": ["+7111111111"]})
+    first_name: Optional[StrictStr] = Field(default=None, description="Имя покупателя", alias="firstName", json_schema_extra={"examples": ["Ольга"]})
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderID", json_schema_extra={"examples": [4564152]})
+    phone_code: Optional[StrictInt] = Field(default=None, description="Добавочный код", alias="phoneCode", json_schema_extra={"examples": [3535]})
     __properties: ClassVar[List[str]] = ["phone", "firstName", "orderID", "phoneCode"]
 
     model_config = ConfigDict(

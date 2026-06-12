@@ -2122,42 +2122,47 @@ components:
       type: object
     api.OrderClientInfo:
       example:
-        phone: "+71111111111"
-        firstName: Иван
-        orderID: 1234567
-        phoneCode: 1234567
+        phone: "+7111111111"
+        firstName: Ольга
+        orderID: 4564152
+        phoneCode: 3535
       properties:
         phone:
           description: |
             Телефон для связи с покупателем. Чтобы связаться с покупателем наберите
             этот номер и введите добавочный код. Данный номер не является прямым
-            номером покупателя.
+            номером покупателя
+          example: "+7111111111"
           type: string
         firstName:
           description: Имя покупателя
+          example: Ольга
           type: string
         orderID:
           description: ID сборочного задания
+          example: 4564152
           type: integer
         phoneCode:
           description: Добавочный код
+          example: 3535
           type: integer
       type: object
     api.OrderClientInfoResp:
       example:
-        supplierStatus: confirm
-        wbStatus: waiting
+        orders:
+        - phone: "+7111111111"
+          firstName: Ольга
+          orderID: 4564152
+          phoneCode: 3535
+        - phone: "+7111111111"
+          firstName: Ольга
+          orderID: 4564152
+          phoneCode: 3535
       properties:
         orders:
           items:
             $ref: "#/components/schemas/api.OrderClientInfo"
           type: array
-        supplierStatus:
-          description: "Статус сборочного задания, установленный продавцом"
-          type: string
-        wbStatus:
-          description: Статус сборочного задания в системе WB
-          type: string
       type: object
     api.Orders:
       example:

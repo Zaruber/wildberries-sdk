@@ -3,6 +3,7 @@
 export * from './ApiBatchError';
 export * from './ApiBatchErrorResponse';
 export * from './ApiBatchErrorResponseMetaDetailsInner';
+export * from './ApiMarketplaceV3DbwOrdersClientPost400Response';
 export * from './ApiMetaDeleteResponses';
 export * from './ApiMetaDeleteResponsesResultsInner';
 export * from './ApiMetaDeleteResponsesResultsInnerErrorsInner';
@@ -23,7 +24,6 @@ export * from './ApiV3DbwOrdersNewGet402Response';
 export * from './ApiV3DbwOrdersOrderIdMetaGet200Response';
 export * from './ApiV3DbwOrdersOrderIdMetaGtinPutRequest';
 export * from './ApiV3DbwOrdersOrderIdMetaImeiPutRequest';
-export * from './ApiV3DbwOrdersOrderIdMetaSgtinPutRequest';
 export * from './ApiV3DbwOrdersOrderIdMetaUinPutRequest';
 export * from './ApiV3DbwOrdersStatusPost200Response';
 export * from './ApiV3DbwOrdersStatusPost200ResponseOrdersInner';

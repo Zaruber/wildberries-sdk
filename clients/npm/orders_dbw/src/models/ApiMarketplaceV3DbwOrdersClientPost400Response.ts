@@ -16,52 +16,73 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface ApiBatchError
+ * @interface ApiMarketplaceV3DbwOrdersClientPost400Response
  */
-export interface ApiBatchError {
+export interface ApiMarketplaceV3DbwOrdersClientPost400Response {
+    /**
+     * Код ошибки
+     * @type {string}
+     * @memberof ApiMarketplaceV3DbwOrdersClientPost400Response
+     */
+    code?: string;
+    /**
+     * Описание ошибки
+     * @type {string}
+     * @memberof ApiMarketplaceV3DbwOrdersClientPost400Response
+     */
+    message?: string;
+    /**
+     * Дополнительные данные ошибки
+     * @type {object}
+     * @memberof ApiMarketplaceV3DbwOrdersClientPost400Response
+     */
+    data?: object | null;
     /**
      * Детали ошибки
      * @type {string}
-     * @memberof ApiBatchError
+     * @memberof ApiMarketplaceV3DbwOrdersClientPost400Response
      */
     detail?: string | null;
     /**
      * ID внутреннего сервиса WB
      * @type {string}
-     * @memberof ApiBatchError
+     * @memberof ApiMarketplaceV3DbwOrdersClientPost400Response
      */
     origin?: string;
     /**
      * Уникальный ID запроса
      * @type {string}
-     * @memberof ApiBatchError
+     * @memberof ApiMarketplaceV3DbwOrdersClientPost400Response
      */
     requestId?: string;
     /**
      * Заголовок ошибки
      * @type {string}
-     * @memberof ApiBatchError
+     * @memberof ApiMarketplaceV3DbwOrdersClientPost400Response
      */
     title?: string;
 }
 
 /**
- * Check if a given object implements the ApiBatchError interface.
+ * Check if a given object implements the ApiMarketplaceV3DbwOrdersClientPost400Response interface.
  */
-export function instanceOfApiBatchError(value: object): value is ApiBatchError {
+export function instanceOfApiMarketplaceV3DbwOrdersClientPost400Response(value: object): value is ApiMarketplaceV3DbwOrdersClientPost400Response {
     return true;
 }
 
-export function ApiBatchErrorFromJSON(json: any): ApiBatchError {
-    return ApiBatchErrorFromJSONTyped(json, false);
+export function ApiMarketplaceV3DbwOrdersClientPost400ResponseFromJSON(json: any): ApiMarketplaceV3DbwOrdersClientPost400Response {
+    return ApiMarketplaceV3DbwOrdersClientPost400ResponseFromJSONTyped(json, false);
 }
 
-export function ApiBatchErrorFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiBatchError {
+export function ApiMarketplaceV3DbwOrdersClientPost400ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiMarketplaceV3DbwOrdersClientPost400Response {
     if (json == null) {
         return json;
     }
     return {
         
+        'code': json['code'] == null ? undefined : json['code'],
+        'message': json['message'] == null ? undefined : json['message'],
+        'data': json['data'] == null ? undefined : json['data'],
         'detail': json['detail'] == null ? undefined : json['detail'],
         'origin': json['origin'] == null ? undefined : json['origin'],
         'requestId': json['requestId'] == null ? undefined : json['requestId'],
@@ -69,17 +90,20 @@ export function ApiBatchErrorFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
-export function ApiBatchErrorToJSON(json: any): ApiBatchError {
-    return ApiBatchErrorToJSONTyped(json, false);
+export function ApiMarketplaceV3DbwOrdersClientPost400ResponseToJSON(json: any): ApiMarketplaceV3DbwOrdersClientPost400Response {
+    return ApiMarketplaceV3DbwOrdersClientPost400ResponseToJSONTyped(json, false);
 }
 
-export function ApiBatchErrorToJSONTyped(value?: ApiBatchError | null, ignoreDiscriminator: boolean = false): any {
+export function ApiMarketplaceV3DbwOrdersClientPost400ResponseToJSONTyped(value?: ApiMarketplaceV3DbwOrdersClientPost400Response | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
 
     return {
         
+        'code': value['code'],
+        'message': value['message'],
+        'data': value['data'],
         'detail': value['detail'],
         'origin': value['origin'],
         'requestId': value['requestId'],

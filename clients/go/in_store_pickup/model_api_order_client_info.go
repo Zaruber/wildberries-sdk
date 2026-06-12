@@ -19,7 +19,7 @@ var _ MappedNullable = &ApiOrderClientInfo{}
 
 // ApiOrderClientInfo struct for ApiOrderClientInfo
 type ApiOrderClientInfo struct {
-	// Телефон для связи с покупателем. Чтобы связаться с покупателем наберите этот номер и введите добавочный код. Данный номер не является прямым номером покупателя. 
+	// Телефон для связи с покупателем. Чтобы связаться с покупателем наберите этот номер и введите добавочный код. Данный номер не является прямым номером покупателя 
 	Phone *string `json:"phone,omitempty"`
 	// Имя покупателя
 	FirstName *string `json:"firstName,omitempty"`

@@ -57,7 +57,7 @@ class ApiBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $openAPITypes = [
-        'detail' => 'object',
+        'detail' => 'string',
         'origin' => 'string',
         'request_id' => 'string',
         'title' => 'string'
@@ -83,7 +83,7 @@ class ApiBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'detail' => false,
+        'detail' => true,
         'origin' => false,
         'request_id' => false,
         'title' => false
@@ -313,7 +313,7 @@ class ApiBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets detail
      *
-     * @return object|null
+     * @return string|null
      */
     public function getDetail()
     {
@@ -323,14 +323,21 @@ class ApiBatchError implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets detail
      *
-     * @param object|null $detail Детали ошибки
+     * @param string|null $detail Детали ошибки
      *
      * @return self
      */
     public function setDetail($detail)
     {
         if (is_null($detail)) {
-            throw new \InvalidArgumentException('non-nullable detail cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'detail');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('detail', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['detail'] = $detail;
 

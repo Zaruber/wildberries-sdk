@@ -12,7 +12,16 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ApiBatchError {
+pub struct ApiMarketplaceV3DbwOrdersClientPost400Response {
+    /// Код ошибки
+    #[serde(rename = "code", skip_serializing_if = "Option::is_none")]
+    pub code: Option<String>,
+    /// Описание ошибки
+    #[serde(rename = "message", skip_serializing_if = "Option::is_none")]
+    pub message: Option<String>,
+    /// Дополнительные данные ошибки
+    #[serde(rename = "data", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub data: Option<Option<serde_json::Value>>,
     /// Детали ошибки
     #[serde(rename = "detail", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub detail: Option<Option<String>>,
@@ -27,9 +36,12 @@ pub struct ApiBatchError {
     pub title: Option<String>,
 }
 
-impl ApiBatchError {
-    pub fn new() -> ApiBatchError {
-        ApiBatchError {
+impl ApiMarketplaceV3DbwOrdersClientPost400Response {
+    pub fn new() -> ApiMarketplaceV3DbwOrdersClientPost400Response {
+        ApiMarketplaceV3DbwOrdersClientPost400Response {
+            code: None,
+            message: None,
+            data: None,
             detail: None,
             origin: None,
             request_id: None,

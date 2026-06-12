@@ -15,20 +15,12 @@ use serde::{Deserialize, Serialize};
 pub struct ApiOrderClientInfoResp {
     #[serde(rename = "orders", skip_serializing_if = "Option::is_none")]
     pub orders: Option<Vec<models::ApiOrderClientInfo>>,
-    /// Статус сборочного задания, установленный продавцом
-    #[serde(rename = "supplierStatus", skip_serializing_if = "Option::is_none")]
-    pub supplier_status: Option<String>,
-    /// Статус сборочного задания в системе WB
-    #[serde(rename = "wbStatus", skip_serializing_if = "Option::is_none")]
-    pub wb_status: Option<String>,
 }
 
 impl ApiOrderClientInfoResp {
     pub fn new() -> ApiOrderClientInfoResp {
         ApiOrderClientInfoResp {
             orders: None,
-            supplier_status: None,
-            wb_status: None,
         }
     }
 }

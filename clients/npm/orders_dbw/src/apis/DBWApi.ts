@@ -19,6 +19,11 @@ import {
     ApiBatchErrorToJSON,
 } from '../models/ApiBatchError';
 import {
+    type ApiMarketplaceV3DbwOrdersClientPost400Response,
+    ApiMarketplaceV3DbwOrdersClientPost400ResponseFromJSON,
+    ApiMarketplaceV3DbwOrdersClientPost400ResponseToJSON,
+} from '../models/ApiMarketplaceV3DbwOrdersClientPost400Response';
+import {
     type ApiMetaDeleteResponses,
     ApiMetaDeleteResponsesFromJSON,
     ApiMetaDeleteResponsesToJSON,
@@ -83,11 +88,6 @@ import {
     ApiV3DbwOrdersOrderIdMetaImeiPutRequestFromJSON,
     ApiV3DbwOrdersOrderIdMetaImeiPutRequestToJSON,
 } from '../models/ApiV3DbwOrdersOrderIdMetaImeiPutRequest';
-import {
-    type ApiV3DbwOrdersOrderIdMetaSgtinPutRequest,
-    ApiV3DbwOrdersOrderIdMetaSgtinPutRequestFromJSON,
-    ApiV3DbwOrdersOrderIdMetaSgtinPutRequestToJSON,
-} from '../models/ApiV3DbwOrdersOrderIdMetaSgtinPutRequest';
 import {
     type ApiV3DbwOrdersOrderIdMetaUinPutRequest,
     ApiV3DbwOrdersOrderIdMetaUinPutRequestFromJSON,
@@ -174,21 +174,12 @@ export interface ApiV3DbwOrdersGetRequest {
     dateTo: number;
 }
 
-export interface ApiV3DbwOrdersOrderIdAssemblePatchRequest {
-    orderId: number;
-}
-
 export interface ApiV3DbwOrdersOrderIdCancelPatchRequest {
     orderId: number;
 }
 
 export interface ApiV3DbwOrdersOrderIdConfirmPatchRequest {
     orderId: number;
-}
-
-export interface ApiV3DbwOrdersOrderIdMetaDeleteRequest {
-    orderId: number;
-    key?: string;
 }
 
 export interface ApiV3DbwOrdersOrderIdMetaGetRequest {
@@ -203,11 +194,6 @@ export interface ApiV3DbwOrdersOrderIdMetaGtinPutOperationRequest {
 export interface ApiV3DbwOrdersOrderIdMetaImeiPutOperationRequest {
     orderId: number;
     apiV3DbwOrdersOrderIdMetaImeiPutRequest?: ApiV3DbwOrdersOrderIdMetaImeiPutRequest;
-}
-
-export interface ApiV3DbwOrdersOrderIdMetaSgtinPutOperationRequest {
-    orderId: number;
-    apiV3DbwOrdersOrderIdMetaSgtinPutRequest?: ApiV3DbwOrdersOrderIdMetaSgtinPutRequest;
 }
 
 export interface ApiV3DbwOrdersOrderIdMetaUinPutOperationRequest {
@@ -726,59 +712,6 @@ export class DBWApi extends runtime.BaseAPI {
     }
 
     /**
-     * Creates request options for apiV3DbwOrdersOrderIdAssemblePatch without sending the request
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdAssemblePatchRequestOpts(requestParameters: ApiV3DbwOrdersOrderIdAssemblePatchRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbwOrdersOrderIdAssemblePatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbw/orders/{orderId}/assemble`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-     * Перевести в доставку
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdAssemblePatchRaw(requestParameters: ApiV3DbwOrdersOrderIdAssemblePatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbwOrdersOrderIdAssemblePatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-     * Перевести в доставку
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdAssemblePatch(requestParameters: ApiV3DbwOrdersOrderIdAssemblePatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbwOrdersOrderIdAssemblePatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
      * Creates request options for apiV3DbwOrdersOrderIdCancelPatch without sending the request
      */
     async apiV3DbwOrdersOrderIdCancelPatchRequestOpts(requestParameters: ApiV3DbwOrdersOrderIdCancelPatchRequest): Promise<runtime.RequestOpts> {
@@ -876,63 +809,6 @@ export class DBWApi extends runtime.BaseAPI {
      */
     async apiV3DbwOrdersOrderIdConfirmPatch(requestParameters: ApiV3DbwOrdersOrderIdConfirmPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbwOrdersOrderIdConfirmPatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbwOrdersOrderIdMetaDelete without sending the request
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdMetaDeleteRequestOpts(requestParameters: ApiV3DbwOrdersOrderIdMetaDeleteRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbwOrdersOrderIdMetaDelete().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['key'] != null) {
-            queryParameters['key'] = requestParameters['key'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbw/orders/{orderId}/meta`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-     * Удалить идентификаторы маркировки сборочного задания
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdMetaDeleteRaw(requestParameters: ApiV3DbwOrdersOrderIdMetaDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbwOrdersOrderIdMetaDeleteRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-     * Удалить идентификаторы маркировки сборочного задания
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdMetaDelete(requestParameters: ApiV3DbwOrdersOrderIdMetaDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbwOrdersOrderIdMetaDeleteRaw(requestParameters, initOverrides);
     }
 
     /**
@@ -1093,62 +969,6 @@ export class DBWApi extends runtime.BaseAPI {
      */
     async apiV3DbwOrdersOrderIdMetaImeiPut(requestParameters: ApiV3DbwOrdersOrderIdMetaImeiPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV3DbwOrdersOrderIdMetaImeiPutRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for apiV3DbwOrdersOrderIdMetaSgtinPut without sending the request
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdMetaSgtinPutRequestOpts(requestParameters: ApiV3DbwOrdersOrderIdMetaSgtinPutOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['orderId'] == null) {
-            throw new runtime.RequiredError(
-                'orderId',
-                'Required parameter "orderId" was null or undefined when calling apiV3DbwOrdersOrderIdMetaSgtinPut().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/dbw/orders/{orderId}/meta/sgtin`;
-        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ApiV3DbwOrdersOrderIdMetaSgtinPutRequestToJSON(requestParameters['apiV3DbwOrdersOrderIdMetaSgtinPutRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-     * Закрепить за сборочным заданием код маркировки товара
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdMetaSgtinPutRaw(requestParameters: ApiV3DbwOrdersOrderIdMetaSgtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.apiV3DbwOrdersOrderIdMetaSgtinPutRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517) 
-     * Закрепить за сборочным заданием код маркировки товара
-     * @deprecated
-     */
-    async apiV3DbwOrdersOrderIdMetaSgtinPut(requestParameters: ApiV3DbwOrdersOrderIdMetaSgtinPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiV3DbwOrdersOrderIdMetaSgtinPutRaw(requestParameters, initOverrides);
     }
 
     /**

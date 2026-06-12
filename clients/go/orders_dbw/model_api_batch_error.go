@@ -20,7 +20,7 @@ var _ MappedNullable = &ApiBatchError{}
 // ApiBatchError struct for ApiBatchError
 type ApiBatchError struct {
 	// Детали ошибки
-	Detail map[string]interface{} `json:"detail,omitempty"`
+	Detail NullableString `json:"detail,omitempty"`
 	// ID внутреннего сервиса WB
 	Origin *string `json:"origin,omitempty"`
 	// Уникальный ID запроса
@@ -46,36 +46,46 @@ func NewApiBatchErrorWithDefaults() *ApiBatchError {
 	return &this
 }
 
-// GetDetail returns the Detail field value if set, zero value otherwise.
-func (o *ApiBatchError) GetDetail() map[string]interface{} {
-	if o == nil || IsNil(o.Detail) {
-		var ret map[string]interface{}
+// GetDetail returns the Detail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ApiBatchError) GetDetail() string {
+	if o == nil || IsNil(o.Detail.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Detail
+	return *o.Detail.Get()
 }
 
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiBatchError) GetDetailOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Detail) {
-		return map[string]interface{}{}, false
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ApiBatchError) GetDetailOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Detail, true
+	return o.Detail.Get(), o.Detail.IsSet()
 }
 
 // HasDetail returns a boolean if a field has been set.
 func (o *ApiBatchError) HasDetail() bool {
-	if o != nil && !IsNil(o.Detail) {
+	if o != nil && o.Detail.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDetail gets a reference to the given map[string]interface{} and assigns it to the Detail field.
-func (o *ApiBatchError) SetDetail(v map[string]interface{}) {
-	o.Detail = v
+// SetDetail gets a reference to the given NullableString and assigns it to the Detail field.
+func (o *ApiBatchError) SetDetail(v string) {
+	o.Detail.Set(&v)
+}
+// SetDetailNil sets the value for Detail to be an explicit nil
+func (o *ApiBatchError) SetDetailNil() {
+	o.Detail.Set(nil)
+}
+
+// UnsetDetail ensures that no value is present for Detail, not even an explicit nil
+func (o *ApiBatchError) UnsetDetail() {
+	o.Detail.Unset()
 }
 
 // GetOrigin returns the Origin field value if set, zero value otherwise.
@@ -184,8 +194,8 @@ func (o ApiBatchError) MarshalJSON() ([]byte, error) {
 
 func (o ApiBatchError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Detail) {
-		toSerialize["detail"] = o.Detail
+	if o.Detail.IsSet() {
+		toSerialize["detail"] = o.Detail.Get()
 	}
 	if !IsNil(o.Origin) {
 		toSerialize["origin"] = o.Origin

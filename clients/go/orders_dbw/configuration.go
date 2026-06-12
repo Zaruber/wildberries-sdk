@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.105/go",
+		UserAgent:        "OpenAPI-Generator/0.1.106/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -152,12 +152,6 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"DBWAPIService.ApiV3DbwOrdersOrderIdAssemblePatch": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
 			"DBWAPIService.ApiV3DbwOrdersOrderIdCancelPatch": {
 				{
 					URL: "https://marketplace-api.wildberries.ru",
@@ -165,12 +159,6 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DBWAPIService.ApiV3DbwOrdersOrderIdConfirmPatch": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBWAPIService.ApiV3DbwOrdersOrderIdMetaDelete": {
 				{
 					URL: "https://marketplace-api.wildberries.ru",
 					Description: "No description provided",
@@ -189,12 +177,6 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DBWAPIService.ApiV3DbwOrdersOrderIdMetaImeiPut": {
-				{
-					URL: "https://marketplace-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DBWAPIService.ApiV3DbwOrdersOrderIdMetaSgtinPut": {
 				{
 					URL: "https://marketplace-api.wildberries.ru",
 					Description: "No description provided",
