@@ -1102,24 +1102,23 @@ components:
       properties:
         phone:
           type: string
+          example: '+7111111111'
           description: |
             Телефон для связи с покупателем. Чтобы связаться с покупателем наберите
             этот номер и введите добавочный код. Данный номер не является прямым
-            номером покупателя.
+            номером покупателя
         firstName:
           type: string
           description: Имя покупателя
+          example: Ольга
         orderID:
           type: integer
+          example: 4564152
           description: ID сборочного задания
         phoneCode:
           type: integer
+          example: 3535
           description: Добавочный код
-      example:
-        phone: '+71111111111'
-        firstName: Иван
-        orderID: 1234567
-        phoneCode: 1234567
     api.OrderClientInfoResp:
       type: object
       properties:
@@ -1127,15 +1126,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/api.OrderClientInfo'
-        supplierStatus:
-          type: string
-          description: Статус сборочного задания, установленный продавцом
-        wbStatus:
-          type: string
-          description: Статус сборочного задания в системе WB
-      example:
-        supplierStatus: confirm
-        wbStatus: waiting
     api.Orders:
       type: object
       properties:
