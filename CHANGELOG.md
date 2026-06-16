@@ -1,6 +1,14 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.06.16)
+- Orders FBS: уточнено описание статуса валидации маркировки `sgtinWithdrawn` — теперь «Выбыл. Проверка не пройдена» (вместо «Списан. Проверка не пройдена»)
+- Самовывоз (Click&Collect) / Идентификаторы маркировки: добавлен новый метод `POST /api/marketplace/v3/click-collect/orders/meta/details` для получения идентификаторов маркировки сборочных заданий со статусами их проверки; ответ — `api.OrdersMetaDetailsResponse`
+- Самовывоз (Click&Collect) / Идентификаторы маркировки: метод `POST /api/marketplace/v3/click-collect/orders/meta/info` помечен как `deprecated` и будет удалён 15 июля; добавлено явное предупреждение в описании
+- Самовывоз (Click&Collect) / Идентификаторы маркировки: обновлены ссылки в описаниях методов удаления/закрепления маркировок (sgtin/uin/imei/gtin) на новый endpoint `/meta/details` вместо `/meta/info`
+- Самовывоз (Click&Collect) / Идентификаторы маркировки: для нового метода получения деталей добавано описание лимитов — 150 запросов/мин на аккаунт (интервал 400 мс, всплеск 20), запросы с 4XX считаются как 10
+- Самовывоз (Click&Collect) / Схемы: добавлены `api.MetaDetailsResponse`, `api.OrdersMetaDetailsResponse` и `MetaDetailsErrors` (детализация ошибок валидации по ключам `imei/uin/sgtin/gtin/expiration/customsDeclaration` с полями `key`, `value`, `decision`)
+
 ### Changed (2026.06.12)
 - Orders FBS: в описаниях/ошибках по УИН заменена формулировка «спецификация с договором на поставку» на «спецификация с договором на доставку» (в т.ч. для `uinNotFound` и рекомендаций по повторному добавлению УИН).
 - Orders DBW: удалён устаревший endpoint `PATCH /api/v3/dbw/orders/{orderId}/assemble` (перевод в доставку; ранее помечен deprecated и планировался к удалению 5 июня).
