@@ -128,7 +128,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/api.StatusSetResponses'
+                $ref: '#/components/schemas/api.MetaDetailsResponse'
         '400':
           $ref: '#/components/responses/IncorrectRequest'
         '401':
@@ -493,7 +493,7 @@ paths:
           $ref: '#/components/responses/AccessDeniedBatch'
         '429':
           $ref: '#/components/responses/429'
-  /api/marketplace/v3/click-collect/orders/meta/info:
+  /api/marketplace/v3/click-collect/orders/meta/details:
     post:
       x-readonly-method: true
       x-category: marketplace
@@ -501,10 +501,49 @@ paths:
         - Идентификаторы маркировки Самовывоз
       summary: Получить идентификаторы маркировки сборочных заданий
       description: |
-        Метод возвращает идентификаторы маркировки [сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz).
-        <br><br>
+        Метод возвращает [идентификаторы маркировки](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) сборочных заданий и статусы их проверки.
+
         Перечень идентификаторов маркировки, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1new/get), поле `requiredMeta`.
-        <br><br>
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 150 запросов | 400 мс | 20 запросов |
+
+        Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов
+        </div>
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/api.OrdersRequestV2'
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.OrdersMetaDetailsResponse'
+        '400':
+          $ref: '#/components/responses/IncorrectRequest'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/AccessDeniedBatch'
+        '429':
+          $ref: '#/components/responses/429'
+  /api/marketplace/v3/click-collect/orders/meta/info:
+    post:
+      x-readonly-method: true
+      x-category: marketplace
+      tags:
+        - Идентификаторы маркировки Самовывоз
+      summary: Получить идентификаторы маркировки сборочных заданий
+      deprecated: true
+      description: |
+        Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=536)
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления идентификаторов маркировки Самовывоз</strong>:
@@ -545,7 +584,7 @@ paths:
         - Идентификаторы маркировки Самовывоз
       summary: Удалить идентификаторы маркировки сборочных заданий
       description: |
-        Метод удаляет значения указанных [идентификаторов маркировки](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) для нескольких сборочных заданий.
+        Метод удаляет значения указанных [идентификаторов маркировки](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1details/post) для нескольких сборочных заданий.
         <br><br>
         Одним запросом можно удалить идентификаторы маркировки только одного типа: `imei`, `uin`, `gtin` или `sgtin`.
 
@@ -588,10 +627,10 @@ paths:
         - Идентификаторы маркировки Самовывоз
       summary: Закрепить коды маркировки Честного знака за сборочными заданиями
       description: |
-        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки Честного знака можно, только если в [идентификаторах маркировки сборочного задания](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`.
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [идентификаторах маркировки](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки Честного знака можно, только если в [идентификаторах маркировки сборочного задания](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`.
         <br><br>
-        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post).
+        Получить загруженные маркировки можно в [идентификаторах маркировки сборочного задания](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1details/post).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления идентификаторов маркировки Самовывоз</strong>:
@@ -633,7 +672,7 @@ paths:
         - Идентификаторы маркировки Самовывоз
       summary: Закрепить УИН за сборочными заданиями
       description: |
-        Метод обновляет УИН, уникальные идентификационные номера, в [идентификаторах маркировки сборочных заданий](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post). У одного сборочного задания может быть
+        Метод обновляет УИН, уникальные идентификационные номера, в [идентификаторах маркировки сборочных заданий](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1details/post). У одного сборочного задания может быть
         только один УИН. Добавлять УИН можно только для сборочных заданий в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post)
         `confirm` и доставка которых осуществляется силами WB.
 
@@ -677,7 +716,7 @@ paths:
         - Идентификаторы маркировки Самовывоз
       summary: Закрепить IMEI за сборочными заданиями
       description: |
-        Метод обновляет IMEI в [идентификаторах маркировки сборочных заданий](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post). У одного сборочного задания может
+        Метод обновляет IMEI в [идентификаторах маркировки сборочных заданий](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1details/post). У одного сборочного задания может
         быть только один IMEI. Добавлять IMEI можно только для сборочных заданий в
         [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm`, если их доставка осуществляется силами WB.
 
@@ -721,7 +760,7 @@ paths:
         - Идентификаторы маркировки Самовывоз
       summary: Закрепить GTIN за сборочными заданиями
       description: |
-        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [идентификаторах маркировки](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1info/post) нескольких сборочных
+        Метод обновляет GTIN, уникальный ID товара в Беларуси, в [идентификаторах маркировки](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers/paths/~1api~1marketplace~1v3~1click-collect~1orders~1meta~1details/post) нескольких сборочных
         заданий. У одного сборочного задания может быть только один GTIN.
         Добавлять GTIN можно только для сборочных заданий в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1marketplace~1v3~1click-collect~1orders~1status~1info/post) `confirm` и
         доставка которых осуществляется силами WB.
@@ -1338,6 +1377,7 @@ components:
           example:
             - 123456
             - 234567
+            - 345678
           maxItems: 1000
           type: array
           items:
@@ -1385,6 +1425,115 @@ components:
             $ref: '#/components/schemas/api.BatchErrorResponse'
           type: array
           description: Детали ошибки
+    api.MetaDetailsResponse:
+      example:
+        requestId: 03615778-eb9e-4f55-b4O4-fd3ac0fad2сc
+        results:
+          - orderId: 234567
+            isError: false
+          - orderId: 123456
+            isError: true
+            errors:
+              - code: 404
+                detail: NotFound
+          - orderId: 345678
+            isError: true
+            errors:
+              - code: 409
+                detail: MetaValidationFail
+                metaDetails:
+                  - key: imei
+                    value: '359876543210925'
+                    decision: imeiAlreadySold
+      properties:
+        requestId:
+          description: Уникальный ID запроса
+          example: f1787bd2d1fdс35d6f537316514у4a05
+        results:
+          items:
+            type: object
+            required:
+              - orderId
+              - isError
+            properties:
+              orderId:
+                type: integer
+                description: ID сборочного задания
+              isError:
+                type: boolean
+                description: Есть ли ошибки
+              errors:
+                items:
+                  required:
+                    - code
+                    - detail
+                  properties:
+                    code:
+                      type: integer
+                      description: Код ошибки
+                    detail:
+                      type: string
+                      description: |
+                        - `NotFound` — сборочное задание не найдено
+                        - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
+                        - `MetaValidationFail` — идентификаторы маркировки не прошли проверку
+                    metaDetails:
+                      description: Ошибки проверки идентификаторов маркировки
+                      $ref: '#/components/schemas/MetaDetailsErrors'
+                      type: array
+                  type: object
+                type: array
+                description: Детали ошибки
+      type: object
+      required:
+        - requestId
+        - results
+    MetaDetailsErrors:
+      type: array
+      description: Ошибки проверки идентификаторов маркировки
+      items:
+        type: object
+        properties:
+          key:
+            type: string
+            example: uin
+            description: Идентификатор маркировки
+          value:
+            nullable: true
+            type: string
+            example: null
+            description: Значение идентификатора маркировки
+          decision:
+            type: string
+            example: uinMaySell
+            description: |
+              Ошибки проверки идентификаторов маркировки. <br>
+              - `imei`
+                - `pending` — Проверка маркировки продолжается. Дождитесь изменения статуса проверки
+                - `required` — Маркировка обязательна и не закреплена за сборочным заданием
+                - `imeiInvalidFormat` — Указан неверный формат маркировки
+                - `imeiAlreadySold` — Товар с этим IMEI уже продан
+              - `uin`
+                - `required` — Маркировка обязательна и не закреплена за сборочным заданием
+              - `sgtin`
+                - `pending` — Проверка маркировки продолжается. Дождитесь изменения статуса проверки
+                - `required` — Маркировка обязательна и не закреплена за сборочным заданием
+                - `sgtinInvalidFormat` — Указан неверный формат маркировки
+                - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)
+                - `sgtinEmitted` —  Маркировка эмитирована
+                - `sgtinApplied` — Не пройдена процедура Ввод в оборот
+                - `sgtinWrittenOff` — Списан
+                - `sgtinRetired` — Выбыл
+                - `sgtinWithdrawn` — Выбыл
+                - `sgtinDisaggregated` — Расформирован
+                - `sgtinDisaggregation` — Расформирован
+                - `sgtinAppliedNotPaid` — Не оплачен
+              - `gtin`
+                - `required` — Маркировка обязательна и не закреплена за сборочным заданием
+              - `expiration`
+                - `required` — Маркировка обязательна и не закреплена за сборочным заданием
+              - `customsDeclaration`
+                - `required` — Маркировка обязательна и не закреплена за сборочным заданием
     api.OrdersResponses:
       example:
         requestId: 03615778-eb9e-4f55-b4O4-fd3ac0fad2сc
@@ -1508,6 +1657,115 @@ components:
         wbStatus:
           type: string
           description: Статус сборочного задания в системе Wildberries
+    api.OrdersMetaDetailsResponse:
+      type: object
+      required:
+        - requestId
+        - orders
+      properties:
+        requestId:
+          type: string
+          description: Уникальный ID запроса
+          example: f1787bd2d1fdс35d6f537316514у4a05
+        orders:
+          type: array
+          description: Идентификаторы маркировки сборочных заданий и статусы их валидации
+          items:
+            type: object
+            required:
+              - isError
+              - metaDetails
+              - orderId
+            properties:
+              orderId:
+                type: integer
+                example: 123456
+                description: ID сборочного задания
+              isError:
+                type: boolean
+                description: Есть ли ошибки
+                example: false
+              errors:
+                type: array
+                example: []
+                description: Информация об ошибке
+                items:
+                  type: object
+                  required:
+                    - code
+                    - detail
+                  properties:
+                    code:
+                      type: integer
+                      description: Код ошибки
+                      example: 404
+                    detail:
+                      type: string
+                      example: NotFound
+                      description: Дополнительная информация об ошибке
+              metaDetails:
+                type: array
+                description: Идентификаторы маркировки и статусы их валидации
+                items:
+                  type: object
+                  required:
+                    - decision
+                    - key
+                  properties:
+                    key:
+                      type: string
+                      example: imei
+                      description: Идентификатор маркировки
+                    value:
+                      type: string
+                      nullable: true
+                      description: Значение идентификатора маркировки
+                      example: '359876543210025'
+                    decision:
+                      type: string
+                      example: imeiInvalidFormat
+                      description: |
+                        Статусы проверки идентификатора маркировки. <br>
+                        - `imei`
+                          - `filled` — Маркировка закреплена за сборочным заданием, проверка не требуется
+                          - `optional` — Маркировка не закреплена за сборочным заданием и не обязательна. Проверка пройдена
+                          - `deadlineExceeded` — Проверка маркировки не завершена и будет продолжена. Проверка может завершиться и успешно, и неуспешно
+                          - `imeiMaySell` — Товар допущен к продаже. Проверка пройдена
+                          - `imeiSoldB2B` — Товар продан покупателю B2B, допущен к продаже повторно. Проверка пройдена
+                          - `pending` — Проверка маркировки продолжается. Дождитесь изменения статуса проверки
+                          - `required` — Маркировка обязательна и не закреплена за сборочным заданием. Проверка не пройдена
+                          - `imeiInvalidFormat` — Указан неверный формат маркировки. Проверка не пройдена
+                          - `imeiAlreadySold` — Товар с этим IMEI уже продан. Проверка не пройдена
+                        - `uin`
+                          - `filled` — Маркировка закреплена за сборочным заданием, проверка не требуется
+                          - `optional` — Маркировка не закреплена за сборочным заданием и не обязательна. Проверка пройдена
+                          - `required` — Маркировка обязательна и не закреплена за сборочным заданием. Проверка не пройдена                         <br>
+                        - `sgtin`
+                          - `filled` — Маркировка закреплена за сборочным заданием, проверка не требуется
+                          - `optional` — Маркировка не закреплена за сборочным заданием и не обязательна. Проверка пройдена
+                          - `deadlineExceeded` — Проверка маркировки не завершена и будет продолжена. Проверка может завершиться и успешно, и неуспешно
+                          - `sgtinIntroduced` — Товар допущен к продаже. Проверка пройдена
+                          - `sgtinSoldB2B` — Товар продан покупателю B2B, допущен к продаже повторно. Проверка пройдена
+                          - `pending` — Проверка маркировки продолжается. Дождитесь изменения статуса проверки
+                          - `required` — Маркировка обязательна и не закреплена за сборочным заданием. Проверка не пройдена
+                          - `sgtinInvalidFormat` — Указан неверный формат маркировки. Проверка не пройдена
+                          - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru). Проверка не пройдена
+                          - `sgtinEmitted` —  Маркировка эмитирована. Проверка не пройдена
+                          - `sgtinApplied` — Не пройдена процедура Ввод в оборот. Проверка не пройдена
+                          - `sgtinWrittenOff` — Списан. Проверка не пройдена
+                          - `sgtinRetired` — Выбыл. Проверка не пройдена
+                          - `sgtinWithdrawn` — Выбыл. Проверка не пройдена
+                          - `sgtinDisaggregated` — Расформирован. Проверка не пройдена
+                          - `sgtinDisaggregation` — Расформирован. Проверка не пройдена
+                          - `sgtinAppliedNotPaid` — Не оплачен. Проверка не пройдена
+                        - `gtin`
+                          - `filled` — Маркировка закреплена за сборочным заданием, проверка не требуется
+                          - `optional` — Маркировка не закреплена за сборочным заданием и не обязательна. Проверка пройдена
+                          - `required` — Маркировка обязательна и не закреплена за сборочным заданием. Проверка не пройдена
+                        - `customsDeclaration`
+                          - `filled` — Маркировка закреплена за сборочным заданием, проверка не требуется
+                          - `optional` — Маркировка не закреплена за сборочным заданием и не обязательна. Проверка пройдена
+                          - `required` — Маркировка обязательна и не закреплена за сборочным заданием. Проверка не пройдена
     api.OrdersMetaResponse:
       type: object
       required:
