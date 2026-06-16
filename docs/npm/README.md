@@ -201,6 +201,7 @@ main().catch(console.error);
 
 ### in_store_pickup (`in_store_pickup`)
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaDeletePost` — Удалить идентификаторы маркировки сборочных заданий
+- `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaDetailsPost` — Получить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaGtinPost` — Закрепить GTIN за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaImeiPost` — Закрепить IMEI за сборочными заданиями
 - `in_store_pickup.DefaultApi.apiMarketplaceV3ClickCollectOrdersMetaInfoPost` — Получить идентификаторы маркировки сборочных заданий

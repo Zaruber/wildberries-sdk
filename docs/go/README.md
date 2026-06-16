@@ -201,6 +201,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 
 ### in_store_pickup (`in_store_pickup`)
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaDeletePost` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaDetailsPost` — `POST /api/marketplace/v3/click-collect/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaGtinPost` — `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaImeiPost` — `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
 - `in_store_pickup.DefaultApiService.ApiMarketplaceV3ClickCollectOrdersMetaInfoPost` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить идентификаторы маркировки сборочных заданий

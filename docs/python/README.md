@@ -213,9 +213,10 @@ print(feedbacks)
 
 ### in_store_pickup (`in_store_pickup`)
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_delete_post` — `POST /api/marketplace/v3/click-collect/orders/meta/delete` — Удалить идентификаторы маркировки сборочных заданий
+- `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_details_post` — `POST /api/marketplace/v3/click-collect/orders/meta/details` — Получить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_gtin_post` — `POST /api/marketplace/v3/click-collect/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_imei_post` — `POST /api/marketplace/v3/click-collect/orders/meta/imei` — Закрепить IMEI за сборочными заданиями
-- `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_info_post` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — Получить идентификаторы маркировки сборочных заданий
+- `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_info_post` — `POST /api/marketplace/v3/click-collect/orders/meta/info` — (Deprecated) Получить идентификаторы маркировки сборочных заданий
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_sgtin_post` — `POST /api/marketplace/v3/click-collect/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_meta_uin_post` — `POST /api/marketplace/v3/click-collect/orders/meta/uin` — Закрепить УИН за сборочными заданиями
 - `in_store_pickup.DefaultApi.api_marketplace_v3_click_collect_orders_status_cancel_post` — `POST /api/marketplace/v3/click-collect/orders/status/cancel` — Отменить сборочные задания

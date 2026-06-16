@@ -28,7 +28,7 @@ class ApiOrdersRequestV2(BaseModel):
     """
     ApiOrdersRequestV2
     """ # noqa: E501
-    orders_ids: Optional[Annotated[List[StrictInt], Field(max_length=1000)]] = Field(default=None, description="Список ID сборочных заданий", alias="ordersIds", json_schema_extra={"examples": [[123456, 234567]]})
+    orders_ids: Optional[Annotated[List[StrictInt], Field(max_length=1000)]] = Field(default=None, description="Список ID сборочных заданий", alias="ordersIds", json_schema_extra={"examples": [[123456, 234567, 345678]]})
     __properties: ClassVar[List[str]] = ["ordersIds"]
 
     model_config = ConfigDict(
